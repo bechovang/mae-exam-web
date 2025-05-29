@@ -285,19 +285,37 @@ export default function ExamClient({ examId }: ExamClientProps) {
             <RadioGroup
               value={userAnswers[currentQuestion + 1] || ""}
               onValueChange={handleAnswerSelect}
-              className="space-y-3"
+              className="grid grid-cols-2 gap-3 sm:grid-cols-3"
             >
-              {["A", "B", "C", "D", "E"].map((option) => (
+              {["A", "B", "C", "D", "E", "F"].map((option) => (
                 <div
                   key={option}
-                  className={`flex items-center rounded-lg border p-3 transition-colors ${
-                    userAnswers[currentQuestion + 1] === option ? "border-blue-500 bg-blue-50" : "hover:bg-gray-50"
+                  className={`relative flex cursor-pointer items-center justify-center rounded-lg border-2 p-4 transition-all hover:bg-gray-50 ${
+                    userAnswers[currentQuestion + 1] === option
+                      ? "border-blue-500 bg-blue-50 shadow-sm"
+                      : "border-gray-200"
                   }`}
+                  onClick={() => handleAnswerSelect(option)}
                 >
-                  <RadioGroupItem value={option} id={`option-${option}`} className="mr-3" />
-                  <Label htmlFor={`option-${option}`} className="w-full cursor-pointer font-medium">
-                    {option}
-                  </Label>
+                  <RadioGroupItem
+                    value={option}
+                    id={`option-${option}`}
+                    className="peer sr-only"
+                  />
+                  <div className="flex items-center justify-center">
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-full border-2 text-lg font-semibold transition-colors ${
+                      userAnswers[currentQuestion + 1] === option
+                        ? "border-blue-500 bg-blue-500 text-white"
+                        : "border-gray-300 text-gray-700"
+                    }`}>
+                      {option}
+                    </div>
+                  </div>
+                  {userAnswers[currentQuestion + 1] === option && (
+                    <div className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-blue-500 text-xs text-white">
+                      ✓
+                    </div>
+                  )}
                 </div>
               ))}
             </RadioGroup>
