@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react"
 import { useRouter } from "next/navigation"
-import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
@@ -19,6 +18,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog"
+import { TransformWrapper, TransformComponent } from "react-zoom-pan-pinch"
 
 interface Question {
   id: number
@@ -240,44 +240,45 @@ export default function ExamClient({ examId }: ExamClientProps) {
           <CardContent className="p-4 pt-6">
             <div className="mb-6 overflow-hidden rounded-lg border">
               <div className="relative">
-                <div className="absolute right-2 top-2 z-10 flex gap-2">
-                  <Button
-                    variant="secondary"
-                    size="icon"
-                    onClick={handleZoomIn}
-                    className="h-8 w-8 bg-white/80 hover:bg-white"
-                  >
-                    <ZoomIn className="h-4 w-4" />
-                  </Button>
-                  <Button
-                    variant="secondary"
-                    size="icon"
-                    onClick={handleZoomOut}
-                    className="h-8 w-8 bg-white/80 hover:bg-white"
-                  >
-                    <ZoomOut className="h-4 w-4" />
-                  </Button>
-                </div>
-                <div 
-                  ref={imageContainerRef}
-                  className="relative aspect-[4/3] w-full cursor-move"
-                  onMouseDown={handleMouseDown}
-                  onMouseMove={handleMouseMove}
-                  onMouseUp={handleMouseUp}
-                  onMouseLeave={handleMouseLeave}
+                <TransformWrapper
+                  initialScale={1}
+                  minScale={1}
+                  maxScale={3}
+                  centerOnInit
+                  wheel={{ step: 0.1 }}
                 >
-                  <Image
-                    src={examData.questions[currentQuestion].image}
-                    alt={`Câu hỏi ${currentQuestion + 1}`}
-                    fill
-                    className="object-contain transition-transform duration-200"
-                    style={{ 
-                      transform: `scale(${scale}) translate(${position.x}px, ${position.y}px)`,
-                      cursor: scale > 1 ? 'move' : 'default'
-                    }}
-                    priority
-                  />
-                </div>
+                  {({ zoomIn, zoomOut, resetTransform }) => (
+                    <>
+                      <div className="absolute right-2 top-2 z-10 flex gap-2">
+                        <Button
+                          variant="secondary"
+                          size="icon"
+                          onClick={() => zoomIn()}
+                          className="h-8 w-8 bg-white/80 hover:bg-white"
+                        >
+                          <ZoomIn className="h-4 w-4" />
+                        </Button>
+                        <Button
+                          variant="secondary"
+                          size="icon"
+                          onClick={() => zoomOut()}
+                          className="h-8 w-8 bg-white/80 hover:bg-white"
+                        >
+                          <ZoomOut className="h-4 w-4" />
+                        </Button>
+                      </div>
+                      <TransformComponent wrapperClass="w-full" contentClass="w-full">
+                        <div className="relative aspect-[4/3] w-full">
+                          <img
+                            src={examData.questions[currentQuestion].image}
+                            alt={`Câu hỏi ${currentQuestion + 1}`}
+                            className="w-full h-full object-contain"
+                          />
+                        </div>
+                      </TransformComponent>
+                    </>
+                  )}
+                </TransformWrapper>
               </div>
             </div>
 
