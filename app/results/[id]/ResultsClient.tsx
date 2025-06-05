@@ -12,6 +12,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 interface ExamResults {
   examId: string
@@ -130,8 +131,11 @@ ${Object.entries(results.answers)
     <div className="flex min-h-screen flex-col bg-gray-50 p-4">
       <div className="mx-auto w-full max-w-4xl">
         <Card className="mb-6">
-          <CardHeader className="text-center">
+          <CardHeader className="text-center relative">
             <CardTitle className="text-2xl">Kết quả bài thi</CardTitle>
+            <div className="absolute top-1/2 right-4 -translate-y-1/2">
+              <ThemeToggle />
+            </div>
           </CardHeader>
           <CardContent className="space-y-6">
             <div className="rounded-lg bg-gray-100 p-6 text-center">

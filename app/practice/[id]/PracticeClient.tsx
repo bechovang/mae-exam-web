@@ -76,7 +76,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
   const [showHints, setShowHints] = useState(false)
   const [practiceComplete, setPracticeComplete] = useState(false)
   const [showSummaryDialog, setShowSummaryDialog] = useState(false)
-  const timerRef = useRef<NodeJS.Timeout>()
+  const timerRef = useRef<NodeJS.Timeout | null>(null)
 
   useEffect(() => {
     const studentName = localStorage.getItem("studentName")
@@ -433,10 +433,10 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
                   <Lightbulb className="h-4 w-4" />
                   Gợi ý:
                 </h4>
-                <ul className="space-y-1">
+                <ul className="space-y-1 list-disc list-inside">
                   {currentQuestionData.hints.map((hint, index) => (
                     <li key={index} className="text-sm text-yellow-700">
-                      • {hint}
+                      <SimpleMath>{hint}</SimpleMath>
                     </li>
                   ))}
                 </ul>
