@@ -946,11 +946,11 @@
         "D. V only"
       ],
       "correctAnswer": "B",
-      "explanation": "Để một tập hợp con là không gian con, nó phải thỏa mãn ba điều kiện: chứa vector không, đóng kín với phép cộng vector, và đóng kín với phép nhân vô hướng.\\\\**Xét tập U: \\( U = \\{(x, y) | x = 2y \\} \\)**\\\\1. **Chứa vector không:** Nếu \\( (x,y) = (0,0) \\), thì \\( 0 = 2(0) \\) là đúng. Vậy \\( (0,0) \\in U \\).\\\\2. **Đóng kín với phép cộng:** Giả sử \\( \\vec{u}_1 = (x_1, y_1) \\in U \\) và \\( \\vec{u}_2 = (x_2, y_2) \\in U \\).\\\\   Điều này có nghĩa là \\( x_1 = 2y_1 \\) và \\( x_2 = 2y_2 \\).\\\\   Ta có \\( \\vec{u}_1 + \\vec{u}_2 = (x_1+x_2, y_1+y_2) \\).\\\\   Kiểm tra xem \\( (x_1+x_2) = 2(y_1+y_2) \\) có đúng không:\\\\   \\( x_1+x_2 = 2y_1 + 2y_2 = 2(y_1+y_2) \\). Điều này đúng.\\\\   Vậy, \\( \\vec{u}_1 + \\vec{u}_2 \\in U \\).\\\\3. **Đóng kín với phép nhân vô hướng:** Giả sử \\( \\vec{u} = (x, y) \\in U \\) (tức là \\( x = 2y \\)) và \\(k\\) là một số vô hướng.\\\\   Ta có \\( k\vec{u} = (kx, ky) \\).\\\\   Kiểm tra xem \\( kx = 2(ky) \\) có đúng không:\\\\   Vì \\( x=2y \\), nhân cả hai vế với \\(k\\), ta được \\( kx = k(2y) = 2(ky) \\). Điều này đúng.\\\\   Vậy, \\( k\vec{u} \\in U \\).\\\\Vì U thỏa mãn cả ba điều kiện, U là một không gian con.\\\\**Xét tập V: \\( V = \\{(x, y) | xy = 0 \\} \\)**\\\\1. **Chứa vector không:** Nếu \\( (x,y) = (0,0) \\), thì \\( (0)(0) = 0 \\) là đúng. Vậy \\( (0,0) \\in V \\).\\\\2. **Đóng kín với phép cộng:**\\\\   Chọn \\( \\vec{v}_1 = (1, 0) \\). Ta có \\( (1)(0) = 0 \\), nên \\( \\vec{v}_1 \\in V \\).\\\\   Chọn \\( \\vec{v}_2 = (0, 1) \\). Ta có \\( (0)(1) = 0 \\), nên \\( \\vec{v}_2 \\in V \\).\\\\   Xét tổng \\( \\vec{v}_1 + \\vec{v}_2 = (1, 0) + (0, 1) = (1, 1) \\).\\\\   Kiểm tra xem \\( (1,1) \\) có thuộc V không: \\( (1)(1) = 1 \\neq 0 \\).\\\\   Vì \\( (1,1) \\notin V \\), V không đóng kín với phép cộng.\\\\Do V không đóng kín với phép cộng, V không phải là không gian con.\\\\Kết luận: Chỉ U là không gian con.",
+      "explanation": "Only **U** is a subspace because it contains the zero vector, is closed under addition and scalar multiplication, whereas **V** is not closed under addition and thus not a subspace.",
       "difficulty": "medium",
       "topic": "Subspaces",
       "hints": [
-        "Kiểm tra ba điều kiện của không gian con: chứa vector không, đóng kín với phép cộng, đóng kín với phép nhân vô hướng.",
+        "Check the three conditions for a subspace: contains zero vector, closed under addition, closed under scalar multiplication.",
         "Đối với tập V, hãy thử tìm hai vector thuộc V mà tổng của chúng không thuộc V."
       ]
     },
