@@ -1,7 +1,7 @@
 {
-    "examId": "333333",
-    "title": "de222233333322dmmmm",
-    "description": "Bài 33333",
+    "examId": "de3",
+    "title": "33333",
+    "description": "Bài 233333322",
     "questions": [
       {
         "id": 1,
@@ -214,22 +214,23 @@
       },
       {
         "id": 11,
-        "question": "dmmmmmm Find the domain of the function \\( f(x) = \\ln(3x + 6) \\)",
+        "question": "Sdmmmmm the inequality \\( |x - 2| < 3 \\)",
         "image": "11.jpg",
         "options": [
-          "A. [-2, ∞)",
-          "B. [-6, ∞)",
-          "C. (-2, ∞)",
-          "D. (6, ∞)",
-          "E. (-∞, ∞)"
+          "A. x ∈ (-1, 5)",
+          "B. x ∈ (-5, 1)",
+          "C. x ∈ (0, 4)",
+          "D. x ∈ (-3, 7)",
+          "E. x ∈ (-∞, ∞)"
         ],
-        "correctAnswer": "C",
-        "explanation": "For the natural logarithm function to be defined, the argument must be positive. So we need \\( 3x + 6 > 0 \\), which gives us \\( 3x > -6 \\), therefore \\( x > -2 \\). The domain is \\( (-2, ∞) \\).",
+        "correctAnswer": "A",
+        "explanation": "The inequality \\( |x - 2| < 3 \\) is equivalent to \\( -3 < x - 2 < 3 \\). Adding 2 to all parts: \\( -1 < x < 5 \\), so \\( x ∈ (-1, 5) \\).",
         "difficulty": "easy",
-        "topic": "Functions",
+        "topic": "Absolute Value",
         "hints": [
-          "Hàm ln chỉ xác định khi đối số > 0",
-          "Giải bất phương trình 3x + 6 > 0"
+          "Bất phương trình |a| < b tương đương -b < a < b",
+          "Viết lại: -3 < x - 2 < 3",
+          "Cộng 2 vào tất cả: -1 < x < 5"
         ]
       }
     ]

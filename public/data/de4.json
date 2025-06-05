@@ -1,7 +1,7 @@
 {
-    "examId": "333333",
-    "title": "de222233333322dmmmm",
-    "description": "Bài 33333",
+    "examId": "de4",
+    "title": "4444",
+    "description": "Bài 44444",
     "questions": [
       {
         "id": 1,
@@ -210,26 +210,6 @@
           "Bất phương trình |a| < b tương đương -b < a < b",
           "Viết lại: -3 < x - 2 < 3",
           "Cộng 2 vào tất cả: -1 < x < 5"
-        ]
-      },
-      {
-        "id": 11,
-        "question": "dmmmmmm Find the domain of the function \\( f(x) = \\ln(3x + 6) \\)",
-        "image": "11.jpg",
-        "options": [
-          "A. [-2, ∞)",
-          "B. [-6, ∞)",
-          "C. (-2, ∞)",
-          "D. (6, ∞)",
-          "E. (-∞, ∞)"
-        ],
-        "correctAnswer": "C",
-        "explanation": "For the natural logarithm function to be defined, the argument must be positive. So we need \\( 3x + 6 > 0 \\), which gives us \\( 3x > -6 \\), therefore \\( x > -2 \\). The domain is \\( (-2, ∞) \\).",
-        "difficulty": "easy",
-        "topic": "Functions",
-        "hints": [
-          "Hàm ln chỉ xác định khi đối số > 0",
-          "Giải bất phương trình 3x + 6 > 0"
         ]
       }
     ]

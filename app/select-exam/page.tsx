@@ -4,70 +4,32 @@ import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { FileText, BookOpen, Clock, Target, AlertTriangle } from "lucide-react"
+import { FileText, BookOpen, Clock, Target, AlertTriangle, Info, Loader2 } from "lucide-react"
 
-interface PracticeSet {
-  id: number;
+// Interface for the data structure expected from deX.json files
+interface FetchedExamData {
+  examId: string;
   title: string;
   description: string;
-  questions: number; // Approximate number of questions or specific if known
-  difficulty: string;
-  topics: string[];
-  dataAvailable: boolean;
+  // questions: any[]; // We might use questions.length later if needed
 }
+
+// Interface for the data structure used to render exam cards
+interface ExamCardDisplayData {
+  id: number; // Numeric ID, e.g., 1 for de1.json
+  examIdToDisplay: string; // examId from JSON, or a placeholder
+  titleToDisplay: string; // title from JSON, or a placeholder
+  descriptionToDisplay: string; // description from JSON, or a placeholder
+  isLoading: boolean; // True while attempting to fetch this specific exam
+  isAvailable: boolean; // True if successfully loaded, false otherwise
+}
+
+const MAX_EXAMS_TO_CHECK = 10; // Check for de1.json up to de10.json
 
 export default function SelectPracticePage() {
   const router = useRouter()
   const [studentName, setStudentName] = useState("")
-
-  // Define practice sets based on available JSON data
-  const practiceData: PracticeSet[] = [
-    {
-      id: 1,
-      title: "Luyện tập Toán học cơ bản",
-      description: "Đạo hàm, tích phân và hàm số (Sử dụng de1.json)",
-      questions: 10, // From de1.json
-      difficulty: "Trung bình",
-      topics: ["Derivatives", "Integration", "Functions", "Limits", "Absolute Value"],
-      dataAvailable: true,
-    },
-    {
-      id: 2,
-      title: "Luyện tập Đại số nâng cao",
-      description: "Phương trình và bất phương trình (Sử dụng de2.json)",
-      questions: 5, // From de2.json
-      difficulty: "Khó",
-      topics: ["Quadratic Equations", "Rational Functions", "Absolute Value", "Factoring"],
-      dataAvailable: true,
-    },
-    {
-      id: 3,
-      title: "Luyện tập Hình học (Chưa có dữ liệu)",
-      description: "Tọa độ và vectơ trong mặt phẳng",
-      questions: 12,
-      difficulty: "Dễ",
-      topics: ["Geometry", "Vectors", "Coordinates"],
-      dataAvailable: false, // Mark as unavailable
-    },
-    {
-      id: 4,
-      title: "Luyện tập Xác suất (Chưa có dữ liệu)",
-      description: "Xác suất và thống kê cơ bản",
-      questions: 8,
-      difficulty: "Trung bình",
-      topics: ["Probability", "Statistics"],
-      dataAvailable: false, // Mark as unavailable
-    },
-    {
-      id: 5,
-      title: "Luyện tập Tổng hợp (Chưa có dữ liệu)",
-      description: "Ôn tập các chủ đề toán học",
-      questions: 20,
-      difficulty: "Khó",
-      topics: ["Mixed Topics", "Review"],
-      dataAvailable: false, // Mark as unavailable
-    }
-  ]
+  const [practiceSets, setPracticeSets] = useState<ExamCardDisplayData[]>([])
 
   useEffect(() => {
     const name = localStorage.getItem("studentName")
@@ -76,25 +38,72 @@ export default function SelectPracticePage() {
       return
     }
     setStudentName(name)
-  }, [router])
 
-  const handleSelectPractice = (practice: PracticeSet) => {
-    if (!practice.dataAvailable) {
-      alert("Bộ đề luyện tập này hiện chưa có dữ liệu. Vui lòng chọn bộ đề khác.");
+    const loadAllExamData = async () => {
+      const examIdsToTry = Array.from({ length: MAX_EXAMS_TO_CHECK }, (_, i) => i + 1);
+
+      // Initial placeholder state
+      const initialPlaceholderSets: ExamCardDisplayData[] = examIdsToTry.map(id => ({
+        id,
+        examIdToDisplay: `de${id}`,
+        titleToDisplay: `Đề ${id}`,
+        descriptionToDisplay: "Đang kiểm tra trạng thái...",
+        isLoading: true,
+        isAvailable: false,
+      }));
+      setPracticeSets(initialPlaceholderSets);
+
+      const settledPromises = await Promise.allSettled(
+        examIdsToTry.map(async (id) => {
+          const response = await fetch(`/data/de${id}.json`);
+          if (!response.ok) {
+            throw new Error(`File de${id}.json not found or not accessible`);
+          }
+          const data: FetchedExamData = await response.json();
+          return { id, ...data }; // Return id along with fetched data
+        })
+      );
+
+      const updatedSets = initialPlaceholderSets.map((placeholderSet, index) => {
+        const result = settledPromises[index];
+        if (result.status === "fulfilled") {
+          const loadedData = result.value;
+          return {
+            id: placeholderSet.id, // Ensure 'id' is the numeric id
+            examIdToDisplay: loadedData.examId,
+            titleToDisplay: loadedData.title,
+            descriptionToDisplay: loadedData.description,
+            isLoading: false,
+            isAvailable: true,
+          };
+        } else {
+          // Fetch failed for this ID (e.g., file not found)
+          return {
+            ...placeholderSet,
+            descriptionToDisplay: "Dữ liệu đề thi không tồn tại.",
+            isLoading: false,
+            isAvailable: false,
+          };
+        }
+      });
+      setPracticeSets(updatedSets);
+    };
+
+    loadAllExamData();
+  }, [router]);
+
+  const handleSelectPractice = (practice: ExamCardDisplayData) => {
+    if (!practice.isAvailable || practice.isLoading) {
+      // This case should ideally not be met if button is properly disabled
+      alert("Đề luyện tập này hiện không có sẵn hoặc đang tải.");
       return;
     }
-    localStorage.setItem("selectedPractice", practice.id.toString())
+    localStorage.setItem("selectedPractice", practice.id.toString()) // Use numeric id
     router.push(`/practice/${practice.id}`)
   }
 
-  const getDifficultyColor = (difficulty: string) => {
-    switch (difficulty) {
-      case "Dễ": return "text-green-600 bg-green-100"
-      case "Trung bình": return "text-yellow-600 bg-yellow-100"
-      case "Khó": return "text-red-600 bg-red-100"
-      default: return "text-gray-600 bg-gray-100"
-    }
-  }
+  // getDifficultyColor is no longer used as difficulty is not displayed per card
+  // const getDifficultyColor = (difficulty: string) => { ... }
 
   return (
     <div className="flex min-h-screen flex-col bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
@@ -133,64 +142,61 @@ export default function SelectPracticePage() {
         </Card>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {practiceData.map((practice) => (
+          {practiceSets.map((practice) => (
             <Card
               key={practice.id}
-              className={`cursor-pointer transition-all duration-300 border-2 
-                ${practice.dataAvailable 
-                  ? 'hover:shadow-xl hover:scale-105 hover:bg-blue-50 hover:border-blue-200'
-                  : 'opacity-60 bg-gray-100 cursor-not-allowed'}`}
-              onClick={() => handleSelectPractice(practice)}
+              className={`transition-all duration-300 border-2 flex flex-col ${
+                practice.isAvailable && !practice.isLoading
+                  ? 'hover:shadow-xl hover:scale-105 hover:bg-blue-50 hover:border-blue-200 cursor-pointer'
+                  : 'opacity-70 bg-gray-100 cursor-not-allowed'
+              }`}
+              onClick={() => practice.isAvailable && !practice.isLoading && handleSelectPractice(practice)}
             >
               <CardContent className="flex flex-col h-full p-6">
                 <div className="flex items-start justify-between mb-4">
-                  {practice.dataAvailable ? 
+                  {practice.isAvailable ? 
                     <FileText className="h-8 w-8 text-blue-500 flex-shrink-0" /> : 
                     <AlertTriangle className="h-8 w-8 text-orange-400 flex-shrink-0" />
                   }
-                  <span className={`px-3 py-1 rounded-full text-xs font-medium ${getDifficultyColor(practice.difficulty)}`}>
-                    {practice.difficulty}
-                  </span>
                 </div>
                 
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  {practice.title}
-                </h3>
-                
-                <p className="text-gray-600 mb-3 flex-grow text-sm">
-                  {practice.description}
-                </p>
-                
-                <div className="space-y-3">
-                  <div className="flex justify-between items-center text-sm">
-                    <span className="text-gray-500">Số câu hỏi:</span>
-                    <span className="font-semibold text-blue-600">{practice.questions} câu</span>
+                {practice.isLoading ? (
+                  <div className="flex-grow flex flex-col items-center justify-center">
+                    <Loader2 className="h-8 w-8 animate-spin text-blue-500" />
+                    <p className="text-sm text-gray-500 mt-2">{practice.titleToDisplay}</p>
+                    <p className="text-xs text-gray-400 mt-1">{practice.descriptionToDisplay}</p>
                   </div>
-                  
-                  <div className="flex flex-wrap gap-1">
-                    {practice.topics.map((topic, index) => (
-                      <span 
-                        key={index}
-                        className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md"
-                      >
-                        {topic}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                ) : (
+                  <>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-1">
+                      {practice.titleToDisplay}
+                    </h3>
+                    {practice.isAvailable && (
+                      <p className="text-xs text-gray-500 mb-2 flex items-center">
+                        <Info size={12} className="mr-1 text-gray-400"/> ID: {practice.examIdToDisplay}
+                      </p>
+                    )}
+                    <p className={`text-gray-600 mb-3 flex-grow text-sm ${!practice.isAvailable ? 'italic' : ''}`}>
+                      {practice.descriptionToDisplay}
+                    </p>
+                  </>
+                )}
                 
                 <Button 
-                  className={`mt-4 w-full 
-                  ${practice.dataAvailable 
+                  className={`mt-auto w-full ${
+                  practice.isAvailable && !practice.isLoading
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700'
-                    : 'bg-gray-300 cursor-not-allowed'}`}
-                  disabled={!practice.dataAvailable}
-                  onClick={(e) => {
-                    if (!practice.dataAvailable) e.stopPropagation(); // Prevent card click if disabled
-                    // handleSelectPractice is called by Card's onClick
-                  }}
+                    : 'bg-gray-300 cursor-not-allowed'
+                  }`}
+                  disabled={!practice.isAvailable || practice.isLoading}
                 >
-                  {practice.dataAvailable ? 'Bắt đầu luyện tập' : 'Chưa có dữ liệu'}
+                  {practice.isLoading ? (
+                    <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Đang tải...</>
+                  ) : practice.isAvailable ? (
+                    'Bắt đầu luyện tập'
+                  ) : (
+                    'Không có sẵn'
+                  )}
                 </Button>
               </CardContent>
             </Card>
