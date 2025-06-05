@@ -281,12 +281,23 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
         {/* Header */}
         <Card className="mb-4 shadow-lg">
           <CardHeader className="flex flex-row items-center justify-between pb-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
-            <div>
-              <CardTitle className="flex items-center gap-2">
-                <BookOpen className="h-5 w-5" />
-                {practiceData.title}
-              </CardTitle>
-              <p className="text-blue-100 text-sm mt-1">{practiceData.description}</p>
+            <div className="flex items-center gap-4">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="rounded-full hover:bg-white/20"
+                onClick={() => router.push('/select-exam')}
+              >
+                <Home className="h-5 w-5" />
+                <span className="sr-only">Về trang chọn đề</span>
+              </Button>
+              <div>
+                <CardTitle className="flex items-center gap-2">
+                  <BookOpen className="h-5 w-5" />
+                  {practiceData.title}
+                </CardTitle>
+                <p className="text-blue-100 text-sm mt-1">{practiceData.description}</p>
+              </div>
             </div>
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2 rounded-full bg-white/20 px-3 py-1">
