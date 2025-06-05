@@ -210,6 +210,217 @@
         "Khi \\(V\\) được cho, hãy tìm giá trị tương ứng của \\(D\\).",
         "Thay các giá trị đã biết vào phương trình đã đạo hàm để giải tìm \\(\\frac{dD}{dt}\\)."
       ]
+    },
+    {
+      "id": 11,
+      "question": "Let \\( y = ax - b \\) be the linear approximation for \\( f(x) = \\sqrt{2x+8} \\) at \\( x = 4 \\). Find b.",
+      "image": null,
+      "options": [
+        "A. 3",
+        "B. 4",
+        "C. 2",
+        "D. 0",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "E",
+      "explanation": "Xấp xỉ tuyến tính của hàm số \\( f(x) \\) tại \\( x = x_0 \\) được cho bởi phương trình đường tiếp tuyến tại điểm đó: \\( L(x) = f(x_0) + f'(x_0)(x - x_0) \\).\\\\So sánh với dạng \\( y = ax - b \\), ta có \\( L(x) = ax - b \\).\\\\Do đó, \\( ax - b = f'(x_0)x + (f(x_0) - f'(x_0)x_0) \\).\\\\Suy ra \\( a = f'(x_0) \\) và \\( -b = f(x_0) - f'(x_0)x_0 \\), hay \\( b = f'(x_0)x_0 - f(x_0) \\).\\\\Cho \\( f(x) = \\sqrt{2x+8} \\) và \\( x_0 = 4 \\).\\\\1. **Tính \\( f(x_0) = f(4) \\):**\\\\   \\( f(4) = \\sqrt{2(4)+8} = \\sqrt{8+8} = \\sqrt{16} = 4 \\).\\\\2. **Tính đạo hàm \\( f'(x) \\):**\\\\   \\( f(x) = (2x+8)^{1/2} \\)\\\\   \\( f'(x) = \\frac{1}{2}(2x+8)^{-1/2} \\cdot \\frac{d}{dx}(2x+8) = \\frac{1}{2\\sqrt{2x+8}} \\cdot 2 = \\frac{1}{\\sqrt{2x+8}} \\).\\\\3. **Tính \\( f'(x_0) = f'(4) \\):**\\\\   \\( f'(4) = \\frac{1}{\\sqrt{2(4)+8}} = \\frac{1}{\\sqrt{16}} = \\frac{1}{4} \\).\\\\4. **Tính \\( b \\):**\\\\   \\( b = f'(4) \\cdot 4 - f(4) \\)\\\\   \\( b = \\left(\\frac{1}{4}\\right) \\cdot 4 - 4 = 1 - 4 = -3 \\).\\\\Giá trị của \\(b\\) là -3. Vì -3 không có trong các lựa chọn A, B, C, D, nên đáp án là \"E. None of the other choices is correct\".",
+      "difficulty": "medium",
+      "topic": "Linear Approximation",
+      "hints": [
+        "Xấp xỉ tuyến tính \\(L(x)\\) của \\(f(x)\\) tại \\(x_0\\) là \\(L(x) = f(x_0) + f'(x_0)(x-x_0)\\).",
+        "So sánh \\(L(x)\\) với dạng \\(y = ax - b\\) để tìm biểu thức cho \\(a\\) và \\(b\\).",
+        "Tính \\(f(4)\\) và \\(f'(4)\\)."
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Find the absolute maximum and absolute minimum values of \\( f(x) = -6 - 10x - 5x^2 \\) on \\( [-2, 1] \\).",
+      "image": null,
+      "options": [
+        "A. Absolute maximum: -1, absolute minimum: -21",
+        "B. Absolute maximum: -6, absolute minimum: -11",
+        "C. Absolute maximum: 11, absolute minimum: -11",
+        "D. Absolute maximum: 11, absolute minimum: -21",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Để tìm giá trị lớn nhất và nhỏ nhất tuyệt đối của hàm số \\( f(x) = -6 - 10x - 5x^2 \\) trên đoạn \\( [-2, 1] \\), ta thực hiện các bước sau:\\\\1. **Tìm các điểm tới hạn (critical points) của \\(f(x)\\) trong khoảng \\( (-2, 1) \\).**\\\\   Tính đạo hàm \\( f'(x) \\):\\\\   \\( f'(x) = \\frac{d}{dx}(-6 - 10x - 5x^2) = -10 - 10x \\).\\\\   Đặt \\( f'(x) = 0 \\) để tìm điểm tới hạn:\\\\   \\( -10 - 10x = 0 \\implies -10x = 10 \\implies x = -1 \\).\\\\   Điểm tới hạn \\( x = -1 \\) nằm trong đoạn \\( [-2, 1] \\).\\\\2. **Tính giá trị của hàm số tại các điểm tới hạn và tại hai đầu mút của đoạn.**\\\\   - Tại \\( x = -2 \\) (đầu mút trái):\\\\     \\( f(-2) = -6 - 10(-2) - 5(-2)^2 = -6 + 20 - 5(4) = -6 + 20 - 20 = -6 \\).\\\\   - Tại \\( x = -1 \\) (điểm tới hạn):\\\\     \\( f(-1) = -6 - 10(-1) - 5(-1)^2 = -6 + 10 - 5(1) = -6 + 10 - 5 = -1 \\).\\\\   - Tại \\( x = 1 \\) (đầu mút phải):\\\\     \\( f(1) = -6 - 10(1) - 5(1)^2 = -6 - 10 - 5 = -21 \\).\\\\3. **So sánh các giá trị đã tính để tìm giá trị lớn nhất và nhỏ nhất tuyệt đối.**\\\\   Các giá trị thu được là: -6, -1, -21.\\\\   - Giá trị lớn nhất tuyệt đối (Absolute maximum) là -1 (xảy ra tại \\( x = -1 \\)).\\\\   - Giá trị nhỏ nhất tuyệt đối (Absolute minimum) là -21 (xảy ra tại \\( x = 1 \\)).",
+      "difficulty": "medium",
+      "topic": "Absolute Extrema",
+      "hints": [
+        "Tìm đạo hàm \\(f'(x)\\) và giải \\(f'(x)=0\\) để tìm các điểm tới hạn.",
+        "Tính giá trị của hàm số \\(f(x)\\) tại các điểm tới hạn nằm trong đoạn và tại hai đầu mút của đoạn.",
+        "So sánh các giá trị này để tìm giá trị lớn nhất và nhỏ nhất tuyệt đối."
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Determine where the function \\( f(x) = x^2 - 20x + 104 \\) is concave up and where it is concave down. <br> (i) Concave down on \\( (-\\infty, \\infty) \\) <br> (ii) Concave up on \\( (10, \\infty) \\) and concave down on \\( (-\\infty, 10) \\) <br> (iii) Concave up on \\( (-\\infty, \\infty) \\) <br> (iv) Concave down on \\( (10, \\infty) \\) and concave up on \\( (-\\infty, 10) \\)",
+      "image": null,
+      "options": [
+        "A. (i)",
+        "B. (ii)",
+        "C. (iii)",
+        "D. (iv)",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Để xác định tính lồi lõm (concavity) của hàm số \\( f(x) = x^2 - 20x + 104 \\), ta cần xét dấu của đạo hàm cấp hai \\( f''(x) \\).\\\\1. **Tính đạo hàm cấp một \\( f'(x) \\):**\\\\   \\( f'(x) = \\frac{d}{dx}(x^2 - 20x + 104) = 2x - 20 \\).\\\\2. **Tính đạo hàm cấp hai \\( f''(x) \\):**\\\\   \\( f''(x) = \\frac{d}{dx}(2x - 20) = 2 \\).\\\\3. **Xét dấu của \\( f''(x) \\):**\\\\   Ta có \\( f''(x) = 2 \\). Vì 2 là một hằng số dương (\\( 2 > 0 \\)) với mọi giá trị của \\(x\\), nên \\( f''(x) > 0 \\) trên toàn bộ miền xác định của hàm số (tức là trên \\( (-\\infty, \\infty) \\)).\\\\Khi \\( f''(x) > 0 \\), hàm số lõm lên (concave up).\\\\Vậy, hàm số \\( f(x) = x^2 - 20x + 104 \\) lõm lên trên toàn bộ khoảng \\( (-\\infty, \\infty) \\).\\\\Điều này tương ứng với lựa chọn (iii).",
+      "difficulty": "easy",
+      "topic": "Concavity",
+      "hints": [
+        "Tính lồi lõm của hàm số được xác định bởi dấu của đạo hàm cấp hai \\(f''(x)\\).",
+        "Nếu \\(f''(x) > 0\\) trên một khoảng, hàm số lõm lên (concave up) trên khoảng đó.",
+        "Nếu \\(f''(x) < 0\\) trên một khoảng, hàm số lõm xuống (concave down) trên khoảng đó."
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Find the horizontal asymptote of \\( f(x) = \\frac{\\sin x}{x} + 1 \\).",
+      "image": null,
+      "options": [
+        "A. \\( y = 1 \\)",
+        "B. \\( y = 0 \\)",
+        "C. \\( y = -1 \\)",
+        "D. The horizontal asymptote does not exist"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Để tìm tiệm cận ngang của hàm số \\( f(x) = \\frac{\\sin x}{x} + 1 \\), ta cần tính giới hạn của \\( f(x) \\) khi \\( x \\to \\infty \\) và khi \\( x \\to -\\infty \\).\\\\1. **Tính \\( \\lim_{x \\to \\infty} f(x) \\):**\\\\   \\( \\lim_{x \\to \\infty} \\left( \\frac{\\sin x}{x} + 1 \\right) = \\lim_{x \\to \\infty} \\frac{\\sin x}{x} + \\lim_{x \\to \\infty} 1 \\).\\\\   Ta biết rằng \\( -1 \\le \\sin x \\le 1 \\) với mọi \\(x\\).\\\\   Khi \\( x > 0 \\), chia các vế cho \\(x\\), ta được: \\( -\\frac{1}{x} \\le \\frac{\\sin x}{x} \\le \\frac{1}{x} \\).\\\\   Vì \\( \\lim_{x \\to \\infty} \\left(-\\frac{1}{x}\\right) = 0 \\) và \\( \\lim_{x \\to \\infty} \\frac{1}{x} = 0 \\), theo Định lý Kẹp (Squeeze Theorem), ta có \\( \\lim_{x \\to \\infty} \\frac{\\sin x}{x} = 0 \\).\\\\   Do đó, \\( \\lim_{x \\to \\infty} f(x) = 0 + 1 = 1 \\).\\\\2. **Tính \\( \\lim_{x \\to -\\infty} f(x) \\):**\\\\   Tương tự, khi \\( x < 0 \\), chia các vế của \\( -1 \\le \\sin x \\le 1 \\) cho \\(x\\) (và đổi chiều bất đẳng thức vì \\(x\\) âm), ta được \\( \\frac{1}{x} \\le \\frac{\\sin x}{x} \\le -\\frac{1}{x} \\) (hoặc có thể giữ \\( -\\frac{1}{|x|} \\le \\frac{\\sin x}{x} \\le \\frac{1}{|x|} \\)).\\\\   Cũng theo Định lý Kẹp, \\( \\lim_{x \\to -\\infty} \\frac{\\sin x}{x} = 0 \\).\\\\   Do đó, \\( \\lim_{x \\to -\\infty} f(x) = 0 + 1 = 1 \\).\\\\Vì \\( \\lim_{x \\to \\infty} f(x) = 1 \\) và \\( \\lim_{x \\to -\\infty} f(x) = 1 \\), nên đường thẳng \\( y = 1 \\) là tiệm cận ngang của đồ thị hàm số.",
+      "difficulty": "medium",
+      "topic": "Asymptotes",
+      "hints": [
+        "Tiệm cận ngang được tìm bằng cách tính giới hạn của hàm số khi \\(x \\to \\infty\\) và \\(x \\to -\\infty\\).",
+        "Sử dụng Định lý Kẹp (Squeeze Theorem) để tính \\( \\lim_{x \\to \\pm\\infty} \\frac{\\sin x}{x} \\)."
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Find the point on the line \\( y = 5x + 2 \\) that is closest to the origin.",
+      "image": null,
+      "options": [
+        "A. \\( (-5/13, 1/13) \\)",
+        "B. \\( (5/13, 51/13) \\)",
+        "C. \\( (-5/13, -51/13) \\)",
+        "D. \\( (5/13, -51/13) \\)",
+        "E. None of others"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Gọi \\( P(x, y) \\) là một điểm bất kỳ trên đường thẳng \\( y = 5x + 2 \\). Ta cần tìm điểm P sao cho khoảng cách từ P đến gốc tọa độ \\( O(0,0) \\) là nhỏ nhất.\\\\Khoảng cách \\( d \\) từ P đến O là \\( d = \\sqrt{(x-0)^2 + (y-0)^2} = \\sqrt{x^2 + y^2} \\).\\\\Để đơn giản hóa việc tính toán, ta sẽ cực tiểu hóa bình phương khoảng cách, \\( S = d^2 = x^2 + y^2 \\).\\\\Vì \\( y = 5x + 2 \\), ta thay vào biểu thức S:\\\\ \\( S(x) = x^2 + (5x+2)^2 = x^2 + (25x^2 + 20x + 4) = 26x^2 + 20x + 4 \\).\\\\Để tìm giá trị nhỏ nhất của \\( S(x) \\), ta tìm đạo hàm \\( S'(x) \\) và đặt nó bằng 0:\\\\ \\( S'(x) = \\frac{d}{dx}(26x^2 + 20x + 4) = 52x + 20 \\).\\\\Đặt \\( S'(x) = 0 \\):\\\\ \\( 52x + 20 = 0 \\implies 52x = -20 \\implies x = -\\frac{20}{52} = -\\frac{5}{13} \\).\\\\Để đảm bảo đây là điểm cực tiểu, ta xét đạo hàm cấp hai: \\( S''(x) = 52 \\). Vì \\( S''(x) > 0 \\), đây là một điểm cực tiểu.\\\\Khi \\( x = -\\frac{5}{13} \\), giá trị của \\(y\\) là:\\\\ \\( y = 5x + 2 = 5\\left(-\\frac{5}{13}\\right) + 2 = -\\frac{25}{13} + \\frac{26}{13} = \\frac{1}{13} \\).\\\\Vậy, điểm trên đường thẳng \\( y = 5x + 2 \\) gần gốc tọa độ nhất là \\( \\left(-\\frac{5}{13}, \\frac{1}{13}\\right) \\).\\\\**Cách khác (Hình học):**\\\\Đường thẳng nối gốc tọa độ với điểm gần nhất trên đường thẳng \\(d_1: y = 5x+2\\) sẽ vuông góc với \\(d_1\\).\\\\Hệ số góc của \\(d_1\\) là \\( m_1 = 5 \\).\\\\Đường thẳng \\(d_2\\) đi qua gốc tọa độ và vuông góc với \\(d_1\\) sẽ có hệ số góc \\( m_2 = -\\frac{1}{m_1} = -\\frac{1}{5} \\).\\\\Phương trình của \\(d_2\\) là \\( y = -\\frac{1}{5}x \\).\\\\Điểm cần tìm là giao điểm của \\(d_1\\) và \\(d_2\\). Ta giải hệ phương trình:\\\\ \\( y = 5x + 2 \\)\\\\ \\( y = -\\frac{1}{5}x \\)\\\\Cho hai vế bằng nhau: \\( 5x + 2 = -\\frac{1}{5}x \\).\\\\Nhân cả hai vế với 5: \\( 25x + 10 = -x \\)\\\\ \\( 26x = -10 \\)\\\\ \\( x = -\\frac{10}{26} = -\\frac{5}{13} \\).\\\\Thay \\(x\\) vào phương trình của \\(d_2\\): \\( y = -\\frac{1}{5}\\left(-\\frac{5}{13}\\right) = \\frac{1}{13} \\).\\\\Điểm cần tìm là \\( \\left(-\\frac{5}{13}, \\frac{1}{13}\\right) \\).",
+      "difficulty": "medium",
+      "topic": "Optimization",
+      "hints": [
+        "Để tìm điểm gần nhất, hãy cực tiểu hóa bình phương khoảng cách từ một điểm \\((x, y)\\) trên đường thẳng đến gốc tọa độ.",
+        "Thay \\(y = 5x+2\\) vào biểu thức bình phương khoảng cách để có hàm một biến \\(x\\).",
+        "Tìm đạo hàm của hàm này theo \\(x\\), đặt bằng 0 để tìm giá trị \\(x\\) tương ứng.",
+        "Cách khác: Đường thẳng nối gốc tọa độ với điểm cần tìm sẽ vuông góc với đường thẳng đã cho."
+      ]
+    },
+    {
+      "id": 16,
+      "question": "Use Newton's method with the specified initial approximation \\(x_0\\) to find \\(x_2\\), the third approximation to the root of the given equation. \\( x^3 - 2x - 1 = 0, x_0 = 0 \\)",
+      "image": null,
+      "options": [
+        "A. -5/12",
+        "B. 5/12",
+        "C. -1/4",
+        "D. 1/4",
+        "E. 1",
+        "F. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Công thức của phương pháp Newton là \\( x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)} \\).\\\\Cho phương trình: \\( f(x) = x^3 - 2x - 1 \\).\\\\Đạo hàm là: \\( f'(x) = 3x^2 - 2 \\).\\\\Giá trị ban đầu: \\( x_0 = 0 \\).\\\\**Lần lặp thứ nhất (tìm \\(x_1\\)):**\\\\\\( f(x_0) = f(0) = (0)^3 - 2(0) - 1 = -1 \\).\\\\\\( f'(x_0) = f'(0) = 3(0)^2 - 2 = -2 \\).\\\\\\( x_1 = x_0 - \\frac{f(x_0)}{f'(x_0)} = 0 - \\frac{-1}{-2} = 0 - \\frac{1}{2} = -\\frac{1}{2} \\).\\\\**Lần lặp thứ hai (tìm \\(x_2\\)):**\\\\\\( x_1 = -\\frac{1}{2} \\).\\\\\\( f(x_1) = f(-\\frac{1}{2}) = \\left(-\\frac{1}{2}\\right)^3 - 2\\left(-\\frac{1}{2}\\right) - 1 = -\\frac{1}{8} + 1 - 1 = -\\frac{1}{8} \\).\\\\\\( f'(x_1) = f'(-\\frac{1}{2}) = 3\\left(-\\frac{1}{2}\\right)^2 - 2 = 3\\left(\\frac{1}{4}\\right) - 2 = \\frac{3}{4} - 2 = -\\frac{5}{4} \\).\\\\\\( x_2 = x_1 - \\frac{f(x_1)}{f'(x_1)} = -\\frac{1}{2} - \\frac{-1/8}{-5/4} = -\\frac{1}{2} - \\frac{1}{10} = -\\frac{5}{10} - \\frac{1}{10} = -\\frac{6}{10} = -\\frac{3}{5} \\).\\\\Vì \\(x_2 = -\\frac{3}{5}\\) không khớp với bất kỳ lựa chọn nào, đáp án đúng là F - None of the other choices is correct.",
+      "difficulty": "medium",
+      "topic": "Numerical Methods",
+      "hints": [
+        "Công thức Newton: \\(x_{n+1} = x_n - f(x_n)/f'(x_n)\\).",
+        "Tính \\(f(x)\\) và \\(f'(x)\\) cho hàm số đã cho.",
+        "Thực hiện hai lần lặp, bắt đầu từ \\(x_0 = 0\\), để tìm \\(x_1\\) rồi đến \\(x_2\\)."
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Find the Riemann sum for \\( f(x) = x + x^2 \\), \\( 0 \\le x \\le 3 \\) with 3 equal subintervals and taking left endpoints.",
+      "image": null,
+      "options": [
+        "A. 20",
+        "B. 8",
+        "C. 27/2",
+        "D. None of the other choices is correct",
+        "E. 14"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Hàm số là \\( f(x) = x + x^2 \\), đoạn là \\( [0, 3] \\), và số khoảng con là \\( n = 3 \\).\\\\1. **Tính độ rộng của mỗi khoảng con \\( \\Delta x \\):**\\\\   \\( \\Delta x = \\frac{b-a}{n} = \\frac{3-0}{3} = 1 \\).\\\\2. **Xác định các điểm cuối bên trái của các khoảng con:**\\\\   Các khoảng con là: \\( [0, 1] \\), \\( [1, 2] \\), \\( [2, 3] \\).\\\\   Các điểm cuối bên trái là: \\( x_0 = 0 \\), \\( x_1 = 1 \\), \\( x_2 = 2 \\).\\\\3. **Tính giá trị của hàm số tại các điểm cuối bên trái:**\\\\   - \\( f(x_0) = f(0) = 0 + 0^2 = 0 \\).\\\\   - \\( f(x_1) = f(1) = 1 + 1^2 = 1 + 1 = 2 \\).\\\\   - \\( f(x_2) = f(2) = 2 + 2^2 = 2 + 4 = 6 \\).\\\\4. **Tính tổng Riemann:**\\\\   Tổng Riemann \\( S \\) được tính bằng công thức \\( S = \\sum_{i=0}^{n-1} f(x_i) \\Delta x \\) (cho điểm cuối bên trái).\\\\   \\( S = [f(x_0) + f(x_1) + f(x_2)] \\Delta x \\)\\\\\\   \\( S = [0 + 2 + 6] \\cdot 1 \\)\\\\\\   \\( S = [8] \\cdot 1 = 8 \\).\\\\Vậy, tổng Riemann là 8.",
+      "difficulty": "easy",
+      "topic": "Riemann Sums",
+      "hints": [
+        "Tính độ rộng của mỗi khoảng con: \\( \\Delta x = (b-a)/n \\).",
+        "Xác định các điểm cuối bên trái của mỗi khoảng con.",
+        "Tổng Riemann cho điểm cuối bên trái là \\( \\sum_{i=0}^{n-1} f(x_i) \\Delta x \\)."
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Express the area under the graph of \\( f(x) = x^2 + 1 \\), from 0 to 4, as a limit. <br> (i) \\( \\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\frac{4}{n} (1 + \\frac{64i^2}{n^2}) \\) <br> (ii) \\( \\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\frac{4}{n} (\\frac{4i^2}{n^2} + 1) \\) <br> (iii) \\( \\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\frac{4}{n} (1 + \\frac{4i}{n}) \\) <br> (iv) \\( \\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\frac{4}{n} (\\frac{16i^2}{n^2} + 1) \\)",
+      "image": null,
+      "options": [
+        "A. (i)",
+        "B. (ii)",
+        "C. (iii)",
+        "D. (iv)",
+        "E. None of the other choices is correct."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Diện tích dưới đồ thị của \\( f(x) \\) từ \\( a \\) đến \\( b \\) được biểu diễn dưới dạng giới hạn của tổng Riemann là:\\\\ \\( A = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} f(x_i^*) \\Delta x \\)\\\\Ở đây, \\( f(x) = x^2 + 1 \\), \\( a = 0 \\), \\( b = 4 \\).\\\\1. **Độ rộng của mỗi khoảng con:**\\\\   \\( \\Delta x = \\frac{b-a}{n} = \\frac{4-0}{n} = \\frac{4}{n} \\).\\\\2. **Chọn điểm mẫu (sử dụng điểm cuối bên phải):**\\\\   \\( x_i^* = x_i = a + i \\Delta x = 0 + i \\frac{4}{n} = \\frac{4i}{n} \\).\\\\3. **Tính \\( f(x_i^*) \\):**\\\\   \\( f(x_i^*) = f\\left(\\frac{4i}{n}\\right) = \\left(\\frac{4i}{n}\\right)^2 + 1 = \\frac{16i^2}{n^2} + 1 \\).\\\\4. **Thiết lập giới hạn của tổng Riemann:**\\\\   \\( A = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\left(\\frac{16i^2}{n^2} + 1\\right) \\frac{4}{n} \\)\\\\\\   \\( A = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\frac{4}{n} \\left(\\frac{16i^2}{n^2} + 1\\right) \\).\\\\Biểu thức này khớp với lựa chọn (iv).",
+      "difficulty": "medium",
+      "topic": "Definite Integrals as Limits",
+      "hints": [
+        "Nhớ lại định nghĩa của tích phân xác định dưới dạng giới hạn của tổng Riemann: \\( \\lim_{n \\to \\infty} \\sum f(x_i) \\Delta x \\).",
+        "Xác định \\( \\Delta x = (b-a)/n \\).",
+        "Xác định \\( x_i = a + i \\Delta x \\) (sử dụng điểm cuối bên phải).",
+        "Thay \\(x_i\\) vào \\(f(x)\\)."
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Find \\( \\int_0^2 f(x) dx \\) if \\( f(x) = \\begin{cases} x & \\text{for } x \\le 1 \\\\ 2x-1 & \\text{for } x > 1 \\end{cases} \\)",
+      "image": null,
+      "options": [
+        "A. 5/2",
+        "B. 3/2",
+        "C. -5/2",
+        "D. -3/2",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Vì hàm số \\(f(x)\\) được định nghĩa bởi các biểu thức khác nhau trên các khoảng khác nhau, ta cần chia tích phân thành các phần tương ứng:\\\\ \\( \\int_0^2 f(x) dx = \\int_0^1 f(x) dx + \\int_1^2 f(x) dx \\).\\\\1. **Tính \\( \\int_0^1 f(x) dx \\):**\\\\   Trên khoảng \\( [0, 1] \\), \\( x \\le 1 \\), nên \\( f(x) = x \\).\\\\   \\( \\int_0^1 x \\, dx = \\left[ \\frac{x^2}{2} \\right]_0^1 = \\frac{1^2}{2} - \\frac{0^2}{2} = \\frac{1}{2} - 0 = \\frac{1}{2} \\).\\\\2. **Tính \\( \\int_1^2 f(x) dx \\):**\\\\   Trên khoảng \\( (1, 2] \\), \\( x > 1 \\), nên \\( f(x) = 2x-1 \\).\\\\   \\( \\int_1^2 (2x-1) \\, dx = \\left[ \\frac{2x^2}{2} - x \\right]_1^2 = [x^2 - x]_1^2 \\)\\\\\\   \\( = (2^2 - 2) - (1^2 - 1) = (4 - 2) - (1 - 1) = 2 - 0 = 2 \\).\\\\3. **Cộng hai kết quả lại:**\\\\   \\( \\int_0^2 f(x) dx = \\frac{1}{2} + 2 = \\frac{1}{2} + \\frac{4}{2} = \\frac{5}{2} \\).",
+      "difficulty": "easy",
+      "topic": "Definite Integrals",
+      "hints": [
+        "Chia tích phân thành hai phần tại điểm mà định nghĩa của hàm số thay đổi (tức là tại \\(x=1\\)).",
+        "Tính từng tích phân riêng biệt sử dụng biểu thức tương ứng của \\(f(x)\\).",
+        "Cộng các kết quả lại."
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Find the average value of the function \\( f(x) = 5x + 3 \\) over the interval \\( [2, 9] \\).",
+      "image": null,
+      "options": [
+        "A. 213.5",
+        "B. 30.5",
+        "C. 25.5",
+        "D. 35",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Giá trị trung bình của hàm số \\( f(x) \\) trên đoạn \\( [a, b] \\) được cho bởi công thức:\\\\ \\( f_{avg} = \\frac{1}{b-a} \\int_a^b f(x) \\, dx \\).\\\\Ở đây, \\( f(x) = 5x + 3 \\), \\( a = 2 \\), và \\( b = 9 \\).\\\\1. **Tính \\( b-a \\):**\\\\   \\( b-a = 9 - 2 = 7 \\).\\\\2. **Tính tích phân xác định \\( \\int_a^b f(x) \\, dx \\):**\\\\   \\( \\int_2^9 (5x + 3) \\, dx = \\left[ \\frac{5x^2}{2} + 3x \\right]_2^9 \\)\\\\\\   \\( = \\left( \\frac{5(9)^2}{2} + 3(9) \\right) - \\left( \\frac{5(2)^2}{2} + 3(2) \\right) \\)\\\\\\   \\( = \\left( \\frac{5(81)}{2} + 27 \\right) - \\left( \\frac{5(4)}{2} + 6 \\right) \\)\\\\\\   \\( = \\left( \\frac{405}{2} + 27 \\right) - \\left( \\frac{20}{2} + 6 \\right) \\)\\\\\\   \\( = \\left( \\frac{405}{2} + \\frac{54}{2} \\right) - (10 + 6) \\)\\\\\\   \\( = \\frac{459}{2} - 16 = \\frac{459}{2} - \\frac{32}{2} = \\frac{427}{2} \\).\\\\3. **Tính giá trị trung bình:**\\\\   \\( f_{avg} = \\frac{1}{7} \\cdot \\frac{427}{2} = \\frac{427}{14} \\).\\\\Để chuyển thành số thập phân: \\( 427 \\div 14 \\approx 30.5 \\).\\\\Vậy, giá trị trung bình của hàm số là 30.5.",
+      "difficulty": "easy",
+      "topic": "Average Value of a Function",
+      "hints": [
+        "Sử dụng công thức tính giá trị trung bình: \\( f_{avg} = \\frac{1}{b-a} \\int_a^b f(x) dx \\).",
+        "Tính tích phân xác định của hàm số trên đoạn đã cho.",
+        "Chia kết quả tích phân cho độ dài của đoạn \\( (b-a) \\)."
+      ]
     }
   ]
 }
