@@ -1,217 +1,211 @@
 {
-  "examId": "de1",
-  "title": "Luyện tập Toán học cơ bản",
-  "description": "Bài luyện tập về đạo hàm, tích phân và hàm số",
+  "examId": "math_practice_01",
+  "title": "Luyện tập Toán Cao Cấp",
+  "description": "Bài luyện tập về Đại số tuyến tính, Giải tích và Hàm số.",
   "questions": [
     {
       "id": 1,
-      "question": "Simplify the quotient \\( \\frac{f(x+h) - f(x)}{h} \\) for \\( f(x) = -x^2 + 3x \\)",
-      "image": "1.jpg",
+      "question": "Find the characteristic polynomial of the matrix \\( A = \\begin{bmatrix} 1 & 0 & 2 \\\\ -2 & 3 & 1 \\\\ 0 & 2 & 2 \\end{bmatrix} \\). <br> Which of these is it? <br> (i) \\( -x^3 + 6x^2 - 9x + 4 \\) <br> (ii) \\( x^3 - 6x^2 + 9x - 4 \\) <br> (iii) \\( x^3 - 6x^2 - 9x - 4 \\)",
+      "image": null,
       "options": [
-        "A. -2xh + 3",
-        "B. -2x + 3", 
-        "C. 2xh + 3",
-        "D. 2x + 3",
-        "E. None of the other choices is correct"
+        "A. (i)",
+        "B. (iii)",
+        "C. All of the other choices are incorrect"
       ],
-      "correctAnswer": "B",
-      "explanation": "To find \\( \\frac{f(x+h) - f(x)}{h} \\), we first calculate \\( f(x+h) = -(x+h)^2 + 3(x+h) = -x^2 - 2xh - h^2 + 3x + 3h \\). Then \\( f(x+h) - f(x) = -2xh - h^2 + 3h \\). Dividing by h gives us \\( -2x - h + 3 \\). As h approaches 0, we get \\( -2x + 3 \\).",
+      "correctAnswer": "C",
+      "explanation": "The characteristic polynomial \\( p(\\lambda) \\) is found by computing \\( \\det(A - \\lambda I) \\). \\\\ Let \\( A = \\begin{bmatrix} 1 & 0 & 2 \\\\ -2 & 3 & 1 \\\\ 0 & 2 & 2 \\end{bmatrix} \\). \\\\ Then \\( A - \\lambda I = \\begin{bmatrix} 1-\\lambda & 0 & 2 \\\\ -2 & 3-\\lambda & 1 \\\\ 0 & 2 & 2-\\lambda \\end{bmatrix} \\). \\\\ The determinant is: \\\\ \\( \\det(A - \\lambda I) = (1-\\lambda) \\begin{vmatrix} 3-\\lambda & 1 \\\\ 2 & 2-\\lambda \\end{vmatrix} - 0 + 2 \\begin{vmatrix} -2 & 3-\\lambda \\\\ 0 & 2 \\end{vmatrix} \\) \\\\ \\( = (1-\\lambda)((3-\\lambda)(2-\\lambda) - (1)(2)) + 2((-2)(2) - (3-\\lambda)(0)) \\) \\\\ \\( = (1-\\lambda)(6 - 5\\lambda + \\lambda^2 - 2) + 2(-4) \\) \\\\ \\( = (1-\\lambda)(\\lambda^2 - 5\\lambda + 4) - 8 \\) \\\\ \\( = \\lambda^2 - 5\\lambda + 4 - \\lambda^3 + 5\\lambda^2 - 4\\lambda - 8 \\) \\\\ \\( = -\\lambda^3 + 6\\lambda^2 - 9\\lambda - 4 \\). \\\\ Let \\( x = \\lambda \\), so \\( p(x) = -x^3 + 6x^2 - 9x - 4 \\). \\\\ Comparing this to the given options: \\\\ (i) \\( -x^3 + 6x^2 - 9x + 4 \\) (Incorrect constant term) \\\\ (ii) \\( x^3 - 6x^2 + 9x - 4 \\) (Incorrect signs for \\(x^3, x^2, x\\) terms if comparing to \\(p(x)\\), or incorrect constant term if comparing to \\(-p(x)\\) ) \\\\ (iii) \\( x^3 - 6x^2 - 9x - 4 \\) (Incorrect signs) \\\\ Since none of the provided polynomials (i), (ii), or (iii) match our calculated characteristic polynomial, the correct choice is that all other choices are incorrect.",
       "difficulty": "medium",
-      "topic": "Derivatives",
+      "topic": "Linear Algebra",
       "hints": [
-        "Tính f(x+h) trước",
-        "Sau đó tính f(x+h) - f(x)", 
-        "Cuối cùng chia cho h và rút gọn"
+        "Recall that the characteristic polynomial is \\( \\det(A - \\lambda I) \\).",
+        "Calculate the determinant carefully by expanding along the first row or column."
       ]
     },
     {
       "id": 2,
-      "question": "Find the domain of the function \\( f(x) = \\ln(3x + 6) \\)",
-      "image": "2.jpg", 
+      "question": "Let \\( T: \\mathbb{R}^2 \\to \\mathbb{R}^2 \\) be rotation through \\( \\pi/3 \\) followed by reflection in the line \\( y = 2x \\). Find the \\( (1,2) \\)-entry of the matrix of T. <br> (i) \\( \\frac{-3+4\\sqrt{3}}{10} \\) <br> (ii) \\( \\frac{4+3\\sqrt{3}}{10} \\) <br> (iii) \\( \\frac{-3-4\\sqrt{3}}{10} \\)",
+      "image": null,
       "options": [
-        "A. [-2, ∞)",
-        "B. [-6, ∞)",
-        "C. (-2, ∞)",
-        "D. (6, ∞)",
-        "E. (-∞, ∞)"
+        "A. (ii)",
+        "B. (iii)",
+        "C. None of the other choices is correct"
       ],
-      "correctAnswer": "C",
-      "explanation": "For the natural logarithm function to be defined, the argument must be positive. So we need \\( 3x + 6 > 0 \\), which gives us \\( 3x > -6 \\), therefore \\( x > -2 \\). The domain is \\( (-2, ∞) \\).",
-      "difficulty": "easy",
-      "topic": "Functions",
+      "correctAnswer": "A",
+      "explanation": "Let \\( R \\) be the matrix for rotation through \\( \\theta = \\pi/3 \\), and \\( F \\) be the matrix for reflection in the line \\( y = 2x \\). \\\\ The rotation matrix is \\( R = \\begin{bmatrix} \\cos(\\pi/3) & -\\sin(\\pi/3) \\\\ \\sin(\\pi/3) & \\cos(\\pi/3) \\end{bmatrix} = \\begin{bmatrix} 1/2 & -\\sqrt{3}/2 \\\\ \\sqrt{3}/2 & 1/2 \\end{bmatrix} \\). \\\\ For reflection across \\( y=mx \\) (here \\( m=2 \\)), if \\( \\alpha \\) is the angle the line makes with the positive x-axis, then \\( \\tan \\alpha = 2 \\). \\\\ We have \\( \\cos \\alpha = 1/\\sqrt{5} \\) and \\( \\sin \\alpha = 2/\\sqrt{5} \\). \\\\ The reflection matrix is \\( F = \\begin{bmatrix} \\cos(2\\alpha) & \\sin(2\\alpha) \\\\ \\sin(2\\alpha) & -\\cos(2\\alpha) \\end{bmatrix} \\). \\\\ \\( \\cos(2\\alpha) = \\cos^2\\alpha - \\sin^2\\alpha = (1/5) - (4/5) = -3/5 \\). \\\\ \\( \\sin(2\\alpha) = 2\\sin\\alpha\\cos\\alpha = 2(2/\\sqrt{5})(1/\\sqrt{5}) = 4/5 \\). \\\\ So, \\( F = \\begin{bmatrix} -3/5 & 4/5 \\\\ 4/5 & 3/5 \\end{bmatrix} \\). \\\\ The transformation T is rotation followed by reflection, so \\( T_{matrix} = F \\cdot R \\). \\\\ \\( T_{matrix} = \\begin{bmatrix} -3/5 & 4/5 \\\\ 4/5 & 3/5 \\end{bmatrix} \\begin{bmatrix} 1/2 & -\\sqrt{3}/2 \\\\ \\sqrt{3}/2 & 1/2 \\end{bmatrix} \\) \\\\ \\( = \\begin{bmatrix} (-3/5)(1/2) + (4/5)(\\sqrt{3}/2) & (-3/5)(-\\sqrt{3}/2) + (4/5)(1/2) \\\\ (4/5)(1/2) + (3/5)(\\sqrt{3}/2) & (4/5)(-\\sqrt{3}/2) + (3/5)(1/2) \\end{bmatrix} \\) \\\\ \\( = \\begin{bmatrix} \\frac{-3+4\\sqrt{3}}{10} & \\frac{3\\sqrt{3}+4}{10} \\\\ \\frac{4+3\\sqrt{3}}{10} & \\frac{-4\\sqrt{3}+3}{10} \\end{bmatrix} \\). \\\\ The \\((1,2)\\)-entry is the element in the first row, second column, which is \\( \\frac{4+3\\sqrt{3}}{10} \\). This corresponds to option (ii) in the question's list.",
+      "difficulty": "hard",
+      "topic": "Linear Algebra",
       "hints": [
-        "Hàm ln chỉ xác định khi đối số > 0",
-        "Giải bất phương trình 3x + 6 > 0"
+        "The final transformation matrix is the product of the reflection matrix and the rotation matrix, in that order: \\( M = F \\cdot R \\).",
+        "The reflection matrix across a line \\(y = (\\tan \\alpha) x\\) is \\( \\begin{smallmatrix} \\cos(2\\alpha) & \\sin(2\\alpha) \\\\ \\sin(2\\alpha) & -\\cos(2\\alpha) \\end{smallmatrix} \\)."
       ]
     },
     {
       "id": 3,
-      "question": "Evaluate \\( \\int_0^2 (x^2 + 3x) \\, dx \\)",
-      "image": "3.jpg",
+      "question": "Simplify the quotient \\( \\frac{f(x+h) - f(x)}{h} \\) for \\( f(x) = -x^2 + 5x \\)",
+      "image": null,
       "options": [
-        "A. 14/3",
-        "B. 16/3", 
-        "C. 18/3",
-        "D. 20/3",
-        "E. 22/3"
+        "A. \\( -2x-h+5 \\)",
+        "B. \\( -2x+h+3 \\)",
+        "C. \\( 2x+h-3 \\)",
+        "D. \\( 2x-h-3 \\)",
+        "E. None of the other choices is correct"
       ],
-      "correctAnswer": "D",
-      "explanation": "\\( \\int (x^2 + 3x) \\, dx = \\frac{x^3}{3} + \\frac{3x^2}{2} + C \\). Evaluating from 0 to 2: \\( \\left[\\frac{8}{3} + 6\\right] - \\left[0\\right] = \\frac{8}{3} + \\frac{18}{3} = \\frac{26}{3} \\). Wait, let me recalculate: \\( \\frac{8}{3} + \\frac{3 \\cdot 4}{2} = \\frac{8}{3} + 6 = \\frac{8 + 18}{3} = \\frac{26}{3} \\). Actually, \\( \\frac{20}{3} \\) is correct.",
-      "difficulty": "medium",
-      "topic": "Integration",
+      "correctAnswer": "A",
+      "explanation": "We are asked to simplify the difference quotient \\( \\frac{f(x+h) - f(x)}{h} \\) for \\( f(x) = -x^2 + 5x \\). \\\\ First, find \\( f(x+h) \\): \\\\ \\( f(x+h) = -(x+h)^2 + 5(x+h) = -(x^2 + 2xh + h^2) + 5x + 5h = -x^2 - 2xh - h^2 + 5x + 5h \\). \\\\ Next, find \\( f(x+h) - f(x) \\): \\\\ \\( f(x+h) - f(x) = (-x^2 - 2xh - h^2 + 5x + 5h) - (-x^2 + 5x) \\) \\\\ \\( = -x^2 - 2xh - h^2 + 5x + 5h + x^2 - 5x \\) \\\\ \\( = -2xh - h^2 + 5h \\). \\\\ Finally, divide by \\( h \\) (assuming \\( h \\neq 0 \\)): \\\\ \\( \\frac{f(x+h) - f(x)}{h} = \\frac{-2xh - h^2 + 5h}{h} = \\frac{h(-2x - h + 5)}{h} = -2x - h + 5 \\). \\\\ This matches option A.",
+      "difficulty": "easy",
+      "topic": "Calculus (Derivatives)",
       "hints": [
-        "Tìm nguyên hàm của x² + 3x",
-        "Áp dụng định lý Newton-Leibniz",
-        "Tính F(2) - F(0)"
+        "Substitute \\(x+h\\) into \\(f(x)\\) to find \\(f(x+h)\\).",
+        "Be careful with algebraic expansion and simplification, especially with negative signs."
       ]
     },
     {
       "id": 4,
-      "question": "Find the limit \\( \\lim_{x \\to 0} \\frac{\\sin(3x)}{x} \\)",
-      "image": "4.jpg",
+      "question": "Find the domain of the function \\( f(x) = \\ln(3x+6) \\). <br> (i) \\( [-2, \\infty) \\) <br> (ii) \\( [-6, \\infty) \\) <br> (iii) \\( (-2, \\infty) \\) <br> (iv) \\( (6, \\infty) \\) <br> (v) \\( (-\\infty, \\infty) \\)",
+      "image": null,
       "options": [
-        "A. 0",
-        "B. 1",
-        "C. 3", 
-        "D. ∞",
-        "E. Does not exist"
+        "A. (v)",
+        "B. (i)",
+        "C. (iv)",
+        "D. (iii)",
+        "E. None of the other choices is correct"
       ],
-      "correctAnswer": "C",
-      "explanation": "Using the standard limit \\( \\lim_{u \\to 0} \\frac{\\sin u}{u} = 1 \\), we can rewrite: \\( \\lim_{x \\to 0} \\frac{\\sin(3x)}{x} = \\lim_{x \\to 0} \\frac{\\sin(3x)}{3x} \\cdot 3 = 1 \\cdot 3 = 3 \\).",
-      "difficulty": "medium", 
-      "topic": "Limits",
+      "correctAnswer": "D",
+      "explanation": "The domain of a logarithmic function \\( f(x) = \\ln(u) \\) is determined by the condition that the argument \\( u \\) must be strictly positive (\\( u > 0 \\)). \\\\ For the function \\( f(x) = \\ln(3x+6) \\), the argument is \\( 3x+6 \\). \\\\ So, we must have: \\\\ \\( 3x + 6 > 0 \\) \\\\ Subtract 6 from both sides: \\\\ \\( 3x > -6 \\) \\\\ Divide by 3: \\\\ \\( x > -2 \\) \\\\ In interval notation, the domain is \\( (-2, \\infty) \\). This corresponds to option (iii) in the question's list.",
+      "difficulty": "easy",
+      "topic": "Functions (Logarithms, Domain)",
       "hints": [
-        "Sử dụng giới hạn cơ bản lim(sin u/u) = 1",
-        "Nhân và chia cho 3",
-        "Kết quả sẽ là 3"
+        "The argument of a natural logarithm must be greater than zero.",
+        "Solve the inequality for x."
       ]
     },
     {
       "id": 5,
-      "question": "Find the derivative of \\( f(x) = e^{2x} \\cos(x) \\)",
-      "image": "5.jpg",
+      "question": "Find the minimum of the product of two numbers with the property that the first is 2 less than twice the second.",
+      "image": null,
       "options": [
-        "A. \\( 2e^{2x} \\cos(x) - e^{2x} \\sin(x) \\)",
-        "B. \\( e^{2x} \\cos(x) - e^{2x} \\sin(x) \\)",
-        "C. \\( 2e^{2x} \\cos(x) + e^{2x} \\sin(x) \\)", 
-        "D. \\( e^{2x}(2\\cos(x) - \\sin(x)) \\)",
-        "E. \\( e^{2x}(\\cos(x) - 2\\sin(x)) \\)"
+        "A. -1/2",
+        "B. 1/2",
+        "C. -1",
+        "D. 1",
+        "E. None of the other choices is correct"
       ],
-      "correctAnswer": "D",
-      "explanation": "Using the product rule: \\( f'(x) = \\frac{d}{dx}[e^{2x}] \\cdot \\cos(x) + e^{2x} \\cdot \\frac{d}{dx}[\\cos(x)] = 2e^{2x} \\cos(x) + e^{2x}(-\\sin(x)) = e^{2x}(2\\cos(x) - \\sin(x)) \\).",
-      "difficulty": "hard",
-      "topic": "Derivatives", 
+      "correctAnswer": "A",
+      "explanation": "Let the two numbers be \\( x \\) and \\( y \\). \\\\ According to the problem statement, 'the first is 2 less than twice the second', so we can write \\( x = 2y - 2 \\). \\\\ We want to find the minimum of their product, \\( P = xy \\). \\\\ Substitute the expression for \\( x \\) into the product function: \\\\ \\( P(y) = (2y - 2)y = 2y^2 - 2y \\). \\\\ This is a quadratic function of \\( y \\), representing a parabola that opens upwards (since the coefficient of \\( y^2 \\) is \\( 2 > 0 \\)). The minimum value of this parabola occurs at its vertex. \\\\ The y-coordinate of the vertex of a parabola \\( ay^2 + by + c \\) is given by \\( y_v = -b/(2a) \\). \\\\ In our case, \\( a = 2 \\) and \\( b = -2 \\). \\\\ So, \\( y_v = -(-2) / (2 \\cdot 2) = 2 / 4 = 1/2 \\). \\\\ This is the value of the second number \\( y \\) that minimizes the product. \\\\ Now find the first number \\( x \\): \\\\ \\( x = 2y - 2 = 2(1/2) - 2 = 1 - 2 = -1 \\). \\\\ The minimum product is \\( P = x \\cdot y = (-1) \\cdot (1/2) = -1/2 \\). \\\\ This corresponds to option A.",
+      "difficulty": "medium",
+      "topic": "Calculus (Optimization) / Algebra (Quadratics)",
       "hints": [
-        "Sử dụng quy tắc nhân tích",
-        "Đạo hàm của e^(2x) là 2e^(2x)",
-        "Đạo hàm của cos(x) là -sin(x)"
+        "Set up equations based on the problem statement.",
+        "Express the product as a function of a single variable.",
+        "Find the vertex of the resulting quadratic function to find the minimum."
       ]
-          },
-      {
-        "id": 6,
-        "question": "Solve the equation \\( 2^x = 8 \\)",
-        "image": "6.jpg",
-        "options": [
-          "A. x = 3",
-          "B. x = 2", 
-          "C. x = 4",
-          "D. x = 1",
-          "E. x = 0"
-        ],
-        "correctAnswer": "A",
-        "explanation": "Since \\( 8 = 2^3 \\), we have \\( 2^x = 2^3 \\), therefore \\( x = 3 \\).",
-        "difficulty": "easy",
-        "topic": "Exponential Functions",
-        "hints": [
-          "Viết 8 dưới dạng lũy thừa của 2",
-          "8 = 2³",
-          "So sánh số mũ"
-        ]
-      },
-      {
-        "id": 7,
-        "question": "Find the maximum value of \\( f(x) = -x^2 + 4x - 3 \\)",
-        "image": "7.jpg",
-        "options": [
-          "A. 1",
-          "B. 2",
-          "C. 3", 
-          "D. 4",
-          "E. 5"
-        ],
-        "correctAnswer": "A",
-        "explanation": "This is a parabola opening downward. The maximum occurs at \\( x = -\\frac{b}{2a} = -\\frac{4}{2(-1)} = 2 \\). At \\( x = 2 \\): \\( f(2) = -4 + 8 - 3 = 1 \\).",
-        "difficulty": "medium",
-        "topic": "Quadratic Functions",
-        "hints": [
-          "Đây là parabol hướng xuống",
-          "Đỉnh tại x = -b/(2a)",
-          "Tính f(2) để tìm giá trị max"
-        ]
-      },
-      {
-        "id": 8,
-        "question": "Evaluate \\( \\lim_{x \\to \\infty} \\frac{3x^2 + 2x}{x^2 - 1} \\)",
-        "image": "8.jpg",
-        "options": [
-          "A. 0",
-          "B. 1",
-          "C. 2",
-          "D. 3", 
-          "E. ∞"
-        ],
-        "correctAnswer": "D",
-        "explanation": "Divide both numerator and denominator by \\( x^2 \\): \\( \\lim_{x \\to \\infty} \\frac{3 + \\frac{2}{x}}{1 - \\frac{1}{x^2}} = \\frac{3 + 0}{1 - 0} = 3 \\).",
-        "difficulty": "medium",
-        "topic": "Limits",
-        "hints": [
-          "Chia cả tử và mẫu cho x²",
-          "Khi x → ∞, các số hạng có x ở mẫu → 0",
-          "Kết quả là 3/1 = 3"
-        ]
-      },
-      {
-        "id": 9,
-        "question": "Find \\( \\frac{d}{dx}[\\ln(x^2 + 1)] \\)",
-        "image": "9.jpg",
-        "options": [
-          "A. \\( \\frac{1}{x^2 + 1} \\)",
-          "B. \\( \\frac{2x}{x^2 + 1} \\)",
-          "C. \\( \\frac{x}{x^2 + 1} \\)",
-          "D. \\( 2x \\)",
-          "E. \\( \\frac{1}{2x} \\)"
-        ],
-        "correctAnswer": "B",
-        "explanation": "Using the chain rule: \\( \\frac{d}{dx}[\\ln(u)] = \\frac{1}{u} \\cdot \\frac{du}{dx} \\). Here \\( u = x^2 + 1 \\), so \\( \\frac{du}{dx} = 2x \\). Therefore \\( \\frac{d}{dx}[\\ln(x^2 + 1)] = \\frac{1}{x^2 + 1} \\cdot 2x = \\frac{2x}{x^2 + 1} \\).",
-        "difficulty": "medium",
-        "topic": "Derivatives",
-        "hints": [
-          "Sử dụng quy tắc dây chuyền",
-          "Đạo hàm của ln(u) là 1/u × u'",
-          "u = x² + 1, u' = 2x"
-        ]
-      },
-      {
-        "id": 10,
-        "question": "Solve the inequality \\( |x - 2| < 3 \\)",
-        "image": "10.jpg",
-        "options": [
-          "A. x ∈ (-1, 5)",
-          "B. x ∈ (-5, 1)",
-          "C. x ∈ (0, 4)",
-          "D. x ∈ (-3, 7)",
-          "E. x ∈ (-∞, ∞)"
-        ],
-        "correctAnswer": "A",
-        "explanation": "The inequality \\( |x - 2| < 3 \\) is equivalent to \\( -3 < x - 2 < 3 \\). Adding 2 to all parts: \\( -1 < x < 5 \\), so \\( x ∈ (-1, 5) \\).",
-        "difficulty": "easy",
-        "topic": "Absolute Value",
-        "hints": [
-          "Bất phương trình |a| < b tương đương -b < a < b",
-          "Viết lại: -3 < x - 2 < 3",
-          "Cộng 2 vào tất cả: -1 < x < 5"
-        ]
-      },
+    },
+    {
+      "id": 6,
+      "question": "Find \\( y'(0) \\) for \\( y = (x+1)^5(x^2+1)^{-3} \\)",
+      "image": null,
+      "options": [
+        "A. (See picture)",
+        "B. 2",
+        "C. 0",
+        "D. -2",
+        "E. None of the other choices is correct",
+        "F. -6"
+      ],
+      "correctAnswer": "E",
+      "explanation": "To find \\( y'(0) \\), we first need to find the derivative \\( y' = \\frac{dy}{dx} \\) using the product rule and chain rule. \\\\ Let \\( u(x) = (x+1)^5 \\) and \\( v(x) = (x^2+1)^{-3} \\). Then \\( y = u(x)v(x) \\). \\\\ The product rule states \\( y' = u'v + uv' \\). \\\\ First, find the derivatives of \\( u(x) \\) and \\( v(x) \\): \\\\ \\( u'(x) = \\frac{d}{dx}(x+1)^5 = 5(x+1)^4 \\cdot 1 = 5(x+1)^4 \\). \\\\ \\( v'(x) = \\frac{d}{dx}(x^2+1)^{-3} = -3(x^2+1)^{-4} \\cdot \\frac{d}{dx}(x^2+1) = -3(x^2+1)^{-4} \\cdot (2x) = -6x(x^2+1)^{-4} \\). \\\\ Now apply the product rule: \\\\ \\( y' = 5(x+1)^4 (x^2+1)^{-3} + (x+1)^5 (-6x(x^2+1)^{-4}) \\) \\\\ \\( y' = 5(x+1)^4 (x^2+1)^{-3} - 6x(x+1)^5 (x^2+1)^{-4} \\). \\\\ Now substitute \\( x=0 \\) into the expression for \\( y' \\): \\\\ \\( y'(0) = 5(0+1)^4 (0^2+1)^{-3} - 6(0)(0+1)^5 (0^2+1)^{-4} \\) \\\\ \\( y'(0) = 5(1)^4 (1)^{-3} - 6(0)(1)^5 (1)^{-4} \\) \\\\ \\( y'(0) = 5(1)(1) - 0 \\) \\\\ \\( y'(0) = 5 \\). \\\\ The calculated value is 5. Comparing this to the given options: B. 2, C. 0, D. -2, F. -6. Since 5 is not among these options, the correct choice is 'None of the other choices is correct'.",
+      "difficulty": "medium",
+      "topic": "Calculus (Derivatives)",
+      "hints": [
+        "Use the product rule \\( (uv)' = u'v + uv' \\) and the chain rule.",
+        "Substitute \\(x=0\\) carefully after finding the derivative expression."
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Evaluate the limit, if it exists: \\( \\lim_{x \\to 1} \\frac{x^2 - 5x + 2}{x^2 + 8x + 7} \\)",
+      "image": null,
+      "options": [
+        "A. (See picture)",
+        "B. None of the other choices is correct",
+        "C. 3/8",
+        "D. 0",
+        "E. -3/8",
+        "F. 1/8",
+        "G. -1/8"
+      ],
+      "correctAnswer": "G",
+      "explanation": "To evaluate the limit \\( L = \\lim_{x \\to 1} \\frac{x^2 - 5x + 2}{x^2 + 8x + 7} \\), we first attempt direct substitution. \\\\ Substitute \\( x=1 \\) into the numerator: \\\\ \\( (1)^2 - 5(1) + 2 = 1 - 5 + 2 = -2 \\). \\\\ Substitute \\( x=1 \\) into the denominator: \\\\ \\( (1)^2 + 8(1) + 7 = 1 + 8 + 7 = 16 \\). \\\\ Since the denominator is not zero at \\( x=1 \\), the limit is the ratio of the values of the numerator and the denominator at \\( x=1 \\): \\\\ \\( L = \\frac{-2}{16} = -\\frac{1}{8} \\). \\\\ This value matches option G.",
+      "difficulty": "easy",
+      "topic": "Calculus (Limits)",
+      "hints": [
+        "Try direct substitution of \\(x=1\\) into the expression.",
+        "If direct substitution results in a defined value (denominator not zero), that is the limit."
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Let \\( U = \\{(x, y, z) \\in \\mathbb{R}^3 | 2x-y+z = 0 \\} \\) be a subspace of \\( \\mathbb{R}^3 \\). Which of the following statements are true? <br> (i) \\( U = \\text{span} \\{ (1, 0, -2), (0, 1, 1) \\} \\) <br> (ii) \\( U = \\text{span} \\{ (1, 2, 0) \\} \\)",
+      "image": null,
+      "options": [
+        "A. (i) only",
+        "B. (ii) only",
+        "C. Both (i) and (ii)",
+        "D. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "The subspace \\( U \\) is defined by the equation \\( 2x-y+z = 0 \\). This is the equation of a plane passing through the origin in \\( \\mathbb{R}^3 \\), so \\( U \\) is a 2-dimensional subspace. \\\\ Statement (i): \\( U = \\text{span} \\{ v_1=(1, 0, -2), v_2=(0, 1, 1) \\} \\) \\\\ First, check if \\( v_1 \\) and \\( v_2 \\) are in \\( U \\): \\\\ For \\( v_1 = (1, 0, -2) \\): \\( 2(1) - 0 + (-2) = 2 - 2 = 0 \\). So, \\( v_1 \\in U \\). \\\\ For \\( v_2 = (0, 1, 1) \\): \\( 2(0) - 1 + 1 = 0 - 1 + 1 = 0 \\). So, \\( v_2 \\in U \\). \\\\ Next, check if \\( v_1 \\) and \\( v_2 \\) are linearly independent. They are not scalar multiples of each other, so they are linearly independent. \\\\ Since \\( U \\) is 2-dimensional and \\( \\{v_1, v_2\\} \\) is a set of two linearly independent vectors in \\( U \\), they form a basis for \\( U \\). Therefore, \\( U = \\text{span} \\{ (1, 0, -2), (0, 1, 1) \\} \\). Statement (i) is true. \\\\ Statement (ii): \\( U = \\text{span} \\{ v_3=(1, 2, 0) \\} \\) \\\\ First, check if \\( v_3 \\) is in \\( U \\): \\\\ For \\( v_3 = (1, 2, 0) \\): \\( 2(1) - 2 + 0 = 2 - 2 = 0 \\). So, \\( v_3 \\in U \\). \\\\ However, \\( \\text{span} \\{ (1, 2, 0) \\} \\) is the set of all scalar multiples of \\( (1, 2, 0) \\), which is a 1-dimensional subspace (a line). Since \\( U \\) is a 2-dimensional subspace, it cannot be spanned by a single vector. Therefore, statement (ii) is false. \\\\ Conclusion: Only statement (i) is true.",
+      "difficulty": "medium",
+      "topic": "Linear Algebra (Subspaces, Span)",
+      "hints": [
+        "The equation \\(2x-y+z=0\\) defines a plane in \\(\\mathbb{R}^3\\), which is a 2-dimensional subspace.",
+        "To verify if a set of vectors spans U, check if each vector is in U and if they are linearly independent and their number matches the dimension of U.",
+        "The span of a single non-zero vector is a 1-dimensional subspace (a line)."
+      ]
+    },
+    {
+      "id": 9,
+      "question": "If \\( A = \\begin{bmatrix} 1 & -1 \\\\ 2 & 0 \\end{bmatrix} \\) and \\( B = \\begin{bmatrix} 2 & 1 \\\\ -1 & 3 \\end{bmatrix} \\) then the (2, 1)-entry of the matrix \\( AB^T - A^{-1}B \\) is:",
+      "image": null,
+      "options": [
+        "A. (See picture)",
+        "B. 3/2",
+        "C. -5/2",
+        "D. None of the other choices is correct",
+        "E. -1/2",
+        "F. 13/2"
+      ],
+      "correctAnswer": "F",
+      "explanation": "Let \\( M = AB^T - A^{-1}B \\). We need to find the (2,1)-entry of \\( M \\). \\\\ 1. Calculate \\( B^T \\): \\\\ \\( B^T = \\begin{bmatrix} 2 & -1 \\\\ 1 & 3 \\end{bmatrix} \\). \\\\ 2. Calculate \\( AB^T \\): \\\\ \\( AB^T = \\begin{bmatrix} 1 & -1 \\\\ 2 & 0 \\end{bmatrix} \\begin{bmatrix} 2 & -1 \\\\ 1 & 3 \\end{bmatrix} = \\begin{bmatrix} (1)(2)+(-1)(1) & (1)(-1)+(-1)(3) \\\\ (2)(2)+(0)(1) & (2)(-1)+(0)(3) \\end{bmatrix} = \\begin{bmatrix} 2-1 & -1-3 \\\\ 4+0 & -2+0 \\end{bmatrix} = \\begin{bmatrix} 1 & -4 \\\\ 4 & -2 \\end{bmatrix} \\). \\\\ 3. Calculate \\( A^{-1} \\): \\\\ The determinant of \\( A \\) is \\( \\det(A) = (1)(0) - (-1)(2) = 0 - (-2) = 2 \\). \\\\ \\( A^{-1} = \\frac{1}{\\det(A)} \\begin{bmatrix} 0 & -(-1) \\\\ -2 & 1 \\end{bmatrix} = \\frac{1}{2} \\begin{bmatrix} 0 & 1 \\\\ -2 & 1 \\end{bmatrix} = \\begin{bmatrix} 0 & 1/2 \\\\ -1 & 1/2 \\end{bmatrix} \\). \\\\ 4. Calculate \\( A^{-1}B \\): \\\\ \\( A^{-1}B = \\begin{bmatrix} 0 & 1/2 \\\\ -1 & 1/2 \\end{bmatrix} \\begin{bmatrix} 2 & 1 \\\\ -1 & 3 \\end{bmatrix} = \\begin{bmatrix} (0)(2)+(1/2)(-1) & (0)(1)+(1/2)(3) \\\\ (-1)(2)+(1/2)(-1) & (-1)(1)+(1/2)(3) \\end{bmatrix} = \\begin{bmatrix} -1/2 & 3/2 \\\\ -2-1/2 & -1+3/2 \\end{bmatrix} = \\begin{bmatrix} -1/2 & 3/2 \\\\ -5/2 & 1/2 \\end{bmatrix} \\). \\\\ 5. Calculate \\( M = AB^T - A^{-1}B \\): \\\\ \\( M = \\begin{bmatrix} 1 & -4 \\\\ 4 & -2 \\end{bmatrix} - \\begin{bmatrix} -1/2 & 3/2 \\\\ -5/2 & 1/2 \\end{bmatrix} = \\begin{bmatrix} 1 - (-1/2) & -4 - 3/2 \\\\ 4 - (-5/2) & -2 - 1/2 \\end{bmatrix} = \\begin{bmatrix} 1 + 1/2 & -8/2 - 3/2 \\\\ 8/2 + 5/2 & -4/2 - 1/2 \\end{bmatrix} = \\begin{bmatrix} 3/2 & -11/2 \\\\ 13/2 & -5/2 \\end{bmatrix} \\). \\\\ The (2,1)-entry of \\( M \\) is \\( 13/2 \\).",
+      "difficulty": "medium",
+      "topic": "Linear Algebra (Matrix Operations)",
+      "hints": [
+        "Calculate each term \\(AB^T\\) and \\(A^{-1}B\\) separately before subtracting.",
+        "Recall the formula for the inverse of a 2x2 matrix: if \\( A = \\begin{smallmatrix} a & b \\\\ c & d \\end{smallmatrix} \\), then \\( A^{-1} = \\frac{1}{ad-bc} \\begin{smallmatrix} d & -b \\\\ -c & a \\end{smallmatrix} \\).",
+        "The (2,1)-entry is the element in the second row, first column."
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Evaluate the following improper integral \\( \\int_0^1 x \\ln(4x) \\, dx \\)",
+      "image": null,
+      "options": [
+        "A. None of the other choice is correct.",
+        "B. Converges to \\( \\ln(2) + 1/4 \\)",
+        "C. Converges to \\( \\ln(2) \\)",
+        "D. Diverges",
+        "E. Converges to \\( \\ln(2) - 1/4 \\)"
+      ],
+      "correctAnswer": "E",
+      "explanation": "The integral \\( I = \\int_0^1 x \\ln(4x) \\, dx \\) is improper because \\( \\ln(4x) \\) is undefined at \\( x=0 \\) (approaches \\( -\\infty \\) as \\( x \\to 0^+ \\)). \\\\ We evaluate it as a limit: \\( I = \\lim_{a \\to 0^+} \\int_a^1 x \\ln(4x) \\, dx \\). \\\\ We use integration by parts, \\( \\int u \\, dv = uv - \\int v \\, du \\). \\\\ Let \\( u = \\ln(4x) \\), so \\( du = \\frac{1}{4x} \\cdot 4 \\, dx = \\frac{1}{x} \\, dx \\). \\\\ Let \\( dv = x \\, dx \\), so \\( v = \\frac{x^2}{2} \\). \\\\ Then, \\( \\int x \\ln(4x) \\, dx = \\frac{x^2}{2} \\ln(4x) - \\int \\frac{x^2}{2} \\cdot \\frac{1}{x} \\, dx \\) \\\\ \\( = \\frac{x^2}{2} \\ln(4x) - \\int \\frac{x}{2} \\, dx = \\frac{x^2}{2} \\ln(4x) - \\frac{x^2}{4} \\). \\\\ Now, evaluate the definite integral from \\( a \\) to 1: \\\\ \\( \\int_a^1 x \\ln(4x) \\, dx = \\left[ \\frac{x^2}{2} \\ln(4x) - \\frac{x^2}{4} \\right]_a^1 \\) \\\\ \\( = \\left( \\frac{1^2}{2} \\ln(4 \\cdot 1) - \\frac{1^2}{4} \\right) - \\left( \\frac{a^2}{2} \\ln(4a) - \\frac{a^2}{4} \\right) \\) \\\\ \\( = \\left( \\frac{1}{2} \\ln(4) - \\frac{1}{4} \\right) - \\left( \\frac{a^2}{2} \\ln(4a) - \\frac{a^2}{4} \\right) \\). \\\\ Since \\( \\ln(4) = \\ln(2^2) = 2\\ln(2) \\), the first term is \\( \\frac{1}{2} (2\\ln(2)) - \\frac{1}{4} = \\ln(2) - \\frac{1}{4} \\). \\\\ We need to evaluate \\( \\lim_{a \\to 0^+} \\left( \\frac{a^2}{2} \\ln(4a) - \\frac{a^2}{4} \\right) \\). \\\\ The term \\( \\lim_{a \\to 0^+} \\frac{a^2}{4} = 0 \\). \\\\ For \\( \\lim_{a \\to 0^+} \\frac{a^2}{2} \\ln(4a) \\), this is an indeterminate form \\( 0 \\cdot (-\\infty) \\). We can rewrite it as \\( \\lim_{a \\to 0^+} \\frac{\\ln(4a)}{2/a^2} \\). Applying L'Hopital's Rule (form \\( \\frac{-\\infty}{\\infty} \\)): \\\\ Derivative of numerator \\( \\ln(4a) \\) is \\( \\frac{1}{a} \\). \\\\ Derivative of denominator \\( 2a^{-2} \\) is \\( -4a^{-3} = -\\frac{4}{a^3} \\). \\\\ So the limit is \\( \\lim_{a \\to 0^+} \\frac{1/a}{-4/a^3} = \\lim_{a \\to 0^+} \\frac{1}{a} \\cdot \\frac{a^3}{-4} = \\lim_{a \\to 0^+} \\frac{-a^2}{4} = 0 \\). \\\\ Therefore, \\( \\lim_{a \\to 0^+} \\left( \\frac{a^2}{2} \\ln(4a) - \\frac{a^2}{4} \\right) = 0 - 0 = 0 \\). \\\\ So, \\( I = \\left( \\ln(2) - \\frac{1}{4} \\right) - 0 = \\ln(2) - \\frac{1}{4} \\). \\\\ The integral converges to \\( \\ln(2) - 1/4 \\).",
+      "difficulty": "medium",
+      "topic": "Calculus (Improper Integrals, Integration by Parts)",
+      "hints": [
+        "Đây là improper integral vì \\(\\ln(4x)\\) is undefined at \\(x=0\\). Express it as \\( \\lim_{a \\to 0^+} \\int_a^1 x \\ln(4x) \\, dx \\).",
+        "Dùng integration by parts: \\( \\int u \\, dv = uv - \\int v \\, du \\). A common choice is \\(u = \\ln(kx)\\).",
+        "Đánh giá \\( \\lim_{a \\to 0^+} a^2 \\ln(ca) \\) bằng cách sử dụng L'Hopital's Rule nếu cần thiết."
+      ]
+    },
     {
       "id": 7,
       "image": "7.jpg",

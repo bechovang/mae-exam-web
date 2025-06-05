@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Search, BookOpen, Target, Clock, Trophy } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 interface Student {
   id: string
@@ -66,7 +67,10 @@ export default function LoginPage() {
     <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-4">
       <div className="w-full max-w-md">
         {/* Header Section */}
-        <div className="text-center mb-8">
+        <div className="text-center mb-8 relative">
+          <div className="absolute top-0 right-0">
+            <ThemeToggle />
+          </div>
           <div className="mx-auto w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mb-4 shadow-lg">
             <BookOpen className="w-8 h-8 text-white" />
           </div>

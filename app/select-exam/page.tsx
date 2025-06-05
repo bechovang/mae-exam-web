@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { FileText, BookOpen, Clock, Target, AlertTriangle, Info, Loader2 } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 // Interface for the data structure expected from deX.json files
 interface FetchedExamData {
@@ -109,11 +110,14 @@ export default function SelectPracticePage() {
     <div className="flex min-h-screen flex-col bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
       <div className="mx-auto w-full max-w-6xl">
         <Card className="mb-6 shadow-lg">
-          <CardHeader className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white">
+          <CardHeader className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white relative">
             <CardTitle className="text-center text-2xl flex items-center justify-center gap-2">
               <BookOpen className="h-6 w-6" />
               Nền tảng luyện tập toán học
             </CardTitle>
+            <div className="absolute top-1/2 right-4 -translate-y-1/2">
+              <ThemeToggle />
+            </div>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="text-center">

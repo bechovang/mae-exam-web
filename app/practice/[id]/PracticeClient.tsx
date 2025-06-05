@@ -32,6 +32,7 @@ import {
 } from "@/components/ui/alert-dialog"
 import { Badge } from "@/components/ui/badge"
 import SimpleMath from "@/components/SimpleMath"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 interface Question {
   id: number
@@ -296,6 +297,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
                 <Trophy className="h-4 w-4" />
                 <span className="font-medium">{score.correct}/{score.total}</span>
               </div>
+              <ThemeToggle />
             </div>
           </CardHeader>
           <CardContent className="pb-2 pt-4">
