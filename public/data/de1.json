@@ -1,7 +1,7 @@
 {
-  "examId": "math_practice_01",
-  "title": "Luyện tập Toán Cao Cấp",
-  "description": "Bài luyện tập về Đại số tuyến tính, Giải tích và Hàm số.",
+  "examId": "de1",
+  "title": "Đề 1",
+  "description": "AI hints and explanations",
   "questions": [
     {
       "id": 1,
