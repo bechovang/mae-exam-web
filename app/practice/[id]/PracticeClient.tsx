@@ -405,7 +405,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
                   <div className="bg-white rounded-md p-3 border">
                     <h4 className="font-medium text-gray-800 mb-2">Giải thích:</h4>
                     <SimpleMath className="text-sm text-gray-700">
-                      {currentQuestionData.explanation}
+                      {currentQuestionData.explanation.replace(/\\\\/g, '<br />')} 
                     </SimpleMath>
                   </div>
                 </div>
