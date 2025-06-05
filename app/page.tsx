@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Search } from "lucide-react"
+import { Search, BookOpen, Target, Clock, Trophy } from "lucide-react"
 
 interface Student {
   id: string
@@ -21,7 +21,7 @@ export default function LoginPage() {
   const [showDropdown, setShowDropdown] = useState(false)
 
   useEffect(() => {
-    // In a real app, this would be fetched from an API
+    // Load student data
     const studentData: Student[] = [
       { id: "SV001", name: "Nguyễn Văn An" },
       { id: "SV002", name: "Trần Thị Bình" },
@@ -54,20 +54,53 @@ export default function LoginPage() {
     setShowDropdown(false)
   }
 
-  const handleStartExam = () => {
+  const handleStartPractice = () => {
     const studentName = searchTerm.trim() || customName.trim()
     if (studentName) {
-      // Save student name to localStorage
       localStorage.setItem("studentName", studentName)
       router.push("/select-exam")
     }
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gray-50 p-4">
-      <Card className="w-full max-w-md">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-4">
+      <div className="w-full max-w-md">
+        {/* Header Section */}
+        <div className="text-center mb-8">
+          <div className="mx-auto w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mb-4 shadow-lg">
+            <BookOpen className="w-8 h-8 text-white" />
+          </div>
+          <h1 className="text-3xl font-bold text-gray-800 mb-2">MathPractice</h1>
+          <p className="text-gray-600">Nền tảng luyện tập toán học thông minh</p>
+        </div>
+
+        {/* Features Section */}
+        <div className="grid grid-cols-3 gap-4 mb-8">
+          <div className="text-center">
+            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Target className="w-6 h-6 text-green-600" />
+            </div>
+            <p className="text-xs text-gray-600">Feedback tức thì</p>
+          </div>
+          <div className="text-center">
+            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Clock className="w-6 h-6 text-blue-600" />
+            </div>
+            <p className="text-xs text-gray-600">Không áp lực thời gian</p>
+          </div>
+          <div className="text-center">
+            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Trophy className="w-6 h-6 text-purple-600" />
+            </div>
+            <p className="text-xs text-gray-600">Theo dõi tiến độ</p>
+          </div>
+        </div>
+
+        {/* Login Card */}
+        <Card className="shadow-xl border-0 bg-white/80 backdrop-blur">
         <CardHeader className="text-center">
-          <CardTitle className="text-2xl font-bold">Đăng nhập làm bài thi</CardTitle>
+            <CardTitle className="text-xl font-bold text-gray-800">Bắt đầu luyện tập</CardTitle>
+            <p className="text-sm text-gray-500 mt-1">Nhập tên để bắt đầu hành trình học tập</p>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="space-y-2">
@@ -76,8 +109,8 @@ export default function LoginPage() {
                 <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-gray-500" />
                 <Input
                   type="text"
-                  placeholder="Tìm tên sinh viên"
-                  className="pl-9"
+                    placeholder="Tìm tên sinh viên..."
+                    className="pl-9 border-2 focus:border-blue-500 transition-colors"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
                   onFocus={() => {
@@ -94,10 +127,11 @@ export default function LoginPage() {
                     {filteredStudents.map((student) => (
                       <li
                         key={student.id}
-                        className="cursor-pointer px-4 py-2 hover:bg-gray-100"
+                          className="cursor-pointer px-4 py-2 hover:bg-blue-50 transition-colors"
                         onClick={() => handleStudentSelect(student)}
                       >
-                        {student.name}
+                          <div className="font-medium">{student.name}</div>
+                          <div className="text-xs text-gray-500">{student.id}</div>
                       </li>
                     ))}
                   </ul>
@@ -108,24 +142,49 @@ export default function LoginPage() {
 
           <div className="flex items-center">
             <div className="flex-grow border-t border-gray-300"></div>
-            <span className="mx-4 text-sm text-gray-500">HOẶC</span>
+              <span className="mx-4 text-sm text-gray-500 bg-white px-2">HOẶC</span>
             <div className="flex-grow border-t border-gray-300"></div>
           </div>
 
           <div className="space-y-2">
             <Input
               type="text"
-              placeholder="Nhập tên của bạn"
+                placeholder="Nhập tên của bạn..."
+                className="border-2 focus:border-blue-500 transition-colors"
               value={customName}
               onChange={(e) => setCustomName(e.target.value)}
             />
           </div>
 
-          <Button className="w-full" onClick={handleStartExam} disabled={!searchTerm && !customName}>
-            Bắt đầu
+            <Button 
+              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 h-12 text-base font-medium shadow-lg transition-all duration-200 hover:shadow-xl" 
+              onClick={handleStartPractice} 
+              disabled={!searchTerm && !customName}
+            >
+              <BookOpen className="mr-2 h-5 w-5" />
+              Bắt đầu luyện tập
           </Button>
         </CardContent>
       </Card>
+
+        {/* Footer */}
+        <div className="text-center mt-8 text-sm text-gray-500">
+          <p>💡 Học toán hiệu quả với phương pháp luyện tập tương tác</p>
+          
+          {/* Math Test */}
+          <div className="mt-4 p-4 bg-blue-50 rounded-lg">
+            <p className="text-xs text-gray-600 mb-2">Test MathJax:</p>
+            <div className="text-base">
+              <span>Inline: </span>
+              <span>\( x^2 + y^2 = z^2 \)</span>
+            </div>
+            <div className="text-base mt-2">
+              <span>Display: </span>
+              <div>\[ \int_0^1 x^2 dx = \frac{1}{3} \]</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
