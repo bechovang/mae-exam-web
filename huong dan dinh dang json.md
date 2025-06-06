@@ -20,7 +20,7 @@ Tài liệu này hướng dẫn cách xây dựng một đề thi Toán học s�
   "questions": [
     {
       "id": 1,
-      "question": "Find the derivative of \\( f(x) = x^2 \\sin(x) \\)<br>Choose the correct answer.",
+      "question": "Find the derivative of \\( f(x) = x^2 \\sin(x) \\)<br />Choose the correct answer.",
       "image": "1.jpg",
       "options": [
         "A. \\( 2x \\sin(x) \\)",
@@ -29,7 +29,7 @@ Tài liệu này hướng dẫn cách xây dựng một đề thi Toán học s�
         "D. \\( 2x \\cos(x) + x^2 \\sin(x) \\)"
       ],
       "correctAnswer": "C",
-      "explanation": "<b>Sử dụng quy tắc đạo hàm tích:</b>\\\\ \\( f'(x) = 2x \\sin(x) + x^2 \\cos(x) \\)",
+      "explanation": "<b>Sử dụng quy tắc đạo hàm tích:</b><br />\\( f'(x) = 2x \\sin(x) + x^2 \\cos(x) \\)",
       "difficulty": "medium",
       "topic": "Derivatives",
       "hints": [
@@ -45,21 +45,21 @@ Tài liệu này hướng dẫn cách xây dựng một đề thi Toán học s�
 
 ### ✅ Ý nghĩa các trường:
 
-| Trường          | Ý nghĩa                                                                                         |
-| --------------- | ----------------------------------------------------------------------------------------------- |
-| `examId`        | Mã định danh đề thi.                                                                            |
-| `title`         | Tiêu đề đề thi (tiếng Anh).                                                                     |
-| `description`   | Mô tả đề thi (tiếng Anh).                                                                       |
-| `questions`     | Danh sách câu hỏi.                                                                              |
-| `id`            | Số thứ tự câu hỏi.                                                                              |
-| `question`      | Câu hỏi (tiếng Anh, có thể chứa LaTeX, xuống dòng bằng `<br />`).                               |
-| `image`         | Tên tệp hình ảnh nếu có minh họa.                                                               |
-| `options`       | Các lựa chọn (tiếng Anh, có thể chứa LaTeX).                                                    |
-| `correctAnswer` | Đáp án đúng (ký tự: `"A"`, `"B"`...).                                                           |
-| `explanation`   | Giải thích bằng tiếng Việt, hỗ trợ LaTeX, **dùng `\\\\` để xuống dòng** và **`<b>` để in đậm**. |
-| `difficulty`    | Mức độ câu hỏi: `"easy"`, `"medium"`, `"hard"`.                                                 |
-| `topic`         | Chủ đề: `"Derivatives"`, `"Integrals"`, v.v.                                                    |
-| `hints`         | Gợi ý (tiếng Việt, là array, mỗi dòng là một phần tử, **không cần `\\\\`**).                    |
+| Trường          | Ý nghĩa                                                                                           |
+| --------------- | ------------------------------------------------------------------------------------------------- |
+| `examId`        | Mã định danh đề thi.                                                                              |
+| `title`         | Tiêu đề đề thi (tiếng Anh).                                                                       |
+| `description`   | Mô tả đề thi (tiếng Anh).                                                                         |
+| `questions`     | Danh sách câu hỏi.                                                                                |
+| `id`            | Số thứ tự câu hỏi.                                                                                |
+| `question`      | Câu hỏi (tiếng Anh, có thể chứa LaTeX, xuống dòng bằng `<br />`).                                 |
+| `image`         | Tên tệp hình ảnh nếu có minh họa.                                                                 |
+| `options`       | Các lựa chọn (tiếng Anh, có thể chứa LaTeX).                                                      |
+| `correctAnswer` | Đáp án đúng (ký tự: `"A"`, `"B"`...).                                                             |
+| `explanation`   | Giải thích bằng tiếng Việt, hỗ trợ LaTeX, **dùng `<br />` để xuống dòng** và **`<b>` để in đậm**. |
+| `difficulty`    | Mức độ câu hỏi: `"easy"`, `"medium"`, `"hard"`.                                                   |
+| `topic`         | Chủ đề: `"Derivatives"`, `"Integrals"`, v.v.                                                      |
+| `hints`         | Gợi ý (tiếng Việt, là array, mỗi dòng là một phần tử, **không cần xuống dòng thêm**).             |
 
 ---
 
@@ -84,7 +84,7 @@ Dành cho công thức dài, hiển thị riêng dòng.
 **Ví dụ:**
 
 ```json
-"explanation": "<b>Áp dụng công thức:</b>\\\\ \\[ \\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C \\]"
+"explanation": "<b>Áp dụng công thức:</b><br />\\[ \\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C \\]"
 ```
 
 ---
@@ -105,24 +105,24 @@ Dành cho công thức dài, hiển thị riêng dòng.
 
 ## 4. ↩️ **Quy Tắc Xuống Dòng và In Đậm**
 
-| Trường        | Cách xuống dòng          | In đậm             |
-| ------------- | ------------------------ | ------------------ |
-| `question`    | Dùng `<br />`            | Dùng `<b>`         |
-| `explanation` | Dùng `\\\\`              | Dùng `<b>`         |
-| `hints`       | Không cần `\\\\` (array) | Dùng `<b>` nếu cần |
+| Trường        | Cách xuống dòng                                            | In đậm             |
+| ------------- | ---------------------------------------------------------- | ------------------ |
+| `question`    | Dùng `<br />`                                              | Dùng `<b>`         |
+| `explanation` | Dùng `<br />`                                              | Dùng `<b>`         |
+| `hints`       | Không cần xuống dòng<br>(mỗi phần tử array hiển thị riêng) | Dùng `<b>` nếu cần |
 
 ---
 
 ### 📌 Ví dụ `explanation` hoàn chỉnh:
 
 ```json
-"explanation": "<b>Bước 1:</b> Đặt \\( u = x^2 \\), \\( dv = e^x dx \\)\\\\<b>Bước 2:</b> Tính \\( du = 2x dx \\), \\( v = e^x \\)"
+"explanation": "<b>Bước 1:</b> Đặt \\( u = x^2 \\), \\( dv = e^x dx \\)<br /><b>Bước 2:</b> Tính \\( du = 2x dx \\), \\( v = e^x \\)"
 ```
 
 Hiển thị:
 
-> **Bước 1:** Đặt $u = x^2$, $dv = e^x dx$
-> **Bước 2:** Tính $du = 2x dx$, $v = e^x$
+> **Bước 1:** Đặt \$u = x^2\$, \$dv = e^x dx\$
+> **Bước 2:** Tính \$du = 2x dx\$, \$v = e^x\$
 
 ---
 
@@ -156,14 +156,22 @@ Hiển thị:
 
 ## ✅ **Tổng Kết**
 
-| Nội dung                        | Quy ước                                             |
-| ------------------------------- | --------------------------------------------------- |
-| Toán inline                     | `\\( ... \\)`                                       |
-| Toán block                      | `\\[ ... \\]`                                       |
-| Xuống dòng trong `question`     | `<br />`                                            |
-| Xuống dòng trong `explanation`  | `\\\\`                                              |
-| Không dùng `\\\\` trong `hints` | Vì `hints` là array                                 |
-| In đậm                          | Dùng HTML `<b>...</b>` thay vì `**...**` (Markdown) |
-| Kết xuất toán học               | Tích hợp MathJax hoặc KaTeX                         |
-| Ngôn ngữ                        | Câu hỏi bằng tiếng Anh – Giải thích bằng tiếng Việt |
+| Nội dung                       | Quy ước                                             |
+| ------------------------------ | --------------------------------------------------- |
+| Toán inline                    | `\\( ... \\)`                                       |
+| Toán block                     | `\\[ ... \\]`                                       |
+| Xuống dòng trong `question`    | `<br />`                                            |
+| Xuống dòng trong `explanation` | `<br />`                                            |
+| Không dùng `\\\\` trong JSON   | Vì đã chuyển sang dùng `<br />`                     |
+| In đậm                         | Dùng HTML `<b>...</b>` thay vì `**...**` (Markdown) |
+| Kết xuất toán học              | Tích hợp MathJax hoặc KaTeX                         |
+| Ngôn ngữ                       | Câu hỏi bằng tiếng Anh – Giải thích bằng tiếng Việt |
+
+---
+
+**Lưu ý cuối cùng**: Sau khi xóa đoạn `currentQuestionData.explanation.replace(/\\\\/g, '<br />')`, bạn chỉ cần đảm bảo rằng:
+
+* Mọi xuống dòng trong `"explanation"` đã được viết bằng `<br />`.
+* Frontend sẽ hiển thị nguyên văn HTML (có nội dung `<br />`, `<b>...</b>`, LaTeX trong `\\[ ... \\]` hoặc `\\( ... \\)`).
+* MathJax/KaTeX nhận diện và render công thức LaTeX tự động.
 
