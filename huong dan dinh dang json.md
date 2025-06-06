@@ -12,8 +12,6 @@ Tài liệu này hướng dẫn cách xây dựng một đề thi Toán học s�
 
 ## 2. 📦 **Cấu Trúc JSON cho Đề Thi Toán**
 
-Mỗi đề thi được định nghĩa bằng một đối tượng JSON có các trường thông tin như sau:
-
 ```json
 {
   "examId": "de1",
@@ -22,7 +20,7 @@ Mỗi đề thi được định nghĩa bằng một đối tượng JSON có c�
   "questions": [
     {
       "id": 1,
-      "question": "Find the derivative of \\( f(x) = x^2 \\sin(x) \\)",
+      "question": "Find the derivative of \\( f(x) = x^2 \\sin(x) \\)<br>Choose the correct answer.",
       "image": "1.jpg",
       "options": [
         "A. \\( 2x \\sin(x) \\)",
@@ -31,7 +29,7 @@ Mỗi đề thi được định nghĩa bằng một đối tượng JSON có c�
         "D. \\( 2x \\cos(x) + x^2 \\sin(x) \\)"
       ],
       "correctAnswer": "C",
-      "explanation": "Sử dụng quy tắc đạo hàm tích:\\\\ \\( f'(x) = 2x \\sin(x) + x^2 \\cos(x) \\)",
+      "explanation": "<b>Sử dụng quy tắc đạo hàm tích:</b>\\\\ \\( f'(x) = 2x \\sin(x) + x^2 \\cos(x) \\)",
       "difficulty": "medium",
       "topic": "Derivatives",
       "hints": [
@@ -43,65 +41,55 @@ Mỗi đề thi được định nghĩa bằng một đối tượng JSON có c�
 }
 ```
 
+---
+
 ### ✅ Ý nghĩa các trường:
 
-| Trường          | Ý nghĩa                                                                |
-| --------------- | ---------------------------------------------------------------------- |
-| `examId`        | Mã định danh đề thi.                                                   |
-| `title`         | Tiêu đề đề thi (tiếng Anh).                                            |
-| `description`   | Mô tả đề thi (tiếng Anh).                                              |
-| `questions`     | Danh sách câu hỏi.                                                     |
-| `id`            | Số thứ tự câu hỏi.                                                     |
-| `question`      | Câu hỏi (tiếng Anh, có thể chứa công thức LaTeX).                      |
-| `image`         | Tên tệp hình ảnh nếu có minh họa.                                      |
-| `options`       | Các lựa chọn (tiếng Anh, có thể chứa LaTeX).                           |
-| `correctAnswer` | Đáp án đúng (ký tự: `"A"`, `"B"`...).                                  |
-| `explanation`   | Giải thích chi tiết (bằng **tiếng Việt**, hỗ trợ LaTeX và xuống dòng). |
-| `difficulty`    | Mức độ câu hỏi: `"easy"`, `"medium"`, `"hard"`.                        |
-| `topic`         | Chủ đề: `"Derivatives"`, `"Integrals"`, v.v.                           |
-| `hints`         | Danh sách gợi ý (viết bằng **tiếng Việt**, có thể dùng LaTeX).         |
+| Trường          | Ý nghĩa                                                                                         |
+| --------------- | ----------------------------------------------------------------------------------------------- |
+| `examId`        | Mã định danh đề thi.                                                                            |
+| `title`         | Tiêu đề đề thi (tiếng Anh).                                                                     |
+| `description`   | Mô tả đề thi (tiếng Anh).                                                                       |
+| `questions`     | Danh sách câu hỏi.                                                                              |
+| `id`            | Số thứ tự câu hỏi.                                                                              |
+| `question`      | Câu hỏi (tiếng Anh, có thể chứa LaTeX, xuống dòng bằng `<br />`).                               |
+| `image`         | Tên tệp hình ảnh nếu có minh họa.                                                               |
+| `options`       | Các lựa chọn (tiếng Anh, có thể chứa LaTeX).                                                    |
+| `correctAnswer` | Đáp án đúng (ký tự: `"A"`, `"B"`...).                                                           |
+| `explanation`   | Giải thích bằng tiếng Việt, hỗ trợ LaTeX, **dùng `\\\\` để xuống dòng** và **`<b>` để in đậm**. |
+| `difficulty`    | Mức độ câu hỏi: `"easy"`, `"medium"`, `"hard"`.                                                 |
+| `topic`         | Chủ đề: `"Derivatives"`, `"Integrals"`, v.v.                                                    |
+| `hints`         | Gợi ý (tiếng Việt, là array, mỗi dòng là một phần tử, **không cần `\\\\`**).                    |
 
 ---
 
-## 3. 🧮 **Định Dạng Toán Học Bằng LaTeX trong JSON**
-
-Để viết công thức toán học, sử dụng cú pháp **LaTeX** như sau:
+## 3. 🧮 **Viết Công Thức Toán bằng LaTeX**
 
 ### 3.1. ✅ **Toán inline** (`\\( ... \\)`)
 
-Dùng để chèn công thức vào giữa dòng văn bản.
+Dùng để chèn công thức giữa dòng.
 
-Ví dụ:
+**Ví dụ:**
 
 ```json
-"question": "Find the value of \\( \\int_0^1 x^2 \\, dx \\)"
+"question": "Tính \\( \\int x^2 dx \\)"
 ```
-
-Sẽ hiển thị:
-*Find the value of*
-\$ \int\_0^1 x^2 , dx \$
 
 ---
 
-### 3.2. ✅ **Toán dạng khối (block math)** (`\\[ ... \\]`)
+### 3.2. ✅ **Toán block** (`\\[ ... \\]`)
 
-Dùng cho công thức dài hoặc cần trình bày riêng một dòng:
+Dành cho công thức dài, hiển thị riêng dòng.
+
+**Ví dụ:**
 
 ```json
-"explanation": "Áp dụng công thức tích phân:\\\\ \\[ \\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C \\]"
+"explanation": "<b>Áp dụng công thức:</b>\\\\ \\[ \\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C \\]"
 ```
-
-Sẽ hiển thị:
-
-> Áp dụng công thức tích phân
->
-> $$
-> \int x^n \, dx = \frac{x^{n+1}}{n+1} + C
-> $$
 
 ---
 
-### 3.3. 🔢 **Một số lệnh LaTeX phổ biến**
+### 3.3. 🔢 **Một số cú pháp LaTeX hữu ích**
 
 | Biểu thức   | Cú pháp LaTeX        |
 | ----------- | -------------------- |
@@ -111,48 +99,42 @@ Sẽ hiển thị:
 | Tích phân   | `\\int`, `\\int_a^b` |
 | Giới hạn    | `\\lim_{x \\to 0}`   |
 | Lũy thừa    | `e^{x}`, `x^2`       |
-| Nhân        | `\\cdot` hoặc `*`    |
+| Nhân        | `\\cdot`, `*`        |
 
 ---
 
-## 4. ↩️ **Quy Ước Xuống Dòng trong Phần `explanation` và `hints`**
+## 4. ↩️ **Quy Tắc Xuống Dòng và In Đậm**
 
-Bạn có thể sử dụng `\\\\` để biểu diễn xuống dòng, vì hệ thống frontend sử dụng:
+| Trường        | Cách xuống dòng          | In đậm             |
+| ------------- | ------------------------ | ------------------ |
+| `question`    | Dùng `<br />`            | Dùng `<b>`         |
+| `explanation` | Dùng `\\\\`              | Dùng `<b>`         |
+| `hints`       | Không cần `\\\\` (array) | Dùng `<b>` nếu cần |
 
-```js
-{currentQuestionData.explanation.replace(/\\\\/g, '<br />')}
-```
+---
 
-### 📌 Cách dùng:
+### 📌 Ví dụ `explanation` hoàn chỉnh:
 
 ```json
-"explanation": "Bước 1: Đặt \\( u = x^2 \\), \\( dv = e^x dx \\)\\\\
-Bước 2: Tính \\( du = 2x dx \\), \\( v = e^x \\)\\\\
-Kết quả: \\[ \\int x^2 e^x dx = x^2 e^x - \\int 2x e^x dx \\]"
+"explanation": "<b>Bước 1:</b> Đặt \\( u = x^2 \\), \\( dv = e^x dx \\)\\\\<b>Bước 2:</b> Tính \\( du = 2x dx \\), \\( v = e^x \\)"
 ```
 
-Hiển thị như:
+Hiển thị:
 
-> Bước 1: Đặt $u = x^2$, $dv = e^x dx$
-> Bước 2: Tính $du = 2x dx$, $v = e^x$
-> Kết quả:
-> \$ \int x^2 e^x dx = x^2 e^x - \int 2x e^x dx \$
+> **Bước 1:** Đặt $u = x^2$, $dv = e^x dx$
+> **Bước 2:** Tính $du = 2x dx$, $v = e^x$
 
 ---
 
-## 5. 🌐 **Tích Hợp Frontend với MathJax hoặc KaTeX**
+## 5. 🌐 **Tích Hợp MathJax hoặc KaTeX trên Web**
 
-Để hiển thị công thức toán học đẹp mắt trên trình duyệt, bạn nên dùng một trong hai thư viện sau:
-
-### 5.1. 📚 MathJax (phổ biến hơn)
+### MathJax (phổ biến)
 
 ```html
-<script type="text/javascript" async 
-  src="https://cdn.jsdelivr.net/npm/mathjax@2.7.7/MathJax.js?config=TeX-MML-AM_CHTML">
-</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
 ```
 
-### 5.2. 💨 KaTeX (nhẹ và nhanh)
+### KaTeX (nhẹ, nhanh)
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.0/dist/katex.min.css">
@@ -161,28 +143,27 @@ Hiển thị như:
 
 ---
 
-## 6. 🌏 **Quy Ước Ngôn Ngữ trong JSON**
+## 6. 🌏 **Quy Ước Ngôn Ngữ**
 
-| Trường          | Ngôn ngữ                                        |
-| --------------- | ----------------------------------------------- |
-| `question`      | 🇬🇧 Tiếng Anh                                  |
-| `options`       | 🇬🇧 Tiếng Anh                                  |
-| `correctAnswer` | 🇬🇧 Tiếng Anh (ký tự A–E)                      |
-| `title`         | 🇬🇧 Tiếng Anh                                  |
-| `description`   | 🇬🇧 Tiếng Anh                                  |
-| `topic`         | 🇬🇧 Tiếng Anh                                  |
-| `difficulty`    | 🇬🇧 Tiếng Anh (`"easy"`, `"medium"`, `"hard"`) |
-| `explanation`   | 🇻🇳 Tiếng Việt                                 |
-| `hints`         | 🇻🇳 Tiếng Việt                                 |
+| Trường                                                               | Ngôn ngữ        |
+| -------------------------------------------------------------------- | --------------- |
+| `question`, `options`, `title`, `topic`, `description`, `difficulty` | 🇬🇧 Tiếng Anh  |
+| `explanation`, `hints`                                               | 🇻🇳 Tiếng Việt |
 
-> 🔎 Lý do: Câu hỏi và lựa chọn bằng tiếng Anh giúp luyện đọc hiểu, trong khi phần giải thích và gợi ý bằng tiếng Việt giúp học sâu, tránh hiểu sai bản chất.
+> 🎯 Mục tiêu: luyện kỹ năng tiếng Anh, hiểu sâu bằng tiếng Việt.
 
 ---
 
-## ✅ **Tổng Kết Hướng Dẫn**
+## ✅ **Tổng Kết**
 
-* Dùng **LaTeX** để viết công thức toán học với `\\( ... \\)` hoặc `\\[ ... \\]`.
-* Dùng `\\\\` để xuống dòng trong phần `"explanation"` và `"hints"`.
-* Tích hợp **MathJax/KaTeX** để hiển thị công thức.
-* Duy trì quy ước ngôn ngữ: tiếng Anh cho câu hỏi, tiếng Việt cho giải thích.
+| Nội dung                        | Quy ước                                             |
+| ------------------------------- | --------------------------------------------------- |
+| Toán inline                     | `\\( ... \\)`                                       |
+| Toán block                      | `\\[ ... \\]`                                       |
+| Xuống dòng trong `question`     | `<br />`                                            |
+| Xuống dòng trong `explanation`  | `\\\\`                                              |
+| Không dùng `\\\\` trong `hints` | Vì `hints` là array                                 |
+| In đậm                          | Dùng HTML `<b>...</b>` thay vì `**...**` (Markdown) |
+| Kết xuất toán học               | Tích hợp MathJax hoặc KaTeX                         |
+| Ngôn ngữ                        | Câu hỏi bằng tiếng Anh – Giải thích bằng tiếng Việt |
 

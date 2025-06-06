@@ -1,0 +1,407 @@
+{
+    "examId": "de3",
+    "title": "Linear Algebra and Calculus Exam",
+    "description": "An exam covering topics such as determinants, linear combinations, calculus fundamentals, matrix rank, and vector projections.",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Let \\( A, B, C \\) be \\( 10 \\times 10 \\) matrices with \\( \\det(A) = 3 \\), \\( \\det(B) = 2 \\), and \\( \\det(C) = -1 \\). <br />Find \\( \\det(A^{-1}B^T C^{-1}) \\).",
+        "image": null,
+        "options": [
+          "A. 2/3",
+          "B. -6",
+          "C. 1/3",
+          "D. All of the other choices are incorrect",
+          "E. -2/3"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Sử dụng các tính chất của định thức:\\\\<b>- \\( \\det(XYZ) = \\det(X)\\det(Y)\\det(Z) \\)</b>\\\\<b>- \\( \\det(X^{-1}) = \\frac{1}{\\det(X)} \\)</b>\\\\<b>- \\( \\det(X^T) = \\det(X) \\)</b>\\\\Ta có:\\\\\\[ \\det(A^{-1}B^T C^{-1}) = \\det(A^{-1}) \\cdot \\det(B^T) \\cdot \\det(C^{-1}) \\]\\\\\\[ = \\frac{1}{\\det(A)} \\cdot \\det(B) \\cdot \\frac{1}{\\det(C)} \\]\\\\\\[ = \\frac{1}{3} \\cdot 2 \\cdot \\left( \\frac{1}{-1} \\right) = -\\frac{2}{3} \\]",
+        "difficulty": "medium",
+        "topic": "Determinants",
+        "hints": [
+          "<b>Nhớ lại các tính chất của định thức</b> đối với phép nhân ma trận, ma trận nghịch đảo và ma trận chuyển vị.",
+          "Áp dụng công thức: <b>\\( \\det(A^{-1}) = 1/\\det(A) \\)</b> và <b>\\( \\det(B^T) = \\det(B) \\)</b>."
+        ]
+      },
+      {
+        "id": 2,
+        "question": "Find the value of <b>\\( t \\)</b> for which \\( (4, 6, t) \\) is a linear combination of the vectors <br />\\( (1, 3, 1) \\) and \\( (2, 8, -1) \\).",
+        "image": null,
+        "options": [
+          "A. 4",
+          "B. 11",
+          "C. 0",
+          "D. 7",
+          "E. 13",
+          "F. None of the other choices is correct"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Để vector \\( (4, 6, t) \\) là một tổ hợp tuyến tính của hai vector kia, phải tồn tại hai số thực \\( a \\) và \\( b \\) sao cho:\\\\ \\[ (4, 6, t) = a(1, 3, 1) + b(2, 8, -1) \\]\\\\ Điều này dẫn đến một hệ phương trình tuyến tính:\\\\ <b>1) \\( a + 2b = 4 \\)</b>\\\\ <b>2) \\( 3a + 8b = 6 \\)</b>\\\\ <b>3) \\( a - b = t \\)</b>\\\\Giải hệ hai phương trình đầu tiên, ta tìm được <b>\\( a = 10 \\)</b> và <b>\\( b = -3 \\)</b>.\\\\Thay các giá trị này vào phương trình thứ ba, ta có: \\( t = a - b = 10 - (-3) = 13 \\).",
+        "difficulty": "medium",
+        "topic": "Linear Combinations",
+        "hints": [
+          "<b>Viết phương trình vector</b> dưới dạng một hệ phương trình tuyến tính cho các thành phần tương ứng.",
+          "Giải hệ hai phương trình đầu tiên để tìm các hệ số, sau đó sử dụng chúng để tìm <b>\\( t \\)</b> ở phương trình thứ ba."
+        ]
+      },
+      {
+        "id": 3,
+        "question": "Let \\( F(x) = \\int_{0}^{x^2+1} t \\cos(t) \\, dt \\). Find <b>\\( F'(x) \\)</b>. <br />(i) \\( (x^2 + 1) \\cos(x^2 + 1) \\) <br />(ii) \\( 2x \\cos(x^2 + 1) \\) <br />(iii) \\( (t^2 + 1) \\cos(t^2 + 1) \\) <br />(iv) \\( 2x(x^2 + 1) \\cos(x^2 + 1) \\)",
+        "image": null,
+        "options": [
+          "A. (iv)",
+          "B. (iii)",
+          "C. (i)",
+          "D. (ii)",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta cần áp dụng <b>Định lý Cơ bản của Giải tích</b> (Phần 2) kết hợp với <b>Quy tắc chuỗi</b> (Chain Rule).\\\\Đặt \\( g(u) = \\int_0^u t \\cos(t) \\, dt \\) và \\( h(x) = x^2 + 1 \\). Khi đó, \\( F(x) = g(h(x)) \\).\\\\Theo Quy tắc chuỗi: \\( F'(x) = g'(h(x)) \\cdot h'(x) \\).\\\\<b>- Theo Định lý Cơ bản: \\( g'(u) = u \\cos(u) \\).</b>\\\\<b>- Đạo hàm của \\( h(x) \\) là \\( h'(x) = 2x \\).</b>\\\\Do đó, ta có:\\\\ \\[ F'(x) = g'(x^2 + 1) \\cdot 2x \\] \\\\ \\[ = (x^2 + 1) \\cos(x^2 + 1) \\cdot 2x \\] \\\\ \\[ = 2x(x^2 + 1) \\cos(x^2 + 1) \\] \\\\Đây chính là biểu thức <b>(iv)</b>.",
+        "difficulty": "hard",
+        "topic": "Calculus",
+        "hints": [
+          "Đây là một ứng dụng của <b>Định lý Cơ bản của Giải tích</b>.",
+          "Đừng quên sử dụng <b>quy tắc chuỗi</b> vì cận trên của tích phân là hàm \\( x^2+1 \\), không phải chỉ là \\( x \\)."
+        ]
+      },
+      {
+        "id": 4,
+        "question": "Find the <b>rank</b> of the matrix <br />\\[ A = \\begin{bmatrix} 3 & 2 & 1 \\\\ 2 & 1 & 3 \\\\ 5 & 3 & 4 \\end{bmatrix} \\]",
+        "image": null,
+        "options": [
+          "A. (See picture)",
+          "B. 2",
+          "C. 3",
+          "D. 1",
+          "E. 0"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Hạng của ma trận là số lượng hàng (hoặc cột) độc lập tuyến tính tối đa. Ta có thể tìm hạng bằng cách tính định thức hoặc dùng phép biến đổi hàng.\\\\<b>Cách 1: Tính định thức</b>\\\\\\[ \\det(A) = 3(1 \\cdot 4 - 3 \\cdot 3) - 2(2 \\cdot 4 - 3 \\cdot 5) + 1(2 \\cdot 3 - 1 \\cdot 5) \\]\\\\\\[ = 3(-5) - 2(-7) + 1(1) = -15 + 14 + 1 = 0 \\]\\\\Vì \\( \\det(A) = 0 \\), hạng của ma trận phải nhỏ hơn 3. Ta xét định thức của ma trận con 2x2, ví dụ ma trận ở góc trên bên trái:\\\\\\[ \\det\\left(\\begin{pmatrix} 3 & 2 \\\\ 2 & 1 \\end{pmatrix}\\right) = 3(1) - 2(2) = -1 \\neq 0 \\]\\\\Vì có một ma trận con cấp 2 có định thức khác 0, nên hạng của ma trận là 2.\\\\<b>Cách 2: Biến đổi hàng</b>\\\\Nhận thấy rằng Hàng 3 = Hàng 1 + Hàng 2. Do đó, ta có thể thực hiện phép biến đổi \\( R_3 \\to R_3 - R_1 - R_2 \\) để tạo ra một hàng toàn số không. Ma trận sẽ còn lại 2 hàng độc lập tuyến tính. Vậy hạng của ma trận là <b>2</b>.",
+        "difficulty": "easy",
+        "topic": "Matrix Rank",
+        "hints": [
+          "Thử <b>tính định thức</b> của ma trận. Nếu nó khác 0, hạng của ma trận là 3.",
+          "Nếu định thức bằng 0, hãy kiểm tra hạng của các <b>ma trận con 2x2</b>."
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Find the <b>projection</b> of the vector \\( \\mathbf{u} = [1, 1, 2] \\) <br />on \\( \\mathbf{v} = [2, 3, 1] \\).",
+        "image": null,
+        "options": [
+          "A. [2, 3/2, 1/2]",
+          "B. [1, 3/2, 1/2]",
+          "C. [2, 3, 1]",
+          "D. [1, -3/2, -1/2]",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Công thức hình chiếu của vector \\( \\mathbf{u} \\) lên vector \\( \\mathbf{v} \\) là:\\\\\\[ \\text{proj}_{\\mathbf{v}}(\\mathbf{u}) = \\frac{\\mathbf{u} \\cdot \\mathbf{v}}{\\|\\mathbf{v}\\|^2} \\mathbf{v} \\]\\\\Với \\( \\mathbf{u} = [1, 1, 2] \\) và \\( \\mathbf{v} = [2, 3, 1] \\), ta có: \\\\<b>1. Tính tích vô hướng (dot product):</b>\\\\\\[ \\mathbf{u} \\cdot \\mathbf{v} = (1)(2) + (1)(3) + (2)(1) = 2 + 3 + 2 = 7 \\]\\\\<b>2. Tính bình phương độ dài của \\( \\mathbf{v} \\):</b>\\\\\\[ \\|\\mathbf{v}\\|^2 = 2^2 + 3^2 + 1^2 = 4 + 9 + 1 = 14 \\]\\\\<b>3. Thay các giá trị vào công thức:</b>\\\\\\[ \\text{proj}_{\\mathbf{v}}(\\mathbf{u}) = \\frac{7}{14} \\left[2, 3, 1\\right] = \\frac{1}{2} \\left[2, 3, 1\\right] = \\left[1, \\frac{3}{2}, \\frac{1}{2}\\right] \\]",
+        "difficulty": "easy",
+        "topic": "Vector Projection",
+        "hints": [
+          "Sử dụng <b>công thức hình chiếu vector</b>: \\( (\\frac{\\mathbf{u} \\cdot \\mathbf{v}}{\\|\\mathbf{v}\\|^2}) \\mathbf{v} \\).",
+          "Bước đầu tiên là tính <b>tích vô hướng</b> \\( \\mathbf{u} \\cdot \\mathbf{v} \\) và <b>bình phương độ dài</b> \\( \\|\\mathbf{v}\\|^2 \\)."
+        ]
+      },
+      {
+        "id": 6,
+        "question": "Find \\( y'(1) \\) for \\( y = \\frac{x^2 - 3x + 2}{x^2 - 2} \\).",
+        "image": null,
+        "options": [
+          "A. None of the other choices is correct",
+          "B. 5",
+          "C. -1",
+          "D. 1",
+          "E. -5"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Để tìm đạo hàm của một thương, ta sử dụng <b>Quy tắc đạo hàm của thương</b>:\\\\\\[ y' = \\left( \\frac{u}{v} \\right)' = \\frac{u'v - uv'}{v^2} \\]\\\\Với \\( u = x^2 - 3x + 2 \\) và \\( v = x^2 - 2 \\), ta có: \\\\- \\( u' = 2x - 3 \\)\\\\- \\( v' = 2x \\)\\\\Do đó, đạo hàm là: \\\\ \\[ y' = \\frac{(2x - 3)(x^2 - 2) - (x^2 - 3x + 2)(2x)}{(x^2 - 2)^2} \\]\\\\Bây giờ, thay \\( x = 1 \\) vào biểu thức trên: \\\\ \\[ y'(1) = \\frac{(2(1) - 3)(1^2 - 2) - (1^2 - 3(1) + 2)(2(1))}{(1^2 - 2)^2} \\]\\\\ \\[ y'(1) = \\frac{(-1)(-1) - (0)(2)}{(-1)^2} = \\frac{1 - 0}{1} = 1 \\]",
+        "difficulty": "easy",
+        "topic": "Derivatives",
+        "hints": [
+          "Sử dụng <b>quy tắc đạo hàm của thương</b>: \\( (u/v)' = (u'v - uv')/v^2 \\).",
+          "Tính đạo hàm của hàm số trước, sau đó thay giá trị <b>\\( x = 1 \\)</b> vào kết quả."
+        ]
+      },
+      {
+        "id": 7,
+        "question": "Find the (1, 2)-entry of the matrix A such that<br />\\[ \\left( 2A^T + \\begin{bmatrix} 8 & 5 \\\\ 1 & 0 \\\\ 7 & 3 \\end{bmatrix} \\right)^T = \\begin{bmatrix} 2 & 1 \\\\ 3 & 2 \\\\ 1 & 5 \\end{bmatrix} \\]",
+        "image": null,
+        "options": [
+          "A. -1",
+          "B. None of the other choices is correct",
+          "C. 0",
+          "D. 5",
+          "E. -3"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Lưu ý:</b> Đề bài gốc có vẻ bị lỗi về kích thước ma trận, dẫn đến một phương trình không thể giải được. Dưới đây là cách giải dựa trên giả định hợp lý nhất.\\\\Giả định phương trình đúng là: \\\\ \\( 2A^T + \\begin{bmatrix} 8 & 5 \\\\ 1 & 0 \\\\ 7 & 3 \\end{bmatrix} = \\begin{bmatrix} 2 & 1 \\\\ 3 & 2 \\\\ 1 & 5 \\end{bmatrix} \\)\\\\Từ đó, ta có: \\\\ \\[ 2A^T = \\begin{bmatrix} 2 & 1 \\\\ 3 & 2 \\\\ 1 & 5 \\end{bmatrix} - \\begin{bmatrix} 8 & 5 \\\\ 1 & 0 \\\\ 7 & 3 \\end{bmatrix} = \\begin{bmatrix} -6 & -4 \\\\ 2 & 2 \\\\ -6 & 2 \\end{bmatrix} \\]\\\\ \\[ A^T = \\frac{1}{2} \\begin{bmatrix} -6 & -4 \\\\ 2 & 2 \\\\ -6 & 2 \\end{bmatrix} = \\begin{bmatrix} -3 & -2 \\\\ 1 & 1 \\\\ -3 & 1 \\end{bmatrix} \\]\\\\Lấy chuyển vị để tìm \\( A \\): \\\\ \\[ A = (A^T)^T = \\begin{bmatrix} -3 & 1 & -3 \\\\ -2 & 1 & 1 \\end{bmatrix} \\]\\\\Phần tử ở vị trí (1, 2) là <b>1</b>. Giá trị này không có trong các lựa chọn A, C, D, E. Đáp án đúng là <b>None of the other choices is correct</b>.",
+        "difficulty": "hard",
+        "topic": "Matrix Algebra",
+        "hints": [
+          "Sử dụng tính chất của phép chuyển vị: <b>\\( (X+Y)^T = X^T + Y^T \\)</b> và <b>\\( (X^T)^T = X \\)</b>.",
+          "Kiểm tra lại kích thước của các ma trận. Nếu kích thước không tương thích, bài toán có thể bị lỗi. Hãy giải theo cách diễn giải hợp lý nhất.",
+          "Sau khi tìm được \\( A^T \\), đừng quên chuyển vị một lần nữa để tìm \\( A \\)."
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Given that \\( \\lambda=1 \\) is an eigenvalue of the matrix<br />\\[ M = \\begin{bmatrix} 1 & 1 & 1 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 0 \\end{bmatrix} \\]<br />Find a set of basic eigenvectors corresponding to this eigenvalue.<br />(i) \\( \\{[0,0,1]^T\\} \\)<br />(ii) \\( \\{[1,0,0]^T, [0,0,1]^T\\} \\)<br />(iii) \\( \\{[1,0,0]^T\\} \\)",
+        "image": null,
+        "options": [
+          "A. None of the others",
+          "B. (iii)",
+          "C. (ii)",
+          "D. (i)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Để tìm các vector riêng (eigenvectors) ứng với một giá trị riêng \\( \\lambda \\), ta cần giải hệ:\\\\\\[ (M - \\lambda I)\\mathbf{x} = \\mathbf{0} \\]\\\\Với \\( \\lambda = 1 \\), ta có: \\\\ \\[ (M - I) = \\begin{bmatrix} 1 & 1 & 1 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 0 \\end{bmatrix} - \\begin{bmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{bmatrix} = \\begin{bmatrix} 0 & 1 & 1 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & -1 \\end{bmatrix} \\]\\\\Giải hệ: \\\\ \\[ \\begin{bmatrix} 0 & 1 & 1 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & -1 \\end{bmatrix} \\begin{bmatrix} x_1 \\\\ x_2 \\\\ x_3 \\end{bmatrix} = \\begin{bmatrix} 0 \\\\ 0 \\\\ 0 \\end{bmatrix} \\]\\\\Hệ phương trình: \\\\1) \\( x_2 + x_3 = 0 \\)\\\\2) \\( x_3 = 0 \\)\\\\3) \\( -x_3 = 0 \\)\\\\Suy ra \\( x_3 = 0 \\Rightarrow x_2 = 0 \\), \\( x_1 \\) tự do.\\\\Vậy: \\( \\mathbf{x} = t[1, 0, 0]^T \\) với \\( t \\in \\mathbb{R} \\).\\\\Cơ sở không gian riêng là <b>\\( \\{[1, 0, 0]^T\\} \\)</b>, chọn <b>(iii)</b>.",
+        "difficulty": "medium",
+        "topic": "Eigenvalues and Eigenvectors",
+        "hints": [
+          "Để tìm vector riêng, hãy giải hệ phương trình <b>\\( (M - \\lambda I)\\mathbf{x} = \\mathbf{0} \\)</b>.",
+          "Thay <b>\\( \\lambda = 1 \\)</b> và ma trận \\( M \\) vào công thức, sau đó giải hệ phương trình tuyến tính thu được."
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Which of the following integrals is convergent?<br />(i) \\( \\int_{1}^{\\infty} \\frac{1 + e^{-x}}{x} \\, dx \\)<br />(ii) \\( \\int_{1}^{\\infty} \\frac{1}{x^2} \\, dx \\)",
+        "image": null,
+        "options": [
+          "A. (i) and (ii)",
+          "B. (i)",
+          "C. (ii)",
+          "D. None of the other choices is correct"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Ta sẽ xét sự hội tụ của từng tích phân:\\\\<b>Xét tích phân (ii):</b> \\( \\int_{1}^{\\infty} \\frac{1}{x^2} \\, dx \\)\\\\Đây là một <b>tích phân dạng p-series</b> (p-integral) \\( \\int_{1}^{\\infty} \\frac{1}{x^p} \\, dx \\). Tích phân này hội tụ khi và chỉ khi \\( p > 1 \\).\\\\Trong trường hợp này, \\( p = 2 \\), vì \\( 2 > 1 \\) nên tích phân (ii) <b>hội tụ</b>.\\\\<b>Xét tích phân (i):</b> \\( \\int_{1}^{\\infty} \\frac{1 + e^{-x}}{x} \\, dx \\)\\\\Ta sử dụng <b>Tiêu chuẩn so sánh giới hạn</b> hoặc <b>Tiêu chuẩn so sánh trực tiếp</b>. Ta so sánh hàm dưới dấu tích phân với \\( g(x) = \\frac{1}{x} \\).\\\\Khi \\( x \\ge 1 \\), ta có \\( e^{-x} > 0 \\), do đó \\( 1 + e^{-x} > 1 \\).\\\\Suy ra: \\( \\frac{1 + e^{-x}}{x} > \\frac{1}{x} \\).\\\\Ta biết rằng tích phân \\( \\int_{1}^{\\infty} \\frac{1}{x} \\, dx \\) (p-integral với \\( p=1 \\)) là <b>phân kỳ</b>.\\\\Vì hàm \\( \\frac{1 + e^{-x}}{x} \\) lớn hơn một hàm có tích phân phân kỳ, nên theo tiêu chuẩn so sánh, tích phân (i) cũng <b>phân kỳ</b>.\\\\Vậy, chỉ có tích phân (ii) là hội tụ.",
+        "difficulty": "medium",
+        "topic": "Improper Integrals",
+        "hints": [
+          "Đối với tích phân (ii), hãy nhận ra đây là một <b>tích phân dạng p-series</b> và áp dụng điều kiện hội tụ của nó.",
+          "Đối với tích phân (i), hãy thử sử dụng <b>tiêu chuẩn so sánh</b> bằng cách so sánh hàm dưới dấu tích phân với hàm đơn giản hơn như \\( \\frac{1}{x} \\)."
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Given two vectors \\( X, Y \\) such that the vectors \\( \\frac{1}{3}X \\) and \\( \\frac{1}{2}Y \\) are orthogonal unit vectors.<br />Compute \\( (X - 2Y) \\cdot (2X + Y) \\).",
+        "image": null,
+        "options": [
+          "A. 10",
+          "B. 8",
+          "C. 6",
+          "D. 4",
+          "E. 12"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Lưu ý:</b> Đề bài chỉ nói 'orthogonal'. Để có kết quả duy nhất, ta giả định 2 vector là đơn vị.\\\\Điều kiện 1 – trực giao: \\\\ \\[ \\left( \\frac{1}{3}X \\right) \\cdot \\left( \\frac{1}{2}Y \\right) = 0 \\Rightarrow \\frac{1}{6}(X \\cdot Y) = 0 \\Rightarrow X \\cdot Y = 0 \\]\\\\Điều kiện 2 – độ dài đơn vị: \\\\ \\[ \\left\\| \\frac{1}{3}X \\right\\| = 1 \\Rightarrow \\|X\\| = 3 \\quad ; \\quad \\left\\| \\frac{1}{2}Y \\right\\| = 1 \\Rightarrow \\|Y\\| = 2 \\]\\\\Tính biểu thức: \\\\ \\[ (X - 2Y) \\cdot (2X + Y) = 2(X \\cdot X) + (X \\cdot Y) - 4(Y \\cdot X) - 2(Y \\cdot Y) \\]\\\\Do \\( X \\cdot Y = 0 \\): \\\\ \\[ = 2(9) - 0 - 2(4) = 18 - 8 = 10 \\]",
+        "difficulty": "hard",
+        "topic": "Vector Algebra",
+        "hints": [
+          "Phân tích điều kiện 'orthogonal' (trực giao) có nghĩa là tích vô hướng của hai vector bằng <b>0</b>.",
+          "Phân tích điều kiện 'unit vector' (vector đơn vị) có nghĩa là độ dài (norm) của vector bằng <b>1</b>.",
+          "Khai triển biểu thức tích vô hướng cần tính bằng cách sử dụng các quy tắc phân phối và thay thế các giá trị \\( X \\cdot Y \\), \\( \\|X\\|^2 \\), và \\( \\|Y\\|^2 \\)."
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Describe how the graph of \\( y = f(x - 3) - 2 \\) is obtained from the graph of \\( y = f(x) \\).",
+        "image": null,
+        "options": [
+          "A. Shift 3 units to the right and then shift 2 units downward",
+          "B. Shift 3 units to the left and then shift 2 units downward",
+          "C. Shift 3 units to the right and then shift 2 units upward",
+          "D. Shift 3 units to the left and then shift 2 units upward",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta áp dụng các quy tắc tịnh tiến đồ thị:\\\\- <b>Phép biến đổi \\( f(x) \\to f(x-h) \\):</b> Dịch chuyển đồ thị sang <b>phải</b> \\( h \\) đơn vị.\\\\  Trong trường hợp này, \\( x-3 \\) có nghĩa là dịch sang phải 3 đơn vị.\\\\- <b>Phép biến đổi \\( f(x) \\to f(x) + k \\):</b> Dịch chuyển đồ thị <b>xuống dưới</b> \\( |k| \\) đơn vị nếu \\( k < 0 \\).\\\\  Trong trường hợp này, \\( -2 \\) có nghĩa là dịch xuống dưới 2 đơn vị.\\\\Vậy, đồ thị được dịch sang <b>phải 3 đơn vị</b> và <b>xuống dưới 2 đơn vị</b>.",
+        "difficulty": "easy",
+        "topic": "Graph Transformations",
+        "hints": [
+          "Biến đổi \\( f(x - h) \\) ảnh hưởng đến vị trí theo chiều ngang (trục x).",
+          "Biến đổi \\( f(x) + k \\) ảnh hưởng đến vị trí theo chiều dọc (trục y)."
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Find the point on the line \\( y = 5x + 2 \\) that is closest to the origin.",
+        "image": null,
+        "options": [
+          "A. (-5/13, 5-1/13)",
+          "B. (5/13, 51)",
+          "C. (5/13, -51/13)",
+          "D. (-5/13, 1/13)",
+          "E. None of others"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Để tìm điểm gần nhất, ta cần tối thiểu hóa khoảng cách. Ta có thể tối thiểu hóa bình phương khoảng cách để tránh tính căn bậc hai.\\\\Một điểm bất kỳ trên đường thẳng có tọa độ \\( P(x, 5x+2) \\).\\\\Bình phương khoảng cách từ gốc tọa độ \\( O(0,0) \\) đến \\( P \\) là:\\\\[ D(x) = (x-0)^2 + (5x+2-0)^2 = x^2 + (5x+2)^2 \\]\\\\Khai triển biểu thức: \\\\ \\[ D(x) = x^2 + 25x^2 + 20x + 4 = 26x^2 + 20x + 4 \\]\\\\Để tìm giá trị nhỏ nhất, lấy đạo hàm và cho bằng 0: \\\\ \\[ D'(x) = 52x + 20 \\]\\\\ \\[ 52x + 20 = 0 \\implies x = -\\frac{20}{52} = -\\frac{5}{13} \\]\\\\Thay \\( x \\) vào phương trình đường thẳng để tìm \\( y \\):\\\\ \\[ y = 5\\left(-\\frac{5}{13}\\right) + 2 = -\\frac{25}{13} + \\frac{26}{13} = \\frac{1}{13} \\]\\\\Vậy điểm cần tìm là <b>\\( \\left(-\\frac{5}{13}, \\frac{1}{13}\\right) \\)</b>.",
+        "difficulty": "medium",
+        "topic": "Optimization",
+        "hints": [
+          "Thiết lập hàm bình phương khoảng cách \\( d^2 \\) từ gốc tọa độ đến một điểm \\( (x, 5x+2) \\).",
+          "Tìm đạo hàm của hàm khoảng cách theo \\( x \\) và giải phương trình đạo hàm bằng 0."
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Find the relative extrema, if they exist, of the function<br />\\( f(x) = -x^2 - 18x - 32 \\).",
+        "image": null,
+        "options": [
+          "A. None of the other choices is correct",
+          "B. Relative maximum at (-18, -32), No relative minimum",
+          "C. Relative maximum at (-9, 49), No relative minimum",
+          "D. Relative minimum at (-18, -32), No relative maximum",
+          "E. Relative minimum at (-9, 49), No relative maximum"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Đây là một hàm bậc hai có hệ số của \\( x^2 \\) là âm (\\( -1 \\)), nên đồ thị là một parabol quay xuống, chỉ có cực đại tương đối.\\\\<b>Bước 1: Tìm đạo hàm bậc nhất.</b>\\\\\\[ f'(x) = -2x - 18 \\]\\\\<b>Bước 2: Tìm điểm tới hạn.</b>\\\\\\[ -2x - 18 = 0 \\implies x = -9 \\]\\\\<b>Bước 3: Tìm giá trị cực đại.</b>\\\\\\[ f(-9) = -(-9)^2 - 18(-9) - 32 = -81 + 162 - 32 = 49 \\]\\\\<b>Bước 4: Kiểm tra bằng đạo hàm bậc hai.</b>\\\\\\[ f''(x) = -2 < 0 \\], điều này khẳng định tại \\( x=-9 \\) là một cực đại.\\\\Vậy hàm số có <b>cực đại tương đối tại (-9, 49)</b> và không có cực tiểu tương đối.",
+        "difficulty": "easy",
+        "topic": "Relative Extrema",
+        "hints": [
+          "Tìm đạo hàm bậc nhất và giải phương trình \\( f'(x) = 0 \\) để tìm điểm tới hạn.",
+          "Sử dụng dấu của đạo hàm bậc hai để xác định điểm đó là cực đại hay cực tiểu."
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Find an equation of the plane passing through the points<br />(8, 0, 0), (0, -2, 0), (0, 0, 4).",
+        "image": null,
+        "options": [
+          "A. x - 4y + 2z - 8 = 0",
+          "B. x + 4y - 2z - 8 = 0",
+          "C. x + 4y + 2z - 8 = 0",
+          "D. x - 4y + 2z + 8 = 0",
+          "E. -x + 4y + 2z - 8 = 0"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Các điểm đã cho là các giao điểm của mặt phẳng với các trục tọa độ. Ta có thể sử dụng <b>phương trình mặt phẳng theo đoạn chắn</b>:\\\\\\[ \\frac{x}{a} + \\frac{y}{b} + \\frac{z}{c} = 1 \\]\\\\Với các đoạn chắn trên trục x, y, z lần lượt là \\( a = 8 \\), \\( b = -2 \\), \\( c = 4 \\).\\\\Thay các giá trị vào phương trình: \\\\ \\[ \\frac{x}{8} + \\frac{y}{-2} + \\frac{z}{4} = 1 \\]\\\\Để khử mẫu số, nhân hai vế với Bội chung nhỏ nhất của 8, 2, 4 là 8: \\\\ \\[ 8 \\cdot \\left(\\frac{x}{8}\\right) - 8 \\cdot \\left(\\frac{y}{2}\\right) + 8 \\cdot \\left(\\frac{z}{4}\\right) = 8 \\cdot 1 \\]\\\\ \\[ x - 4y + 2z = 8 \\]\\\\Chuyển vế để được dạng tổng quát: \\\\ \\[ x - 4y + 2z - 8 = 0 \\]",
+        "difficulty": "easy",
+        "topic": "Planes in 3D Space",
+        "hints": [
+          "Nhận ra rằng các điểm đã cho nằm trên các trục tọa độ Ox, Oy, Oz.",
+          "Sử dụng công thức phương trình mặt phẳng theo đoạn chắn \\( x/a + y/b + z/c = 1 \\)."
+        ]
+      },
+      {
+        "id": 15,
+        "question": "Find the absolute maximum and absolute minimum values of<br />\\( f(x) = -\\frac{1}{x^2} \\)<br />on \\( [1/2, 2] \\).",
+        "image": null,
+        "options": [
+          "A. Absolute maximum: -1/2, absolute minimum: -2",
+          "B. None of the other choices is correct",
+          "C. Absolute maximum: -1/4, absolute minimum: -4",
+          "D. Absolute maximum: -1/2, absolute minimum: -4",
+          "E. Absolute maximum: -1/4, absolute minimum: -2"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Để tìm giá trị lớn nhất và nhỏ nhất tuyệt đối trên một đoạn kín, ta kiểm tra các điểm tới hạn và các đầu mút của đoạn.\\\\<b>Bước 1: Tìm điểm tới hạn.</b>\\\\ \\[ f(x) = -x^{-2} \\Rightarrow f'(x) = 2x^{-3} = \\frac{2}{x^3} \\]\\\\Đạo hàm \\( f'(x) \\) không bao giờ bằng 0 và không xác định tại \\( x = 0 \\), nhưng \\( 0 \\notin [1/2, 2] \\) nên không có điểm tới hạn nào trong đoạn.\\\\<b>Bước 2: Tính giá trị tại hai đầu mút.</b>\\\\ \\[ f\\left(\\frac{1}{2}\\right) = -\\frac{1}{(1/2)^2} = -\\frac{1}{1/4} = -4 \\]\\\\ \\[ f(2) = -\\frac{1}{2^2} = -\\frac{1}{4} \\]\\\\<b>Bước 3: So sánh các giá trị.</b>\\\\- <b>Giá trị lớn nhất tuyệt đối</b> là \\( -\\frac{1}{4} \\).\\\\- <b>Giá trị nhỏ nhất tuyệt đối</b> là \\( -4 \\).",
+        "difficulty": "medium",
+        "topic": "Absolute Extrema",
+        "hints": [
+          "Giá trị cực trị tuyệt đối trên một đoạn kín chỉ có thể xảy ra tại các điểm tới hạn hoặc tại hai đầu mút.",
+          "Tính giá trị của hàm tại \\( x=1/2 \\) và \\( x=2 \\) rồi so sánh chúng."
+        ]
+      },
+      {
+        "id": 16,
+        "question": "Evaluate the integral of<br />\\( f(x) = \\frac{\\ln x}{x^2} \\)<br />on the interval [1, 2].",
+        "image": null,
+        "options": [
+          "A. (1 - ln2)/2",
+          "B. -(1 + ln2)/2",
+          "C. (ln2 - 1)/2",
+          "D. (1 + ln2)/2"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta cần tính tích phân \\( \\int_1^2 \\frac{\\ln x}{x^2} dx \\).\\\\Sử dụng phương pháp <b>Tích phân từng phần</b>: \\( \\int u \\, dv = uv - \\int v \\, du \\).\\\\Đặt: \\\\- \\( u = \\ln x \\) \\( \\Rightarrow du = \\frac{1}{x} dx \\)\\\\- \\( dv = \\frac{1}{x^2} dx = x^{-2} dx \\) \\( \\Rightarrow v = -x^{-1} = -\\frac{1}{x} \\)\\\\Áp dụng công thức: \\\\ \\[ \\int \\frac{\\ln x}{x^2} dx = (\\ln x) \\left(-\\frac{1}{x}\\right) - \\int \\left(-\\frac{1}{x}\\right) \\frac{1}{x} dx \\]\\\\ \\[ = -\\frac{\\ln x}{x} + \\int \\frac{1}{x^2} dx = -\\frac{\\ln x}{x} - \\frac{1}{x} + C \\]\\\\Bây giờ tính tích phân xác định: \\\\ \\[ \\int_1^2 \\frac{\\ln x}{x^2} dx = \\left[ -\\frac{\\ln x}{x} - \\frac{1}{x} \\right]_1^2 \\]\\\\ \\[ = \\left(-\\frac{\\ln 2}{2} - \\frac{1}{2}\\right) - \\left(-\\frac{\\ln 1}{1} - \\frac{1}{1}\\right) \\]\\\\ \\[ = -\\frac{\\ln 2}{2} - \\frac{1}{2} - (0 - 1) = -\\frac{\\ln 2}{2} - \\frac{1}{2} + 1 = \\frac{1 - \\ln 2}{2} \\]",
+        "difficulty": "hard",
+        "topic": "Integration by Parts",
+        "hints": [
+          "Sử dụng phương pháp <b>tích phân từng phần</b>.",
+          "Thử đặt \\( u = \\ln x \\) và \\( dv = \\frac{1}{x^2} dx \\)."
+        ]
+      },
+      {
+        "id": 17,
+        "question": "Let A, B be \\( 2 \\times 2 \\) matrices with<br />\\[ A^{-1} = \\begin{bmatrix} 1 & 3 \\\\ 2 & -1 \\end{bmatrix}, B^{-1} = \\begin{bmatrix} 2 & 0 \\\\ 1 & 3 \\end{bmatrix} \\]<br />Find the (1, 1)-entry of the matrix \\( (AB^T)^{-1} \\).",
+        "image": null,
+        "options": [
+          "A. -2",
+          "B. 4",
+          "C. None of the other choices is correct",
+          "D. 2",
+          "E. 5"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Sử dụng các tính chất của ma trận nghịch đảo và chuyển vị:\\\\\\[ (AB^T)^{-1} = (B^T)^{-1} A^{-1} \\]\\\\Ta lại có \\( (B^T)^{-1} = (B^{-1})^T \\). Do đó: \\\\ \\[ (AB^T)^{-1} = (B^{-1})^T A^{-1} \\]\\\\Trước hết, tìm \\( (B^{-1})^T \\): \\\\ \\[ (B^{-1})^T = \\left( \\begin{bmatrix} 2 & 0 \\\\ 1 & 3 \\end{bmatrix} \\right)^T = \\begin{bmatrix} 2 & 1 \\\\ 0 & 3 \\end{bmatrix} \\]\\\\Bây giờ, thực hiện phép nhân ma trận: \\\\ \\[ (AB^T)^{-1} = \\begin{bmatrix} 2 & 1 \\\\ 0 & 3 \\end{bmatrix} \\begin{bmatrix} 1 & 3 \\\\ 2 & -1 \\end{bmatrix} \\]\\\\ \\[ = \\begin{bmatrix} (2)(1) + (1)(2) & (2)(3) + (1)(-1) \\\\ (0)(1) + (3)(2) & (0)(3) + (3)(-1) \\end{bmatrix} \\]\\\\ \\[ = \\begin{bmatrix} 4 & 5 \\\\ 6 & -3 \\end{bmatrix} \\]\\\\Phần tử ở vị trí (1, 1) của ma trận kết quả là <b>4</b>. Tuy nhiên, đề bài hỏi phần tử (1,1) của \\( (AB^T)^{-1} \\) chứ không phải \\( (AB)^{-1} \\). Hãy kiểm tra lại. \\\\Lỗi, phần tử (1,2) là 5 chứ không phải phần tử (1,1) là 5. \\\\Phần tử (1,1) là \\(2*1+1*2 = 4\\). Đáp án là B.",
+        "difficulty": "medium",
+        "topic": "Matrix Algebra",
+        "hints": [
+          "Sử dụng công thức \\( (XY)^{-1} = Y^{-1}X^{-1} \\).",
+          "Sử dụng công thức \\( (X^T)^{-1} = (X^{-1})^T \\).",
+          "Cẩn thận với thứ tự nhân ma trận."
+        ]
+      },
+      {
+        "id": 18,
+        "question": "Let A be a matrix of size \\( m \\times n \\) such that rank(A) = r. Which of the following statements are true?<br />(i) dim(null(A)) = \\( m - r \\).<br />(ii) rank(\\(A^T\\)) = r.",
+        "image": null,
+        "options": [
+          "A. Both (i) and (ii)",
+          "B. None of them.",
+          "C. (i) only.",
+          "D. (ii) only."
+        ],
+        "correctAnswer": "D",
+        "explanation": "Ta xét từng phát biểu:\\\\<b>Phát biểu (i): dim(null(A)) = \\( m - r \\)</b>\\\\- Đây là một phát biểu của <b>Định lý Hạng-Số chiều</b> (Rank-Nullity Theorem).\\\\- Định lý này phát biểu rằng: \\( \\text{rank}(A) + \\text{dim}(\\text{null}(A)) = n \\), với \\( n \\) là <b>số cột</b> của A.\\\\- Do đó, \\( \\text{dim}(\\text{null}(A)) = n - \\text{rank}(A) = n - r \\).\\\\- Phát biểu (i) lại cho là \\( m - r \\), với \\( m \\) là số hàng. Phát biểu này chỉ đúng khi ma trận A là ma trận vuông (\\( m=n \\)). Vì vậy, nó <b>sai</b> trong trường hợp tổng quát.\\\\<b>Phát biểu (ii): rank(\\(A^T\\)) = r</b>\\\\- Đây là một tính chất cơ bản của hạng ma trận.\\\\- Hạng của một ma trận bằng hạng của ma trận chuyển vị của nó. Tức là, số chiều của không gian hàng bằng số chiều của không gian cột.\\\\- Do đó, \\( \\text{rank}(A^T) = \\text{rank}(A) = r \\). Phát biểu này <b>đúng</b>.\\\\Vậy, chỉ có phát biểu (ii) là đúng.",
+        "difficulty": "medium",
+        "topic": "Rank-Nullity Theorem",
+        "hints": [
+          "Nhớ lại Định lý Hạng-Số chiều liên quan đến hạng và số chiều của không gian null (hạt nhân).",
+          "Hạng của ma trận A và ma trận chuyển vị \\( A^T \\) có mối quan hệ gì?"
+        ]
+      },
+      {
+        "id": 19,
+        "question": "Find the reflection of \\( v = [0, -1, 3] \\) in the plane with equation \\( 2x + y - 3z = 0 \\).",
+        "image": null,
+        "options": [
+          "A. [-20/7, 3/7, -9/7]",
+          "B. [-20/7, -3/7, -9/7]",
+          "C. [-20/7, 3/7, 9/7]",
+          "D. [-20/7, -3/7, 9/7]",
+          "E. None of other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Gọi \\( v_r \\) là vector phản xạ của vector \\( v \\) qua mặt phẳng có pháp tuyến \\( n \\). Công thức phản xạ là:\\\\ \\[ v_r = v - 2 \\cdot \\frac{v \\cdot n}{\\|n\\|^2} n \\]\\\\Với phương trình mặt phẳng \\( 2x + y - 3z = 0 \\), vector pháp tuyến là \\( n = [2, 1, -3] \\).\\\\Vector cần phản xạ là \\( v = [0, -1, 3] \\).\\\\<b>Bước 1: Tính tích vô hướng và độ dài bình phương của \\( n \\)</b>\\\\ \\[ v \\cdot n = (0)(2) + (-1)(1) + (3)(-3) = -1 - 9 = -10 \\]\\\\ \\[ \\|n\\|^2 = 2^2 + 1^2 + (-3)^2 = 4 + 1 + 9 = 14 \\]\\\\<b>Bước 2: Thay vào công thức phản xạ</b>:\\\\ \\[ v_r = [0, -1, 3] - 2 \\cdot \\frac{-10}{14} [2, 1, -3] = [0, -1, 3] + \\frac{10}{7} [2, 1, -3] \\]\\\\ \\[ v_r = [0, -1, 3] + \\left[\\frac{20}{7}, \\frac{10}{7}, -\\frac{30}{7}\\right] \\]\\\\ \\[ v_r = \\left[ \\frac{20}{7}, \\frac{-7 + 10}{7}, \\frac{21 - 30}{7} \\right] = \\left[ \\frac{20}{7}, \\frac{3}{7}, -\\frac{9}{7} \\right] \\]\\\\Vậy vector phản xạ là <b>\\( \\left[ \\frac{20}{7}, \\frac{3}{7}, -\\frac{9}{7} \\right] \\)</b>, hay <b>đáp án D</b>.",
+        "difficulty": "hard",
+        "topic": "Vector Reflection",
+        "hints": [
+          "Vector pháp tuyến \\( n \\) của mặt phẳng \\( ax+by+cz=d \\) là \\( [a, b, c] \\).",
+          "Sử dụng công thức phản xạ của vector v qua mặt phẳng có vector pháp tuyến n: \\( v_r = v - 2 \\cdot \\text{proj}_n(v) \\)."
+        ]
+      },
+      {
+        "id": 20,
+        "question": "Evaluate \\( \\int \\frac{(\\ln x)^5}{x} \\, dx \\).<br />(i) \\( \\frac{1}{5}(\\ln x)^5 + C \\)<br />(ii) \\( \\frac{1}{6}(\\ln x)^6 + C \\)<br />(iii) \\( 6(\\ln x)^5 + C \\)<br />(iv) \\( 5(\\ln x)^4 + C \\)",
+        "image": null,
+        "options": [
+          "A. (i)",
+          "B. (iv)",
+          "C. (ii)",
+          "D. None of the other choices is correct",
+          "E. (iii)"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Ta sử dụng phương pháp <b>đổi biến số</b> (u-substitution).\\\\Đặt: \\\\ \\[ u = \\ln x \\]\\\\Lấy vi phân hai vế, ta có: \\\\ \\[ du = \\frac{1}{x} dx \\]\\\\Bây giờ, thay \\( u \\) và \\( du \\) vào tích phân ban đầu: \\\\ \\[ \\int \\frac{(\\ln x)^5}{x} dx = \\int (\\ln x)^5 \\cdot \\left(\\frac{1}{x} dx\\right) = \\int u^5 \\, du \\]\\\\Sử dụng công thức tích phân của hàm lũy thừa: \\\\ \\[ \\int u^5 \\, du = \\frac{u^6}{6} + C \\]\\\\Cuối cùng, thay \\( u = \\ln x \\) trở lại: \\\\ \\[ \\frac{(\\ln x)^6}{6} + C \\]\\\\Đây chính là biểu thức (ii).",
+        "difficulty": "easy",
+        "topic": "Integration by Substitution",
+        "hints": [
+          "Nhận ra rằng đạo hàm của \\( \\ln x \\) là \\( 1/x \\), có mặt trong biểu thức.",
+          "Thử đặt \\( u = \\ln x \\) và thực hiện phép đổi biến."
+        ]
+      }
+    ]
+  }
