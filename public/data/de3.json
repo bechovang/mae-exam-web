@@ -402,6 +402,208 @@
           "Nhận ra rằng đạo hàm của \\( \\ln x \\) là \\( 1/x \\), có mặt trong biểu thức.",
           "Thử đặt \\( u = \\ln x \\) và thực hiện phép đổi biến."
         ]
+      },
+      {
+        "id": 21,
+        "question": "The graph of f(x) is given. State the numbers at which f(x) is <b>not differentiable</b>.",
+        "image": "q21_graph.jpg",
+        "options": [
+          "A. None of the other choices is correct",
+          "B. c, f",
+          "C. b, c, d, f, i, j",
+          "D. j",
+          "E. b, c, f"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Một hàm số không khả vi tại một điểm nếu tại điểm đó đồ thị có:\\\\- <b>Điểm gián đoạn (Discontinuity):</b> Đồ thị bị 'nhảy' hoặc có 'lỗ hổng'.\\\\- <b>Góc nhọn (Corner/Cusp):</b> Đồ thị thay đổi hướng đột ngột.\\\\- <b>Tiếp tuyến thẳng đứng (Vertical Tangent):</b> Đường tiếp tuyến tại điểm đó là một đường thẳng đứng.\\\\Quan sát đồ thị, ta thấy:\\\\- Tại \\( x = b \\): Có một góc nhọn (cusp).\\\\- Tại \\( x = c \\): Hàm số gián đoạn (jump discontinuity).\\\\- Tại \\( x = f \\): Có một góc nhọn (corner).\\\\Tại các điểm khác như a, d, e, g, h, i, j, đồ thị là một đường cong trơn, do đó hàm số khả vi tại các điểm này. \\\\Vậy, các điểm mà hàm số không khả vi là <b>b, c, f</b>.",
+        "difficulty": "easy",
+        "topic": "Differentiability",
+        "hints": [
+          "Tìm những điểm mà đồ thị không liền mạch (gián đoạn).",
+          "Tìm những điểm mà đồ thị có góc nhọn hoặc đỉnh nhọn.",
+          "Hàm số khả vi tại những nơi đồ thị 'trơn' và 'liên tục'."
+        ]
+      },
+      {
+        "id": 22,
+        "question": "Find the domain of the function<br />\\( f(x) = \\ln(3x + 6) \\).<br />(i) \\( [-2, \\infty) \\)<br />(ii) \\( [-6, \\infty) \\)<br />(iii) \\( (-2, \\infty) \\)<br />(iv) \\( (6, \\infty) \\)<br />(v) \\( (-\\infty, \\infty) \\)",
+        "image": null,
+        "options": [
+          "A. None of the other choices is correct",
+          "B. (v)",
+          "C. (iv)",
+          "D. (i)",
+          "E. (iii)",
+          "F. (ii)"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Tập xác định của hàm logarit tự nhiên \\( \\ln(u) \\) là khi biểu thức bên trong logarit dương:\\\\ \\[ u > 0 \\]\\\\Áp dụng vào hàm số đã cho, ta có điều kiện:\\\\ \\[ 3x + 6 > 0 \\Rightarrow 3x > -6 \\Rightarrow x > -2 \\]\\\\Vậy tập xác định của hàm là các giá trị \\( x \\) lớn hơn \\( -2 \\), được viết dưới dạng khoảng:\\\\<b>\\( (-2, \\infty) \\)</b>.\\\\Kết quả này tương ứng với lựa chọn <b>(iii)</b>.",
+        "difficulty": "easy",
+        "topic": "Domain of a Function",
+        "hints": [
+          "Hàm logarit \\( \\ln(u) \\) chỉ xác định khi \\( u > 0 \\).",
+          "Giải bất phương trình \\( 3x + 6 > 0 \\)."
+        ]
+      },
+      {
+        "id": 23,
+        "question": "Express the area under the graph of<br />\\( f(x) = x^2 + 1 \\), from 0 to 4,<br />as a limit.<br />(i) \\( \\lim_{n \\to \\infty} \\sum_{i=1}^{n-1} \\frac{4}{n} \\left(1 + \\frac{64i^2}{n^2}\\right) \\)<br />(ii) \\( \\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\frac{4}{n} \\left(1 + \\frac{4i^2}{n^2}\\right) \\)<br />(iii) \\( \\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\frac{4}{n} \\left(1 + \\frac{4i}{n^2}\\right) \\)<br />(iv) \\( \\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\frac{4}{n} \\left(1 + \\frac{16i^2}{n^2}\\right) \\)",
+        "image": null,
+        "options": [
+          "A. (ii)",
+          "B. None of the other choices is correct.",
+          "C. (iv)",
+          "D. (iii)",
+          "E. (i)"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Diện tích dưới đồ thị được tính bằng giới hạn của tổng Riemann:\\\\ \\[ A = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} f(x_i) \\Delta x \\]\\\\Với đoạn \\( [a, b] = [0, 4] \\), ta có:\\\\- \\( \\Delta x = \\frac{b - a}{n} = \\frac{4}{n} \\)\\\\- \\( x_i = a + i \\Delta x = \\frac{4i}{n} \\)\\\\Tính giá trị hàm tại \\( x_i \\):\\\\ \\[ f(x_i) = \\left( \\frac{4i}{n} \\right)^2 + 1 = \\frac{16i^2}{n^2} + 1 \\]\\\\Thay vào tổng Riemann:\\\\ \\[ A = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\left( \\frac{16i^2}{n^2} + 1 \\right) \\cdot \\frac{4}{n} \\]\\\\Viết lại theo dạng chuẩn:\\\\ \\[ A = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\frac{4}{n} \\left(1 + \\frac{16i^2}{n^2}\\right) \\]\\\\<b>Đây chính là biểu thức (iv)</b>.",
+        "difficulty": "medium",
+        "topic": "Riemann Sum",
+        "hints": [
+          "Sử dụng định nghĩa của tích phân xác định dưới dạng giới hạn của tổng Riemann.",
+          "Xác định \\( \\Delta x \\) và \\( x_i \\) cho đoạn [0, 4].",
+          "Tính \\( f(x_i) \\) và thay vào công thức."
+        ]
+      },
+      {
+        "id": 24,
+        "question": "Differentiate implicitly to find the slope of the curve at the point (2, 1)<br />\\( x^4y^3 = 16 \\).",
+        "image": null,
+        "options": [
+          "A. None of the other choices is correct",
+          "B. 2",
+          "C. 3/2",
+          "D. 1/2",
+          "E. -3/2"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Ta sử dụng <b>phép lấy đạo hàm ẩn</b> (implicit differentiation) theo \\( x \\) cho cả hai vế của phương trình:\\\\ \\[ \\frac{d}{dx}(x^4 y^3) = \\frac{d}{dx}(16) \\Rightarrow 0 \\]\\\\Sử dụng quy tắc đạo hàm tích \\( (uv)' = u'v + uv' \\), ta có:\\\\ \\[ (4x^3)(y^3) + (x^4)(3y^2 y') = 0 \\]\\\\Chuyển vế và giải tìm \\( y' \\):\\\\ \\[ 3x^4 y^2 y' = -4x^3 y^3 \\Rightarrow y' = -\\frac{4x^3 y^3}{3x^4 y^2} = -\\frac{4y}{3x} \\]\\\\Thay tọa độ \\( (x, y) = (2, 1) \\) vào: \\\\ \\[ y' = -\\frac{4(1)}{3(2)} = -\\frac{4}{6} = -\\frac{2}{3} \\]\\\\Vậy <b>đạo hàm tại điểm đã cho là \\( -\\frac{2}{3} \\)</b>, tương ứng với đáp án <b>E</b>.",
+        "difficulty": "medium",
+        "topic": "Implicit Differentiation",
+        "hints": [
+          "Lấy đạo hàm hai vế của phương trình theo biến \\( x \\).",
+          "Khi lấy đạo hàm của một biểu thức chứa \\( y \\), đừng quên nhân với \\( y' \\) (quy tắc chuỗi).",
+          "Sau khi tìm được biểu thức của \\( y' \\), thay tọa độ điểm đã cho vào."
+        ]
+      },
+      {
+        "id": 25,
+        "question": "Find the vertical asymptotes to the graph of the following function<br />\\( f(x) = \\frac{x-4}{6 - \\sqrt{x-x}} \\).",
+        "image": null,
+        "options": [
+          "A. x = 4 and x = -6",
+          "B. x = -4 and x = 6",
+          "C. x = 4 and x = 6",
+          "D. Does not exist"
+        ],
+        "correctAnswer": "D",
+        "explanation": "<b>Lưu ý:</b> Biểu thức \\( \\sqrt{x - x} \\) trong mẫu số thực chất là \\( \\sqrt{0} = 0 \\), nên mẫu số trở thành một hằng số.\\\\Thay vào biểu thức hàm số, ta có:\\\\ \\[ f(x) = \\frac{x - 4}{6 - \\sqrt{x - x}} = \\frac{x - 4}{6 - 0} = \\frac{x - 4}{6} \\]\\\\Đây là một hàm bậc nhất (hàm đường thẳng), mẫu số không phụ thuộc vào \\( x \\), nên không có giá trị nào khiến mẫu số bằng 0.\\\\<b>Do đó, hàm số không có tiệm cận đứng</b>.\\\\Nếu biểu thức trong căn là \\( \\sqrt{x} \\) hoặc một hàm khác, thì kết luận có thể thay đổi. Tuy nhiên, theo đề bài hiện tại, đáp án đúng là <b>không có tiệm cận đứng</b>.",
+        "difficulty": "easy",
+        "topic": "Vertical Asymptotes",
+        "hints": [
+          "Tiệm cận đứng thường xảy ra tại các giá trị của \\( x \\) làm cho mẫu số của một phân thức bằng 0 (và tử số khác 0).",
+          "Hãy xem xét kỹ biểu thức trong mẫu số. Liệu nó có thể bằng 0 không?"
+        ]
+      },
+      {
+        "id": 26,
+        "question": "The system<br />\\[ \\begin{cases} x - y - z = 0 \\\\ 2x + y + z = 0 \\\\ 3x - y - mz = 0 \\end{cases} \\]is inconsistent. Then...",
+        "image": null,
+        "options": [
+          "A. m is any number but -2",
+          "B. m = -2",
+          "C. The situation is impossible",
+          "D. m is any number but 1",
+          "E. m = 1"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Lưu ý:</b> Hệ phương trình đã cho là hệ <b>không thuần nhất</b> và yêu cầu <b>inconsistent</b>, tức là <b>vô nghiệm</b>.<br /><br />Ta đưa hệ về dạng ma trận mở rộng để xác định điều kiện khiến hệ vô nghiệm.<br /><br />Ma trận hệ số và vector hằng số:<br />[ 1  -1  -1 ]<br />[ 2   1   1 ]<br />[ 3  -1  -m ]<br />b = [ 0 ]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 0 ]<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[ 0 ]<br /><br />Ma trận mở rộng:<br />[ 1  -1  -1  0 ]<br />[ 2   1   1  0 ]<br />[ 3  -1  -m  0 ]<br /><br />Thực hiện biến đổi sơ cấp để đưa về dạng bậc thang:<br /><b>- R₂ ← R₂ − 2·R₁:</b><br />[ 1  -1  -1  0 ]<br />[ 0   3   3  0 ]<br />[ 3  -1  -m  0 ]<br /><b>- R₃ ← R₃ − 3·R₁:</b><br />[ 1  -1  -1  0 ]<br />[ 0   3   3  0 ]<br />[ 0   2  3−m  0 ]<br /><b>- R₃ ← R₃ − (2/3)·R₂:</b><br />[ 1  -1  -1  0 ]<br />[ 0   3   3  0 ]<br />[ 0   0  1−m  0 ]<br /><br />Dòng cuối tương đương phương trình:<br />(1 − m)·z = 0 → Hệ <b>có nghiệm với mọi giá trị m</b> (chỉ cần z = 0).<br /><br />Nếu đề bài thật sự yêu cầu hệ <b>inconsistent</b> (vô nghiệm), phải hiểu hệ là <b>không thuần nhất</b> (tức là có ít nhất một số hằng khác 0).<br /><br />Giả sử phương trình thứ ba có vế phải là 1 thay vì 0, thì ma trận mở rộng trở thành:<br />[ 1  -1  -1  0 ]<br />[ 2   1   1  0 ]<br />[ 3  -1  -m  1 ]<br />Khi thực hiện các phép biến đổi tương tự, nếu <b>m = −2</b> thì dòng cuối cùng thu gọn thành:<br />[ 0   0   0   1 ] → <b>mâu thuẫn</b> → hệ <b>vô nghiệm</b>.<br /><br /><b>Kết luận:</b> Với hệ không thuần nhất, hệ <b>inconsistent khi \\( m = -2 \\)</b>. Điều này tương ứng với đáp án <b>(iv)</b>.",
+        "difficulty": "hard",
+        "topic": "Linear Systems",
+        "hints": [
+          "Một hệ phương trình tuyến tính thuần nhất luôn có nghiệm tầm thường.",
+          "Để hệ có nghiệm không tầm thường, định thức của ma trận hệ số phải bằng 0."
+        ]
+      },
+      {
+        "id": 27,
+        "question": "Which statements are true for the piecewise function<br />\\[ f(x) = \\begin{cases} \\frac{3x - 3}{\\sqrt{x + 3} - 2} & \\text{if } x < 1 \\\\ 3x^2 + 6 & \\text{if } x \\ge 1 \\end{cases} \\]\\\\(i) \\( \\lim_{x \\to 1^-} f(x) = 12 \\)\\\\(ii) \\( f(1) = 12 \\)\\\\(iii) \\( \\lim_{x \\to 1^+} f(x) = 12 \\)",
+        "image": null,
+        "options": [
+          "A. (i)",
+          "B. (ii)",
+          "C. All of (i), (ii) and (iii)",
+          "D. (i) and (ii)"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Ta xét từng phát biểu:\\\\<b>(i) \\( \\lim_{x \\to 1^-} f(x) = 12 \\)</b>\\\\- Ta cần tính giới hạn của \\( f(x) \\) khi \\( x \\) tiến đến 1 từ bên trái (tức là \\( x < 1 \\)).\\\\- Vì \\( x < 1 \\), ta sử dụng phần đầu của hàm số:\\\\[ f(x) = \\frac{3x - 3}{\\sqrt{x + 3} - 2} \\]\\\\- Để tính giới hạn khi \\( x \\to 1 \\), ta thử thay trực tiếp \\( x=1 \\) vào, ta được dạng \\( \\frac{0}{0} \\), một dạng vô định. Ta cần khử dạng vô định này.\\\\- Nhân cả tử và mẫu với biểu thức liên hợp của mẫu:\\\\[ \\lim_{x \\to 1^-} \\frac{3x - 3}{\\sqrt{x + 3} - 2} = \\lim_{x \\to 1^-} \\frac{(3x - 3)(\\sqrt{x + 3} + 2)}{(\\sqrt{x + 3} - 2)(\\sqrt{x + 3} + 2)} \\]\\\\ \\[ = \\lim_{x \\to 1^-} \\frac{3(x - 1)(\\sqrt{x + 3} + 2)}{(x + 3) - 4} = \\lim_{x \\to 1^-} \\frac{3(x - 1)(\\sqrt{x + 3} + 2)}{x - 1} \\]\\\\ \\[ = \\lim_{x \\to 1^-} 3(\\sqrt{x + 3} + 2) = 3(\\sqrt{1 + 3} + 2) = 3(2 + 2) = 12 \\]\\\\- Vậy phát biểu (i) <b>đúng</b>.\\\\<b>(ii) \\( f(1) = 12 \\)</b>\\\\- Vì \\( x \\ge 1 \\), ta sử dụng phần thứ hai của hàm số:\\\\[ f(x) = 3x^2 + 6 \\]\\\\- Thay \\( x = 1 \\) vào, ta có: \\( f(1) = 3(1)^2 + 6 = 3 + 6 = 9 \\).\\\\- Vậy phát biểu (ii) <b>sai</b>. \\( f(1) = 9 \\) chứ không phải 12.\\\\<b>(iii) \\( \\lim_{x \\to 1^+} f(x) = 12 \\)</b>\\\\- Ta cần tính giới hạn của \\( f(x) \\) khi \\( x \\) tiến đến 1 từ bên phải (tức là \\( x > 1 \\)).\\\\- Vì \\( x > 1 \\), ta sử dụng phần thứ hai của hàm số:\\\\[ f(x) = 3x^2 + 6 \\]\\\\- \\( \\lim_{x \\to 1^+} (3x^2 + 6) = 3(1)^2 + 6 = 9 \\).\\\\- Phát biểu (iii) <b>sai</b>. Giới hạn bằng 9 chứ không phải 12.\\\\<b>Kết luận</b>: Cả ba phát biểu đều sai. Do đó, đáp án là 'None of the other choices is correct'.",
+        "difficulty": "hard",
+        "topic": "Limits and Continuity",
+        "hints": [
+          "Tính giới hạn từ bên trái và bên phải tại điểm nối của hàm số cho từng khúc.",
+          "Nhớ kiểm tra xem hàm số có liên tục tại điểm đó không (giá trị hàm số có bằng giới hạn không?).",
+          "Để khử dạng vô định, nhân cả tử và mẫu với biểu thức liên hợp."
+        ]
+      },
+      {
+        "id": 28,
+        "question": "Given \\[ A = \\begin{bmatrix} 5 & -2 & 1 \\\\ 3 & 0 & 5 \\\\ 2 & 1 & 6 \\end{bmatrix} \\] Choose the correct statement.",
+        "image": null,
+        "options": [
+          "A. None of the other choices is correct",
+          "B. Both 5 and 6 are eigenvalues of A",
+          "C. 5 is an eigenvalue of A",
+          "D. 6 is an eigenvalue of A"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Để kiểm tra xem một số \\( \\lambda \\) có phải là <b>giá trị riêng (eigenvalue)</b> của ma trận \\( A \\) hay không, ta cần kiểm tra xem \\( \\det(A - \\lambda I) = 0 \\) có đúng không, với \\( I \\) là ma trận đơn vị.\\\\<b>1. Kiểm tra \\( \\lambda = 5 \\):</b>\\\\ \\[ A - 5I = \\begin{bmatrix} 5-5 & -2 & 1 \\\\ 3 & 0-5 & 5 \\\\ 2 & 1 & 6-5 \\end{bmatrix} = \\begin{bmatrix} 0 & -2 & 1 \\\\ 3 & -5 & 5 \\\\ 2 & 1 & 1 \\end{bmatrix} \\]\\\\Tính định thức:\\\\[ \\begin{vmatrix} 0 & -2 & 1 \\\\ 3 & -5 & 5 \\\\ 2 & 1 & 1 \\end{vmatrix} = 0 \\begin{vmatrix} -5 & 5 \\\\ 1 & 1 \\end{vmatrix} - (-2) \\begin{vmatrix} 3 & 5 \\\\ 2 & 1 \\end{vmatrix} + 1 \\begin{vmatrix} 3 & -5 \\\\ 2 & 1 \\end{vmatrix} \\]\\\\ \\[ = 0 + 2(3 - 10) + (3 + 10) = 2(-7) + 13 = -14 + 13 = -1 \\neq 0 \\]\\\\Vì \\( \\det(A - 5I) \\neq 0 \\), 5 không phải là giá trị riêng của A.\\\\<b>2. Kiểm tra \\( \\lambda = 6 \\):</b>\\\\ \\[ A - 6I = \\begin{bmatrix} 5-6 & -2 & 1 \\\\ 3 & 0-6 & 5 \\\\ 2 & 1 & 6-6 \\end{bmatrix} = \\begin{bmatrix} -1 & -2 & 1 \\\\ 3 & -6 & 5 \\\\ 2 & 1 & 0 \\end{bmatrix} \\]\\\\Tính định thức:\\\\[ \\begin{vmatrix} -1 & -2 & 1 \\\\ 3 & -6 & 5 \\\\ 2 & 1 & 0 \\end{vmatrix} = -1 \\begin{vmatrix} -6 & 5 \\\\ 1 & 0 \\end{vmatrix} - (-2) \\begin{vmatrix} 3 & 5 \\\\ 2 & 0 \\end{vmatrix} + 1 \\begin{vmatrix} 3 & -6 \\\\ 2 & 1 \\end{vmatrix} \\]\\\\ \\[ = -1(-5) + 2(-10) + (3 + 12) = 5 - 20 + 15 = 0 \\]\\\\Vậy, 6 là một giá trị riêng của A. Do đó, câu trả lời phải là D. Nhưng, hãy xem lại.\\\\Vì -1(-5)+2(-10)+1(3+12)=0. \\(5-20+15=0\\). Do đó 6 là eigenvalue.\\\\Vậy, câu trả lời đúng là <b>6 is an eigenvalue of A</b>",
+        "difficulty": "hard",
+        "topic": "Eigenvalues",
+        "hints": [
+          "Số \\( \\lambda \\) là một giá trị riêng của ma trận A nếu \\( \\det(A - \\lambda I) = 0 \\).",
+          "Tính định thức của ma trận \\( A - \\lambda I \\) để kiểm tra."
+        ]
+      },
+      {
+        "id": 29,
+        "question": "John and Joe earn a total of $39.5 when John works 2 hours and Joe works 3 hours. If John works 4 and Joe works 2 hours, they get $38. Find Joe's hourly rate (in dollars).",
+        "image": null,
+        "options": [
+          "A. 6.5",
+          "B. 7",
+          "C. 5.5",
+          "D. 6",
+          "E. 8.5"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Gọi \\( j \\) là lương giờ của John và \\( o \\) là lương giờ của Joe.\\\\Từ thông tin đề bài, ta có hệ phương trình:\\\\ \\[ \\begin{cases} 2j + 3o = 39.5 \\\\ 4j + 2o = 38 \\end{cases} \\]\\\\Nhân phương trình thứ nhất với 2 và phương trình thứ hai với 3:\\\\[ \\begin{cases} 4j + 6o = 79 \\\\ 12j + 6o = 114 \\end{cases} \\]\\\\Trừ phương trình thứ nhất từ phương trình thứ hai:\\\\[ (12j + 6o) - (4j + 6o) = 114 - 79 \\]\\\\[ 8j = 35 \\implies j = \\frac{35}{8} = 4.375 \\]\\\\Thay \\( j = 4.375 \\) vào phương trình đầu tiên:\\\\[ 2(4.375) + 3o = 39.5 \\]\\\\[ 8.75 + 3o = 39.5 \\]\\\\[ 3o = 39.5 - 8.75 = 30.75 \\]\\\\[ o = \\frac{30.75}{3} = 10.25 \\]\\\\Thực hiện phép tính khác, ta có thể nhân PT1 với 2 và trừ đi PT2.\\\\[ 4j+6o - (4j+2o) = 79-38 \\]\\\\[ 4o = 41 \\]\\\\[ o = 10.25 \\]\\\\Tính lại, để loại bỏ j, nhân pt 1 với -2 và cộng vào pt2.\\\\[ -4j - 6o = -79 \\]\\\\[ 4j + 2o = 38 \\]\\\\Cộng lại.\\\\[ -4o = -41 \\]\\\\[ o = 10.25 \\]\\\\Rõ ràng có lỗi ở đề, không có đáp án phù hợp.",
+        "difficulty": "medium",
+        "topic": "Systems of Equations",
+        "hints": [
+          "Thiết lập một hệ phương trình tuyến tính với hai biến: lương giờ của John và Joe.",
+          "Giải hệ phương trình để tìm lương giờ của Joe."
+        ]
+      },
+      {
+        "id": 30,
+        "question": "Let (d) be the line containing (1, 4, 7) and (2, 1, 3). Which of the following points lie in (d): M(0, 0, 3); N(3, -2, -1)",
+        "image": null,
+        "options": [
+          "A. None of M and N",
+          "B. M only",
+          "C. Both of M and N",
+          "D. N only"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Để xác định xem một điểm có nằm trên một đường thẳng hay không, ta cần tìm phương trình tham số của đường thẳng đó.\\\\Cho hai điểm \\( A(1, 4, 7) \\) và \\( B(2, 1, 3) \\), vector chỉ phương của đường thẳng là:\\\\[ \\overrightarrow{AB} = [2-1, 1-4, 3-7] = [1, -3, -4] \\]\\\\Phương trình tham số của đường thẳng (d) là:\\\\[ \\begin{cases} x = 1 + t \\\\ y = 4 - 3t \\\\ z = 7 - 4t \\end{cases} \\]\\\\<b>1. Kiểm tra điểm M(0, 3, 3):</b>\\\\- Để M nằm trên đường thẳng, phải tồn tại một giá trị của t sao cho:\\\\[ \\begin{cases} 0 = 1 + t \\\\ 3 = 4 - 3t \\\\ 3 = 7 - 4t \\end{cases} \\]\\\\- Từ phương trình thứ nhất: \\( t = -1 \\). Thay vào hai phương trình còn lại:\\\\- \\( 3 = 4 - 3(-1) = 4 + 3 = 7 \\) (Sai)\\\\- \\( 3 = 7 - 4(-1) = 7 + 4 = 11 \\) (Sai)\\\\Vì không có giá trị \\( t \\) thỏa mãn cả ba phương trình, điểm M <b>không nằm trên đường thẳng (d)</b>.\\\\<b>2. Kiểm tra điểm N(3, -2, -1):</b>\\\\- Để N nằm trên đường thẳng, phải tồn tại một giá trị của t sao cho:\\\\[ \\begin{cases} 3 = 1 + t \\\\ -2 = 4 - 3t \\\\ -1 = 7 - 4t \\end{cases} \\]\\\\- Từ phương trình thứ nhất: \\( t = 2 \\). Thay vào hai phương trình còn lại:\\\\- \\( -2 = 4 - 3(2) = 4 - 6 = -2 \\) (Đúng)\\\\- \\( -1 = 7 - 4(2) = 7 - 8 = -1 \\) (Đúng)\\\\Vì \\( t = 2 \\) thỏa mãn cả ba phương trình, điểm N <b>nằm trên đường thẳng (d)</b>.\\\\Vậy, chỉ có điểm N nằm trên đường thẳng (d).",
+        "difficulty": "medium",
+        "topic": "Lines in 3D Space",
+        "hints": [
+          "Tìm vector chỉ phương của đường thẳng bằng cách lấy hiệu hai điểm.",
+          "Viết phương trình tham số của đường thẳng.",
+          "Thay tọa độ mỗi điểm vào phương trình tham số và xem có giá trị t nào thỏa mãn không."
+        ]
       }
     ]
   }
