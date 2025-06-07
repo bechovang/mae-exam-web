@@ -84,7 +84,6 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
   const [showSummaryDialog, setShowSummaryDialog] = useState(false)
   const timerRef = useRef<NodeJS.Timeout | null>(null)
   const feedbackTimeoutRef = useRef<NodeJS.Timeout | null>(null); // For auto-hiding feedback
-  const questionDotsRef = useRef<HTMLDivElement>(null); // Add this ref to the component
 
   // --- Helper for small particle effects ---
   const spawnParticles = useCallback((isCorrect: boolean) => {
@@ -177,24 +176,6 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
     localStorage.setItem(`practiceTime_${practiceId}`, totalTimeSpent.toString())
   }, [totalTimeSpent, practiceId])
 
-  // Add this new useEffect to scroll the active dot into view
-  useEffect(() => {
-    if (questionDotsRef.current) {
-      const activeDot = questionDotsRef.current.querySelector(
-        `.question-dot-${currentQuestion}` // Use a unique class for each dot
-      ) as HTMLElement;
-
-      if (activeDot) {
-        // Cuộn ngang và dọc để chấm active nằm trong view
-        activeDot.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest', // Scrolls the element into view vertically
-          inline: 'center' // Scrolls the element into view horizontally
-        });
-      }
-    }
-  }, [currentQuestion, practiceData]); // Re-run when question changes or data loads
-
   const handleAnswerSelect = (value: string) => {
     if (showFeedback) return;
 
@@ -233,7 +214,11 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
     }, 3000); // Feedback visible for 3 seconds
   };
 
-  const goToQuestion = (index: number) => {
+  const goToQuestion = (index: number, e?: React.MouseEvent<HTMLButtonElement>) => {
+    if (e) {
+      // Blur the button to prevent the browser's default scroll-on-focus behavior
+      e.currentTarget.blur();
+    }
     if (feedbackTimeoutRef.current) {
         clearTimeout(feedbackTimeoutRef.current);
         feedbackTimeoutRef.current = null;
@@ -334,8 +319,8 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
 
   if (!practiceData) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
-        <p className="text-lg text-gray-700 animate-pulse">Đang tải bài luyện tập...</p>
+      <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-black p-4">
+        <p className="text-lg text-gray-700 dark:text-gray-300 animate-pulse">Đang tải bài luyện tập...</p>
       </div>
     )
   }
@@ -346,7 +331,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
   const score = calculateScore()
 
   return (
-    <div className="flex min-h-screen flex-col bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="flex min-h-screen flex-col bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-black p-4">
       <div className="mx-auto w-full max-w-4xl">
 
         {/* --- Header Section --- */}
@@ -354,9 +339,9 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
           <CardHeader className="flex flex-row items-center justify-between p-4 bg-gradient-to-r from-blue-600 to-purple-700 text-white">
             <div className="flex items-center gap-4">
               <Button
-                variant="ghost"
+                variant="outline"
                 size="icon"
-                className="rounded-full hover:bg-white/20 transition-colors"
+                className="rounded-full bg-white/20 text-white border-white/30 hover:bg-white/30 transition-all"
                 onClick={() => router.push('/select-exam')}
                 aria-label="Về trang chọn đề"
               >
@@ -382,8 +367,8 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
               <ThemeToggle />
             </div>
           </CardHeader>
-          <CardContent className="pb-2 pt-4 px-6 bg-white">
-            <div className="mb-2 flex justify-between text-sm text-gray-600 font-medium">
+          <CardContent className="pb-2 pt-4 px-6 bg-white dark:bg-gray-900">
+            <div className="mb-2 flex justify-between text-sm text-gray-600 dark:text-gray-300 font-medium">
               <span>Câu hỏi {currentQuestion + 1} / {practiceData.questions.length}</span>
               <span>Hoàn thành: {Object.keys(questionResults).length} / {practiceData.questions.length}</span>
             </div>
@@ -413,8 +398,8 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
             </div>
 
             {/* Question Text with SimpleMath for LaTeX */}
-            <div className="mb-6 bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <SimpleMath className="text-lg leading-relaxed text-gray-800">
+            <div className="mb-6 bg-gray-50 dark:bg-gray-800/50 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+              <SimpleMath className="text-lg leading-relaxed text-gray-800 dark:text-gray-200">
                 {currentQuestionData.question}
               </SimpleMath>
               {currentQuestionData.image && (
@@ -441,16 +426,16 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
                 let optionClass = "relative flex items-center space-x-3 rounded-lg border-2 p-4 transition-all duration-200 shadow-sm";
                 if (showFeedback) {
                   if (isCorrect) {
-                    optionClass += " border-green-500 bg-green-50 text-green-800 animate-pulse-once"; // Custom pulse-once
+                    optionClass += " border-green-500 bg-green-50 text-green-800 dark:bg-green-950 dark:text-green-300 dark:border-green-600";
                   } else if (isSelected && !isCorrect) {
-                    optionClass += " border-red-500 bg-red-50 text-red-800 animate-shake";
+                    optionClass += " border-red-500 bg-red-50 text-red-800 dark:bg-red-950 dark:text-red-300 dark:border-red-600";
                   } else {
-                    optionClass += " border-gray-200 text-gray-700 opacity-70";
+                    optionClass += " border-gray-200 text-gray-700 opacity-70 dark:border-gray-700 dark:text-gray-400";
                   }
                 } else {
                   optionClass += isSelected
-                    ? " border-blue-500 bg-blue-50 text-blue-800 ring-2 ring-blue-300"
-                    : " border-gray-200 hover:border-blue-300 hover:bg-blue-25";
+                    ? " border-blue-500 bg-blue-50 text-blue-800 ring-2 ring-blue-300 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-500"
+                    : " border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600 hover:bg-blue-25 dark:hover:bg-gray-800/60";
                 }
 
                 return (
@@ -483,51 +468,51 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
                 <div
                   className={`rounded-xl p-5 shadow-md ${
                     currentResult.correct
-                      ? 'bg-gradient-to-br from-green-50 to-green-100 border-l-4 border-green-400'
-                      : 'bg-gradient-to-br from-red-50 to-red-100 border-l-4 border-red-400'
+                      ? 'bg-gradient-to-br from-green-50 to-green-100 border-l-4 border-green-400 dark:from-green-900/20 dark:to-green-950/30'
+                      : 'bg-gradient-to-br from-red-50 to-red-100 border-l-4 border-red-400 dark:from-red-900/20 dark:to-red-950/30'
                   }`}
                 >
                   <div className="flex items-center gap-3 mb-3">
                     {currentResult.correct ? (
                       <Sparkles className="h-7 w-7 text-green-600 animate-sparkle-burst" /> // Sparkle burst
                     ) : (
-                      <Frown className="h-7 w-7 text-red-600 animate-shake" />
+                      <Frown className="h-7 w-7 text-red-600 animate-wiggle" />
                     )}
                     <span
                       className={`text-xl font-bold ${
-                        currentResult.correct ? 'text-green-800' : 'text-red-800'
+                        currentResult.correct ? 'text-green-800 dark:text-green-300' : 'text-red-800 dark:text-red-300'
                       }`}
                     >
                       {currentResult.correct ? 'Chính xác!' : 'Chưa đúng'}
                     </span>
-                    <span className="text-sm text-gray-600 ml-auto">
+                    <span className="text-sm text-gray-600 dark:text-gray-400 ml-auto">
                       (Thời gian: {formatTime(currentResult.timeSpent)})
                     </span>
                   </div>
                   {studyTip && (
-                    <p className="text-base text-gray-700 mb-4 bg-white p-3 rounded-md shadow-inner animate-slide-in-right">
+                    <p className="text-base text-gray-700 dark:text-gray-300 mb-4 bg-white dark:bg-gray-800/50 p-3 rounded-md shadow-inner">
                       {studyTip}
                     </p>
                   )}
 
-                  <div className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm animate-fade-in">
-                    <h4 className="font-semibold text-gray-800 mb-3 text-lg flex items-center gap-2">
+                  <div className="bg-white dark:bg-gray-800/50 rounded-lg p-4 border border-gray-200 dark:border-gray-700 shadow-sm">
+                    <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-3 text-lg flex items-center gap-2">
                       <BookOpen className="h-5 w-5 text-blue-600" /> Giải thích chi tiết:
                     </h4>
-                    <SimpleMath className="text-sm text-gray-700 leading-relaxed">
+                    <SimpleMath className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">
                       {currentQuestionData.explanation}
                     </SimpleMath>
                   </div>
 
                   {currentResult.hintsUsed > 0 && (
-                    <div className="mt-4 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-lg animate-fade-in">
-                      <h4 className="font-medium text-yellow-800 mb-2 flex items-center gap-2">
+                    <div className="mt-4 bg-yellow-50 dark:bg-yellow-400/10 border-l-4 border-yellow-400 p-4 rounded-lg animate-fade-in">
+                      <h4 className="font-medium text-yellow-800 dark:text-yellow-300 mb-2 flex items-center gap-2">
                         <Lightbulb className="h-5 w-5" />
                         Gợi ý đã sử dụng ({currentResult.hintsUsed} lần):
                       </h4>
                       <ul className="space-y-1 list-disc list-inside">
                         {currentQuestionData.hints.map((hint, index) => (
-                          <li key={index} className="text-sm text-yellow-700">
+                          <li key={index} className="text-sm text-yellow-700 dark:text-yellow-400">
                             <SimpleMath>{hint}</SimpleMath>
                           </li>
                         ))}
@@ -554,14 +539,14 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
             )}
 
             {showHints && !showFeedback && currentQuestionData.hints && currentQuestionData.hints.length > 0 && (
-              <div className="mt-4 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-lg animate-fade-in">
-                <h4 className="font-medium text-yellow-800 mb-2 flex items-center gap-2">
+              <div className="mt-4 bg-yellow-50 dark:bg-yellow-400/10 border-l-4 border-yellow-400 p-4 rounded-lg animate-fade-in">
+                <h4 className="font-medium text-yellow-800 dark:text-yellow-300 mb-2 flex items-center gap-2">
                   <Lightbulb className="h-5 w-5" />
                   Gợi ý:
                 </h4>
                 <ul className="space-y-1 list-disc list-inside">
                   {currentQuestionData.hints.map((hint, index) => (
-                    <li key={index} className="text-sm text-yellow-700">
+                    <li key={index} className="text-sm text-yellow-700 dark:text-yellow-400">
                       <SimpleMath>{hint}</SimpleMath>
                     </li>
                   ))}
@@ -571,7 +556,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
           </CardContent>
 
           {/* --- Footer with Navigation Buttons --- */}
-          <CardFooter className="flex justify-between items-center p-4 bg-gray-50 border-t rounded-b-xl">
+          <CardFooter className="flex justify-between items-center p-4 bg-gray-50 dark:bg-gray-900/50 border-t dark:border-gray-700 rounded-b-xl">
             <div className="flex gap-2">
               <Button
                 variant="outline"
@@ -585,7 +570,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
                 <Button
                   variant="outline"
                   onClick={resetQuestion}
-                  className="text-orange-600 border-orange-300 hover:bg-orange-50 transition-colors duration-200"
+                  className="text-orange-600 border-orange-300 hover:bg-orange-50 dark:text-orange-400 dark:border-orange-600 dark:hover:bg-orange-950 transition-colors duration-200"
                 >
                   <RotateCcw className="mr-2 h-4 w-4" /> Làm lại
                 </Button>
@@ -615,8 +600,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
           </CardHeader>
           <CardContent className="p-4">
             <div
-              ref={questionDotsRef} // Gắn ref vào đây
-              className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-3 max-h-48 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-rounded scrollbar-track-blue-100 dark:scrollbar-track-gray-700 scrollbar-thumb-blue-400 dark:scrollbar-thumb-blue-600" // Responsive grid, fixed height, vertical scroll
+              className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-3 max-h-48 overflow-y-auto pr-2 pt-2 scrollbar-thin scrollbar-thumb-rounded scrollbar-track-blue-100 dark:scrollbar-track-gray-700 scrollbar-thumb-blue-400 dark:scrollbar-thumb-blue-600" // Added pt-2 for top padding
             >
               {practiceData.questions.map((_, index) => {
                 const result = questionResults[index + 1];
@@ -630,7 +614,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
                     ? " bg-green-500 hover:bg-green-600"
                     : " bg-red-500 hover:bg-red-600";
                 } else {
-                  dotClass += " bg-gray-400 hover:bg-gray-500";
+                  dotClass += " bg-gray-400 hover:bg-gray-500 dark:bg-gray-600 dark:hover:bg-gray-500";
                 }
 
                 return (
@@ -638,7 +622,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
                     key={index}
                     variant="ghost" // Use ghost to remove default button styles
                     className={`${dotClass} question-dot-${index}`} // Add unique class
-                    onClick={() => goToQuestion(index)}
+                    onClick={(e) => goToQuestion(index, e)}
                   >
                     {index + 1}
                   </Button>
@@ -652,23 +636,23 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
         <AlertDialog open={showSummaryDialog} onOpenChange={setShowSummaryDialog}>
           <AlertDialogContent className="max-w-md rounded-xl p-6">
             <AlertDialogHeader className="text-center">
-              <AlertDialogTitle className="flex flex-col items-center gap-3 text-2xl font-bold text-blue-700">
+              <AlertDialogTitle className="flex flex-col items-center gap-3 text-2xl font-bold text-blue-700 dark:text-blue-400">
                 <Trophy className="h-10 w-10 text-yellow-500 animate-bounce" />
                 Hoàn thành luyện tập!
               </AlertDialogTitle>
               <AlertDialogDescription className="space-y-4 mt-4">
                 <div className="text-center">
-                  <div className="text-4xl font-extrabold text-blue-600 mb-2">
+                  <div className="text-4xl font-extrabold text-blue-600 dark:text-blue-400 mb-2">
                     {score.correct}/{score.total}
                   </div>
-                  <div className="text-lg text-gray-700 font-semibold mb-1">
+                  <div className="text-lg text-gray-700 dark:text-gray-300 font-semibold mb-1">
                     Tỷ lệ đúng: {score.total > 0 ? Math.round((score.correct / score.total) * 100) : 0}%
                   </div>
-                  <div className="text-md text-gray-600">
+                  <div className="text-md text-gray-600 dark:text-gray-400">
                     Tổng thời gian: {formatTime(totalTimeSpent)}
                   </div>
                 </div>
-                <div className="text-base text-gray-800 text-center">
+                <div className="text-base text-gray-800 dark:text-gray-200 text-center">
                   {score.correct === score.total
                     ? "🎉 Xuất sắc! Bạn đã trả lời đúng tất cả câu hỏi, kiến thức vững chắc!"
                     : score.total > 0 && score.correct / score.total >= 0.8
@@ -680,7 +664,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
             <AlertDialogFooter className="flex-col sm:flex-row sm:justify-center gap-3 mt-4">
               <AlertDialogCancel
                 onClick={() => router.push("/select-exam")}
-                className="w-full sm:w-auto bg-gray-200 hover:bg-gray-300 text-gray-800 rounded-lg transition-colors"
+                className="w-full sm:w-auto bg-gray-200 hover:bg-gray-300 text-gray-800 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-gray-200 rounded-lg transition-colors"
               >
                 <Home className="mr-2 h-4 w-4" />
                 Về trang chủ
