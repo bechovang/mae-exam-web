@@ -292,7 +292,7 @@
     },
     {
       "id": 15,
-      "question": "Solve the system of equations for \\( y \\):<br />\\( x + 4y + 2z = 1 \\)<br />\\( 2x + 3y + 3z = -1 \\)<br />\\( 4x + y + 4z = 0 \\)",
+      "question": "Solve the system of equations for \\( y \\): <br/> \\( x + 4y + 2z = 1 \\)<br /> \\( 2x + 3y + 3z = -1 \\)<br /> \\( 4x + y + 4z = 0 \\)",
       "image": null,
       "options": [
         "A. -4/5",
@@ -302,13 +302,13 @@
         "E. All of the other choices are incorrect"
       ],
       "correctAnswer": "B",
-      "explanation": "Có hai cách tiếp cận nhanh cho bài toán trắc nghiệm này.<br /><br /><b>Cách 1: Thử đáp án (Nhanh nhất cho trắc nghiệm)</b><br />- Thử trực tiếp đáp án, ví dụ \\( y = 8/5 \\), vào phương trình đơn giản nhất là phương trình (3):<br />\\( 4x + \\frac{8}{5} + 4z = 0 \\Rightarrow 4(x+z) = -\\frac{8}{5} \\Rightarrow x+z = -\\frac{2}{5} \\).<br />- Thế \\( y=8/5 \\) và \\( x+z=-2/5 \\) vào phương trình (1), ta sẽ tìm được giá trị \\(z\\) cụ thể, chứng tỏ hệ nhất quán và đây là đáp án đúng.<br /><br /><b>Cách 2: Phân tích định thức (Để khẳng định có nghiệm duy nhất)</b><br />- Tính nhanh định thức của ma trận hệ số: \\( D = \\begin{vmatrix} 1 & 4 & 2 \\\\ 2 & 3 & 3 \\\\ 4 & 1 & 4 \\end{vmatrix} = 5 \\).<br />- Vì định thức \\( D \\neq 0 \\), hệ có nghiệm duy nhất. Điều này khẳng định việc thử đáp án ở Cách 1 chắc chắn sẽ thành công.",
+      "explanation": "Để giải nhanh và chắc chắn, ta dùng Quy tắc Cramer và tối ưu hóa việc tính toán.<br /><br /><b>1. Phân tích định thức (Để khẳng định có nghiệm duy nhất)</b><br />- Đầu tiên, tính định thức của ma trận hệ số D để đảm bảo hệ có nghiệm duy nhất.<br />\\( D = \\begin{vmatrix} 1 & 4 & 2 \\\\ 2 & 3 & 3 \\\\ 4 & 1 & 4 \\end{vmatrix} = 5 \\).<br />- Vì \\( D \\neq 0 \\), hệ chắc chắn có một và chỉ một nghiệm duy nhất.<br /><br /><b>2. Tính Dy bằng cách siêu nhanh</b><br />- Bây giờ, ta tính \\( D_y \\) bằng cách thay cột y bằng vế phải:<br />\\( D_y = \\begin{vmatrix} 1 & 1 & 2 \\\\ 2 & -1 & 3 \\\\ 4 & 0 & 4 \\end{vmatrix} \\)<br />- <b>Mẹo để tính siêu nhanh</b> là khai triển theo hàng hoặc cột có số 0. Ta sẽ khai triển theo <b>hàng 3</b>:<br />\\( D_y = 4 \\cdot \\begin{vmatrix} 1 & 2 \\\\ -1 & 3 \\end{vmatrix} - 0 + 4 \\cdot \\begin{vmatrix} 1 & 1 \\\\ 2 & -1 \\end{vmatrix} \\)<br />\\( D_y = 4(5) + 4(-3) = 20 - 12 = 8 \\).<br /><br /><b>3. Kết quả cuối cùng</b><br />\\( y = \\frac{D_y}{D} = \\frac{8}{5} \\).",
       "difficulty": "medium",
       "topic": "Linear Algebra (Systems of Equations, Cramer's Rule)",
       "hints": [
-        "Cách 1 (Nhanh nhất): Đừng giải, hãy thử đáp án! Thế `y` vào và xem hệ có nhất quán không.",
-        "Cách 2 (An toàn): Tính nhanh định thức. Nếu khác 0, hệ có nghiệm duy nhất, lúc này việc thử đáp án là chắc chắn đúng.",
-        "Khi thử đáp án, bắt đầu với phương trình (3) vì nó cho mối quan hệ đơn giản nhất giữa \\(x\\) và \\(z\\)."
+        "Đầu tiên, tính định thức D để chắc chắn có nghiệm duy nhất (nếu D khác 0).",
+        "Mẹo tính định thức nhanh nhất: Luôn khai triển theo hàng hoặc cột có nhiều số 0 nhất.",
+        "Khi tính \\(D_y\\), khai triển theo hàng 3 là cách làm tối ưu."
       ]
     },
     {
@@ -323,13 +323,14 @@
         "E. \\(x = 0\\) and \\(x = 1\\)"
       ],
       "correctAnswer": "C",
-      "explanation": "Để giải bài này trong nháy mắt, ta dùng hai mẹo nhanh cho tiệm cận đứng và tiệm cận ngang.<br /><br /><b>1. Tiệm cận đứng (Nghiệm của mẫu):</b><br />Cho mẫu số bằng 0: \\( x - 1 = 0 \\Rightarrow x = 1 \\).<br /><br /><b>2. Tiệm cận ngang (So sánh bậc):</b><br />Vì bậc của tử (bậc 1) và mẫu (bậc 1) bằng nhau, tiệm cận ngang là tỉ số của hai hệ số cao nhất.<br />\\( y = \\frac{1}{1} = 1 \\).<br /><br /><b>Kết luận:</b> Các tiệm cận là \\( x=1 \\) và \\( y=1 \\).",
+      "explanation": "Ta tìm tiệm cận bằng cách kết hợp mẹo nhanh và bản chất của giới hạn.<br /><br /><b>1. Tiệm cận đứng:</b><br />- <b>Bản chất:</b> Khi \\( x \\) tiến đến 1, mẫu số \\( (x-1) \\) tiến về 0, làm cho giá trị của hàm số tiến ra vô cùng (\\( \\infty \\)).<br />- <b>Mẹo nhanh:</b> Tiệm cận đứng chính là nghiệm của mẫu số. Cho \\( x - 1 = 0 \\Rightarrow x = 1 \\).<br /><br /><b>2. Tiệm cận ngang:</b><br />- <b>Bản chất:</b> Khi \\( x \\) tiến ra vô cùng (\\( \\pm \\infty \\)), giá trị của hàm số \\( f(x) = \\frac{x}{x-1} \\) tiến đến 1.<br />- <b>Mẹo nhanh (so sánh bậc tử và mẫu):</b><br />  - Bậc tử < bậc mẫu \\( \\Rightarrow y = 0 \\) là tiệm cận ngang.<br />  - <b>Bậc tử = bậc mẫu \\( \\Rightarrow y = \\) (tỉ số hệ số cao nhất) là tiệm cận ngang. (Trường hợp này)</b><br />  - Bậc tử > bậc mẫu \\( \\Rightarrow \\) không có tiệm cận ngang.<br />Áp dụng cho bài này (bậc tử = bậc mẫu), ta có \\( y = \\frac{1}{1} = 1 \\).<br /><br /><b>3. Tiệm cận xiên:</b><br />Hàm số không có tiệm cận xiên vì bậc của tử không lớn hơn bậc của mẫu đúng một đơn vị.<br /><br /><b>Kết luận:</b> Các tiệm cận là \\( x=1 \\) và \\( y=1 \\).",
       "difficulty": "easy",
       "topic": "Calculus (Functions, Asymptotes)",
       "hints": [
         "Tiệm cận đứng: Cho mẫu số bằng 0.",
-        "Tiệm cận ngang: So sánh bậc của tử và mẫu.",
-        "Khi bậc tử = bậc mẫu, tiệm cận ngang là \\( y = \\) (hệ số tử) / (hệ số mẫu)."
+        "Tiệm cận ngang: Luôn so sánh bậc của tử và mẫu.",
+        "TCN: Bậc tử < mẫu \\(\\Rightarrow y=0\\); Bậc tử = mẫu \\(\\Rightarrow y=\\)tỉ số hệ số; Bậc tử > mẫu \\(\\Rightarrow\\) không có.",
+        "Tiệm cận xiên chỉ có khi bậc tử lớn hơn bậc mẫu đúng 1 bậc."
       ]
     },
     {
@@ -344,12 +345,13 @@
         "E. None of the other choices is correct"
       ],
       "correctAnswer": "E",
-      "explanation": "From the equality of matrices, we can set the corresponding elements equal: <br/> 1) \\( x + y = 9 \\) <br/> 2) \\( x + z = 6 \\) <br/> 3) \\( z + y = 3 \\) <br/> We want to find \\( x+y+z \\). <br/> Add the three equations: <br/> \\( (x+y) + (x+z) + (z+y) = 9 + 6 + 3 \\) <br/> \\( 2x + 2y + 2z = 18 \\) <br/> Factor out 2: <br/> \\( 2(x+y+z) = 18 \\) <br/> Divide by 2: <br/> \\( x+y+z = \\frac{18}{2} = 9 \\). <br/> Since 9 is not among the options A, B, C, or D, the correct answer is 'None of the other choices is correct'.",
+      "explanation": "Để giải siêu tốc, ta không cần giải tìm từng biến \\(x, y, z\\). Mẹo ở đây là cộng tất cả các phương trình lại với nhau.<br /><br /><b>1. Nhẩm nhanh hệ phương trình từ ma trận:</b><br />- \\( x + y = 9 \\)<br />- \\( x + z = 6 \\)<br />- \\( y + z = 3 \\)<br /><br /><b>2. Cộng ba phương trình lại với nhau:</b><br />- Vế trái: \\( (x+y) + (x+z) + (y+z) = 2x + 2y + 2z = 2(x+y+z) \\).<br />- Vế phải: \\( 9 + 6 + 3 = 18 \\).<br /><br /><b>3. Tìm kết quả:</b><br />\\( 2(x+y+z) = 18 \\Rightarrow x+y+z = 9 \\).<br /><br />Vì 9 không có trong các lựa chọn, ta chọn đáp án 'None of the other choices is correct'.",
       "difficulty": "easy",
       "topic": "Linear Algebra (Matrix Equality, Systems of Equations)",
       "hints": [
-        "Equate corresponding entries of the two matrices to form a system of linear equations.",
-        "Sum the resulting equations in a way that helps find \\(x+y+z\\)."
+        "Mẹo giải nhanh nhất: Đừng giải tìm x, y, z riêng lẻ. Hãy cộng ba phương trình lại với nhau.",
+        "Bạn sẽ thấy mỗi biến xuất hiện đúng hai lần ở vế trái.",
+        "Mục tiêu là tìm \\(2(x+y+z)\\) rồi chia cho 2."
       ]
     },
     {
