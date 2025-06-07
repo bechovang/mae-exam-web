@@ -451,12 +451,12 @@
         "D. 3"
       ],
       "correctAnswer": "C",
-      "explanation": "Để giải bài này trong nháy mắt, ta dùng công thức sau:<br /><br /><b>Số chiều không gian con = (Số chiều không gian tổng) - (Số phương trình ràng buộc độc lập)</b><br /><br /><b>1. Xác định các giá trị:</b><br />- Không gian tổng là \\(\\mathbb{R}^4\\), vậy có <b>4 chiều</b> (tương ứng với 4 ẩn a, b, c, d).<br />- Có <b>2 phương trình ràng buộc</b> độc lập tuyến tính.<br /><br /><b>2. Áp dụng công thức:</b><br />Số chiều của U = 4 - 2 = 2.<br /><br />Vậy, số chiều của U là 2.",
+      "explanation": "Để giải bài này trong nháy mắt, ta dùng công thức sau:<br /><br /><b>Số chiều không gian con = (Số chiều không gian tổng) - (Số phương trình ràng buộc độc lập)</b><br /><br />- Không gian tổng là \\(\\mathbb{R}^4\\), vậy có <b>4 chiều</b> (4 ẩn).<br />- Có <b>2 phương trình ràng buộc</b> độc lập.<br /><br />- Số chiều của U = 4 - 2 = 2.<br /><br />---<br /><b>Tại sao công thức này lại đúng? (Giải thích bản chất)</b><br /><br />Số chiều của một không gian chính là số biến 'tự do' mà bạn có thể chọn. Mỗi phương trình ràng buộc sẽ 'khóa' lại một biến, làm nó phụ thuộc vào các biến khác và không còn tự do nữa.<br /><br />1.  Ban đầu, trong \\(\\mathbb{R}^4\\), ta có 4 biến tự do (a, b, c, d).<br />2.  Phương trình thứ nhất, \\(3a - 5d = 0\\), buộc \\(a\\) phải phụ thuộc vào \\(d\\) (\\(a = \\frac{5}{3}d\\)). Ta mất đi một biến tự do, chỉ còn lại 3.<br />3.  Phương trình thứ hai, \\(b + c + d = 0\\), buộc \\(b\\) phải phụ thuộc vào \\(c\\) và \\(d\\) (\\(b = -c - d\\)). Ta mất thêm một biến tự do nữa, chỉ còn lại 2.<br /><br />Cuối cùng, ta chỉ có thể chọn tự do 2 biến (ví dụ là \\(c\\) và \\(d\\)), các biến còn lại (\\(a\\) và \\(b\\)) sẽ được tính theo. Vì có 2 biến tự do, nên số chiều của không gian con này là 2.",
       "difficulty": "easy",
       "topic": "Linear Algebra (Subspace Dimension)",
       "hints": [
-        "Mẹo giải nhanh nhất: Số chiều = (số ẩn) - (số phương trình).",
-        "Bài này có 4 ẩn (a, b, c, d) và 2 phương trình ràng buộc.",
+        "Mẹo giải nhanh nhất: Số chiều = (số ẩn) - (số phương trình ràng buộc).",
+        "Bài này có 4 ẩn (a, b, c, d) và 2 phương trình.",
         "Chỉ cần làm phép tính: 4 - 2 = 2."
       ]
     },
@@ -472,13 +472,13 @@
         "E. 10/3"
       ],
       "correctAnswer": "C",
-      "explanation": "Để giải siêu tốc, ta áp dụng công thức và tính nhẩm thật nhanh.<br /><br /><b>1. Thiết lập công thức (trong đầu):</b><br />Giá trị trung bình = \\( \\frac{1}{2-0} \\int_0^2 (x^2 - 6x + 4) dx \\).<br /><br /><b>2. Tìm nguyên hàm và thế cận trên (vì cận dưới là 0):</b><br />- Nguyên hàm là: \\( \\frac{x^3}{3} - 3x^2 + 4x \\).<br />- Vì cận dưới là 0, ta chỉ cần thế cận trên \\(x=2\\) vào:<br />\\( \\frac{2^3}{3} - 3(2^2) + 4(2) = \\frac{8}{3} - 12 + 8 = \\frac{8}{3} - 4 = -\\frac{4}{3} \\).<br /><br /><b>3. Nhân với \\(\\frac{1}{b-a}\\) và ra kết quả:</b><br />\\( \\frac{1}{2} \\cdot (-\\frac{4}{3}) = -\\frac{2}{3} \\).",
+      "explanation": "Để giải siêu tốc, ta áp dụng công thức và tính nhẩm thật nhanh.<br /><br /><b>1. Thiết lập công thức:</b><br />Giá trị trung bình = \\( \\frac{1}{2-0} \\int_0^2 (x^2 - 6x + 4) dx \\).<br /><br /><b>2. Tìm nguyên hàm và thế cận trên (vì cận dưới là 0):</b><br />- Nguyên hàm là: \\( \\frac{x^3}{3} - 3x^2 + 4x \\).<br />- Thế \\(x=2\\) vào: \\( \\frac{8}{3} - 12 + 8 = -\\frac{4}{3} \\).<br /><br /><b>3. Nhân với \\(\\frac{1}{b-a}\\) và ra kết quả:</b><br />\\( \\frac{1}{2} \\cdot (-\\frac{4}{3}) = -\\frac{2}{3} \\).<br /><br />---<br /><b>Tại sao công thức lại như vậy? (Giải thích bản chất)</b><br /><br />Hãy tưởng tượng bạn có một hình chữ nhật. Diện tích của nó bằng `Chiều cao * Chiều rộng`.<br />- Tích phân \\( \\int_a^b f(x) dx \\) cho chúng ta <b>tổng diện tích</b> dưới đồ thị của hàm số.<br />- \\( (b-a) \\) chính là <b>chiều rộng</b> của khoảng đang xét.<br />- 'Giá trị trung bình' của hàm số chính là <b>chiều cao trung bình</b> của đồ thị. Đó là chiều cao của một hình chữ nhật có cùng diện tích và cùng chiều rộng với phần diện tích dưới đồ thị.<br />- Từ đó ta có: \\( \\text{Diện tích} = \\text{Giá trị trung bình} \\times \\text{Chiều rộng} \\).<br />- Suy ra: \\( \\text{Giá trị trung bình} = \\frac{\\text{Diện tích}}{\\text{Chiều rộng}} = \\frac{1}{b-a} \\int_a^b f(x) dx \\).",
       "difficulty": "easy",
       "topic": "Calculus (Average Value of a Function)",
       "hints": [
-        "Mẹo giải nhanh nhất: Vì cận dưới là 0, bạn chỉ cần tính giá trị của nguyên hàm tại cận trên rồi nhân với \\(1/(b-a)\\).",
-        "Công thức: \\( f_{tb} = \\frac{1}{2} \\times [\\text{Giá trị nguyên hàm tại x=2}] \\).",
-        "Nhẩm nhanh: Nguyên hàm là \\(\\frac{x^3}{3} - 3x^2 + 4x\\). Thế 2 vào được \\(-4/3\\). Lấy \\(-4/3\\) nhân \\(1/2\\) là xong."
+        "Công thức: Giá trị trung bình = (1 / chiều rộng khoảng) * (Tích phân trên khoảng đó).",
+        "Hãy tưởng tượng bạn đang san phẳng diện tích dưới đồ thị thành một hình chữ nhật có cùng diện tích và chiều rộng. Giá trị trung bình chính là chiều cao của hình chữ nhật đó.",
+        "Mẹo giải nhanh nhất: Vì cận dưới là 0, bạn chỉ cần tính giá trị của nguyên hàm tại cận trên rồi nhân với \\(1/(b-a)\\)."
       ]
     },
     {
