@@ -185,16 +185,11 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
       ) as HTMLElement;
 
       if (activeDot) {
-        // Calculate scroll position to center the active dot
-        const containerWidth = questionDotsRef.current.offsetWidth;
-        const dotWidth = activeDot.offsetWidth;
-        const dotLeft = activeDot.offsetLeft;
-
-        const scrollLeft = dotLeft - (containerWidth / 2) + (dotWidth / 2);
-
-        questionDotsRef.current.scrollTo({
-          left: scrollLeft,
-          behavior: 'smooth'
+        // Cuộn ngang và dọc để chấm active nằm trong view
+        activeDot.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest', // Scrolls the element into view vertically
+          inline: 'center' // Scrolls the element into view horizontally
         });
       }
     }
@@ -611,50 +606,47 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
           </CardFooter>
         </Card>
 
-        {/* --- Progress Journey (Reimagined Question Navigation Grid) --- */}
-        <div className="relative w-full overflow-hidden mb-4 py-4">
-            {/* Line connecting the points */}
-            <div className="absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-blue-300 to-purple-300 transform -translate-y-1/2 z-0"></div>
-            {/* Scrollable container for question dots */}
+        {/* --- NEW: Question Navigation Grid --- */}
+        <Card className="mb-4 shadow-lg rounded-xl overflow-hidden bg-white dark:bg-gray-800 animate-fade-in">
+          <CardHeader className="p-4 border-b dark:border-gray-700">
+            <CardTitle className="text-lg font-bold text-gray-800 dark:text-gray-200 flex items-center gap-2">
+              <Target className="h-5 w-5 text-blue-600" /> Bản đồ câu hỏi
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-4">
             <div
-                ref={questionDotsRef} // Attach the ref here
-                className="flex z-10 relative overflow-x-auto pb-2 scrollbar-hide" // Added overflow-x-auto and pb-2
+              ref={questionDotsRef} // Gắn ref vào đây
+              className="grid grid-cols-6 sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12 gap-3 max-h-48 overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-rounded scrollbar-track-blue-100 dark:scrollbar-track-gray-700 scrollbar-thumb-blue-400 dark:scrollbar-thumb-blue-600" // Responsive grid, fixed height, vertical scroll
             >
-                {practiceData.questions.map((_, index) => {
-                    const result = questionResults[index + 1];
-                    const isActive = currentQuestion === index;
-                    let dotClass = "flex-shrink-0 relative w-10 h-10 rounded-full flex items-center justify-center text-white font-bold text-sm transition-all duration-300 ease-in-out cursor-pointer shadow-md mx-1"; // Added mx-1 for spacing and flex-shrink-0
+              {practiceData.questions.map((_, index) => {
+                const result = questionResults[index + 1];
+                const isActive = currentQuestion === index;
+                let dotClass = "relative w-8 h-8 md:w-9 md:h-9 rounded-full flex items-center justify-center text-white font-bold text-sm transition-all duration-300 ease-in-out cursor-pointer shadow-md";
 
-                    if (isActive) {
-                        dotClass += " bg-blue-600 ring-4 ring-blue-300 scale-125 z-20";
-                    } else if (result?.answered) {
-                        dotClass += result.correct
-                            ? " bg-green-500 hover:bg-green-600"
-                            : " bg-red-500 hover:bg-red-600";
-                    } else {
-                        dotClass += " bg-gray-400 hover:bg-gray-500";
-                    }
+                if (isActive) {
+                  dotClass += " bg-blue-600 ring-4 ring-blue-300 scale-110 z-20"; // Scale slightly less for grid
+                } else if (result?.answered) {
+                  dotClass += result.correct
+                    ? " bg-green-500 hover:bg-green-600"
+                    : " bg-red-500 hover:bg-red-600";
+                } else {
+                  dotClass += " bg-gray-400 hover:bg-gray-500";
+                }
 
-                    return (
-                        <div key={index} className="flex flex-col items-center gap-2">
-                            <Button
-                                variant="ghost"
-                                className={`${dotClass} question-dot-${index}`} // Add unique class here
-                                onClick={() => goToQuestion(index)}
-                            >
-                                {index + 1}
-                            </Button>
-                            {isActive && (
-                                <span className="text-blue-700 text-xs font-semibold whitespace-nowrap mt-1 animate-fade-in">
-                                    Đang làm
-                                </span>
-                            )}
-                        </div>
-                    );
-                })}
+                return (
+                  <Button
+                    key={index}
+                    variant="ghost" // Use ghost to remove default button styles
+                    className={`${dotClass} question-dot-${index}`} // Add unique class
+                    onClick={() => goToQuestion(index)}
+                  >
+                    {index + 1}
+                  </Button>
+                );
+              })}
             </div>
-        </div>
-
+          </CardContent>
+        </Card>
 
         {/* --- Summary Dialog (after practice completion) --- */}
         <AlertDialog open={showSummaryDialog} onOpenChange={setShowSummaryDialog}>
