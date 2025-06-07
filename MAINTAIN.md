@@ -1,231 +1,95 @@
-# Hướng dẫn bảo trì và phát triển
+# Hướng dẫn Bảo trì và Phát triển Ứng dụng
 
-## Quy trình phát triển
+Tài liệu này cung cấp các hướng dẫn cần thiết để bảo trì, cập nhật và mở rộng ứng dụng MathPractice.
 
-### 1. Cài đặt môi trường phát triển
+## 1. Cấu trúc Dự án
 
-```bash
-# Cài đặt dependencies
-npm install
-
-# Cài đặt các công cụ phát triển
-npm install -D typescript @types/node @types/react
-```
-
-### 2. Cấu trúc dự án
+Dưới đây là mô tả về các thư mục và tệp quan trọng trong dự án:
 
 ```
-mae-exam-web/
-├── app/                    # App Router của Next.js
-│   ├── exam/              # Trang thi
-│   │   ├── [id]/         # Dynamic route cho từng đề
-│   │   │   ├── page.tsx  # Server component
-│   │   │   └── ExamClient.tsx # Client component
-│   ├── results/          # Trang kết quả
-│   └── select-exam/      # Trang chọn đề
-├── components/           # Shared components
-│   └── ui/              # UI components từ shadcn/ui
-├── public/              # Static files
-│   └── images/         # Hình ảnh đề thi
-└── types/              # TypeScript definitions
+/
+├── app/                  # Chứa các trang chính của ứng dụng (Next.js App Router)
+│   ├── page.tsx          # Trang chủ (đăng nhập/chọn tên)
+│   ├── select-exam/      # Trang chọn bộ đề luyện tập
+│   ├── practice/         # Trang làm bài luyện tập
+│   ├── results/          # Trang hiển thị kết quả
+│   └── layout.tsx        # Layout chung của toàn bộ ứng dụng
+├── components/           # Các component React tái sử dụng
+│   └── ui/               # Các component từ shadcn/ui (Button, Card, etc.)
+├── public/               # Chứa các tài sản tĩnh
+│   └── data/             # Nơi lưu trữ các tệp JSON của bộ đề (ví dụ: de1.json)
+├── styles/               # (Nếu có) Chứa các tệp CSS global
+├── lib/                  # (Nếu có) Chứa các hàm tiện ích
+└── README.md             # Tài liệu giới thiệu dự án
 ```
 
-### 3. Quy ước đặt tên
+## 2. Quản lý Dữ liệu Đề thi
 
-- **Files**: PascalCase cho components, camelCase cho utilities
-- **Components**: PascalCase (ví dụ: `ExamClient.tsx`)
-- **Functions**: camelCase (ví dụ: `handleSubmit`)
-- **Variables**: camelCase (ví dụ: `userAnswers`)
-- **Types/Interfaces**: PascalCase với prefix I cho interfaces (ví dụ: `IExamData`)
+### Định dạng File JSON
 
-### 4. State Management
+Mỗi bộ đề luyện tập là một tệp `.json` được lưu trong thư mục `public/data/`. Tên tệp phải theo định dạng `de<ID>.json`, ví dụ: `de1.json`, `de2.json`.
 
-#### Local State
-```typescript
-const [state, setState] = useState<StateType>(initialValue)
-```
+Cấu trúc của một tệp JSON phải tuân thủ định dạng sau:
 
-#### Persistent State (LocalStorage)
-```typescript
-// Lưu state
-localStorage.setItem(key, JSON.stringify(value))
-
-// Đọc state
-const value = JSON.parse(localStorage.getItem(key) || 'defaultValue')
-```
-
-### 5. Xử lý ảnh
-
-#### Cấu trúc thư mục ảnh
-```
-public/
-└── images/
-    └── de{id}/          # Thư mục cho từng đề
-        ├── 1.jpg       # Câu 1
-        ├── 2.jpg       # Câu 2
-        └── ...
-```
-
-#### Quy ước đặt tên ảnh
-- Format: `{số_câu}.jpg`
-- Kích thước: Tối ưu cho web (max 1200px width)
-- Format: JPG cho ảnh, PNG cho ảnh có text
-
-### 6. Testing
-
-#### Unit Tests
-```bash
-# Chạy tests
-npm test
-
-# Chạy tests với coverage
-npm test -- --coverage
-```
-
-#### E2E Tests
-```bash
-# Chạy Cypress
-npm run cypress:open
-```
-
-### 7. Performance Optimization
-
-#### Image Optimization
-- Sử dụng Next.js Image component
-- Lazy loading cho ảnh
-- Tối ưu kích thước ảnh
-
-#### Code Splitting
-- Sử dụng dynamic imports
-- Tách components lớn thành nhỏ hơn
-- Lazy load các components không cần thiết ngay
-
-### 8. Security
-
-#### Data Storage
-- Không lưu thông tin nhạy cảm trong localStorage
-- Mã hóa dữ liệu quan trọng
-- Xóa dữ liệu khi không cần thiết
-
-#### Input Validation
-- Validate tất cả input từ người dùng
-- Sanitize data trước khi lưu
-- Xử lý lỗi gracefully
-
-### 9. Error Handling
-
-#### Global Error Boundary
-```typescript
-// app/error.tsx
-'use client'
-
-export default function Error({
-  error,
-  reset,
-}: {
-  error: Error
-  reset: () => void
-}) {
-  return (
-    <div>
-      <h2>Something went wrong!</h2>
-      <button onClick={() => reset()}>Try again</button>
-    </div>
-  )
+```json
+{
+  "examId": "de1", // ID định danh, khớp với tên file
+  "title": "Đề 1", // Tên của bộ đề
+  "description": "AI hints and explanations", // Mô tả ngắn gọn
+  "questions": [
+    {
+      "id": 1, // ID của câu hỏi (số nguyên)
+      "question": "Nội dung câu hỏi. Hỗ trợ MathJax, ví dụ: \\( x^2 + y^2 = z^2 \\)",
+      "image": null, // Đường dẫn đến hình ảnh nếu có, ví dụ: "/images/de1/cau1.png"
+      "options": [
+        "A. Lựa chọn 1",
+        "B. Lựa chọn 2",
+        "C. Lựa chọn 3"
+      ],
+      "correctAnswer": "A", // Đáp án đúng
+      "explanation": "Giải thích chi tiết cho câu trả lời. Hỗ trợ HTML và MathJax.",
+      "difficulty": "medium", // Độ khó (easy, medium, hard)
+      "topic": "Linear Algebra", // Chủ đề của câu hỏi
+      "hints": [
+        "Gợi ý 1",
+        "Gợi ý 2"
+      ]
+    }
+    // ... các câu hỏi khác
+  ]
 }
 ```
 
-#### API Error Handling
-```typescript
-try {
-  // API call
-} catch (error) {
-  console.error('API Error:', error)
-  // Handle error appropriately
-}
-```
+**Lưu ý quan trọng:**
 
-### 10. Deployment
+- **MathJax**: Để hiển thị công thức toán, sử dụng `\\(` và `\\)` cho inline math, và `\\[` và `\\]` cho display math.
+- **HTML**: Bạn có thể sử dụng các thẻ HTML cơ bản (như `<b>`, `<i>`, `<br>`, `<ul>`, `<li>`) trong trường `explanation` để định dạng nội dung.
 
-#### Production Build
-```bash
-# Build ứng dụng
-npm run build
+### Thêm một Bộ đề mới
 
-# Kiểm tra build
-npm run start
-```
+1.  **Chuẩn bị file JSON**: Tạo một tệp `.json` mới với cấu trúc như đã mô tả ở trên.
+2.  **Đặt tên file**: Đặt tên tệp theo quy tắc `de<ID>.json`. Ví dụ, để thêm đề số 11, bạn tạo tệp `de11.json`.
+3.  **Thêm vào thư mục `public/data/`**: Sao chép tệp vừa tạo vào thư mục `public/data/`.
+4.  **Cập nhật hằng số (nếu cần)**: Trong file `app/select-exam/page.tsx`, có một hằng số `MAX_EXAMS_TO_CHECK`. Nếu bạn thêm một đề có ID lớn hơn giá trị hiện tại của hằng số này, hãy tăng giá trị đó lên để ứng dụng có thể phát hiện ra đề mới.
 
-#### Environment Variables
-- Tạo file `.env.production` cho production
-- Không commit file `.env` vào git
-- Sử dụng `.env.example` làm template
+    ```typescript
+    // app/select-exam/page.tsx
+    const MAX_EXAMS_TO_CHECK = 10; // Tăng giá trị này nếu ID đề mới > 10
+    ```
 
-### 11. Monitoring
+Ứng dụng sẽ tự động phát hiện và hiển thị bộ đề mới trên trang chọn đề.
 
-#### Error Tracking
-- Sử dụng error boundaries
-- Log errors với stack trace
-- Gửi error reports đến monitoring service
+## 3. Tùy chỉnh Giao diện (Styling)
 
-#### Performance Monitoring
-- Track page load times
-- Monitor API response times
-- Track user interactions
+- **Tailwind CSS**: Dự án sử dụng Tailwind CSS để styling. Bạn có thể chỉnh sửa các class utility trực tiếp trong các file component.
+- **Dark Mode**: Chế độ tối/sáng được quản lý bởi `ThemeProvider` trong `app/layout.tsx` và `ThemeToggle` component. Để tùy chỉnh màu sắc cho dark mode, sử dụng tiền tố `dark:`, ví dụ: `bg-white dark:bg-black`.
+- **Global Styles**: Các style toàn cục có thể được định nghĩa trong `app/globals.css`.
 
-### 12. Maintenance Tasks
+## 4. Quản lý Dependencies
 
-#### Regular Tasks
-- Cập nhật dependencies
-- Kiểm tra và xóa unused code
-- Tối ưu performance
-- Backup dữ liệu
+- Dự án sử dụng `npm` để quản lý các gói thư viện.
+- Để thêm một thư viện mới, chạy: `npm install <ten-thu-vien>`.
+- Để xóa một thư viện, chạy: `npm uninstall <ten-thu-vien>`.
+- Sau khi thay đổi dependencies, hãy đảm bảo bạn commit cả file `package.json` và `package-lock.json`.
 
-#### Code Review Checklist
-- TypeScript types đầy đủ
-- Error handling
-- Performance optimization
-- Security considerations
-- Accessibility
-- Responsive design
-- Test coverage
-
-### 13. Troubleshooting
-
-#### Common Issues
-
-1. **Images not loading**
-   - Kiểm tra đường dẫn
-   - Kiểm tra quyền truy cập
-   - Kiểm tra format ảnh
-
-2. **State not persisting**
-   - Kiểm tra localStorage quota
-   - Kiểm tra JSON serialization
-   - Kiểm tra error handling
-
-3. **Performance issues**
-   - Kiểm tra bundle size
-   - Kiểm tra image optimization
-   - Kiểm tra code splitting
-
-### 14. Resources
-
-#### Documentation
-- [Next.js Documentation](https://nextjs.org/docs)
-- [TypeScript Documentation](https://www.typescriptlang.org/docs)
-- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
-- [shadcn/ui Documentation](https://ui.shadcn.com)
-
-#### Tools
-- VS Code Extensions
-  - ESLint
-  - Prettier
-  - Tailwind CSS IntelliSense
-  - TypeScript and JavaScript Language Features
-
-#### Development Tools
-- Chrome DevTools
-- React Developer Tools
-- Redux DevTools (nếu sử dụng)
-- Network tab for API debugging 
+Cảm ơn bạn đã đóng góp vào việc bảo trì và phát triển dự án! 

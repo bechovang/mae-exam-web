@@ -1,120 +1,50 @@
-# MAE Exam Web Application
+# MathPractice - Nền tảng Luyện tập Toán học
 
-Ứng dụng web thi trắc nghiệm trực tuyến được xây dựng với Next.js 14, TypeScript và Tailwind CSS.
+Chào mừng bạn đến với MathPractice, một ứng dụng web tương tác được thiết kế để giúp người dùng luyện tập và nâng cao kỹ năng toán học thông qua các bộ đề trắc nghiệm. Ứng dụng cung cấp phản hồi tức thì và giải thích chi tiết cho từng câu hỏi, tạo ra một môi trường học tập hiệu quả và không áp lực.
 
-## Tính năng chính
+## ✨ Tính năng chính
 
-- 🎯 Thi trắc nghiệm trực tuyến
-- ⏱️ Đếm ngược thời gian làm bài
-- 📝 Lưu trữ kết quả và đáp án
-- 🔍 Xem lại bài làm và đáp án
-- 📊 Thống kê kết quả
-- 📱 Responsive trên mọi thiết bị
-- 🔄 Tự động lưu tiến độ làm bài
-- 📥 Tải kết quả dưới dạng file text
+- **Luyện tập tương tác**: Chọn từ nhiều bộ đề khác nhau để bắt đầu.
+- **Phản hồi tức thì**: Nhận ngay kết quả và xem giải thích chi tiết sau mỗi câu trả lời.
+- **Không áp lực thời gian**: Tập trung vào việc học mà không cần lo lắng về đồng hồ đếm ngược.
+- **Giao diện hiện đại**: Trải nghiệm người dùng mượt mà với giao diện sáng/tối (Light/Dark mode).
+- **Hỗ trợ Công thức Toán học**: Hiển thị đẹp mắt các công thức phức tạp nhờ tích hợp MathJax.
+- **Cá nhân hóa**: Nhập tên của bạn để theo dõi quá trình luyện tập.
 
-## Yêu cầu hệ thống
+## 🚀 Công nghệ sử dụng
 
-- Node.js 18.0.0 trở lên
-- npm hoặc yarn
-- Trình duyệt web hiện đại (Chrome, Firefox, Safari, Edge)
+- **Framework**: [Next.js](https://nextjs.org/) 14
+- **Ngôn ngữ**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
+- **State Management**: React Hooks (useState, useEffect)
+- **Rendering Toán học**: [MathJax](https://www.mathjax.org/)
 
-## Cài đặt
+## 🛠️ Hướng dẫn Cài đặt và Chạy
 
-1. Clone repository:
-```bash
-git clone https://github.com/your-username/mae-exam-web.git
-cd mae-exam-web
-```
+1.  **Clone repository** về máy của bạn:
+    ```bash
+    git clone <URL_CUA_REPOSITORY>
+    cd <TEN_THU_MUC>
+    ```
 
-2. Cài đặt dependencies:
-```bash
-npm install
-# hoặc
-yarn install
-```
+2.  **Cài đặt các dependencies** cần thiết:
+    ```bash
+    npm install
+    ```
 
-3. Tạo file môi trường:
-```bash
-cp .env.example .env.local
-```
+3.  **Chạy ứng dụng** ở chế độ development:
+    ```bash
+    npm run dev
+    ```
 
-4. Chạy ứng dụng ở môi trường development:
-```bash
-npm run dev
-# hoặc
-yarn dev
-```
+4.  Mở trình duyệt và truy cập vào `http://localhost:3000` để bắt đầu trải nghiệm.
 
-5. Mở trình duyệt và truy cập `http://localhost:3000`
+## 👨‍💻 Đội ngũ phát triển
 
-## Cấu trúc thư mục
+Dự án được phát triển bởi:
 
-```
-mae-exam-web/
-├── app/                    # Thư mục chính của ứng dụng
-│   ├── exam/              # Trang thi
-│   ├── results/           # Trang kết quả
-│   └── select-exam/       # Trang chọn đề
-├── components/            # Components tái sử dụng
-│   └── ui/               # UI components
-├── public/               # Static files
-│   └── images/          # Hình ảnh đề thi
-├── styles/              # Global styles
-└── types/               # TypeScript type definitions
-```
+- **Nguyễn Ngọc Phúc**
+- **Mai Thế Duy**
 
-## Công nghệ sử dụng
-
-- **Framework**: Next.js 14
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **UI Components**: shadcn/ui
-- **State Management**: React Hooks
-- **Storage**: LocalStorage
-- **Image Handling**: react-zoom-pan-pinch
-
-## Cách sử dụng
-
-### 1. Chọn đề thi
-- Truy cập trang chủ
-- Nhập tên thí sinh
-- Chọn đề thi từ danh sách
-
-### 2. Làm bài thi
-- Đọc câu hỏi và chọn đáp án
-- Sử dụng nút điều hướng để chuyển câu
-- Có thể xem lại các câu đã làm
-- Thời gian làm bài được hiển thị ở góc phải
-
-### 3. Xem kết quả
-- Sau khi nộp bài hoặc hết thời gian
-- Xem tổng điểm và số câu đúng
-- Xem chi tiết từng câu
-- Tải kết quả về máy
-
-## Tính năng đặc biệt
-
-### Zoom và Pan ảnh
-- Click nút Zoom In/Out để phóng to/thu nhỏ
-- Kéo ảnh để di chuyển
-- Sử dụng chuột giữa hoặc trackpad để zoom
-- Double click để reset về kích thước ban đầu
-
-### Lưu trữ tự động
-- Tự động lưu đáp án khi chọn
-- Lưu thời gian còn lại
-- Khôi phục tiến độ khi tải lại trang
-
-### Responsive Design
-- Tương thích với mọi kích thước màn hình
-- Tối ưu hiển thị trên mobile
-- UI thân thiện với người dùng
-
-## Contributing
-
-Xem [CONTRIBUTING.md](CONTRIBUTING.md) để biết thêm chi tiết về cách đóng góp vào dự án.
-
-## License
-
-MIT License - Xem [LICENSE](LICENSE) để biết thêm chi tiết.
+Cảm ơn bạn đã sử dụng MathPractice!
