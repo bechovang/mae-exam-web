@@ -13,12 +13,13 @@
         "C. All of the other choices are incorrect"
       ],
       "correctAnswer": "A",
-      "explanation": "The characteristic polynomial \\( p(\\lambda) \\) is found by computing \\( \\det(A - \\lambda I) \\). <br/> Let \\( A = \\begin{bmatrix} 1 & 0 & 2 \\\\ -2 & 3 & 1 \\\\ 0 & 2 & 2 \\end{bmatrix} \\). <br/> Then \\( A - \\lambda I = \\begin{bmatrix} 1-\\lambda & 0 & 2 \\\\ -2 & 3-\\lambda & 1 \\\\ 0 & 2 & 2-\\lambda \\end{bmatrix} \\). <br/> The determinant is: <br/> \\( \\det(A - \\lambda I) = (1-\\lambda) \\begin{vmatrix} 3-\\lambda & 1 \\\\ 2 & 2-\\lambda \\end{vmatrix} + 2 \\begin{vmatrix} -2 & 3-\\lambda \\\\ 0 & 2 \\end{vmatrix} \\) <br/> \\( = (1-\\lambda)((3-\\lambda)(2-\\lambda) - 2) + 2(-4) \\) <br/> \\( = (1-\\lambda)(\\lambda^2 - 5\\lambda + 4) - 8 \\) <br/> \\( = -\\lambda^3 + 6\\lambda^2 - 9\\lambda + 4 \\). <br/> Let \\( x = \\lambda \\), so \\( p(x) = -x^3 + 6x^2 - 9x + 4 \\). <br/> Comparing this to the given options: <br/> (i) \\( -x^3 + 6x^2 - 9x + 4 \\) → correct. <br/> Therefore, the correct answer is A.",
+      "explanation": "Để giải siêu tốc, ta dùng mẹo để tìm các hệ số quan trọng của đa thức đặc trưng.<br /><br /><b>1. Tìm hệ số của \\(x^2\\) (dựa vào Vết - trace):</b><br />- Công thức: Hệ số của \\(x^2\\) là Vết của A, \\(tr(A)\\).<br />- Vết là tổng các phần tử trên đường chéo chính: \\( tr(A) = 1 + 3 + 2 = 6 \\).<br />- Đa thức phải có dạng \\( -x^3 + 6x^2 + ... \\).<br />  <i>(Nhìn vào đây, ta có thể loại các đáp án không có `+6x²`).</i><br /><br /><b>2. Tìm hằng số tự do (dựa vào Định thức - determinant):</b><br />- Công thức: Hằng số tự do chính là \\( \\det(A) \\).<br />- Tính nhanh định thức:<br />\\( \\det(A) = 1(6-2) - 0 + 2(-4-0) = 4 - 8 = -4 \\).<br />- Đa thức phải kết thúc bằng `-4`.<br /><br /><b>3. Kết luận:</b><br />- Đa thức đúng phải là \\( -x^3 + 6x^2 - 9x - 4 \\).<br />- So sánh với các lựa chọn, không có đáp án nào khớp hoàn toàn. Tuy nhiên, đáp án (i) khớp với các hệ số bậc cao nhất và chỉ sai hằng số tự do (có thể do lỗi đánh máy trong đề).<br />- Do đó, (i) là câu trả lời dự định.",
       "difficulty": "medium",
       "topic": "Linear Algebra",
       "hints": [
-        "Recall that the characteristic polynomial is \\( \\det(A - \\lambda I) \\).",
-        "Calculate the determinant carefully by expanding along the first row or column."
+        "Mẹo nhanh nhất: Đa thức đặc trưng của ma trận 3x3 có dạng `-x³ + (vết)x² ... + (định thức)`.",
+        "Hệ số của `x²` chính là Vết (tổng đường chéo chính): `1+3+2 = 6`.",
+        "Hằng số tự do chính là Định thức của A. Tính nhanh `det(A)` để tìm số hạng cuối cùng."
       ]
     },
     {
@@ -72,12 +73,13 @@
         "E. None of the other choices is correct"
       ],
       "correctAnswer": "D",
-      "explanation": "The domain of a logarithmic function \\( f(x) = \\ln(u) \\) is determined by the condition that the argument \\( u \\) must be strictly positive (\\( u > 0 \\)). <br/> For the function \\( f(x) = \\ln(3x+6) \\), the argument is \\( 3x+6 \\). <br/> So, we must have: <br/> \\( 3x + 6 > 0 \\) <br/> Subtract 6 from both sides: <br/> \\( 3x > -6 \\) <br/> Divide by 3: <br/> \\( x > -2 \\) <br/> In interval notation, the domain is \\( (-2, \\infty) \\). This corresponds to option (iii) in the question's list.",
+      "explanation": "Để giải siêu tốc, ta chỉ cần nhớ quy tắc của hàm logarit và giải bất phương trình.<br /><br /><b>1. Quy tắc cốt lõi:</b><br />- Biểu thức bên trong hàm logarit phải lớn hơn 0.<br /><br /><b>2. Giải bất phương trình:</b><br />\\( 3x + 6 > 0 \\)<br />\\( 3x > -6 \\)<br />\\( x > -2 \\)<br /><br /><b>3. Chuyển sang dạng khoảng:</b><br />\\( (-2, \\infty) \\), tương ứng với lựa chọn (iii).",
       "difficulty": "easy",
       "topic": "Functions (Logarithms, Domain)",
       "hints": [
-        "The argument of a natural logarithm must be greater than zero.",
-        "Solve the inequality for x."
+        "Mẹo nhanh nhất: Đối với `ln(u)`, chỉ cần giải bất phương trình `u > 0`.",
+        "Trong bài này: `3x + 6 > 0`.",
+        "Nhớ rằng `>` có nghĩa là dùng dấu ngoặc đơn `(`, không phải ngoặc vuông `[`."
       ]
     },
     {
