@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react"
 import { useRouter } from "next/navigation"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { FileText, BookOpen, Clock, Target, AlertTriangle, Info, Loader2 } from "lucide-react"
@@ -107,12 +108,12 @@ export default function SelectPracticePage() {
   // const getDifficultyColor = (difficulty: string) => { ... }
 
   return (
-    <div className="flex min-h-screen flex-col bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+    <div className="flex min-h-screen flex-col bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-950 p-4">
       <div className="mx-auto w-full max-w-6xl">
-        <Card className="mb-6 shadow-lg">
+        <Card className="mb-6 shadow-lg bg-white dark:bg-gray-800/30">
           <CardHeader className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white relative">
             <CardTitle className="text-center text-2xl flex items-center justify-center gap-2">
-              <BookOpen className="h-6 w-6" />
+              <Image src="/bechovang.webp" alt="Logo" width={32} height={32} className="rounded-full" />
               Nền tảng luyện tập toán học
             </CardTitle>
             <div className="absolute top-1/2 right-4 -translate-y-1/2">
@@ -121,13 +122,13 @@ export default function SelectPracticePage() {
           </CardHeader>
           <CardContent className="pt-6">
             <div className="text-center">
-              <h2 className="text-xl font-semibold text-gray-800 mb-2">
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-2">
                 Xin chào, {studentName}! 👋
               </h2>
-              <p className="text-gray-600 mb-4">
+              <p className="text-gray-600 dark:text-gray-400 mb-4">
                 Chọn một bộ đề luyện tập để bắt đầu hành trình học toán của bạn
               </p>
-              <div className="flex justify-center items-center gap-6 text-sm text-gray-500">
+              <div className="flex justify-center items-center gap-6 text-sm text-gray-500 dark:text-gray-400">
                 <div className="flex items-center gap-1">
                   <Target className="h-4 w-4" />
                   <span>Feedback tức thì</span>
@@ -151,8 +152,8 @@ export default function SelectPracticePage() {
               key={practice.id}
               className={`transition-all duration-300 border-2 flex flex-col ${
                 practice.isAvailable && !practice.isLoading
-                  ? 'hover:shadow-xl hover:scale-105 hover:bg-blue-50 hover:border-blue-200 cursor-pointer'
-                  : 'opacity-70 bg-gray-100 cursor-not-allowed'
+                  ? 'bg-white dark:bg-gray-800/50 hover:shadow-xl hover:scale-105 hover:bg-blue-50 dark:hover:bg-gray-800 hover:border-blue-200 dark:hover:border-blue-600 cursor-pointer'
+                  : 'opacity-70 bg-gray-100 dark:bg-gray-800/50 cursor-not-allowed'
               }`}
               onClick={() => practice.isAvailable && !practice.isLoading && handleSelectPractice(practice)}
             >
@@ -172,15 +173,15 @@ export default function SelectPracticePage() {
                   </div>
                 ) : (
                   <>
-                    <h3 className="text-xl font-semibold text-gray-800 mb-1">
+                    <h3 className="text-xl font-semibold text-gray-800 dark:text-gray-100 mb-1">
                       {practice.titleToDisplay}
                     </h3>
                     {practice.isAvailable && (
-                      <p className="text-xs text-gray-500 mb-2 flex items-center">
+                      <p className="text-xs text-gray-500 dark:text-gray-400 mb-2 flex items-center">
                         <Info size={12} className="mr-1 text-gray-400"/> ID: {practice.examIdToDisplay}
                       </p>
                     )}
-                    <p className={`text-gray-600 mb-3 flex-grow text-sm ${!practice.isAvailable ? 'italic' : ''}`}>
+                    <p className={`text-gray-600 dark:text-gray-400 mb-3 flex-grow text-sm ${!practice.isAvailable ? 'italic' : ''}`}>
                       {practice.descriptionToDisplay}
                     </p>
                   </>
@@ -190,7 +191,7 @@ export default function SelectPracticePage() {
                   className={`mt-auto w-full ${
                   practice.isAvailable && !practice.isLoading
                     ? 'bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700'
-                    : 'bg-gray-300 cursor-not-allowed'
+                    : 'bg-gray-300 dark:bg-gray-700 cursor-not-allowed'
                   }`}
                   disabled={!practice.isAvailable || practice.isLoading}
                 >
@@ -208,7 +209,7 @@ export default function SelectPracticePage() {
         </div>
 
         <div className="mt-8 text-center">
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-500 dark:text-gray-400">
             💡 Mẹo: Hãy thực hành thường xuyên để cải thiện kỹ năng toán học của bạn!
           </p>
         </div>

@@ -9,7 +9,10 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "MathPractice - Nền tảng luyện tập toán học",
   description: "Nền tảng luyện tập toán học tương tác với feedback tức thì và giải thích chi tiết",
-  generator: 'v0.dev'
+  generator: 'v0.dev',
+  icons: {
+    icon: '/bechovang.webp',
+  }
 }
 
 export default function RootLayout({

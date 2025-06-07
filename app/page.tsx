@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { useRouter } from "next/navigation"
+import Image from "next/image"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
@@ -64,47 +65,51 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 p-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 dark:from-gray-900 dark:via-gray-950 dark:to-black p-4">
       <div className="w-full max-w-md">
         {/* Header Section */}
         <div className="text-center mb-8 relative">
           <div className="absolute top-0 right-0">
             <ThemeToggle />
           </div>
-          <div className="mx-auto w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center mb-4 shadow-lg">
-            <BookOpen className="w-8 h-8 text-white" />
-          </div>
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">MathPractice</h1>
-          <p className="text-gray-600">Nền tảng luyện tập toán học thông minh</p>
+          <Image
+            src="/bechovang.webp"
+            alt="Bechovang Logo"
+            width={64}
+            height={64}
+            className="mx-auto mb-4 rounded-full"
+          />
+          <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-2">MathPractice</h1>
+          <p className="text-gray-600 dark:text-gray-400">Nền tảng luyện tập toán học thông minh</p>
         </div>
 
         {/* Features Section */}
         <div className="grid grid-cols-3 gap-4 mb-8">
           <div className="text-center">
-            <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-2">
-              <Target className="w-6 h-6 text-green-600" />
+            <div className="w-12 h-12 bg-green-100 dark:bg-green-900/50 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Target className="w-6 h-6 text-green-600 dark:text-green-400" />
             </div>
-            <p className="text-xs text-gray-600">Feedback tức thì</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400">Feedback tức thì</p>
           </div>
           <div className="text-center">
-            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-2">
-              <Clock className="w-6 h-6 text-blue-600" />
+            <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Clock className="w-6 h-6 text-blue-600 dark:text-blue-400" />
             </div>
-            <p className="text-xs text-gray-600">Không áp lực thời gian</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400">Không áp lực thời gian</p>
           </div>
           <div className="text-center">
-            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-2">
-              <Trophy className="w-6 h-6 text-purple-600" />
+            <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/50 rounded-full flex items-center justify-center mx-auto mb-2">
+              <Trophy className="w-6 h-6 text-purple-600 dark:text-purple-400" />
             </div>
-            <p className="text-xs text-gray-600">Theo dõi tiến độ</p>
+            <p className="text-xs text-gray-600 dark:text-gray-400">Theo dõi tiến độ</p>
           </div>
         </div>
 
         {/* Login Card */}
-        <Card className="shadow-xl border-0 bg-white/80 backdrop-blur">
+        <Card className="shadow-xl border-0 bg-white/80 dark:bg-gray-900/80 backdrop-blur">
         <CardHeader className="text-center">
-            <CardTitle className="text-xl font-bold text-gray-800">Bắt đầu luyện tập</CardTitle>
-            <p className="text-sm text-gray-500 mt-1">Nhập tên để bắt đầu hành trình học tập</p>
+            <CardTitle className="text-xl font-bold text-gray-800 dark:text-gray-100">Bắt đầu luyện tập</CardTitle>
+            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">Nhập tên để bắt đầu hành trình học tập</p>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="space-y-2">
@@ -145,9 +150,9 @@ export default function LoginPage() {
           </div>
 
           <div className="flex items-center">
-            <div className="flex-grow border-t border-gray-300"></div>
-              <span className="mx-4 text-sm text-gray-500 bg-white px-2">HOẶC</span>
-            <div className="flex-grow border-t border-gray-300"></div>
+            <div className="flex-grow border-t border-gray-300 dark:border-gray-700"></div>
+              <span className="mx-4 text-sm text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-900/80 px-2">HOẶC</span>
+            <div className="flex-grow border-t border-gray-300 dark:border-gray-700"></div>
           </div>
 
           <div className="space-y-2">
@@ -172,12 +177,12 @@ export default function LoginPage() {
       </Card>
 
         {/* Footer */}
-        <div className="text-center mt-8 text-sm text-gray-500">
+        <div className="text-center mt-8 text-sm text-gray-500 dark:text-gray-400">
           <p>💡 Học toán hiệu quả với phương pháp luyện tập tương tác</p>
           
           {/* Math Test */}
-          <div className="mt-4 p-4 bg-blue-50 rounded-lg">
-            <p className="text-xs text-gray-600 mb-2">Test MathJax:</p>
+          <div className="mt-4 p-4 bg-blue-50 dark:bg-gray-800/50 rounded-lg">
+            <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">Test MathJax:</p>
             <div className="text-base">
               <span>Inline: </span>
               <span>\( x^2 + y^2 = z^2 \)</span>
