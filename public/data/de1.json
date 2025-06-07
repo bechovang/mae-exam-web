@@ -700,14 +700,13 @@
         "E. \\( 1.127 \\text{ cm/s} \\)"
       ],
       "correctAnswer": "E",
-      "explanation": "Let \\( V \\) be the volume of the sphere, \\( r \\) be its radius, and \\( D \\) be its diameter. <br/> We are given \\( \\frac{dV}{dt} = -9 \\text{ cm}^3/\\text{s} \\). We want to find \\( \\left| \\frac{dD}{dt} \\right| \\) when \\( V = 6 \\text{ cm}^3 \\). <br/> The volume of a sphere is \\( V = \\frac{4}{3}\\pi r^3 \\). Since \\( D = 2r \\), then \\( r = D/2 \\). <br/> Substitute \\( r = D/2 \\) into the volume formula: <br/> \\( V = \\frac{4}{3}\\pi \\left(\\frac{D}{2}\\right)^3 = \\frac{4}{3}\\pi \\frac{D^3}{8} = \\frac{\\pi D^3}{6} \\). <br/> Differentiate both sides with respect to time \\( t \\): <br/> \\( \\frac{dV}{dt} = \\frac{d}{dt} \\left( \\frac{\\pi D^3}{6} \\right) = \\frac{\\pi}{6} \\cdot 3D^2 \\frac{dD}{dt} = \\frac{\\pi D^2}{2} \\frac{dD}{dt} \\). <br/> When \\( V = 6 \\text{ cm}^3 \\): <br/> \\( 6 = \\frac{\\pi D^3}{6} \\implies D^3 = \\frac{36}{\\pi} \\implies D = \\left( \\frac{36}{\\pi} \\right)^{1/3} \\). <br/> So, \\( D^2 = \\left( \\frac{36}{\\pi} \\right)^{2/3} \\). <br/> Substitute the known values into the differentiated equation: <br/> \\( -9 = \\frac{\\pi}{2} \\left( \\frac{36}{\\pi} \\right)^{2/3} \\frac{dD}{dt} \\) <br/> \\( -9 = \\frac{\\pi}{2} \\frac{36^{2/3}}{\\pi^{2/3}} \\frac{dD}{dt} = \\frac{\\pi^{1/3} \\cdot 36^{2/3}}{2} \\frac{dD}{dt} \\) <br/> \\( \\frac{dD}{dt} = \\frac{-18}{\\pi^{1/3} \\cdot 36^{2/3}} = \\frac{-18}{\\pi^{1/3} \\cdot (6^2)^{2/3}} = \\frac{-18}{\\pi^{1/3} \\cdot 6^{4/3}} = \\frac{-18}{\\pi^{1/3} \\cdot 6 \\cdot 6^{1/3}} = \\frac{-3}{(6\\pi)^{1/3}} \\). <br/> Numerically: <br/> \\( (6\\pi)^{1/3} \\approx (6 \\cdot 3.14159)^{1/3} = (18.84954)^{1/3} \\approx 2.6617 \\). <br/> \\( \\frac{dD}{dt} \\approx \\frac{-3}{2.6617} \\approx -1.12709 \\text{ cm/s} \\). <br/> The rate of decrease is the absolute value, so approx \\( 1.127 \\text{ cm/s} \\).",
+      "explanation": "Để giải siêu tốc, ta cần một công thức liên hệ trực tiếp các đại lượng. Mẹo ở đây là lấy phương trình đạo hàm chia cho phương trình thể tích.<br /><br /><b>1. Các phương trình cơ bản:</b><br />- Thể tích: \\( V = \\frac{\\pi D^3}{6} \\)<br />- Tốc độ thay đổi: \\( \\frac{dV}{dt} = \\frac{\\pi D^2}{2} \\frac{dD}{dt} \\)<br /><br /><b>2. Tạo công thức siêu tốc:</b><br />Lấy (phương trình tốc độ) chia cho (phương trình thể tích):<br />\\( \\frac{dV/dt}{V} = \\frac{ (\\pi D^2 / 2) \\cdot (dD/dt) }{ \\pi D^3 / 6 } = \\frac{3}{D} \\frac{dD}{dt} \\)<br />Sắp xếp lại, ta có công thức cuối cùng:<br />\\[ \\frac{dD}{dt} = \\frac{D}{3V} \\frac{dV}{dt} \\]<br /><br /><b>3. Áp dụng:</b><br />- Tìm D khi V=6: \\( 6 = \\frac{\\pi D^3}{6} \\Rightarrow D^3 = \\frac{36}{\\pi} \\Rightarrow D \\approx 2.25 \\text{ cm} \\).<br />- Thế số vào công thức siêu tốc:<br />\\( \\frac{dD}{dt} \\approx \\frac{2.25}{3 \\cdot 6} \\cdot (-9) = \\frac{2.25}{18} \\cdot (-9) = -\\frac{2.25}{2} = -1.125 \\).<br /><br />Tốc độ giảm là \\(1.125\\), gần nhất với đáp án E.",
       "difficulty": "medium",
       "topic": "Calculus (Related Rates)",
       "hints": [
-        "Volume of a sphere: \\(V = \\frac{4}{3}\\pi r^3\\). Diameter \\(D = 2r\\). Express V in terms of D.",
-        "Differentiate the volume equation with respect to time \\(t\\).",
-        "Find the value of D when V is given.",
-        "Substitute known values to solve for \\(dD/dt\\)."
+        "Mẹo nhanh nhất: Dùng công thức rút gọn \\( \\frac{dD}{dt} = \\frac{D}{3V} \\frac{dV}{dt} \\).",
+        "Bạn chỉ cần 2 bước: (1) Tìm D khi V=6, (2) Thế tất cả các số vào công thức trên.",
+        "Công thức này được tạo ra bằng cách lấy phương trình đạo hàm chia cho phương trình gốc để khử các số hạng phức tạp."
       ]
     },
     {
@@ -722,13 +721,13 @@
         "E. None of the other choices is correct"
       ],
       "correctAnswer": "A",
-      "explanation": "The adjugate of a matrix A, denoted adj(A), is the transpose of its cofactor matrix C. <br/> \\( \\text{adj}(A) = C^T \\). <br/> The elements of the cofactor matrix \\( C_{ij} \\) are given by \\( C_{ij} = (-1)^{i+j} M_{ij} \\), where \\( M_{ij} \\) is the determinant of the submatrix obtained by deleting the i-th row and j-th column. <br/> The first row of \\( \\text{adj}(A) \\) consists of the cofactors \\( C_{11}, C_{21}, C_{31} \\). <br/> Given matrix \\( A = \\begin{bmatrix} 1 & 2 & 0 \\\\ 3 & -1 & 1 \\\\ 0 & -2 & 1 \\end{bmatrix} \\). <br/> 1. Calculate \\( C_{11} \\): <br/> \\( C_{11} = (-1)^{1+1} \\begin{vmatrix} -1 & 1 \\\\ -2 & 1 \\end{vmatrix} = 1 \\cdot ((-1)(1) - (1)(-2)) = 1 \\cdot (-1 + 2) = 1 \\cdot 1 = 1 \\). <br/> 2. Calculate \\( C_{21} \\): <br/> \\( C_{21} = (-1)^{2+1} \\begin{vmatrix} 2 & 0 \\\\ -2 & 1 \\end{vmatrix} = -1 \\cdot ((2)(1) - (0)(-2)) = -1 \\cdot (2 - 0) = -1 \\cdot 2 = -2 \\). <br/> 3. Calculate \\( C_{31} \\): <br/> \\( C_{31} = (-1)^{3+1} \\begin{vmatrix} 2 & 0 \\\\ -1 & 1 \\end{vmatrix} = 1 \\cdot ((2)(1) - (0)(-1)) = 1 \\cdot (2 - 0) = 1 \\cdot 2 = 2 \\). <br/> Therefore, the first row of \\( \\text{adj}(A) \\) is \\( [C_{11} \\quad C_{21} \\quad C_{31}] = [1 \\quad -2 \\quad 2] \\).",
+      "explanation": "Để giải siêu tốc, ta phải nhớ rằng **hàng 1 của ma trận phụ hợp** chính là **cột 1 của ma trận đồng yếu tố**.\\\\[ \\text{adj}(A)_{1j} = C_{ji} \\]<br /><br />Ta chỉ cần tính 3 phần tử \\(C_{11}, C_{21}, C_{31}\\) và xếp chúng thành một hàng.<br /><br /><b>1. Tính nhẩm các đồng yếu tố:</b><br />- \\(C_{11}\\) (dấu +): \\( (-1)(1) - (1)(-2) = 1 \\).<br />- \\(C_{21}\\) (dấu -): \\( -[(2)(1) - (0)(-2)] = -2 \\).<br />- \\(C_{31}\\) (dấu +): \\( (2)(1) - (0)(-1) = 2 \\).<br /><br /><b>2. Ghép lại thành hàng:</b><br />Hàng đầu tiên của ma trận phụ hợp là \\([1, -2, 2]\\).",
       "difficulty": "medium",
       "topic": "Linear Algebra (Adjugate Matrix, Cofactors)",
       "hints": [
-        "The adjugate matrix is the transpose of the cofactor matrix.",
-        "The first row of adj(A) is [C_{11}, C_{21}, C_{31}].",
-        "Recall that C_{ij} = (-1)^{i+j} M_{ij}, where M_{ij} is the minor."
+        "Mẹo nhanh nhất: Hàng 1 của ma trận phụ hợp (adj) = Cột 1 của ma trận đồng yếu tố (C).",
+        "Bạn chỉ cần tính 3 phần tử: \\(C_{11}, C_{21}, C_{31}\\).",
+        "Nhớ quy tắc dấu xen kẽ (+, -, +) khi tính các đồng yếu tố."
       ]
     },
     {
@@ -739,16 +738,17 @@
         "A. \\( (-s/4, -s/4+t, s, t) \\)",
         "B. \\( (s/4, s/4+t, s, t) \\)",
         "C. None of the other choices is correct",
-        "D. \\( (s/4, -s/4-t, s, t) \\)",
+        "D. \\( (-s/4, -s/4-t, s, t) \\)",
         "E. \\( (s/4, s/4-t, s, t) \\)"
       ],
       "correctAnswer": "D",
-      "explanation": "We have the system: <br/> 1) \\( 3x_1 + x_2 + x_3 + x_4 = 0 \\) <br/> 2) \\( 5x_1 - x_2 + x_3 - x_4 = 0 \\) <br/> Add equation (1) and (2): <br/> \\( (3x_1 + x_2 + x_3 + x_4) + (5x_1 - x_2 + x_3 - x_4) = 0 + 0 \\) <br/> \\( 8x_1 + 2x_3 = 0 \\) <br/> \\( 2x_3 = -8x_1 \\implies x_3 = -4x_1 \\) (Equation 3) <br/> Subtract equation (2) from equation (1) (or multiply (2) by -1 and add): <br/> \\( (3x_1 + x_2 + x_3 + x_4) - (5x_1 - x_2 + x_3 - x_4) = 0 - 0 \\) <br/> \\( 3x_1 + x_2 + x_3 + x_4 - 5x_1 + x_2 - x_3 + x_4 = 0 \\) <br/> \\( -2x_1 + 2x_2 + 2x_4 = 0 \\) <br/> Divide by 2: \\( -x_1 + x_2 + x_4 = 0 \\implies x_2 = x_1 - x_4 \\) (Equation 4) <br/> Let \\( x_1 = s \\) and \\( x_4 = t \\) be free parameters. <br/> From Equation 3: \\( x_3 = -4s \\). <br/> From Equation 4: \\( x_2 = s - t \\). <br/> So the solution is \\( (x_1, x_2, x_3, x_4) = (s, s-t, -4s, t) \\). <br/> Let's check the options format. They seem to be parameterizing with \\( x_3=s \\) and \\( x_4=t \\). <br/> If \\( x_3 = s \\), then from \\( x_3 = -4x_1 \\), we have \\( s = -4x_1 \\implies x_1 = -s/4 \\). <br/> Then \\( x_2 = x_1 - x_4 = -s/4 - t \\). <br/> So, \\( (x_1, x_2, x_3, x_4) = (-s/4, -s/4 - t, s, t) \\). <br/> This matches option D. <br/> Let's verify with Gaussian elimination: <br/> \\( \\begin{bmatrix} 3 & 1 & 1 & 1 & 0 \\\\ 5 & -1 & 1 & -1 & 0 \\end{bmatrix} \\) <br/> \\( R_2 \\to R_2 - \\frac{5}{3}R_1 \\): <br/> \\( 5 - \\frac{5}{3}(3) = 5-5=0 \\) <br/> \\( -1 - \\frac{5}{3}(1) = -1 - 5/3 = -3/3 - 5/3 = -8/3 \\) <br/> \\( 1 - \\frac{5}{3}(1) = 1 - 5/3 = 3/3 - 5/3 = -2/3 \\) <br/> \\( -1 - \\frac{5}{3}(1) = -1 - 5/3 = -3/3 - 5/3 = -8/3 \\) <br/> \\( \\begin{bmatrix} 3 & 1 & 1 & 1 & 0 \\\\ 0 & -8/3 & -2/3 & -8/3 & 0 \\end{bmatrix} \\) <br/> Multiply \\( R_2 \\) by \\( -3/2 \\): <br/> \\( \\begin{bmatrix} 3 & 1 & 1 & 1 & 0 \\\\ 0 & 4 & 1 & 4 & 0 \\end{bmatrix} \\) (Multiplying by -3/2 gives \\(4, 1, 4\\)) <br/> From \\( R_2 \\): \\( 4x_2 + x_3 + 4x_4 = 0 \\). Let \\( x_3 = s, x_4 = t \\). <br/> \\( 4x_2 + s + 4t = 0 \\implies 4x_2 = -s - 4t \\implies x_2 = -s/4 - t \\). <br/> From \\( R_1 \\): \\( 3x_1 + x_2 + x_3 + x_4 = 0 \\). <br/> \\( 3x_1 + (-s/4 - t) + s + t = 0 \\) <br/> \\( 3x_1 -s/4 - t + s + t = 0 \\) <br/> \\( 3x_1 + 3s/4 = 0 \\implies 3x_1 = -3s/4 \\implies x_1 = -s/4 \\). <br/> So, solution is \\( (x_1, x_2, x_3, x_4) = (-s/4, -s/4 - t, s, t) \\). This matches option D.",
+      "explanation": "Để giải siêu tốc, ta không giải hệ mà sẽ thử đáp án. Tất cả các đáp án đều có dạng \\((..., s, t)\\), nghĩa là ta được cho trước \\(x_3=s\\) và \\(x_4=t\\).<br /><br /><b>1. Chọn và phân tích đáp án D:</b><br />- \\(x_1 = -s/4\\)<br />- \\(x_2 = -s/4 - t\\)<br />- \\(x_3 = s\\)<br />- \\(x_4 = t\\)<br /><br /><b>2. Thử nhanh vào phương trình (1):</b> \\(3x_1 + x_2 + x_3 + x_4 = 0\\)<br />\\( 3(-\\frac{s}{4}) + (-\\frac{s}{4} - t) + s + t = -\\frac{3s}{4} - \\frac{s}{4} - t + s + t = -\\frac{4s}{4} + s = -s + s = 0 \\).<br />→ Khớp.<br /><br /><b>3. Thử nhanh vào phương trình (2):</b> \\(5x_1 - x_2 + x_3 - x_4 = 0\\)<br />\\( 5(-\\frac{s}{4}) - (-\\frac{s}{4} - t) + s - t = -\\frac{5s}{4} + \\frac{s}{4} + t + s - t = -\\frac{4s}{4} + s = -s + s = 0 \\).<br />→ Khớp.<br /><br />Vì đáp án D thỏa mãn cả hai phương trình, đây là đáp án đúng.",
       "difficulty": "medium",
       "topic": "Linear Algebra (Homogeneous Systems)",
       "hints": [
-        "Use Gaussian elimination to reduce the augmented matrix to row-echelon form.",
-        "Identify free variables and express basic variables in terms of them."
+        "Mẹo nhanh nhất: Đừng giải hệ, hãy thử đáp án!",
+        "Tất cả các đáp án đều đặt `x₃ = s` và `x₄ = t`. Bạn chỉ cần thế `x₁` và `x₂` từ một đáp án vào để kiểm tra.",
+        "Chỉ cần một phương trình sai là có thể loại ngay đáp án đó và chuyển sang thử đáp án khác."
       ]
     },
     {
@@ -762,12 +762,13 @@
         "D. (7, 3, 0)"
       ],
       "correctAnswer": "A",
-      "explanation": "Let \\( \\vec{u}_1 = (1, 1, 0) \\) and \\( \\vec{u}_2 = (0, -1, 1) \\). Let \\( \\vec{v} = (1, 3, -2) \\). <br/> We need to express \\( \\vec{v} \\) as a linear combination of \\( \\vec{u}_1 \\) and \\( \\vec{u}_2 \\), if possible. <br/> \\( (1, 3, -2) = a(1, 1, 0) + b(0, -1, 1) \\) <br/> \\( (1, 3, -2) = (a, a, 0) + (0, -b, b) = (a, a-b, b) \\) <br/> This gives the system of equations: <br/> 1) \\( a = 1 \\) <br/> 2) \\( a - b = 3 \\) <br/> 3) \\( b = -2 \\) <br/> From (1), \\( a=1 \\). From (3), \\( b=-2 \\). <br/> Check consistency with (2): \\( a - b = 1 - (-2) = 1 + 2 = 3 \\). This is consistent. <br/> So, \\( (1, 3, -2) = 1 \\cdot (1, 1, 0) - 2 \\cdot (0, -1, 1) \\). <br/> Since T is a linear transformation: <br/> \\( T(1, 3, -2) = T(1 \\cdot \\vec{u}_1 - 2 \\cdot \\vec{u}_2) = 1 \\cdot T(\\vec{u}_1) - 2 \\cdot T(\\vec{u}_2) \\) <br/> \\( T(1, 3, -2) = 1 \\cdot (2, 3, -1) - 2 \\cdot (5, 0, 1) \\) <br/> \\( = (2, 3, -1) - (10, 0, 2) \\) <br/> \\( = (2-10, 3-0, -1-2) = (-8, 3, -3) \\). <br/> Let's check the options: <br/> B. (8, 3, -3) <br/> C. (1, -6, 3) <br/> D. (7, 3, 0) <br/> My result is \\( (-8, 3, -3) \\). Option B is \\( (8, 3, -3) \\). This differs in the first component's sign. <br/> Since my result \\( (-8, 3, -3) \\) is not among B, C, or D, the answer is 'None of the others'.",
+      "explanation": "Để giải siêu tốc, ta cần tìm nhanh hai số \\(a, b\\) sao cho:<br />\\( (1, 3, -2) = a(1, 1, 0) + b(0, -1, 1) \\).<br /><br /><b>1. Nhẩm nhanh hệ số \\(a, b\\) nhờ các số 0:</b><br />- <b>Nhìn vào thành phần x:</b> \\( 1 = a(1) + b(0) \\Rightarrow a = 1 \\).<br />- <b>Nhìn vào thành phần z:</b> \\( -2 = a(0) + b(1) \\Rightarrow b = -2 \\).<br /><br /><b>2. Áp dụng tính chất tuyến tính và tính nhẩm:</b><br />Ta đã có \\( \\vec{v} = 1 \\cdot \\vec{u_1} - 2 \\cdot \\vec{u_2} \\), vậy:<br />\\( T(1, 3, -2) = 1 \\cdot T(1, 1, 0) - 2 \\cdot T(0, -1, 1) \\)<br />\\( = 1 \\cdot (2, 3, -1) - 2 \\cdot (5, 0, 1) \\)<br />\\( = (2, 3, -1) - (10, 0, 2) \\)<br />\\( = (-8, 3, -3) \\).<br /><br />Kết quả này không khớp với các lựa chọn B, C, D, nên ta chọn 'None of the others'.",
       "difficulty": "medium",
       "topic": "Linear Algebra (Linear Transformations)",
       "hints": [
-        "Express the vector \\((1, 3, -2)\\) as a linear combination of \\((1, 1, 0)\\) and \\((0, -1, 1)\\).",
-        "Use the linearity property: \\(T(c_1\\vec{u}_1 + c_2\\vec{u}_2) = c_1T(\\vec{u}_1) + c_2T(\\vec{u}_2)\\)."
+        "Mẹo nhanh nhất: Tìm `a, b` sao cho vector mục tiêu là tổ hợp tuyến tính của hai vector đã cho.",
+        "Nhờ các số 0, bạn có thể nhẩm ngay `a` từ thành phần đầu và `b` từ thành phần cuối.",
+        "Kết quả cuối cùng là `1*T(u₁) - 2*T(u₂)`."
       ]
     },
     {
@@ -782,12 +783,13 @@
         "E. \\( (39, 21, -40) \\)"
       ],
       "correctAnswer": "E",
-      "explanation": "Let the points be \\( P_1 = (-7, 10, 0) \\), \\( P_2 = (4, 1, 6) \\), and \\( P_3 = (2, -1, 3) \\). <br/> To find a vector perpendicular to the plane, we can find two vectors lying in the plane and then take their cross product. <br/> Let \\( \\vec{u} = \\vec{P_1P_2} = P_2 - P_1 = (4 - (-7), 1 - 10, 6 - 0) = (11, -9, 6) \\). <br/> Let \\( \\vec{v} = \\vec{P_1P_3} = P_3 - P_1 = (2 - (-7), -1 - 10, 3 - 0) = (9, -11, 3) \\). <br/> The normal vector \\( \\vec{n} \\) is \\( \\vec{u} \\times \\vec{v} \\). <br/> \\( \\vec{n} = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} <br/> 11 & -9 & 6 <br/> 9 & -11 & 3 \\end{vmatrix} \\) <br/> \\( \\vec{n} = \\mathbf{i} \\begin{vmatrix} -9 & 6 <br/> -11 & 3 \\end{vmatrix} - \\mathbf{j} \\begin{vmatrix} 11 & 6 <br/> 9 & 3 \\end{vmatrix} + \\mathbf{k} \\begin{vmatrix} 11 & -9 <br/> 9 & -11 \\end{vmatrix} \\) <br/> \\( = \\mathbf{i}((-9)(3) - (6)(-11)) - \\mathbf{j}((11)(3) - (6)(9)) + \\mathbf{k}((11)(-11) - (-9)(9)) \\) <br/> \\( = \\mathbf{i}(-27 - (-66)) - \\mathbf{j}(33 - 54) + \\mathbf{k}(-121 - (-81)) \\) <br/> \\( = \\mathbf{i}(-27 + 66) - \\mathbf{j}(-21) + \\mathbf{k}(-121 + 81) \\) <br/> \\( = \\mathbf{i}(39) - \\mathbf{j}(-21) + \\mathbf{k}(-40) \\) <br/> \\( = (39, 21, -40) \\). <br/> This matches option E.",
+      "explanation": "Để giải siêu tốc, ta cần tìm hai vector trong mặt phẳng rồi dùng tích có hướng để tìm vector pháp tuyến (vuông góc).<br /><br /><b>1. Tính 2 vector trong mặt phẳng (nhẩm nhanh):</b><br />- Lấy điểm thứ hai trừ điểm đầu: \\(\\vec{u} = (4 - (-7), 1 - 10, 6 - 0) = (11, -9, 6)\\).<br />- Lấy điểm thứ ba trừ điểm đầu: \\(\\vec{v} = (2 - (-7), -1 - 10, 3 - 0) = (9, -11, 3)\\).<br /><br /><b>2. Tính tích có hướng (mẹo: tính từng thành phần rồi liếc đáp án):</b><br />- <b>Thành phần x:</b> \\((-9)(3) - (6)(-11) = -27 + 66 = 39\\).<br />  <i>(Nhìn đáp án, ta loại được C và D).</i><br />- <b>Thành phần y (nhớ đổi dấu):</b> \\(-[(11)(3) - (6)(9)] = -[33 - 54] = -[-21] = 21\\).<br />  <i>(Cả B và E đều có thành phần này, ta phải tính tiếp).</i><br />- <b>Thành phần z:</b> \\((11)(-11) - (-9)(9) = -121 + 81 = -40\\).<br /><br />Vector pháp tuyến là \\((39, 21, -40)\\), khớp với đáp án E.",
       "difficulty": "medium",
       "topic": "Linear Algebra (Vectors in 3D, Cross Product, Planes)",
       "hints": [
-        "Find two vectors that lie in the plane by subtracting pairs of the given points.",
-        "The cross product of these two vectors will be perpendicular to the plane."
+        "Mẹo nhanh nhất: (1) Tạo 2 vector từ 3 điểm, (2) Tính tích có hướng của chúng.",
+        "Khi tính tích có hướng, hãy tính thành phần đầu tiên (x), rồi liếc nhìn các đáp án để loại trừ.",
+        "Nhớ rằng thành phần thứ hai (y) của tích có hướng phải đổi dấu."
       ]
     },
     {
@@ -802,12 +804,13 @@
         "E. (ii)"
       ],
       "correctAnswer": "E",
-      "explanation": "The function is \\( y = \\sqrt{4+5x} = (4+5x)^{1/2} \\). <br/> The differential \\( dy \\) is given by \\( dy = y' dx \\), where \\( y' = \\frac{dy}{dx} \\). <br/> First, find the derivative \\( y' \\): <br/> Using the chain rule, let \\( u = 4+5x \\), so \\( u' = 5 \\). Then \\( y = u^{1/2} \\). <br/> \\( y' = \\frac{1}{2}u^{-1/2} \\cdot u' = \\frac{1}{2}(4+5x)^{-1/2} \\cdot 5 \\) <br/> \\( y' = \\frac{5}{2(4+5x)^{1/2}} = \\frac{5}{2\\sqrt{4+5x}} \\). <br/> Now, the differential \\( dy \\) is: <br/> \\( dy = y' dx = \\frac{5}{2\\sqrt{4+5x}} dx \\). <br/> This matches option (ii).",
+      "explanation": "Để giải siêu tốc, ta áp dụng quy tắc chuỗi và viết ra kết quả ngay lập tức.<br /><br /><b>1. Nhớ công thức:</b><br />Vi phân \\( dy = y' \\cdot dx \\). Ta chỉ cần tính đạo hàm \\(y'\\).<br /><br /><b>2. Áp dụng quy tắc chuỗi (nhẩm nhanh):</b><br />- <b>Đạo hàm hàm ngoài (hàm căn):</b> Đạo hàm của \\(\\sqrt{u}\\) là \\(\\frac{1}{2\\sqrt{u}}\\).<br />- <b>Đạo hàm hàm trong (hàm ruột \\(4+5x\\)):</b> Đạo hàm là 5.<br /><br /><b>3. Kết hợp lại:</b><br />\\( y' = (\\text{đạo hàm ngoài}) \\times (\\text{đạo hàm trong}) = \\frac{1}{2\\sqrt{4+5x}} \\cdot 5 = \\frac{5}{2\\sqrt{4+5x}} \\).<br /><br />Vậy, vi phân là \\( dy = \\frac{5}{2\\sqrt{4+5x}} dx \\), tương ứng với lựa chọn (ii).",
       "difficulty": "easy",
       "topic": "Calculus (Differentials)",
       "hints": [
-        "Recall that \\(dy = f'(x)dx\\).",
-        "Find the derivative of \\(y\\) with respect to \\(x\\) using the chain rule."
+        "Mẹo nhanh nhất: Vi phân `dy` chính là `(đạo hàm) * dx`.",
+        "Công thức đạo hàm nhanh cho hàm căn: Đạo hàm của \\(\\sqrt{u}\\) là \\(\\frac{u'}{2\\sqrt{u}}\\).",
+        "Trong bài này, \\(u = 4+5x\\) và \\(u' = 5\\). Chỉ cần thế vào công thức là xong."
       ]
     },
     {
@@ -822,18 +825,18 @@
         "E. (i) and (iii)"
       ],
       "correctAnswer": "C",
-      "explanation": "Let's analyze each statement for a 3x3 matrix A. <br/> **Statement (i): \\( \\det(-A) = -\\det(A) \\)** <br/> For an \\(n \\times n\\) matrix A, \\( \\det(kA) = k^n \\det(A) \\). <br/> Here, \\( k = -1 \\) and \\( n = 3 \\) (since A is a 3x3 matrix). <br/> So, \\( \\det(-A) = \\det((-1)A) = (-1)^3 \\det(A) = -1 \\cdot \\det(A) = -\\det(A) \\). <br/> Thus, statement (i) is correct. <br/> **Statement (ii): If A has two equal rows, then \\( \\det(A) = 0 \\)** <br/> This is a standard property of determinants. If a matrix has two identical rows (or columns), its determinant is 0. <br/> Thus, statement (ii) is correct. <br/> **Statement (iii): If \\( \\det(A) = 0 \\), then A has two equal rows.** <br/> This statement is false. If \\( \\det(A) = 0 \\), it means the matrix is singular, and its rows (and columns) are linearly dependent. This does not necessarily mean two rows must be equal. <br/> For example, consider the matrix \\( A = \\begin{bmatrix} 1 & 2 & 3 <br/> 2 & 4 & 6 <br/> 0 & 0 & 1 \\end{bmatrix} \\). <br/> The first row is \\( R_1 \\) and the second row is \\( R_2 = 2R_1 \\). The rows are linearly dependent. <br/> \\( \\det(A) = 1(4-0) - 2(2-0) + 3(0-0) \\) -- no, this is for if R2 = 2R1. Let's try simpler. <br/> \\( A = \\begin{bmatrix} 1 & 2 & 3 <br/> 2 & 4 & 6 <br/> 7 & 8 & 9 \\end{bmatrix} \\). Here \\( R_2 = 2R_1 \\). Then \\( \\det(A) = 0 \\) because rows are linearly dependent. However, no two rows are strictly equal. <br/> Another example: \\( A = \\begin{bmatrix} 1 & 0 & 0 <br/> 0 & 1 & 0 <br/> 0 & 0 & 0 \\end{bmatrix} \\). Here \\( \\det(A) = 0 \\), but no two rows are equal. (Although one row is a zero row, which also makes det=0). <br/> A better counterexample is when rows are linearly dependent but not simply one being zero or a multiple of another identical row. <br/> Consider \\( A = \\begin{bmatrix} 1 & 1 & 1 <br/> 2 & 2 & 2 <br/> 1 & 2 & 3 \\end{bmatrix} \\). \\( \\det(A) = 1(6-4) - 1(6-2) + 1(4-2) = 2 - 4 + 2 = 0 \\). No two rows are equal, but \\( R_2 = 2R_1 \\). This still implies linear dependence, not necessarily two equal rows. <br/> The statement says *if* \\( \\det(A)=0 \\), *then* A *has two equal rows*. This is too strong. \\( \\det(A)=0 \\) implies rows are linearly dependent. It does not imply two rows must be identical. <br/> For instance, \\( A = \\begin{bmatrix} 1 & 2 & 3 <br/> 4 & 5 & 6 <br/> 5 & 7 & 9 \\end{bmatrix} \\). Here \\( R_3 = R_1 + R_2 \\). So \\( \\det(A)=0 \\). But no two rows are equal. <br/> Thus, statement (iii) is false. <br/> Correct statements are (i) and (ii).",
+      "explanation": "Để giải siêu tốc, ta cần nhớ các tính chất cơ bản của định thức.<br /><br /><b>1. Kiểm tra (i): \\( \\det(-A) = -\\det(A) \\)</b><br />- <b>Tính chất:</b> \\(\\det(kA) = k^n \\det(A)\\), với n là cấp của ma trận.<br />- Ở đây A là ma trận 3x3 (n=3), k=-1. Vậy \\(\\det(-A) = (-1)^3 \\det(A) = -\\det(A)\\).<br />- → Mệnh đề (i) <b>ĐÚNG</b> (vì n=3 là số lẻ).<br /><br /><b>2. Kiểm tra (ii): Hai hàng bằng nhau \\(\\Rightarrow \\det(A) = 0\\)</b><br />- Đây là một tính chất cơ bản và kinh điển của định thức.<br />- → Mệnh đề (ii) <b>ĐÚNG</b>.<br /><br /><b>3. Kiểm tra (iii): \\(\\det(A) = 0 \\Rightarrow\\) hai hàng bằng nhau</b><br />- <b>Bẫy kinh điển:</b> Đây là mệnh đề đảo của (ii), và nó không đúng.<br />- \\(\\det(A)=0\\) chỉ có nghĩa là các hàng phụ thuộc tuyến tính, không nhất thiết phải có hai hàng bằng nhau.<br />- <b>Phản ví dụ:</b> Một hàng là bội số của hàng khác (ví dụ hàng 2 = 2 * hàng 1) hoặc một hàng là tổng của hai hàng khác. <br />- → Mệnh đề (iii) <b>SAI</b>.<br /><br /><b>Kết luận:</b> (i) và (ii) đúng.",
       "difficulty": "medium",
       "topic": "Linear Algebra (Properties of Determinants)",
       "hints": [
-        "For (i), recall the property \\(\\det(kA) = k^n \\det(A)\\) for an \\(n \\times n\\) matrix.",
-        "For (ii), recall that if a matrix has two identical rows (or columns), its determinant is 0.",
-        "For (iii), consider if \\(\\det(A)=0\\) necessarily implies two rows are identical, or just that they are linearly dependent."
+        "Mẹo cho (i): Công thức là \\(\\det(kA) = k^n \\det(A)\\). Với n=3 (lẻ), dấu trừ được giữ lại.",
+        "Mẹo cho (ii): Đây là tính chất đúng 'kinh điển' của định thức.",
+        "Mẹo cho (iii): Đây là mệnh đề đảo, một 'bẫy' kinh điển. \\(det(A)=0\\) chỉ suy ra các hàng/cột phụ thuộc tuyến tính, không nhất thiết phải bằng nhau."
       ]
     },
     {
       "id": 41,
-      "question": "Find \\( \\int \\frac{x dx}{(\\cos x)^2} \\). <br> (i) \\( x \\sin x - \\tan x + C \\) <br> (ii) \\( x \\tan x + \\ln|\\cos x| + C \\) <br> (iii) \\( x \\sin x + \\ln|\\cos x| + C \\) <br> (iv) \\( x \\tan x + \\ln(\\cos x) + C \\) <br> (v) \\( x \\tan x + \\ln|\\sec x| + C \\) <br> (The actual options in the image might differ slightly, but the form \\(x \\tan x + \\ln|\\cos x| + C\\) is a common result for this type of integral if simplified certain ways. Option (ii) looks like the most standard form.)",
+      "question": "Find \\( \\int \\frac{x dx}{(\\cos x)^2} \\). <br> (i) \\( x \\sin x - \\tan x + C \\) <br> (ii) \\( x \\tan x + \\ln|\\cos x| + C \\) <br> (iii) \\( x \\sin x + \\ln|\\cos x| + C \\) <br> (iv) \\( x \\tan x + \\ln(\\cos x) + C \\) <br> (v) \\( x \\tan x + \\ln|\\sec x| + C \\)",
       "image": null,
       "options": [
         "A. (i)",
@@ -844,13 +847,13 @@
         "F. None of the other choices is correct"
       ],
       "correctAnswer": "D",
-      "explanation": "We want to evaluate \\( I = \\int \\frac{x}{(\\cos x)^2} dx = \\int x \\sec^2 x \\, dx \\). <br/> We use integration by parts: \\( \\int u \\, dv = uv - \\int v \\, du \\). <br/> Let \\( u = x \\) and \\( dv = \\sec^2 x \\, dx \\). <br/> Then \\( du = dx \\) and \\( v = \\int \\sec^2 x \\, dx = \\tan x \\). <br/> So, \\( I = x \\tan x - \\int \\tan x \\, dx \\). <br/> Now we need to integrate \\( \\tan x \\). <br/> \\( \\int \\tan x \\, dx = \\int \\frac{\\sin x}{\\cos x} \\, dx \\). <br/> Let \\( w = \\cos x \\), then \\( dw = -\\sin x \\, dx \\). So \\( \\sin x \\, dx = -dw \\). <br/> \\( \\int \\frac{\\sin x}{\\cos x} \\, dx = \\int \\frac{-dw}{w} = -\\ln|w| + C_1 = -\\ln|\\cos x| + C_1 \\). <br/> Alternatively, \\( -\\ln|\\cos x| = \\ln|(\\cos x)^{-1}| = \\ln|\\sec x| \\). <br/> Substituting this back into the expression for \\( I \\): <br/> \\( I = x \\tan x - (-\\ln|\\cos x|) + C = x \\tan x + \\ln|\\cos x| + C \\). <br/> This matches option (ii). <br/> If we use \\( \\ln|\\sec x| \\), then \\( I = x \\tan x - \\ln|\\sec x| + C \\). This would match option (v) if the sign was negative for the log term. Since our integration of tan x yields -ln|cos x|, the final answer is x tan x + ln|cos x| + C.",
+      "explanation": "Để giải siêu tốc, ta cần nhận ra ngay đây là tích phân từng phần và nhớ kết quả của các tích phân cơ bản.<br /><br /><b>1. Nhận dạng và Đặt (trong đầu):</b><br />- Viết lại tích phân: \\( \\int x \\sec^2 x \\, dx \\).<br />- Theo quy tắc 'Nhất Lô, Nhì Đa, Tam Lượng...', ta ưu tiên đặt \\( u = x \\) (hàm đa thức) và \\( dv = \\sec^2 x \\, dx \\) (hàm lượng giác).<br /><br /><b>2. Áp dụng công thức Từng phần: \\(uv - \\int v du\\)</b><br />- \\( u=x \\Rightarrow du=dx \\)<br />- \\( dv = \\sec^2 x dx \\Rightarrow v = \\tan x \\)<br />- Thay vào công thức: \\( x \\tan x - \\int \\tan x \\, dx \\).<br /><br /><b>3. Nhớ nguyên hàm của tan(x):</b><br />- Nguyên hàm của \\( \\tan x \\) là \\( -\\ln|\\cos x| \\).<br />- Kết quả cuối cùng: \\( x \\tan x - (-\\ln|\\cos x|) + C = x \\tan x + \\ln|\\cos x| + C \\).<br /><br />Điều này tương ứng với lựa chọn (ii).",
       "difficulty": "medium",
       "topic": "Calculus (Integration by Parts)",
       "hints": [
-        "Rewrite \\(1/(\\cos x)^2\\) as \\(\\sec^2 x\\).",
-        "Use integration by parts with \\(u = x\\) and \\(dv = \\sec^2 x \\, dx\\).",
-        "Recall that \\(\\int \\tan x \\, dx = -\\ln|\\cos x| + C = \\ln|\\sec x| + C\\)."
+        "Mẹo nhanh nhất: Nhận dạng ngay đây là tích phân từng phần của \\(x\\sec^2x\\).",
+        "Đặt \\(u=x\\) và \\(dv=\\sec^2x dx\\).",
+        "Phải thuộc lòng: \\( \\int \\tan x \\, dx = -\\ln|\\cos x| \\). Kết hợp với dấu trừ của công thức từng phần sẽ ra dấu cộng."
       ]
     },
     {
@@ -864,13 +867,14 @@
         "D. None of the other choices is correct",
         "E. \\( x = 1+t, y = t, z = 2t \\)"
       ],
-      "correctAnswer": "C",
-      "explanation": "The direction vector \\( \\vec{d} \\) of the line can be found by \\( \\vec{AB} = B - A \\) or \\( \\vec{BA} = A - B \\). <br/> Let's use \\( \\vec{d} = \\vec{AB} = (1-2, 0-(-1), 1-3) = (-1, 1, -2) \\). <br/> The parametric equation of a line passing through point \\( P_0(x_0, y_0, z_0) \\) with direction vector \\( \\vec{d} = (a,b,c) \\) is: <br/> \\( x = x_0 + at \\) <br/> \\( y = y_0 + bt \\) <br/> \\( z = z_0 + ct \\) <br/> **Option 1: Using point A(2, -1, 3) and \\( \\vec{d} = (-1, 1, -2) \\)** <br/> \\( x = 2 - t \\) <br/> \\( y = -1 + t \\) <br/> \\( z = 3 - 2t \\) <br/> Let's check the given options against this form or a form using \\( \\vec{BA} \\). <br/> \\( \\vec{BA} = (2-1, -1-0, 3-1) = (1, -1, 2) \\). <br/> **Option 2: Using point A(2, -1, 3) and \\( \\vec{d}' = (1, -1, 2) \\)** <br/> \\( x = 2 + t \\) <br/> \\( y = -1 - t \\) <br/> \\( z = 3 + 2t \\) <br/> This matches option A. So option A is a valid parameterization. <br/> **Option 3: Using point B(1, 0, 1) and \\( \\vec{d}' = (1, -1, 2) \\)** <br/> \\( x = 1 + t \\) <br/> \\( y = 0 - t = -t \\) <br/> \\( z = 1 + 2t \\) <br/> Let's re-evaluate the options provided in the image: <br/> A. \\( x = 2+t, y = -1-t, z = 3+2t \\). This uses point A(2, -1, 3) and direction vector (1, -1, 2) which is \\(\\vec{BA}\\). This is correct. <br/> B. \\( x = 2+t, y = -1+t, z = 3+2t \\). Direction vector (1, 1, 2). Not \\(\\vec{BA}\\) or \\(\\vec{AB}\\). Incorrect. <br/> C. \\( x = 1+t, y = t, z = 1+2t \\). This uses point B(1, 0, 1). The direction vector implied is (1, 1, 2). This is not \\(\\vec{BA}\\) or \\(\\vec{AB}\\). Wait, I might have misread options or my vectors. <br/> Let's re-check the vector \\( \\vec{d} = \\vec{AB} = (-1, 1, -2) \\). <br/> Using point A(2, -1, 3): \\( x = 2 - t, y = -1 + t, z = 3 - 2t \\). <br/> Using point B(1, 0, 1): \\( x = 1 - t, y = 0 + t = t, z = 1 - 2t \\). <br/> Now let's check the options again. <br/> A. \\( x = 2+t, y = -1-t, z = 3+2t \\). Point is A. Direction vector is \\( (1, -1, 2) \\). This is \\( \\vec{BA} \\). So A is correct. <br/> B. \\( x = 2+t, y = -1+t, z = 3+2t \\). Point is A. Direction vector is \\( (1, 1, 2) \\). Incorrect. <br/> C. \\( x = 1+t, y = t, z = 1+2t \\). Point is B. Direction vector is \\( (1, 1, 2) \\). Incorrect. <br/> E. \\( x = 1+t, y = t, z = 2t \\). Point is not B or A directly. If t=0, point is (1,0,0) not B. <br/> It seems option A: \\( x = 2+t, y = -1-t, z = 3+2t \\) is correct based on point A and direction vector \\( \\vec{BA} = (1, -1, 2) \\). <br/> If the given answer 'C' is correct, then \\( x = 1+t, y = t, z = 1+2t \\) must be it. This implies point (1,0,1) which is B, and direction vector (1,1,2). <br/> Let's check if \\( (1,1,2) \\) is parallel to \\( \\vec{AB} = (-1,1,-2) \\) or \\( \\vec{BA} = (1,-1,2) \\). <br/> Is \\( (1,1,2) = k(-1,1,-2) \\)? No (1=-k and 1=k is impossible). <br/> Is \\( (1,1,2) = k(1,-1,2) \\)? No (1=k and 1=-k is impossible). <br/> So the direction vector in option C, (1,1,2), is incorrect. This means C is incorrect. <br/> My analysis points to A. \\( x = 2+t, y = -1-t, z = 3+2t \\). <br/> Let's re-check the calculation for \\( \\vec{AB} \\) and \\( \\vec{BA} \\): <br/> A(2, -1, 3), B(1, 0, 1) <br/> \\( \\vec{AB} = (1-2, 0-(-1), 1-3) = (-1, 1, -2) \\) <br/> \\( \\vec{BA} = (2-1, -1-0, 3-1) = (1, -1, 2) \\) <br/> Using point A and \\( \\vec{BA} \\): \\( x = 2+t, y = -1-t, z = 3+2t \\). This is option A. <br/> Using point B and \\( \\vec{BA} \\): \\( x = 1+t, y = 0-t, z = 1+2t \\) which is \\( x=1+t, y=-t, z=1+2t \\). This is not option C. <br/> If there is a simple typo in option C, e.g., if it was \\( y = -t \\), then it would be \\( x=1+t, y=-t, z=1+2t \\) using point B and direction \\((1, -1, 2)\\) which is \\(\\vec{BA}\\). <br/> Given the options and my derivations, A seems correct. If the intended answer is C, there must be a misunderstanding or error. Assuming A is correct and the provided 'C' from a previous context might be for a different problem or option lettering.",
+      "correctAnswer": "A",
+      "explanation": "Để giải siêu tốc, ta không viết phương trình mà sẽ kiểm tra ngược từ đáp án. Mỗi đáp án cho ta 2 thông tin: một **điểm đi qua** và một **vector chỉ phương**.<br /><br /><b>1. Tính nhẩm vector chỉ phương (VTCP) đúng:</b><br />- \\(\\vec{d} = A - B = (2-1, -1-0, 3-1) = (1, -1, 2)\\).<br /><br /><b>2. Phân tích các đáp án:</b><br />- <b>Đáp án A:</b> \\(x = 2+t, y = -1-t, z = 3+2t\\)<br />  - Điểm đi qua là (2, -1, 3), chính là điểm A. <b>(Đúng)</b><br />  - VTCP (hệ số của t) là (1, -1, 2). <b>(Đúng)</b><br />- → Khớp hoàn toàn. Đây là đáp án đúng.<br /><br />- <b>Đáp án C:</b> \\(x = 1+t, y = t, z = 1+2t\\)<br />  - Điểm đi qua là (1, 0, 1), chính là điểm B. <b>(Đúng)</b><br />  - VTCP là (1, 1, 2). <b>(Sai)</b>, vì VTCP đúng là (1, -1, 2).",
       "difficulty": "easy",
       "topic": "Analytic Geometry (Parametric Equations of a Line)",
       "hints": [
-        "Find the direction vector of the line by subtracting the coordinates of the two points (e.g., \\(\\vec{d} = B - A\\)).",
-        "Use one of the points (e.g., A) and the direction vector to write the parametric equations: \\(x = x_A + d_x t, y = y_A + d_y t, z = z_A + d_z t\\)."
+        "Mẹo nhanh nhất: Đừng viết phương trình, hãy kiểm tra đáp án.",
+        "Từ mỗi đáp án, rút ra 2 thứ: 'Điểm' (các số hạng không chứa t) và 'Vector chỉ phương' (các hệ số của t).",
+        "Đối chiếu 'Điểm' với A hoặc B, và đối chiếu 'Vector chỉ phương' với A-B hoặc B-A."
       ]
     },
     {
@@ -885,13 +889,13 @@
         "E. (ii)"
       ],
       "correctAnswer": "A",
-      "explanation": "To determine where the function is increasing or decreasing, we need to find the first derivative \\( f'(x) \\) and analyze its sign. <br/> \\( f(x) = \\frac{5x}{x^2+1} \\) <br/> Using the quotient rule: \\( \\left(\\frac{u}{v}\\right)' = \\frac{u'v - uv'}{v^2} \\). <br/> Let \\( u = 5x \\implies u' = 5 \\). <br/> Let \\( v = x^2+1 \\implies v' = 2x \\). <br/> \\( f'(x) = \\frac{5(x^2+1) - 5x(2x)}{(x^2+1)^2} = \\frac{5x^2+5 - 10x^2}{(x^2+1)^2} = \\frac{5 - 5x^2}{(x^2+1)^2} = \\frac{5(1 - x^2)}{(x^2+1)^2} \\). <br/> The denominator \\( (x^2+1)^2 \\) is always positive. So the sign of \\( f'(x) \\) is determined by the sign of the numerator \\( 5(1 - x^2) \\). <br/> Critical points occur where \\( f'(x) = 0 \\) or \\( f'(x) \\) is undefined. Since \\( (x^2+1)^2 \\) is never zero, \\( f'(x) \\) is always defined. <br/> Set \\( f'(x) = 0 \\): \\( 5(1 - x^2) = 0 \\implies 1 - x^2 = 0 \\implies x^2 = 1 \\implies x = \\pm 1 \\). <br/> The critical points are \\( x = -1 \\) and \\( x = 1 \\). These divide the number line into three intervals: \\( (-\\infty, -1) \\), \\( (-1, 1) \\), and \\( (1, \\infty) \\). <br/> Test the sign of \\( f'(x) \\) in each interval using \\( 1-x^2 \\) (since \\( 5/(x^2+1)^2 > 0 \\)): <br/> 1. Interval \\( (-\\infty, -1) \\): Choose \\( x = -2 \\). \\( 1 - (-2)^2 = 1 - 4 = -3 < 0 \\). So \\( f'(x) < 0 \\), function is decreasing. <br/> 2. Interval \\( (-1, 1) \\): Choose \\( x = 0 \\). \\( 1 - (0)^2 = 1 > 0 \\). So \\( f'(x) > 0 \\), function is increasing. <br/> 3. Interval \\( (1, \\infty) \\): Choose \\( x = 2 \\). \\( 1 - (2)^2 = 1 - 4 = -3 < 0 \\). So \\( f'(x) < 0 \\), function is decreasing. <br/> Summary: <br/> - Decreasing on \\( (-\\infty, -1) \\) <br/> - Increasing on \\( (-1, 1) \\) <br/> - Decreasing on \\( (1, \\infty) \\) <br/> This matches option (i).",
+      "explanation": "Để giải siêu tốc, ta chỉ cần xét dấu của đạo hàm \\(f'(x)\\).<br /><br /><b>1. Tính đạo hàm (dùng quy tắc thương):</b><br />\\( f'(x) = \\frac{(5)(x^2+1) - (5x)(2x)}{(x^2+1)^2} = \\frac{5x^2+5 - 10x^2}{(x^2+1)^2} = \\frac{5(1-x^2)}{(x^2+1)^2} \\).<br /><br /><b>2. Phân tích dấu (Mẹo siêu nhanh):</b><br />- Mẫu số \\((x^2+1)^2\\) luôn dương, nên ta có thể bỏ qua nó.<br />- Dấu của \\(f'(x)\\) phụ thuộc hoàn toàn vào tử số: \\(1 - x^2\\).<br />- Đây là một tam thức bậc hai có hệ số a âm (parabol quay xuống), nên nó sẽ có giá trị dương ở 'trong khoảng hai nghiệm' và âm ở 'ngoài khoảng hai nghiệm'.<br /><br /><b>3. Tìm nghiệm và kết luận:</b><br />- Nghiệm của \\(1-x^2=0\\) là \\(x=-1\\) và \\(x=1\\).<br />- <b>Trong khoảng (-1, 1):</b> \\(f'(x) > 0 \\Rightarrow\\) hàm số đồng biến (tăng).<br />- <b>Ngoài khoảng (-1, 1):</b> \\(f'(x) < 0 \\Rightarrow\\) hàm số nghịch biến (giảm).<br /><br />Kết quả này khớp với lựa chọn (i).",
       "difficulty": "medium",
       "topic": "Calculus (Increasing/Decreasing Functions, First Derivative Test)",
       "hints": [
-        "Find the first derivative \\(f'(x)\\) using the quotient rule.",
-        "Find the critical points by setting \\(f'(x) = 0\\) or where \\(f'(x)\\) is undefined.",
-        "Test the sign of \\(f'(x)\\) in the intervals defined by the critical points."
+        "Mẹo nhanh nhất: Dấu của đạo hàm chỉ phụ thuộc vào tử số \\(5(1-x^2)\\).",
+        "Tử số là một parabol quay xuống, nên nó sẽ dương ở giữa hai nghiệm (-1 và 1) và âm ở bên ngoài.",
+        "Trong khoảng nghiệm (-1, 1) là đồng biến. Ngoài khoảng là nghịch biến."
       ]
     },
     {
@@ -905,12 +909,12 @@
         "D. The function is discontinuous at x = -1 and at x = -1."
       ],
       "correctAnswer": "B",
-      "explanation": "The function is \\( f(x) = -\\frac{1}{(x-1)^2} \\). <br/> A rational function is continuous everywhere except where the denominator is zero. <br/> The denominator is \\( (x-1)^2 \\). <br/> Set the denominator to zero to find points of discontinuity: <br/> \\( (x-1)^2 = 0 \\implies x-1 = 0 \\implies x = 1 \\). <br/> At \\( x=1 \\), the denominator is 0, so the function is undefined and thus discontinuous at \\( x=1 \\). <br/> For all other real values of \\( x \\neq 1 \\), the denominator \\( (x-1)^2 \\) is non-zero, and the function is defined and continuous. <br/> Let's evaluate the given options: <br/> A. The function is continuous for all real values of x. (False, discontinuous at x=1) <br/> B. The function is discontinuous at x = 1. (True) <br/> C. The function is discontinuous for all x < 1. (False, it is continuous for x < 1) <br/> D. The function is discontinuous at x = -1 and at x = -1. (This option seems to have a typo, possibly meant x=1 and x=-1. It is continuous at x=-1 because \\((-1-1)^2 = (-2)^2 = 4 \\neq 0\\).) <br/> Based on the analysis, statement B is true.",
+      "explanation": "Để giải siêu tốc, ta chỉ cần tìm điểm làm cho mẫu số bằng 0.<br /><br /><b>1. Nhìn vào mẫu số:</b><br />- Mẫu số là \\((x-1)^2\\).<br /><br /><b>2. Tìm nghiệm của mẫu:</b><br />- \\( (x-1)^2 = 0 \\Rightarrow x - 1 = 0 \\Rightarrow x = 1 \\).<br /><br /><b>Kết luận:</b><br />Hàm số bị gián đoạn (không xác định) duy nhất tại điểm làm cho mẫu bằng 0, đó chính là \\(x=1\\).",
       "difficulty": "easy",
       "topic": "Calculus (Continuity)",
       "hints": [
-        "A rational function is discontinuous where its denominator is zero.",
-        "Set the denominator to zero and solve for x."
+        "Mẹo nhanh nhất: Một hàm phân thức chỉ bị gián đoạn tại nơi mẫu số bằng 0.",
+        "Chỉ cần giải phương trình: `mẫu số = 0`."
       ]
     },
     {
@@ -925,14 +929,14 @@
         "E. (iii)"
       ],
       "correctAnswer": "C",
-      "explanation": "The area under the graph of \\( f(x) \\) from \\( a \\) to \\( b \\) as a limit of Riemann sums is given by: <br/> \\( A = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} f(x_i^*) \\Delta x \\) <br/> Here, \\( f(x) = x^2 - 1 \\), \\( a = 0 \\), \\( b = 4 \\). <br/> The width of each subinterval is \\( \\Delta x = \\frac{b-a}{n} = \\frac{4-0}{n} = \\frac{4}{n} \\). <br/> For the right endpoints, \\( x_i^* = x_i = a + i \\Delta x = 0 + i \\frac{4}{n} = \\frac{4i}{n} \\). <br/> Now, evaluate \\( f(x_i^*) \\): <br/> \\( f(x_i^*) = f\\left(\\frac{4i}{n}\\right) = \\left(\\frac{4i}{n}\\right)^2 - 1 = \\frac{16i^2}{n^2} - 1 \\). <br/> Substitute these into the limit formula: <br/> \\( A = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\left(\\frac{16i^2}{n^2} - 1\\right) \\frac{4}{n} \\) <br/> \\( A = \\lim_{n \\to \\infty} \\sum_{i=1}^{n} \\frac{4}{n} \\left(\\frac{16i^2}{n^2} - 1\\right) \\). <br/> This matches option (iv).",
+      "explanation": "Để giải siêu tốc, ta lắp ráp nhanh các thành phần của công thức tổng Riemann:<br />\\[ \\lim_{n \\to \\infty} \\sum_{i=1}^{n} f(x_i) \\Delta x \\]<br /><br /><b>1. Tính các thành phần cơ bản (nhẩm nhanh):</b><br />- <b>Chiều rộng \\(\\Delta x\\):</b> \\( \\frac{4-0}{n} = \\frac{4}{n} \\).<br />  <i>(Nhìn vào đây, ta thấy mọi đáp án đều có \\(\\frac{4}{n}\\) ở ngoài, không loại được gì).</i><br />- <b>Điểm mút phải \\(x_i\\):</b> \\( a + i \\Delta x = 0 + i \\frac{4}{n} = \\frac{4i}{n} \\).<br /><br /><b>2. Tính giá trị hàm số \\(f(x_i)\\):</b><br />- Chỉ cần thế \\(x_i\\) vào hàm \\(f(x) = x^2 - 1\\):<br />\\( f(x_i) = (\\frac{4i}{n})^2 - 1 = \\frac{16i^2}{n^2} - 1 \\).<br /><br /><b>3. Lắp ráp và kết luận:</b><br />Kết hợp lại, ta có biểu thức: \\( \\lim_{n \\to \\infty} \\sum_{i=1}^{n} (\\frac{16i^2}{n^2} - 1) \\frac{4}{n} \\).<br />Điều này tương ứng với lựa chọn (iv).",
       "difficulty": "medium",
       "topic": "Calculus (Definite Integrals as Limits of Riemann Sums)",
       "hints": [
-        "Recall the definition of the definite integral as a limit of Riemann sums: \\( \\lim_{n \\to \\infty} \\sum f(x_i) \\Delta x \\).",
-        "Determine \\( \\Delta x = (b-a)/n \\).",
-        "Determine \\( x_i = a + i \\Delta x \\) (using right endpoints).",
-        "Substitute \\(x_i\\) into \\(f(x)\\)."
+        "Mẹo nhanh nhất: Công thức là \\(\\lim \\sum f(x_i) \\Delta x\\).",
+        "Bước 1: Tìm \\(\\Delta x = (b-a)/n = 4/n\\).",
+        "Bước 2: Tìm \\(x_i = a + i\\Delta x = 4i/n\\).",
+        "Bước 3: Thế \\(x_i\\) vào hàm \\(f(x)\\). Bạn sẽ có ngay \\((\\frac{16i^2}{n^2} - 1)\\). Kết hợp với \\(\\Delta x\\) là ra đáp án."
       ]
     },
     {
@@ -947,12 +951,13 @@
         "E. None of the other choices is correct"
       ],
       "correctAnswer": "B",
-      "explanation": "A set of three vectors in \\(\\mathbb{R}^3\\) is linearly dependent if and only if the determinant of the matrix formed by these vectors (as rows or columns) is zero. <br/> Let the matrix be \\( M = \\begin{bmatrix} 1 & -1 & 0 <br/> 2 & 0 & 1 <br/> 0 & 1 & a \\end{bmatrix} \\). <br/> We calculate the determinant of M: <br/> \\( \\det(M) = 1 \\cdot \\begin{vmatrix} 0 & 1 <br/> 1 & a \\end{vmatrix} - (-1) \\cdot \\begin{vmatrix} 2 & 1 <br/> 0 & a \\end{vmatrix} + 0 \\cdot \\begin{vmatrix} 2 & 0 <br/> 0 & 1 \\end{vmatrix} \\) <br/> \\( = 1( (0)(a) - (1)(1) ) + 1( (2)(a) - (1)(0) ) + 0 \\) <br/> \\( = 1(0 - 1) + 1(2a - 0) = -1 + 2a \\). <br/> For the set of vectors to be dependent, the determinant must be zero: <br/> \\( -1 + 2a = 0 \\) <br/> \\( 2a = 1 \\) <br/> \\( a = 1/2 \\). <br/> Thus, the set of vectors is dependent when \\( a = 1/2 \\).",
+      "explanation": "Để giải siêu tốc, ta dùng quy tắc: 3 vector trong \\(\\mathbb{R}^3\\) phụ thuộc tuyến tính khi và chỉ khi định thức của ma trận tạo bởi chúng bằng 0.<br /><br /><b>1. Tính định thức (nhanh nhất bằng cách khai triển theo hàng 1 vì có số 0):</b><br />\\( \\det(M) = \\begin{vmatrix} 1 & -1 & 0 \\\\ 2 & 0 & 1 \\\\ 0 & 1 & a \\end{vmatrix} \\)<br />\\( = 1 \\cdot (0 - 1) - (-1) \\cdot (2a - 0) + 0 \\)<br />\\( = -1 + 2a \\).<br /><br /><b>2. Cho định thức bằng 0 và giải:</b><br />\\( -1 + 2a = 0 \\Rightarrow 2a = 1 \\Rightarrow a = 1/2 \\).",
       "difficulty": "medium",
       "topic": "Linear Algebra (Linear Dependence)",
       "hints": [
-        "A set of n vectors in \\(\\mathbb{R}^n\\) is linearly dependent if the determinant of the matrix formed by these vectors is zero.",
-        "Set up the determinant and solve for \\(a\\)."
+        "Mẹo nhanh nhất: Các vector 'phụ thuộc' khi định thức của ma trận tạo bởi chúng bằng 0.",
+        "Đặt các vector vào ma trận và tính định thức.",
+        "Khai triển định thức theo hàng hoặc cột có nhiều số 0 nhất để tính toán tối giản."
       ]
     },
     {
@@ -967,12 +972,13 @@
         "E. 10"
       ],
       "correctAnswer": "C",
-      "explanation": "The height function is given by \\( h(t) = 1 + 25t + at^2 \\). <br/> The velocity \\( v(t) \\) is the first derivative of the height function with respect to time \\( t \\): <br/> \\( v(t) = h'(t) = \\frac{d}{dt}(1 + 25t + at^2) = 0 + 25 + 2at = 25 + 2at \\). <br/> We are given that the velocity of the ball at time \\( t = 2 \\)s is 5 m/s. So, \\( v(2) = 5 \\). <br/> Substitute \\( t = 2 \\) into the velocity function: <br/> \\( v(2) = 25 + 2a(2) = 25 + 4a \\). <br/> Set this equal to the given velocity: <br/> \\( 25 + 4a = 5 \\) <br/> \\( 4a = 5 - 25 \\) <br/> \\( 4a = -20 \\) <br/> \\( a = \\frac{-20}{4} = -5 \\).",
+      "explanation": "Để giải siêu tốc, ta thực hiện đạo hàm và giải phương trình trong vài bước ngắn gọn.<br /><br /><b>1. Tìm hàm vận tốc (đạo hàm nhẩm):</b><br />- Vận tốc \\(v(t)\\) là đạo hàm của quãng đường \\(h(t)\\).<br />\\( v(t) = h'(t) = 25 + 2at \\).<br /><br /><b>2. Thiết lập phương trình từ dữ kiện:</b><br />- Đề bài cho biết tại \\(t=2\\), vận tốc \\(v(2)=5\\).<br />- Thế \\(t=2\\) vào hàm vận tốc: \\( v(2) = 25 + 2a(2) = 25 + 4a \\).<br /><br /><b>3. Giải phương trình tìm a:</b><br />\\( 25 + 4a = 5 \\)<br />\\( 4a = 5 - 25 = -20 \\)<br />\\( a = -5 \\).",
       "difficulty": "easy",
       "topic": "Calculus (Derivatives, Kinematics)",
       "hints": [
-        "Velocity is the derivative of the height function: \\(v(t) = h'(t)\\).",
-        "Substitute \\(t=2\\) into \\(v(t)\\) and set it equal to 5."
+        "Mẹo nhanh nhất: Vận tốc là đạo hàm của quãng đường.",
+        "Lấy đạo hàm của `h(t)` để có `v(t)`, sau đó thế `t=2` và cho `v(2)=5`.",
+        "Phương trình cuối cùng bạn cần giải là `25 + 4a = 5`."
       ]
     },
     {
@@ -988,13 +994,13 @@
         "F. 0.3133"
       ],
       "correctAnswer": "D",
-      "explanation": "Newton's method formula is \\( x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)} \\). <br/> Given equation: \\( f(x) = x^3 - 3x + 1 \\). <br/> The derivative is \\( f'(x) = 3x^2 - 3 \\). <br/> Initial approximation: \\( x_0 = 0 \\). <br/> **First iteration (to find \\(x_1\\)):** <br/> \\( f(x_0) = f(0) = (0)^3 - 3(0) + 1 = 1 \\) <br/> \\( f'(x_0) = f'(0) = 3(0)^2 - 3 = -3 \\) <br/> \\( x_1 = x_0 - \\frac{f(x_0)}{f'(x_0)} = 0 - \\frac{1}{-3} = 0 + \\frac{1}{3} = \\frac{1}{3} \\). <br/> So, \\( x_1 \\approx 0.333333... \\) <br/> **Second iteration (to find \\(x_2\\)):** <br/> \\( x_1 = 1/3 \\) <br/> \\( f(x_1) = f(1/3) = (1/3)^3 - 3(1/3) + 1 = \\frac{1}{27} - 1 + 1 = \\frac{1}{27} \\) <br/> \\( f'(x_1) = f'(1/3) = 3(1/3)^2 - 3 = 3(\\frac{1}{9}) - 3 = \\frac{1}{3} - 3 = \\frac{1}{3} - \\frac{9}{3} = -\\frac{8}{3} \\) <br/> \\( x_2 = x_1 - \\frac{f(x_1)}{f'(x_1)} = \\frac{1}{3} - \\frac{1/27}{-8/3} = \\frac{1}{3} - \\left( \\frac{1}{27} \\cdot \\frac{-3}{8} \\right) = \\frac{1}{3} - \\left( \\frac{-1}{9 \\cdot 8} \\right) = \\frac{1}{3} + \\frac{1}{72} \\) <br/> \\( x_2 = \\frac{24}{72} + \\frac{1}{72} = \\frac{25}{72} \\). <br/> Now, convert \\( x_2 \\) to a decimal and round to 4 decimal places: <br/> \\( x_2 = \\frac{25}{72} \\approx 0.347222... \\) <br/> Rounded to 4 decimal places, \\( x_2 \\approx 0.3472 \\).",
+      "explanation": "Để giải siêu tốc, ta cần áp dụng công thức 2 lần một cách máy móc và nhanh gọn.<br /><br /><b>1. Chuẩn bị (nhẩm nhanh):</b><br />- \\( f(x) = x^3 - 3x + 1 \\)<br />- \\( f'(x) = 3x^2 - 3 \\)<br /><br /><b>2. Vòng lặp 1 (Tìm x₁):</b><br />- Với \\(x_0 = 0\\), ta có \\(f(0)=1\\) và \\(f'(0)=-3\\).<br />- \\( x_1 = x_0 - \\frac{f(x_0)}{f'(x_0)} = 0 - \\frac{1}{-3} = \\frac{1}{3} \\).<br /><br /><b>3. Vòng lặp 2 (Tìm x₂):</b><br />- Với \\(x_1 = 1/3\\), ta có:<br />  \\( f(1/3) = (1/3)^3 - 1 + 1 = 1/27 \\).<br />  \\( f'(1/3) = 3(1/3)^2 - 3 = 1/3 - 3 = -8/3 \\).<br />- \\( x_2 = \\frac{1}{3} - \\frac{1/27}{-8/3} = \\frac{1}{3} + \\frac{1}{27} \\cdot \\frac{3}{8} = \\frac{1}{3} + \\frac{1}{72} = \\frac{24+1}{72} = \\frac{25}{72} \\).<br /><br /><b>4. Chuyển sang số thập phân:</b><br />\\( \\frac{25}{72} \\approx 0.3472 \\).",
       "difficulty": "medium",
       "topic": "Numerical Methods (Newton's Method)",
       "hints": [
-        "Use the formula \\(x_{n+1} = x_n - f(x_n)/f'(x_n)\\).",
-        "Calculate \\(f(x)\\) and \\(f'(x)\\).",
-        "Iterate twice starting with \\(x_0 = 0\\) to find \\(x_2\\)."
+        "Mẹo nhanh nhất: Thuộc lòng công thức \\(x_{n+1} = x_n - f(x_n)/f'(x_n)\\) và thực hiện tuần tự.",
+        "Vòng lặp đầu tiên thường rất đơn giản để tính (với x=0).",
+        "Cẩn thận khi chia phân số ở vòng lặp thứ hai."
       ]
     },
     {
@@ -1008,13 +1014,14 @@
         "D. None of the other choices is correct"
       ],
       "correctAnswer": "C",
-      "explanation": "Let A be an \\( m \\times n \\) matrix. In this case, \\( m=30 \\) (number of rows) and \\( n=70 \\) (number of columns). <br/> We are given that rank(A) = 20. <br/> 1.  **Dimension of the Column Space (dim(Col(A)))**: <br/> The dimension of the column space of a matrix is equal to its rank. <br/> So, \\( \\text{dim(Col(A))} = \\text{rank}(A) = 20 \\). <br/> 2.  **Dimension of the Row Space (dim(Row(A)))**: <br/> The dimension of the row space of a matrix is also equal to its rank. <br/> So, \\( \\text{dim(Row(A))} = \\text{rank}(A) = 20 \\). <br/> 3.  **Dimension of the Null Space (dim(Null(A)))**: <br/> The Rank-Nullity Theorem states that for an \\( m \\times n \\) matrix A: <br/> \\( \\text{rank}(A) + \\text{dim(Null(A))} = n \\) (where \\(n\\) is the number of columns). <br/> We have rank(A) = 20 and \\( n = 70 \\). <br/> \\( 20 + \\text{dim(Null(A))} = 70 \\) <br/> \\( \\text{dim(Null(A))} = 70 - 20 = 50 \\). <br/> Therefore, dim(Col(A)) = 20, dim(Row(A)) = 20, and dim(Null(A)) = 50.",
+      "explanation": "Để giải siêu tốc, ta áp dụng 3 quy tắc cơ bản và nhanh chóng.<br /><br /><b>1. Số chiều không gian cột và hàng:</b><br />- Cả hai đều bằng hạng của ma trận.<br />- \\( \\text{dim(Col(A))} = \\text{dim(Row(A))} = \\text{rank}(A) = 20 \\).<br /><br /><b>2. Số chiều không gian Null (hạt nhân):</b><br />- Áp dụng Định lý Hạng-Số chiều: \\( \\text{rank}(A) + \\text{dim(Null(A))} = \\text{số cột} \\).<br />- \\( 20 + \\text{dim(Null(A))} = 70 \\).<br />- \\( \\text{dim(Null(A))} = 70 - 20 = 50 \\).<br /><br /><b>Kết quả:</b> Các số chiều lần lượt là (20, 20, 50).",
       "difficulty": "easy",
       "topic": "Linear Algebra (Rank-Nullity Theorem, Fundamental Subspaces)",
       "hints": [
-        "dim(Col(A)) = rank(A)",
-        "dim(Row(A)) = rank(A)",
-        "Rank-Nullity Theorem: rank(A) + dim(Null(A)) = number of columns."
+        "Mẹo nhanh nhất: Nhớ 3 quy tắc vàng.",
+        "1. dim(Cột) = Hạng = 20.",
+        "2. dim(Hàng) = Hạng = 20.",
+        "3. dim(Null) = (Số cột) - Hạng = 70 - 20 = 50."
       ]
     },
     {
@@ -1029,12 +1036,13 @@
         "E. \\( t(1, -1) \\), t is nonzero"
       ],
       "correctAnswer": "C",
-      "explanation": "Let \\( A = \\begin{bmatrix} 3 & -6 <br/> 8 & -11 \\end{bmatrix} \\) and \\( \\lambda = -3 \\). <br/> To find the eigenvectors \\( \\vec{v} = \\begin{bmatrix} x <br/> y \\end{bmatrix} \\) corresponding to \\( \\lambda = -3 \\), we need to solve the equation \\( (A - \\lambda I)\\vec{v} = \\vec{0} \\), where \\( I \\) is the identity matrix and \\( \\vec{0} \\) is the zero vector. <br/> First, calculate \\( A - \\lambda I \\): <br/> \\( A - (-3)I = A + 3I = \\begin{bmatrix} 3 & -6 <br/> 8 & -11 \\end{bmatrix} + 3\\begin{bmatrix} 1 & 0 <br/> 0 & 1 \\end{bmatrix} \\) <br/> \\( = \\begin{bmatrix} 3 & -6 <br/> 8 & -11 \\end{bmatrix} + \\begin{bmatrix} 3 & 0 <br/> 0 & 3 \\end{bmatrix} = \\begin{bmatrix} 3+3 & -6+0 <br/> 8+0 & -11+3 \\end{bmatrix} = \\begin{bmatrix} 6 & -6 <br/> 8 & -8 \\end{bmatrix} \\). <br/> Now, solve the system \\( \\begin{bmatrix} 6 & -6 <br/> 8 & -8 \\end{bmatrix} \\begin{bmatrix} x <br/> y \\end{bmatrix} = \\begin{bmatrix} 0 <br/> 0 \\end{bmatrix} \\): <br/> This gives the equations: <br/> 1) \\( 6x - 6y = 0 \\) <br/> 2) \\( 8x - 8y = 0 \\) <br/> From equation (1), \\( 6x = 6y \\implies x = y \\). <br/> Equation (2) also gives \\( 8x = 8y \\implies x = y \\). Both equations are dependent, which is expected. <br/> So, the eigenvectors are of the form \\( \\begin{bmatrix} y <br/> y \\end{bmatrix} \\) or \\( \\begin{bmatrix} x <br/> x \\end{bmatrix} \\). <br/> Let \\( y = t \\) (where \\( t \\) is any non-zero scalar, since eigenvectors must be non-zero). <br/> Then \\( x = t \\). <br/> The eigenvectors are \\( \\vec{v} = \\begin{bmatrix} t <br/> t \\end{bmatrix} = t \\begin{bmatrix} 1 <br/> 1 \\end{bmatrix} \\), for \\( t \\neq 0 \\). <br/> In coordinate form, this is \\( t(1, 1) \\), where t is nonzero. This matches option C.",
+      "explanation": "Để giải siêu tốc, ta chỉ cần giải hệ \\((A - \\lambda I)\\vec{v} = \\vec{0}\\) bằng cách nhìn vào một hàng duy nhất.<br /><br /><b>1. Tính nhanh \\( A - \\lambda I \\):</b><br />- Với \\(\\lambda = -3\\), ta cần tính \\(A + 3I\\):<br />\\( A + 3I = \\begin{bmatrix} 3+3 & -6 \\\\ 8 & -11+3 \\end{bmatrix} = \\begin{bmatrix} 6 & -6 \\\\ 8 & -8 \\end{bmatrix} \\).<br /><br /><b>2. Dùng một hàng để tìm vector (Mẹo nhanh nhất):</b><br />- Hai hàng của ma trận này luôn tỉ lệ với nhau. Ta chỉ cần dùng hàng đầu tiên: \\([6, -6]\\).<br />- Phương trình tương ứng là \\(6x - 6y = 0\\), suy ra \\(x = y\\).<br /><br /><b>3. Kết luận:</b><br />- Một vector có dạng \\(x=y\\) sẽ là \\((t, t)\\) hoặc \\(t(1, 1)\\).<br />- Điều này khớp với đáp án C.",
       "difficulty": "easy",
       "topic": "Linear Algebra (Eigenvalues and Eigenvectors)",
       "hints": [
-        "Solve the system \\((A - \\lambda I)\\vec{v} = \\vec{0}\\) for \\(\\vec{v}\\).",
-        "Substitute the given matrix A and eigenvalue \\(\\lambda\\)."
+        "Mục tiêu là giải \\((A - \\lambda I)\\vec{v} = \\vec{0}\\).",
+        "Mẹo nhanh nhất: Sau khi tính \\((A - \\lambda I)\\), bạn chỉ cần dùng một hàng để tìm ra mối quan hệ giữa x và y.",
+        "Nếu một hàng là `[a, b]`, vector riêng tương ứng sẽ là `t(-b, a)`. Trong bài này, hàng là `[6, -6]`, vậy vector là `t(6, 6)` hay `t(1, 1)`."
       ]
     }
   ]
