@@ -177,7 +177,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
         case 'arrowleft': case 'p': event.preventDefault(); goToPrevQuestion(); break;
         case 'arrowright': case 'n': case ' ': event.preventDefault(); goToNextQuestion(); break;
         case 'r': event.preventDefault(); if (currentResult?.answered) resetQuestion(); break;
-        case 'h': event.preventDefault(); if (practiceData?.questions[currentQuestion].hints.length > 0) toggleHints(); break;
+        case 'h': event.preventDefault(); toggleHints(); break;
         case 'escape': event.preventDefault(); setShowExitConfirmDialog(true); break;
         case '?': event.preventDefault(); setShowShortcutsHelp(true); break;
         default: break;
