@@ -515,13 +515,13 @@
         "F. 1"
       ],
       "correctAnswer": "C",
-      "explanation": "Để giải siêu tốc, mẹo là chia đa thức trước, sau đó mới lấy đạo hàm. Vì ta chỉ cần tính tại \\(x=1\\), mọi số hạng chứa \\(x\\) sẽ trở thành 1, giúp rút gọn phép tính.<br /><br /><b>1. Chia để đơn giản hóa (nhẩm nhanh):</b><br />\\( y = \\frac{x^2}{\\sqrt{x}} + \\frac{8x}{\\sqrt{x}} + \\frac{3}{\\sqrt{x}} = x^{3/2} + 8x^{1/2} + 3x^{-1/2} \\)<br /><br /><b>2. Lấy đạo hàm:</b><br />\\( y' = \\frac{3}{2}x^{1/2} + 8 \\cdot \\frac{1}{2}x^{-1/2} + 3 \\cdot (-\\frac{1}{2})x^{-3/2} \\)<br />\\( y' = \\frac{3}{2}x^{1/2} + 4x^{-1/2} - \\frac{3}{2}x^{-3/2} \\)<br /><br /><b>3. Thế số và tính nhẩm:</b><br />Khi \\(x=1\\), tất cả các số hạng chứa \\(x\\) đều bằng 1.<br />\\( y'(1) = \\frac{3}{2} + 4 - \\frac{3}{2} \\)<br />Hai số hạng đầu và cuối tự triệt tiêu, vậy kết quả là <b>4</b>.",
+      "explanation": "Để giải siêu tốc, ta dùng 'câu thần chú' của quy tắc thương: <b>'tử phẩy nhân mẫu, trừ mẫu phẩy nhân tử'</b>, tất cả chia cho mẫu bình phương. Ta sẽ tính giá trị của từng thành phần tại `x=1` rồi lắp vào.<br /><br /><b>1. Chuẩn bị các giá trị tại x=1 (tính nhẩm):</b><br />- Tử số: \\( u = x^2+8x+3 \\Rightarrow u(1) = 1+8+3=12 \\).<br />- Đạo hàm tử: \\( u' = 2x+8 \\Rightarrow u'(1) = 2+8=10 \\).<br />- Mẫu số: \\( v = \\sqrt{x} \\Rightarrow v(1) = 1 \\).<br />- Đạo hàm mẫu: \\( v' = \\frac{1}{2\\sqrt{x}} \\Rightarrow v'(1) = \\frac{1}{2} \\).<br /><br /><b>2. Lắp ráp vào 'câu thần chú':</b><br />\\( y'(1) = \\frac{u'(1)v(1) - u(1)v'(1)}{[v(1)]^2} \\)<br />\\( y'(1) = \\frac{(10)(1) - (12)(\\frac{1}{2})}{1^2} \\)<br />\\( y'(1) = \\frac{10 - 6}{1} = 4 \\).",
       "difficulty": "easy",
       "topic": "Calculus (Derivatives)",
       "hints": [
-        "Mẹo giải nhanh nhất: Đừng dùng quy tắc thương! Hãy chia tử cho mẫu trước.",
-        "Sau khi đạo hàm, việc thế `x=1` vào sẽ cực kỳ đơn giản vì `1` mũ bao nhiêu cũng bằng `1`.",
-        "Bạn sẽ thấy ngay hai số hạng đầu và cuối tự triệt tiêu lẫn nhau."
+        "Câu thần chú quy tắc thương: 'tử phẩy nhân mẫu, trừ mẫu phẩy nhân tử' (tất cả chia mẫu bình phương).",
+        "Mẹo nhanh nhất: Tính 4 giá trị `u(1), u'(1), v(1), v'(1)` trước rồi mới lắp vào công thức.",
+        "Việc thế số `x=1` ngay từ đầu sẽ nhanh hơn nhiều so với việc rút gọn biểu thức đạo hàm."
       ]
     },
     {
@@ -546,7 +546,7 @@
     },
     {
       "id": 27,
-      "question": "Let S be the transformation induced by the matrix \\( \\begin{bmatrix} 1 & 1 & 1 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 2 \\end{bmatrix} \\). Calculate \\( S([1 \\quad 2 \\quad 1]^T) \\). <br> (i) \\( [3 \\quad 2 \\quad 2]^T \\) <br> (ii) \\( [4 \\quad 3 \\quad 2]^T \\) <br> (iii) \\( \\vec{0} \\) <br> (iv) \\( [2 \\quad 3 \\quad 4]^T \\) <br> (v) \\( [2 \\quad 2 \\quad 3]^T \\)",
+      "question": "Let S be the transformation induced by the matrix \\( \\begin{bmatrix} 1 & 1 & 1 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 2 \\end{bmatrix} \\). Calculate \\( S([1 \\quad 2 \\quad 1]^T) \\). <br> <br> (i) \\( [3 \\quad 2 \\quad 2]^T \\) <br> (ii) \\( [4 \\quad 3 \\quad 2]^T \\) <br> (iii) \\( \\vec{0} \\) <br> (iv) \\( [2 \\quad 3 \\quad 4]^T \\) <br> (v) \\( [2 \\quad 2 \\quad 3]^T \\)",
       "image": null,
       "options": [
         "A. (See picture)",
