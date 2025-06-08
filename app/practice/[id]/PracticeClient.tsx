@@ -147,10 +147,83 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
   }, [showHints, hintsUsedCount]);
   
   const handleGoToQuestionSubmit = useCallback(() => { if (!practiceData) return; const questionNumber = parseInt(goToQuestionInput); if (!isNaN(questionNumber) && questionNumber >= 1 && questionNumber <= practiceData.questions.length) { goToQuestion(questionNumber - 1); setShowGoToQuestionDialog(false); setGoToQuestionInput(""); } }, [goToQuestionInput, practiceData, goToQuestion]);
-  const useKeyboardShortcuts = () => { const handleKeyPress = useCallback((event: KeyboardEvent) => { if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement || event.target instanceof HTMLSelectElement) return; const isDialogActive = showSummaryDialog || showShortcutsHelp || showExitConfirmDialog || showGoToQuestionDialog; if (isDialogActive) { if (event.key === 'Escape') { setShowSummaryDialog(false); setShowShortcutsHelp(false); setShowExitConfirmDialog(false); setShowGoToQuestionDialog(false); } if (event.key === 'Enter' && showGoToQuestionDialog) { handleGoToQuestionSubmit(); } return; } const currentResult = questionResults[currentQuestion + 1]; if (event.ctrlKey || event.metaKey) { if (event.key.toLowerCase() === 'g') { event.preventDefault(); setShowGoToQuestionDialog(true); } return; } switch (event.key.toLowerCase()) { case 'a': case '1': event.preventDefault(); if (!showFeedback) handleAnswerSelect('A'); break; case 'b': case '2': event.preventDefault(); if (!showFeedback) handleAnswerSelect('B'); break; case 'c': case '3': event.preventDefault(); if (!showFeedback) handleAnswerSelect('C'); break; case 'd': case '4': event.preventDefault(); if (!showFeedback) handleAnswerSelect('D'); break; case 'e': case '5': event.preventDefault(); if (!showFeedback) handleAnswerSelect('E'); break; case 'f': case '6': event.preventDefault(); if (!showFeedback) handleAnswerSelect('F'); break; case 'arrowleft': case 'p': event.preventDefault(); goToPrevQuestion(); break; case 'arrowright': case 'n': case ' ': event.preventDefault(); goToNextQuestion(); break; case 'r': event.preventDefault(); if (currentResult?.answered) resetQuestion(); break; case 'h': event.preventDefault(); if (practiceData?.questions[currentQuestion].hints.length > 0) toggleHints(); break; case 'escape': event.preventDefault(); setShowExitConfirmDialog(true); break; case '?': event.preventDefault(); setShowShortcutsHelp(true); break; default: break; } }, [ showFeedback, practiceData, currentQuestion, questionResults, showSummaryDialog, showShortcutsHelp, showExitConfirmDialog, showGoToQuestionDialog, handleAnswerSelect, goToPrevQuestion, goToNextQuestion, resetQuestion, toggleHints, router, handleGoToQuestionSubmit ]); useEffect(() => { document.addEventListener('keydown', handleKeyPress); return () => document.removeEventListener('keydown', handleKeyPress); }, [handleKeyPress]); };
+  
+  const useKeyboardShortcuts = () => { 
+    const handleKeyPress = useCallback((event: KeyboardEvent) => { 
+      if (event.target instanceof HTMLInputElement || event.target instanceof HTMLTextAreaElement || event.target instanceof HTMLSelectElement) return; 
+      const isDialogActive = showSummaryDialog || showShortcutsHelp || showExitConfirmDialog || showGoToQuestionDialog; 
+      if (isDialogActive) { 
+        if (event.key === 'Escape') { 
+          setShowSummaryDialog(false); setShowShortcutsHelp(false); setShowExitConfirmDialog(false); setShowGoToQuestionDialog(false); 
+        } 
+        if (event.key === 'Enter' && showGoToQuestionDialog) { 
+          handleGoToQuestionSubmit(); 
+        } 
+        return; 
+      } 
+      const currentResult = questionResults[currentQuestion + 1]; 
+      if (event.ctrlKey || event.metaKey) { 
+        if (event.key.toLowerCase() === 'g') { 
+          event.preventDefault(); 
+          setShowGoToQuestionDialog(true); 
+        } 
+        return; 
+      } 
+      switch (event.key.toLowerCase()) { 
+        case 'a': case '1': event.preventDefault(); if (!showFeedback) handleAnswerSelect('A'); break; 
+        case 'b': case '2': event.preventDefault(); if (!showFeedback) handleAnswerSelect('B'); break; 
+        case 'c': case '3': event.preventDefault(); if (!showFeedback) handleAnswerSelect('C'); break; 
+        case 'd': case '4': event.preventDefault(); if (!showFeedback) handleAnswerSelect('D'); break; 
+        case 'e': case '5': event.preventDefault(); if (!showFeedback) handleAnswerSelect('E'); break; 
+        case 'f': case '6': event.preventDefault(); if (!showFeedback) handleAnswerSelect('F'); break; 
+        case 'arrowleft': case 'p': event.preventDefault(); goToPrevQuestion(); break; 
+        case 'arrowright': case 'n': case ' ': event.preventDefault(); goToNextQuestion(); break; 
+        case 'r': event.preventDefault(); if (currentResult?.answered) resetQuestion(); break; 
+        case 'h': event.preventDefault(); toggleHints(); break; 
+        case 'escape': event.preventDefault(); setShowExitConfirmDialog(true); break; 
+        case '?': event.preventDefault(); setShowShortcutsHelp(true); break; 
+        default: break; 
+      } 
+    }, [ showFeedback, practiceData, currentQuestion, questionResults, showSummaryDialog, showShortcutsHelp, showExitConfirmDialog, showGoToQuestionDialog, handleAnswerSelect, goToPrevQuestion, goToNextQuestion, resetQuestion, toggleHints, router, handleGoToQuestionSubmit ]); 
+    useEffect(() => { 
+      document.addEventListener('keydown', handleKeyPress); 
+      return () => document.removeEventListener('keydown', handleKeyPress); 
+    }, [handleKeyPress]); 
+  };
+  
   useKeyboardShortcuts();
+
   useEffect(() => { if (showGoToQuestionDialog) { setTimeout(() => goToInputRef.current?.focus(), 100); } }, [showGoToQuestionDialog]);
-  useEffect(() => { const studentName = localStorage.getItem("studentName"); if (!studentName) { router.push("/"); return; } const loadPracticeData = async () => { try { const response = await fetch(`/data/de${practiceId}.json`); setPracticeData(response.ok ? await response.json() : { examId: `de${practiceId}`, title: `Luyện tập số ${practiceId}`, description: "Bài luyện tập toán học", questions: Array.from({ length: 20 }, (_, i) => { let options = ["A. \\(x=1\\)", "B. \\(x=2\\)", "C. \\(x=3\\)", "D. \\(x=4\\)"]; if (i % 4 === 2) { options.push("E. \\(x=5\\)"); } if (i % 4 === 3) { options.push("E. \\(x=5\\)"); options.push("F. \\(x=6\\)"); } return { id: i + 1, question: `Câu hỏi ${i + 1}: Giải phương trình sau \\( x^2 - 4x + 4 = 0 \\)`, image: null, options: options, correctAnswer: "B", explanation: `Đây là giải thích chi tiết cho câu hỏi ${i + 1}. Phương trình có nghiệm kép \\(x=2\\) vì \\( (x-2)^2 = 0 \\).`, difficulty: i % 3 === 0 ? "easy" : i % 3 === 1 ? "medium" : "hard", topic: "Đại số", hints: i % 2 === 0 ? [`Gợi ý 1: Đây là hằng đẳng thức.`, `Gợi ý 2: Khai triển \\( (a-b)^2 \\).`] : [] }; }) }); } catch (error) { console.error("Error loading practice data:", error); } }; loadPracticeData(); const savedAnswers = localStorage.getItem(`practiceAnswers_${practiceId}`); const savedResults = localStorage.getItem(`practiceResults_${practiceId}`); const savedTime = localStorage.getItem(`practiceTime_${practiceId}`); if (savedAnswers) setUserAnswers(JSON.parse(savedAnswers)); if (savedResults) setQuestionResults(JSON.parse(savedResults)); if (savedTime) setTotalTimeSpent(Number(savedTime)); setQuestionStartTime(Date.now()); timerRef.current = setInterval(() => setTotalTimeSpent(prev => prev + 1), 1000); return () => { if (timerRef.current) clearInterval(timerRef.current); if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current); }; }, [practiceId, router]);
+
+  useEffect(() => { 
+    const studentName = localStorage.getItem("studentName"); 
+    if (!studentName) { router.push("/"); return; } 
+    const loadPracticeData = async () => { 
+      try { 
+        const response = await fetch(`/data/de${practiceId}.json`); 
+        setPracticeData(response.ok ? await response.json() : { examId: `de${practiceId}`, title: `Luyện tập số ${practiceId}`, description: "Bài luyện tập toán học", questions: Array.from({ length: 20 }, (_, i) => { 
+          let options = ["A. \\(x=1\\)", "B. \\(x=2\\)", "C. \\(x=3\\)", "D. \\(x=4\\)"]; 
+          if (i % 4 === 2) { options.push("E. \\(x=5\\)"); } 
+          if (i % 4 === 3) { options.push("E. \\(x=5\\)"); options.push("F. \\(x=6\\)"); } 
+          return { id: i + 1, question: `Câu hỏi ${i + 1}: Giải phương trình sau \\( x^2 - 4x + 4 = 0 \\)`, image: null, options: options, correctAnswer: "B", explanation: `Đây là giải thích chi tiết cho câu hỏi ${i + 1}. Phương trình có nghiệm kép \\(x=2\\) vì \\( (x-2)^2 = 0 \\).`, difficulty: i % 3 === 0 ? "easy" : i % 3 === 1 ? "medium" : "hard", topic: "Đại số", hints: i % 2 === 0 ? [`Gợi ý 1: Đây là hằng đẳng thức.`, `Gợi ý 2: Khai triển \\( (a-b)^2 \\).`] : [] }; 
+        }) }); 
+      } catch (error) { console.error("Error loading practice data:", error); } 
+    }; 
+    loadPracticeData(); 
+    const savedAnswers = localStorage.getItem(`practiceAnswers_${practiceId}`); 
+    const savedResults = localStorage.getItem(`practiceResults_${practiceId}`); 
+    const savedTime = localStorage.getItem(`practiceTime_${practiceId}`); 
+    if (savedAnswers) setUserAnswers(JSON.parse(savedAnswers)); 
+    if (savedResults) setQuestionResults(JSON.parse(savedResults)); 
+    if (savedTime) setTotalTimeSpent(Number(savedTime)); 
+    setQuestionStartTime(Date.now()); 
+    timerRef.current = setInterval(() => setTotalTimeSpent(prev => prev + 1), 1000); 
+    return () => { 
+      if (timerRef.current) clearInterval(timerRef.current); 
+      if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current); 
+    }; 
+  }, [practiceId, router]);
+  
   useEffect(() => { if (practiceData) localStorage.setItem(`practiceAnswers_${practiceId}`, JSON.stringify(userAnswers)) }, [userAnswers, practiceId, practiceData]);
   useEffect(() => { if (practiceData) localStorage.setItem(`practiceResults_${practiceId}`, JSON.stringify(questionResults)) }, [questionResults, practiceId, practiceData]);
   useEffect(() => { localStorage.setItem(`practiceTime_${practiceId}`, totalTimeSpent.toString()) }, [totalTimeSpent, practiceId]);
@@ -175,7 +248,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
         <div className="flex flex-col lg:flex-row lg:gap-8">
 
           {/* --- Main Content (Left Column) --- */}
-          <div className="lg:w-2/3 w-full min-w-0"> {/* Added min-w-0 for flexbox shrink issues */}
+          <div className="lg:w-2/3 w-full min-w-0">
             <Card className="mb-4 shadow-xl rounded-xl animate-fade-in-up">
               <CardHeader>
                   <CardTitle className="text-2xl font-bold">Câu hỏi {currentQuestion + 1}</CardTitle>
@@ -230,7 +303,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
 
           {/* --- Sidebar (Right Column) with Sticky Position --- */}
           <div className="lg:w-1/3 w-full lg:sticky lg:top-16 self-start">
-            <div className="space-y-6 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pr-4"> {/* Wrapper for scrolling */}
+            <div className="space-y-6 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto lg:pr-4">
                 <Card className="shadow-lg rounded-xl animate-fade-in-up" style={{ animationDelay: '150ms' }}>
                 <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-xl font-bold"><BookOpen className="h-6 w-6 text-blue-500" /> {practiceData.title}</CardTitle>
@@ -254,13 +327,13 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
                         if (isActive) dotClass += " bg-blue-600 text-white ring-4 ring-blue-300 scale-110 z-10"; 
                         else if (result?.answered) dotClass += result.correct ? " bg-green-500 hover:bg-green-600 text-white" : " bg-red-500 hover:bg-red-600 text-white"; 
                         else dotClass += " bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600"; 
-                        return <button key={index} className={dotClass} onClick={(e) => goToQuestion(index)}>{index + 1}</button>; 
+                        return <button key={index} className={dotClass} onClick={() => goToQuestion(index)}>{index + 1}</button>; 
                         })}
                     </div>
                     </div>
                 </CardContent>
                 <CardFooter className="grid grid-cols-2 gap-2">
-                    <Button variant="outline" onClick={() => router.push('/select-exam')}><Home className="mr-2 h-4 w-4" /> Về trang chủ</Button>
+                    <Button variant="outline" onClick={() => setShowExitConfirmDialog(true)}><Home className="mr-2 h-4 w-4" /> Thoát</Button>
                     <Button variant="outline" onClick={() => setShowShortcutsHelp(true)}><Keyboard className="mr-2 h-4 w-4" /> Phím tắt</Button>
                 </CardFooter>
                 </Card>
@@ -276,11 +349,102 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
         </div>
       </main>
 
-      {/* --- ALL DIALOGS (UNCHANGED) --- */}
-      <AlertDialog open={showSummaryDialog} onOpenChange={setShowSummaryDialog}>{/* Summary Dialog Content */}</AlertDialog>
-      <AlertDialog open={showShortcutsHelp} onOpenChange={setShowShortcutsHelp}>{/* Shortcuts Dialog Content */}</AlertDialog>
-      <AlertDialog open={showExitConfirmDialog} onOpenChange={setShowExitConfirmDialog}>{/* Exit Dialog Content */}</AlertDialog>
-      <AlertDialog open={showGoToQuestionDialog} onOpenChange={setShowGoToQuestionDialog}>{/* GoTo Dialog Content */}</AlertDialog>
+      {/* --- ALL DIALOGS (FIXED) --- */}
+      <AlertDialog open={showSummaryDialog} onOpenChange={setShowSummaryDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle className="flex items-center gap-2 text-2xl font-bold">
+              <Trophy className="h-8 w-8 text-yellow-500" />
+              Hoàn thành bài luyện tập!
+            </AlertDialogTitle>
+            <AlertDialogDescription className="pt-4 text-base">
+              Chúc mừng bạn đã hoàn thành bài làm. Dưới đây là kết quả của bạn:
+              <div className="mt-4 grid grid-cols-2 gap-4 text-center">
+                <div className="rounded-lg bg-gray-100 dark:bg-gray-800 p-4">
+                  <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Điểm số</p>
+                  <p className="text-3xl font-bold text-gray-900 dark:text-gray-100">{score.correct}/{score.total}</p>
+                </div>
+                <div className="rounded-lg bg-gray-100 dark:bg-gray-800 p-4">
+                  <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Thời gian</p>
+                  <p className="text-3xl font-bold text-gray-900 dark:text-gray-100">{formatTime(totalTimeSpent)}</p>
+                </div>
+              </div>
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel onClick={() => setPracticeComplete(false)}>Xem lại bài</AlertDialogCancel>
+            <AlertDialogAction onClick={() => router.push('/select-exam')}>Về trang chủ</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      <AlertDialog open={showShortcutsHelp} onOpenChange={setShowShortcutsHelp}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle className="flex items-center gap-2">
+              <Keyboard className="h-6 w-6" /> Phím tắt
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              Sử dụng các phím tắt sau để thao tác nhanh hơn:
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <div className="text-sm">
+            <ul className="space-y-2">
+              <li className="flex justify-between items-center"><span>Chọn đáp án A, B, C...</span> <span className="space-x-1"><Badge variant="outline">A</Badge><Badge variant="outline">1</Badge></span></li>
+              <li className="flex justify-between items-center"><span>Câu tiếp theo</span> <span className="space-x-1"><Badge variant="outline">→</Badge><Badge variant="outline">N</Badge><Badge variant="outline">Space</Badge></span></li>
+              <li className="flex justify-between items-center"><span>Câu trước đó</span> <span className="space-x-1"><Badge variant="outline">←</Badge><Badge variant="outline">P</Badge></span></li>
+              <li className="flex justify-between items-center"><span>Hiện/Ẩn gợi ý</span> <Badge variant="outline">H</Badge></li>
+              <li className="flex justify-between items-center"><span>Làm lại câu hỏi</span> <Badge variant="outline">R</Badge></li>
+              <li className="flex justify-between items-center"><span>Đi đến câu hỏi...</span> <Badge variant="outline">Ctrl/Cmd + G</Badge></li>
+              <li className="flex justify-between items-center"><span>Mở bảng phím tắt này</span> <Badge variant="outline">?</Badge></li>
+              <li className="flex justify-between items-center"><span>Thoát (mở hộp thoại)</span> <Badge variant="outline">Esc</Badge></li>
+            </ul>
+          </div>
+          <AlertDialogFooter>
+            <AlertDialogAction>Đã hiểu</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      <AlertDialog open={showExitConfirmDialog} onOpenChange={setShowExitConfirmDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Bạn chắc chắn muốn thoát?</AlertDialogTitle>
+            <AlertDialogDescription>
+              Tiến trình làm bài của bạn sẽ được lưu lại. Bạn có thể quay lại làm tiếp bất cứ lúc nào.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Ở lại</AlertDialogCancel>
+            <AlertDialogAction onClick={() => router.push('/select-exam')}>Thoát</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      <AlertDialog open={showGoToQuestionDialog} onOpenChange={setShowGoToQuestionDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle className="flex items-center gap-2">
+              <Navigation className="h-5 w-5" /> Đi đến câu hỏi
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              Nhập số thứ tự câu hỏi bạn muốn đến (từ 1 đến {practiceData.questions.length}).
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <Input
+            ref={goToInputRef}
+            type="number"
+            placeholder={`Nhập số từ 1 - ${practiceData.questions.length}`}
+            value={goToQuestionInput}
+            onChange={(e) => setGoToQuestionInput(e.target.value)}
+            onKeyDown={(e) => {if (e.key === 'Enter') { e.preventDefault(); handleGoToQuestionSubmit() }}}
+          />
+          <AlertDialogFooter>
+            <AlertDialogCancel>Hủy</AlertDialogCancel>
+            <AlertDialogAction onClick={handleGoToQuestionSubmit}>Đi đến</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   )
 }
