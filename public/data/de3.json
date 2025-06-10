@@ -709,6 +709,110 @@
           "Công thức sau khi đạo hàm là `x(dx/dt) + y(dy/dt) = z(dz/dt)`.",
           "Mẹo siêu tốc: Nếu vận tốc không đổi, tốc độ xa nhau cũng không đổi và bằng `sqrt((dx/dt)² + (dy/dt)²) = sqrt(70² + 28²) ≈ 75.39`."
         ]
+      },
+      {
+        "id": 36,
+        "question": "Determine whether U is a subspace of \\(\\mathbb{R}^3\\).<br />(i) \\( U=\\{[0 \\; 1 \\; s]^T: s \\in \\mathbb{R}\\} \\)<br />(ii) \\( U=\\{[0 \\; a \\; b]^T: a,b \\in \\mathbb{R}\\} \\)<br />(iii) \\( U=\\{[a \\; b \\; a+1]^T: a,b \\in \\mathbb{R}\\} \\)",
+        "image": null,
+        "options": [
+          "A. (iii)",
+          "B. (ii)",
+          "C. (i)",
+          "D. None of the other choices is correct"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Để kiểm tra không gian con, ta dùng mẹo nhanh nhất: <b>Kiểm tra vector không!</b> Một không gian con bắt buộc phải chứa vector \\( \\vec{0} = [0 \\; 0 \\; 0]^T \\).<br/><br/><b>1. Kiểm tra (i):</b> \\( [0 \\; 1 \\; s]^T \\). Thành phần thứ hai luôn là 1, không bao giờ bằng 0. <b>→ Loại (i).</b><br/><b>2. Kiểm tra (iii):</b> \\( [a \\; b \\; a+1]^T \\). Để vector này là vector không, ta phải có \\(a=0\\) và \\(a+1=0\\). Điều này vô lý (\\(0 \\neq -1\\)). <b>→ Loại (iii).</b><br/><b>3. Kiểm tra (ii):</b> \\( [0 \\; a \\; b]^T \\). Có thể là vector không không? Có, khi \\(a=0\\) và \\(b=0\\). Nó cũng thỏa mãn 2 tính chất đóng (cộng và nhân vô hướng). <b>→ (ii) là không gian con.</b><br/><br/>Đáp án tương ứng với (ii) là B.",
+        "difficulty": "easy",
+        "topic": "Linear Algebra (Vector Subspaces)",
+        "hints": [
+          "Câu thần chú kiểm tra không gian con: <b>\"Vector không có nhà không?\"</b>. Nếu không chứa vector \\(\\vec{0}\\), nó không phải là không gian con.",
+          "Cách kiểm tra vector không: Thử cho tất cả các thành phần của vector bằng 0 và xem có tồn tại tham số thỏa mãn không.",
+          "Sau khi loại trừ được (i) và (iii) bằng mẹo vector không, bạn có thể chọn ngay (ii) mà không cần kiểm tra thêm để tiết kiệm thời gian."
+        ]
+      },
+      {
+        "id": 37,
+        "question": "Find the average value of the function \\(f(x) = x^2 - 6x + 4\\) over the interval \\([0, 2]\\).",
+        "image": null,
+        "options": [
+          "A. -1",
+          "B. -2/3",
+          "C. 10/3",
+          "D. None of the other choices is correct",
+          "E. -4"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Áp dụng công thức tính giá trị trung bình của hàm số siêu tốc:<br /><b>Giá trị trung bình = \\(\\frac{1}{b-a} \\int_a^b f(x)dx\\)</b><br/><br/><b>1. Áp dụng công thức:</b><br />\\( \\frac{1}{2-0} \\int_0^2 (x^2 - 6x + 4) dx \\)<br/><br/><b>2. Tính tích phân:</b><br />\\( \\int (x^2 - 6x + 4) dx = \\frac{x^3}{3} - 3x^2 + 4x \\)<br/><br/><b>3. Thế cận từ 0 đến 2:</b><br />\\( [\\frac{2^3}{3} - 3(2^2) + 4(2)] - [0] = \\frac{8}{3} - 12 + 8 = \\frac{8}{3} - 4 = -\\frac{4}{3} \\)<br/><br/><b>4. Nhân với hệ số \\( \\frac{1}{2} \\):</b><br />Giá trị trung bình = \\( \\frac{1}{2} \\times (-\\frac{4}{3}) = -\\frac{2}{3} \\).<br/><br/><b>Kết luận:</b> Đáp án là B.",
+        "difficulty": "easy",
+        "topic": "Calculus (Average Value of a Function)",
+        "hints": [
+          "Câu thần chú: \"Giá trị trung bình = <b>Tích phân CHIA cho Độ dài</b>\".",
+          "Nhớ công thức \\(\\frac{1}{b-a} \\int_a^b f(x)dx\\). Đừng quên nhân với \\(\\frac{1}{b-a}\\) ở đầu!",
+          "Khi cận dưới là 0, việc thế cận trở nên rất nhanh vì giá trị tại cận dưới thường bằng 0."
+        ]
+      },
+      {
+        "id": 38,
+        "question": "Find the value of \\(t\\) for which the following system is consistent: <br /> \\( \\begin{cases} x + y = 1 \\\\ tx + y = t \\\\ (1+t)x + 2y = 3 \\end{cases} \\)",
+        "image": null,
+        "options": [
+          "A. None of the other choices is correct",
+          "B. t = 1, -2",
+          "C. t = 1, -2",
+          "D. t = 1, -3",
+          "E. t = 1, -3"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đây là hệ 3 phương trình 2 ẩn. Mẹo giải nhanh là <b>giải hệ 2 phương trình đầu để tìm x, y theo t, sau đó thế vào phương trình thứ 3</b>.<br/><br/><b>1. Lấy PT (2) trừ PT (1):</b><br/>\\( (tx + y) - (x + y) = t - 1 \\)<br/>\\( \\Rightarrow (t-1)x = t-1 \\)<br/><br/><b>2. Phân tích và giải:</b><br/>- <b>Trường hợp 1: \\( t \\neq 1 \\)</b>, ta có \\( x = 1 \\). Thế vào PT (1): \\(1 + y = 1 \\Rightarrow y = 0\\).<br/>- <b>Thế \\(x=1, y=0\\) vào PT (3)</b> để tìm t: \\((1+t)(1) + 2(0) = 3 \\Rightarrow 1+t = 3 \\Rightarrow \\mathbf{t=2}\\).<br/>- <b>Trường hợp 2: \\( t = 1 \\)</b>, hệ trở thành:<br/>  \\( x + y = 1 \\)<br/>  \\( x + y = 1 \\)<br/>  \\( 2x + 2y = 3 \\Rightarrow x+y = 1.5 \\)<br/>  Hệ này vô nghiệm vì \\(1 \neq 1.5\\).<br/><br/><b>Kết luận:</b> Giá trị duy nhất là \\(t=2\\). Giá trị này không có trong các lựa chọn B, C, D, E. Vậy đáp án là <b>A. None of the other choices is correct</b>.",
+        "difficulty": "medium",
+        "topic": "Linear Algebra (Systems of Linear Equations)",
+        "hints": [
+          "Gặp hệ 3 phương trình 2 ẩn, hãy giải 2 phương trình dễ nhất trước để tìm `x, y` theo tham số `t`.",
+          "Thế `x, y` tìm được vào phương trình còn lại để ra một phương trình chỉ chứa `t`.",
+          "Luôn cẩn thận với trường hợp đặc biệt làm cho hệ số của biến bằng 0 (ở đây là `t-1 = 0`)."
+        ]
+      },
+      {
+        "id": 39,
+        "question": "State the domain of the derivative of the function \\( f(x) = \\ln(x^2) \\).",
+        "image": null,
+        "options": [
+          "A. All nonzero numbers",
+          "B. All real numbers",
+          "C. All positive numbers",
+          "D. All nonnegative numbers",
+          "E. None of them"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Làm 2 bước siêu tốc: <b>1. Tìm đạo hàm. 2. Tìm tập xác định của nó.</b><br/><br/><b>1. Tìm đạo hàm \\(f'(x)\\):</b><br/>   Dùng \"câu thần chú\" đạo hàm Loga: \\( (\\ln u)' = \\frac{u'}{u} \\).<br/>   Ở đây, \\( u = x^2 \\), suy ra \\( u' = 2x \\).<br/>   \\( \\Rightarrow f'(x) = \\frac{2x}{x^2} = \\frac{2}{x} \\)<br/><br/><b>2. Tìm tập xác định của \\(f'(x) = \\frac{2}{x}\\):</b><br/>   Biểu thức này có nghĩa khi mẫu số khác 0.<br/>   \\( \\Rightarrow x \\neq 0 \\).<br/><br/><b>Kết luận:</b> Tập xác định là tất cả các số thực khác 0 (All nonzero numbers), tức là đáp án A.",
+        "difficulty": "easy",
+        "topic": "Calculus (Derivatives & Domains)",
+        "hints": [
+          "Mẹo: Tập xác định của ĐẠO HÀM (domain of derivative), chứ không phải của hàm gốc. Hãy tìm đạo hàm trước rồi mới tìm tập xác định.",
+          "Mẹo rút gọn: \\(f(x)=\\ln(x^2)=2\\ln|x|\\) (vì \\(x^2>0\\) nên x có thể âm). Đạo hàm của \\(2\\ln|x|\\) là \\(\\frac{2}{x}\\).",
+          "Tập xác định của một phân thức luôn là điều kiện để 'mẫu khác không'."
+        ]
+      },
+      {
+        "id": 40,
+        "question": "Find the matrix of the transformation \\( T: \\mathbb{R}^3 \\to \\mathbb{R}^3 \\) which is reflection in the YZ-plane.<br />(i) \\(\\begin{pmatrix} -1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}\\)  (ii) \\(\\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}\\)<br />(iii) \\(\\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & -1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}\\) (iv) \\(\\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & -1 \\end{pmatrix}\\)",
+        "image": null,
+        "options": [
+          "A. (iii)",
+          "B. All of the other choices are incorrect",
+          "C. (ii)",
+          "D. (iv)",
+          "E. (i)"
+        ],
+        "correctAnswer": "E",
+        "explanation": "<b>Câu thần chú:</b> Ma trận biến đổi được tạo từ các cột là ảnh của các vector cơ sở \\(e_1, e_2, e_3\\).<br/><br/><b>1. Phân tích phép biến đổi:</b> Phép đối xứng qua mặt phẳng YZ có nghĩa là:<br/>   - Điểm trên mặt phẳng YZ (nơi có \\(x=0\\)) được giữ nguyên.<br/>   - Tọa độ <b>y</b> giữ nguyên.<br/>   - Tọa độ <b>z</b> giữ nguyên.<br/>   - Tọa độ <b>x</b> đổi dấu.<br/>   Vậy, \\( T(x, y, z) = (-x, y, z) \\).<br/><br/><b>2. Tìm ảnh của các vector cơ sở:</b><br/>   - Cột 1 = \\(T(e_1) = T(1,0,0) = (-1, 0, 0)\\)<br/>   - Cột 2 = \\(T(e_2) = T(0,1,0) = (0, 1, 0)\\)<br/>   - Cột 3 = \\(T(e_3) = T(0,0,1) = (0, 0, 1)\\)<br/><br/><b>3. Ghép các cột lại:</b><br/>   Ma trận là \\(\\begin{pmatrix} -1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix}\\). Đây chính là ma trận <b>(i)</b>. Trong các lựa chọn, đáp án <b>E</b> tương ứng với (i).",
+        "difficulty": "medium",
+        "topic": "Linear Algebra (Transformation Matrices)",
+        "hints": [
+          "Mẹo ghi nhớ siêu tốc: Phép đối xứng qua mặt phẳng nào (ví dụ: YZ) thì sẽ <b>đổi dấu tọa độ còn thiếu (x)</b>. Tọa độ y và z giữ nguyên.",
+          "Đối xứng qua mặt phẳng XY đổi dấu z. Đối xứng qua mặt phẳng XZ đổi dấu y.",
+          "Cột đầu tiên của ma trận luôn là \\(T(1,0,0)\\), cột thứ hai là \\(T(0,1,0)\\),... Chỉ cần tính ảnh của các vector cơ sở là ra đáp án."
+        ]
       }
     ]
   }
