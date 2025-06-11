@@ -813,6 +813,112 @@
           "Đối xứng qua mặt phẳng XY đổi dấu z. Đối xứng qua mặt phẳng XZ đổi dấu y.",
           "Cột đầu tiên của ma trận luôn là \\(T(1,0,0)\\), cột thứ hai là \\(T(0,1,0)\\),... Chỉ cần tính ảnh của các vector cơ sở là ra đáp án."
         ]
+      },
+      {
+        "id": 41,
+        "question": "Cho ma trận \\( A = \\begin{pmatrix} 1 & 0 & 1 \\\\ 0 & 1 & 0 \\end{pmatrix} \\) và \\( B = \\begin{pmatrix} 1 & 0 \\\\ 0 & 1 \\\\ 1 & 2 \\end{pmatrix} \\).<br />Tìm phần tử ở vị trí (3,2) của ma trận tích BA.",
+        "image": null,
+        "options": [
+          "A. None of the other choices is correct",
+          "B. 2",
+          "C. 3",
+          "D. 1",
+          "E. 0"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Mẹo giải siêu tốc:</b> Không cần tính cả ma trận tích! Để tìm một phần tử duy nhất của ma trận tích, hãy dùng quy tắc 'Hàng nhân Cột'.<br /><br /><b>1. Xác định mục tiêu:</b><br />Ta cần tìm phần tử ở <b>hàng 3, cột 2</b> của ma trận <b>BA</b>.<br /><br /><b>2. Áp dụng quy tắc 'Hàng nhân Cột':</b><br />- Lấy <b>hàng 3</b> của ma trận đứng trước (là <b>B</b>): \\( \\begin{pmatrix} 1 & 2 \\end{pmatrix} \\).<br />- Lấy <b>cột 2</b> của ma trận đứng sau (là <b>A</b>): \\( \\begin{pmatrix} 0 \\\\ 1 \\end{pmatrix} \\).<br /><br /><b>3. Tính tích vô hướng (dot product):</b><br />\\( (1 \\times 0) + (2 \\times 1) = 0 + 2 = 2 \\).<br /><br /><b>Kết luận:</b> Phần tử ở vị trí (3,2) chính xác là <b>2</b>. Công việc hoàn thành trong chưa đầy 15 giây.",
+        "difficulty": "easy",
+        "topic": "Linear Algebra (Matrix Multiplication)",
+        "hints": [
+          "Câu thần chú vàng: 'Hàng nhân Cột'. Phần tử (i, j) của tích XY = (hàng i của X) ⋅ (cột j của Y).",
+          "Tuyệt đối không nhân toàn bộ ma trận khi chỉ được yêu cầu tìm một phần tử. Đó là một cái bẫy thời gian.",
+          "Luôn để ý thứ tự ma trận. BA khác với AB. Ở đây ta lấy hàng của B và cột của A."
+        ]
+      },
+      {
+        "id": 42,
+        "question": "Estimate the area of under the graph of<br />\\(f(x) = 9 - x^2\\)<br />from x = 0 to x = 3, using three approximating rectangles and midpoints.",
+        "image": null,
+        "options": [
+          "A. 73/4",
+          "B. None of the other choices is correct",
+          "C. 75/4",
+          "D. 71/4",
+          "E. 77/4"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đây là bài toán xấp xỉ diện tích bằng tổng Riemann trung điểm (Midpoint Riemann Sum). Giải nhanh như sau:<br /><br /><b>1. Tìm chiều rộng hình chữ nhật (Δx):</b><br />- Khoảng là \\([0, 3]\\), chia làm 3 hình chữ nhật.<br />- Chiều rộng mỗi hình: \\( \\Delta x = \\frac{3-0}{3} = 1 \\).<br /><br /><b>2. Tìm các điểm giữa (midpoints):</b><br />- Khoảng con 1: \\([0, 1]\\) → điểm giữa là \\(0.5\\) (tức \\(1/2\\)).<br />- Khoảng con 2: \\([1, 2]\\) → điểm giữa là \\(1.5\\) (tức \\(3/2\\)).<br />- Khoảng con 3: \\([2, 3]\\) → điểm giữa là \\(2.5\\) (tức \\(5/2\\)).<br /><br /><b>3. Tính chiều cao tại các điểm giữa:</b><br />- \\( f(1/2) = 9 - (1/2)^2 = 9 - 1/4 = 35/4 \\).<br />- \\( f(3/2) = 9 - (3/2)^2 = 9 - 9/4 = 27/4 \\).<br />- \\( f(5/2) = 9 - (5/2)^2 = 9 - 25/4 = 11/4 \\).<br /><br /><b>4. Tính tổng diện tích:</b><br />Diện tích = (Chiều rộng) x (Tổng các chiều cao)<br />\\( Area = 1 \\times (\\frac{35}{4} + \\frac{27}{4} + \\frac{11}{4}) = \\frac{35+27+11}{4} = \\frac{73}{4} \\).<br /><br /><b>Kết luận:</b> Đáp án chính xác là <b>73/4</b>.",
+        "difficulty": "medium",
+        "topic": "Calculus (Riemann Sums)",
+        "hints": [
+          "Mẹo nhận dạng: 'approximating rectangles' và 'midpoints' chính là dấu hiệu của Tổng Riemann Trung điểm.",
+          "Câu thần chú: Diện tích ≈ (Rộng) × [Cao(giữa_1) + Cao(giữa_2) + ...].",
+          "Mẹo kiểm tra nhanh: Tính tích phân thực tế \\(\\int_0^3 (9-x^2)dx = [9x - \\frac{x^3}{3}]_0^3 = 27-9=18\\). Đáp án 73/4 = 18.25 là giá trị rất gần, đáng tin cậy nhất."
+        ]
+      },
+      {
+        "id": 43,
+        "question": "Find differential of<br />\\( y = x^2 \\cos(2x) \\)",
+        "image": null,
+        "options": [
+          "A. (See picture)",
+          "B. (i) \\( dy = 2x(\\cos{2x} - x\\sin{2x})dx \\)",
+          "C. (iv)",
+          "D. (ii)",
+          "E. (iii)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Để tìm vi phân `dy`, ta cần tìm đạo hàm `dy/dx` rồi nhân với `dx`. Bài này dùng Quy tắc Tích.<br /><br /><b>1. Xác định Quy tắc Tích (Product Rule):</b><br />- Công thức: \\( (uv)' = u'v + uv' \\).<br />- Ở đây, \\( u = x^2 \\) và \\( v = \\cos(2x) \\).<br /><br /><b>2. Tìm đạo hàm của từng phần:</b><br />- \\( u' = \\frac{d}{dx}(x^2) = 2x \\).<br />- \\( v' = \\frac{d}{dx}(\\cos(2x)) = -\\sin(2x) \\cdot 2 = -2\\sin(2x) \\) (nhớ dùng Quy tắc Dây chuyền - Chain Rule).<br /><br /><b>3. Ghép lại theo công thức:</b><br />\\( \\frac{dy}{dx} = u'v + uv' = (2x)(\\cos(2x)) + (x^2)(-2\\sin(2x)) \\)<br />\\( \\frac{dy}{dx} = 2x\\cos(2x) - 2x^2\\sin(2x) \\).<br /><br /><b>4. Rút gọn và viết dạng vi phân:</b><br />- Rút nhân tử chung \\( 2x \\) ra ngoài: \\( \\frac{dy}{dx} = 2x(\\cos(2x) - x\\sin(2x)) \\).<br />- Vậy, vi phân là: \\( dy = 2x(\\cos(2x) - x\\sin(2x))dx \\).<br /><br /><b>Kết luận:</b> So sánh với các lựa chọn, đây chính là đáp án (i).",
+        "difficulty": "medium",
+        "topic": "Calculus (Differentials and Product Rule)",
+        "hints": [
+          "Câu thần chú Đạo hàm Tích: `(uv)' = u'v + uv'`.",
+          "Luôn nhớ Quy tắc Dây chuyền (Chain Rule) cho các hàm hợp như `cos(2x)`.",
+          "Nhìn đáp án để biết cần rút nhân tử chung gì. Ở đây `2x` được rút ra ngoài."
+        ]
+      },
+      {
+        "id": 44,
+        "question": "Evaluate the limit, if it exists<br />\\( \\lim_{x \\to \\frac{\\pi}{2}} [5\\cos(2x) + 16\\tan(x)] \\)",
+        "image": null,
+        "options": [
+          "A. 5",
+          "B. None of the other choices is correct",
+          "C. 0",
+          "D. 3",
+          "E. -5",
+          "F. -3"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Mẹo giải siêu tốc:</b> Khi thấy giới hạn tại \\(x \\to \\pi/2\\), hãy kiểm tra ngay lập tức các hàm có tiệm cận đứng tại đó, đặc biệt là \\(\\tan(x)\\).<br /><br /><b>1. Phân tích từng thành phần khi \\( x \\to \\pi/2 \\):</b><br />- <b>Thành phần 1: \\( 5\\cos(2x) \\)</b><br />Khi thế số: \\( 5\\cos(2 \\cdot \\frac{\\pi}{2}) = 5\\cos(\\pi) = 5 \\times (-1) = -5 \\). Đây là một giá trị hữu hạn.<br /><br />- <b>Thành phần 2: \\( 16\\tan(x) \\)</b><br />Hàm \\( \\tan(x) = \\frac{\\sin(x)}{\\cos(x)} \\). Khi \\( x \\to \\pi/2 \\), tử số \\(\\sin(x) \\to 1\\), còn mẫu số \\(\\cos(x) \\to 0\\). Phép chia cho 0 dẫn đến giới hạn tiến ra vô cùng.<br /><br /><b>2. Kết luận:</b><br />Vì giới hạn của \\(\\tan(x)\\) khi \\(x \\to \\pi/2\\) không tồn tại (tiến ra vô cùng), nên giới hạn của cả tổng cũng <b>không tồn tại</b>. Do đó, không có lựa chọn số nào là đáp án đúng.",
+        "difficulty": "easy",
+        "topic": "Calculus (Limits with Trigonometric Functions)",
+        "hints": [
+          "Mẹo vàng: Giới hạn tại \\(\\pi/2\\) là 'vùng nguy hiểm' của hàm `tan(x)`.",
+          "Nếu một thành phần của tổng tiến ra vô cùng và phần còn lại hữu hạn, thì giới hạn của cả tổng không tồn tại.",
+          "Hãy nhớ đồ thị của hàm `tan(x)`: nó có các đường tiệm cận đứng tại các điểm \\( ...-\\pi/2, \\pi/2, 3\\pi/2, ... \\)"
+        ]
+      },
+      {
+        "id": 45,
+        "question": "Use Newton's method with the initial approximation \\(x_1 = 1\\) to find \\(x_3\\), the third approximation to the root of the equation<br />\\( x^3 - 10 = 0 \\).<br />Round your answer to 4 decimal places.",
+        "image": null,
+        "options": [
+          "A. 2.2725",
+          "B. 1.9952",
+          "C. 2.8000",
+          "D. None of the other choices is correct",
+          "E. 2.4341"
+        ],
+        "correctAnswer": "D",
+        "explanation": "<b>Mẹo giải siêu tốc:</b> Chỉ cần nhớ công thức của phương pháp Newton và thực hiện 2 vòng lặp tính toán một cách cẩn thận.<br /><br /><b>1. Thiết lập công thức:</b><br />- Hàm số: \\( f(x) = x^3 - 10 \\).<br />- Đạo hàm: \\( f'(x) = 3x^2 \\).<br />- Công thức Newton: \\( x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)} = x_n - \\frac{x_n^3 - 10}{3x_n^2} \\).<br /><br /><b>2. Vòng lặp 1 (Tìm x₂):</b><br />- Sử dụng giá trị ban đầu \\( x_1 = 1 \\).<br />- \\( x_2 = 1 - \\frac{1^3 - 10}{3(1)^2} = 1 - \\frac{-9}{3} = 1 + 3 = 4 \\).<br /><br /><b>3. Vòng lặp 2 (Tìm x₃):</b><br />- Bây giờ sử dụng \\( x_2 = 4 \\).<br />- \\( x_3 = 4 - \\frac{4^3 - 10}{3(4)^2} = 4 - \\frac{64 - 10}{3(16)} = 4 - \\frac{54}{48} \\).<br />- \\( x_3 = 4 - 1.125 = 2.875 \\).<br /><br /><b>Kết luận:</b> Làm tròn đến 4 chữ số thập phân, ta được \\( x_3 = 2.8750 \\). Giá trị này không khớp với bất kỳ lựa chọn nào, do đó đáp án là 'None of the other choices is correct'.",
+        "difficulty": "medium",
+        "topic": "Numerical Methods (Newton's Method)",
+        "hints": [
+          "Công thức cốt lõi cần nhớ: `x_new = x_old - f(x_old) / f'(x_old)`.",
+          "Đừng hoảng sợ nếu kết quả tính toán không khớp với lựa chọn. Nếu bạn tự tin vào các bước tính của mình, 'None of the other choices' là một đáp án hoàn toàn có thể xảy ra.",
+          "Cẩn thận với dấu trừ trong công thức, đặc biệt khi `f(x)` có giá trị âm. `x - (-y)` sẽ thành `x + y`."
+        ]
       }
     ]
   }
