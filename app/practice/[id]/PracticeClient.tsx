@@ -75,6 +75,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
   const [showShortcutsHelp, setShowShortcutsHelp] = useState(false)
   const [showExitConfirmDialog, setShowExitConfirmDialog] = useState(false)
   const [showGoToQuestionDialog, setShowGoToQuestionDialog] = useState(false)
+  const [showResetConfirmDialog, setShowResetConfirmDialog] = useState(false)
   const [goToQuestionInput, setGoToQuestionInput] = useState("")
   const timerRef = useRef<NodeJS.Timeout | null>(null)
   const feedbackTimeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -232,6 +233,18 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
   const calculateProgress = () => practiceData ? (Object.keys(questionResults).length / practiceData.questions.length) * 100 : 0;
   const calculateScore = () => ({ correct: Object.values(questionResults).filter(r => r.correct).length, total: practiceData?.questions.length || 0 });
 
+  const resetExam = useCallback(() => {
+    setUserAnswers({});
+    setQuestionResults({});
+    setTotalTimeSpent(0);
+    setCurrentQuestion(0);
+    setQuestionStartTime(Date.now());
+    setShowFeedback(false);
+    setShowHints(false);
+    setHintsUsedCount(0);
+    if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current);
+  }, []);
+
   if (!practiceData) return <div className="flex min-h-screen items-center justify-center bg-gray-50 dark:bg-gray-900"><p className="text-lg text-gray-700 dark:text-gray-300 animate-pulse">Đang tải bài luyện tập...</p></div>;
 
   const currentQuestionData = practiceData.questions[currentQuestion];
@@ -335,6 +348,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
                 <CardFooter className="grid grid-cols-2 gap-2">
                     <Button variant="outline" onClick={() => setShowExitConfirmDialog(true)}><Home className="mr-2 h-4 w-4" /> Thoát</Button>
                     <Button variant="outline" onClick={() => setShowShortcutsHelp(true)}><Keyboard className="mr-2 h-4 w-4" /> Phím tắt</Button>
+                    <Button variant="destructive" onClick={() => setShowResetConfirmDialog(true)} className="col-span-2"><RotateCcw className="mr-2 h-4 w-4" /> Làm lại đề</Button>
                 </CardFooter>
                 </Card>
 
@@ -442,6 +456,21 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
           <AlertDialogFooter>
             <AlertDialogCancel>Hủy</AlertDialogCancel>
             <AlertDialogAction onClick={handleGoToQuestionSubmit}>Đi đến</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
+      <AlertDialog open={showResetConfirmDialog} onOpenChange={setShowResetConfirmDialog}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Bạn chắc chắn muốn làm lại đề?</AlertDialogTitle>
+            <AlertDialogDescription>
+              Tất cả các đáp án và tiến độ của bạn sẽ bị xóa. Bạn không thể hoàn tác hành động này.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel>Hủy</AlertDialogCancel>
+            <AlertDialogAction onClick={resetExam} className="bg-red-600 hover:bg-red-700">Xác nhận làm lại</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

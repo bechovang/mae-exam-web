@@ -1,0 +1,219 @@
+{
+    "examId": "de4",
+    "title": "Đề 4",
+    "description": "1234 ngày",
+    "questions": [
+        {
+            "id": 1,
+            "question": "Find the function \\( f \\circ g(x) \\) for<br />\\( f(x) = \\sqrt{x+2}, \\quad g(x) = x^2+4x+5 \\)<br /><br />(i) \\( \\sqrt{x^2+4x+7} \\)<br />(ii) \\( \\sqrt{x^2+4x+5} \\)<br />(iii) \\( \\sqrt{x^2+4x+2} \\)<br />(iv) \\( \\sqrt{x^2+4x+10} \\)",
+            "image": null,
+            "options": [
+                "A. None of them",
+                "B. (i)",
+                "C. (iii)",
+                "D. (ii)",
+                "E. (iv)"
+            ],
+            "correctAnswer": "B",
+            "explanation": "Đây là bài toán hàm hợp, chìa khóa là \"lấy g(x) thế vào x của f(x)\".<br /><br /><b>1. Nhớ định nghĩa:</b><br />\\( (f \\circ g)(x) \\) có nghĩa là \\( f(g(x)) \\).<br /><br /><b>2. Thực hiện phép thế:</b><br />- Bất cứ đâu có \\(x\\) trong hàm \\(f(x)\\), ta thay toàn bộ biểu thức của \\(g(x)\\) vào đó.<br />- \\( f(g(x)) = \\sqrt{g(x) + 2} \\)<br /><br /><b>3. Thế biểu thức của g(x) và rút gọn:</b><br />\\( = \\sqrt{(x^2+4x+5) + 2} \\)<br />\\( = \\sqrt{x^2+4x+7} \\)<br /><br /><b>Kết luận:</b> Kết quả này khớp với lựa chọn (i). Do đó, đáp án đúng là <b>B</b>.",
+            "difficulty": "easy",
+            "topic": "Functions (Composition of Functions)",
+            "hints": [
+                "Câu thần chú: `f o g` là \"g trong f\".",
+                "Lấy toàn bộ biểu thức `x² + 4x + 5` và \"nhét\" nó vào vị trí của `x` trong `sqrt(x+2)`.",
+                "Phép tính cuối cùng chỉ là `(x² + 4x + 5) + 2`. Đừng tính toán phức tạp."
+            ]
+        },
+        {
+            "id": 2,
+            "question": "Write equation for the graphs that are obtained from stretch the graph of \\( y = f(x) \\) vertically by a factor of 5 and then shift 1 unit upward.",
+            "image": null,
+            "options": [
+              "A. y = 5f(x) + 1",
+              "B. y = 5(f(x) + 1)",
+              "C. y = f(5x) + 1",
+              "D. y = f(x/5) + 1",
+              "E. None of the other choices is correct"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Đây là bài toán về biến đổi đồ thị, chỉ cần nhớ quy tắc \"trong và ngoài\".<br /><br /><b>1. Quy tắc \"Trong-Ngoài\":</b><br />- Các phép biến đổi <b>dọc (vertical)</b> như co giãn dọc, tịnh tiến lên/xuống sẽ tác động <b>bên ngoài</b> hàm \\( f(x) \\).<br />- Các phép biến đổi <b>ngang (horizontal)</b> như co giãn ngang, tịnh tiến trái/phải sẽ tác động <b>bên trong</b> hàm \\( f(x) \\), tức là tác động vào biến \\(x\\).<br /><br /><b>2. Áp dụng từng bước:</b><br />- <b>Bước 1: Co giãn dọc (stretch vertically) lên 5 lần:</b> Tác động bên ngoài. Nhân toàn bộ hàm với 5.<br />  \\( y = f(x) \\longrightarrow y = 5f(x) \\)<br />- <b>Bước 2: Tịnh tiến lên (shift upward) 1 đơn vị:</b> Tác động bên ngoài. Cộng 1 vào kết quả.<br />  \\( y = 5f(x) \\longrightarrow y = 5f(x) + 1 \\)<br /><br /><b>Kết luận:</b> Phương trình cuối cùng là \\( y = 5f(x) + 1 \\). Đáp án là <b>A</b>.",
+            "difficulty": "easy",
+            "topic": "Functions (Graph Transformations)",
+            "hints": [
+              "Mẹo nhớ: Biến đổi 'dọc' (lên/xuống, co giãn dọc) tác động BÊN NGOÀI f(x).",
+              "Co giãn dọc 5 lần -> nhân 5 BÊN NGOÀI: `5f(x)`.",
+              "Tịnh tiến lên 1 -> cộng 1 BÊN NGOÀI: `... + 1`. Kết hợp lại ra đáp án."
+            ]
+        },
+        {
+            "id": 3,
+            "question": "Evaluate the limit, if it exists<br />\\( \\lim_{x \\to 1} \\frac{\\sqrt{x^2+3x}-2}{x-1} \\)",
+            "image": null,
+            "options": [
+              "A. 5/4",
+              "B. -5/4",
+              "C. 0",
+              "D. -5/2",
+              "E. 5/2",
+              "F. None of the other choices is correct"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Đây là dạng giới hạn \\( \\frac{0}{0} \\), cách giải nhanh nhất là dùng quy tắc L'Hôpital.<br /><br /><b>1. Kiểm tra dạng vô định:</b><br />- Thay \\( x=1 \\) vào tử: \\( \\sqrt{1^2+3(1)}-2 = \\sqrt{4}-2 = 0 \\).<br />- Thay \\( x=1 \\) vào mẫu: \\( 1-1 = 0 \\).<br />=> Đúng dạng \\( \\frac{0}{0} \\).<br /><br /><b>2. Áp dụng L'Hôpital (Đạo hàm tử / Đạo hàm mẫu):</b><br />- Đạo hàm tử: \\( (\\sqrt{x^2+3x}-2)' = \\frac{(x^2+3x)'}{2\\sqrt{x^2+3x}} = \\frac{2x+3}{2\\sqrt{x^2+3x}} \\).<br />- Đạo hàm mẫu: \\( (x-1)' = 1 \\).<br /><br /><b>3. Tính giới hạn mới:</b><br />\\( \\lim_{x \\to 1} \\frac{\\frac{2x+3}{2\\sqrt{x^2+3x}}}{1} = \\frac{2(1)+3}{2\\sqrt{1^2+3(1)}} = \\frac{5}{2\\sqrt{4}} = \\frac{5}{2 \\cdot 2} = \\frac{5}{4} \\).<br /><br /><b>Kết luận:</b> Đáp án là <b>A</b>.",
+            "difficulty": "medium",
+            "topic": "Calculus (Limits with L'Hopital's Rule)",
+            "hints": [
+              "Mẹo Thần Tốc: Thấy giới hạn dạng 0/0, dùng ngay quy tắc L'Hôpital.",
+              "Công thức đạo hàm nhanh: `(sqrt(u))' = u' / (2*sqrt(u))`.",
+              "Nếu quên L'Hôpital, có thể dùng phương pháp nhân liên hợp với `sqrt(x²+3x) + 2`."
+            ]
+        },
+        {
+            "id": 4,
+            "question": "Find the number \\( a \\) such that the function<br />\\( f(x) = \\begin{cases} \\frac{\\sqrt{x+1}-2}{x-3} & \\text{if } x>3 \\\\ x^2-3a+1 & \\text{if } x \\le 3 \\end{cases} \\)<br />is continuous on its domain.",
+            "image": null,
+            "options": [
+              "A. 13/4",
+              "B. 4/13",
+              "C. 1/4",
+              "D. 39/4",
+              "E. 3"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Để hàm số liên tục tại điểm \"nối\" \\( x=3 \\), giới hạn từ hai phía phải bằng nhau và bằng giá trị của hàm tại đó.<br /><br /><b>1. \"Thần chú liên tục\":</b><br />\\( \\lim_{x \\to 3^+} f(x) = \\lim_{x \\to 3^-} f(x) = f(3) \\).<br /><br /><b>2. Tính vế trái (giới hạn trái và giá trị tại điểm):</b><br />Sử dụng nhánh \\( x \\le 3 \\):<br />\\( f(3) = (3)^2 - 3a + 1 = 9 - 3a + 1 = 10 - 3a \\).<br /><br /><b>3. Tính vế phải (giới hạn phải):</b><br />Sử dụng nhánh \\( x > 3 \\). Đây là giới hạn \\( \\lim_{x \\to 3} \\frac{\\sqrt{x+1}-2}{x-3} \\).<br />Đây là dạng \\( \\frac{0}{0} \\), áp dụng L'Hôpital:<br />\\( \\lim_{x \\to 3} \\frac{(\\sqrt{x+1}-2)'}{(x-3)'} = \\lim_{x \\to 3} \\frac{\\frac{1}{2\\sqrt{x+1}}}{1} = \\frac{1}{2\\sqrt{3+1}} = \\frac{1}{2\\sqrt{4}} = \\frac{1}{4} \\).<br /><br /><b>4. Cho hai vế bằng nhau và giải:</b><br />\\( 10 - 3a = \\frac{1}{4} \\)<br />\\( 3a = 10 - \\frac{1}{4} = \\frac{39}{4} \\)<br />\\( a = \\frac{39}{4 \\cdot 3} = \\frac{13}{4} \\).<br /><br /><b>Kết luận:</b> Đáp án là <b>A</b>.",
+            "difficulty": "medium",
+            "topic": "Calculus (Continuity of Piecewise Functions)",
+            "hints": [
+              "Mẹo liên tục: Giới hạn trái = Giới hạn phải. Chỉ cần quan tâm điểm nối `x=3`.",
+              "Giới hạn phải là một bài toán giới hạn 0/0. Dùng L'Hôpital để giải trong 10 giây.",
+              "Giới hạn trái chỉ đơn giản là thế `x=3` vào nhánh thứ hai. Cuối cùng cho hai kết quả bằng nhau."
+            ]
+        },
+        {
+            "id": 5,
+            "question": "Simplify the expression \\( \\frac{f(x+h)-f(x)}{h} \\) for \\( f(x) = x^2+5x \\).",
+            "image": null,
+            "options": [
+              "A. 2h+x+5",
+              "B. h+2x-5",
+              "C. h+2x+5",
+              "D. 2h+x-5",
+              "E. None of the other choices is correct"
+            ],
+            "correctAnswer": "C",
+            "explanation": "Đây là bài toán rút gọn biểu thức \"Thương sai phân\", nền tảng của định nghĩa đạo hàm.<br /><br /><b>1. Mẹo siêu tốc (nhận dạng đạo hàm):</b><br />- Biểu thức này khi \\( h \\to 0 \\) chính là đạo hàm \\( f'(x) \\).<br />- Ta có: \\( f'(x) = (x^2+5x)' = 2x+5 \\).<br />- Kết quả rút gọn phải chứa \\( 2x+5 \\) và một vài số hạng chứa \\(h\\). Nhìn vào các đáp án, chỉ có <b>C. h+2x+5</b> là hợp lý.<br /><br /><b>2. Giải theo cách truyền thống:</b><br />- <b>Bước 1: Tính \\( f(x+h) \\)</b><br />  \\( f(x+h) = (x+h)^2 + 5(x+h) = (x^2+2xh+h^2) + (5x+5h) \\).<br />- <b>Bước 2: Tính \\( f(x+h) - f(x) \\)</b><br />  \\( (x^2+2xh+h^2+5x+5h) - (x^2+5x) = 2xh+h^2+5h \\).<br />  (Lưu ý: tất cả các số hạng không có \\(h\\) đã tự triệt tiêu).<br />- <b>Bước 3: Chia cho \\(h\\)</b><br />  \\( \\frac{2xh+h^2+5h}{h} = \\frac{h(2x+h+5)}{h} = 2x+h+5 \\).<br /><br /><b>Kết luận:</b> Đáp án là <b>C</b>.",
+            "difficulty": "easy",
+            "topic": "Calculus (Difference Quotient)",
+            "hints": [
+              "Mẹo kiểm tra nhanh: Đáp án đúng khi cho `h=0` phải ra đạo hàm `f'(x)`.",
+              "Tính đạo hàm `f'(x) = 2x+5`. Liếc đáp án thấy `h+2x+5`, khả năng cao là đúng.",
+              "Khi tính `f(x+h) - f(x)`, tất cả các số hạng không dính tới `h` phải triệt tiêu nhau. Nếu không, bạn đã tính sai."
+            ]
+        },
+        {
+            "id": 6,
+            "question": "Find an equation of the tangent line to the curve.<br />\\( y = \\frac{\\sqrt{x}}{x+1} \\) at \\( (4, 0.4) \\)",
+            "image": null,
+            "options": [
+              "A. y = -0.03x+0.52",
+              "B. y = -0.03x+0.28",
+              "C. y = -0.03x-0.52",
+              "D. y= -0.03x-0.38",
+              "E. y = 0.03x+0.52",
+              "F. None of the other choices is correct"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Để tìm phương trình tiếp tuyến, ta cần tìm hệ số góc \\(m\\) bằng cách lấy đạo hàm tại điểm tiếp xúc.<br /><br /><b>1. Công thức cần dùng:</b><br />- Phương trình tiếp tuyến: \\( y - y_0 = m(x - x_0) \\)<br />- Hệ số góc: \\( m = y'(x_0) \\)<br /><br /><b>2. Tính đạo hàm (dùng quy tắc thương):</b><br />\\( y' = \\frac{(\\sqrt{x})'(x+1) - \\sqrt{x}(x+1)'}{(x+1)^2} = \\frac{\\frac{1}{2\\sqrt{x}}(x+1) - \\sqrt{x}(1)}{(x+1)^2} \\)<br /><br /><b>3. Tính hệ số góc m tại x = 4:</b><br />\\( m = y'(4) = \\frac{\\frac{1}{2\\sqrt{4}}(4+1) - \\sqrt{4}}{(4+1)^2} = \\frac{\\frac{1}{4}(5) - 2}{5^2} = \\frac{\\frac{5}{4} - 2}{25} = \\frac{-\\frac{3}{4}}{25} = -\\frac{3}{100} = -0.03 \\)<br /><br /><b>4. Lập phương trình tiếp tuyến:</b><br />- Ta có điểm \\((x_0, y_0) = (4, 0.4)\\) và \\(m = -0.03\\).<br />- \\( y - 0.4 = -0.03(x - 4) \\)<br />- \\( y = -0.03x + (-0.03)(-4) + 0.4 \\)<br />- \\( y = -0.03x + 0.12 + 0.4 \\)<br />- \\( y = -0.03x + 0.52 \\)<br /><br /><b>Kết luận:</b> Đáp án là <b>A</b>.",
+            "difficulty": "medium",
+            "topic": "Calculus (Tangent Lines)",
+            "hints": [
+              "Mẹo 1: Hệ số góc tiếp tuyến `m` chính là giá trị của đạo hàm `y'` tại điểm `x=4`.",
+              "Mẹo 2: Dùng quy tắc đạo hàm của thương: `(tử/mẫu)' = (tử' * mẫu - tử * mẫu') / mẫu²`.",
+              "Mẹo 3: Sau khi tính được `m = -0.03`, bạn có thể loại ngay các đáp án có hệ số góc khác."
+            ]
+        },
+        {
+            "id": 7,
+            "question": "A particle moves along a straight line with displacement given by \\( s(t) = t^2 - 8t + 18 \\). What is the instantaneous velocity when \\( t = 4 \\)?",
+            "image": null,
+            "options": [
+              "A. All of the other choices are incorrect",
+              "B. 2",
+              "C. 0",
+              "D. 4",
+              "E. 8"
+            ],
+            "correctAnswer": "C",
+            "explanation": "Đây là bài toán vận tốc tức thời, chìa khóa giải trong 5 giây là lấy đạo hàm.<br /><br /><b>1. \"Thần chú\" Vận tốc tức thời:</b><br />Vận tốc tức thời \\( v(t) \\) chính là đạo hàm của hàm quãng đường (displacement) \\( s(t) \\).<br />\\( v(t) = s'(t) \\)<br /><br /><b>2. Tìm hàm vận tốc v(t):</b><br />\\( v(t) = (t^2 - 8t + 18)' = 2t - 8 \\)<br /><br /><b>3. Tính vận tốc tại t = 4:</b><br />Thế \\( t=4 \\) vào hàm \\( v(t) \\):<br />\\( v(4) = 2(4) - 8 = 8 - 8 = 0 \\)<br /><br /><b>Kết luận:</b> Vận tốc tức thời tại \\(t=4\\) là 0. Đáp án là <b>C</b>.",
+            "difficulty": "easy",
+            "topic": "Calculus (Derivatives, Velocity)",
+            "hints": [
+              "Câu thần chú: Vận tốc tức thời = Đạo hàm của quãng đường.",
+              "Đừng thế `t=4` vào hàm `s(t)` ban đầu, đó là vị trí, không phải vận tốc.",
+              "Chỉ cần tính `s'(t)` rồi thế `t=4` vào là ra kết quả."
+            ]
+        },
+        {
+            "id": 8,
+            "question": "Differentiate \\( y = \\frac{5}{(2x-3)^4} \\)<br /><br />(i) \\( dy/dx = \\frac{20}{(2x-3)^5} \\)<br />(ii) \\( dy/dx = \\frac{-20}{(2x-3)^5} \\)<br />(iii) \\( dy/dx = \\frac{40}{(2x-3)^5} \\)<br />(iv) \\( dy/dx = \\frac{-40}{(2x-3)^5} \\)",
+            "image": null,
+            "options": [
+              "A. (iv)",
+              "B. (i)",
+              "C. (ii)",
+              "D. (iii)",
+              "E. None of the other choices is correct"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Cách nhanh nhất để giải bài này là đưa mẫu số lên tử với số mũ âm và dùng quy tắc chuỗi.<br /><br /><b>1. Viết lại hàm số:</b><br />\\( y = \\frac{5}{(2x-3)^4} = 5(2x-3)^{-4} \\)<br /><br /><b>2. Áp dụng quy tắc chuỗi (Chain Rule):</b><br />\"Đạo hàm hàm ngoài, nhân với đạo hàm hàm trong\"<br />- Hàm ngoài: \\( 5u^{-4} \\) -> đạo hàm là \\( 5(-4)u^{-5} = -20u^{-5} \\)<br />- Hàm trong: \\( u = 2x-3 \\) -> đạo hàm là \\( 2 \\)<br /><br /><b>3. Kết hợp lại:</b><br />\\( \\frac{dy}{dx} = (-20(2x-3)^{-5}) \\cdot (2) \\)<br />\\( = -40(2x-3)^{-5} \\)<br />\\( = \\frac{-40}{(2x-3)^5} \\)<br /><br /><b>Kết luận:</b> Kết quả khớp với (iv). Đáp án là <b>A</b>.",
+            "difficulty": "easy",
+            "topic": "Calculus (Chain Rule)",
+            "hints": [
+              "Mẹo siêu tốc: Đừng dùng quy tắc thương, hãy viết lại hàm thành `y = 5(2x-3)⁻⁴`.",
+              "Câu thần chú quy tắc chuỗi: `(uⁿ)' = n*uⁿ⁻¹ * u'`.",
+              "Đừng quên nhân với đạo hàm của hàm bên trong `(2x-3)' = 2`."
+            ]
+        },
+        {
+            "id": 9,
+            "question": "Find \\( dy/dx \\) by implicit differentiation<br />\\( 7y^2 - 5x^2 = 5 \\)<br /><br />(i) \\( (5x)/(7y) \\)<br />(ii) \\( (5xi)/7 \\)<br />(iii) \\( (10x+5)/(14y) \\)<br />(iv) \\( (5x^2)/(14y) \\)",
+            "image": null,
+            "options": [
+              "A. (iv)",
+              "B. (ii)",
+              "C. (iii)",
+              "D. (i)",
+              "E. None of the other choices is correct"
+            ],
+            "correctAnswer": "D",
+            "explanation": "Đây là bài toán đạo hàm ẩn, chìa khóa là nhớ nhân thêm \\( dy/dx \\) khi đạo hàm theo biến \\(y\\).<br /><br /><b>1. Lấy đạo hàm hai vế theo x:</b><br />\\( \\frac{d}{dx}(7y^2) - \\frac{d}{dx}(5x^2) = \\frac{d}{dx}(5) \\)<br /><br /><b>2. Thực hiện đạo hàm:</b><br />- Đạo hàm của \\( 7y^2 \\) là \\( 14y \\cdot \\frac{dy}{dx} \\) (quy tắc chuỗi).<br />- Đạo hàm của \\( 5x^2 \\) là \\( 10x \\).<br />- Đạo hàm của hằng số \\( 5 \\) là \\( 0 \\).<br />Phương trình trở thành: \\( 14y \\frac{dy}{dx} - 10x = 0 \\)<br /><br /><b>3. Rút \\( \\frac{dy}{dx} \\) ra:</b><br />\\( 14y \\frac{dy}{dx} = 10x \\)<br />\\( \\frac{dy}{dx} = \\frac{10x}{14y} = \\frac{5x}{7y} \\)<br /><br /><b>Kết luận:</b> Kết quả khớp với (i). Đáp án là <b>D</b>.",
+            "difficulty": "easy",
+            "topic": "Calculus (Implicit Differentiation)",
+            "hints": [
+              "Câu thần chú đạo hàm ẩn: \"Mỗi khi đạo hàm một số hạng có `y`, hãy nhân thêm `dy/dx` vào cuối\".",
+              "Quy trình 3 bước: 1. Đạo hàm 2 vế. 2. Chuyển vế để gom các số hạng có `dy/dx`. 3. Chia để tìm `dy/dx`.",
+              "Cẩn thận: Đạo hàm của `7y²` là `14y * dy/dx`, không phải chỉ `14y`."
+            ]
+        },
+        {
+            "id": 10,
+            "question": "Each side of a square is increasing at a rate of 3cm/s. At what rate (in cm²/s) is the area of the square increasing when the area of square is 25cm²?",
+            "image": null,
+            "options": [
+              "A. 30",
+              "B. 15",
+              "C. 5",
+              "D. 25",
+              "E. None of the other choices is correct"
+            ],
+            "correctAnswer": "A",
+            "explanation": "Đây là bài toán 'tốc độ thay đổi có liên quan' (Related Rates).<br /><br /><b>1. Thiết lập các biến và công thức:</b><br />- Gọi cạnh hình vuông là \\(s\\), diện tích là \\(A\\).<br />- Ta có công thức: \\( A = s^2 \\).<br />- Ta được cho: tốc độ tăng của cạnh \\( \\frac{ds}{dt} = 3 \\) cm/s.<br />- Ta cần tìm: tốc độ tăng của diện tích \\( \\frac{dA}{dt} \\) tại thời điểm \\( A = 25 \\) cm².<br /><br /><b>2. Đạo hàm công thức theo thời gian t:</b><br />Lấy đạo hàm hai vế của \\( A = s^2 \\) theo \\(t\\):<br />\\( \\frac{dA}{dt} = 2s \\cdot \\frac{ds}{dt} \\)<br /><br /><b>3. Tìm giá trị của s tại thời điểm cần tính:</b><br />Khi diện tích \\( A = 25 \\), ta có \\( s^2 = 25 \\Rightarrow s = 5 \\) cm.<br /><br /><b>4. Thế số và giải:</b><br />\\( \\frac{dA}{dt} = 2 \\cdot (5) \\cdot (3) = 30 \\) cm²/s.<br /><br /><b>Kết luận:</b> Tốc độ tăng của diện tích là 30 cm²/s. Đáp án là <b>A</b>.",
+            "difficulty": "medium",
+            "topic": "Calculus (Related Rates)",
+            "hints": [
+              "Mẹo 3 bước: 1. Viết công thức (A=s²). 2. Lấy đạo hàm 2 vế theo thời gian t. 3. Thế các giá trị đã biết vào.",
+              "Thông tin ẩn: Khi `A=25`, bạn phải tự suy ra cạnh `s=5`.",
+              "Công thức cốt lõi: `dA/dt = 2s * ds/dt`. Nhớ nhân thêm `ds/dt` (quy tắc chuỗi)."
+            ]
+        }
+    ]
+  }
