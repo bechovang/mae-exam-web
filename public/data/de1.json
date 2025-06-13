@@ -13,7 +13,7 @@
         "C. All of the other choices are incorrect"
       ],
       "correctAnswer": "A",
-      "explanation": "Để giải siêu tốc, ta dùng mẹo để tìm các hệ số quan trọng của đa thức đặc trưng.<br /><br /><b>1. Tìm hệ số của \\(x^2\\) (dựa vào Vết - trace):</b><br />- Công thức: Hệ số của \\(x^2\\) là Vết của A, \\(tr(A)\\).<br />- Vết là tổng các phần tử trên đường chéo chính: \\( tr(A) = 1 + 3 + 2 = 6 \\).<br />- Đa thức phải có dạng \\( -x^3 + 6x^2 + ... \\).<br />  <i>(Nhìn vào đây, ta có thể loại các đáp án không có `+6x²`).</i><br /><br /><b>2. Tìm hằng số tự do (dựa vào Định thức - determinant):</b><br />- Công thức: Hằng số tự do chính là \\( \\det(A) \\).<br />- Tính nhanh định thức:<br />\\( \\det(A) = 1(6-2) - 0 + 2(-4-0) = 4 - 8 = -4 \\).<br />- Đa thức phải kết thúc bằng `-4`.<br /><br /><b>3. Kết luận:</b><br />- Đa thức đúng phải là \\( -x^3 + 6x^2 - 9x - 4 \\).<br />- So sánh với các lựa chọn, không có đáp án nào khớp hoàn toàn. Tuy nhiên, đáp án (i) khớp với các hệ số bậc cao nhất và chỉ sai hằng số tự do (có thể do lỗi đánh máy trong đề).<br />- Do đó, (i) là câu trả lời dự định.",
+      "explanation": "cau nay sai, de sua lai, Để giải siêu tốc, ta dùng mẹo để tìm các hệ số quan trọng của đa thức đặc trưng.<br /><br /><b>1. Tìm hệ số của \\(x^2\\) (dựa vào Vết - trace):</b><br />- Công thức: Hệ số của \\(x^2\\) là Vết của A, \\(tr(A)\\).<br />- Vết là tổng các phần tử trên đường chéo chính: \\( tr(A) = 1 + 3 + 2 = 6 \\).<br />- Đa thức phải có dạng \\( -x^3 + 6x^2 + ... \\).<br />  <i>(Nhìn vào đây, ta có thể loại các đáp án không có `+6x²`).</i><br /><br /><b>2. Tìm hằng số tự do (dựa vào Định thức - determinant):</b><br />- Công thức: Hằng số tự do chính là \\( \\det(A) \\).<br />- Tính nhanh định thức:<br />\\( \\det(A) = 1(6-2) - 0 + 2(-4-0) = 4 - 8 = -4 \\).<br />- Đa thức phải kết thúc bằng `-4`.<br /><br /><b>3. Kết luận:</b><br />- Đa thức đúng phải là \\( -x^3 + 6x^2 - 9x - 4 \\).<br />- So sánh với các lựa chọn, không có đáp án nào khớp hoàn toàn. Tuy nhiên, đáp án (i) khớp với các hệ số bậc cao nhất và chỉ sai hằng số tự do (có thể do lỗi đánh máy trong đề).<br />- Do đó, (i) là câu trả lời dự định.",
       "difficulty": "medium",
       "topic": "Linear Algebra",
       "hints": [
@@ -478,7 +478,7 @@
       "hints": [
         "Công thức: Giá trị trung bình = (1 / chiều rộng khoảng) * (Tích phân trên khoảng đó).",
         "Hãy tưởng tượng bạn đang san phẳng diện tích dưới đồ thị thành một hình chữ nhật có cùng diện tích và chiều rộng. Giá trị trung bình chính là chiều cao của hình chữ nhật đó.",
-        "Mẹo giải nhanh nhất: Vì cận dưới là 0, bạn chỉ cần tính giá trị của nguyên hàm tại cận trên rồi nhân với \\(1/(b-a)\\)."
+        "Mẹo giải nhanh nhất: Vì cận dưới là 0, và nguyên hàm vẫn còn chứa x nên bạn chỉ cần tính giá trị của nguyên hàm tại cận trên rồi nhân với \\(1/(b-a)\\)."
       ]
     },
     {
