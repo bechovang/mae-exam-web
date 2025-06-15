@@ -197,8 +197,8 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
   useEffect(() => { if (showGoToQuestionDialog) { setTimeout(() => goToInputRef.current?.focus(), 100); } }, [showGoToQuestionDialog]);
 
   useEffect(() => { 
-    const studentName = localStorage.getItem("studentName"); 
-    if (!studentName) { router.push("/"); return; } 
+    const studentName = localStorage.getItem("studentName") || "Học sinh"; 
+    localStorage.setItem("studentName", studentName);
     const loadPracticeData = async () => { 
       try { 
         const response = await fetch(`/data/de${practiceId}.json`); 

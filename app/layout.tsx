@@ -3,6 +3,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -23,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="vi" suppressHydrationWarning>
       <head>
-        <script id="mathjax-config">
+        <Script id="mathjax-config" strategy="beforeInteractive">
           {`
             window.MathJax = {
               tex: {
@@ -37,14 +38,13 @@ export default function RootLayout({
                   console.log('MathJax v3 startup: Ready!');
                   MathJax.startup.defaultReady();
                   if (typeof window !== 'undefined') {
-                    window.dispatchEvent(new Event('MathJaxReady')); // Custom event
+                    window.dispatchEvent(new Event('MathJaxReady'));
                   }
                 }
               },
               svg: { fontCache: 'global' }
             };
 
-            // Function to manually trigger typesetting
             window.typesetMath = (element) => {
               if (window.MathJax && window.MathJax.typesetPromise && element) {
                 console.log('Manually typesetting:', element);
@@ -54,11 +54,12 @@ export default function RootLayout({
               }
             };
           `}
-        </script>
-        <script 
-          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" 
+        </Script>
+        <Script 
+          src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+          strategy="beforeInteractive"
           id="MathJax-script"
-        ></script>
+        />
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
