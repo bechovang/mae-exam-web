@@ -1,0 +1,270 @@
+{
+    "examId": "de6",
+    "title": "Null và Img của ma trận",
+    "description": "Tuyển tập các câu hỏi về Không gian Null (Hạt nhân), Không gian Ảnh (Cột), Hạng và các khái niệm liên quan.",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Let A be a 30x70 matrix having rank A = 20. Find \\( \\text{dim}(\\text{Col}(A)) \\), \\( \\text{dim}(\\text{Row}(A)) \\) and \\( \\text{dim}(\\text{Null}(A)) \\).<br><br><i>(Nguồn: Đề 1, Câu 49)</i>",
+        "image": null,
+        "options": [
+          "A. 70, 30, 20",
+          "B. 20, 20, 40",
+          "C. 20, 20, 50",
+          "D. None of the other choices is correct"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Để giải siêu tốc, ta áp dụng 3 quy tắc cơ bản và nhanh chóng.<br /><br /><b>1. Số chiều không gian cột và hàng:</b><br />- Cả hai đều bằng hạng của ma trận.<br />- \\( \\text{dim(Col(A))} = \\text{dim(Row(A))} = \\text{rank}(A) = 20 \\).<br /><br /><b>2. Số chiều không gian Null (hạt nhân):</b><br />- Áp dụng Định lý Hạng-Số chiều: \\( \\text{rank}(A) + \\text{dim(Null(A))} = \\text{số cột} \\).<br />- \\( 20 + \\text{dim(Null(A))} = 70 \\).<br />- \\( \\text{dim(Null(A))} = 70 - 20 = 50 \\).<br /><br /><b>Kết quả:</b> Các số chiều lần lượt là (20, 20, 50).",
+        "difficulty": "easy",
+        "topic": "Linear Algebra (Rank-Nullity Theorem, Fundamental Subspaces)",
+        "hints": [
+          "Mẹo nhanh nhất: Nhớ 3 quy tắc vàng.",
+          "1. dim(Col(A)) = Hạng = 20.",
+          "2. dim(Row(A)) = Hạng = 20.",
+          "3. dim(Null(A)) = (Số cột) - Hạng = 70 - 20 = 50."
+        ]
+      },
+      {
+        "id": 2,
+        "question": "Let A be a matrix of size \\( m \\times n \\) such that rank(A) = r. Which of the following statements are true?<br />(i) \\( \\text{dim}(\\text{null}(A)) = m - r \\).<br />(ii) \\( \\text{rank}(A^T) = r \\).<br><br><i>(Nguồn: Đề 3, Câu 18)</i>",
+        "image": null,
+        "options": [
+          "A. Both (i) and (ii)",
+          "B. None of them.",
+          "C. (i) only.",
+          "D. (ii) only."
+        ],
+        "correctAnswer": "D",
+        "explanation": "Ta xét từng phát biểu:<br/><b>Phát biểu (i): \\( \\text{dim}(\\text{null}(A)) = m - r \\)</b><br/>- Đây là một phát biểu của <b>Định lý Hạng-Số chiều</b> (Rank-Nullity Theorem).<br/>- Định lý này phát biểu rằng: \\( \\text{rank}(A) + \\text{dim}(\\text{null}(A)) = n \\), với \\( n \\) là <b>số cột</b> của A.<br/>- Do đó, \\( \\text{dim}(\\text{null}(A)) = n - \\text{rank}(A) = n - r \\).<br/>- Phát biểu (i) lại cho là \\( m - r \\), với \\( m \\) là số hàng. Phát biểu này chỉ đúng khi ma trận A là ma trận vuông (\\( m=n \\)). Vì vậy, nó <b>sai</b> trong trường hợp tổng quát.<br/><b>Phát biểu (ii): \\( \\text{rank}(A^T) = r \\)</b><br/>- Đây là một tính chất cơ bản của hạng ma trận.<br/>- Hạng của một ma trận bằng hạng của ma trận chuyển vị của nó. Tức là, số chiều của không gian hàng bằng số chiều của không gian cột.<br/>- Do đó, \\( \\text{rank}(A^T) = \\text{rank}(A) = r \\). Phát biểu này <b>đúng</b>.<br/>Vậy, chỉ có phát biểu (ii) là đúng.",
+        "difficulty": "medium",
+        "topic": "Rank-Nullity Theorem",
+        "hints": [
+          "Nhớ lại Định lý Hạng-Số chiều liên quan đến hạng và số chiều của không gian null (hạt nhân).",
+          "Hạng của ma trận A và ma trận chuyển vị \\( A^T \\) có mối quan hệ gì?"
+        ]
+      },
+      {
+        "id": 3,
+        "question": "Let \\( U = \\{(a, b, c, d) \\in \\mathbb{R}^4 \\mid 3a - 5d = 0, b + c + d = 0 \\} \\) be a subspace of \\( \\mathbb{R}^4 \\). Find the dimension of U.<br><br><i>(Nguồn: Đề 1, Câu 22)</i>",
+        "image": null,
+        "options": [
+          "A. 4",
+          "B. 1",
+          "C. 2",
+          "D. 3"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Để giải bài này trong nháy mắt, ta dùng công thức sau:<br /><br /><b>Số chiều không gian con = (Số chiều không gian tổng) - (Số phương trình ràng buộc độc lập)</b><br /><br />- Không gian tổng là \\(\\mathbb{R}^4\\), vậy có <b>4 chiều</b> (4 ẩn).<br />- Có <b>2 phương trình ràng buộc</b> độc lập.<br /><br />- Số chiều của U = 4 - 2 = 2.<br /><br />---<br /><b>Tại sao công thức này lại đúng? (Giải thích bản chất)</b><br /><br />Số chiều của một không gian chính là số biến 'tự do' mà bạn có thể chọn. Mỗi phương trình ràng buộc sẽ 'khóa' lại một biến, làm nó phụ thuộc vào các biến khác và không còn tự do nữa.<br /><br />1.  Ban đầu, trong \\(\\mathbb{R}^4\\), ta có 4 biến tự do (a, b, c, d).<br />2.  Phương trình thứ nhất, \\(3a - 5d = 0\\), buộc \\(a\\) phải phụ thuộc vào \\(d\\) (\\(a = \\frac{5}{3}d\\)). Ta mất đi một biến tự do, chỉ còn lại 3.<br />3.  Phương trình thứ hai, \\(b + c + d = 0\\), buộc \\(b\\) phải phụ thuộc vào \\(c\\) và \\(d\\) (\\(b = -c - d\\)). Ta mất thêm một biến tự do nữa, chỉ còn lại 2.<br /><br />Cuối cùng, ta chỉ có thể chọn tự do 2 biến (ví dụ là \\(c\\) và \\(d\\)), các biến còn lại (\\(a\\) và \\(b\\)) sẽ được tính theo. Vì có 2 biến tự do, nên số chiều của không gian con này là 2.",
+        "difficulty": "easy",
+        "topic": "Linear Algebra (Subspace Dimension)",
+        "hints": [
+          "Mẹo giải nhanh nhất: Số chiều = (số ẩn) - (số phương trình ràng buộc).",
+          "Bài này có 4 ẩn (a, b, c, d) và 2 phương trình.",
+          "Chỉ cần làm phép tính: 4 - 2 = 2."
+        ]
+      },
+      {
+        "id": 4,
+        "question": "How many solutions must a homogeneous linear system of 6 equations in 7 unknowns have?<br><br><i>(Nguồn: Đề 2, Câu 28)</i>",
+        "image": null,
+        "options": [
+          "A. Infinitely many solutions",
+          "B. no solutions",
+          "C. exactly 7 solutions",
+          "D. None of the other choices is correct",
+          "E. exactly one solution"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Một hệ phương trình tuyến tính thuần nhất (homogeneous) luôn có ít nhất một nghiệm là nghiệm tầm thường (trivial solution), tức là tất cả các ẩn đều bằng 0.<br/>Cho một hệ phương trình tuyến tính thuần nhất \\( Ax = 0 \\) với \\(m\\) phương trình và \\(n\\) ẩn.<br/>- Nếu \\( m < n \\) (số phương trình ít hơn số ẩn), hệ luôn có vô số nghiệm. Điều này là do hạng của ma trận hệ số \\(A\\) không thể lớn hơn \\(m\\) (rank(A) \\(\\le m\\)). Theo định lý Rank-Nullity, số chiều của không gian nghiệm (dim(Null(A))) là \\( n - \\text{rank}(A) \\). Vì \\( \\text{rank}(A) \\le m < n \\), suy ra \\( n - \\text{rank}(A) > 0 \\). Do đó, có ít nhất một biến tự do, dẫn đến vô số nghiệm.<br/>Trong trường hợp này, ta có 6 phương trình (\\(m=6\\)) và 7 ẩn (\\(n=7\\)).<br/>Vì số phương trình (6) ít hơn số ẩn (7), hệ phương trình tuyến tính thuần nhất này phải có vô số nghiệm.<br/>Lý do chi tiết hơn:<br/>Hạng của ma trận hệ số \\(A\\) (kích thước 6x7) tối đa là min(6,7) = 6. Tức là \\( \\text{rank}(A) \\le 6 \\).<br/>Số biến tự do trong nghiệm của hệ thuần nhất là \\( n - \\text{rank}(A) = 7 - \\text{rank}(A) \\).<br/>Vì \\( \\text{rank}(A) \\le 6 \\), thì \\( 7 - \\text{rank}(A) \\ge 7 - 6 = 1 \\).<br/>Do có ít nhất một biến tự do, hệ phương trình sẽ có vô số nghiệm.",
+        "difficulty": "easy",
+        "topic": "Linear Equations",
+        "hints": [
+          "Một hệ phương trình tuyến tính thuần nhất luôn có ít nhất nghiệm tầm thường (tất cả các ẩn bằng 0).",
+          "Nếu số ẩn nhiều hơn số phương trình trong một hệ thuần nhất, hệ đó sẽ có bao nhiêu nghiệm?"
+        ]
+      },
+      {
+        "id": 5,
+        "question": "Find the <b>rank</b> of the matrix <br />\\[ A = \\begin{bmatrix} 3 & 2 & 1 \\\\ 2 & 1 & 3 \\\\ 5 & 3 & 4 \\end{bmatrix} \\]<br><br><i>(Nguồn: Đề 3, Câu 4)</i>",
+        "image": null,
+        "options": [
+          "A. (See picture)",
+          "B. 2",
+          "C. 3",
+          "D. 1",
+          "E. 0"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Hạng của ma trận là số lượng hàng (hoặc cột) độc lập tuyến tính tối đa. Ta có thể tìm hạng bằng cách tính định thức hoặc dùng phép biến đổi hàng.<br/><b>Cách 1: Tính định thức</b><br/>\\[ \\det(A) = 3(1 \\cdot 4 - 3 \\cdot 3) - 2(2 \\cdot 4 - 3 \\cdot 5) + 1(2 \\cdot 3 - 1 \\cdot 5) \\]<br/>\\[ = 3(-5) - 2(-7) + 1(1) = -15 + 14 + 1 = 0 \\]<br/>Vì \\( \\det(A) = 0 \\), hạng của ma trận phải nhỏ hơn 3. Ta xét định thức của ma trận con 2x2, ví dụ ma trận ở góc trên bên trái:<br/>\\[ \\det\\left(\\begin{pmatrix} 3 & 2 \\\\ 2 & 1 \\end{pmatrix}\\right) = 3(1) - 2(2) = -1 \\neq 0 \\]<br/>Vì có một ma trận con cấp 2 có định thức khác 0, nên hạng của ma trận là 2.<br/><b>Cách 2: Biến đổi hàng</b><br/>Nhận thấy rằng Hàng 3 = Hàng 1 + Hàng 2. Do đó, ta có thể thực hiện phép biến đổi \\( R_3 \\to R_3 - R_1 - R_2 \\) để tạo ra một hàng toàn số không. Ma trận sẽ còn lại 2 hàng độc lập tuyến tính. Vậy hạng của ma trận là <b>2</b>.",
+        "difficulty": "easy",
+        "topic": "Matrix Rank",
+        "hints": [
+          "Thử <b>tính định thức</b> của ma trận. Nếu nó khác 0, hạng của ma trận là 3.",
+          "Nếu định thức bằng 0, hãy kiểm tra hạng của các <b>ma trận con 2x2</b>."
+        ]
+      },
+      {
+        "id": 6,
+        "question": "For a system of 3 equations in 4 unknowns, which of the following statements are true?<br />(i) The system can be inconsistent.<br />(ii) The system can have a unique solution.<br />(iii) The system can have infinitely many solutions.<br><br><i>(Nguồn: Đề 4, Câu 25)</i>",
+        "image": null,
+        "options": [
+          "A. (i), (iii)",
+          "B. (ii)",
+          "C. (i), (ii)",
+          "D. All of (i), (ii) and (iii)",
+          "E. (ii), (iii)"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đây là một câu hỏi lý thuyết cốt lõi của Đại số tuyến tính.<br /><br /><b>Quy tắc vàng:</b> Đối với một hệ phương trình tuyến tính, nếu <b>số ẩn nhiều hơn số phương trình</b> (ở đây là 4 ẩn > 3 phương trình), thì hệ đó <b>KHÔNG BAO GIỜ</b> có nghiệm duy nhất.<br /><br /><b>1. Phân tích mệnh đề (ii):</b><br />- \"Hệ có thể có nghiệm duy nhất\" -> <b>SAI</b>. Vì luôn có ít nhất \\( 4 - 3 = 1 \\) biến tự do nếu hệ có nghiệm. Một biến tự do dẫn đến vô số nghiệm.<br />- Việc (ii) sai giúp ta loại ngay các đáp án B, C, D, E.<br /><br /><b>2. Phân tích mệnh đề (i) và (iii):</b><br />- Khi không có nghiệm duy nhất, hệ chỉ có thể rơi vào 2 trường hợp còn lại:<br />  - <b>Vô nghiệm (inconsistent):</b> Điều này hoàn toàn có thể xảy ra. Ví dụ: \\(x+y+z+w=1\\) và \\(x+y+z+w=2\\). => Mệnh đề (i) <b>ĐÚNG</b>.<br />  - <b>Vô số nghiệm (infinitely many solutions):</b> Đây là trường hợp phổ biến khi có biến tự do. => Mệnh đề (iii) <b>ĐÚNG</b>.<br /><br /><b>Kết luận:</b> Chỉ có (i) và (iii) là đúng. Đáp án là <b>A</b>.",
+        "difficulty": "easy",
+        "topic": "Linear Algebra (Systems of Equations)",
+        "hints": [
+          "Câu thần chú: 'Ẩn nhiều hơn phương trình, không bao giờ có nghiệm duy nhất'.",
+          "Hệ như vậy chỉ có 2 khả năng: hoặc VÔ NGHIỆM (inconsistent), hoặc VÔ SỐ NGHIỆM (infinitely many).",
+          "Vì mệnh đề (ii) chắc chắn sai, bạn có thể loại ngay mọi đáp án chứa (ii)."
+        ]
+      },
+      {
+        "id": 7,
+        "question": "The dimension of the subspace<br />\\( U = \\text{span}\\{[-2, 0, 3]^T, [1, 2, -1]^T, [-2, 8, 5]^T, [-1, 2, 2]^T\\} \\)<br />is...<br><br><i>(Nguồn: Đề 4, Câu 47)</i>",
+        "image": null,
+        "options": [
+          "A. 2",
+          "B. 4",
+          "C. 3",
+          "D. 1"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Số chiều (dimension) của một không gian con sinh bởi một tập hợp vector bằng <b>số lượng vector độc lập tuyến tính tối đa</b> trong tập hợp đó. Đây chính là hạng (rank) của ma trận tạo bởi các vector này.<br /><br /><b>1. Nhận dạng nhanh:</b><br />- Không gian con U là một không gian con của \\(\\mathbb{R}^3\\).<br />- Số chiều của một không gian con không thể lớn hơn số chiều của không gian chứa nó. Do đó, số chiều của U \\( \\le 3 \\). Ta có thể loại ngay đáp án B (4).<br /><br /><b>2. Thiết lập ma trận và khử Gauss:</b><br />Đặt các vector thành các hàng của một ma trận và thực hiện phép khử Gauss để tìm hạng.<br />\\( \\begin{pmatrix} -2 & 0 & 3 \\\\ 1 & 2 & -1 \\\\ -2 & 8 & 5 \\\\ -1 & 2 & 2 \\end{pmatrix} \\)<br />- Đưa về dạng bậc thang, ta sẽ thấy có 3 hàng khác không, cho thấy hạng của ma trận là 3. Các bước tính toán thủ công có thể dễ nhầm lẫn, nhưng kết quả là có 3 vector độc lập tuyến tính trong tập hợp này.<br /><br /><b>Kết luận:</b> Vì hạng của ma trận tạo bởi các vector này là 3, nên số chiều của không gian con U là 3. Đáp án là <b>C</b>.",
+        "difficulty": "medium",
+        "topic": "Linear Algebra (Dimension, Rank)",
+        "hints": [
+          "Mẹo 1: Số chiều của span(S) bằng hạng (rank) của ma trận có các cột (hoặc hàng) là các vector trong S.",
+          "Mẹo 2: Số chiều của không gian con của R³ không thể lớn hơn 3.",
+          "Dùng phép khử Gauss để đưa ma trận về dạng bậc thang. Số hàng khác không chính là hạng (số chiều)."
+        ]
+      },
+      {
+        "id": 8,
+        "question": "Which of the followings are subspaces of \\(\\mathbb{R}^3\\)?<br /><br />(i) \\( U = \\{(x, y, z+1) \\mid x, y, z \\in \\mathbb{R}\\} \\)<br />(ii) \\( U = \\{(x, y, z) \\mid x+2y-3z=0\\} \\)<br />(iii) \\( U = \\{(x, y, z) \\mid x^2+y^2+z^2=1\\} \\)<br><br><i>(Nguồn: Đề 4, Câu 44)</i>",
+        "image": null,
+        "options": [
+          "A. (i)",
+          "B. (ii)",
+          "C. (ii) and (iii)",
+          "D. (i) and (ii)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Một tập hợp là không gian con nếu nó thỏa mãn 3 điều kiện: chứa vector không, đóng với phép cộng, và đóng với phép nhân vô hướng. Cách nhanh nhất là kiểm tra điều kiện vector không.<br /><br /><b>1. Phân tích (i): \\( U = \\{(x, y, z+1) \\mid x, y, z \\in \\mathbb{R}\\} \\)</b><br />- Đây là một cách viết khó hiểu. Tuy nhiên, theo cách hiểu phổ biến nhất, nó không chứa vector không \\((0,0,0)\\). <b>=> Không phải không gian con.</b><br /><br /><b>2. Phân tích (ii): \\( U = \\{(x, y, z) \\mid x+2y-3z=0\\} \\)</b><br />- Đây là phương trình của một <b>mặt phẳng đi qua gốc tọa độ</b>.<br />- <b>Chứa vector không:</b> \\(0+2(0)-3(0)=0\\). Đúng.<br />- Theo định nghĩa, mọi mặt phẳng (hoặc đường thẳng) đi qua gốc tọa độ trong \\(R^3\\) đều là một không gian con. <b>=> Là không gian con.</b><br /><br /><b>3. Phân tích (iii): \\( U = \\{(x, y, z) \\mid x^2+y^2+z^2=1\\} \\)</b><br />- Đây là phương trình của một <b>mặt cầu</b> bán kính 1, tâm tại gốc tọa độ.<br />- <b>Chứa vector không:</b> \\(0^2+0^2+0^2 = 0 \\neq 1\\). Sai.<br />- Vì không chứa vector không, nó <b>không phải là không gian con.</b><br /><br /><b>Kết luận:</b> Chỉ có (ii) là không gian con. Đáp án là <b>B</b>.",
+        "difficulty": "easy",
+        "topic": "Linear Algebra (Subspaces)",
+        "hints": [
+          "Mẹo Vàng: Một không gian con BẮT BUỘC phải chứa vector không (0,0,0). Dùng mẹo này để loại trừ nhanh.",
+          "Câu thần chú: Một mặt phẳng hoặc đường thẳng đi qua gốc tọa độ luôn là một không gian con.",
+          "Tập (iii) là mặt cầu, không chứa (0,0,0) nên không phải không gian con."
+        ]
+      },
+      {
+        "id": 9,
+        "question": "Given that \\( \\lambda=1 \\) is an eigenvalue of the matrix<br />\\( \\begin{pmatrix} 1 & 1 & 1 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 0 \\end{pmatrix} \\).<br />Find a set of basic eigenvectors corresponding to this eigenvalue \\( \\lambda=1 \\).<br /><br />(i) \\( \\{[0,0,1]^T\\} \\)<br />(ii) \\( \\{[1,0,0]^T, [0,0,1]^T\\} \\)<br />(iii) \\( \\{[1,0,0]^T\\} \\)<br />(iv) \\( \\{[0,0,1]^T, [1,1,0]^T\\} \\)<br><br><i>(Nguồn: Đề 4, Câu 49)</i>",
+        "image": null,
+        "options": [
+          "A. (i)",
+          "B. (ii)",
+          "C. (iii)",
+          "D. (iv)",
+          "E. None of the others"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Để tìm các vector riêng (eigenvectors) ứng với giá trị riêng \\( \\lambda \\), ta cần giải hệ phương trình \\( (A - \\lambda I)x = 0 \\).<br /><br /><b>1. Bước 1: Tính ma trận \\( A - \\lambda I \\)</b><br />Với \\( A = \\begin{pmatrix} 1 & 1 & 1 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 0 \\end{pmatrix} \\) và \\( \\lambda = 1 \\):<br />\\( A - 1I = \\begin{pmatrix} 1 & 1 & 1 \\\\ 0 & 1 & 1 \\\\ 0 & 0 & 0 \\end{pmatrix} - \\begin{pmatrix} 1 & 0 & 0 \\\\ 0 & 1 & 0 \\\\ 0 & 0 & 1 \\end{pmatrix} = \\begin{pmatrix} 0 & 1 & 1 \\\\ 0 & 0 & 1 \\\\ 0 & 0 & -1 \\end{pmatrix} \\)<br /><br /><b>2. Bước 2: Giải hệ phương trình \\( (A - I)x = 0 \\)</b><br />Ta có hệ:<br />\\( \\begin{cases} 0x_1 + 1x_2 + 1x_3 = 0 \\\\ 0x_1 + 0x_2 + 1x_3 = 0 \\\\ 0x_1 + 0x_2 - 1x_3 = 0 \\end{cases} \\)<br />- Từ phương trình (2) và (3), ta có ngay \\( x_3 = 0 \\).<br />- Thế \\(x_3=0\\) vào phương trình (1): \\( x_2 + 0 = 0 \\Rightarrow x_2 = 0 \\).<br />- Biến \\( x_1 \\) không bị ràng buộc bởi phương trình nào, do đó nó là biến tự do. Đặt \\( x_1 = t \\).<br /><br /><b>3. Bước 3: Viết dạng nghiệm và tìm vector cơ sở</b><br />- Vector nghiệm có dạng: \\( x = \\begin{pmatrix} x_1 \\\\ x_2 \\\\ x_3 \\end{pmatrix} = \\begin{pmatrix} t \\\\ 0 \\\\ 0 \\end{pmatrix} = t \\begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\end{pmatrix} \\).<br />- Vector cơ sở cho không gian riêng này là \\( \\begin{pmatrix} 1 \\\\ 0 \\\\ 0 \\end{pmatrix} \\).<br /><br /><b>Kết luận:</b> Tập hợp vector riêng cơ sở là \\( \\{[1,0,0]^T\\} \\), khớp với lựa chọn (iii). Đáp án là <b>C</b>.",
+        "difficulty": "medium",
+        "topic": "Linear Algebra (Eigenvectors, Eigenspace)",
+        "hints": [
+          "Mẹo Vàng: Tìm vector riêng là giải hệ phương trình `(A - λI)x = 0`.",
+          "Bước 1: Tính ma trận `A - I` bằng cách trừ 1 khỏi các phần tử trên đường chéo chính của A.",
+          "Bước 2: Giải hệ phương trình thu được. Các biến tự do sẽ cho bạn các vector cơ sở."
+        ]
+      },
+      {
+        "id": 10,
+        "question": "Which of the following statements is true?<br>(i) \\( \\{[1, 1, 4], [2, -1, -1], [3, 0, 3] \\} \\) is a basis of \\( \\mathbb{R}^3 \\).<br>(ii) \\( \\{[1, 1], [1/2, -3] \\} \\) is a basis of \\( \\mathbb{R}^2 \\).<br><br><i>(Nguồn: Đề 3, Câu 31)</i>",
+        "image": null,
+        "options": [
+          "A. (i)",
+          "B. (ii)",
+          "C. Neither (i) nor (ii)",
+          "D. Both (i) and (ii)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Để giải siêu tốc, ta dùng định thức để kiểm tra tính độc lập tuyến tính.<br /><br /><b>1. Kiểm tra (i): 3 vector trong \\(\\mathbb{R}^3\\)</b><br />- <b>Mẹo nhanh:</b> Trước khi tính định thức, hãy kiểm tra xem có mối quan hệ đơn giản nào giữa các vector không. Ta thấy ngay:<br />  <b>Vector 3 = Vector 1 + Vector 2</b> \\((3=1+2; 0=1+(-1); 3=4+(-1))\\).<br />- Vì các vector phụ thuộc tuyến tính, chúng không thể tạo thành một cơ sở.<br />- → Mệnh đề (i) <b>SAI</b>.<br /><br /><b>2. Kiểm tra (ii): 2 vector trong \\(\\mathbb{R}^2\\)</b><br />- Ta chỉ cần tính định thức của ma trận tạo bởi chúng:<br />\\( \\det \\begin{pmatrix} 1 & 1/2 \\\\ 1 & -3 \\end{pmatrix} = (1)(-3) - (1)(\\frac{1}{2}) = -3 - \\frac{1}{2} = -3.5 \\).<br />- Vì định thức khác 0, hai vector này độc lập tuyến tính và tạo thành một cơ sở.<br />- → Mệnh đề (ii) <b>ĐÚNG</b>.<br /><br /><b>Kết luận:</b> Chỉ có (ii) là đúng.",
+        "difficulty": "medium",
+        "topic": "Linear Algebra (Basis, Linear Independence)",
+        "hints": [
+          "Mẹo nhanh nhất: `n` vector là cơ sở của `Rⁿ` khi và chỉ khi định thức của ma trận tạo bởi chúng khác 0.",
+          "Với (i), hãy liếc qua các vector. Bạn sẽ thấy ngay `v₃ = v₁ + v₂`, nên chúng phụ thuộc tuyến tính.",
+          "Với (ii), chỉ cần kiểm tra nhanh định thức `ad-bc`."
+        ]
+      },
+      {
+        "id": 11,
+        "question": "Which of the following are subspaces? <br> \\( U = \\{(x, y) | x = 2y \\} \\) <br> \\( V = \\{(x, y) | xy = 0 \\} \\)<br><br><i>(Nguồn: Đề 2, Câu 46)</i>",
+        "image": null,
+        "options": [
+          "A. Both U and V",
+          "B. U only",
+          "C. None of U and V",
+          "D. V only"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Kiểm tra U:</b><br/> - <b>Vector không:</b> Nếu y=0, thì x=2(0)=0. Vậy (0,0) thuộc U. (OK)<br/> - <b>Phép cộng:</b> Lấy 2 vector \\((2y_1, y_1)\\) và \\((2y_2, y_2)\\) thuộc U. Tổng của chúng là \\((2y_1+2y_2, y_1+y_2) = (2(y_1+y_2), y_1+y_2)\\). Vector này cũng có dạng \\((2y', y')\\) nên thuộc U. (OK)<br/> - <b>Phép nhân vô hướng:</b> Lấy vector \\((2y, y)\\) thuộc U. Nhân với hằng số c: \\(c(2y, y) = (2cy, cy)\\). Vector này cũng có dạng \\((2y', y')\\) nên thuộc U. (OK)<br/>=> <b>U là không gian con.</b><br/><br/><b>Kiểm tra V:</b><br/> - <b>Vector không:</b> (0,0) thỏa mãn xy=0. (OK)<br/> - <b>Phép cộng:</b> Lấy 2 vector \\(u=(1,0)\\) và \\(v=(0,1)\\). Cả hai đều thuộc V vì \\(1 \\cdot 0 = 0\\).<br/>   Tổng của chúng là \\(u+v = (1,1)\\). Kiểm tra: \\(1 \\cdot 1 = 1 \\neq 0\\). Vậy \\(u+v\\) không thuộc V.<br/>=> <b>V không đóng với phép cộng, nên không phải là không gian con.</b>",
+        "difficulty": "medium",
+        "topic": "Subspaces",
+        "hints": [
+          "Check the three conditions for a subspace: contains zero vector, closed under addition, closed under scalar multiplication.",
+          "Đối với tập V, hãy thử tìm hai vector thuộc V mà tổng của chúng không thuộc V."
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Solve the homogeneous system \\( \\begin{cases} 3x_1 + x_2 + x_3 + x_4 = 0 \\\\ 5x_1 - x_2 + x_3 - x_4 = 0 \\end{cases} \\)<br><br><i>(Nguồn: Đề 1, Câu 36)</i>",
+        "image": null,
+        "options": [
+          "A. \\( (-s/4, -s/4+t, s, t) \\)",
+          "B. \\( (s/4, s/4+t, s, t) \\)",
+          "C. None of the other choices is correct",
+          "D. \\( (-s/4, -s/4-t, s, t) \\)",
+          "E. \\( (s/4, s/4-t, s, t) \\)"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Để giải siêu tốc, ta không giải hệ mà sẽ thử đáp án. Tất cả các đáp án đều có dạng \\((..., s, t)\\), nghĩa là ta được cho trước \\(x_3=s\\) và \\(x_4=t\\).<br /><br /><b>1. Chọn và phân tích đáp án D:</b><br />- \\(x_1 = -s/4\\)<br />- \\(x_2 = -s/4 - t\\)<br />- \\(x_3 = s\\)<br />- \\(x_4 = t\\)<br /><br /><b>2. Thử nhanh vào phương trình (1):</b> \\(3x_1 + x_2 + x_3 + x_4 = 0\\)<br />\\( 3(-\\frac{s}{4}) + (-\\frac{s}{4} - t) + s + t = -\\frac{3s}{4} - \\frac{s}{4} - t + s + t = -\\frac{4s}{4} + s = -s + s = 0 \\).<br />→ Khớp.<br /><br /><b>3. Thử nhanh vào phương trình (2):</b> \\(5x_1 - x_2 + x_3 - x_4 = 0\\)<br />\\( 5(-\\frac{s}{4}) - (-\\frac{s}{4} - t) + s - t = -\\frac{5s}{4} + \\frac{s}{4} + t + s - t = -\\frac{4s}{4} + s = -s + s = 0 \\).<br />→ Khớp.<br /><br />Vì đáp án D thỏa mãn cả hai phương trình, đây là đáp án đúng.",
+        "difficulty": "medium",
+        "topic": "Linear Algebra (Homogeneous Systems)",
+        "hints": [
+          "Mẹo nhanh nhất: Đừng giải hệ, hãy thử đáp án!",
+          "Tất cả các đáp án đều đặt `x₃ = s` và `x₄ = t`. Bạn chỉ cần thế `x₁` và `x₂` từ một đáp án vào để kiểm tra.",
+          "Chỉ cần một phương trình sai là có thể loại ngay đáp án đó và chuyển sang thử đáp án khác."
+        ]
+      },
+      {
+        "id": 13,
+        "question": "Given that -3 is an eigenvalue for the matrix \\( \\begin{bmatrix} 3 & -6 \\\\ 8 & -11 \\end{bmatrix} \\). Find all eigenvectors corresponding to this eigenvalue \\( \\lambda = -3 \\).<br><br><i>(Nguồn: Đề 2, Câu 38)</i>",
+        "image": null,
+        "options": [
+          "A. \\( t(1, -1) \\), t is nonzero",
+          "B. \\( t(1, -2) \\), t is nonzero",
+          "C. \\( t(2, 1) \\), t is nonzero",
+          "D. \\( t(1, 1) \\), t is nonzero",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Để giải siêu tốc, ta chỉ cần giải hệ \\((A - \\lambda I)\\vec{v} = \\vec{0}\\) bằng cách nhìn vào một hàng duy nhất.<br /><br /><b>1. Tính nhanh \\( A - \\lambda I \\):</b><br />- Với \\(\\lambda = -3\\), ta cần tính \\(A + 3I\\):<br />\\( A + 3I = \\begin{bmatrix} 3+3 & -6 \\\\ 8 & -11+3 \\end{bmatrix} = \\begin{bmatrix} 6 & -6 \\\\ 8 & -8 \\end{bmatrix} \\).<br /><br /><b>2. Dùng một hàng để tìm vector (Mẹo nhanh nhất):</b><br />- Hai hàng của ma trận này luôn tỉ lệ với nhau. Ta chỉ cần dùng hàng đầu tiên: \\([6, -6]\\).<br />- Phương trình tương ứng là \\(6x - 6y = 0\\), suy ra \\(x = y\\).<br /><br /><b>3. Kết luận:</b><br />- Một vector có dạng \\(x=y\\) sẽ là \\((t, t)\\) hoặc \\(t(1, 1)\\).<br />- Điều này khớp với đáp án D.",
+        "difficulty": "easy",
+        "topic": "Linear Algebra (Eigenvalues and Eigenvectors)",
+        "hints": [
+          "Mục tiêu là giải \\((A - \\lambda I)\\vec{v} = \\vec{0}\\).",
+          "Mẹo nhanh nhất: Sau khi tính \\((A - \\lambda I)\\), bạn chỉ cần dùng một hàng để tìm ra mối quan hệ giữa x và y.",
+          "Nếu một hàng là `[a, b]`, vector riêng tương ứng sẽ là `t(-b, a)`. Trong bài này, hàng là `[6, -6]`, vậy vector là `t(6, 6)` hay `t(1, 1)`."
+        ]
+      }
+    ]
+  }
