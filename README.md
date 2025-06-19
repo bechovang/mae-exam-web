@@ -1,3 +1,6 @@
+prompt json: 
+Prompt cho google ai studio hiểu chuyển ảnh để làm web thi FE MAE : https://ideone.com/pA2bEG
+
 # MathPractice - Nền tảng Luyện tập Toán học
 
 Chào mừng bạn đến với MathPractice, một ứng dụng web tương tác được thiết kế để giúp người dùng luyện tập và nâng cao kỹ năng toán học thông qua các bộ đề trắc nghiệm. Ứng dụng cung cấp phản hồi tức thì và giải thích chi tiết cho từng câu hỏi, tạo ra một môi trường học tập hiệu quả và không áp lực.
