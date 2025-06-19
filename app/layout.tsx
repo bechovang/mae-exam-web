@@ -24,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="vi" suppressHydrationWarning>
       <head>
+        {/* MathJax config */}
         <Script id="mathjax-config" strategy="beforeInteractive">
           {`
             window.MathJax = {
@@ -55,11 +56,28 @@ export default function RootLayout({
             };
           `}
         </Script>
+
+        {/* MathJax script */}
         <Script 
           src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
           strategy="beforeInteractive"
           id="MathJax-script"
         />
+
+        {/* Google Analytics script */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-Y4F55BYWHD"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Y4F55BYWHD');
+          `}
+        </Script>
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
