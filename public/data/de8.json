@@ -1,0 +1,289 @@
+{
+    "examId": "de8",
+    "title": "Distance & Displacement (quãng đường và độ dời)",
+    "description": "Tổng hợp các câu hỏi liên quan đến Quãng đường và Độ dời từ các đề trước (câu 1-4) và một số câu hỏi bổ sung.",
+    "questions": [
+      {
+        "id": 1,
+        "question": "A ball is thrown upward such that its height (in meters) after \\(t\\) seconds takes the form \\( h(t) = 1 + 25t + at^2 \\). Assume that the velocity of the ball at time \\( t = 2 \\)s is 5 m/s. Find \\(a\\). (Nguồn: Câu 47, Đề 3)",
+        "image": null,
+        "options": [
+          "A. (See picture)",
+          "B. -10",
+          "C. -5",
+          "D. 5",
+          "E. 10"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Để giải siêu tốc, ta thực hiện đạo hàm và giải phương trình trong vài bước ngắn gọn.<br /><br /><b>1. Tìm hàm vận tốc (đạo hàm nhẩm):</b><br />- Vận tốc \\(v(t)\\) là đạo hàm của quãng đường \\(h(t)\\).<br />\\( v(t) = h'(t) = 25 + 2at \\).<br /><br /><b>2. Thiết lập phương trình từ dữ kiện:</b><br />- Đề bài cho biết tại \\(t=2\\), vận tốc \\(v(2)=5\\).<br />- Thế \\(t=2\\) vào hàm vận tốc: \\( v(2) = 25 + 2a(2) = 25 + 4a \\).<br /><br /><b>3. Giải phương trình tìm a:</b><br />\\( 25 + 4a = 5 \\)<br />\\( 4a = 5 - 25 = -20 \\)<br />\\( a = -5 \\).",
+        "difficulty": "easy",
+        "topic": "Calculus (Derivatives, Kinematics)",
+        "hints": [
+          "Mẹo nhanh nhất: Vận tốc là đạo hàm của quãng đường.",
+          "Lấy đạo hàm của `h(t)` để có `v(t)`, sau đó thế `t=2` và cho `v(2)=5`.",
+          "Phương trình cuối cùng bạn cần giải là `25 + 4a = 5`."
+        ]
+      },
+      {
+        "id": 2,
+        "question": "A potato is launched vertically upward with an initial velocity of 100 ft/s from a potato gun at the top of an 85-feet-tall building. The distance in feet that the potato travels from the ground after \\(t\\) seconds is given by<br /><br />\\( s(t) = -16t^2 + 100t + 85 \\)<br /><br />Find the speed of the potato at 5 seconds. (Nguồn: Câu 49, Đề 3)",
+        "image": null,
+        "options": [
+          "A. 60 ft/s",
+          "B. 160 ft/s",
+          "C. -160 ft/s",
+          "D. None of the other choices is correct",
+          "E. -60 ft/s"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đây là bài toán tìm tốc độ tức thời, chìa khóa là lấy đạo hàm.<br /><br /><b>1. \"Thần chú\" Tốc độ & Vận tốc:</b><br />- Vận tốc (velocity) \\( v(t) \\) là đạo hàm của quãng đường \\( s(t) \\).<br />- Tốc độ (speed) là <b>trị tuyệt đối</b> của vận tốc: \\( \\text{speed} = |v(t)| \\).<br /><br /><b>2. Tìm vận tốc v(t):</b><br />Lấy đạo hàm của \\( s(t) \\):<br />\\( v(t) = s'(t) = (-16t^2 + 100t + 85)' = -32t + 100 \\)<br /><br /><b>3. Tính vận tốc tại t = 5:</b><br />\\( v(5) = -32(5) + 100 = -160 + 100 = -60 \\) ft/s.<br /><br /><b>4. Tìm tốc độ:</b><br />Tốc độ tại t = 5 là \\( |v(5)| = |-60| = 60 \\) ft/s.<br /><br /><b>Kết luận:</b> Đáp án là <b>A</b>. Chú ý rằng vận tốc có thể âm (đi xuống), nhưng tốc độ luôn dương.",
+        "difficulty": "easy",
+        "topic": "Calculus (Derivatives, Velocity and Speed)",
+        "hints": [
+          "Câu thần chú: Vận tốc là đạo hàm của quãng đường `v(t) = s'(t)`.",
+          "Cẩn thận bẫy: \"Speed\" (tốc độ) là trị tuyệt đối của \"velocity\" (vận tốc). Đừng chọn đáp án âm!",
+          "Chỉ cần lấy đạo hàm `s(t)`, sau đó thế `t=5` vào và lấy trị tuyệt đối."
+        ]
+      },
+      {
+        "id": 3,
+        "question": "Two cars start moving from the same point. One travels south at 28 mi/h and the other travels west at 70 mi/h. At what rate is the distance between the cars increasing 5 hours later? Round the result to the nearest hundredth. (Nguồn: Câu 35, Đề 3)",
+        "image": null,
+        "options": [
+          "A. 75.39 mi/h",
+          "B. None of the other choices is correct",
+          "C. 76.4 mi/h",
+          "D. 75.30 mi/h",
+          "E. 75.49 mi/h"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đây là bài toán 'tốc độ thay đổi' kinh điển, sử dụng định lý Pytago.<br /><br /><b>1. Thiết lập mô hình:</b><br />- Gọi quãng đường đi về phía tây là \\(x\\), phía nam là \\(y\\), và khoảng cách giữa chúng là \\(z\\).<br />- Ta có: \\( x^2 + y^2 = z^2 \\).<br /><br /><b>2. Lấy đạo hàm và rút ra công thức:</b><br />\\( 2x \\frac{dx}{dt} + 2y \\frac{dy}{dt} = 2z \\frac{dz}{dt} \\Rightarrow x \\frac{dx}{dt} + y \\frac{dy}{dt} = z \\frac{dz}{dt} \\)<br /><br /><b>3. Tìm các giá trị tại t = 5 giờ:</b><br />- \\( \\frac{dx}{dt} = 70 \\), \\( \\frac{dy}{dt} = 28 \\).<br />- \\( x = 70 \\times 5 = 350 \\).<br />- \\( y = 28 \\times 5 = 140 \\).<br />- \\( z = \\sqrt{350^2 + 140^2} = \\sqrt{122500 + 19600} = \\sqrt{142100} \\approx 376.96166 \\).<br /><br /><b>4. Thế số và giải:</b><br />\\( (350)(70) + (140)(28) = (376.96166) \\frac{dz}{dt} \\)<br />\\( 24500 + 3920 = 376.96166 \\frac{dz}{dt} \\)<br />\\( 28420 = 376.96166 \\frac{dz}{dt} \\Rightarrow \\frac{dz}{dt} = \\frac{28420}{376.96166} \\approx 75.3915 \\text{ mi/h} \\).<br />Làm tròn đến hai chữ số thập phân: 75.39 mi/h.<br /><br /><b>Mẹo siêu tốc (nhận ra tỉ lệ):</b><br />- Tốc độ không đổi, nên khoảng cách giữa các xe tăng với tốc độ không đổi. Tốc độ này là \\( \\sqrt{(v_x)^2 + (v_y)^2} \\).<br />- \\( \\frac{dz}{dt} = \\sqrt{70^2 + 28^2} = \\sqrt{4900 + 784} = \\sqrt{5684} \\approx 75.3923 \\text{ mi/h} \\).",
+        "difficulty": "medium",
+        "topic": "Calculus (Related Rates)",
+        "hints": [
+          "Mẹo: Dùng Pytago `x² + y² = z²` và lấy đạo hàm hai vế theo thời gian `t`.",
+          "Công thức sau khi đạo hàm là `x(dx/dt) + y(dy/dt) = z(dz/dt)`.",
+          "Mẹo siêu tốc: Nếu vận tốc không đổi, tốc độ xa nhau cũng không đổi và bằng `sqrt((dx/dt)² + (dy/dt)²) = sqrt(70² + 28²) ≈ 75.39`."
+        ]
+      },
+      {
+        "id": 4,
+        "question": "A particle moves along a straight line with displacement given by \\( s(t) = t^2 - 8t + 18 \\). What is the instantaneous velocity when \\( t = 4 \\)? (Nguồn: Câu 7, Đề 4)",
+        "image": null,
+        "options": [
+          "A. All of the other choices are incorrect",
+          "B. 2",
+          "C. 0",
+          "D. 4",
+          "E. 8"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Đây là bài toán vận tốc tức thời, chìa khóa giải trong 5 giây là lấy đạo hàm.<br /><br /><b>1. \"Thần chú\" Vận tốc tức thời:</b><br />Vận tốc tức thời \\( v(t) \\) chính là đạo hàm của hàm quãng đường (displacement) \\( s(t) \\).<br />\\( v(t) = s'(t) \\)<br /><br /><b>2. Tìm hàm vận tốc v(t):</b><br />\\( v(t) = (t^2 - 8t + 18)' = 2t - 8 \\)<br /><br /><b>3. Tính vận tốc tại t = 4:</b><br />Thế \\( t=4 \\) vào hàm \\( v(t) \\):<br />\\( v(4) = 2(4) - 8 = 8 - 8 = 0 \\)<br /><br /><b>Kết luận:</b> Vận tốc tức thời tại \\(t=4\\) là 0. Đáp án là <b>C</b>.",
+        "difficulty": "easy",
+        "topic": "Calculus (Derivatives, Velocity)",
+        "hints": [
+          "Câu thần chú: Vận tốc tức thời = Đạo hàm của quãng đường.",
+          "Đừng thế `t=4` vào hàm `s(t)` ban đầu, đó là vị trí, không phải vận tốc.",
+          "Chỉ cần tính `s'(t)` rồi thế `t=4` vào là ra kết quả."
+        ]
+      },
+      {
+        "id": 5,
+        "question": "A particle's velocity is given by \\( v(t) = 3t^2 - 2t + 1 \\) m/s. If the particle's initial position at \\( t=0 \\) is \\( s(0) = 5 \\) m, find its displacement from \\( t=0 \\) to \\( t=2 \\) seconds.",
+        "image": null,
+        "options": [
+          "A. 6 m",
+          "B. 8 m",
+          "C. 10 m",
+          "D. 4 m"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Độ dời (displacement) \\( \\Delta s \\) của hạt từ thời điểm \\( t_1 \\) đến \\( t_2 \\) được tính bằng tích phân của hàm vận tốc:<br />\\( \\Delta s = \\int_{t_1}^{t_2} v(t) dt \\).<br />Trong trường hợp này, \\( t_1 = 0 \\), \\( t_2 = 2 \\), và \\( v(t) = 3t^2 - 2t + 1 \\).<br />\\( \\Delta s = \\int_{0}^{2} (3t^2 - 2t + 1) dt \\)<br />Tính nguyên hàm:<br />\\( = [\\frac{3t^3}{3} - \\frac{2t^2}{2} + t]_{0}^{2} = [t^3 - t^2 + t]_{0}^{2} \\)<br />Thế cận:<br />\\( = (2^3 - 2^2 + 2) - (0^3 - 0^2 + 0) \\)<br />\\( = (8 - 4 + 2) - 0 = 6 \\) m.<br />Lưu ý: Thông tin về vị trí ban đầu \\(s(0)=5\\)m không cần thiết để tính độ dời trong khoảng thời gian này, nó sẽ cần nếu câu hỏi yêu cầu vị trí cuối cùng.",
+        "difficulty": "easy",
+        "topic": "Calculus (Integration, Displacement)",
+        "hints": [
+          "Độ dời là tích phân của vận tốc theo thời gian.",
+          "Tính tích phân xác định \\int_{0}^{2} v(t) dt."
+        ]
+      },
+      {
+        "id": 6,
+        "question": "The velocity of a particle moving along a line is \\( v(t) = t^2 - 4t + 3 \\) m/s. Find the total distance traveled by the particle from \\( t=0 \\) to \\( t=3 \\) seconds.",
+        "image": null,
+        "options": [
+          "A. 4/3 m",
+          "B. 2 m",
+          "C. 8/3 m",
+          "D. 0 m"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Tổng quãng đường đi được là tích phân của tốc độ (giá trị tuyệt đối của vận tốc): \\( \\text{Total distance} = \\int_{t_1}^{t_2} |v(t)| dt \\).<br />Đầu tiên, tìm các thời điểm mà vận tốc \\(v(t) = 0\\) để xác định các khoảng mà vận tốc có thể đổi dấu.<br />\\( v(t) = t^2 - 4t + 3 = (t-1)(t-3) = 0 \\). Vậy \\( t=1 \\) và \\( t=3 \\).<br />Xét dấu của \\(v(t)\\) trong các khoảng của đoạn [0, 3]:<br />- Khoảng [0, 1]: Chọn \\(t=0.5\\), \\(v(0.5) = (0.5-1)(0.5-3) = (-0.5)(-2.5) = 1.25 > 0\\). Vậy \\(|v(t)| = v(t)\\).<br />- Khoảng [1, 3]: Chọn \\(t=2\\), \\(v(2) = (2-1)(2-3) = (1)(-1) = -1 < 0\\). Vậy \\(|v(t)| = -v(t)\\).<br />Tổng quãng đường = \\( \\int_{0}^{1} (t^2 - 4t + 3) dt + \\int_{1}^{3} -(t^2 - 4t + 3) dt \\).<br />Nguyên hàm của \\( t^2 - 4t + 3 \\) là \\( \\frac{t^3}{3} - 2t^2 + 3t \\).<br />\\( \\int_{0}^{1} (t^2 - 4t + 3) dt = [\\frac{t^3}{3} - 2t^2 + 3t]_0^1 = (\\frac{1}{3} - 2 + 3) - 0 = \\frac{4}{3} \\).<br />\\( \\int_{1}^{3} (t^2 - 4t + 3) dt = [\\frac{t^3}{3} - 2t^2 + 3t]_1^3 = (\\frac{27}{3} - 2(9) + 3(3)) - (\\frac{1}{3} - 2 + 3) = (9 - 18 + 9) - \\frac{4}{3} = 0 - \\frac{4}{3} = -\\frac{4}{3} \\).<br />Tổng quãng đường = \\( \\frac{4}{3} + |-\\frac{4}{3}| = \\frac{4}{3} + \\frac{4}{3} = \\frac{8}{3} \\) m.",
+        "difficulty": "medium",
+        "topic": "Calculus (Integration, Total Distance)",
+        "hints": [
+          "Tổng quãng đường là tích phân của tốc độ (giá trị tuyệt đối của vận tốc), \\( \\int |v(t)| dt \\).",
+          "Tìm các điểm mà \\(v(t)=0\\) để chia khoảng tích phân nếu \\(v(t)\\) đổi dấu.",
+          "Tính riêng từng phần tích phân rồi cộng các giá trị tuyệt đối lại."
+        ]
+      },
+      {
+        "id": 7,
+        "question": "A particle starts from rest at the origin at \\( t=0 \\) and moves with acceleration \\( a(t) = 2t - 4 \\) m/s². Find its position at \\( t=3 \\) seconds.",
+        "image": null,
+        "options": [
+          "A. -3 m",
+          "B. 3 m",
+          "C. -9 m",
+          "D. 9 m"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Để tìm vị trí từ gia tốc, ta cần tích phân hai lần.<br />1. Tìm hàm vận tốc \\( v(t) \\) bằng cách tích phân gia tốc \\( a(t) \\):<br />\\( v(t) = \\int a(t) dt = \\int (2t - 4) dt = t^2 - 4t + C_1 \\).<br />Vì hạt bắt đầu từ trạng thái nghỉ (starts from rest), vận tốc ban đầu \\( v(0) = 0 \\).<br />\\( v(0) = 0^2 - 4(0) + C_1 = 0 \\Rightarrow C_1 = 0 \\).<br />Vậy, \\( v(t) = t^2 - 4t \\).<br />2. Tìm hàm vị trí \\( s(t) \\) bằng cách tích phân vận tốc \\( v(t) \\):<br />\\( s(t) = \\int v(t) dt = \\int (t^2 - 4t) dt = \\frac{t^3}{3} - 2t^2 + C_2 \\).<br />Vì hạt bắt đầu từ gốc tọa độ (starts at the origin), vị trí ban đầu \\( s(0) = 0 \\).<br />\\( s(0) = \\frac{0^3}{3} - 2(0)^2 + C_2 = 0 \\Rightarrow C_2 = 0 \\).<br />Vậy, \\( s(t) = \\frac{t^3}{3} - 2t^2 \\).<br />3. Tìm vị trí tại \\( t=3 \\) giây:<br />\\( s(3) = \\frac{3^3}{3} - 2(3)^2 = \\frac{27}{3} - 2(9) = 9 - 18 = -9 \\) m.",
+        "difficulty": "medium",
+        "topic": "Calculus (Integration, Kinematics)",
+        "hints": [
+          "Tích phân gia tốc để được vận tốc, sau đó tích phân vận tốc để được vị trí.",
+          "Sử dụng các điều kiện ban đầu (bắt đầu từ trạng thái nghỉ, tại gốc tọa độ) để tìm các hằng số tích phân."
+        ]
+      },
+      {
+        "id": 8,
+        "question": "The position of a particle is given by \\( s(t) = t^3 - 6t^2 + 9t \\) meters, where \\(t\\) is in seconds. For what value of \\(t\\) in the interval \\([0, 2]\\) is the instantaneous velocity equal to the average velocity over this interval?",
+        "image": null,
+        "options": [
+          "A. \\( 1 - \\frac{1}{\\sqrt{3}} \\) s",
+          "B. 1 s",
+          "C. \\( 1 + \\frac{1}{\\sqrt{3}} \\) s",
+          "D. \\( 2 - \\frac{2}{\\sqrt{3}} \\) s"
+        ],
+        "correctAnswer": "D",
+        "explanation": "1. Tính vận tốc trung bình \\( v_{avg} \\) trên đoạn \\([0, 2]\\):<br />\\( s(0) = 0^3 - 6(0)^2 + 9(0) = 0 \\) m.<br />\\( s(2) = 2^3 - 6(2)^2 + 9(2) = 8 - 24 + 18 = 2 \\) m.<br />\\( v_{avg} = \\frac{s(2) - s(0)}{2 - 0} = \\frac{2 - 0}{2} = 1 \\) m/s.<br />2. Tính vận tốc tức thời \\( v(t) \\):<br />\\( v(t) = s'(t) = \\frac{d}{dt}(t^3 - 6t^2 + 9t) = 3t^2 - 12t + 9 \\).<br />3. Đặt \\( v(t) = v_{avg} \\) và giải tìm \\(t\\):<br />\\( 3t^2 - 12t + 9 = 1 \\)<br />\\( 3t^2 - 12t + 8 = 0 \\).<br />Sử dụng công thức nghiệm phương trình bậc hai \\( t = \\frac{-b \\pm \\sqrt{b^2 - 4ac}}{2a} \\):<br />\\( t = \\frac{-(-12) \\pm \\sqrt{(-12)^2 - 4(3)(8)}}{2(3)} = \\frac{12 \\pm \\sqrt{144 - 96}}{6} = \\frac{12 \\pm \\sqrt{48}}{6} \\)<br />\\( t = \\frac{12 \\pm 4\\sqrt{3}}{6} = 2 \\pm \\frac{4\\sqrt{3}}{6} = 2 \\pm \\frac{2\\sqrt{3}}{3} \\).<br />Ta có hai giá trị của \\(t\\):<br />\\( t_1 = 2 + \\frac{2\\sqrt{3}}{3} \\approx 2 + \\frac{2(1.732)}{3} \\approx 2 + 1.1547 = 3.1547 \\) s.<br />\\( t_2 = 2 - \\frac{2\\sqrt{3}}{3} \\approx 2 - 1.1547 = 0.8453 \\) s.<br />Chỉ có \\( t_2 \\approx 0.8453 \\) nằm trong khoảng \\([0, 2]\\).<br />\\(2 - \\frac{2}{\\sqrt{3}}\\) chính là \\(2 - \\frac{2\\sqrt{3}}{3}\\).",
+        "difficulty": "hard",
+        "topic": "Calculus (Mean Value Theorem for Integrals, Velocity)",
+        "hints": [
+          "Vận tốc trung bình = (thay đổi vị trí) / (thay đổi thời gian).",
+          "Vận tốc tức thời là đạo hàm của vị trí \\(s'(t)\\).",
+          "Đặt chúng bằng nhau và giải tìm \\(t\\). Nhớ kiểm tra xem nghiệm có nằm trong khoảng cho trước không."
+        ]
+      },
+      {
+        "id": 9,
+        "question": "A ball is thrown vertically upwards from the ground with an initial velocity of 40 m/s. Its height \\(h(t)\\) in meters after \\(t\\) seconds is given by \\( h(t) = 40t - 5t^2 \\). What is the maximum height reached by the ball?",
+        "image": null,
+        "options": [
+          "A. 40 m",
+          "B. 60 m",
+          "C. 80 m",
+          "D. 100 m"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Độ cao cực đại đạt được khi vận tốc tức thời của quả bóng bằng 0.<br />1. Tìm hàm vận tốc \\( v(t) \\) bằng cách lấy đạo hàm của hàm độ cao \\( h(t) \\):<br />\\( v(t) = h'(t) = \\frac{d}{dt}(40t - 5t^2) = 40 - 10t \\).<br />2. Đặt \\( v(t) = 0 \\) để tìm thời điểm đạt độ cao cực đại:<br />\\( 40 - 10t = 0 \\Rightarrow 10t = 40 \\Rightarrow t = 4 \\) giây.<br />3. Thay thời điểm \\( t=4 \\) vào hàm độ cao \\( h(t) \\) để tìm độ cao cực đại:<br />\\( h(4) = 40(4) - 5(4)^2 = 160 - 5(16) = 160 - 80 = 80 \\) mét.",
+        "difficulty": "easy",
+        "topic": "Calculus (Optimization, Kinematics)",
+        "hints": [
+          "Độ cao cực đại đạt được khi vận tốc tức thời bằng không.",
+          "Tìm đạo hàm \\(h'(t)\\), đặt nó bằng không để tìm thời gian \\(t\\) tương ứng.",
+          "Thay giá trị thời gian này trở lại vào hàm độ cao \\(h(t)\\)."
+        ]
+      },
+      {
+        "id": 10,
+        "question": "A particle's position is described by the function \\( s(t) = t^3 - 9t^2 + 24t + 5 \\) for \\( t \\ge 0 \\). At what times does the particle change direction?",
+        "image": null,
+        "options": [
+          "A. t = 2s and t = 4s",
+          "B. t = 3s only",
+          "C. t = 1s and t = 5s",
+          "D. t = 2s only"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Hạt thay đổi hướng chuyển động khi vận tốc của nó đổi dấu. Điều này thường xảy ra tại các điểm mà vận tốc bằng 0.<br />1. Tìm hàm vận tốc \\( v(t) \\) bằng cách lấy đạo hàm của hàm vị trí \\( s(t) \\):<br />\\( v(t) = s'(t) = \\frac{d}{dt}(t^3 - 9t^2 + 24t + 5) = 3t^2 - 18t + 24 \\).<br />2. Đặt \\( v(t) = 0 \\) để tìm các thời điểm mà vận tốc có thể đổi dấu:<br />\\( 3t^2 - 18t + 24 = 0 \\)<br />Chia cả hai vế cho 3: \\( t^2 - 6t + 8 = 0 \\)<br />Phân tích thành nhân tử: \\( (t-2)(t-4) = 0 \\).<br />Vậy, \\( t=2 \\) giây và \\( t=4 \\) giây là các thời điểm mà vận tốc bằng 0.<br />3. Kiểm tra dấu của vận tốc xung quanh các điểm này:<br />   - Với \\( t < 2 \\) (ví dụ \\( t=1 \\)): \\( v(1) = 3(1)^2 - 18(1) + 24 = 3 - 18 + 24 = 9 > 0 \\).<br />   - Với \\( 2 < t < 4 \\) (ví dụ \\( t=3 \\)): \\( v(3) = 3(3)^2 - 18(3) + 24 = 27 - 54 + 24 = -3 < 0 \\). (Đổi hướng tại t=2)<br />   - Với \\( t > 4 \\) (ví dụ \\( t=5 \\)): \\( v(5) = 3(5)^2 - 18(5) + 24 = 75 - 90 + 24 = 9 > 0 \\). (Đổi hướng tại t=4)<br />Do đó, hạt thay đổi hướng tại \\( t=2 \\) giây và \\( t=4 \\) giây.",
+        "difficulty": "medium",
+        "topic": "Calculus (Velocity, Motion Analysis)",
+        "hints": [
+          "Hạt thay đổi hướng khi vận tốc của nó đổi dấu (thường là khi vận tốc bằng 0).",
+          "Tìm hàm vận tốc \\(v(t) = s'(t)\\).",
+          "Đặt \\(v(t)=0\\) để tìm các thời điểm có khả năng đổi hướng, sau đó kiểm tra dấu của \\(v(t)\\) ở các khoảng giữa các thời điểm đó."
+        ]
+      },
+      {
+        "id": 11,
+        "question": "A particle moves along the x-axis. Its position at time \\(t\\) is given by \\(x(t) = t^2 - 4t + 3\\) for \\(0 \\le t \\le 3\\). Find the total distance traveled by the particle. (Nguồn: Câu 11, Đề 5 - Câu hỏi gốc có vấn đề với các lựa chọn, kết quả đúng là 5m)",
+        "image": null,
+        "options": [
+          "A. 1 m",
+          "B. 2 m",
+          "C. 2.5 m",
+          "D. 5 m"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Để tìm tổng quãng đường, ta cần xem xét các điểm mà hạt đổi chiều, tức là khi vận tốc \\(v(t) = x'(t) = 0\\).<br />1. Tìm vận tốc: \\( v(t) = x'(t) = 2t - 4 \\).<br />2. Tìm thời điểm vận tốc bằng 0: \\( 2t - 4 = 0 \\Rightarrow t = 2 \\) s. Thời điểm này nằm trong khoảng [0, 3].<br />3. Tính vị trí tại các thời điểm quan trọng: \\(t=0, t=2, t=3\\).<br />   \\( x(0) = 0^2 - 4(0) + 3 = 3 \\) m.<br />   \\( x(2) = 2^2 - 4(2) + 3 = 4 - 8 + 3 = -1 \\) m.<br />   \\( x(3) = 3^2 - 4(3) + 3 = 9 - 12 + 3 = 0 \\) m.<br />4. Tính tổng quãng đường:<br />   - Quãng đường từ \\(t=0\\) đến \\(t=2\\): Hạt đi từ x=3 đến x=-1. Quãng đường là \\( |x(2) - x(0)| = |-1 - 3| = |-4| = 4 \\) m.<br />   - Quãng đường từ \\(t=2\\) đến \\(t=3\\): Hạt đi từ x=-1 đến x=0. Quãng đường là \\( |x(3) - x(2)| = |0 - (-1)| = |1| = 1 \\) m.<br />   Tổng quãng đường = 4m + 1m = 5m.",
+        "difficulty": "medium",
+        "topic": "Calculus (Total Distance vs Displacement)",
+        "hints": [
+          "Tổng quãng đường khác với độ dời. Bạn cần xem xét khi nào hạt đổi chiều.",
+          "Tìm vận tốc \\(v(t) = x'(t)\\) và giải \\(v(t)=0\\) để tìm các thời điểm hạt có thể đổi chiều.",
+          "Tính quãng đường trên từng đoạn không đổi chiều rồi cộng lại, hoặc sử dụng \\( \\int_0^3 |v(t)| dt \\)."
+        ]
+      },
+      {
+        "id": 12,
+        "question": "The displacement of a particle from its starting point is given by \\(s(t) = t^3 - 7t^2 + 10t\\) meters, where \\(t\\) is in seconds. Find the times (other than \\(t=0\\)) when the object returns to its starting point.",
+        "image": null,
+        "options": [
+          "A. t = 2s only",
+          "B. t = 5s only",
+          "C. t = 2s and t = 5s",
+          "D. t = 7s only"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Vật trở lại điểm xuất phát khi độ dời \\(s(t) = 0\\).<br />Ta cần giải phương trình: \\( t^3 - 7t^2 + 10t = 0 \\).<br />Đưa \\(t\\) ra làm nhân tử chung:<br />\\( t(t^2 - 7t + 10) = 0 \\).<br />Tiếp tục phân tích tam thức bậc hai:<br />\\( t(t-2)(t-5) = 0 \\).<br />Phương trình này có ba nghiệm: \\( t=0, t=2, t=5 \\).<br />\\(t=0\\) là thời điểm bắt đầu. Các thời điểm khác mà vật trở lại điểm xuất phát là \\( t=2 \\) giây và \\( t=5 \\) giây.",
+        "difficulty": "easy",
+        "topic": "Kinematics (Displacement)",
+        "hints": [
+          "Vật trở lại điểm xuất phát khi độ dời của nó bằng không, tức là \\(s(t)=0\\).",
+          "Giải phương trình \\(s(t)=0\\) để tìm các giá trị của \\(t\\)."
+        ]
+      },
+      {
+        "id": 13,
+        "question": "A car travels east at 60 km/h for 1 hour, then turns and travels north at 80 km/h for 1 hour. What is the magnitude of the car's average velocity for the entire 2-hour journey?",
+        "image": null,
+        "options": [
+          "A. 70 km/h",
+          "B. 50 km/h",
+          "C. 100 km/h",
+          "D. 140 km/h"
+        ],
+        "correctAnswer": "B",
+        "explanation": "1. Tính quãng đường đi theo hướng Đông: \\( d_E = 60 \\text{ km/h} \\times 1 \\text{ h} = 60 \\) km.<br />2. Tính quãng đường đi theo hướng Bắc: \\( d_N = 80 \\text{ km/h} \\times 1 \\text{ h} = 80 \\) km.<br />3. Tổng độ dời (displacement) là vector có thành phần \\( (60, 80) \\). Độ lớn của vector độ dời là:<br />\\( |\\Delta \\vec{s}| = \\sqrt{60^2 + 80^2} = \\sqrt{3600 + 6400} = \\sqrt{10000} = 100 \\) km.<br />4. Tổng thời gian của hành trình là \\( \\Delta t = 1 \\text{ h} + 1 \\text{ h} = 2 \\) h.<br />5. Vận tốc trung bình (average velocity) là vector: \\( \\vec{v}_{avg} = \\frac{\\Delta \\vec{s}}{\\Delta t} \\).<br />   Độ lớn của vận tốc trung bình là: \\( |\\vec{v}_{avg}| = \\frac{|\\Delta \\vec{s}|}{\\Delta t} = \\frac{100 \\text{ km}}{2 \\text{ h}} = 50 \\) km/h.",
+        "difficulty": "medium",
+        "topic": "Kinematics (Average Velocity vs Average Speed)",
+        "hints": [
+          "Vận tốc trung bình là tổng độ dời chia cho tổng thời gian.",
+          "Độ dời là vector nối điểm đầu và điểm cuối. Tính độ lớn của vector này.",
+          "Đừng nhầm lẫn với tốc độ trung bình (tổng quãng đường chia tổng thời gian)."
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Car A is 30 km west of an intersection. Car A starts moving east towards the intersection at 20 km/h. At the same time, car B is at the intersection and starts moving north at 15 km/h. At what rate is the distance between the cars changing after 1 hour? (Kết quả đúng xấp xỉ 1.39 km/h. Câu hỏi gốc có đáp án không khớp. Chọn A cho mục đích làm tròn gần nhất theo đề gốc, nhưng lưu ý kết quả tính toán.)",
+        "image": null,
+        "options": [
+          "A. 1.39 km/h",
+          "B. 5 km/h",
+          "C. 7 km/h",
+          "D. 10 km/h"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Gọi vị trí của giao lộ là gốc tọa độ (0,0).<br />- Đặt khoảng cách từ xe A đến giao lộ là \\(x(t)\\). Ban đầu \\(x(0) = 30\\) km. Vì xe A đi về phía Đông (về phía giao lộ), \\( \\frac{dx}{dt} = -20 \\) km/h.<br />- Đặt khoảng cách từ xe B đến giao lộ là \\(y(t)\\). Ban đầu \\(y(0) = 0\\) km. Vì xe B đi về phía Bắc, \\( \\frac{dy}{dt} = 15 \\) km/h.<br />Khoảng cách \\(D\\) giữa hai xe là \\( D = \\sqrt{x^2 + y^2} \\).<br />Bình phương hai vế: \\( D^2 = x^2 + y^2 \\).<br />Lấy đạo hàm theo thời gian \\(t\\):<br />\\( 2D \\frac{dD}{dt} = 2x \\frac{dx}{dt} + 2y \\frac{dy}{dt} \\)<br />\\( D \\frac{dD}{dt} = x \\frac{dx}{dt} + y \\frac{dy}{dt} \\).<br />Sau 1 giờ:<br />\\( x(1) = 30 - 20(1) = 10 \\) km.<br />\\( y(1) = 15(1) = 15 \\) km.<br />\\( D(1) = \\sqrt{10^2 + 15^2} = \\sqrt{100 + 225} = \\sqrt{325} = 5\\sqrt{13} \\approx 18.0277 \\) km.<br />Thay các giá trị vào phương trình đạo hàm:<br />\\( (5\\sqrt{13}) \\frac{dD}{dt} = (10)(-20) + (15)(15) \\)<br />\\( (5\\sqrt{13}) \\frac{dD}{dt} = -200 + 225 = 25 \\)<br />\\( \\frac{dD}{dt} = \\frac{25}{5\\sqrt{13}} = \\frac{5}{\\sqrt{13}} = \\frac{5\\sqrt{13}}{13} \\approx \\frac{5 \\times 3.60555}{13} \\approx \\frac{18.02775}{13} \\approx 1.38675 \\) km/h.<br />Làm tròn đến hai chữ số thập phân: 1.39 km/h.",
+        "difficulty": "hard",
+        "topic": "Calculus (Related Rates)",
+        "hints": [
+          "Đặt gốc tọa độ tại giao lộ. Xác định vị trí \\(x_A(t)\\) của xe A và \\(y_B(t)\\) của xe B theo thời gian \\(t\\).",
+          "Khoảng cách \\(D\\) giữa hai xe là \\( D = \\sqrt{x_A^2 + y_B^2} \\) (nếu \\(x_A\\) là khoảng cách từ A đến giao lộ).",
+          "Đạo hàm phương trình \\(D^2 = x_A^2 + y_B^2\\) theo thời gian để tìm \\(\\frac{dD}{dt}\\).",
+          "Cẩn thận với dấu của \\(\\frac{dx_A}{dt}\\) nếu \\(x_A\\) là khoảng cách đến giao lộ (nó sẽ giảm)."
+        ]
+      }
+    ]
+  }
