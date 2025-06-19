@@ -1,0 +1,209 @@
+{
+    "examId": "de7",
+    "title": "Tốc độ các đại lượng liên quan",
+    "description": "Tuyển tập các bài toán về Tốc độ các đại lượng liên quan (Related Rates) từ các đề trước và có tự chế thêm.",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Volume of a spherical balloon is decreasing at rate \\( 9 \\text{ cm}^3/\\text{s} \\). How fast is its diameter decreasing when the volume is \\( 6 \\text{ cm}^3 \\)?",
+        "image": null,
+        "options": [
+          "A. \\( 3.127 \\text{ cm/s} \\)",
+          "B. \\( 0.127 \\text{ cm/s} \\)",
+          "C. \\( 2.127 \\text{ cm/s} \\)",
+          "D. None of the other choices is correct",
+          "E. \\( 1.127 \\text{ cm/s} \\)"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Để giải siêu tốc, ta cần một công thức liên hệ trực tiếp các đại lượng. Mẹo ở đây là lấy phương trình đạo hàm chia cho phương trình thể tích.<br /><br /><b>1. Các phương trình cơ bản:</b><br />- Thể tích: \\( V = \\frac{\\pi D^3}{6} \\)<br />- Tốc độ thay đổi: \\( \\frac{dV}{dt} = \\frac{\\pi D^2}{2} \\frac{dD}{dt} \\)<br /><br /><b>2. Tạo công thức siêu tốc:</b><br />Lấy (phương trình tốc độ) chia cho (phương trình thể tích):<br />\\( \\frac{dV/dt}{V} = \\frac{ (\\pi D^2 / 2) \\cdot (dD/dt) }{ \\pi D^3 / 6 } = \\frac{3}{D} \\frac{dD}{dt} \\)<br />Sắp xếp lại, ta có công thức cuối cùng:<br />\\[ \\frac{dD}{dt} = \\frac{D}{3V} \\frac{dV}{dt} \\]<br /><br /><b>3. Áp dụng:</b><br />- Tìm D khi V=6: \\( 6 = \\frac{\\pi D^3}{6} \\Rightarrow D^3 = \\frac{36}{\\pi} \\Rightarrow D \\approx 2.25 \\text{ cm} \\).<br />- Thế số vào công thức siêu tốc:<br />\\( \\frac{dD}{dt} \\approx \\frac{2.25}{3 \\cdot 6} \\cdot (-9) = \\frac{2.25}{18} \\cdot (-9) = -\\frac{2.25}{2} = -1.125 \\).<br /><br />Tốc độ giảm là \\(1.125\\), gần nhất với đáp án E.",
+        "difficulty": "medium",
+        "topic": "Calculus (Related Rates)",
+        "hints": [
+          "Mẹo nhanh nhất: Dùng công thức rút gọn \\( \\frac{dD}{dt} = \\frac{D}{3V} \\frac{dV}{dt} \\).",
+          "Bạn chỉ cần 2 bước: (1) Tìm D khi V=6, (2) Thế tất cả các số vào công thức trên.",
+          "Công thức này được tạo ra bằng cách lấy phương trình đạo hàm chia cho phương trình gốc để khử các số hạng phức tạp."
+        ]
+      },
+      {
+        "id": 2,
+        "question": "Two cars start moving from the same point. One travels south at 28 mi/h and the other travels west at 70 mi/h. At what rate is the distance between the cars increasing 5 hours later? Round the result to the nearest hundredth.",
+        "image": null,
+        "options": [
+          "A. 75.42 mi/h",
+          "B. 75.39 mi/h",
+          "C. 76.4 mi/h",
+          "D. 75.30 mi/h",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đây là một bài toán \"Tốc độ các đại lượng liên quan\" kinh điển, sử dụng định lý Pytago.<br /><br /><b>1. Thiết lập mô hình và công thức:</b><br />- Gọi quãng đường đi về phía tây là \\(x\\), phía nam là \\(y\\), và khoảng cách \\(z\\) giữa hai xe.<br />- Theo Pytago, ta có: \\( x^2 + y^2 = z^2 \\).<br />- Ta được cho: \\( \\frac{dx}{dt} = 70 \\) mi/h và \\( \\frac{dy}{dt} = 28 \\) mi/h.<br />- Ta cần tìm \\( \\frac{dz}{dt} \\).<br /><br /><b>Mẹo siêu tốc:</b><br />Vì vận tốc của hai xe không đổi, tốc độ chúng tách xa nhau (\\(\\frac{dz}{dt}\\)) cũng không đổi và không phụ thuộc vào thời gian \"5 giờ sau\". Tốc độ này có thể được tính trực tiếp từ các vận tốc ban đầu bằng cách áp dụng định lý Pytago cho các vector vận tốc.<br />\\[ \\frac{dz}{dt} = \\sqrt{(\\frac{dx}{dt})^2 + (\\frac{dy}{dt})^2} \\]<br /><br /><b>2. Tính toán:</b><br />\\( \\frac{dz}{dt} = \\sqrt{70^2 + 28^2} = \\sqrt{4900 + 784} = \\sqrt{5684} \\approx 75.3923 \\)<br />Làm tròn đến hai chữ số thập phân, ta được <b>75.39 mi/h</b>.<br /><br /><b>Kết luận:</b> Kết quả khớp với đáp án <b>B</b>.",
+        "difficulty": "medium",
+        "topic": "Calculus (Related Rates)",
+        "hints": [
+          "Mẹo: Dùng Pytago `x² + y² = z²` và lấy đạo hàm hai vế theo thời gian `t`.",
+          "Công thức sau khi đạo hàm là `x(dx/dt) + y(dy/dt) = z(dz/dt)`.",
+          "Mẹo siêu tốc: Nếu vận tốc không đổi, tốc độ xa nhau cũng không đổi và bằng `sqrt((dx/dt)² + (dy/dt)²) = sqrt(70² + 28²) ≈ 75.39`."
+        ]
+      },
+      {
+        "id": 3,
+        "question": "Each side of a square is increasing at a rate of 3cm/s. At what rate (in cm²/s) is the area of the square increasing when the area of square is 25cm²?",
+        "image": null,
+        "options": [
+          "A. 30",
+          "B. 15",
+          "C. 5",
+          "D. 25"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đây là bài toán 'tốc độ thay đổi có liên quan' (Related Rates).<br /><br /><b>1. Thiết lập các biến và công thức:</b><br />- Gọi cạnh hình vuông là \\(s\\), diện tích là \\(A\\).<br />- Ta có công thức: \\( A = s^2 \\).<br />- Ta được cho: tốc độ tăng của cạnh \\( \\frac{ds}{dt} = 3 \\) cm/s.<br />- Ta cần tìm: tốc độ tăng của diện tích \\( \\frac{dA}{dt} \\) tại thời điểm \\( A = 25 \\) cm².<br /><br /><b>2. Đạo hàm công thức theo thời gian t:</b><br />Lấy đạo hàm hai vế của \\( A = s^2 \\) theo \\(t\\):<br />\\( \\frac{dA}{dt} = 2s \\cdot \\frac{ds}{dt} \\)<br /><br /><b>3. Tìm giá trị của s tại thời điểm cần tính:</b><br />Khi diện tích \\( A = 25 \\), ta có \\( s^2 = 25 \\Rightarrow s = 5 \\) cm.<br /><br /><b>4. Thế số và giải:</b><br />\\( \\frac{dA}{dt} = 2 \\cdot (5) \\cdot (3) = 30 \\) cm²/s.<br /><br /><b>Kết luận:</b> Tốc độ tăng của diện tích là 30 cm²/s. Đáp án là <b>A</b>.",
+        "difficulty": "medium",
+        "topic": "Calculus (Related Rates)",
+        "hints": [
+          "Mẹo 3 bước: 1. Viết công thức (A=s²). 2. Lấy đạo hàm 2 vế theo thời gian t. 3. Thế các giá trị đã biết vào.",
+          "Thông tin ẩn: Khi `A=25`, bạn phải tự suy ra cạnh `s=5`.",
+          "Công thức cốt lõi: `dA/dt = 2s * ds/dt`. Nhớ nhân thêm `ds/dt` (quy tắc chuỗi)."
+        ]
+      },
+      {
+        "id": 4,
+        "question": "A 13-foot ladder is leaning against a vertical wall. The bottom of the ladder is sliding away from the wall at a rate of 2 ft/s. How fast is the top of the ladder sliding down the wall when the bottom of the ladder is 5 feet from the wall?",
+        "image": null,
+        "options": [
+          "A. 5/6 ft/s",
+          "B. 6/5 ft/s",
+          "C. 12/5 ft/s",
+          "D. 2 ft/s"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đây là một bài toán kinh điển về tốc độ liên quan.<br /><br /><b>1. Thiết lập công thức:</b><br />- Gọi \\(x\\) là khoảng cách từ chân tường đến chân thang, \\(y\\) là chiều cao của đỉnh thang trên tường. Chiều dài thang là 13 ft (hằng số).<br />- Theo định lý Pytago: \\( x^2 + y^2 = 13^2 \\).<br />- Ta được cho: \\( \\frac{dx}{dt} = 2 \\) ft/s.<br />- Ta cần tìm: \\( \\frac{dy}{dt} \\) khi \\( x = 5 \\) ft.<br /><br /><b>2. Đạo hàm theo thời gian t:</b><br />\\( 2x \\frac{dx}{dt} + 2y \\frac{dy}{dt} = 0 \\)<br />\\( x \\frac{dx}{dt} + y \\frac{dy}{dt} = 0 \\)<br /><br /><b>3. Tìm giá trị của y tại thời điểm cần tính:</b><br />- Khi \\( x=5 \\), ta có \\( 5^2 + y^2 = 13^2 \\Rightarrow 25 + y^2 = 169 \\Rightarrow y^2 = 144 \\Rightarrow y = 12 \\) ft.<br /><br /><b>4. Thế số và giải:</b><br />\\( (5)(2) + (12) \\frac{dy}{dt} = 0 \\)<br />\\( 10 + 12 \\frac{dy}{dt} = 0 \\)<br />\\( 12 \\frac{dy}{dt} = -10 \\)<br />\\( \\frac{dy}{dt} = -\\frac{10}{12} = -\\frac{5}{6} \\) ft/s.<br /><br />Dấu âm cho thấy đỉnh thang đang trượt xuống. Tốc độ trượt xuống là \\( \\frac{5}{6} \\) ft/s. Đáp án là <b>A</b>.",
+        "difficulty": "medium",
+        "topic": "Calculus (Related Rates)",
+        "hints": [
+          "Sử dụng định lý Pytago `x² + y² = L²` làm công thức chính.",
+          "Lấy đạo hàm hai vế theo thời gian `t`.",
+          "Dùng Pytago để tìm giá trị của biến còn lại (`y`) tại thời điểm đã cho."
+        ]
+      },
+      {
+        "id": 5,
+        "question": "A conical tank has a height of 10 meters and a base radius of 5 meters. Water is being pumped into the tank at a rate of 2 m³/min. How fast is the water level rising when the water is 6 meters deep?",
+        "image": null,
+        "options": [
+          "A. 1/(9π) m/min",
+          "B. 2/(9π) m/min",
+          "C. 1/(3π) m/min",
+          "D. 18π m/min"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Bài toán này yêu cầu sử dụng tam giác đồng dạng để liên hệ các biến.<br /><br /><b>1. Thiết lập công thức:</b><br />- Thể tích hình nón: \\( V = \\frac{1}{3}\\pi r^2 h \\).<br />- Ta được cho: \\( \\frac{dV}{dt} = 2 \\) m³/min.<br />- Ta cần tìm: \\( \\frac{dh}{dt} \\) khi \\( h = 6 \\) m.<br /><br /><b>2. Sử dụng tam giác đồng dạng:</b><br />- Tỉ lệ bán kính và chiều cao của bể chứa là \\( \\frac{R}{H} = \\frac{5}{10} = \\frac{1}{2} \\).<br />- Tỉ lệ này cũng đúng cho mực nước: \\( \\frac{r}{h} = \\frac{1}{2} \\Rightarrow r = \\frac{h}{2} \\).<br /><br /><b>3. Thế để có hàm một biến:</b><br />\\( V = \\frac{1}{3}\\pi (\\frac{h}{2})^2 h = \\frac{1}{3}\\pi (\\frac{h^2}{4}) h = \\frac{\\pi}{12}h^3 \\).<br /><br /><b>4. Đạo hàm theo thời gian và giải:</b><br />\\( \\frac{dV}{dt} = \\frac{\\pi}{12} \\cdot 3h^2 \\frac{dh}{dt} = \\frac{\\pi h^2}{4} \\frac{dh}{dt} \\)<br />\\( 2 = \\frac{\\pi (6)^2}{4} \\frac{dh}{dt} \\)<br />\\( 2 = \\frac{36\\pi}{4} \\frac{dh}{dt} = 9\\pi \\frac{dh}{dt} \\)<br />\\( \\frac{dh}{dt} = \\frac{2}{9\\pi} \\) m/min.<br /><br /><b>Kết luận:</b> Đáp án là <b>B</b>.",
+        "difficulty": "hard",
+        "topic": "Calculus (Related Rates)",
+        "hints": [
+          "Dùng tam giác đồng dạng để biểu diễn `r` theo `h` (hoặc ngược lại).",
+          "Thế vào công thức thể tích để có hàm một biến `V(h)`.",
+          "Lấy đạo hàm hai vế theo thời gian `t` và giải tìm `dh/dt`."
+        ]
+      },
+      {
+        "id": 6,
+        "question": "Air is being pumped into a spherical balloon so that its radius is increasing at a rate of 0.5 cm/s. How fast is the volume of the balloon increasing when the radius is 4 cm?",
+        "image": null,
+        "options": [
+          "A. 8π cm³/s",
+          "B. 16π cm³/s",
+          "C. 32π cm³/s",
+          "D. 64π cm³/s"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Đây là một ứng dụng trực tiếp của quy tắc chuỗi.<br /><br /><b>1. Thiết lập công thức:</b><br />- Thể tích hình cầu: \\( V = \\frac{4}{3}\\pi r^3 \\).<br />- Ta được cho: \\( \\frac{dr}{dt} = 0.5 \\) cm/s.<br />- Ta cần tìm: \\( \\frac{dV}{dt} \\) khi \\( r = 4 \\) cm.<br /><br /><b>2. Đạo hàm theo thời gian t:</b><br />\\( \\frac{dV}{dt} = \\frac{d}{dt} (\\frac{4}{3}\\pi r^3) = \\frac{4}{3}\\pi \\cdot (3r^2 \\frac{dr}{dt}) = 4\\pi r^2 \\frac{dr}{dt} \\).<br /><br /><b>3. Thế số và giải:</b><br />Thay \\( r = 4 \\) và \\( \\frac{dr}{dt} = 0.5 \\) vào:<br />\\( \\frac{dV}{dt} = 4\\pi (4)^2 (0.5) \\)<br />\\( = 4\\pi (16) (0.5) \\)<br />\\( = 64\\pi \\cdot 0.5 = 32\\pi \\) cm³/s.<br /><br /><b>Kết luận:</b> Đáp án là <b>C</b>.",
+        "difficulty": "medium",
+        "topic": "Calculus (Related Rates)",
+        "hints": [
+          "Viết công thức thể tích hình cầu `V = (4/3)πr³`.",
+          "Lấy đạo hàm hai vế theo thời gian `t`.",
+          "Thế các giá trị đã cho của `r` và `dr/dt` vào để tìm `dV/dt`."
+        ]
+      },
+      {
+        "id": 7,
+        "question": "A 6 ft tall man walks away from a 15 ft tall lamppost at a speed of 4 ft/s. At what rate is the length of his shadow growing?",
+        "image": null,
+        "options": [
+          "A. 4/3 ft/s",
+          "B. 8/3 ft/s",
+          "C. 4 ft/s",
+          "D. 10/3 ft/s"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Bài toán này sử dụng tam giác đồng dạng để tìm mối quan hệ giữa các đại lượng.<br /><br /><b>1. Thiết lập mô hình:</b><br />- Gọi \\(H=15\\) là chiều cao đèn, \\(h=6\\) là chiều cao người.<br />- Gọi \\(x\\) là khoảng cách từ người đến chân đèn, \\(s\\) là chiều dài của bóng.<br />- Ta có hai tam giác vuông đồng dạng: tam giác lớn tạo bởi đèn và đỉnh bóng, và tam giác nhỏ tạo bởi người và đỉnh bóng.<br /><br /><b>2. Viết phương trình từ tam giác đồng dạng:</b><br />\\( \\frac{\\text{chiều cao nhỏ}}{\\text{cạnh đáy nhỏ}} = \\frac{\\text{chiều cao lớn}}{\\text{cạnh đáy lớn}} \\)<br />\\( \\frac{h}{s} = \\frac{H}{x+s} \\)<br />\\( \\frac{6}{s} = \\frac{15}{x+s} \\)<br />\\( 6(x+s) = 15s \\)<br />\\( 6x + 6s = 15s \\)<br />\\( 6x = 9s \\Rightarrow s = \\frac{6}{9}x = \\frac{2}{3}x \\)<br /><br /><b>3. Đạo hàm theo thời gian:</b><br />\\( \\frac{ds}{dt} = \\frac{2}{3} \\frac{dx}{dt} \\)<br /><br /><b>4. Thế số và giải:</b><br />- Ta được cho \\( \\frac{dx}{dt} = 4 \\) ft/s.<br />- \\( \\frac{ds}{dt} = \\frac{2}{3} (4) = \\frac{8}{3} \\) ft/s.<br /><br /><b>Kết luận:</b> Chiều dài của bóng đang tăng với tốc độ 8/3 ft/s. Đáp án là <b>B</b>.",
+        "difficulty": "hard",
+        "topic": "Calculus (Related Rates)",
+        "hints": [
+          "Vẽ hình và xác định hai tam giác vuông đồng dạng.",
+          "Lập tỉ lệ từ tam giác đồng dạng để liên hệ khoảng cách của người (`x`) và chiều dài bóng (`s`).",
+          "Lấy đạo hàm phương trình thu được theo thời gian `t`."
+        ]
+      },
+      {
+        "id": 8,
+        "question": "A stone is dropped into a calm pond, causing ripples in the form of concentric circles. The radius `r` of the outer ripple is increasing at a constant rate of 1 ft/s. When the radius is 4 ft, at what rate is the total area `A` of the disturbed water increasing?",
+        "image": null,
+        "options": [
+          "A. 4π ft²/s",
+          "B. 8π ft²/s",
+          "C. π ft²/s",
+          "D. 16π ft²/s"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Bài toán này liên hệ giữa diện tích và bán kính của hình tròn.<br /><br /><b>1. Thiết lập công thức:</b><br />- Diện tích hình tròn: \\( A = \\pi r^2 \\).<br />- Ta được cho: \\( \\frac{dr}{dt} = 1 \\) ft/s.<br />- Ta cần tìm: \\( \\frac{dA}{dt} \\) khi \\( r = 4 \\) ft.<br /><br /><b>2. Đạo hàm theo thời gian t:</b><br />Lấy đạo hàm hai vế của \\( A = \\pi r^2 \\) theo \\(t\\):<br />\\( \\frac{dA}{dt} = \\pi \\cdot (2r \\frac{dr}{dt}) = 2\\pi r \\frac{dr}{dt} \\).<br /><br /><b>3. Thế số và giải:</b><br />Thay \\( r = 4 \\) và \\( \\frac{dr}{dt} = 1 \\) vào:<br />\\( \\frac{dA}{dt} = 2\\pi (4) (1) = 8\\pi \\) ft²/s.<br /><br /><b>Kết luận:</b> Diện tích đang tăng với tốc độ 8π ft²/s. Đáp án là <b>B</b>.",
+        "difficulty": "easy",
+        "topic": "Calculus (Related Rates)",
+        "hints": [
+          "Công thức diện tích hình tròn là `A = πr²`.",
+          "Lấy đạo hàm hai vế theo thời gian `t`.",
+          "Thế các giá trị đã cho của `r` và `dr/dt` vào để tìm `dA/dt`."
+        ]
+      },
+      {
+        "id": 9,
+        "question": "An airplane flies south from an airport at a speed of 400 km/h. Another airplane flies east from the same airport at 300 km/h. At what rate is the distance between the airplanes increasing 1 hour after they depart?",
+        "image": null,
+        "options": [
+          "A. 400 km/h",
+          "B. 300 km/h",
+          "C. 500 km/h",
+          "D. 700 km/h"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Bài toán này tương tự bài toán hai chiếc xe, sử dụng định lý Pytago cho các vector vận tốc.<br /><br /><b>1. Thiết lập mô hình:</b><br />- Gọi \\(y\\) là quãng đường máy bay đi về phía nam, \\(x\\) là quãng đường máy bay đi về phía đông, và \\(z\\) là khoảng cách giữa chúng.<br />- Ta có: \\( x^2 + y^2 = z^2 \\).<br />- Ta được cho: \\( \\frac{dy}{dt} = 400 \\) km/h và \\( \\frac{dx}{dt} = 300 \\) km/h.<br /><br /><b>Mẹo siêu tốc:</b><br />Vì các vận tốc là hằng số, tốc độ chúng tách xa nhau (\\(\\frac{dz}{dt}\\)) cũng là hằng số và không phụ thuộc vào thời gian. Ta có thể tính trực tiếp từ các tốc độ ban đầu:<br />\\[ \\frac{dz}{dt} = \\sqrt{(\\frac{dx}{dt})^2 + (\\frac{dy}{dt})^2} \\]<br /><br /><b>2. Tính toán:</b><br />\\( \\frac{dz}{dt} = \\sqrt{300^2 + 400^2} \\)<br />Đây là một bộ ba Pytago quen thuộc (3-4-5).<br />\\( \\frac{dz}{dt} = \\sqrt{(3 \\cdot 100)^2 + (4 \\cdot 100)^2} = \\sqrt{9 \\cdot 10000 + 16 \\cdot 10000} \\)<br />\\( = \\sqrt{25 \\cdot 10000} = 5 \\cdot 100 = 500 \\) km/h.<br /><br /><b>Kết luận:</b> Khoảng cách giữa hai máy bay đang tăng với tốc độ 500 km/h. Đáp án là <b>C</b>.",
+        "difficulty": "easy",
+        "topic": "Calculus (Related Rates)",
+        "hints": [
+          "Nhận ra đây là một bài toán Pytago.",
+          "Vì vận tốc không đổi, tốc độ chúng tách xa nhau cũng không đổi.",
+          "Sử dụng bộ ba số Pytago (3-4-5) để tính nhẩm: `sqrt(300² + 400²) = 500`."
+        ]
+      },
+      {
+        "id": 10,
+        "question": "A kite 100 ft above the ground moves horizontally at a speed of 8 ft/s. At what rate is the angle of elevation of the string decreasing when 200 ft of string have been let out?",
+        "image": null,
+        "options": [
+          "A. 1/50 rad/s",
+          "B. 1/25 rad/s",
+          "C. 1/100 rad/s",
+          "D. 2/25 rad/s"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đây là một bài toán lượng giác và tốc độ liên quan.<br /><br /><b>1. Thiết lập mô hình và công thức:</b><br />- Gọi \\(h=100\\) là chiều cao không đổi của diều.<br />- Gọi \\(x\\) là khoảng cách ngang từ người đến diều.<br />- Gọi \\(\\theta\\) là góc nâng của dây diều.<br />- Ta có mối quan hệ: \\( \\tan(\\theta) = \\frac{h}{x} = \\frac{100}{x} = 100x^{-1} \\).<br />- Ta được cho: \\( \\frac{dx}{dt} = 8 \\) ft/s.<br />- Ta cần tìm: \\( \\frac{d\\theta}{dt} \\) khi chiều dài dây \\(z = 200\\) ft.<br /><br /><b>2. Đạo hàm theo thời gian t:</b><br />\\( \\sec^2(\\theta) \\frac{d\\theta}{dt} = -100x^{-2} \\frac{dx}{dt} = -\\frac{100}{x^2} \\frac{dx}{dt} \\).<br /><br /><b>3. Tìm các giá trị tại thời điểm cần tính:</b><br />- Khi chiều dài dây \\(z=200\\) và chiều cao \\(h=100\\), ta dùng Pytago để tìm \\(x\\):<br />  \\( x = \\sqrt{z^2 - h^2} = \\sqrt{200^2 - 100^2} = \\sqrt{40000 - 10000} = \\sqrt{30000} = 100\\sqrt{3} \\) ft.<br />- Ta cũng cần \\( \\sec(\\theta) \\). Từ tam giác, \\( \\sec(\\theta) = \\frac{\\text{cạnh kề}}{\\text{cạnh huyền}} = \\frac{z}{x} = \\frac{200}{100\\sqrt{3}} = \\frac{2}{\\sqrt{3}} \\).<br />- Do đó, \\( \\sec^2(\\theta) = (\\frac{2}{\\sqrt{3}})^2 = \\frac{4}{3} \\).<br /><br /><b>4. Thế số và giải:</b><br />\\( (\\frac{4}{3}) \\frac{d\\theta}{dt} = -\\frac{100}{(100\\sqrt{3})^2} (8) \\)<br />\\( (\\frac{4}{3}) \\frac{d\\theta}{dt} = -\\frac{100}{30000} (8) = -\\frac{8}{300} = -\\frac{2}{75} \\)<br />\\( \\frac{d\\theta}{dt} = -\\frac{2}{75} \\cdot \\frac{3}{4} = -\\frac{1}{50} \\) rad/s.<br /><br />Góc nâng đang giảm với tốc độ 1/50 rad/s. Đáp án là <b>A</b>.",
+        "difficulty": "hard",
+        "topic": "Calculus (Related Rates)",
+        "hints": [
+          "Sử dụng một hàm lượng giác để liên hệ góc `θ` với các cạnh (ví dụ: tan, sin, hoặc cot). `tan(θ) = 100/x` là một lựa chọn tốt.",
+          "Lấy đạo hàm hai vế theo thời gian `t`.",
+          "Dùng Pytago để tìm giá trị của các cạnh `x`, `z` tại thời điểm đã cho để tính các giá trị lượng giác cần thiết (như `sec(θ)`)."
+        ]
+      }
+    ]
+  }
