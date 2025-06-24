@@ -609,7 +609,7 @@
     },
     {
       "id": 30,
-      "question": "John and Joe earn a total of $24.80 when John works 2 hours and Joe works 3 hours. If John works 3 hours and Joe works 2 hours, they get $23.90. Find their hourly rates (in dollars).",
+      "question": "John and Joe earn a total of $24.60 when John works 2 hours and Joe works 3 hours. If John works 3 hours and Joe works 2 hours, they get $23.90. Find their hourly rates (in dollars).<br><em>(Lưu ý: Đề bài đã được điều chỉnh để có đáp án chính xác)</em>",
       "image": null,
       "options": [
         "A. 6.70, 9.40",
@@ -619,13 +619,13 @@
         "E. 1.40, 0.80"
       ],
       "correctAnswer": "B",
-      "explanation": "Để giải siêu tốc, ta sẽ không giải hệ mà thử trực tiếp đáp án.<br /><br /><b>1. Thiết lập nhanh hệ phương trình (trong đầu):</b><br />- \\( 2J + 3O = 24.80 \\)<br />- \\( 3J + 2O = 23.90 \\)<br /><br /><b>2. Thử đáp án B (J=4.50, O=5.20):</b><br />- Thử với phương trình thứ hai (vì số 23.90 trông 'đẹp' hơn):<br />  \\( 3(4.50) + 2(5.20) = 13.50 + 10.40 = 23.90 \\). <b>Khớp hoàn hảo!</b><br />- Chỉ cần một phương trình khớp, khả năng rất cao đây là đáp án đúng (có thể đề bài bị lỗi đánh máy ở phương trình còn lại). Không cần thử tiếp, chọn ngay đáp án này.<br /><br /><b>Mẹo kiểm tra siêu tốc khác:</b><br />- Cộng hai phương trình gốc lại với nhau:<br />\\( (2J+3O) + (3J+2O) = 24.80 + 23.90 \\)<br />\\( 5J + 5O = 48.70 \\Rightarrow J+O = 9.74 \\)<br />- Kiểm tra tổng của đáp án B: \\( 4.50 + 5.20 = 9.70 \\). Tổng này gần như chính xác, càng khẳng định B là đáp án đúng.",
+      "explanation": "Có hai cách tiếp cận siêu tốc cho bài này, không cần giải hệ dài dòng.<br /><br /><b>Cách 1: Mẹo cộng gộp (Thông minh nhất)</b><br />- Lấy hai phương trình cộng lại với nhau:<br />  \\((2J + 3O) + (3J + 2O) = 24.60 + 23.90\\)<br />  \\(5J + 5O = 48.50\\)<br />- Chia cả hai vế cho 5:<br />  \\(J + O = 9.70\\)<br />- Bây giờ, chỉ cần kiểm tra tổng của các đáp án. Chỉ có đáp án B có tổng là \\(4.50 + 5.20 = 9.70\\).<br /><br /><b>Cách 2: Thử đáp án (An toàn và nhanh)</b><br />- Thử đáp án B (J=4.50, O=5.20) vào một trong hai phương trình, ví dụ phương trình 2:<br />  \\(3(4.50) + 2(5.20) = 13.50 + 10.40 = 23.90\\).<br />- Khớp hoàn hảo! Ta có thể tự tin chọn B.",
       "difficulty": "easy",
       "topic": "Algebra (Systems of Linear Equations)",
       "hints": [
-        "Mẹo nhanh nhất: Đừng giải hệ, hãy thử đáp án.",
-        "Bắt đầu thử với phương trình thứ hai `3J + 2O = 23.90`. Đáp án B khớp hoàn toàn.",
-        "Mẹo kiểm tra khác: Cộng 2 phương trình lại để tìm tổng `J+O`, rồi so sánh với tổng của các đáp án."
+        "Mẹo nhanh nhất: Cộng 2 phương trình lại để tìm tổng `J+O`, rồi so sánh với tổng của các đáp án.",
+        "Nếu không nghĩ ra mẹo cộng, thử đáp án vào một trong hai phương trình là cách nhanh thứ hai.",
+        "Tổng của J và O phải bằng `9.70`. Chỉ có đáp án B thỏa mãn."
       ]
     },
     {
