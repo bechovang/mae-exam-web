@@ -5,7 +5,7 @@
   "questions": [
     {
       "id": 1,
-      "question": "Find the characteristic polynomial of the matrix \\( A = \\begin{bmatrix} 1 & 0 & 2 \\\\ -2 & 3 & -3 \\\\ 0 & 2 & 2 \\end{bmatrix} \\). <br> Which of these is it? <br> (i) \\( -x^3 + 6x^2 - 9x + 4 \\) <br> (ii) \\( x^3 - 6x^2 + 9x - 4 \\) <br> (iii) \\( x^3 - 6x^2 - 9x - 4 \\)<br><em>(Lưu ý: Đề bài đã được điều chỉnh để có đáp án chính xác)</em>",
+      "question": "Find the characteristic polynomial of the matrix \\( A = \\begin{bmatrix} 1 & 0 & 2 \\\\ -2 & 3 & -3 \\\\ 0 & 2 & 2 \\end{bmatrix} \\). <br> Which of these is it? <br> (i) \\( -x^3 + 6x^2 - 9x + 4 \\) <br> (ii) \\( x^3 - 6x^2 + 9x - 4 \\) <br> (iii) \\( x^3 - 6x^2 - 9x - 4 \\)",
       "image": null,
       "options": [
         "A. (i)",
@@ -609,7 +609,7 @@
     },
     {
       "id": 30,
-      "question": "John and Joe earn a total of $24.60 when John works 2 hours and Joe works 3 hours. If John works 3 hours and Joe works 2 hours, they get $23.90. Find their hourly rates (in dollars).<br><em>(Lưu ý: Đề bài đã được điều chỉnh để có đáp án chính xác)</em>",
+      "question": "John and Joe earn a total of $24.60 when John works 2 hours and Joe works 3 hours. If John works 3 hours and Joe works 2 hours, they get $23.90. Find their hourly rates (in dollars).",
       "image": null,
       "options": [
         "A. 6.70, 9.40",
