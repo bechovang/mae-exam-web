@@ -7,6 +7,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Label } from "@/components/ui/label"
 import { Progress } from "@/components/ui/progress"
+import { Textarea } from "@/components/ui/textarea"
 import {
   ChevronLeft,
   ChevronRight,
@@ -24,7 +25,9 @@ import {
   Target,
   Keyboard,
   Navigation,
-  LogOut
+  LogOut,
+  StickyNote,
+  Save
 } from "lucide-react"
 import {
   AlertDialog,
@@ -65,6 +68,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [userAnswers, setUserAnswers] = useState<Record<number, string>>({})
   const [questionResults, setQuestionResults] = useState<Record<number, QuestionResult>>({})
+  const [questionNotes, setQuestionNotes] = useState<Record<number, string>>({})
   const [questionStartTime, setQuestionStartTime] = useState<number>(Date.now())
   const [totalTimeSpent, setTotalTimeSpent] = useState(0)
   const [showFeedback, setShowFeedback] = useState(false)
@@ -77,9 +81,11 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
   const [showGoToQuestionDialog, setShowGoToQuestionDialog] = useState(false)
   const [showResetConfirmDialog, setShowResetConfirmDialog] = useState(false)
   const [goToQuestionInput, setGoToQuestionInput] = useState("")
+  const [showNotes, setShowNotes] = useState(false)
   const timerRef = useRef<NodeJS.Timeout | null>(null)
   const feedbackTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const goToInputRef = useRef<HTMLInputElement>(null)
+  const notesTextareaRef = useRef<HTMLTextAreaElement>(null)
 
   const getStudyTip = useCallback(() => {
     const tips = [
@@ -107,6 +113,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
     setShowFeedback(!!questionResults[index + 1]?.answered);
     setShowHints(false);
     setHintsUsedCount(questionResults[index + 1]?.hintsUsed || 0);
+    setShowNotes(false);
   }, [questionResults]);
 
   const goToNextQuestion = useCallback(() => {
@@ -137,6 +144,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
       const questionId = currentQuestion + 1;
       setUserAnswers(prev => { const newAnswers = { ...prev }; delete newAnswers[questionId]; return newAnswers; });
       setQuestionResults(prev => { const newResults = { ...prev }; delete newResults[questionId]; return newResults; });
+      setQuestionNotes(prev => { const newNotes = { ...prev }; delete newNotes[questionId]; return newNotes; });
       setShowFeedback(false); setShowHints(false); setHintsUsedCount(0); setQuestionStartTime(Date.now());
       if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current);
     }
@@ -146,6 +154,32 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
     setShowHints(prev => !prev);
     if (!showHints && hintsUsedCount === 0) setHintsUsedCount(1);
   }, [showHints, hintsUsedCount]);
+
+  const toggleNotes = useCallback(() => {
+    setShowNotes(prev => !prev);
+    if (!showNotes) {
+      setTimeout(() => {
+        notesTextareaRef.current?.focus();
+      }, 100);
+    }
+  }, [showNotes]);
+
+  const saveNote = useCallback(() => {
+    if (notesTextareaRef.current) {
+      const noteText = notesTextareaRef.current.value;
+      setQuestionNotes(prev => ({
+        ...prev,
+        [currentQuestion + 1]: noteText
+      }));
+    }
+  }, [currentQuestion]);
+
+  const handleNoteChange = useCallback((value: string) => {
+    setQuestionNotes(prev => ({
+      ...prev,
+      [currentQuestion + 1]: value
+    }));
+  }, [currentQuestion]);
   
   const handleGoToQuestionSubmit = useCallback(() => { if (!practiceData) return; const questionNumber = parseInt(goToQuestionInput); if (!isNaN(questionNumber) && questionNumber >= 1 && questionNumber <= practiceData.questions.length) { goToQuestion(questionNumber - 1); setShowGoToQuestionDialog(false); setGoToQuestionInput(""); } }, [goToQuestionInput, practiceData, goToQuestion]);
   
@@ -181,11 +215,12 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
         case 'arrowright': case 'n': case ' ': event.preventDefault(); goToNextQuestion(); break; 
         case 'r': event.preventDefault(); if (currentResult?.answered) resetQuestion(); break; 
         case 'h': event.preventDefault(); toggleHints(); break; 
+        case 't': event.preventDefault(); toggleNotes(); break; 
         case 'escape': event.preventDefault(); setShowExitConfirmDialog(true); break; 
         case '?': event.preventDefault(); setShowShortcutsHelp(true); break; 
         default: break; 
       } 
-    }, [ showFeedback, practiceData, currentQuestion, questionResults, showSummaryDialog, showShortcutsHelp, showExitConfirmDialog, showGoToQuestionDialog, handleAnswerSelect, goToPrevQuestion, goToNextQuestion, resetQuestion, toggleHints, router, handleGoToQuestionSubmit ]); 
+    }, [ showFeedback, practiceData, currentQuestion, questionResults, showSummaryDialog, showShortcutsHelp, showExitConfirmDialog, showGoToQuestionDialog, handleAnswerSelect, goToPrevQuestion, goToNextQuestion, resetQuestion, toggleHints, toggleNotes, router, handleGoToQuestionSubmit ]); 
     useEffect(() => { 
       document.addEventListener('keydown', handleKeyPress); 
       return () => document.removeEventListener('keydown', handleKeyPress); 
@@ -213,9 +248,11 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
     loadPracticeData(); 
     const savedAnswers = localStorage.getItem(`practiceAnswers_${practiceId}`); 
     const savedResults = localStorage.getItem(`practiceResults_${practiceId}`); 
+    const savedNotes = localStorage.getItem(`practiceNotes_${practiceId}`); 
     const savedTime = localStorage.getItem(`practiceTime_${practiceId}`); 
     if (savedAnswers) setUserAnswers(JSON.parse(savedAnswers)); 
     if (savedResults) setQuestionResults(JSON.parse(savedResults)); 
+    if (savedNotes) setQuestionNotes(JSON.parse(savedNotes)); 
     if (savedTime) setTotalTimeSpent(Number(savedTime)); 
     setQuestionStartTime(Date.now()); 
     timerRef.current = setInterval(() => setTotalTimeSpent(prev => prev + 1), 1000); 
@@ -227,6 +264,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
   
   useEffect(() => { if (practiceData) localStorage.setItem(`practiceAnswers_${practiceId}`, JSON.stringify(userAnswers)) }, [userAnswers, practiceId, practiceData]);
   useEffect(() => { if (practiceData) localStorage.setItem(`practiceResults_${practiceId}`, JSON.stringify(questionResults)) }, [questionResults, practiceId, practiceData]);
+  useEffect(() => { if (practiceData) localStorage.setItem(`practiceNotes_${practiceId}`, JSON.stringify(questionNotes)) }, [questionNotes, practiceId, practiceData]);
   useEffect(() => { localStorage.setItem(`practiceTime_${practiceId}`, totalTimeSpent.toString()) }, [totalTimeSpent, practiceId]);
   
   const formatTime = (seconds: number) => `${Math.floor(seconds / 60).toString().padStart(2, "0")}:${(seconds % 60).toString().padStart(2, "0")}`;
@@ -236,12 +274,14 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
   const resetExam = useCallback(() => {
     setUserAnswers({});
     setQuestionResults({});
+    setQuestionNotes({});
     setTotalTimeSpent(0);
     setCurrentQuestion(0);
     setQuestionStartTime(Date.now());
     setShowFeedback(false);
     setShowHints(false);
     setHintsUsedCount(0);
+    setShowNotes(false);
     if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current);
   }, []);
 
@@ -297,10 +337,60 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
                 </RadioGroup>
                 
                 {currentQuestionData.hints?.length > 0 && (
-                  <div className="mt-4 flex gap-2 animate-fade-in"><Button variant="outline" size="sm" onClick={toggleHints} className="flex items-center gap-2 transition-all"><HelpCircle className="h-4 w-4" />{showHints ? 'Ẩn gợi ý' : 'Xem gợi ý'}<Badge variant="secondary" className="text-xs ml-1">H</Badge></Button></div>
+                  <div className="mt-4 flex gap-2 animate-fade-in">
+                    <Button variant="outline" size="sm" onClick={toggleHints} className="flex items-center gap-2 transition-all">
+                      <HelpCircle className="h-4 w-4" />
+                      {showHints ? 'Ẩn gợi ý' : 'Xem gợi ý'}
+                      <Badge variant="secondary" className="text-xs ml-1">H</Badge>
+                    </Button>
+                    <Button variant="outline" size="sm" onClick={toggleNotes} className="flex items-center gap-2 transition-all">
+                      <StickyNote className="h-4 w-4" />
+                      {showNotes ? 'Ẩn ghi chú' : 'Ghi chú'}
+                      <Badge variant="secondary" className="text-xs ml-1">T</Badge>
+                    </Button>
+                  </div>
                 )}
+
+                {!currentQuestionData.hints?.length && (
+                  <div className="mt-4 flex gap-2 animate-fade-in">
+                    <Button variant="outline" size="sm" onClick={toggleNotes} className="flex items-center gap-2 transition-all">
+                      <StickyNote className="h-4 w-4" />
+                      {showNotes ? 'Ẩn ghi chú' : 'Ghi chú'}
+                      <Badge variant="secondary" className="text-xs ml-1">T</Badge>
+                    </Button>
+                  </div>
+                )}
+
                 {showHints && currentQuestionData.hints?.length > 0 && (
-                  <div className="mt-4 bg-yellow-50 dark:bg-yellow-400/10 border-l-4 border-yellow-400 p-4 rounded-lg animate-fade-in"><h4 className="font-medium text-yellow-800 dark:text-yellow-300 mb-2 flex items-center gap-2"><Lightbulb className="h-5 w-5" />Gợi ý:</h4><ul className="space-y-1 list-disc list-inside">{currentQuestionData.hints.map((hint, index) => <li key={index} className="text-sm text-yellow-700 dark:text-yellow-400"><SimpleMath>{hint}</SimpleMath></li>)}</ul></div>
+                  <div className="mt-4 bg-yellow-50 dark:bg-yellow-400/10 border-l-4 border-yellow-400 p-4 rounded-lg animate-fade-in">
+                    <h4 className="font-medium text-yellow-800 dark:text-yellow-300 mb-2 flex items-center gap-2">
+                      <Lightbulb className="h-5 w-5" />Gợi ý:
+                    </h4>
+                    <ul className="space-y-1 list-disc list-inside">
+                      {currentQuestionData.hints.map((hint, index) => 
+                        <li key={index} className="text-sm text-yellow-700 dark:text-yellow-400">
+                          <SimpleMath>{hint}</SimpleMath>
+                        </li>
+                      )}
+                    </ul>
+                  </div>
+                )}
+
+                {showNotes && (
+                  <div className="mt-4 bg-blue-50 dark:bg-blue-400/10 border-l-4 border-blue-400 p-4 rounded-lg animate-fade-in">
+                    <div className="flex items-center justify-between mb-3">
+                      <h4 className="font-medium text-blue-800 dark:text-blue-300 flex items-center gap-2">
+                        <StickyNote className="h-5 w-5" />Ghi chú cá nhân:
+                      </h4>
+                    </div>
+                    <Textarea
+                      ref={notesTextareaRef}
+                      placeholder="Ghi chú của bạn về câu hỏi này..."
+                      value={questionNotes[currentQuestion + 1] || ""}
+                      onChange={(e) => handleNoteChange(e.target.value)}
+                      className="min-h-[100px] resize-none border-blue-200 dark:border-blue-600 focus:border-blue-400 dark:focus:border-blue-500"
+                    />
+                  </div>
                 )}
 
                 {showFeedback && currentResult && (
@@ -335,12 +425,21 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
                     <h4 className="mb-3 text-sm font-semibold text-gray-600 dark:text-gray-300">Bản đồ câu hỏi</h4>
                     <div className="grid grid-cols-5 sm:grid-cols-7 lg:grid-cols-5 xl:grid-cols-7 gap-2">
                         {practiceData.questions.map((_, index) => { 
-                        const result = questionResults[index + 1]; const isActive = currentQuestion === index; 
+                        const result = questionResults[index + 1]; 
+                        const hasNote = questionNotes[index + 1] && questionNotes[index + 1].trim().length > 0;
+                        const isActive = currentQuestion === index; 
                         let dotClass = "relative w-full aspect-square rounded-lg flex items-center justify-center font-bold text-xs transition-all duration-200 cursor-pointer shadow-sm"; 
                         if (isActive) dotClass += " bg-blue-600 text-white ring-4 ring-blue-300 scale-110 z-10"; 
                         else if (result?.answered) dotClass += result.correct ? " bg-green-500 hover:bg-green-600 text-white" : " bg-red-500 hover:bg-red-600 text-white"; 
                         else dotClass += " bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600"; 
-                        return <button key={index} className={dotClass} onClick={() => goToQuestion(index)}>{index + 1}</button>; 
+                        return (
+                          <button key={index} className={dotClass} onClick={() => goToQuestion(index)}>
+                            {index + 1}
+                            {hasNote && (
+                              <div className="absolute -top-1 -right-1 w-2 h-2 bg-blue-500 rounded-full"></div>
+                            )}
+                          </button>
+                        ); 
                         })}
                     </div>
                     </div>
@@ -408,6 +507,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
               <li className="flex justify-between items-center"><span>Câu tiếp theo</span> <span className="space-x-1"><Badge variant="outline">→</Badge><Badge variant="outline">N</Badge><Badge variant="outline">Space</Badge></span></li>
               <li className="flex justify-between items-center"><span>Câu trước đó</span> <span className="space-x-1"><Badge variant="outline">←</Badge><Badge variant="outline">P</Badge></span></li>
               <li className="flex justify-between items-center"><span>Hiện/Ẩn gợi ý</span> <Badge variant="outline">H</Badge></li>
+              <li className="flex justify-between items-center"><span>Hiện/Ẩn ghi chú</span> <Badge variant="outline">T</Badge></li>
               <li className="flex justify-between items-center"><span>Làm lại câu hỏi</span> <Badge variant="outline">R</Badge></li>
               <li className="flex justify-between items-center"><span>Đi đến câu hỏi...</span> <Badge variant="outline">Ctrl/Cmd + G</Badge></li>
               <li className="flex justify-between items-center"><span>Mở bảng phím tắt này</span> <Badge variant="outline">?</Badge></li>
