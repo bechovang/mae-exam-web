@@ -26,7 +26,7 @@ interface ExamCardDisplayData {
   isAvailable: boolean; // True if successfully loaded, false otherwise
 }
 
-const MAX_EXAMS_TO_CHECK = 10; // Check for de1.json up to de10.json
+const MAX_EXAMS_TO_CHECK = 25; // Check for de1.json up to de25.json
 
 export default function SelectPracticePage() {
   const router = useRouter()
