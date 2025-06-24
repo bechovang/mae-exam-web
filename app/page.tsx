@@ -66,8 +66,8 @@ export default function LoginPage() {
             <Image
               src="/bechovang.webp"
               alt="TechLearn Logo"
-              width={64}
-              height={64}
+              width={20}
+              height={20}
               className="mx-auto mb-4"
             />
           </motion.div>
@@ -77,7 +77,7 @@ export default function LoginPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Bechovang Platform
+            Math Platform
           </motion.h1>
           <motion.p
             className="text-gray-600 dark:text-gray-400"
@@ -85,7 +85,7 @@ export default function LoginPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            Web ôn tập các môn lý thuyết ngành CNTT
+            Web luyện đề Toán cao cấp
           </motion.p>
         </div>
 
