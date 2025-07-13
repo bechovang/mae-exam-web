@@ -533,7 +533,7 @@
     },
     {
       "id": 26,
-      "question": "Find conditions on \\( (a, b, c) \\) such that the following system is inconsistent: \\( \\begin{cases} x + 2y - z = a <br/> 2x + y + 3z = b <br/> x - 4y + 9z = c \\end{cases} \\)",
+      "question": "Find conditions on \\( (a, b, c) \\) such that the following system is inconsistent: \\( \\begin{cases} x + 2y - z = a ~|~ 2x + y + 3z = b ~|~ x - 4y + 9z = c \\end{cases} \\)",
       "image": null,
       "options": [
         "A. \\( 2c - (2b-3a) \\) is nonzero",
