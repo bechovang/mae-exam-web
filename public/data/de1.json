@@ -1028,7 +1028,7 @@
     },
     {
       "id": 50,
-      "question": "Given that -3 is an eigenvalue for the matrix \\( \\begin{bmatrix} 3 & -6 <br/> 8 & -11 \\end{bmatrix} \\). Find all eigenvectors corresponding to this eigenvalue \\( \\lambda = -3 \\).",
+      "question": "Given that -3 is an eigenvalue for the matrix \\( \\begin{bmatrix} 3 & -6 \\\\ 8 & -11 \\end{bmatrix} \\). Find all eigenvectors corresponding to this eigenvalue \\( \\lambda = -3 \\).",
       "image": null,
       "options": [
         "A. (See picture)",
