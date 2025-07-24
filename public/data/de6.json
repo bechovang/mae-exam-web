@@ -234,22 +234,24 @@
           },
           {
             "id": 12,
-            "question": "If \\( \\det(A) = 3 \\) for a 3x3 matrix A, find \\( \\det(2A^{-1}) \\).",
+            "question": "Use Midpoint Rule with n = 4 to approximate \\( \\int_{0}^{8} f(x) dx \\).<br /><br /><pre>x    | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8<br />f(x) | 3 | 1 | 2 | 5 | 3 | 8 | 7 | 6 | 2</pre>",
             "image": null,
             "options": [
-              "A. 8/3",
-              "B. 2/3",
-              "C. 6",
-              "D. -6"
+              "A. 30",
+              "B. 20",
+              "C. 34",
+              "D. 40",
+              "E. None of the other choices is correct",
+              "F. 28"
             ],
-            "correctAnswer": "A",
-            "explanation": "Đây là bài toán áp dụng nhanh các tính chất của định thức.<br /><br /><b>1. Hai công thức vàng cần nhớ:</b><br />   - (1) \\( \\det(kA) = k^n \\det(A) \\), với \\(n\\) là kích thước của ma trận.<br />   - (2) \\( \\det(A^{-1}) = \\frac{1}{\\det(A)} \\).<br /><br /><b>2. Áp dụng vào bài toán (15 giây):</b><br />   - Ta có ma trận 3x3, nên \\(n=3\\). Hằng số là \\(k=2\\).<br />   - Áp dụng công thức (1) trước: \\( \\det(2A^{-1}) = 2^3 \\det(A^{-1}) = 8 \\det(A^{-1}) \\).<br />   - Tiếp tục, áp dụng công thức (2) với \\(\\det(A)=3\\):<br />   - \\( \\det(2A^{-1}) = 8 \\cdot \\frac{1}{\\det(A)} = 8 \\cdot \\frac{1}{3} = \\frac{8}{3} \\).<br /><br /><b>Kết luận:</b> Đáp án là <b>8/3</b>.",
+            "correctAnswer": "D",
+            "explanation": "Đây là bài toán áp dụng công thức xấp xỉ tích phân bằng quy tắc trung điểm.<br /><br /><b>1. Thần chú công thức:</b> \\( \\int f(x)dx \\approx \\Delta x [f(m_1) + f(m_2) + ... + f(m_n)] \\)<br /><br /><b>2. Tìm chiều rộng hình chữ nhật \\( \\Delta x \\) (3 giây):</b><br />   - \\( \\Delta x = \\frac{b-a}{n} = \\frac{8-0}{4} = 2 \\).<br /><br /><b>3. Xác định các trung điểm (5 giây):</b><br />   - Các khoảng con là: [0, 2], [2, 4], [4, 6], [6, 8].<br />   - Các trung điểm tương ứng là: \\(x = 1, 3, 5, 7\\).<br /><br /><b>4. Lấy giá trị \\(f(x)\\) tại trung điểm từ bảng (5 giây):</b><br />   - \\( f(1) = 1 \\)<br />   - \\( f(3) = 5 \\)<br />   - \\( f(5) = 8 \\)<br />   - \\( f(7) = 6 \\)<br /><br /><b>5. Tính toán kết quả (7 giây):</b><br />   - Tổng các giá trị: \\( 1 + 5 + 8 + 6 = 20 \\).<br />   - Xấp xỉ tích phân = \\( \\Delta x \\times (\\text{Tổng}) = 2 \\times 20 = 40 \\).<br /><br /><b>Kết luận:</b> Giá trị xấp xỉ là <b>40</b>.",
             "difficulty": "easy",
-            "topic": "Linear Algebra (Properties of Determinants)",
+            "topic": "Calculus (Numerical Integration, Midpoint Rule)",
             "hints": [
-              "Thần chú 1: det(k.A) = kⁿ.det(A). Ở đây n=3.",
-              "Thần chú 2: det(A nghịch đảo) = 1 / det(A).",
-              "Kết hợp lại: det(2A⁻¹) = 2³ * (1/det(A)) = 8/3."
+              "Câu thần chú: Diện tích = (chiều rộng Δx) nhân (tổng các chiều cao tại TRUNG ĐIỂM).",
+              "Cẩn thận: Δx = (8-0)/4 = 2. Các khoảng là [0,2], [2,4]... nên trung điểm là 1, 3, 5, 7.",
+              "Không dùng các giá trị tại x = 0, 2, 4, 6, 8. Đó là cho quy tắc điểm cuối hoặc quy tắc hình thang."
             ]
           },
           {
