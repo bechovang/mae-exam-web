@@ -326,10 +326,10 @@
         "C. -1/4",
         "D. 1/4",
         "E. 1",
-        "F. None of the other choices is correct"
+        "F. -3/5"
       ],
-      "correctAnswer": "A",
-      "explanation": "Công thức của phương pháp Newton là \\( x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)} \\).<br/>Cho phương trình: \\( f(x) = x^3 - 2x - 1 \\).<br/>Đạo hàm là: \\( f'(x) = 3x^2 - 2 \\).<br/>Giá trị ban đầu: \\( x_0 = 0 \\).<br/>**Lần lặp thứ nhất (tìm \\(x_1\\)):**<br/>\\( f(x_0) = f(0) = (0)^3 - 2(0) - 1 = -1 \\).<br/>\\( f'(x_0) = f'(0) = 3(0)^2 - 2 = -2 \\).<br/>\\( x_1 = x_0 - \\frac{f(x_0)}{f'(x_0)} = 0 - \\frac{-1}{-2} = 0 - \\frac{1}{2} = -\\frac{1}{2} \\).<br/>**Lần lặp thứ hai (tìm \\(x_2\\)):**<br/>\\( x_1 = -\\frac{1}{2} \\).<br/>\\( f(x_1) = f(-\\frac{1}{2}) = \\left(-\\frac{1}{2}\\right)^3 - 2\\left(-\\frac{1}{2}\\right) - 1 = -\\frac{1}{8} + 1 - 1 = -\\frac{1}{8} \\).<br/>\\( f'(x_1) = f'(-\\frac{1}{2}) = 3\\left(-\\frac{1}{2}\\right)^2 - 2 = 3\\left(\\frac{1}{4}\\right) - 2 = \\frac{3}{4} - 2 = -\\frac{5}{4} \\).<br/>\\( x_2 = x_1 - \\frac{f(x_1)}{f'(x_1)} = -\\frac{1}{2} - \\frac{-1/8}{-5/4} = -\\frac{1}{2} - \\frac{1}{10} = -\\frac{5}{10} - \\frac{1}{10} = -\\frac{6}{10} = -\\frac{3}{5} \\).<br/>Vì \\(x_2 = -\\frac{3}{5}\\) không khớp với bất kỳ lựa chọn nào, đáp án đúng là F - None of the other choices is correct.",
+      "correctAnswer": "F",
+      "explanation": "Công thức của phương pháp Newton là \\( x_{n+1} = x_n - \\frac{f(x_n)}{f'(x_n)} \\).<br/>Cho phương trình: \\( f(x) = x^3 - 2x - 1 \\).<br/>Đạo hàm là: \\( f'(x) = 3x^2 - 2 \\).<br/>Giá trị ban đầu: \\( x_0 = 0 \\).<br/>**Lần lặp thứ nhất (tìm \\(x_1\\)):**<br/>\\( f(x_0) = f(0) = (0)^3 - 2(0) - 1 = -1 \\).<br/>\\( f'(x_0) = f'(0) = 3(0)^2 - 2 = -2 \\).<br/>\\( x_1 = x_0 - \\frac{f(x_0)}{f'(x_0)} = 0 - \\frac{-1}{-2} = 0 - \\frac{1}{2} = -\\frac{1}{2} \\).<br/>**Lần lặp thứ hai (tìm \\(x_2\\)):**<br/>\\( x_1 = -\\frac{1}{2} \\).<br/>\\( f(x_1) = f(-\\frac{1}{2}) = \\left(-\\frac{1}{2}\\right)^3 - 2\\left(-\\frac{1}{2}\\right) - 1 = -\\frac{1}{8} + 1 - 1 = -\\frac{1}{8} \\).<br/>\\( f'(x_1) = f'(-\\frac{1}{2}) = 3\\left(-\\frac{1}{2}\\right)^2 - 2 = 3\\left(\\frac{1}{4}\\right) - 2 = \\frac{3}{4} - 2 = -\\frac{5}{4} \\).<br/>\\( x_2 = x_1 - \\frac{f(x_1)}{f'(x_1)} = -\\frac{1}{2} - \\frac{-1/8}{-5/4} = -\\frac{1}{2} - \\frac{1}{10} = -\\frac{5}{10} - \\frac{1}{10} = -\\frac{6}{10} = -\\frac{3}{5} \\).<br/>Vậy \\(x_2 = -\\frac{3}{5}\\) khớp với đáp án F.",
       "difficulty": "medium",
       "topic": "Numerical Methods",
       "hints": [
