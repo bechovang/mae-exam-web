@@ -756,7 +756,7 @@
     },
     {
       "id": 37,
-      "question": "Let \\( A = \\begin{bmatrix} 1 & 0 & -2 \\\\ 3 & 1 & 4 \\\\ 5 & 2 & -3 \\end{bmatrix} \\). Find \\( \\det(2A^{-1}) \\).",
+      "question": "(lỗi)Let \\( A = \\begin{bmatrix} 1 & 0 & -2 \\\\ 3 & 1 & 4 \\\\ 5 & 2 & -3 \\end{bmatrix} \\). Find \\( \\det(2A^{-1}) \\).",
       "image": null,
       "options": [
         "A. -8/13",
