@@ -383,7 +383,7 @@
     },
     {
       "id": 19,
-      "question": "Find \\( \\int_0^2 f(x) dx \\) if \\( f(x) = \\begin{cases} x & \\text{for } x \\le 1 <br/> 2x-1 & \\text{for } x > 1 \\end{cases} \\)",
+      "question": "Find \\( \\int_0^2 f(x) dx \\) if \\( f(x) = \\begin{cases} x & \\text{for } x \\le 1 \\\\ 2x-1 & \\text{for } x > 1 \\end{cases} \\)",
       "image": null,
       "options": [
         "A. 5/2",
