@@ -121,6 +121,235 @@
         "Với `∃y∀x`, hãy thử tìm một `y` duy nhất hoạt động cho mọi `x`.",
         "Mẹo đại số: Luôn thử cô lập biến nằm ở lượng từ bên trong."
       ]
+    },
+    {
+        "id": 7,
+        "question": "<b>Argument 1:</b> José Mourinho on Pep Guardiola (2014): \"If you enjoy what you are doing, you don't lose your hair. He's got bald head. Guardiola doesn't enjoy football.\"",
+        "image": null,
+        "options": [
+          "A. Valid",
+          "B. Invalid"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Nhận dạng mẫu siêu tốc: Đây là quy tắc Phủ định hệ quả (Modus Tollens).</b><br /><br /><b>1. Viết lại cấu trúc:</b><br />- p: 'Bạn tận hưởng công việc'.<br />- q: 'Bạn không bị rụng tóc'.<br />- Tiền đề 1: Nếu p thì q (\\(p \\rightarrow q\\)).<br />- Tiền đề 2: Guardiola bị rụng tóc (tức là \\(\\neg q\\)).<br />- Kết luận: Guardiola không tận hưởng công việc (tức là \\(\\neg p\\)).<br /><br /><b>2. So khớp quy tắc:</b> Cấu trúc \\((p \\rightarrow q) \\land \\neg q \\Rightarrow \\neg p\\) là một quy tắc suy luận <b>luôn hợp lệ (Valid)</b>.<br /><br /><b>Bản chất:</b> Nếu tận hưởng thì tóc không rụng. Ông này tóc rụng, chứng tỏ ông không tận hưởng. Lập luận này hoàn toàn logic.",
+        "difficulty": "easy",
+        "topic": "Propositional Logic (Inference)",
+        "hints": [
+          "Mẹo nhận dạng: 'Nếu A thì B. Không B. Vậy không A.'",
+          "Đây là cấu trúc suy luận 'Phủ định cái đuôi, suy ra phủ định cái đầu'.",
+          "Tên chính thức của quy tắc này là Modus Tollens."
+        ]
+      },
+      {
+        "id": 8,
+        "question": "<b>Argument 2:</b> If apes are intelligent, then apes can solve puzzles. Apes can solve puzzles. Therefore, apes are intelligent.",
+        "image": null,
+        "options": [
+          "A. Valid",
+          "B. Invalid"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Nhận dạng lỗi siêu tốc: Đây là lỗi logic kinh điển 'Khẳng định hệ quả'.</b><br /><br /><b>1. Viết lại cấu trúc:</b><br />- p: 'Vượn thông minh'.<br />- q: 'Vượn giải được câu đố'.<br />- Tiền đề 1: Nếu p thì q (\\(p \\rightarrow q\\)).<br />- Tiền đề 2: Vượn giải được câu đố (tức là \\(q\\) đúng).<br />- Kết luận: Vượn thông minh (tức là \\(p\\) đúng).<br /><br /><b>2. Phát hiện lỗi:</b> Cấu trúc \\((p \\rightarrow q) \\land q \\Rightarrow p\\) là một lỗi suy luận, <b>không hợp lệ (Invalid)</b>.<br /><br /><b>Bản chất:</b> Việc vượn giải được câu đố có thể do nhiều nguyên nhân khác (ví dụ: may mắn, bản năng, trí nhớ tốt) chứ không chỉ vì thông minh. Việc kết quả (q) xảy ra không đảm bảo nguyên nhân (p) là đúng.",
+        "difficulty": "easy",
+        "topic": "Propositional Logic (Logical Fallacies)",
+        "hints": [
+          "Câu thần chú: 'Khẳng định cái đuôi, không suy ra được gì cả!'.",
+          "Ví dụ tương tự: 'Nếu trời mưa thì đường ướt. Đường đang ướt. Vậy trời đã mưa' → Sai! (Có thể do người ta tưới cây).",
+          "Lỗi này có tên là 'Fallacy of Affirming the Consequent'."
+        ]
+      },
+      {
+        "id": 9,
+        "question": "<b>Argument 3:</b> If George does not have eight legs, then he is not a spider. George is a spider. Therefore, George has eight legs.",
+        "image": null,
+        "options": [
+          "A. Valid",
+          "B. Invalid"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Nhận dạng mẫu siêu tốc: Lại là quy tắc Phủ định hệ quả (Modus Tollens).</b><br /><br /><b>1. Viết lại cấu trúc:</b><br />- p: 'George không có 8 chân'.<br />- q: 'Anh ta không phải là nhện'.<br />- Tiền đề 1: Nếu p thì q (\\(p \\rightarrow q\\)).<br />- Tiền đề 2: George là nhện (tức là \\(\\neg q\\)).<br />- Kết luận: George có 8 chân (tức là \\(\\neg p\\)).<br /><br /><b>2. So khớp quy tắc:</b> Cấu trúc \\((p \\rightarrow q) \\land \\neg q \\Rightarrow \\neg p\\) là một quy tắc suy luận <b>luôn hợp lệ (Valid)</b>.<br /><br /><b>Bản chất:</b> Quy tắc là 'nếu không có 8 chân thì không phải nhện'. Dữ kiện cho thấy 'anh ta LÀ nhện', tức là đã phủ định vế sau. Do đó ta phải phủ định vế trước: 'không phải là không có 8 chân', tức là 'phải có 8 chân'.",
+        "difficulty": "easy",
+        "topic": "Propositional Logic (Inference)",
+        "hints": [
+          "Mẹo nhận dạng: 'Nếu A thì B. Không B. Vậy không A.'",
+          "Đây chính là quy tắc Modus Tollens, giống hệt câu 7.",
+          "Phủ định của 'không có 8 chân' chính là 'có 8 chân'."
+        ]
+      },
+      {
+        "id": 10,
+        "question": "<b>Argument 4:</b> Everyone who eats granola every day is healthy. Linda is not healthy. Therefore, Linda does not eat granola every day.",
+        "image": null,
+        "options": [
+          "A. Valid",
+          "B. Invalid"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Nhận dạng mẫu siêu tốc: Vẫn là Phủ định hệ quả, nhưng ở dạng phổ quát.</b><br /><br /><b>1. Viết lại cấu trúc:</b><br />- 'Mọi người (x) ăn granola (P(x)) thì khỏe mạnh (Q(x))': \\( \\forall x (P(x) \\rightarrow Q(x)) \\).<br />- 'Linda không khỏe mạnh': \\( \\neg Q(Linda) \\).<br />- Kết luận: 'Linda không ăn granola': \\( \\neg P(Linda) \\).<br /><br /><b>2. So khớp quy tắc:</b> Đây là một ứng dụng trực tiếp của quy tắc Modus Tollens cho logic vị từ, và nó <b>luôn hợp lệ (Valid)</b>.<br /><br /><b>Bản chất:</b> Nếu tất cả mọi người trong 'nhóm ăn granola' đều khỏe mạnh, mà Linda lại không khỏe mạnh, thì cô ấy không thể nào thuộc 'nhóm ăn granola' được. Lập luận này rất chặt chẽ.",
+        "difficulty": "easy",
+        "topic": "Predicate Logic (Inference)",
+        "hints": [
+          "Mẹo nhận dạng: 'Tất cả A đều là B. X không phải là B. Vậy X không phải là A.'",
+          "Đây là phiên bản logic vị từ của Modus Tollens.",
+          "Tư duy tập hợp: Tập [Người ăn granola] là con của tập [Người khỏe mạnh]. Linda không thuộc tập cha, vậy không thể thuộc tập con."
+        ]
+    },
+    {
+        "id": 11,
+        "question": "Show that this compound proposition is a tautology:<br />b) \\( (p \\land (\\neg p \\lor q)) \\rightarrow q \\)",
+        "image": null,
+        "options": [
+          "A. The proposition is a tautology.",
+          "B. The proposition is a contradiction.",
+          "C. The proposition is a contingency."
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Mẹo siêu tốc: Dùng biến đổi đại số, đừng bao giờ vẽ bảng!</b><br /><br /><b>1. Rút gọn vế trái (tiền đề):</b><br />- Ta có \\( p \\land (\\neg p \\lor q) \\).<br />- Dùng <b>luật phân phối</b>: \\( (p \\land \\neg p) \\lor (p \\land q) \\).<br />- Vì \\( p \\land \\neg p \\) luôn sai (False - F), ta được: \\( F \\lor (p \\land q) \\).<br />- Biểu thức này rút gọn còn \\( p \\land q \\).<br /><br /><b>2. Viết lại toàn bộ mệnh đề:</b><br />- Mệnh đề ban đầu giờ trở thành: \\( (p \\land q) \\rightarrow q \\).<br /><br /><b>3. Kiểm tra logic:</b><br />- Mệnh đề này đọc là: \"Nếu p và q cùng đúng, thì q đúng\". Điều này là hiển nhiên đúng!<br />- Do đó, đây là một <b>hằng đúng (Tautology)</b>.",
+        "difficulty": "medium",
+        "topic": "Propositional Logic (Tautology)",
+        "hints": [
+          "Mẹo vàng: Dùng luật phân phối cho `p ∧ (¬p ∨ q)`.",
+          "Nhớ rằng `p ∧ ¬p` luôn sai (False), nó sẽ biến mất.",
+          "Mệnh đề `(A ∧ B) → B` luôn là một hằng đúng!"
+        ]
+      },
+      {
+        "id": 12,
+        "question": "Find the negation of this statement:<br />b) Mei walks or takes the bus to class.",
+        "image": null,
+        "options": [
+          "A. Mei does not walk to class and she does not take the bus to class.",
+          "B. Mei does not walk to class or she does not take the bus to class.",
+          "C. Mei walks and takes the bus to class.",
+          "D. If Mei walks, she does not take the bus to class."
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Bí quyết: Dùng luật De Morgan trong 5 giây!</b><br /><br /><b>1. Xác định cấu trúc:</b><br />- p: 'Mei đi bộ'.<br />- q: 'Mei đi xe buýt'.<br />- Câu gốc có dạng: \\( p \\lor q \\) (p HOẶC q).<br /><br /><b>2. Áp dụng De Morgan:</b><br />- Câu thần chú: \"Phủ định của một mệnh đề HOẶC là một mệnh đề VÀ của các phủ định\".<br />- Tức là, \\( \\neg (p \\lor q) \\) tương đương với \\( \\neg p \\land \\neg q \\).<br /><br /><b>3. Dịch ngược lại:</b><br />- \\( \\neg p \\): 'Mei không đi bộ'.<br />- \\( \\land \\): 'VÀ'.<br />- \\( \\neg q \\): 'cô ấy không đi xe buýt'.<br />- Ghép lại: \"Mei không đi bộ và cô ấy không đi xe buýt.\"",
+        "difficulty": "easy",
+        "topic": "Propositional Logic (Negation & De Morgan's Law)",
+        "hints": [
+          "Thần chú De Morgan: Phủ định của HOẶC (∨) là VÀ (∧).",
+          "¬(A ∨ B) ⇔ ¬A ∧ ¬B.",
+          "Nói cách khác: Phủ định của 'làm cái này hoặc làm cái kia' là 'không làm cả hai'."
+        ]
+    },
+    {
+        "id": 13,
+        "question": "Write this statement in the form “if p, then q” in English:<br />b) A sufficient condition for the warranty to be good is that you bought the computer less than a year ago.",
+        "image": null,
+        "options": [
+          "A. If the warranty is good, then you bought the computer less than a year ago.",
+          "B. If you bought the computer less than a year ago, then the warranty is good.",
+          "C. The warranty is good if and only if you bought the computer less than a year ago."
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Bí quyết: Nắm vững từ khóa 'sufficient' (đủ).</b><br /><br /><b>1. Quy tắc dịch siêu tốc:</b><br />- Câu có dạng \"<b>A</b> is a sufficient condition for <b>B</b>\" luôn được dịch thành \"If <b>A</b>, then <b>B</b>\".<br /><br /><b>2. Phân tích câu:</b><br />- <b>A</b> (điều kiện đủ): '...that you bought the computer less than a year ago'.<br />- <b>B</b> (kết quả): '...for the warranty to be good'.<br /><br /><b>3. Áp dụng quy tắc:</b><br />- Ghép lại ta được: \"<b>If</b> you bought the computer less than a year ago, <b>then</b> the warranty is good.\"",
+        "difficulty": "easy",
+        "topic": "Propositional Logic (Translation)",
+        "hints": [
+          "Thần chú 1: 'Sufficient' (Đủ) → Mũi tên đi TỪ nó.",
+          "Thần chú 2: 'Necessary' (Cần) → Mũi tên đi VỀ nó.",
+          "'A is sufficient for B' ⇔ 'If A, then B' ⇔ A → B."
+        ]
+      },
+      {
+        "id": 14,
+        "question": "Let I(x) be the statement “x has an Internet connection” and C(x, y) be the statement “x and y have chatted over the Internet,” where the domain for the variables x and y consists of all students in your class. Use quantifiers to express this statement:<br />d) Sanjay has chatted with everyone except Joseph.",
+        "image": null,
+        "options": [
+          "A. ∀y (C(Sanjay, y) ↔ y ≠ Joseph)",
+          "B. ∀y (y ≠ Joseph → C(Sanjay, y))",
+          "C. ∀y C(Sanjay, y) ∧ ¬C(Sanjay, Joseph)",
+          "D. ∃y (y ≠ Joseph ∧ C(Sanjay, y))"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Tư duy siêu tốc: Dùng 'khi và chỉ khi' để xử lý ngoại lệ.</b><br /><br /><b>1. Phân tích câu:</b> \"Sanjay đã chat với mọi người trừ Joseph\" có 2 ý nghĩa:<br />- (1) Sanjay đã chat với tất cả những người <b>không phải</b> là Joseph.<br />- (2) Sanjay đã <b>không</b> chat với Joseph.<br /><br /><b>2. Tìm cách diễn đạt gọn nhất:</b><br />- Hai điều kiện trên có thể gộp lại thành một mệnh đề duy nhất: \"Sanjay chat với một người y <b>khi và chỉ khi</b> người y đó không phải là Joseph\".<br /><br /><b>3. Dịch sang logic:</b><br />- 'Với mọi sinh viên y': \\( \\forall y \\)<br />- 'Sanjay chat với y': \\( C(Sanjay, y) \\)<br />- 'khi và chỉ khi': \\( \\leftrightarrow \\)<br />- 'y không phải là Joseph': \\( y \\neq Joseph \\)<br /><br /><b>4. Ghép lại:</b> \\( \\forall y (C(Sanjay, y) \\leftrightarrow y \\neq Joseph) \\). Cách diễn đạt này vừa gọn vừa bao hàm cả hai ý của câu gốc.",
+        "difficulty": "hard",
+        "topic": "Predicate Logic (Translation)",
+        "hints": [
+          "Mẹo: 'Everyone except X' thường được dịch tốt nhất bằng dấu `↔` (khi và chỉ khi).",
+          "Câu này có nghĩa là: Điều kiện để Sanjay chat với y là gì? Là y không phải Joseph.",
+          "Phải đảm bảo cả 2 vế: chat với người khác VÀ không chat với Joseph."
+        ]
+    },
+    {
+        "id": 15,
+        "question": "Let Q(x, y) be the statement “x + y = x − y”. If the domain for both variables consists of all integers, what are the truth values?<br />d) \\( \\forall x \\exists y Q(x, y) \\)",
+        "image": null,
+        "options": [
+          "A. True",
+          "B. False"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Mẹo giải siêu tốc: Đơn giản hóa phương trình trước khi nghĩ đến lượng từ!</b><br /><br /><b>1. Rút gọn phương trình Q(x, y):</b><br />- Ta có: \\( x + y = x - y \\).<br />- Trừ \\(x\\) ở cả hai vế: \\( y = -y \\).<br />- Điều này chỉ đúng khi: \\( 2y = 0 \\), tức là \\( y = 0 \\).<br /><br /><b>2. Đọc lại mệnh đề với điều kiện mới:</b><br />- Mệnh đề ban đầu là: \"Với mọi số nguyên x, có tồn tại một số nguyên y sao cho \\(x+y = x-y\\)\".<br />- Sau khi rút gọn, nó trở thành: \"Với mọi số nguyên x, có tồn tại một số nguyên y, mà y đó <b>phải bằng 0</b>?\".<br /><br /><b>3. Kiểm tra:</b><br />- Với bất kỳ \\(x\\) nào bạn chọn, liệu tôi có thể tìm ra một \\(y\\) thỏa mãn không? CÓ, tôi chỉ cần chọn \\( y = 0 \\). Vì 0 là một số nguyên, nên luôn tồn tại một giá trị y như vậy.<br />- Do đó, mệnh đề là <b>Đúng (True)</b>.",
+        "difficulty": "easy",
+        "topic": "Predicate Logic (Quantifiers & Truth Values)",
+        "hints": [
+          "Mẹo vàng: Luôn rút gọn biểu thức bên trong trước.",
+          "Câu hỏi thực sự là: 'Với mọi x, có tồn tại y=0 không?' Câu trả lời là có.",
+          "Đừng để các lượng từ `∀x∃y` làm bạn bối rối trước khi đơn giản hóa vấn đề."
+        ]
+      },
+      {
+        "id": 16,
+        "question": "Express the negations of this statement so that all negation symbols immediately precede predicates.<br />c) \\( \\forall x \\forall y (\\neg P(x, y) \\rightarrow Q(x, y)) \\)",
+        "image": null,
+        "options": [
+          "A. ∃x∃y (¬P(x, y) ∧ ¬Q(x, y))",
+          "B. ∃x∃y (P(x, y) ∨ ¬Q(x, y))",
+          "C. ∀x∀y (¬P(x, y) ∧ ¬Q(x, y))",
+          "D. ∃x∃y (P(x, y) → ¬Q(x, y))"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Áp dụng 2 quy tắc phủ định trong 10 giây!</b><br /><br />Câu gốc: \\( \\neg [ \\forall x \\forall y (\\neg P(x, y) \\rightarrow Q(x, y)) ] \\)<br /><br /><b>1. Quy tắc 1 - Phủ định Lượng từ:</b><br />- Đẩy dấu phủ định \\( \\neg \\) qua các lượng từ, đồng thời lật ngược chúng (\\( \\forall \\) thành \\( \\exists \\)).<br />- Ta được: \\( \\exists x \\exists y \\neg (\\neg P(x, y) \\rightarrow Q(x, y)) \\).<br /><br /><b>2. Quy tắc 2 - Phủ định Kéo theo:</b><br />- Nhớ ngay công thức phủ định của mệnh đề kéo theo: \\( \\neg(A \\rightarrow B) \\) tương đương với \\( A \\land \\neg B \\).<br />- Áp dụng vào đây (với A là \\(\\neg P(x,y)\\) và B là \\(Q(x,y)\\)): \\( \\neg P(x, y) \\land \\neg Q(x, y) \\).<br /><br /><b>3. Ghép lại kết quả cuối cùng:</b> \\( \\exists x \\exists y (\\neg P(x, y) \\land \\neg Q(x, y)) \\).",
+        "difficulty": "medium",
+        "topic": "Predicate Logic (Negation & Quantifiers)",
+        "hints": [
+          "Thần chú 1: Phủ định đi qua lượng từ → Lật ngược lượng từ (`∀` ⇔ `∃`).",
+          "Thần chú 2: Phủ định của 'Nếu A thì B' là 'A đúng VÀ B sai' (¬(A→B) ⇔ A ∧ ¬B).",
+          "Làm từ ngoài vào trong: xử lý lượng từ trước, xử lý phép toán sau."
+        ]
+    },
+    {
+        "id": 17,
+        "question": "Express this mathematical statement using predicates, quantifiers, logical connectives, and mathematical operators:<br />b) The sum and the average of two positive real numbers is positive.",
+        "image": null,
+        "options": [
+          "A. ∀x∀y((x>0 ∧ y>0) → (x+y>0 ∧ (x+y)/2 > 0))",
+          "B. ∃x∃y((x>0 ∧ y>0) ∧ (x+y>0 ∧ (x+y)/2 > 0))",
+          "C. ∀x∀y((x>0 ∧ y>0) ∧ (x+y>0 ∧ (x+y)/2 > 0))",
+          "D. ∀x∀y((x>0 ∧ y>0) → (x+y>0))"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Tách câu để dịch siêu tốc:</b><br /><br /><b>1. Dịch phần điều kiện: 'hai số thực dương bất kỳ...'</b><br />- 'Bất kỳ' hay 'với mọi' → Dùng lượng từ \\( \\forall x \\forall y \\).<br />- '...là số thực dương' → Đây là điều kiện, không phải là phát biểu chính. Do đó, ta phải dùng phép kéo theo.\\( \\rightarrow \\)<br />- Điều kiện là: \\( (x>0 \\land y>0) \\).<br />- Ghép lại phần đầu: \\( \\forall x \\forall y ((x>0 \\land y>0) \\rightarrow ...) \\).<br /><br /><b>2. Dịch phần kết quả: 'tổng và trung bình cộng của chúng đều dương'</b><br />- 'Tổng dương': \\( x+y > 0 \\).<br />- 'Trung bình cộng dương': \\( (x+y)/2 > 0 \\).<br />- Cả hai đều đúng → Nối bằng phép VÀ (\\(\\land\\)).<br /><br /><b>3. Ghép lại toàn bộ:</b> \\( \\forall x \\forall y ((x>0 \\land y>0) \\rightarrow (x+y>0 \\land (x+y)/2 > 0)) \\).",
+        "difficulty": "medium",
+        "topic": "Predicate Logic (Translation)",
+        "hints": [
+          "Câu thần chú: 'Với mọi X thỏa mãn điều kiện P...' dịch là `∀x (P(x) → ...)`.",
+          "Điều kiện 'hai số thực dương' được viết là `(x>0 ∧ y>0)`.",
+          "Câu gốc có hai kết quả 'tổng' VÀ 'trung bình cộng', nên dùng phép `∧` để nối chúng ở vế sau."
+        ]
+      },
+      {
+        "id": 18,
+        "question": "For this argument determine whether the argument is correct or incorrect and explain why.<br />b) Quincy likes all action movies. Quincy likes the movie Eight Men Out. Therefore, Eight Men Out is an action movie.",
+        "image": null,
+        "options": [
+          "A. Correct",
+          "B. Incorrect"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Nhận dạng lỗi siêu tốc: Đây là lỗi logic kinh điển 'Khẳng định hệ quả'.</b><br /><br /><b>1. Viết lại cấu trúc:</b><br />- Tiền đề 1: 'Nếu một phim là phim hành động (p), thì Quincy thích nó (q)' → \\( p \\rightarrow q \\).<br />- Tiền đề 2: 'Quincy thích phim Eight Men Out' → \\(q\\) đúng.<br />- Kết luận: 'Eight Men Out là phim hành động' → \\(p\\) đúng.<br /><br /><b>2. Phát hiện lỗi:</b> Cấu trúc \\((p \\rightarrow q) \\land q \\Rightarrow p\\) là một lỗi suy luận, <b>không hợp lệ (Incorrect)</b>.<br /><br /><b>Bản chất:</b> Việc 'Quincy thích tất cả phim hành động' không có nghĩa là 'anh ta CHỈ thích phim hành động'. Anh ta hoàn toàn có thể thích các thể loại khác nữa (hài, chính kịch...). Do đó, việc anh ta thích một bộ phim không đủ để kết luận nó thuộc thể loại hành động.",
+        "difficulty": "easy",
+        "topic": "Predicate Logic (Logical Fallacies)",
+        "hints": [
+          "Câu thần chú: 'Khẳng định cái đuôi, không suy ra được gì cả!'.",
+          "Ví dụ tương tự: 'Mọi sinh viên IT đều biết dùng máy tính. An biết dùng máy tính. Vậy An là sinh viên IT' → Sai!",
+          "Lỗi này có tên là 'Fallacy of Affirming the Consequent'."
+        ]
     }
+
+  
+
   ]
 }
