@@ -85,22 +85,22 @@
       ]
     },
     {
-      "id": 5,
-      "question": "Determine whether the following argument is valid.<br />\"If an animal is a dog, then it is a mammal. The animal is not a mammal. Therefore, it is not a dog.\"",
-      "image": null,
-      "options": [
-        "a. Valid",
-        "b. Invalid"
-      ],
-      "correctAnswer": "a",
-      "explanation": "<b>Nhận dạng mẫu siêu tốc: Đây là một quy tắc suy luận kinh điển.</b><br /><br /><b>1. Đặt mệnh đề:</b><br />- p: 'Con vật là một con chó'.<br />- q: 'Nó là động vật có vú'.<br /><br /><b>2. Viết lại cấu trúc:</b><br />- Tiền đề 1: Nếu p thì q (\\(p \\rightarrow q\\)).<br />- Tiền đề 2: Không phải q (\\(\\neg q\\)).<br />- Kết luận: Không phải p (\\(\\neg p\\)).<br /><br /><b>3. Nhận dạng quy tắc:</b> Cấu trúc \\( (p \\rightarrow q) \\land \\neg q \\Rightarrow \\neg p \\) chính là quy tắc <b>Modus Tollens</b> (Phủ định hệ quả), và đây là một quy tắc suy luận <b>luôn hợp lệ (Valid)</b>.",
-      "difficulty": "easy",
-      "topic": "Propositional Logic (Inference)",
-      "hints": [
-        "Thần chú: Nhớ tên 'Modus Tollens' (Phủ định hệ quả).",
-        "Logic đời thường: Nếu Chó thì phải Có vú. Con này không có vú, vậy chắc chắn không phải là Chó.",
-        "Phân biệt với lỗi sai 'Phủ định tiền đề': Nếu không phải Chó thì không suy ra được gì cả."
-      ]
+        "id": 5,
+        "question": "Determine whether the following argument is valid.<br />\"If an animal is a dog, then it is a mammal. The animal is not a mammal. Therefore, it is not a dog.\"",
+        "image": null,
+        "options": [
+          "a. Valid",
+          "b. Invalid"
+        ],
+        "correctAnswer": "a",
+        "explanation": "<b>Mẹo giải nhanh: Dùng logic loại trừ trực tiếp.</b><br /><br /><b>1. Quy tắc ban đầu:</b> Mọi con chó (p) đều là động vật có vú (q). Điều này có nghĩa là nếu bạn thấy một con chó, nó <b>chắc chắn</b> phải ở trong 'nhóm động vật có vú'.<br /><br /><b>2. Dữ kiện mới:</b> Con vật này <b>không</b> phải là động vật có vú. Tức là nó nằm <b>bên ngoài</b> 'nhóm động vật có vú'.<br /><br /><b>3. Suy luận logic:</b> Nếu nó đã nằm ngoài nhóm lớn (động vật có vú), thì không thể nào nó nằm trong nhóm nhỏ hơn (chó) được chứa bên trong nhóm lớn đó.<br /><br /><b>Kết luận:</b> Suy luận này hoàn toàn logic và chặt chẽ. Do đó, lập luận là <b>Hợp lệ (Valid)</b>.",
+        "difficulty": "easy",
+        "topic": "Propositional Logic (Inference)",
+        "hints": [
+          "Tư duy tập hợp: Tập [Chó] là con của tập [Động vật có vú].",
+          "Nếu một thứ không thuộc tập cha, nó không thể thuộc tập con.",
+          "Kiểm tra bằng phản chứng: Giả sử nó là chó. Vậy nó phải là động vật có vú → mâu thuẫn với đề bài!"
+        ]
     },
     {
       "id": 6,
