@@ -1,0 +1,126 @@
+
+{
+  "examId": "de1_toan_roi_rac",
+  "title": "Đề 1 - Toán Rời Rạc",
+  "description": "Các câu hỏi cơ bản về logic mệnh đề, logic vị từ và các quy tắc suy luận.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "How many rows appear in a truth table for the compound proposition?<br />\\( (p \\land q) \\lor \\neg p \\rightarrow (p \\land \\neg q) \\)",
+      "image": null,
+      "options": [
+        "a. 8",
+        "b. 10",
+        "c. 4",
+        "d. 16",
+        "e. 32"
+      ],
+      "correctAnswer": "c",
+      "explanation": "<b>Cách giải siêu tốc:</b><br /><b>1. Đếm số mệnh đề đơn:</b> Nhìn vào biểu thức, ta chỉ thấy có 2 mệnh đề đơn khác nhau là \\(p\\) và \\(q\\).<br /><b>2. Áp dụng công thức:</b> Số hàng trong bảng chân trị luôn là \\( 2^n \\), với \\(n\\) là số mệnh đề đơn.<br /><b>3. Tính toán:</b> Với \\(n=2\\), ta có \\(2^2 = 4\\) hàng.<br /><br /><b>Kết luận:</b> Chỉ cần đếm, không cần vẽ bảng!",
+      "difficulty": "easy",
+      "topic": "Propositional Logic (Truth Tables)",
+      "hints": [
+        "Câu thần chú: Số hàng = 2 mũ n.",
+        "n là số mệnh đề đơn khác nhau (p, q, r...).",
+        "Chỉ cần đếm số chữ cái, không cần quan tâm đến độ phức tạp của biểu thức."
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Find a proposition equivalent to \\( \\neg r \\rightarrow p \\land q \\).<br />(i) \\( (r \\lor p) \\land q \\)<br />(ii) \\( r \\lor p \\land q \\)<br />(iii) \\( r \\lor p \\land r \\lor q \\)<br />(iv) \\( r \\land p \\lor r \\land q \\)",
+      "image": null,
+      "options": [
+        "a. (i) only",
+        "b. (i) and (ii)",
+        "c. (ii) and (iii)",
+        "d. (ii) only",
+        "e. (i) and (iv)"
+      ],
+      "correctAnswer": "c",
+      "explanation": "<b>Mẹo siêu tốc: Dùng biến đổi đại số, không vẽ bảng!</b><br /><br /><b>1. Dùng công thức kinh điển:</b> Nhớ ngay công thức \\( A \\rightarrow B \\) tương đương với \\( \\neg A \\lor B \\).<br /><b>2. Áp dụng:</b><br />- Biểu thức là \\( \\neg r \\rightarrow (p \\land q) \\).<br />- Áp dụng công thức trên, ta có: \\( \\neg (\\neg r) \\lor (p \\land q) \\).<br />- Rút gọn: \\( r \\lor (p \\land q) \\).<br /><br /><b>3. So sánh với các đáp án:</b><br />- <b>(ii) \\( r \\lor p \\land q \\):</b> Theo thứ tự ưu tiên, phép \\(\\land\\) làm trước, nên nó chính là \\( r \\lor (p \\land q) \\). <b>Đúng!</b><br />- <b>(iii) \\( r \\lor p \\land r \\lor q \\):</b> Đây là cách viết tắt của \\( (r \\lor p) \\land (r \\lor q) \\). Áp dụng luật phân phối ngược, ta cũng được \\( r \\lor (p \\land q) \\). <b>Cũng đúng!</b><br /><br /><b>Kết luận:</b> Cả (ii) và (iii) đều tương đương.",
+      "difficulty": "medium",
+      "topic": "Propositional Logic (Equivalence)",
+      "hints": [
+        "Mẹo vàng: `A → B` đổi thành `(phủ định A) ∨ B`.",
+        "Nhớ luật phân phối: `r ∨ (p ∧ q)` giống hệt `(r ∨ p) ∧ (r ∨ q)`.",
+        "Biến đổi đại số luôn nhanh hơn vẽ bảng chân trị."
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Let p and q be the propositions<br />p : You drive over 65 miles per hour.<br />q : You get a speeding ticket.<br />Write the proposition using p and q and logical connectives (including negations).<br />\"Driving over 65 miles per hour is sufficient for getting a speeding ticket.\"",
+      "image": null,
+      "options": [
+        "a. p ∨ q",
+        "b. p ∧ q",
+        "c. p → q",
+        "d. q → p"
+      ],
+      "correctAnswer": "c",
+      "explanation": "<b>Bí quyết: Nhìn vào từ khóa 'sufficient' (đủ).</b><br /><br /><b>1. Quy tắc dịch:</b> Câu 'A là điều kiện <b>đủ</b> cho B' luôn luôn dịch thành mệnh đề 'Nếu A thì B'.<br /><b>2. Áp dụng:</b><br />- A là 'Lái xe trên 65 dặm/giờ' (mệnh đề p).<br />- B là 'Bị phạt tốc độ' (mệnh đề q).<br />- Vậy câu trên dịch thành 'Nếu p thì q'.<br /><br /><b>3. Ký hiệu logic:</b> Mệnh đề 'Nếu p thì q' được viết là \\( p \\rightarrow q \\).",
+      "difficulty": "easy",
+      "topic": "Propositional Logic (Translation)",
+      "hints": [
+        "Câu thần chú: 'Đủ' → Mũi tên đi từ nó.",
+        "A is sufficient for B ⇔ If A, then B ⇔ A → B.",
+        "Nghĩ đơn giản: NẾU lái nhanh (p), THÌ bị phạt (q)."
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Let variable x denote a student in your university and y denote a course and<br />M(y): y is a math course<br />F(x): x is a freshman<br />T(x,y): x is taking a course y<br />Express the statement \"There is a freshman who is taking every math course \" as a logical expression involving predicates, quantifiers and logical connectives.",
+      "image": null,
+      "options": [
+        "a. ∃x ∀y(F(x) → T(x, y)))",
+        "b. ∃x (F(x) ∧ ∀y(M(y) → T(x, y)))"
+      ],
+      "correctAnswer": "b",
+      "explanation": "<b>Tách câu để dịch siêu tốc:</b><br /><br /><b>1. 'Có một sinh viên năm nhất...':</b><br />- 'Có một' → Dùng lượng từ tồn tại \\( \\exists x \\).<br />- '...là sinh viên năm nhất' → Dùng vị từ \\( F(x) \\).<br />- Vì 'có một người' vừa là sinh viên, vừa thỏa mãn vế sau, ta phải nối bằng phép VÀ (\\(\\land\\)): \\( \\exists x (F(x) \\land ...) \\). Nhìn vào đây đã có thể loại đáp án a.<br /><br /><b>2. '...học mọi khóa học toán':</b><br />- 'mọi khóa học' → Dùng lượng từ với mọi \\( \\forall y \\).<br />- Điều kiện là 'khóa học toán'. Cấu trúc logic là: 'NẾU y là một khóa học toán THÌ x học khóa đó'.<br />- Dịch thành: \\( M(y) \\rightarrow T(x, y) \\).<br /><br /><b>3. Ghép lại:</b> \\( \\exists x (F(x) \\land \\forall y(M(y) \\rightarrow T(x, y))) \\).",
+      "difficulty": "medium",
+      "topic": "Predicate Logic (Translation)",
+      "hints": [
+        "Mẹo 1: Lượng từ `∃` (tồn tại) thường đi với phép `∧` (VÀ).",
+        "Mẹo 2: Lượng từ `∀` (với mọi) thường đi với phép `→` (KÉO THEO).",
+        "Dịch từ ngoài vào trong: 'Tồn tại x ... VÀ ...' → '... với mọi y ... KÉO THEO ...'."
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Determine whether the following argument is valid.<br />\"If an animal is a dog, then it is a mammal. The animal is not a mammal. Therefore, it is not a dog.\"",
+      "image": null,
+      "options": [
+        "a. Valid",
+        "b. Invalid"
+      ],
+      "correctAnswer": "a",
+      "explanation": "<b>Nhận dạng mẫu siêu tốc: Đây là một quy tắc suy luận kinh điển.</b><br /><br /><b>1. Đặt mệnh đề:</b><br />- p: 'Con vật là một con chó'.<br />- q: 'Nó là động vật có vú'.<br /><br /><b>2. Viết lại cấu trúc:</b><br />- Tiền đề 1: Nếu p thì q (\\(p \\rightarrow q\\)).<br />- Tiền đề 2: Không phải q (\\(\\neg q\\)).<br />- Kết luận: Không phải p (\\(\\neg p\\)).<br /><br /><b>3. Nhận dạng quy tắc:</b> Cấu trúc \\( (p \\rightarrow q) \\land \\neg q \\Rightarrow \\neg p \\) chính là quy tắc <b>Modus Tollens</b> (Phủ định hệ quả), và đây là một quy tắc suy luận <b>luôn hợp lệ (Valid)</b>.",
+      "difficulty": "easy",
+      "topic": "Propositional Logic (Inference)",
+      "hints": [
+        "Thần chú: Nhớ tên 'Modus Tollens' (Phủ định hệ quả).",
+        "Logic đời thường: Nếu Chó thì phải Có vú. Con này không có vú, vậy chắc chắn không phải là Chó.",
+        "Phân biệt với lỗi sai 'Phủ định tiền đề': Nếu không phải Chó thì không suy ra được gì cả."
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Let \\( R(x, y) \\) be the statement \\( “x + y = xy” \\) where the domain of \\( x \\) and \\( y \\) is the set of real numbers. State TRUE or FALSE.<br />(i) \\( \\forall x \\exists y R(x, y) \\)<br />(ii) \\( \\exists y \\forall x R(x, y) \\)",
+      "image": null,
+      "options": [
+        "a. (i): TRUE, (ii): TRUE",
+        "b. (i): FALSE, (ii): TRUE",
+        "c. (i): TRUE, (ii): FALSE",
+        "d. (i): FALSE, (ii): FALSE"
+      ],
+      "correctAnswer": "d",
+      "explanation": "<b>Mẹo giải nhanh: Tìm 'kẻ phá đám' hoặc 'nhân vật thần kỳ'.</b><br /><br /><b>1. Xét (i): 'Với mọi x, tồn tại y...'</b><br />- <b>Chiến thuật:</b> Tìm một giá trị \\(x\\) 'phá đám' khiến ta không tìm được \\(y\\).<br />- Biến đổi phương trình theo \\(y\\): \\(x = xy - y = y(x-1) \\Rightarrow y = \\frac{x}{x-1}\\).<br />- <b>Kẻ phá đám:</b> Thấy ngay nếu \\(x = 1\\), mẫu số sẽ bằng 0. Không tồn tại \\(y\\) nào thỏa mãn. <br />- <b>Kết luận:</b> Mệnh đề không đúng với 'mọi x', vậy (i) là <b>FALSE</b>.<br /><br /><b>2. Xét (ii): 'Tồn tại y, với mọi x...'</b><br />- <b>Chiến thuật:</b> Tìm một giá trị \\(y\\) 'thần kỳ' đúng cho tất cả các giá trị \\(x\\).<br />- Biến đổi phương trình theo \\(x\\): \\(y = xy - x = x(y-1)\\).<br />- <b>Tìm y thần kỳ:</b> Để đẳng thức \\(x(y-1) = y\\) đúng với mọi \\(x\\), hệ số của \\(x\\) phải bằng 0. Tức là \\(y-1 = 0 \\Rightarrow y=1\\).<br />- <b>Kiểm tra:</b> Nếu \\(y=1\\), phương trình trở thành \\(x(0) = 1\\), tức là \\(0=1\\). Vô lý!<br />- <b>Kết luận:</b> Không tồn tại giá trị \\(y\\) nào. Vậy (ii) là <b>FALSE</b>.",
+      "difficulty": "medium",
+      "topic": "Predicate Logic (Quantifiers)",
+      "hints": [
+        "Với `∀x∃y`, hãy tìm một `x` phản ví dụ.",
+        "Với `∃y∀x`, hãy thử tìm một `y` duy nhất hoạt động cho mọi `x`.",
+        "Mẹo đại số: Luôn thử cô lập biến nằm ở lượng từ bên trong."
+      ]
+    }
+  ]
+}
