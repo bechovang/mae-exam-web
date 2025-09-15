@@ -27,7 +27,9 @@ import {
   Navigation,
   LogOut,
   StickyNote,
-  Save
+  Save,
+  Bot,
+  Copy
 } from "lucide-react"
 import {
   AlertDialog,
@@ -82,6 +84,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
   const [showResetConfirmDialog, setShowResetConfirmDialog] = useState(false)
   const [goToQuestionInput, setGoToQuestionInput] = useState("")
   const [showNotes, setShowNotes] = useState(false)
+  const [showCopySuccess, setShowCopySuccess] = useState(false)
   const timerRef = useRef<NodeJS.Timeout | null>(null)
   const feedbackTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const goToInputRef = useRef<HTMLInputElement>(null)
@@ -180,6 +183,80 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
       [currentQuestion + 1]: value
     }));
   }, [currentQuestion]);
+
+  const generateAIPrompt = useCallback(() => {
+    if (!practiceData) return "";
+    
+    const currentQ = practiceData.questions[currentQuestion];
+    const optionsText = currentQ.options.map((option, index) => `${String.fromCharCode(65 + index)}. ${option}`).join('\n    ');
+    
+    return `### Prompt Hoàn Chỉnh cho Chức năng "Học với AI" (Bản Giải thích Trực tiếp)
+
+**Hướng dẫn cho người dùng:** Chỉ cần sao chép toàn bộ nội dung dưới đây và dán vào AI chat để nhận được lời giải chi tiết.
+
+---
+
+**[BẮT ĐẦU PROMPT]**
+
+**VAI TRÒ VÀ MỤC TIÊU:**
+Bạn là một Gia sư AI, chuyên gia giải thích các bài toán một cách rõ ràng, súc tích và dễ hiểu. Nhiệm vụ của bạn là nhận một câu hỏi trắc nghiệm và trình bày một bài giảng chi tiết, giúp một sinh viên có thể hiểu sâu bản chất vấn đề, chứ không chỉ biết đáp án.
+
+**DỮ LIỆU BÀI TOÁN:**
+Hãy phân tích và giải thích cặn kẽ bài toán dưới đây:
+
+*   **Đề bài (Question):**
+    \`\`\`
+    ${currentQ.question}
+    \`\`\`
+
+*   **Các lựa chọn (Options):**
+    \`\`\`
+    ${optionsText}
+    \`\`\`
+
+*   **Đáp án đúng (Correct Answer):** \`${currentQ.correctAnswer}\`
+
+**YÊU CẦU VỀ CẤU TRÚC BÀI GIẢNG:**
+Hãy trình bày lời giải thích của bạn theo cấu trúc 4 bước sau đây một cách mạch lạc và logic. Sử dụng ngôn ngữ trực diện, đơn giản để sinh viên có thể nắm bắt nhanh chóng.
+
+**1. Bước 1: Phân Tích "Đọc Vị" Đề Bài**
+*   **Yêu cầu chính:** Nêu rõ nhiệm vụ cốt lõi của bài toán (ví dụ: xác định tính hợp lệ của một lập luận logic, tìm giá trị của một biến, v.v.).
+*   **Giả thiết (Đề cho gì?):** Liệt kê rõ ràng các tiền đề, dữ kiện mà đề bài đã cung cấp.
+*   **Kết luận (Cần chứng minh gì?):** Chỉ ra kết luận mà lập luận hoặc bài toán đang cố gắng đạt tới.
+
+**2. Bước 2: Xác Định "Vũ Khí" - Công Thức & Kiến Thức Cần Dùng**
+*   Nêu tên cụ thể khái niệm, định lý, công thức hoặc quy tắc logic cần thiết để giải bài toán này.
+*   Giải thích ngắn gọn tại sao đây là kiến thức phù hợp để áp dụng cho các dữ kiện của đề bài.
+
+**3. Bước 3: Trình Bày Lời Giải Chi Tiết**
+*   Bắt đầu bằng việc "dịch" các câu chữ của đề bài sang ngôn ngữ toán học hoặc ký hiệu logic (nếu cần). Ví dụ: đặt \`p\` là "Một bộ phim là phim hành động", \`q\` là "Quincy thích bộ phim đó".
+*   Trình bày quá trình suy luận một cách tuần tự, có đánh số hoặc gạch đầu dòng rõ ràng.
+*   Ở mỗi bước, hãy giải thích lý do đằng sau hành động đó. Ví dụ: "Ta có cấu trúc \`p -> q\`. Đề bài cho biết \`q\` đúng. Nhiệm vụ của chúng ta là xem xét liệu có thể suy ra \`p\` đúng hay không."
+*   Phân tích cấu trúc lập luận để chỉ ra nó đúng hay sai dựa trên các quy tắc đã học.
+
+**4. Bước 4: Kết Luận và "Ghi Nhớ" Kinh Nghiệm**
+*   Dựa trên phân tích ở trên, khẳng định đáp án nào là chính xác.
+*   Giải thích tại sao đáp án đó đúng và tại sao các lựa chọn khác là sai.
+*   **Quan trọng:** Đúc kết lại bản chất của vấn đề. Nếu đây là một lỗi sai, hãy gọi tên lỗi đó (ví dụ: "Đây là một lỗi logic kinh điển có tên là 'Khẳng định hệ quả' (Affirming the Consequent)"). Cung cấp một ví dụ tương tự trong đời sống để sinh viên dễ hình dung và tránh mắc phải sai lầm này trong tương lai.
+
+Hãy bắt đầu bài giảng của bạn.
+
+**[KẾT THÚC PROMPT]**`;
+  }, [practiceData, currentQuestion]);
+
+  const handleAICopy = useCallback(async () => {
+    try {
+      const prompt = generateAIPrompt();
+      await navigator.clipboard.writeText(prompt);
+      setShowCopySuccess(true);
+      setTimeout(() => setShowCopySuccess(false), 2000);
+      
+      // Open Google AI Studio in new tab
+      window.open('https://aistudio.google.com/prompts/new_chat', '_blank');
+    } catch (error) {
+      console.error('Failed to copy prompt:', error);
+    }
+  }, [generateAIPrompt]);
   
   const handleGoToQuestionSubmit = useCallback(() => { if (!practiceData) return; const questionNumber = parseInt(goToQuestionInput); if (!isNaN(questionNumber) && questionNumber >= 1 && questionNumber <= practiceData.questions.length) { goToQuestion(questionNumber - 1); setShowGoToQuestionDialog(false); setGoToQuestionInput(""); } }, [goToQuestionInput, practiceData, goToQuestion]);
   
@@ -348,6 +425,15 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
                       {showNotes ? 'Ẩn ghi chú' : 'Ghi chú'}
                       <Badge variant="secondary" className="text-xs ml-1">T</Badge>
                     </Button>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      onClick={handleAICopy} 
+                      className="flex items-center gap-2 transition-all bg-gradient-to-r from-purple-50 to-blue-50 hover:from-purple-100 hover:to-blue-100 border-purple-200 hover:border-purple-300 dark:from-purple-900/20 dark:to-blue-900/20 dark:border-purple-700 dark:hover:border-purple-600"
+                    >
+                      {showCopySuccess ? <Copy className="h-4 w-4 text-green-600" /> : <Bot className="h-4 w-4 text-purple-600" />}
+                      {showCopySuccess ? 'Đã copy!' : 'Học với AI'}
+                    </Button>
                   </div>
                 )}
 
@@ -357,6 +443,15 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
                       <StickyNote className="h-4 w-4" />
                       {showNotes ? 'Ẩn ghi chú' : 'Ghi chú'}
                       <Badge variant="secondary" className="text-xs ml-1">T</Badge>
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      onClick={handleAICopy} 
+                      className="flex items-center gap-2 transition-all bg-gradient-to-r from-purple-50 to-blue-50 hover:from-purple-100 hover:to-blue-100 border-purple-200 hover:border-purple-300 dark:from-purple-900/20 dark:to-blue-900/20 dark:border-purple-700 dark:hover:border-purple-600"
+                    >
+                      {showCopySuccess ? <Copy className="h-4 w-4 text-green-600" /> : <Bot className="h-4 w-4 text-purple-600" />}
+                      {showCopySuccess ? 'Đã copy!' : 'Học với AI'}
                     </Button>
                   </div>
                 )}
