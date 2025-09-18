@@ -52,7 +52,7 @@ const OPTION_SHORTCUT_MAP = {
 } as const;
 
 interface Question {
-  id: number; question: string; image: string | null; options: string[]; correctAnswer: string; explanation: string; difficulty: string; topic: string; hints: string[];
+  id: number; question: string; image: string | null; options: string[]; correctAnswer: string; explanation: string; difficulty: string; topic: string; hints: string[]; type?: 'multiple_choice' | 'essay';
 }
 interface PracticeData {
   examId: string; title: string; description: string; questions: Question[];
@@ -85,6 +85,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
   const [goToQuestionInput, setGoToQuestionInput] = useState("")
   const [showNotes, setShowNotes] = useState(false)
   const [showCopySuccess, setShowCopySuccess] = useState(false)
+  const [showEssayAnswer, setShowEssayAnswer] = useState(false)
   const timerRef = useRef<NodeJS.Timeout | null>(null)
   const feedbackTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const goToInputRef = useRef<HTMLInputElement>(null)
@@ -117,7 +118,8 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
     setShowHints(false);
     setHintsUsedCount(questionResults[index + 1]?.hintsUsed || 0);
     setShowNotes(false);
-  }, [questionResults]);
+    setShowEssayAnswer(!!questionResults[index + 1]?.answered && practiceData?.questions[index]?.type === 'essay');
+  }, [questionResults, practiceData]);
 
   const goToNextQuestion = useCallback(() => {
     if (practiceData && currentQuestion < practiceData.questions.length - 1) {
@@ -149,6 +151,7 @@ export default function PracticeClient({ practiceId }: PracticeClientProps) {
       setQuestionResults(prev => { const newResults = { ...prev }; delete newResults[questionId]; return newResults; });
       setQuestionNotes(prev => { const newNotes = { ...prev }; delete newNotes[questionId]; return newNotes; });
       setShowFeedback(false); setShowHints(false); setHintsUsedCount(0); setQuestionStartTime(Date.now());
+      setShowEssayAnswer(false);
       if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current);
     }
   }, [practiceData, currentQuestion]);
@@ -257,6 +260,26 @@ Hãy bắt đầu bài giảng của bạn.
       console.error('Failed to copy prompt:', error);
     }
   }, [generateAIPrompt]);
+
+  const handleCheckEssayAnswer = useCallback(() => {
+    if (!practiceData) return;
+    
+    const currentTime = Date.now();
+    const timeSpentOnThisQuestion = Math.floor((currentTime - questionStartTime) / 1000);
+    
+    setShowEssayAnswer(true);
+    setQuestionResults(prev => ({ 
+      ...prev, 
+      [currentQuestion + 1]: { 
+        answered: true, 
+        correct: true, // Essay questions are considered "correct" when answered
+        selectedAnswer: 'essay_answered', 
+        timeSpent: timeSpentOnThisQuestion, 
+        hintsUsed: hintsUsedCount 
+      }
+    }));
+    setShowFeedback(true);
+  }, [practiceData, questionStartTime, currentQuestion, hintsUsedCount]);
   
   const handleGoToQuestionSubmit = useCallback(() => { if (!practiceData) return; const questionNumber = parseInt(goToQuestionInput); if (!isNaN(questionNumber) && questionNumber >= 1 && questionNumber <= practiceData.questions.length) { goToQuestion(questionNumber - 1); setShowGoToQuestionDialog(false); setGoToQuestionInput(""); } }, [goToQuestionInput, practiceData, goToQuestion]);
   
@@ -359,6 +382,7 @@ Hãy bắt đầu bài giảng của bạn.
     setShowHints(false);
     setHintsUsedCount(0);
     setShowNotes(false);
+    setShowEssayAnswer(false);
     if (feedbackTimeoutRef.current) clearTimeout(feedbackTimeoutRef.current);
   }, []);
 
@@ -392,26 +416,61 @@ Hãy bắt đầu bài giảng của bạn.
                   <SimpleMath className="text-lg leading-relaxed">{currentQuestionData.question}</SimpleMath>
                   {currentQuestionData.image && <img src={currentQuestionData.image} alt={`Hình ảnh câu hỏi ${currentQuestion + 1}`} className="mt-4 max-w-full h-auto rounded-lg shadow-sm" />}
                 </div>
-                <RadioGroup value={userAnswers[currentQuestion + 1] || ""} onValueChange={handleAnswerSelect} className="space-y-3" disabled={showFeedback}>
-                  {currentQuestionData.options.map((option, index) => {
-                    const optionLetter = option.charAt(0) as keyof typeof OPTION_SHORTCUT_MAP;
-                    const isSelected = userAnswers[currentQuestion + 1] === optionLetter;
-                    const isCorrect = optionLetter === currentQuestionData.correctAnswer;
-                    const shortcutNumber = OPTION_SHORTCUT_MAP[optionLetter];
-                    let optionClass = "relative flex items-center space-x-3 rounded-lg border-2 p-4 transition-all duration-200 shadow-sm cursor-pointer";
-                    if (showFeedback) optionClass += isCorrect ? " border-green-500 bg-green-50 dark:bg-green-950/70 dark:text-green-300 dark:border-green-600" : isSelected && !isCorrect ? " border-red-500 bg-red-50 dark:bg-red-950/70 dark:text-red-300 dark:border-red-600" : " border-gray-200 opacity-60 dark:border-gray-700";
-                    else optionClass += isSelected ? " border-blue-500 bg-blue-50 ring-2 ring-blue-300 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-500" : " border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600";
-                    return (
-                      <Label htmlFor={`option-${index}`} key={index} className={optionClass}>
-                        <RadioGroupItem value={optionLetter} id={`option-${index}`} className="text-blue-600" />
-                        <SimpleMath className="flex-1 text-base font-medium">{option}</SimpleMath>
-                        {!showFeedback && shortcutNumber && (<Badge variant="outline" className="text-xs ml-auto opacity-60">{`${optionLetter}/${shortcutNumber}`}</Badge>)}
-                        {showFeedback && isCorrect && <CheckCircle className="h-6 w-6 text-green-500 animate-bound-in" />}
-                        {showFeedback && isSelected && !isCorrect && <XCircle className="h-6 w-6 text-red-500 animate-bound-in" />}
-                      </Label>
-                    );
-                  })}
-                </RadioGroup>
+                {currentQuestionData.type === 'essay' ? (
+                  <div className="space-y-4">
+                    {!showEssayAnswer ? (
+                      <div className="text-center py-8">
+                        <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-700 rounded-lg p-6">
+                          <h3 className="text-lg font-semibold text-blue-800 dark:text-blue-300 mb-2">
+                            Câu hỏi tự luận
+                          </h3>
+                          <p className="text-blue-600 dark:text-blue-400 mb-4">
+                            Hãy suy nghĩ và phân tích câu hỏi trên. Khi bạn đã sẵn sàng, hãy nhấn nút "Kiểm tra đáp án" để xem lời giải.
+                          </p>
+                          <Button 
+                            onClick={handleCheckEssayAnswer}
+                            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2"
+                          >
+                            Kiểm tra đáp án
+                          </Button>
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="space-y-4">
+                        <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-700 rounded-lg p-4">
+                          <h4 className="font-semibold text-green-800 dark:text-green-300 mb-2 flex items-center gap-2">
+                            <CheckCircle className="h-5 w-5" />
+                            Đáp án:
+                          </h4>
+                          <div className="text-green-700 dark:text-green-300">
+                            <SimpleMath>{currentQuestionData.correctAnswer}</SimpleMath>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <RadioGroup value={userAnswers[currentQuestion + 1] || ""} onValueChange={handleAnswerSelect} className="space-y-3" disabled={showFeedback}>
+                    {currentQuestionData.options.map((option, index) => {
+                      const optionLetter = option.charAt(0) as keyof typeof OPTION_SHORTCUT_MAP;
+                      const isSelected = userAnswers[currentQuestion + 1] === optionLetter;
+                      const isCorrect = optionLetter === currentQuestionData.correctAnswer;
+                      const shortcutNumber = OPTION_SHORTCUT_MAP[optionLetter];
+                      let optionClass = "relative flex items-center space-x-3 rounded-lg border-2 p-4 transition-all duration-200 shadow-sm cursor-pointer";
+                      if (showFeedback) optionClass += isCorrect ? " border-green-500 bg-green-50 dark:bg-green-950/70 dark:text-green-300 dark:border-green-600" : isSelected && !isCorrect ? " border-red-500 bg-red-50 dark:bg-red-950/70 dark:text-red-300 dark:border-red-600" : " border-gray-200 opacity-60 dark:border-gray-700";
+                      else optionClass += isSelected ? " border-blue-500 bg-blue-50 ring-2 ring-blue-300 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-500" : " border-gray-200 dark:border-gray-700 hover:border-blue-300 dark:hover:border-blue-600";
+                      return (
+                        <Label htmlFor={`option-${index}`} key={index} className={optionClass}>
+                          <RadioGroupItem value={optionLetter} id={`option-${index}`} className="text-blue-600" />
+                          <SimpleMath className="flex-1 text-base font-medium">{option}</SimpleMath>
+                          {!showFeedback && shortcutNumber && (<Badge variant="outline" className="text-xs ml-auto opacity-60">{`${optionLetter}/${shortcutNumber}`}</Badge>)}
+                          {showFeedback && isCorrect && <CheckCircle className="h-6 w-6 text-green-500 animate-bound-in" />}
+                          {showFeedback && isSelected && !isCorrect && <XCircle className="h-6 w-6 text-red-500 animate-bound-in" />}
+                        </Label>
+                      );
+                    })}
+                  </RadioGroup>
+                )}
                 
                 {currentQuestionData.hints?.length > 0 && (
                   <div className="mt-4 flex gap-2 animate-fade-in">
@@ -488,8 +547,26 @@ Hãy bắt đầu bài giảng của bạn.
                   </div>
                 )}
 
-                {showFeedback && currentResult && (
+                {showFeedback && currentResult && currentQuestionData.type !== 'essay' && (
                   <div className="mt-6 space-y-4 animate-fade-in"><div className={`rounded-xl p-5 shadow-md ${currentResult.correct ? 'bg-gradient-to-br from-green-50 to-green-100 border-l-4 border-green-400 dark:from-green-900/20 dark:to-green-950/30' : 'bg-gradient-to-br from-red-50 to-red-100 border-l-4 border-red-400 dark:from-red-900/20 dark:to-red-950/30'}`}><div className="flex items-center gap-3 mb-3">{currentResult.correct ? <Sparkles className="h-7 w-7 text-green-600 animate-sparkle-burst" /> : <Frown className="h-7 w-7 text-red-600 animate-wiggle" />}<span className={`text-xl font-bold ${currentResult.correct ? 'text-green-800 dark:text-green-300' : 'text-red-800 dark:text-red-300'}`}>{currentResult.correct ? 'Chính xác!' : 'Chưa đúng'}</span><span className="text-sm text-gray-600 dark:text-gray-400 ml-auto">(Thời gian: {formatTime(currentResult.timeSpent)})</span></div><div className="bg-white dark:bg-gray-800/50 rounded-lg p-4 border border-gray-200 dark:border-gray-700 shadow-sm"><h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-3 text-lg flex items-center gap-2"><BookOpen className="h-5 w-5 text-blue-600" /> Giải thích chi tiết:</h4><SimpleMath className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{currentQuestionData.explanation}</SimpleMath></div></div></div>)}
+
+                {showFeedback && currentResult && currentQuestionData.type === 'essay' && (
+                  <div className="mt-6 space-y-4 animate-fade-in">
+                    <div className="rounded-xl p-5 shadow-md bg-gradient-to-br from-blue-50 to-blue-100 border-l-4 border-blue-400 dark:from-blue-900/20 dark:to-blue-950/30">
+                      <div className="flex items-center gap-3 mb-3">
+                        <Sparkles className="h-7 w-7 text-blue-600 animate-sparkle-burst" />
+                        <span className="text-xl font-bold text-blue-800 dark:text-blue-300">Đã kiểm tra đáp án!</span>
+                        <span className="text-sm text-gray-600 dark:text-gray-400 ml-auto">(Thời gian: {formatTime(currentResult.timeSpent)})</span>
+                      </div>
+                      <div className="bg-white dark:bg-gray-800/50 rounded-lg p-4 border border-gray-200 dark:border-gray-700 shadow-sm">
+                        <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-3 text-lg flex items-center gap-2">
+                          <BookOpen className="h-5 w-5 text-blue-600" /> Giải thích chi tiết:
+                        </h4>
+                        <SimpleMath className="text-sm text-gray-700 dark:text-gray-300 leading-relaxed">{currentQuestionData.explanation}</SimpleMath>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </CardContent>
               <CardFooter className="flex justify-between items-center p-4">
                 <Button variant="outline" onClick={goToPrevQuestion} disabled={currentQuestion === 0}><ChevronLeft className="mr-2 h-4 w-4" /> Câu trước</Button>
