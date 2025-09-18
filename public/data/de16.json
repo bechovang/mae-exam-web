@@ -1,39 +1,396 @@
 {
-  "examId": "essay_sample",
-  "title": "Mẫu câu hỏi tự luận",
-  "description": "Ví dụ về câu hỏi tự luận trong hệ thống thi trắc nghiệm.",
-  "questions": [
-    {
-      "id": 1,
-      "question": "Chứng minh rằng với mọi số nguyên dương n, ta có: \\( 1^2 + 2^2 + 3^2 + \\cdots + n^2 = \\frac{n(n+1)(2n+1)}{6} \\)",
-      "image": null,
-      "options": [],
-      "correctAnswer": "Chứng minh bằng phương pháp quy nạp toán học:\n\n**Bước 1: Kiểm tra với n = 1**\nVế trái: \\( 1^2 = 1 \\)\nVế phải: \\( \\frac{1(1+1)(2\\cdot1+1)}{6} = \\frac{1 \\cdot 2 \\cdot 3}{6} = 1 \\)\nVậy đẳng thức đúng với n = 1.\n\n**Bước 2: Giả sử đẳng thức đúng với n = k**\nTức là: \\( 1^2 + 2^2 + \\cdots + k^2 = \\frac{k(k+1)(2k+1)}{6} \\)\n\n**Bước 3: Chứng minh đúng với n = k + 1**\nTa cần chứng minh:\n\\( 1^2 + 2^2 + \\cdots + k^2 + (k+1)^2 = \\frac{(k+1)(k+2)(2k+3)}{6} \\)\n\nVế trái = \\( \\frac{k(k+1)(2k+1)}{6} + (k+1)^2 \\)\n= \\( (k+1)\\left[\\frac{k(2k+1)}{6} + (k+1)\\right] \\)\n= \\( (k+1)\\left[\\frac{k(2k+1) + 6(k+1)}{6}\\right] \\)\n= \\( (k+1)\\left[\\frac{2k^2 + k + 6k + 6}{6}\\right] \\)\n= \\( (k+1)\\left[\\frac{2k^2 + 7k + 6}{6}\\right] \\)\n= \\( (k+1)\\left[\\frac{(k+2)(2k+3)}{6}\\right] \\)\n= \\( \\frac{(k+1)(k+2)(2k+3)}{6} \\)\n\nVậy đẳng thức đúng với n = k + 1.\n\n**Kết luận:** Theo nguyên lý quy nạp, đẳng thức đúng với mọi số nguyên dương n.",
-      "explanation": "Đây là một bài toán chứng minh bằng quy nạp toán học kinh điển. Phương pháp quy nạp gồm 3 bước:\n\n1. **Bước cơ sở:** Kiểm tra với giá trị nhỏ nhất (thường là n = 1)\n2. **Bước quy nạp:** Giả sử đúng với n = k\n3. **Bước chứng minh:** Chứng minh đúng với n = k + 1\n\n**Mẹo nhớ:** Khi làm bài quy nạp, hãy chú ý:\n- Luôn bắt đầu từ n = 1 (hoặc giá trị nhỏ nhất trong tập xác định)\n- Trong bước chứng minh, phải sử dụng giả thiết quy nạp\n- Biến đổi đại số cẩn thận để đưa về dạng cần chứng minh\n\n**Ứng dụng:** Công thức này rất hữu ích trong việc tính tổng bình phương các số tự nhiên, thường xuất hiện trong các bài toán về xác suất, thống kê và giải tích.",
-      "difficulty": "hard",
-      "topic": "Toán học - Quy nạp",
-      "hints": [
-        "Hãy nhớ phương pháp quy nạp toán học có 3 bước cơ bản.",
-        "Trong bước chứng minh, hãy sử dụng giả thiết quy nạp một cách khéo léo.",
-        "Chú ý phân tích đa thức \\( 2k^2 + 7k + 6 \\) thành nhân tử."
-      ],
-      "type": "essay"
-    },
-    {
-      "id": 2,
-      "question": "Giải phương trình: \\( \\log_2(x+1) + \\log_2(x-1) = 3 \\)",
-      "image": null,
-      "options": [],
-      "correctAnswer": "Điều kiện xác định: \\( x + 1 > 0 \\) và \\( x - 1 > 0 \\)\nTức là: \\( x > 1 \\)\n\nÁp dụng tính chất của logarit:\n\\( \\log_2(x+1) + \\log_2(x-1) = \\log_2[(x+1)(x-1)] \\)\n\nVậy phương trình trở thành:\n\\( \\log_2[(x+1)(x-1)] = 3 \\)\n\\( \\log_2(x^2 - 1) = 3 \\)\n\\( x^2 - 1 = 2^3 \\)\n\\( x^2 - 1 = 8 \\)\n\\( x^2 = 9 \\)\n\\( x = \\pm 3 \\)\n\nKiểm tra điều kiện:\n- Với \\( x = 3 \\): \\( 3 > 1 \\) ✓\n- Với \\( x = -3 \\): \\( -3 < 1 \\) ✗ (loại)\n\n**Kết luận:** \\( x = 3 \\)",
-      "explanation": "Đây là bài toán giải phương trình logarit. Các bước quan trọng:\n\n**1. Tìm điều kiện xác định:**\n- Biểu thức trong logarit phải dương\n- \\( x + 1 > 0 \\) và \\( x - 1 > 0 \\)\n- Suy ra \\( x > 1 \\)\n\n**2. Áp dụng tính chất logarit:**\n- \\( \\log_a b + \\log_a c = \\log_a(bc) \\)\n- Đây là tính chất cơ bản của logarit\n\n**3. Chuyển về dạng mũ:**\n- \\( \\log_a x = b \\) tương đương \\( x = a^b \\)\n- Chuyển từ logarit sang dạng mũ để giải\n\n**4. Kiểm tra nghiệm:**\n- Luôn kiểm tra điều kiện xác định\n- Loại bỏ nghiệm không thỏa mãn\n\n**Lưu ý:** Khi làm bài logarit, điều kiện xác định là bước quan trọng nhất, không được bỏ qua!",
-      "difficulty": "medium",
-      "topic": "Đại số - Logarit",
-      "hints": [
-        "Hãy tìm điều kiện xác định của phương trình trước.",
-        "Sử dụng tính chất: log_a(b) + log_a(c) = log_a(bc).",
-        "Nhớ kiểm tra nghiệm với điều kiện xác định."
-      ],
-      "type": "essay"
-    }
-  ]
-}
+    "examId": "de2_toan_roi_rac_chuong2",
+    "title": "Chapter 2 - Set Theory",
+    "description": "Questions about fundamental set operations, identities, and proofs.",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Determine whether \\( f \\) is a function from the set of all bit strings to the set of integers if<br /><br />1) \\( f(S) \\) is the position of a 0 bit in S.<br />2) \\( f(S) \\) is the number of 1 bits in S.",
+        "image": null,
+        "options": [
+          "A. Both 1 and 2 are functions.",
+          "B. Only 1 is a function.",
+          "C. Only 2 is a function.",
+          "D. Neither 1 nor 2 are functions."
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Mẹo siêu tốc: Kiểm tra 2 điều kiện vàng của hàm số!</b><br />Một quy tắc là hàm số NẾU:<br />1. <b>Mọi đầu vào</b> đều phải có đầu ra.<br />2. Mỗi đầu vào chỉ cho <b>đúng một đầu ra</b> (không được mập mờ).<br /><br />---<br /><b>Xét quy tắc (1): Vị trí của bit 0</b><br />- <b>Phá vỡ điều kiện 1 (Không có đầu ra):</b> Nếu đầu vào là chuỗi \\( S = '111' \\), nó không có bit 0 nào. Vậy \\( f('111') \\) là không xác định. → <b>KHÔNG LÀ HÀM SỐ.</b><br />- <b>Phá vỡ điều kiện 2 (Quá nhiều đầu ra):</b> Nếu đầu vào là chuỗi \\( S = '010' \\), nó có hai bit 0 ở vị trí 1 và 3. Vậy \\( f('010') \\) là 1 hay 3? Quy tắc này mập mờ, cho nhiều hơn một đầu ra. → <b>KHÔNG LÀ HÀM SỐ.</b><br /><br />---<br /><b>Xét quy tắc (2): Số lượng bit 1</b><br />- <b>Kiểm tra điều kiện 1:</b> Mọi chuỗi bit \\(S\\) đều có thể đếm được số lượng bit 1 (kể cả khi số lượng đó là 0). Luôn xác định. ✓<br />- <b>Kiểm tra điều kiện 2:</b> Với mỗi chuỗi bit \\(S\\) bất kỳ, số lượng bit 1 luôn là một con số duy nhất, không thể mập mờ được. ✓<br /><br /><b>Kết luận:</b> Chỉ có quy tắc (2) thỏa mãn cả hai điều kiện, do đó nó <b>LÀ HÀM SỐ.</b>",
+        "difficulty": "medium",
+        "topic": "Functions (Definition)",
+        "hints": [
+          "Thần chú: Một hàm số phải 'well-defined' - tức là mọi input đều có MỘT và CHỈ MỘT output.",
+          "Để chứng minh không phải là hàm số, chỉ cần tìm MỘT phản ví dụ.",
+          "Ví dụ phá đám cho (1): Chuỗi `S='11'` (không có output) hoặc `S='00'` (có 2 output)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 2,
+        "question": "Determine whether \\( f \\) is a function from the set of all bit strings to the set of integers if<br /><br />1) \\( f(S) \\) is the position of a 0 bit in S.<br />2) \\( f(S) \\) is the number of 1 bits in S.",
+        "image": null,
+        "options": [
+          "A. Both 1 and 2 are functions.",
+          "B. Only 1 is a function.",
+          "C. Only 2 is a function.",
+          "D. Neither 1 nor 2 are functions."
+        ],
+        "correctAnswer": "C",
+        "explanation": "Để hiểu bản chất, hãy tưởng tượng 'hàm số' (function) như một cái <b>máy chế biến</b>.<br />Một 'cái máy' tốt phải tuân thủ <b>2 quy tắc vàng</b>:<br /><br />1. <b>Quy tắc 1 (Luôn hoạt động):</b> Mọi nguyên liệu hợp lệ bạn bỏ vào, máy <i>luôn phải</i> cho ra sản phẩm. Nó không được phép 'đơ'.<br />2. <b>Quy tắc 2 (Dễ đoán / Nhất quán):</b> Với cùng một nguyên liệu, máy <i>luôn phải</i> cho ra cùng một sản phẩm duy nhất. Không được lúc thế này, lúc thế khác.<br /><br />---<br /><br /><b>Áp dụng vào bài toán:</b><br />- <b>Nguyên liệu:</b> Các chuỗi bit (ví dụ: '101', '00').<br />- <b>Sản phẩm:</b> Một số nguyên.<br /><br />---<br /><h3>Kiểm tra MÁY SỐ 1: 'Vị trí của một bit 0'</h3><br />- <b>Thử Quy tắc 1 (Luôn hoạt động):</b> Bỏ chuỗi <b>'111'</b> vào. Chuỗi này không có bit 0. Máy không biết trả về vị trí nào cả. Máy bị 'đơ'. → <b>VI PHẠM!</b><br />- <b>Thử Quy tắc 2 (Dễ đoán):</b> Bỏ chuỗi <b>'010'</b> vào. Máy có thể trả về vị trí 1, hoặc cũng có thể trả về vị trí 3. Cùng một nguyên liệu nhưng có thể cho ra hai sản phẩm. → <b>VI PHẠM!</b><br /><br /><b>Kết luận:</b> Máy số 1 là máy hỏng. Nó <b>không phải</b> là hàm số.<br /><br />---<br /><h3>Kiểm tra MÁY SỐ 2: 'Số lượng bit 1'</h3><br />- <b>Thử Quy tắc 1 (Luôn hoạt động):</b> Bỏ chuỗi bất kỳ vào, ví dụ <b>'000'</b>. Máy đếm và trả về <b>0</b>. Luôn hoạt động. ✓<br />- <b>Thử Quy tắc 2 (Dễ đoán):</b> Bỏ chuỗi <b>'1011'</b> vào. Máy luôn đếm và trả về duy nhất một con số là <b>3</b>. Luôn dễ đoán. ✓<br /><br /><b>Kết luận:</b> Máy số 2 là máy tốt, tuân thủ cả hai quy tắc. Nó <b>là một hàm số.</b>",
+        "difficulty": "medium",
+        "topic": "Functions (Definition)",
+        "hints": [
+          "Hãy nghĩ về 'cái máy chế biến': mọi nguyên liệu phải cho ra MỘT và CHỈ MỘT sản phẩm.",
+          "Để chứng minh không phải là hàm số, chỉ cần tìm MỘT 'nguyên liệu' phá đám.",
+          "Thử với chuỗi '11' (máy bị 'đơ') hoặc chuỗi '00' (máy cho 2 sản phẩm) cho quy tắc 1."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 3,
+        "question": "Determine whether \\( f : \\mathbb{R} \\rightarrow \\mathbb{R} \\) is one-to-one if<br /><br />a) \\( f(x) = x^2 - 4x - 5 \\)<br />b) \\( f(x) = x^3 + 7 \\)",
+        "image": null,
+        "options": [
+          "A. Both a and b are one-to-one.",
+          "B. Only a is one-to-one.",
+          "C. Only b is one-to-one.",
+          "D. Neither a nor b are one-to-one."
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Bí quyết: Dùng 'Phép thử đường thẳng ngang' hoặc kiểm tra số nghiệm bằng máy tính!</b><br />Một hàm là 'một-một' (one-to-one) nếu với mỗi giá trị đầu ra y, chỉ có <b>đúng một</b> giá trị đầu vào x tương ứng.<br /><br />---<br /><h3>Kiểm tra hàm a) \\( f(x) = x^2 - 4x - 5 \\)</h3><br />- <b>Cách 1 (Tư duy đồ thị):</b> Đây là hàm bậc hai, đồ thị là một <b>parabol</b> (hình chữ U). Nó chắc chắn rớt 'Phép thử đường thẳng ngang' vì một đường ngang sẽ cắt tại 2 điểm.<br /><br />- <b>Cách 2 (Mẹo bấm máy tính Casio):</b><br />  1. Cho một giá trị bất kỳ ở đầu ra, ví dụ \\( f(x) = 0 \\). Ta có phương trình \\( x^2 - 4x - 5 = 0 \\).<br />  2. Bấm máy giải phương trình bậc hai (ví dụ: MODE 5 → 3). Máy sẽ trả về <b>2 NGHIỆM</b> là \\( x_1 = 5 \\) và \\( x_2 = -1 \\).<br />  3. Vì có <b>2 đầu vào khác nhau</b> (5 và -1) cùng cho ra <b>1 đầu ra</b> (0), hàm này <b>KHÔNG</b> phải là một-một.<br /><br />---<br /><h3>Kiểm tra hàm b) \\( f(x) = x^3 + 7 \\)</h3><br />- <b>Cách 1 (Tư duy đồ thị):</b> Đây là hàm bậc ba, đồ thị là một đường cong <b>luôn đi lên</b>. Nó luôn vượt qua 'Phép thử đường thẳng ngang'.<br /><br />- <b>Cách 2 (Mẹo bấm máy tính Casio):</b><br />  1. Cho một giá trị bất kỳ ở đầu ra, ví dụ \\( f(x) = 15 \\). Ta có phương trình \\( x^3 + 7 = 15 \\), hay \\( x^3 - 8 = 0 \\).<br />  2. Bấm máy giải phương trình bậc ba (ví dụ: MODE 5 → 4). Máy sẽ trả về <b>1 NGHIỆM THỰC</b> duy nhất là \\( x=2 \\) (và 2 nghiệm phức, ta không quan tâm).<br />  3. Vì mỗi đầu ra chỉ tương ứng với <b>1 đầu vào thực</b> duy nhất, hàm này <b>LÀ</b> một-một.",
+        "difficulty": "easy",
+        "topic": "Functions (One-to-one / Injective)",
+        "hints": [
+          "Thần chú: 'Một-một' ⇔ 'Mỗi y chỉ có một x duy nhất'.",
+          "Mẹo bấm máy: Cho f(x) bằng một số, giải phương trình. Nếu có nhiều hơn 1 nghiệm x → KHÔNG phải một-một.",
+          "Mẹo đồ thị: Dùng 'Phép thử đường thẳng ngang'. Cắt nhiều hơn 1 lần → KHÔNG phải một-một."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 22,
+        "question": "Determine whether \\( f : \\mathbb{Z} \\times \\mathbb{Z} \\rightarrow \\mathbb{Z} \\) is onto if<br /><br />a) \\( f(m, n) = 2m - n \\)<br />b) \\( f(m, n) = m^2 - n^2 \\)",
+        "image": null,
+        "options": [
+          "A. Both a and b are onto.",
+          "B. Only a is onto.",
+          "C. Only b is onto.",
+          "D. Neither a nor b are onto."
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Mẹo kiểm tra siêu tốc (Casio): Dùng TABLE!</b><br />Trước khi chứng minh, bạn có thể dùng chức năng TABLE (MODE 7 hoặc 8) để kiểm tra nhanh. Nhập hàm F(X,Y) và cho X chạy từ -5 đến 5, Y chạy từ -5 đến 5. Lướt qua cột kết quả, bạn sẽ thấy hàm (a) tạo ra rất nhiều số nguyên liên tiếp, trong khi hàm (b) tạo ra các giá trị rất thưa thớt và không có số âm nào cả.<br /><br />---<br /><h3>Kiểm tra hàm a) \\( f(m, n) = 2m - n \\) (Toàn ánh)</h3><br />- <b>Thử thách:</b> Cho một số nguyên \\(k\\) bất kỳ, ta có thể tìm được cặp số nguyên \\((m, n)\\) từ tập nguồn \\( \\mathbb{Z} \\times \\mathbb{Z} \\) (tích Descartes của hai tập số nguyên) sao cho \\( 2m - n = k \\) không?<br /><br />- <b>Cách tạo siêu dễ:</b> Hãy cố định một biến. Chọn \\( m = 0 \\).<br />  - Khi đó phương trình trở thành \\( 2(0) - n = k \\), hay \\( n = -k \\).<br />  - Vì \\(k\\) là số nguyên, \\(-k\\) cũng là số nguyên. Vậy cặp \\( (0, -k) \\) luôn là một cặp số nguyên hợp lệ.<br /><br />- <b>Chứng minh hình thức:</b><br />  Với mọi \\( k \\in \\mathbb{Z} \\), ta chọn \\( (m, n) = (0, -k) \\). Cặp này thuộc \\( \\mathbb{Z} \\times \\mathbb{Z} \\).<br />  Ta có \\( f(0, -k) = 2(0) - (-k) = k \\).<br />  Do đó: \\( \\forall k \\in \\mathbb{Z}, \\exists (m,n) \\in \\mathbb{Z} \\times \\mathbb{Z} \\) sao cho \\( f(m,n) = k \\). Vậy \\(f\\) là toàn ánh (onto).<br /><br />---<br /><h3>Kiểm tra hàm b) \\( f(m, n) = m^2 - n^2 \\) (Không toàn ánh)</h3><br />- <b>Chiến lược:</b> Để chứng minh không toàn ánh, ta chỉ cần tìm ra <b>một số nguyên \\(k\\) mà không thể tạo ra được</b>.<br /><br />- <b>Tìm 'kẻ phá đám':</b> Hãy thử tạo ra số \\(k=2\\).<br />  - Ta cần giải phương trình \\( m^2 - n^2 = 2 \\).<br />  - Phân tích thành nhân tử: \\( (m-n)(m+n) = 2 \\).<br />  - Vì \\(m, n\\) là số nguyên, \\(m-n\\) và \\(m+n\\) cũng phải là các ước số nguyên của 2. Ta sẽ dùng <b>các cặp ước số này để giải các hệ phương trình</b> sau:<br />    1. \\( m-n=1 \\) và \\( m+n=2 \\). Cộng hai vế ta được \\( 2m = 3 \\Rightarrow m=1.5 \\) (Không phải số nguyên).<br />    2. \\( m-n=2 \\) và \\( m+n=1 \\). Cộng hai vế ta được \\( 2m = 3 \\Rightarrow m=1.5 \\) (Không phải số nguyên).<br />    3. \\( m-n=-1 \\) và \\( m+n=-2 \\). Cộng hai vế ta được \\( 2m = -3 \\Rightarrow m=-1.5 \\) (Không phải số nguyên).<br />    4. \\( m-n=-2 \\) và \\( m+n=-1 \\). Cộng hai vế ta được \\( 2m = -3 \\Rightarrow m=-1.5 \\) (Không phải số nguyên).<br /><br /><b>Kết luận:</b> Không tồn tại cặp số nguyên \\((m, n)\\) nào có thể tạo ra số 2. Vậy hàm b) <b>KHÔNG</b> phải là toàn ánh.<br /><br />---<br /><h3>✍️ Trình bày ngắn gọn khi đi thi</h3><br /><b>a) Toàn ánh:</b><br />\\( \\forall y \\in \\mathbb{Z} \\), choose \\( (m, n) = (0, -y) \\in \\mathbb{Z} \\times \\mathbb{Z} \\).<br />Then \\( f(0, -y) = 2(0) - (-y) = y \\).<br />Therefore, \\( f \\) is onto.<br /><br /><b>b) Không toàn ánh:</b><br />Let \\( y = 2 \\). We show that there is no \\((m,n) \\in \\mathbb{Z} \\times \\mathbb{Z}\\) such that \\(f(m,n) = 2\\).<br />The equation \\( m^2 - n^2 = 2 \\Leftrightarrow (m-n)(m+n) = 2 \\) has no integer solutions for \\(m, n\\).<br />Therefore, \\( f \\) is not onto.",
+        "difficulty": "medium",
+        "topic": "Functions (Onto / Surjective)",
+        "hints": [
+          "Thần chú: 'Toàn ánh' (onto) ⇔ 'Mọi y đều có ít nhất một x'.",
+          "Để chứng minh toàn ánh, hãy tìm công thức tạo ra một giá trị `k` bất kỳ.",
+          "Để chứng minh không toàn ánh, chỉ cần tìm MỘT giá trị `k` không thể tạo ra được (ví dụ: số 2 trong câu b)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 5,
+        "question": "Determine whether each of these functions is a bijection from \\( \\mathbb{R} \\) to \\( \\mathbb{R} \\). If the function is a bijection, find its inverse.<br /><br />a) \\( f(x) = x^3 - 4 \\)<br />b) \\( f(x) = -3x^2 + 7 \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>a) \\( f(x) = x^3 - 4 \\) is a bijection.</b><br />- <b>Inverse function:</b> \\( f^{-1}(x) = \\sqrt[3]{x+4} \\).<br /><br /><b>b) \\( f(x) = -3x^2 + 7 \\) is not a bijection.</b><br />- It is not one-to-one (e.g., \\( f(1) = f(-1) = 4 \\)).<br />- It is not onto (its range is \\( (-\\infty, 7] \\), not all of \\( \\mathbb{R} \\)).",
+        "explanation": "<b>Bí quyết siêu tốc: Dùng 'Checklist Song Ánh' và thuật toán tìm hàm ngược.</b><br />Một hàm số là song ánh (bijection) nếu nó vừa là <b>Đơn ánh</b> (one-to-one) vừa là <b>Toàn ánh</b> (onto).<br /><br />---<br /><h3>Phân tích chi tiết hàm a) \\( f(x) = x^3 - 4 \\)</h3><br />- <b>Kiểm tra tính Đơn ánh (one-to-one):</b><br />  - Giả sử \\( f(x_1) = f(x_2) \\).<br />  - \\( x_1^3 - 4 = x_2^3 - 4 \\)<br />  - \\( x_1^3 = x_2^3 \\)<br />  - \\( x_1 = x_2 \\).<br />  Vì \\(f(x_1)=f(x_2)\\) chỉ xảy ra khi \\(x_1=x_2\\), hàm số này là đơn ánh. ✓<br /><br />- <b>Kiểm tra tính Toàn ánh (onto):</b><br />  - Ta cần chứng minh rằng với mọi số thực \\(y\\) bất kỳ, luôn tồn tại một số thực \\(x\\) sao cho \\(f(x)=y\\).<br />  - \\( x^3 - 4 = y \\)<br />  - \\( x^3 = y + 4 \\)<br />  - \\( x = \\sqrt[3]{y+4} \\).<br />  - Vì \\(y\\) là số thực, \\(y+4\\) cũng là số thực, và căn bậc ba của một số thực luôn là một số thực. Do đó, luôn tồn tại \\(x\\). Hàm số này là toàn ánh. ✓<br /><br />- <b>Kết luận và Tìm hàm ngược:</b><br />  - Vì hàm vừa đơn ánh vừa toàn ánh, nó là một <b>song ánh</b>.<br />  - Thuật toán tìm hàm ngược đã được thực hiện ở trên, ta chỉ cần thay \\(y\\) bằng \\(x\\): \\( f^{-1}(x) = \\sqrt[3]{x+4} \\).<br /><br />---<br /><h3>Phân tích chi tiết hàm b) \\( f(x) = -3x^2 + 7 \\)</h3><br />- <b>Kiểm tra tính Đơn ánh (one-to-one):</b><br />  - Dùng phương pháp tìm phản ví dụ.<br />  - Chọn \\( x=1 \\), ta có \\( f(1) = -3(1)^2 + 7 = 4 \\).<br />  - Chọn \\( x=-1 \\), ta có \\( f(-1) = -3(-1)^2 + 7 = 4 \\).<br />  - Vì \\( f(1) = f(-1) \\) nhưng \\( 1 \\neq -1 \\), hàm số này <b>không phải là đơn ánh</b>.<br /><br />- <b>Kết luận:</b> Vì hàm không phải đơn ánh, nó không thể là song ánh. Ta không cần kiểm tra tính toàn ánh nữa. (Dù vậy, nó cũng không toàn ánh vì giá trị lớn nhất của hàm là 7, không thể tạo ra các số lớn hơn 7).<br /><br />---<br /><h3>✍️ Trình bày ngắn gọn khi đi thi</h3><br /><b>a) \\( f(x) = x^3 - 4 \\)</b><br />- <b>One-to-one:</b> \\( f(x_1) = f(x_2) \\Rightarrow x_1^3 - 4 = x_2^3 - 4 \\Rightarrow x_1^3 = x_2^3 \\Rightarrow x_1 = x_2 \\). So \\(f\\) is one-to-one.<br />- <b>Onto:</b> For any \\( y \\in \\mathbb{R} \\), let \\( x = \\sqrt[3]{y+4} \\). Then \\( f(x) = (\\sqrt[3]{y+4})^3 - 4 = y \\). So \\(f\\) is onto.<br />- <b>Conclusion:</b> Since \\(f\\) is one-to-one and onto, it is a <b>bijection</b>.<br />- <b>Inverse:</b> \\( f^{-1}(x) = \\sqrt[3]{x+4} \\).<br /><br /><b>b) \\( f(x) = -3x^2 + 7 \\)</b><br />- Let \\(x_1 = 1, x_2 = -1\\).<br />- \\( f(1) = -3(1)^2+7 = 4 \\).<br />- \\( f(-1) = -3(-1)^2+7 = 4 \\).<br />- Since \\( f(1) = f(-1) \\) but \\( 1 \\neq -1 \\), \\(f\\) is <b>not one-to-one</b>.<br />- Therefore, \\(f\\) is <b>not a bijection</b>.",
+        "difficulty": "medium",
+        "topic": "Functions (Bijection & Inverse)",
+        "hints": [
+          "Thần chú: Song ánh (bijection) = Đơn ánh (one-to-one) + Toàn ánh (onto).",
+          "Để chứng minh không phải song ánh, chỉ cần chỉ ra nó không đơn ánh HOẶC không toàn ánh.",
+          "Thuật toán tìm hàm ngược: 1. Viết y=f(x), 2. Đổi chỗ x ↔ y, 3. Giải tìm y mới."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 6,
+        "question": "Determine whether each of these functions is a bijection from \\( \\mathbb{R} \\) to \\( \\mathbb{R} \\). If the function is a bijection, find its inverse.<br /><br />a) \\( f(x) = x^3 - 4 \\)<br />b) \\( f(x) = -3x^2 + 7 \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>a) \\( f(x) = x^3 - 4 \\) is a bijection.</b><br />- <b>Inverse function:</b> \\( f^{-1}(x) = \\sqrt[3]{x+4} \\).<br /><br /><b>b) \\( f(x) = -3x^2 + 7 \\) is not a bijection.</b><br />- It is not one-to-one (e.g., \\( f(1) = f(-1) = 4 \\)).<br />- It is not onto (its range is \\( (-\\infty, 7] \\), not all of \\( \\mathbb{R} \\)).",
+        "explanation": "<b>Bí quyết siêu tốc: Dùng 'Checklist Song Ánh' và thuật toán tìm hàm ngược.</b><br />Một hàm số là song ánh (bijection) nếu nó vừa là <b>Đơn ánh</b> (one-to-one) vừa là <b>Toàn ánh</b> (onto).<br /><br />---<br /><h3>Phân tích chi tiết hàm a) \\( f(x) = x^3 - 4 \\)</h3><br />- <b>Kiểm tra tính Đơn ánh (one-to-one):</b><br />  - Giả sử \\( f(x_1) = f(x_2) \\).<br />  - \\( x_1^3 - 4 = x_2^3 - 4 \\)<br />  - \\( x_1^3 = x_2^3 \\)<br />  - \\( x_1 = x_2 \\).<br />  Vì \\(f(x_1)=f(x_2)\\) chỉ xảy ra khi \\(x_1=x_2\\), hàm số này là đơn ánh. ✓<br /><br />- <b>Kiểm tra tính Toàn ánh (onto):</b><br />  - Ta cần chứng minh rằng với mọi số thực \\(y\\) bất kỳ, luôn tồn tại một số thực \\(x\\) sao cho \\(f(x)=y\\).<br />  - \\( x^3 - 4 = y \\)<br />  - \\( x^3 = y + 4 \\)<br />  - \\( x = \\sqrt[3]{y+4} \\).<br />  - Vì \\(y\\) là số thực, \\(y+4\\) cũng là số thực, và căn bậc ba của một số thực luôn là một số thực. Do đó, luôn tồn tại \\(x\\). Hàm số này là toàn ánh. ✓<br /><br />- <b>Kết luận và Tìm hàm ngược:</b><br />  - Vì hàm vừa đơn ánh vừa toàn ánh, nó là một <b>song ánh</b>.<br />  - Thuật toán tìm hàm ngược đã được thực hiện ở trên, ta chỉ cần thay \\(y\\) bằng \\(x\\): \\( f^{-1}(x) = \\sqrt[3]{x+4} \\).<br /><br />---<br /><h3>Phân tích chi tiết hàm b) \\( f(x) = -3x^2 + 7 \\)</h3><br />- <b>Kiểm tra tính Đơn ánh (one-to-one):</b><br />  - Dùng phương pháp tìm phản ví dụ.<br />  - Chọn \\( x=1 \\), ta có \\( f(1) = -3(1)^2 + 7 = 4 \\).<br />  - Chọn \\( x=-1 \\), ta có \\( f(-1) = -3(-1)^2 + 7 = 4 \\).<br />  - Vì \\( f(1) = f(-1) \\) nhưng \\( 1 \\neq -1 \\), hàm số này <b>không phải là đơn ánh</b>.<br /><br />- <b>Kết luận:</b> Vì hàm không phải đơn ánh, nó không thể là song ánh. Ta không cần kiểm tra tính toàn ánh nữa. (Dù vậy, nó cũng không toàn ánh vì giá trị lớn nhất của hàm là 7, không thể tạo ra các số lớn hơn 7).",
+        "difficulty": "medium",
+        "topic": "Functions (Bijection & Inverse)",
+        "hints": [
+          "Thần chú: Song ánh (bijection) = Đơn ánh (one-to-one) + Toàn ánh (onto).",
+          "Để chứng minh không phải song ánh, chỉ cần chỉ ra nó không đơn ánh HOẶC không toàn ánh.",
+          "Thuật toán tìm hàm ngược: 1. Viết y=f(x), 2. Đổi chỗ x ↔ y, 3. Giải tìm y mới."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 7,
+        "question": "Express the function \\( F(x) = \\sqrt{x+5} \\) as compositions of two functions.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Một cách biểu diễn phổ biến là:<br /><br />- Đặt hàm bên trong là \\( h(x) = x+5 \\).<br />- Đặt hàm bên ngoài là \\( g(x) = \\sqrt{x} \\).<br /><br />Khi đó, \\( F(x) \\) là hàm hợp \\( (g \\circ h)(x) \\), vì:<br />\\[ (g \\circ h)(x) = g(h(x)) = g(x+5) = \\sqrt{x+5} \\]",
+        "explanation": "<h3>Tư duy 'Bóc Hành' Siêu Tốc</h3><br />Để phân tích một hàm hợp, hãy nghĩ đến việc 'bóc' nó ra thành các lớp từ ngoài vào trong, giống như bóc một củ hành.<br /><br /><b>1. Tìm lớp vỏ (hàm bên ngoài):</b><br />- Khi bạn tính giá trị của \\( F(x) = \\sqrt{x+5} \\) với một số \\(x\\) cụ thể, hành động bạn làm <b>sau cùng</b> là gì?<br />- Đó là lấy <b>căn bậc hai</b> của một cái gì đó.<br />- Vậy, lớp vỏ (hàm bên ngoài) chính là hàm lấy căn bậc hai: \\( g(x) = \\sqrt{x} \\).<br /><br /><b>2. Tìm cái lõi (hàm bên trong):</b><br />- 'Cái gì đó' nằm bên trong dấu căn là gì?<br />- Đó là biểu thức \\( x+5 \\).<br />- Vậy, cái lõi (hàm bên trong) chính là: \\( h(x) = x+5 \\).<br /><br /><b>3. Ghép lại và kiểm tra:</b><br />- Hàm hợp là \\( g(h(x)) \\).<br />- Ta thay 'cái lõi' \\(h(x)\\) vào 'lớp vỏ' \\(g(x)\\), ta được \\( g(x+5) = \\sqrt{x+5} \\). Hoàn toàn chính xác!<br /><br /><b>Lưu ý:</b> Việc phân tích này không phải là duy nhất. Ví dụ, ta cũng có thể chọn \\( h(x) = x \\) và \\( g(x) = \\sqrt{x+5} \\), nhưng cách phân tích ở trên thường là cách tự nhiên và hữu ích nhất.",
+        "difficulty": "easy",
+        "topic": "Functions (Composition)",
+        "hints": [
+          "Tư duy 'bóc hành': Tìm hàm 'bên ngoài' (lớp vỏ) và hàm 'bên trong' (cái lõi).",
+          "Hành động bạn làm CUỐI CÙNG khi tính toán (lấy căn) chính là hàm bên ngoài g(x).",
+          "Nhớ rằng (g ∘ h)(x) có nghĩa là 'áp dụng h trước, sau đó áp dụng g cho kết quả'."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 8,
+        "question": "Find the next term and the \\(n\\)th term of the sequence:<br />\\[ 1, 3, 8, 16, 27, 41, \\dots \\]",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>Next Term:</b> 58<br /><br /><b>\\(n\\)th Term:</b> \\( a_n = \\frac{3n^2 - 5n + 4}{2} \\)",
+        "explanation": "<h3>Phương pháp Sai phân (Finite Differences)</h3><br />Đây là một kỹ thuật siêu mạnh để tìm công thức của các dãy số mà quy luật không rõ ràng ngay lập tức.<br /><br /><b>1. Tính sai phân cấp 1 (Hiệu số giữa các số hạng):</b><br />Dãy số: 1, 3, 8, 16, 27, 41<br />Hiệu số: \\( (3-1), (8-3), (16-8), (27-16), (41-27) \\)<br />→ Cấp 1: 2, 5, 8, 11, 14<br />Dãy này chưa phải là hằng số, ta tính tiếp.<br /><br /><b>2. Tính sai phân cấp 2 (Hiệu của các hiệu số):</b><br />Cấp 1: 2, 5, 8, 11, 14<br />Hiệu số: \\( (5-2), (8-5), (11-8), (14-11) \\)<br />→ Cấp 2: 3, 3, 3, 3<br />Dãy này là một hằng số! Điều này cho thấy công thức tổng quát là một <b>đa thức bậc hai</b> có dạng \\( a_n = An^2 + Bn + C \\).<br /><br /><b>3. Tìm số hạng tiếp theo:</b><br />- Sai phân cấp 2 tiếp theo là 3.<br />- Sai phân cấp 1 tiếp theo sẽ là \\( 14 + 3 = 17 \\).<br />- Số hạng tiếp theo của dãy gốc sẽ là \\( 41 + 17 = 58 \\).<br /><br /><b>4. Tìm công thức tổng quát:</b> (Dành cho nâng cao)<br />Bằng cách giải hệ phương trình với 3 giá trị đầu tiên, ta tìm được các hệ số A, B, C và ra được công thức ở trên.",
+        "difficulty": "hard",
+        "topic": "Sequences and Summations",
+        "hints": [
+          "Mẹo vàng: Nếu không thấy quy luật, hãy tính hiệu số giữa các số hạng liên tiếp.",
+          "Nếu hiệu số cấp 1 chưa phải hằng số, hãy tính tiếp hiệu số cấp 2.",
+          "Sai phân cấp 2 là hằng số ⇒ Công thức tổng quát là một hàm bậc hai."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 9,
+        "question": "Find the value of the sum \\( \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + \\frac{1}{16} + \\cdots \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "The value of the sum is <b>1</b>.<br /><br />This is an infinite geometric series with first term \\( a = \\frac{1}{2} \\) and common ratio \\( r = \\frac{1}{2} \\). The sum is calculated using the formula \\( S = \\frac{a}{1-r} \\).",
+        "explanation": "<h3>Giải bằng công thức chuỗi hình học vô hạn</h3><br /><b>1. Nhận dạng chuỗi:</b><br />- Ta thấy mỗi số hạng tiếp theo bằng số hạng trước đó nhân với \\(\\frac{1}{2}\\).<br />- Đây là một chuỗi hình học (cấp số nhân) vô hạn.<br /><br /><b>2. Xác định các tham số:</b><br />- Số hạng đầu tiên (first term): \\( a = \\frac{1}{2} \\).<br />- Công bội (common ratio): \\( r = \\frac{1}{2} \\).<br /><br /><b>3. Kiểm tra điều kiện hội tụ:</b><br />- Một chuỗi hình học vô hạn có tổng hữu hạn khi và chỉ khi giá trị tuyệt đối của công bội nhỏ hơn 1: \\( |r| < 1 \\).<br />- Ở đây, \\( |\\frac{1}{2}| < 1 \\), vậy chuỗi này hội tụ.<br /><br /><b>4. Áp dụng công thức tính tổng:</b><br />\\[ S = \\frac{a}{1-r} \\]<br />\\[ S = \\frac{\\frac{1}{2}}{1 - \\frac{1}{2}} = \\frac{\\frac{1}{2}}{\\frac{1}{2}} = 1 \\]<br /><br /><b>Mẹo tư duy trực quan (Nghịch lý Zeno):</b><br />Hãy tưởng tượng một quãng đường dài 1 mét. Lần đầu bạn đi được 1/2 quãng đường. Lần tiếp theo đi 1/2 quãng đường còn lại (tức là 1/4). Cứ tiếp tục như vậy, bạn sẽ ngày càng tiến gần đến điểm cuối nhưng không bao giờ vượt qua nó. Tổng quãng đường bạn đi sẽ tiến chính xác đến 1.",
+        "difficulty": "easy",
+        "topic": "Sequences and Summations (Geometric Series)",
+        "hints": [
+          "Đây là một chuỗi hình học (cấp số nhân). Hãy tìm số hạng đầu `a` và công bội `r`.",
+          "Nhớ công thức tính tổng chuỗi hình học vô hạn: S = a / (1 - r).",
+          "Công thức này chỉ hoạt động khi |r| < 1."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 10,
+        "question": "Show that \\( |(0, 1)| = |(0, 1]| \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "To show the sets have the same cardinality, we construct a <b>bijection</b> \\( f: (0, 1) \\to (0, 1] \\).<br /><br />Consider the sequence \\( x_n = \\frac{1}{2^n} \\) for \\(n=1, 2, ...\\), i.e., the set \\( A = \\{\\frac{1}{2}, \\frac{1}{4}, \\frac{1}{8}, \\dots\\} \\).<br /><br />The bijection is defined as:<br />\\[ f(x) = \\begin{cases} 1 & \\text{if } x = \\frac{1}{2} \\\\ \\frac{1}{2^{n-1}} & \\text{if } x = \\frac{1}{2^n} \\text{ for } n \\ge 2 \\\\ x & \\text{otherwise} \\end{cases} \\]",
+        "explanation": "<h3>Tư duy 'Khách sạn Hilbert'</h3><br />Bài toán này là một ví dụ kinh điển cho thấy tính chất kỳ lạ của các tập hợp vô hạn. Làm sao một tập hợp (0, 1] chứa một phần tử (số 1) mà tập (0, 1) không có, lại có thể có cùng 'kích thước' (lực lượng)?<br /><br /><b>Ý tưởng:</b> Ta sẽ 'dọn phòng' để nhét thêm số 1 vào.<br /><br /><b>1. Chọn ra một dãy vô hạn các 'phòng' trong (0, 1):</b><br />- Ta chọn các phòng có số hiệu \\( \\frac{1}{2}, \\frac{1}{4}, \\frac{1}{8}, \\frac{1}{16}, \\dots \\).<br /><br /><b>2. Thực hiện việc 'dọn phòng':</b><br />- Ta yêu cầu 'vị khách' ở phòng \\( \\frac{1}{2} \\) chuyển sang phòng mới là phòng số \\( 1 \\). (Đây là phần tử mà chúng ta cần thêm vào).<br />- Yêu cầu vị khách ở phòng \\( \\frac{1}{4} \\) chuyển sang phòng \\( \\frac{1}{2} \\).<br />- Yêu cầu vị khách ở phòng \\( \\frac{1}{8} \\) chuyển sang phòng \\( \\frac{1}{4} \\).<br />- Cứ tiếp tục như vậy, khách ở phòng \\( \\frac{1}{2^n} \\) sẽ chuyển sang phòng \\( \\frac{1}{2^{n-1}} \\).<br /><br /><b>3. Các vị khách khác:</b><br />- Tất cả các vị khách khác không có tên trong danh sách trên (ví dụ: \\(\\frac{1}{3}, \\frac{\\pi}{4}, \\dots\\)) thì cứ ở yên tại phòng của mình.<br /><br /><b>Kết quả:</b><br />- Mọi 'vị khách' từ tập (0, 1) ban đầu đều có một phòng mới trong tập (0, 1].<br />- Mọi 'phòng' trong tập (0, 1] đều có khách.<br />- Không có hai khách nào ở chung một phòng.<br />- Phép 'dọn phòng' này chính là một <b>song ánh (bijection)</b>, chứng tỏ hai tập có cùng lực lượng.",
+        "difficulty": "hard",
+        "topic": "Cardinality of Sets",
+        "hints": [
+          "Để chứng minh hai tập có cùng lực lượng, ta cần tìm một song ánh (bijection) giữa chúng.",
+          "Ý tưởng là 'dọn chỗ' cho phần tử mới (số 1) bằng cách dịch chuyển một dãy vô hạn các phần tử.",
+          "Hãy nghĩ đến nghịch lý 'Khách sạn của Hilbert' (Hilbert's Hotel)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 11,
+        "question": "What can you say about the sets A and B if we know that<br /><br />1) \\( A \\cup B = A \\)?<br />2) \\( A - B = A \\)?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "1) For \\( A \\cup B = A \\), it implies that <b>B is a subset of A (\\( B \\subseteq A \\))</b>.<br /><br />2) For \\( A - B = A \\), it implies that <b>A and B are disjoint (\\( A \\cap B = \\emptyset \\))</b>.",
+        "explanation": "<h3>Tư duy trực quan về các phép toán tập hợp</h3><br /><b>1. Phân tích \\( A \\cup B = A \\) (Phép Hợp)</b><br />- <b>Câu hỏi cốt lõi:</b> Khi nào việc 'hợp nhất' B vào A không làm A thay đổi?<br />- <b>Câu trả lời:</b> Điều này chỉ xảy ra khi mọi thứ có trong B đều đã nằm sẵn trong A rồi. Nếu B có bất kỳ phần tử nào không thuộc A, thì khi hợp lại, A sẽ 'to ra'.<br />- <b>Kết luận:</b> Mọi phần tử của B phải thuộc A. Nói cách khác, B là tập con của A (\\( B \\subseteq A \\)).<br /><br /><b>2. Phân tích \\( A - B = A \\) (Phép Hiệu)</b><br />- <b>Câu hỏi cốt lõi:</b> Khi nào việc 'loại bỏ' các phần tử của B ra khỏi A không làm A thay đổi?<br />- <b>Câu trả lời:</b> Điều này chỉ xảy ra khi không có phần tử nào của B nằm trong A để mà loại bỏ. Nếu có dù chỉ một phần tử chung, A sẽ 'nhỏ đi'.<br />- <b>Kết luận:</b> Giao của A và B phải là rỗng. Nói cách khác, A và B rời nhau (disjoint), \\( A \\cap B = \\emptyset \\).",
+        "difficulty": "easy",
+        "topic": "Set Theory (Set Properties)",
+        "hints": [
+          "A ∪ B = A: 'Gộp B vào A mà không đổi' → B phải nằm gọn trong A.",
+          "A - B = A: 'Trừ B khỏi A mà không đổi' → A và B không có gì chung.",
+          "Hãy vẽ biểu đồ Venn trong đầu để hình dung các trường hợp này."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 12,
+        "question": "Find \\( A^2 \\) if<br /><br />a) \\( A = \\{0, 1, 3\\} \\).<br />b) \\( A = \\{1, 2, a, b\\} \\).",
+        "image": null,
+        "options": [],
+        "correctAnswer": "a) For \\( A = \\{0, 1, 3\\} \\), \\( A^2 \\) is:<br />\\[ \\{ (0,0), (0,1), (0,3), (1,0), (1,1), (1,3), (3,0), (3,1), (3,3) \\} \\]<br /><br />b) For \\( A = \\{1, 2, a, b\\} \\), \\( A^2 \\) is:<br />\\[ \\{ (1,1), (1,2), (1,a), (1,b), \\]<br />\\[ (2,1), (2,2), (2,a), (2,b), \\]<br />\\[ (a,1), (a,2), (a,a), (a,b), \\]<br />\\[ (b,1), (b,2), (b,a), (b,b) \\} \\]",
+        "explanation": "<h3>Bản chất của \\( A^2 \\)</h3><br />Ký hiệu \\( A^2 \\) là một cách viết tắt cho <b>Tích Descartes</b> (Cartesian Product) của A với chính nó, tức là \\( A \\times A \\).<br /><br /><b>Tích Descartes \\( A \\times A \\)</b> là tập hợp của tất cả các <b>cặp có thứ tự</b> \\( (x, y) \\) mà cả \\(x\\) và \\(y\\) đều là phần tử của A.<br /><br /><b>Mẹo giải siêu tốc: Dùng phương pháp 'Quét'</b><br />1. Lấy phần tử đầu tiên của A, ghép lần lượt với TẤT CẢ các phần tử của A (bao gồm cả chính nó).<br />2. Lấy phần tử thứ hai của A, lặp lại quá trình.<br />3. Tiếp tục cho đến khi hết các phần tử.<br /><br /><b>Áp dụng cho câu a) \\( A = \\{0, 1, 3\\} \\):</b><br />- <b>Quét với 0:</b> (0,0), (0,1), (0,3)<br />- <b>Quét với 1:</b> (1,0), (1,1), (1,3)<br />- <b>Quét với 3:</b> (3,0), (3,1), (3,3)<br />Gộp tất cả lại ta được kết quả cuối cùng.<br /><br /><b>Lưu ý:</b> Nếu tập A có \\(n\\) phần tử, thì tập \\( A^2 \\) sẽ có \\( n \\times n = n^2 \\) phần tử.",
+        "difficulty": "easy",
+        "topic": "Set Theory (Cartesian Product)",
+        "hints": [
+          "Nhớ rằng A² chính là A × A (Tích Descartes).",
+          "Kết quả là một tập hợp các 'cặp có thứ tự' (x, y).",
+          "Mẹo: Lấy từng phần tử của A, ghép đôi với tất cả các phần tử trong A."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 13,
+        "question": "Let A and B be sets. Show that:<br /><br />a) \\( (A \\cap B) \\subseteq A \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "The proof is done by definition.<br /><br />Let \\(x\\) be an arbitrary element of \\(A \\cap B\\). By the definition of intersection, \\(x\\) must be an element of A <b>and</b> an element of B. Since \\(x\\) is an element of A, we have shown that every element of \\(A \\cap B\\) is also an element of A. Therefore, \\( (A \\cap B) \\subseteq A \\).",
+        "explanation": "<h3>Tư duy siêu tốc: Dùng định nghĩa cốt lõi</h3><br />Để chứng minh \\(X \\subseteq Y\\), ta chỉ cần chỉ ra rằng: 'Nếu một phần tử bất kỳ thuộc X, thì nó cũng phải thuộc Y'.<br /><br /><b>Các bước chứng minh chi tiết:</b><br />1. <b>Giả sử:</b> Lấy một phần tử \\(x\\) bất kỳ sao cho \\( x \\in (A \\cap B) \\).<br />2. <b>Sử dụng định nghĩa:</b> Theo định nghĩa của phép <b>giao</b> (intersection \\(\\cap\\)), một phần tử thuộc \\(A \\cap B\\) khi và chỉ khi nó thuộc cả A <b>VÀ</b> thuộc cả B.<br />   \\[ x \\in (A \\cap B) \\implies (x \\in A) \\land (x \\in B) \\]<br />3. <b>Rút ra kết luận:</b> Từ mệnh đề \\( (x \\in A) \\land (x \\in B) \\), ta có thể suy ra một cách hiển nhiên rằng \\( x \\in A \\).<br />4. <b>Tổng quát hóa:</b> Vì ta đã chỉ ra rằng một phần tử \\(x\\) bất kỳ của \\(A \\cap B\\) cũng là một phần tử của A, nên theo định nghĩa tập con, ta có \\( (A \\cap B) \\subseteq A \\).",
+        "difficulty": "easy",
+        "topic": "Set Theory (Subset Proof)",
+        "hints": [
+          "Thần chú: Để chứng minh `X ⊆ Y`, hãy bắt đầu bằng 'Giả sử x ∈ X...'.",
+          "Bản chất của phép giao (∩) là 'phần chung'. Phần chung của hai tập thì chắc chắn phải nằm trong mỗi tập đó.",
+          "Hãy vẽ biểu đồ Venn trong đầu để thấy điều này là hiển nhiên."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 14,
+        "question": "Let A and B be sets. Show that:<br /><br />b) \\( A - B \\subseteq A \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "The proof is done by definition.<br /><br />Let \\(x\\) be an arbitrary element of \\(A - B\\). By the definition of set difference, \\(x\\) must be an element of A <b>and not</b> an element of B. Since \\(x\\) is an element of A, we have shown that every element of \\(A - B\\) is also an element of A. Therefore, \\( A - B \\subseteq A \\).",
+        "explanation": "<h3>Tư duy siêu tốc: Dùng định nghĩa cốt lõi</h3><br />Tương tự câu trước, để chứng minh \\(X \\subseteq Y\\), ta chỉ cần chỉ ra rằng: 'Nếu một phần tử bất kỳ thuộc X, thì nó cũng phải thuộc Y'.<br /><br /><b>Các bước chứng minh chi tiết:</b><br />1. <b>Giả sử:</b> Lấy một phần tử \\(x\\) bất kỳ sao cho \\( x \\in (A - B) \\).<br />2. <b>Sử dụng định nghĩa:</b> Theo định nghĩa của phép <b>hiệu</b> (set difference \\(-\\)), một phần tử thuộc \\(A - B\\) khi và chỉ khi nó thuộc A <b>VÀ KHÔNG</b> thuộc B.<br />   \\[ x \\in (A - B) \\implies (x \\in A) \\land (x \\notin B) \\]<br />3. <b>Rút ra kết luận:</b> Từ mệnh đề \\( (x \\in A) \\land (x \\notin B) \\), ta có thể suy ra một cách hiển nhiên rằng \\( x \\in A \\).<br />4. <b>Tổng quát hóa:</b> Vì ta đã chỉ ra rằng một phần tử \\(x\\) bất kỳ của \\(A - B\\) cũng là một phần tử của A, nên theo định nghĩa tập con, ta có \\( A - B \\subseteq A \\).",
+        "difficulty": "easy",
+        "topic": "Set Theory (Subset Proof)",
+        "hints": [
+          "Thần chú: Để chứng minh `X ⊆ Y`, hãy bắt đầu bằng 'Giả sử x ∈ X...'.",
+          "Bản chất của phép hiệu A - B là 'lấy A, vứt đi phần chung với B'. Kết quả chắc chắn vẫn nằm trong A.",
+          "Hãy vẽ biểu đồ Venn trong đầu để thấy điều này là hiển nhiên."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 15,
+        "question": "Let A and B be sets. Show that:<br /><br />c) \\( \\overline{A \\cup B} = \\overline{A} \\cap \\overline{B} \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "This identity is one of <b>De Morgan's Laws</b> for sets.<br /><br />The proof requires showing <b>mutual subset inclusion</b>:<br />1. Show that \\( \\overline{A \\cup B} \\subseteq \\overline{A} \\cap \\overline{B} \\).<br />2. Show that \\( \\overline{A} \\cap \\overline{B} \\subseteq \\overline{A \\cup B} \\).<br /><br />A faster method uses logical equivalences based on definitions.",
+        "explanation": "<h3>Phương pháp 1: Chứng minh Bao hàm hai chiều</h3><br /><b>Phần 1: Chứng minh \\( \\overline{A \\cup B} \\subseteq \\overline{A} \\cap \\overline{B} \\)</b><br />- Giả sử \\( x \\in \\overline{A \\cup B} \\).<br />- Theo định nghĩa phần bù, \\( x \\notin (A \\cup B) \\).<br />- Điều này có nghĩa là \\(x\\) không thuộc A VÀ \\(x\\) không thuộc B, tức là \\( (x \\notin A) \\land (x \\notin B) \\).<br />- Từ \\( x \\notin A \\), ta có \\( x \\in \\overline{A} \\).<br />- Từ \\( x \\notin B \\), ta có \\( x \\in \\overline{B} \\).<br />- Vì \\( x \\in \\overline{A} \\) và \\( x \\in \\overline{B} \\), suy ra \\( x \\in (\\overline{A} \\cap \\overline{B}) \\).<br /><br /><b>Phần 2: Chứng minh \\( \\overline{A} \\cap \\overline{B} \\subseteq \\overline{A \\cup B} \\)</b><br />- Giả sử \\( y \\in (\\overline{A} \\cap \\overline{B}) \\).<br />- Theo định nghĩa phép giao, \\( y \\in \\overline{A} \\) và \\( y \\in \\overline{B} \\).<br />- Điều này có nghĩa là \\( (y \\notin A) \\land (y \\notin B) \\).<br />- Do đó, \\(y\\) không thể thuộc A hoặc B, tức là \\( y \\notin (A \\cup B) \\).<br />- Theo định nghĩa phần bù, suy ra \\( y \\in \\overline{A \\cup B} \\).<br /><br />---<br /><h3>Phương pháp 2: Dùng Tương đương Logic (Siêu Tốc)</h3><br />\\[ x \\in \\overline{A \\cup B} \\]<br />\\[ \\Leftrightarrow x \\notin (A \\cup B) \\]<br />\\[ \\Leftrightarrow \\neg (x \\in A \\lor x \\in B) \\]<br />\\[ \\Leftrightarrow (x \\notin A) \\land (x \\notin B) \\text{  (De Morgan's Law for logic)} \\]<br />\\[ \\Leftrightarrow (x \\in \\overline{A}) \\land (x \\in \\overline{B}) \\]<br />\\[ \\Leftrightarrow x \\in (\\overline{A} \\cap \\overline{B}) \\]",
+        "difficulty": "medium",
+        "topic": "Set Theory (De Morgan's Laws)",
+        "hints": [
+          "Đây là một trong hai Luật De Morgan cho tập hợp. Hãy học thuộc tên của nó!",
+          "Thần chú: 'Phần bù của HỢP là GIAO của các phần bù'.",
+          "Cách chứng minh nhanh nhất là dùng sự tương đương giữa phép toán tập hợp và phép toán logic."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 16,
+        "question": "What can you say about the sets A and B if we know that<br /><br />1) \\( A \\cup B = A \\)?<br />2) \\( A - B = A \\)?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "1) For \\( A \\cup B = A \\), it implies that <b>B is a subset of A (\\( B \\subseteq A \\))</b>.<br /><br />2) For \\( A - B = A \\), it implies that <b>A and B are disjoint (\\( A \\cap B = \\emptyset \\))</b>.",
+        "explanation": "<h3>Tư duy trực quan về các phép toán tập hợp</h3><br /><b>1. Phân tích \\( A \\cup B = A \\) (Phép Hợp)</b><br />- <b>Câu hỏi cốt lõi:</b> Khi nào việc 'hợp nhất' B vào A không làm A thay đổi?<br />- <b>Câu trả lời:</b> Điều này chỉ xảy ra khi mọi thứ có trong B đều đã nằm sẵn trong A rồi. Nếu B có bất kỳ phần tử nào không thuộc A, thì khi hợp lại, A sẽ 'to ra'.<br />- <b>Kết luận:</b> Mọi phần tử của B phải thuộc A. Nói cách khác, B là tập con của A (\\( B \\subseteq A \\)).<br /><br /><b>2. Phân tích \\( A - B = A \\) (Phép Hiệu)</b><br />- <b>Câu hỏi cốt lõi:</b> Khi nào việc 'loại bỏ' các phần tử của B ra khỏi A không làm A thay đổi?<br />- <b>Câu trả lời:</b> Điều này chỉ xảy ra khi không có phần tử nào của B nằm trong A để mà loại bỏ. Nếu có dù chỉ một phần tử chung, A sẽ 'nhỏ đi'.<br />- <b>Kết luận:</b> Giao của A và B phải là rỗng. Nói cách khác, A và B rời nhau (disjoint), \\( A \\cap B = \\emptyset \\).",
+        "difficulty": "easy",
+        "topic": "Set Theory (Set Properties)",
+        "hints": [
+          "A ∪ B = A: 'Gộp B vào A mà không đổi' → B phải nằm gọn trong A.",
+          "A - B = A: 'Trừ B khỏi A mà không đổi' → A và B không có gì chung.",
+          "Hãy vẽ biểu đồ Venn trong đầu để hình dung các trường hợp này."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 17,
+        "question": "Suppose that the universal set is \\( U = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\} \\). Express the set \\( \\{1, 3, 6, 10\\} \\) with bit strings where the ith bit in the string is 1 if i is in the set and 0 otherwise.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "The bit string representation is <b>1010010001</b>.",
+        "explanation": "<h3>Tư duy 'Checklist' Siêu Tốc</h3><br />Cách nhanh nhất để làm bài này là tạo một 'checklist' 10 vị trí tương ứng với các số từ 1 đến 10, sau đó điền vào.<br /><br /><b>1. Tạo khuôn mẫu:</b><br />- Vẽ ra 10 vị trí trống, đại diện cho các số từ 1 đến 10:<br />\\[ \\_\\_\\_\\_\\_\\_\\_\\_\\_\\_ \\]<br />\\[ \\text{pos: } 1\\, 2\\, 3\\, 4\\, 5\\, 6\\, 7\\, 8\\, 9\\, 10 \\]<br /><br /><b>2. Điền số 1 (đánh dấu 'có'):</b><br />- Tập hợp đã cho là \\( \\{1, 3, 6, 10\\} \\).<br />- Đặt số 1 vào các vị trí 1, 3, 6, và 10.<br />\\[ 1\\_1\\_\\_1\\_\\_\\_1 \\]<br /><br /><b>3. Điền số 0 (đánh dấu 'không'):</b><br />- Điền số 0 vào tất cả các vị trí còn lại.<br />\\[ 1010010001 \\]<br /><br /><b>Kết quả cuối cùng:</b> Chuỗi bit là <b>1010010001</b>.",
+        "difficulty": "easy",
+        "topic": "Set Theory (Bit String Representation)",
+        "hints": [
+          "Tạo một chuỗi 10 vị trí trống, tương ứng với U từ 1 đến 10.",
+          "Số nào có trong tập hợp, điền '1' vào vị trí đó.",
+          "Các vị trí còn lại, điền '0'."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 18,
+        "question": "Given two functions \\( f : \\{a, b, c\\} \\rightarrow \\{1, 2, 3\\} \\) and \\( g : \\{1, 2, 3\\} \\rightarrow \\{a, b, c\\} \\) where<br />\\[ f = \\{(a, 2), (b, 3), (c, 1)\\} \\text{ and } g = \\{(1, b), (2, a), (3, b)\\} \\]<br />Determine whether these functions are one-to-one, onto, bijective:<br />\\( f, g, f \\circ g, g \\circ f \\).",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>Summary of Results:</b><br /><br />- <b>\\(f\\):</b> One-to-one, onto, and <b>bijective</b>.<br />- <b>\\(g\\):</b> Not one-to-one, not onto.<br />- <b>\\(f \\circ g\\):</b> Not one-to-one, not onto.<br />- <b>\\(g \\circ f\\):</b> Not one-to-one, not onto.",
+        "explanation": "<h3>Checklist Siêu Tốc</h3><br />- <b>One-to-one (Đơn ánh):</b> Mỗi đầu vào khác nhau phải cho ra một đầu ra khác nhau.<br />- <b>Onto (Toàn ánh):</b> Mọi phần tử của tập đích đều phải được 'ngắm tới' ít nhất một lần.<br />- <b>Bijective (Song ánh):</b> Phải thỏa mãn cả hai điều trên.<br /><br />---<br /><h3>1. Phân tích hàm \\(f\\)</h3><br />- \\(f(a)=2, f(b)=3, f(c)=1\\)<br />- <b>Đơn ánh?</b> Có. Các đầu ra (2, 3, 1) đều khác nhau. ✓<br />- <b>Toàn ánh?</b> Có. Tập giá trị {1, 2, 3} bằng tập đích {1, 2, 3}. ✓<br />- <b>Kết luận:</b> \\(f\\) là song ánh.<br /><br />---<br /><h3>2. Phân tích hàm \\(g\\)</h3><br />- \\(g(1)=b, g(2)=a, g(3)=b\\)<br />- <b>Đơn ánh?</b> Không. Hai đầu vào khác nhau (1 và 3) cùng cho ra một đầu ra (b). ✗<br />- <b>Toàn ánh?</b> Không. Phần tử 'c' trong tập đích không bao giờ được ngắm tới. ✗<br />- <b>Kết luận:</b> \\(g\\) không đơn ánh, không toàn ánh.<br /><br />---<br /><h3>3. Phân tích hàm hợp \\(f \\circ g\\)</h3><br />- Đầu tiên, ta phải tính hàm hợp: \\( (f \\circ g)(x) = f(g(x)) \\)<br />  - \\( (f \\circ g)(1) = f(g(1)) = f(b) = 3 \\)<br />  - \\( (f \\circ g)(2) = f(g(2)) = f(a) = 2 \\)<br />  - \\( (f \\circ g)(3) = f(g(3)) = f(b) = 3 \\)<br />- Vậy \\( f \\circ g = \\{(1, 3), (2, 2), (3, 3)\\} \\)<br />- <b>Đơn ánh?</b> Không. Hai đầu vào (1 và 3) cùng cho ra đầu ra là 3. ✗<br />- <b>Toàn ánh?</b> Không. Phần tử '1' trong tập đích không bao giờ được ngắm tới. ✗<br />- <b>Kết luận:</b> \\(f \\circ g\\) không đơn ánh, không toàn ánh.<br /><br />---<br /><h3>4. Phân tích hàm hợp \\(g \\circ f\\)</h3><br />- Tính hàm hợp: \\( (g \\circ f)(x) = g(f(x)) \\)<br />  - \\( (g \\circ f)(a) = g(f(a)) = g(2) = a \\)<br />  - \\( (g \\circ f)(b) = g(f(b)) = g(3) = b \\)<br />  - \\( (g \\circ f)(c) = g(f(c)) = g(1) = b \\)<br />- Vậy \\( g \\circ f = \\{(a, a), (b, b), (c, b)\\} \\)<br />- <b>Đơn ánh?</b> Không. Hai đầu vào (b và c) cùng cho ra đầu ra là b. ✗<br />- <b>Toàn ánh?</b> Không. Phần tử 'c' trong tập đích không bao giờ được ngắm tới. ✗<br />- <b>Kết luận:</b> \\(g \\circ f\\) không đơn ánh, không toàn ánh.",
+        "difficulty": "hard",
+        "topic": "Functions (Properties of Composition)",
+        "hints": [
+          "Mẹo đơn ánh: Tìm xem có hai mũi tên nào chụm vào cùng một điểm ở đầu ra không.",
+          "Mẹo toàn ánh: Kiểm tra xem có điểm nào ở tập đích bị 'bỏ rơi' không.",
+          "Để tính f∘g, hãy đi từ trong ra ngoài: áp dụng g trước, rồi áp dụng f cho kết quả."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 19,
+        "question": "Determine whether \\( f : \\mathbb{Z} \\times \\mathbb{Z} \\rightarrow \\mathbb{Z} \\) is onto if<br /><br />a) \\( f(m, n) = m + n \\)<br />b) \\( f(m, n) = m^2 + n^2 \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "a) <b>Yes, \\( f(m, n) = m + n \\) is onto.</b><br />For any integer \\(k\\), we can choose the input \\((m, n) = (k, 0)\\) to produce \\(k\\).<br /><br />b) <b>No, \\( f(m, n) = m^2 + n^2 \\) is not onto.</b><br />It is impossible to produce any negative integer, for example, -1.",
+        "explanation": "<b>Mẹo siêu tốc: Để kiểm tra tính 'toàn ánh' (onto), hãy tự hỏi: 'Tôi có thể tạo ra BẤT KỲ số nguyên nào ở đầu ra không?'</b><br /><br />---<br /><h3>Kiểm tra hàm a) \\( f(m, n) = m + n \\)</h3><br />- <b>Thử thách:</b> Cho một số nguyên \\(k\\) bất kỳ, tôi có thể tìm được cặp số nguyên \\((m, n)\\) sao cho \\( m+n = k \\) không?<br />- <b>Chiến lược tạo siêu dễ:</b> Hãy cố định một biến. Đặt \\( n = 0 \\).<br />- Khi đó phương trình trở thành \\( m + 0 = k \\), hay \\( m = k \\).<br />- Vì \\(k\\) là số nguyên, \\(m=k\\) cũng là số nguyên. Cặp \\((k, 0)\\) là một cặp số nguyên hợp lệ.<br />- <b>Ví dụ:</b> Để tạo ra \\(k=50\\), ta chỉ cần chọn đầu vào là \\((50, 0)\\).<br /><br /><b>Kết luận:</b> Luôn có thể tạo ra mọi số nguyên. Vậy hàm a) <b>LÀ</b> toàn ánh.<br /><br />---<br /><h3>Kiểm tra hàm b) \\( f(m, n) = m^2 + n^2 \\)</h3><br />- <b>Thử thách:</b> Liệu tôi có thể tạo ra một số nguyên \\(k\\) bất kỳ không?<br />- <b>Tìm điểm yếu (kẻ phá đám):</b><br />  - \\(m\\) và \\(n\\) là các số nguyên.<br />  - Bình phương của một số nguyên không bao giờ âm: \\( m^2 \\ge 0 \\) và \\( n^2 \\ge 0 \\).<br />  - Do đó, tổng của chúng cũng không bao giờ âm: \\( m^2 + n^2 \\ge 0 \\).<br />- <b>Kẻ phá đám:</b> Không có cách nào để tạo ra một số nguyên âm, ví dụ như \\( k = -1 \\).<br /><br /><b>Kết luận:</b> Vì có những số nguyên không thể được tạo ra, hàm b) <b>KHÔNG</b> phải là toàn ánh.",
+        "difficulty": "medium",
+        "topic": "Functions (Onto / Surjective)",
+        "hints": [
+          "Thần chú: 'Toàn ánh' (onto) ⇔ 'Mọi y đều có ít nhất một x'.",
+          "Để chứng minh 'toàn ánh', hãy tìm một công thức để tạo ra một giá trị `k` bất kỳ.",
+          "Để chứng minh 'không toàn ánh', chỉ cần tìm MỘT giá trị `k` không thể tạo ra được (ví dụ: số âm, số lẻ...)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 20,
+        "question": "Suppose that \\( g \\) is a function from \\( A \\) to \\( B \\) and \\( f \\) is a function from \\( B \\) to \\( C \\). Show that if both \\( f \\) and \\( g \\) are onto functions, then \\( f \\circ g \\) is also onto.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "To prove \\( f \\circ g \\) is onto, we must show that for any element \\( c \\in C \\), there exists an element \\( a \\in A \\) such that \\( (f \\circ g)(a) = c \\).<br /><br /><b>The proof proceeds as follows:</b><br />1. Let \\( c \\) be an arbitrary element in \\( C \\).<br />2. Since \\( f: B \\to C \\) is onto, there exists a \\( b \\in B \\) such that \\( f(b) = c \\).<br />3. Since \\( g: A \\to B \\) is onto, for this \\( b \\), there exists an \\( a \\in A \\) such that \\( g(a) = b \\).<br />4. Therefore, \\( (f \\circ g)(a) = f(g(a)) = f(b) = c \\).<br />We have found an \\(a\\) for any \\(c\\), so \\( f \\circ g \\) is onto.",
+        "explanation": "<h3>Tư duy 'Lần ngược dấu vết'</h3><br />Để chứng minh hàm hợp \\( f \\circ g \\) là toàn ánh (onto), ta phải bắt đầu từ đích (tập C) và tìm đường quay trở lại vạch xuất phát (tập A).<br /><br /><b>1. Đặt mục tiêu:</b><br />- Ta cần chỉ ra rằng mọi phần tử \\(c\\) trong tập \\(C\\) đều có thể 'được tạo ra' từ một phần tử \\(a\\) nào đó trong tập \\(A\\) thông qua hàm \\(f \\circ g\\).<br /><br /><b>2. Lần ngược bước đầu tiên (Dùng tính toàn ánh của \\(f\\)):</b><br />- Ta đang ở \\(c \\in C\\). Hàm \\(f\\) là con đường nối từ \\(B\\) đến \\(C\\).<br />- Vì \\(f\\) là toàn ánh, ta biết chắc chắn rằng mọi \\(c\\) ở \\(C\\) đều phải có một 'nguồn gốc' \\(b\\) nào đó ở \\(B\\). Tức là, tồn tại \\(b \\in B\\) sao cho \\(f(b) = c\\).<br /><br /><b>3. Lần ngược bước thứ hai (Dùng tính toàn ánh của \\(g\\)):</b><br />- Bây giờ ta đã tìm ra \\(b \\in B\\). Hàm \\(g\\) là con đường nối từ \\(A\\) đến \\(B\\).<br />- Vì \\(g\\) cũng là toàn ánh, ta biết chắc chắn rằng \\(b\\) này cũng phải có một 'nguồn gốc' \\(a\\) nào đó ở \\(A\\). Tức là, tồn tại \\(a \\in A\\) sao cho \\(g(a) = b\\).<br /><br /><b>4. Kết nối các dấu vết:</b><br />- Ta đã tìm được một \\(a\\) ở \\(A\\). Hãy xem nó tạo ra gì:<br />\\[ (f \\circ g)(a) = f(g(a)) = f(b) = c \\]<br />- Hoàn hảo! Ta đã tìm được con đường từ \\(a\\) đến \\(c\\). Vì ta có thể làm điều này với mọi \\(c\\), nên \\(f \\circ g\\) là toàn ánh.",
+        "difficulty": "medium",
+        "topic": "Functions (Properties of Composition)",
+        "hints": [
+          "Thần chú chứng minh toàn ánh: 'Hãy bắt đầu từ một phần tử bất kỳ ở tập đích'.",
+          "Làm việc ngược: Từ c ∈ C, dùng f-onto để tìm b ∈ B. Sau đó, dùng g-onto để tìm a ∈ A.",
+          "Toàn ánh + Toàn ánh = Toàn ánh. (Điều này không đúng với đơn ánh!)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 21,
+        "question": "Determine whether each of these functions is a bijection from \\( \\mathbb{R} \\) to \\( \\mathbb{R} \\). If the function is a bijection, find its inverse.<br /><br />a) \\( f(x) = 3x - 7 \\)<br />b) \\( f(x) = x^2 - 3x + 2 \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>a) \\( f(x) = 3x - 7 \\) is a bijection.</b><br />- It is a linear function with a non-zero slope, so it is both one-to-one and onto.<br />- <b>Inverse function:</b> \\( f^{-1}(x) = \\frac{x+7}{3} \\).<br /><br /><b>b) \\( f(x) = x^2 - 3x + 2 \\) is not a bijection.</b><br />- It is a quadratic function, so its graph is a parabola which fails the Horizontal Line Test. It is not one-to-one (e.g., \\( f(1) = f(2) = 0 \\)).",
+        "explanation": "<b>Bí quyết siêu tốc: Nhận dạng đồ thị và áp dụng checklist.</b><br />Checklist Song ánh (Bijection):<br />1. Phải là <b>Đơn ánh</b> (one-to-one) → Đồ thị vượt qua 'Phép thử đường thẳng ngang'.<br />2. Phải là <b>Toàn ánh</b> (onto) → Đồ thị bao phủ toàn bộ trục y.<br /><br />---<br /><h3>Phân tích hàm a) \\( f(x) = 3x - 7 \\)</h3><br />- <b>Nhận dạng:</b> Đây là một hàm tuyến tính (bậc nhất).<br />- <b>Đồ thị:</b> Là một đường thẳng không nằm ngang.<br />- <b>Kiểm tra Checklist:</b><br />  1. <b>Đơn ánh?</b> Một đường thẳng chắc chắn vượt qua 'Phép thử đường thẳng ngang'. ✓<br />  2. <b>Toàn ánh?</b> Một đường thẳng kéo dài vô tận cả hai phía sẽ bao phủ toàn bộ trục y. ✓<br />- <b>Kết luận:</b> Hàm a) là một <b>song ánh</b>.<br />- <b>Tìm hàm ngược (thuật toán 3 bước):</b><br />  1. Viết \\( y = 3x - 7 \\).<br />  2. Đổi chỗ x và y: \\( x = 3y - 7 \\).<br />  3. Giải tìm y: \\( x+7 = 3y \\Rightarrow y = \\frac{x+7}{3} \\).<br />  Vậy \\( f^{-1}(x) = \\frac{x+7}{3} \\).<br /><br />---<br /><h3>Phân tích hàm b) \\( f(x) = x^2 - 3x + 2 \\)</h3><br />- <b>Nhận dạng:</b> Đây là một hàm bậc hai.<br />- <b>Đồ thị:</b> Là một đường parabol.<br />- <b>Kiểm tra Checklist:</b><br />  1. <b>Đơn ánh?</b> Một parabol hình chữ U chắc chắn sẽ rớt 'Phép thử đường thẳng ngang'. ✗<br />- <b>Kết luận:</b> Vì không phải là đơn ánh, nó không thể là song ánh. Ta có thể dừng lại ngay lập tức.",
+        "difficulty": "easy",
+        "topic": "Functions (Bijection & Inverse)",
+        "hints": [
+          "Thần chú: Song ánh = Đơn ánh + Toàn ánh.",
+          "Mẹo đồ thị: Đường thẳng (bậc 1) là song ánh. Parabol (bậc 2) không phải.",
+          "Để chứng minh không phải song ánh, chỉ cần chỉ ra nó không đơn ánh HOẶC không toàn ánh là đủ."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 22,
+        "question": "Find the summations.<br /><br />a) \\( \\sum_{k=1}^{100} (3k + 1) \\)<br />b) \\( \\sum_{i=1}^{10} \\sum_{j\\in\\{1,2,5\\}} i \\)<br />c) \\( \\sum_{i=1}^{10} \\sum_{j=1}^{20} ij \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "a) <b>15250</b><br /><br />b) <b>165</b><br /><br />c) <b>11550</b>",
+        "explanation": "<h3>Bí quyết: Tách nhỏ, rút gọn và áp dụng công thức!</h3><br /><b>a) \\( \\sum_{k=1}^{100} (3k + 1) \\)</b><br />1. <b>Tách tổng:</b> \\( \\sum_{k=1}^{100} 3k + \\sum_{k=1}^{100} 1 \\)<br />2. <b>Đưa hằng số ra ngoài:</b> \\( 3 \\sum_{k=1}^{100} k + \\sum_{k=1}^{100} 1 \\)<br />3. <b>Áp dụng công thức:</b><br />   - \\( \\sum_{k=1}^{n} k = \\frac{n(n+1)}{2} \\)<br />   - \\( \\sum_{k=1}^{n} 1 = n \\)<br />4. <b>Thế số:</b> \\( 3 \\cdot \\frac{100(101)}{2} + 100 = 3 \\cdot 5050 + 100 = 15150 + 100 = 15250 \\).<br /><br />---<br /><b>b) \\( \\sum_{i=1}^{10} \\sum_{j\\in\\{1,2,5\\}} i \\)</b><br />1. <b>Giải tổng bên trong trước:</b> \\( \\sum_{j\\in\\{1,2,5\\}} i \\)<br />   - Biến \\(i\\) là hằng số đối với \\(j\\). Tập \\(\\{1,2,5\\}\\) có 3 phần tử.<br />   - Tổng này chỉ đơn giản là \\( i + i + i = 3i \\).<br />2. <b>Thay vào tổng bên ngoài:</b> \\( \\sum_{i=1}^{10} 3i \\)<br />3. <b>Tính toán:</b> \\( 3 \\sum_{i=1}^{10} i = 3 \\cdot \\frac{10(11)}{2} = 3 \\cdot 55 = 165 \\).<br /><br />---<br /><b>c) \\( \\sum_{i=1}^{10} \\sum_{j=1}^{20} ij \\)</b><br />1. <b>Giải tổng bên trong trước:</b> \\( \\sum_{j=1}^{20} ij \\)<br />   - Biến \\(i\\) là hằng số đối với \\(j\\), ta đưa ra ngoài: \\( i \\sum_{j=1}^{20} j \\).<br />   - Áp dụng công thức: \\( i \\cdot \\frac{20(21)}{2} = i \\cdot 210 = 210i \\).<br />2. <b>Thay vào tổng bên ngoài:</b> \\( \\sum_{i=1}^{10} 210i \\)<br />3. <b>Tính toán:</b> \\( 210 \\sum_{i=1}^{10} i = 210 \\cdot \\frac{10(11)}{2} = 210 \\cdot 55 = 11550 \\).",
+        "difficulty": "medium",
+        "topic": "Sequences and Summations",
+        "hints": [
+          "Thần chú: Luôn giải quyết tổng bên trong (inner sum) trước.",
+          "Nhớ công thức kinh điển: tổng các số từ 1 đến n là n(n+1)/2.",
+          "Nếu biến của tổng bên trong khác biến của tổng bên ngoài, hãy xem biến bên ngoài như một hằng số."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 23,
+        "question": "Give an example of two uncountable sets A and B such that \\( A \\cap B \\) is<br /><br />a) finite.<br />b) countably infinite.<br />c) uncountable.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>a) Finite intersection:</b><br />Let \\( A = [0, 1] \\) and \\( B = [1, 2] \\).<br />Then \\( A \\cap B = \\{1\\} \\), which is finite.<br /><br /><b>b) Countably infinite intersection:</b><br />Let \\( A = [0, 1] \\) and \\( B = \\{ \\frac{1}{n} \\mid n \\in \\mathbb{Z}^+ \\} \\cup [2, 3] \\).<br />Then \\( A \\cap B = \\{1, \\frac{1}{2}, \\frac{1}{3}, \\dots\\} \\), which is countably infinite.<br /><br /><b>c) Uncountable intersection:</b><br />Let \\( A = [0, 2] \\) and \\( B = [1, 3] \\).<br />Then \\( A \\cap B = [1, 2] \\), which is uncountable.",
+        "explanation": "<h3>Tư duy xây dựng tập hợp</h3><br />Mẹo chính ở đây là bắt đầu với các tập hợp không đếm được (uncountable) cơ bản như các khoảng số thực (ví dụ: \\([0, 1]\\), \\(\\mathbb{R}\\)) và điều chỉnh chúng cho phù hợp.<br /><br /><b>a) Giao hữu hạn (Finite):</b><br />- <b>Ý tưởng:</b> Cho hai 'khối' không đếm được chạm vào nhau tại một vài điểm.<br />- Cách dễ nhất là dùng hai khoảng số thực liền kề nhau. \\( A = [0, 1] \\) và \\( B = [1, 2] \\) là không đếm được. Phần chung duy nhất của chúng là điểm \\(\\{1\\}\\), là một tập hữu hạn.<br /><br /><b>b) Giao vô hạn đếm được (Countably Infinite):</b><br />- <b>Ý tưởng:</b> Tạo ra một tập B không đếm được nhưng có 'phần ruột' là một tập vô hạn đếm được nằm trong A.<br />- Ta chọn \\( A = [0, 1] \\).<br />- Ta cần B cũng không đếm được. Ta xây dựng B bằng cách 'hợp' một tập vô hạn đếm được (ví dụ: tập các số nguyên \\(\\mathbb{Z}\\) hoặc tập \\(\\{\\frac{1}{n}\\}\\)) với một tập không đếm được khác (ví dụ: \\([2,3]\\)).<br />- Khi đó \\( B = \\{\\text{phần đếm được}\\} \\cup \\{\\text{phần không đếm được}\\} \\) sẽ là không đếm được.<br />- Ta khéo léo chọn 'phần đếm được' sao cho nó nằm gọn trong A. Giao của A và B sẽ chính là phần đếm được đó.<br /><br /><b>c) Giao không đếm được (Uncountable):</b><br />- <b>Ý tưởng:</b> Đây là trường hợp dễ nhất. Chỉ cần cho hai 'khối' không đếm được đè lên nhau một khoảng.<br />- Chọn hai khoảng số thực gối lên nhau, ví dụ \\( A = [0, 2] \\) và \\( B = [1, 3] \\). Phần chung của chúng là khoảng \\([1, 2]\\), cũng là một tập không đếm được.",
+        "difficulty": "medium",
+        "topic": "Cardinality of Sets",
+        "hints": [
+          "Mẹo: Bắt đầu với các khoảng số thực như `[0,1]` vì chúng là các tập không đếm được điển hình.",
+          "Để tạo giao hữu hạn, cho hai khoảng 'chạm' nhau tại một điểm.",
+          "Để tạo giao vô hạn đếm được, hợp một tập đếm được (như Z) với một tập không đếm được."
+        ],
+        "type": "essay"
+      }
+
+    ]
+  }
