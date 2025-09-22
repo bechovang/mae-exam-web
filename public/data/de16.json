@@ -26,27 +26,6 @@
       },
       {
         "id": 2,
-        "question": "Determine whether \\( f \\) is a function from the set of all bit strings to the set of integers if<br /><br />1) \\( f(S) \\) is the position of a 0 bit in S.<br />2) \\( f(S) \\) is the number of 1 bits in S.",
-        "image": null,
-        "options": [
-          "A. Both 1 and 2 are functions.",
-          "B. Only 1 is a function.",
-          "C. Only 2 is a function.",
-          "D. Neither 1 nor 2 are functions."
-        ],
-        "correctAnswer": "C",
-        "explanation": "Để hiểu bản chất, hãy tưởng tượng 'hàm số' (function) như một cái <b>máy chế biến</b>.<br />Một 'cái máy' tốt phải tuân thủ <b>2 quy tắc vàng</b>:<br /><br />1. <b>Quy tắc 1 (Luôn hoạt động):</b> Mọi nguyên liệu hợp lệ bạn bỏ vào, máy <i>luôn phải</i> cho ra sản phẩm. Nó không được phép 'đơ'.<br />2. <b>Quy tắc 2 (Dễ đoán / Nhất quán):</b> Với cùng một nguyên liệu, máy <i>luôn phải</i> cho ra cùng một sản phẩm duy nhất. Không được lúc thế này, lúc thế khác.<br /><br />---<br /><br /><b>Áp dụng vào bài toán:</b><br />- <b>Nguyên liệu:</b> Các chuỗi bit (ví dụ: '101', '00').<br />- <b>Sản phẩm:</b> Một số nguyên.<br /><br />---<br /><h3>Kiểm tra MÁY SỐ 1: 'Vị trí của một bit 0'</h3><br />- <b>Thử Quy tắc 1 (Luôn hoạt động):</b> Bỏ chuỗi <b>'111'</b> vào. Chuỗi này không có bit 0. Máy không biết trả về vị trí nào cả. Máy bị 'đơ'. → <b>VI PHẠM!</b><br />- <b>Thử Quy tắc 2 (Dễ đoán):</b> Bỏ chuỗi <b>'010'</b> vào. Máy có thể trả về vị trí 1, hoặc cũng có thể trả về vị trí 3. Cùng một nguyên liệu nhưng có thể cho ra hai sản phẩm. → <b>VI PHẠM!</b><br /><br /><b>Kết luận:</b> Máy số 1 là máy hỏng. Nó <b>không phải</b> là hàm số.<br /><br />---<br /><h3>Kiểm tra MÁY SỐ 2: 'Số lượng bit 1'</h3><br />- <b>Thử Quy tắc 1 (Luôn hoạt động):</b> Bỏ chuỗi bất kỳ vào, ví dụ <b>'000'</b>. Máy đếm và trả về <b>0</b>. Luôn hoạt động. ✓<br />- <b>Thử Quy tắc 2 (Dễ đoán):</b> Bỏ chuỗi <b>'1011'</b> vào. Máy luôn đếm và trả về duy nhất một con số là <b>3</b>. Luôn dễ đoán. ✓<br /><br /><b>Kết luận:</b> Máy số 2 là máy tốt, tuân thủ cả hai quy tắc. Nó <b>là một hàm số.</b>",
-        "difficulty": "medium",
-        "topic": "Functions (Definition)",
-        "hints": [
-          "Hãy nghĩ về 'cái máy chế biến': mọi nguyên liệu phải cho ra MỘT và CHỈ MỘT sản phẩm.",
-          "Để chứng minh không phải là hàm số, chỉ cần tìm MỘT 'nguyên liệu' phá đám.",
-          "Thử với chuỗi '11' (máy bị 'đơ') hoặc chuỗi '00' (máy cho 2 sản phẩm) cho quy tắc 1."
-        ],
-        "type": "multiple_choice"
-      },
-      {
-        "id": 3,
         "question": "Determine whether \\( f : \\mathbb{R} \\rightarrow \\mathbb{R} \\) is one-to-one if<br /><br />a) \\( f(x) = x^2 - 4x - 5 \\)<br />b) \\( f(x) = x^3 + 7 \\)",
         "image": null,
         "options": [
@@ -67,7 +46,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 22,
+        "id": 3,
         "question": "Determine whether \\( f : \\mathbb{Z} \\times \\mathbb{Z} \\rightarrow \\mathbb{Z} \\) is onto if<br /><br />a) \\( f(m, n) = 2m - n \\)<br />b) \\( f(m, n) = m^2 - n^2 \\)",
         "image": null,
         "options": [
@@ -88,7 +67,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 5,
+        "id": 4,
         "question": "Determine whether each of these functions is a bijection from \\( \\mathbb{R} \\) to \\( \\mathbb{R} \\). If the function is a bijection, find its inverse.<br /><br />a) \\( f(x) = x^3 - 4 \\)<br />b) \\( f(x) = -3x^2 + 7 \\)",
         "image": null,
         "options": [],
@@ -104,7 +83,7 @@
         "type": "essay"
       },
       {
-        "id": 6,
+        "id": 5,
         "question": "Determine whether each of these functions is a bijection from \\( \\mathbb{R} \\) to \\( \\mathbb{R} \\). If the function is a bijection, find its inverse.<br /><br />a) \\( f(x) = x^3 - 4 \\)<br />b) \\( f(x) = -3x^2 + 7 \\)",
         "image": null,
         "options": [],
@@ -120,7 +99,7 @@
         "type": "essay"
       },
       {
-        "id": 7,
+        "id": 6,
         "question": "Express the function \\( F(x) = \\sqrt{x+5} \\) as compositions of two functions.",
         "image": null,
         "options": [],
@@ -136,7 +115,7 @@
         "type": "essay"
       },
       {
-        "id": 8,
+        "id": 7,
         "question": "Find the next term and the \\(n\\)th term of the sequence:<br />\\[ 1, 3, 8, 16, 27, 41, \\dots \\]",
         "image": null,
         "options": [],
@@ -152,7 +131,7 @@
         "type": "essay"
       },
       {
-        "id": 9,
+        "id": 8,
         "question": "Find the value of the sum \\( \\frac{1}{2} + \\frac{1}{4} + \\frac{1}{8} + \\frac{1}{16} + \\cdots \\)",
         "image": null,
         "options": [],
@@ -168,7 +147,7 @@
         "type": "essay"
       },
       {
-        "id": 10,
+        "id": 9,
         "question": "Show that \\( |(0, 1)| = |(0, 1]| \\)",
         "image": null,
         "options": [],
@@ -184,7 +163,7 @@
         "type": "essay"
       },
       {
-        "id": 11,
+        "id": 10,
         "question": "What can you say about the sets A and B if we know that<br /><br />1) \\( A \\cup B = A \\)?<br />2) \\( A - B = A \\)?",
         "image": null,
         "options": [],
@@ -200,7 +179,7 @@
         "type": "essay"
       },
       {
-        "id": 12,
+        "id": 11,
         "question": "Find \\( A^2 \\) if<br /><br />a) \\( A = \\{0, 1, 3\\} \\).<br />b) \\( A = \\{1, 2, a, b\\} \\).",
         "image": null,
         "options": [],
@@ -216,7 +195,7 @@
         "type": "essay"
       },
       {
-        "id": 13,
+        "id": 12,
         "question": "Let A and B be sets. Show that:<br /><br />a) \\( (A \\cap B) \\subseteq A \\)",
         "image": null,
         "options": [],
@@ -232,7 +211,7 @@
         "type": "essay"
       },
       {
-        "id": 14,
+        "id": 13,
         "question": "Let A and B be sets. Show that:<br /><br />b) \\( A - B \\subseteq A \\)",
         "image": null,
         "options": [],
@@ -248,7 +227,7 @@
         "type": "essay"
       },
       {
-        "id": 15,
+        "id": 14,
         "question": "Let A and B be sets. Show that:<br /><br />c) \\( \\overline{A \\cup B} = \\overline{A} \\cap \\overline{B} \\)",
         "image": null,
         "options": [],
@@ -263,8 +242,8 @@
         ],
         "type": "essay"
       },
-      {
-        "id": 16,
+      { 
+        "id": 15,
         "question": "What can you say about the sets A and B if we know that<br /><br />1) \\( A \\cup B = A \\)?<br />2) \\( A - B = A \\)?",
         "image": null,
         "options": [],
@@ -280,7 +259,7 @@
         "type": "essay"
       },
       {
-        "id": 17,
+        "id": 16,
         "question": "Suppose that the universal set is \\( U = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\} \\). Express the set \\( \\{1, 3, 6, 10\\} \\) with bit strings where the ith bit in the string is 1 if i is in the set and 0 otherwise.",
         "image": null,
         "options": [],
@@ -296,7 +275,7 @@
         "type": "essay"
       },
       {
-        "id": 18,
+        "id": 17,
         "question": "Given two functions \\( f : \\{a, b, c\\} \\rightarrow \\{1, 2, 3\\} \\) and \\( g : \\{1, 2, 3\\} \\rightarrow \\{a, b, c\\} \\) where<br />\\[ f = \\{(a, 2), (b, 3), (c, 1)\\} \\text{ and } g = \\{(1, b), (2, a), (3, b)\\} \\]<br />Determine whether these functions are one-to-one, onto, bijective:<br />\\( f, g, f \\circ g, g \\circ f \\).",
         "image": null,
         "options": [],
@@ -312,7 +291,7 @@
         "type": "essay"
       },
       {
-        "id": 19,
+        "id": 18,
         "question": "Determine whether \\( f : \\mathbb{Z} \\times \\mathbb{Z} \\rightarrow \\mathbb{Z} \\) is onto if<br /><br />a) \\( f(m, n) = m + n \\)<br />b) \\( f(m, n) = m^2 + n^2 \\)",
         "image": null,
         "options": [],
@@ -328,7 +307,7 @@
         "type": "essay"
       },
       {
-        "id": 20,
+        "id": 19,
         "question": "Suppose that \\( g \\) is a function from \\( A \\) to \\( B \\) and \\( f \\) is a function from \\( B \\) to \\( C \\). Show that if both \\( f \\) and \\( g \\) are onto functions, then \\( f \\circ g \\) is also onto.",
         "image": null,
         "options": [],
@@ -344,7 +323,7 @@
         "type": "essay"
       },
       {
-        "id": 21,
+        "id": 20,
         "question": "Determine whether each of these functions is a bijection from \\( \\mathbb{R} \\) to \\( \\mathbb{R} \\). If the function is a bijection, find its inverse.<br /><br />a) \\( f(x) = 3x - 7 \\)<br />b) \\( f(x) = x^2 - 3x + 2 \\)",
         "image": null,
         "options": [],
@@ -360,7 +339,7 @@
         "type": "essay"
       },
       {
-        "id": 22,
+        "id": 21,
         "question": "Find the summations.<br /><br />a) \\( \\sum_{k=1}^{100} (3k + 1) \\)<br />b) \\( \\sum_{i=1}^{10} \\sum_{j\\in\\{1,2,5\\}} i \\)<br />c) \\( \\sum_{i=1}^{10} \\sum_{j=1}^{20} ij \\)",
         "image": null,
         "options": [],
@@ -376,7 +355,7 @@
         "type": "essay"
       },
       {
-        "id": 23,
+        "id": 22,
         "question": "Give an example of two uncountable sets A and B such that \\( A \\cap B \\) is<br /><br />a) finite.<br />b) countably infinite.<br />c) uncountable.",
         "image": null,
         "options": [],
