@@ -1,0 +1,90 @@
+{
+    "examId": "MAD_Unit_2",
+    "title": "Luyện MAD Chương 2",
+    "description": "Basic concepts of set theory, including cardinality and set operations.",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Find the cardinality of the set \\( \\{1, 2, 3, 2, 5, 6\\} \\)",
+        "image": null,
+        "options": [
+          "A. 5",
+          "B. 6",
+          "C. 7",
+          "D. 8"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Lực lượng (cardinality) của một tập hợp là số lượng các phần tử <b>duy nhất</b> trong tập hợp đó.<br /><br />Tập hợp đã cho là \\( \\{1, 2, 3, 2, 5, 6\\} \\).<br />Các phần tử duy nhất là \\( 1, 2, 3, 5, 6 \\).<br />Đếm các phần tử này, ta có 5 phần tử.<br /><br />Vậy, lực lượng của tập hợp là 5.",
+        "difficulty": "easy",
+        "topic": "Set Theory - Cardinality",
+        "hints": [
+          "Hãy nhớ rằng các phần tử lặp lại trong một tập hợp chỉ được đếm một lần.",
+          "Liệt kê các số khác nhau có trong tập hợp và đếm chúng."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 2,
+        "question": "Which of the following is an infinite set? (x is an integer)<br /><br />(i) \\( \\{x | x<2 \\lor x>10\\} \\)<br />(ii) \\( \\{x | x<2 \\land x>1\\} \\)<br />(iii) \\( \\{x | x \\geq 3 \\land x \\leq 6\\} \\)<br />(iv) \\{letters in the alphabet\\}",
+        "image": null,
+        "options": [
+          "A. (iv)",
+          "B. (ii)",
+          "C. (iii)",
+          "D. (i)"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Một tập hợp vô hạn là tập hợp có số phần tử không giới hạn.<br /><br />- <b>(i) \\( \\{x | x<2 \\lor x>10\\} \\):</b> Tập hợp này bao gồm tất cả các số nguyên nhỏ hơn 2 (..., 0, 1) VÀ tất cả các số nguyên lớn hơn 10 (11, 12, ...). Vì nó kéo dài vô tận ở cả hai phía, đây là một <b>tập hợp vô hạn</b>.<br /><br />- <b>(ii) \\( \\{x | x<2 \\land x>1\\} \\):</b> Không có số nguyên nào vừa nhỏ hơn 2 vừa lớn hơn 1. Đây là tập hợp rỗng \\( \\emptyset \\), là tập hữu hạn.<br /><br />- <b>(iii) \\( \\{x | x \\geq 3 \\land x \\leq 6\\} \\):</b> Tập hợp này là \\( \\{3, 4, 5, 6\\} \\), có 4 phần tử. Đây là tập hữu hạn.<br /><br />- <b>(iv) \\{letters in the alphabet\\}:</b> Tập hợp này có 26 phần tử. Đây là tập hữu hạn.",
+        "difficulty": "easy",
+        "topic": "Set Theory - Finite and Infinite Sets",
+        "hints": [
+          "Một tập hợp vô hạn không thể đếm hết số phần tử.",
+          "Phân tích các điều kiện để xem liệu có giới hạn trên và giới hạn dưới cho các phần tử hay không."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 3,
+        "question": "Let \\( X=\\{1, 2, 3, 4, 5\\} \\), \\( Y=\\{0, 3, 6, 9\\} \\), \\( Z=\\{0, 2, 4, 6, 8\\} \\).<br />Find the cardinality of the set \\( X \\cup (Y - Z) \\).",
+        "image": null,
+        "options": [
+          "A. 6",
+          "B. 7",
+          "C. 9",
+          "D. 8",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Bước 1: Tính phép hiệu \\( Y - Z \\)</b><br />\\( Y - Z \\) là tập hợp các phần tử thuộc Y nhưng không thuộc Z.<br />\\( Y - Z = \\{0, 3, 6, 9\\} - \\{0, 2, 4, 6, 8\\} = \\{3, 9\\} \\)<br /><br /><b>Bước 2: Tính phép hợp \\( X \\cup (Y - Z) \\)</b><br />Đây là tập hợp chứa tất cả các phần tử từ X và từ kết quả của Bước 1.<br />\\( X \\cup \\{3, 9\\} = \\{1, 2, 3, 4, 5\\} \\cup \\{3, 9\\} = \\{1, 2, 3, 4, 5, 9\\} \\)<br /><br /><b>Bước 3: Đếm số phần tử</b><br />Lực lượng của tập hợp \\( \\{1, 2, 3, 4, 5, 9\\} \\) là 6.",
+        "difficulty": "medium",
+        "topic": "Set Theory - Operations",
+        "hints": [
+          "Luôn thực hiện phép toán trong ngoặc trước.",
+          "Phép hiệu A - B lấy các phần tử chỉ có trong A.",
+          "Phép hợp A ∪ B lấy tất cả các phần tử từ cả A và B."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 4,
+        "question": "Let \\( A = \\{0, 2, 4, 6, 8, 10\\} \\), \\( B = \\{1, 2, 3, 4, 5, 6\\} \\) and \\( C = \\{1, 2, 3, 4, 5, 7, 8, 9\\} \\).<br />What is the cardinality of the set \\( (A \\cup B) - C \\)?",
+        "image": null,
+        "options": [
+          "A. 4",
+          "B. 1",
+          "C. 2",
+          "D. 0",
+          "E. 3"
+        ],
+        "correctAnswer": "E",
+        "explanation": "<b>Bước 1: Tính phép hợp \\( A \\cup B \\)</b><br />\\( A \\cup B = \\{0, 2, 4, 6, 8, 10\\} \\cup \\{1, 2, 3, 4, 5, 6\\} = \\{0, 1, 2, 3, 4, 5, 6, 8, 10\\} \\)<br /><br /><b>Bước 2: Tính phép hiệu \\( (A \\cup B) - C \\)</b><br />Ta lấy các phần tử thuộc \\( A \\cup B \\) và loại bỏ những phần tử cũng có trong C.<br />\\( \\{0, 1, 2, 3, 4, 5, 6, 8, 10\\} - \\{1, 2, 3, 4, 5, 7, 8, 9\\} = \\{0, 6, 10\\} \\)<br /><br /><b>Bước 3: Đếm số phần tử</b><br />Lực lượng của tập hợp kết quả \\( \\{0, 6, 10\\} \\) là 3.",
+        "difficulty": "medium",
+        "topic": "Set Theory - Operations",
+        "hints": [
+          "Thực hiện phép hợp trước để tạo ra một tập hợp mới.",
+          "Sau đó, từ tập hợp mới đó, loại bỏ các phần tử có trong C."
+        ],
+        "type": "multiple_choice"
+      }
+    ]
+  }
