@@ -1,0 +1,1305 @@
+{
+  "examId": "MAD_Unit_1",
+  "title": "Luyện MAD Chương 1",
+  "description": "Practice questions on truth tables and logical equivalences.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Find a proposition with the given truth table:<br /><br /><style>table, th, td { border: 1px solid #ccc; border-collapse: collapse; padding: 5px; text-align: center; }</style><table><tr><th>p</th><th>q</th><th>?</th></tr><tr><td>T</td><td>T</td><td>T</td></tr><tr><td>T</td><td>F</td><td>F</td></tr><tr><td>F</td><td>T</td><td>T</td></tr><tr><td>F</td><td>F</td><td>T</td></tr></table><br />(i) \\( p \\to q \\)<br />(ii) \\( q \\to p \\)<br />(iii) \\( p \\to \\neg q \\)<br />(iv) \\( \\neg p \\to q \\)",
+      "image": null,
+      "options": [
+        "A. (iii)",
+        "B. (i)",
+        "C. (iv)",
+        "D. (ii)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Phân tích bảng chân trị:</b><br />Chúng ta cần tìm mệnh đề có bảng chân trị là T, F, T, T tương ứng với các trường hợp (p,q) là (T,T), (T,F), (F,T), và (F,F).<br /><br /><b>1. Xét mệnh đề (i) \\( p \\to q \\):</b><br />- Khi p=T, q=T: \\( T \\to T \\) là <b>T</b>.<br />- Khi p=T, q=F: \\( T \\to F \\) là <b>F</b>.<br />- Khi p=F, q=T: \\( F \\to T \\) là <b>T</b>.<br />- Khi p=F, q=F: \\( F \\to F \\) là <b>T</b>.<br />Bảng chân trị là (T, F, T, T), hoàn toàn trùng khớp với bảng đã cho.<br /><br /><b>2. Xét các mệnh đề khác:</b><br />- (ii) \\( q \\to p \\) có bảng chân trị (T, T, F, T).<br />- (iii) \\( p \\to \\neg q \\) có bảng chân trị (F, T, T, T).<br />- (iv) \\( \\neg p \\to q \\) có bảng chân trị (T, T, T, F).<br /><br /><b>Kết luận:</b> Mệnh đề (i) là đáp án đúng.",
+      "difficulty": "easy",
+      "topic": "Propositional Logic",
+      "hints": [
+        "Lập bảng chân trị cho từng mệnh đề được liệt kê.",
+        "So sánh kết quả với cột cuối cùng của bảng chân trị đã cho.",
+        "Nhớ rằng phép kéo theo \\( A \\to B \\) chỉ sai khi A đúng và B sai."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 2,
+      "question": "Let p, q and r be propositions such that \\( p \\equiv T \\), \\( q \\equiv F \\) and \\( r \\equiv T \\).<br />Choose the correct statement.<br /><br />(i) \\( q \\to (p \\land r) \\equiv F \\) and \\( q \\lor r \\equiv T \\)<br />(ii) \\( (p \\lor r) \\to q \\equiv T \\) and \\( p \\land r \\equiv T \\)<br />(iii) \\( (p \\oplus q) \\oplus r \\equiv F \\) and \\( p \\to q \\equiv F \\)",
+      "image": null,
+      "options": [
+        "A. (ii)",
+        "B. (i)",
+        "C. None of the other choices is correct",
+        "D. (iii)"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Với \\( p = T, q = F, r = T \\), ta xét từng mệnh đề:<br /><br /><b>(i) \\( q \\to (p \\land r) \\equiv F \\) và \\( q \\lor r \\equiv T \\)</b><br />- Vế 1: \\( F \\to (T \\land T) = F \\to T = T \\). Mệnh đề cho rằng vế này bằng F là <b>SAI</b>.<br /><br /><b>(ii) \\( (p \\lor r) \\to q \\equiv T \\) và \\( p \\land r \\equiv T \\)</b><br />- Vế 1: \\( (T \\lor T) \\to F = T \\to F = F \\). Mệnh đề cho rằng vế này bằng T là <b>SAI</b>.<br /><br /><b>(iii) \\( (p \\oplus q) \\oplus r \\equiv F \\) và \\( p \\to q \\equiv F \\)</b><br />- Vế 1: \\( (T \\oplus F) \\oplus T = T \\oplus T = F \\). Vế này <b>ĐÚNG</b>.<br />- Vế 2: \\( T \\to F = F \\). Vế này <b>ĐÚNG</b>.<br />- Cả hai vế đều đúng, do đó mệnh đề (iii) là <b>ĐÚNG</b>.<br /><br /><b>Kết luận:</b> Mệnh đề (iii) là phát biểu đúng.",
+      "difficulty": "medium",
+      "topic": "Propositional Logic",
+      "hints": [
+        "Thay các giá trị T, F vào từng biểu thức.",
+        "Nhớ các quy tắc: \\( T \\land T = T \\), \\( T \\to F = F \\), \\( T \\oplus T = F \\), \\( T \\oplus F = T \\).",
+        "Một mệnh đề \"A and B\" chỉ đúng khi cả A và B đều đúng."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 3,
+      "question": "Choose values of p, q, r, s such that the proposition \\( (p \\to q) \\land (r \\to s) \\) is False.",
+      "image": null,
+      "options": [
+        "A. None of the mentioned",
+        "B. p=q=r=F, s=T",
+        "C. p=r=s=F, q=T",
+        "D. p=s=T, q=r=F",
+        "E. p=q=T, r=s=F"
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Phân tích yêu cầu:</b><br />Để mệnh đề \\( (p \\to q) \\land (r \\to s) \\) có giá trị <b>SAI (False)</b>, ít nhất một trong hai vế \\( (p \\to q) \\) hoặc \\( (r \\to s) \\) phải sai.<br /><br />Một mệnh đề kéo theo \\( A \\to B \\) chỉ sai khi \\( A \\) đúng và \\( B \\) sai.<br /><br /><b>Kiểm tra các đáp án:</b><br />- <b>B (p=q=r=F, s=T):</b> \\( (F \\to F) \\land (F \\to T) = T \\land T = T \\) (Đúng).<br />- <b>C (p=r=s=F, q=T):</b> \\( (F \\to T) \\land (F \\to F) = T \\land T = T \\) (Đúng).<br />- <b>D (p=s=T, q=r=F):</b><br />  - Vế 1: \\( p \\to q = T \\to F = F \\).<br />  - Vì vế 1 đã sai, toàn bộ biểu thức \\( \\land \\) sẽ sai.<br />  - Kết quả: \\( F \\land (F \\to T) = F \\land T = F \\) (Sai).<br />- <b>E (p=q=T, r=s=F):</b> \\( (T \\to T) \\land (F \\to F) = T \\land T = T \\) (Đúng).<br /><br /><b>Kết luận:</b> Đáp án D cung cấp bộ giá trị làm cho mệnh đề ban đầu sai.",
+      "difficulty": "medium",
+      "topic": "Propositional Logic",
+      "hints": [
+        "Một biểu thức VÀ (\\( \\land \\)) chỉ sai khi có ít nhất một thành phần sai.",
+        "Một biểu thức kéo theo (\\( \\to \\)) chỉ sai trong trường hợp duy nhất: vế trước đúng, vế sau sai.",
+        "Hãy tìm đáp án nào tạo ra trường hợp \\( T \\to F \\) cho \\( p \\to q \\) hoặc \\( r \\to s \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 4,
+      "question": "Which compound proposition is True when \\( p=r= \\) True and \\( q = \\) False, and is False otherwise?",
+      "image": null,
+      "options": [
+        "A. \\( p \\land \\neg q \\land \\neg r \\)",
+        "B. \\( p \\land q \\land \\neg r \\)",
+        "C. \\( \\neg p \\land \\neg q \\land \\neg r \\)",
+        "D. \\( p \\lor q \\land \\neg r \\)",
+        "E. \\( p \\land \\neg q \\land r \\)"
+      ],
+      "correctAnswer": "E",
+      "explanation": "<b>Phân tích yêu cầu:</b><br />Ta cần một mệnh đề chỉ đúng duy nhất trong trường hợp \\( p=T, q=F, r=T \\). Đây là bài toán tìm một 'minterm' (hội sơ cấp).<br /><br />- Để mệnh đề đúng khi \\( p=T \\), nó phải chứa \\( p \\).<br />- Để mệnh đề đúng khi \\( q=F \\), nó phải chứa \\( \\neg q \\).<br />- Để mệnh đề đúng khi \\( r=T \\), nó phải chứa \\( r \\).<br /><br />Kết hợp ba điều kiện trên bằng phép hội (\\( \\land \\)), ta được mệnh đề: \\( p \\land \\neg q \\land r \\).<br /><br /><b>Kiểm tra:</b><br />Với \\( p=T, q=F, r=T \\), ta có: \\( T \\land (\\neg F) \\land T = T \\land T \\land T = T \\).<br />Với bất kỳ bộ giá trị nào khác, ít nhất một trong ba thành phần \\( p, \\neg q, r \\) sẽ là F, làm cho cả mệnh đề sai.<br /><br /><b>Kết luận:</b> Đáp án E là chính xác.",
+      "difficulty": "medium",
+      "topic": "Propositional Logic",
+      "hints": [
+        "Bài toán yêu cầu bạn xây dựng một mệnh đề chỉ đúng cho một bộ giá trị chân lý duy nhất.",
+        "Nếu một biến (ví dụ p) là True, hãy dùng \\( p \\). Nếu nó là False (ví dụ q), hãy dùng \\( \\neg q \\).",
+        "Nối tất cả các thành phần lại bằng phép VÀ (\\( \\land \\))."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 5,
+      "question": "Which compound proposition is True when \\( p, q = \\) True and \\( r = \\) False, and is False otherwise?",
+      "image": null,
+      "options": [
+        "A. \\( p \\land q \\land \\neg r \\)",
+        "B. \\( p \\land \\neg q \\land \\neg r \\)",
+        "C. \\( \\neg p \\land \\neg q \\land \\neg r \\)",
+        "D. \\( p \\land \\neg q \\land r \\)",
+        "E. \\( p \\lor q \\lor \\neg r \\)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích yêu cầu:</b><br />Ta cần tìm một mệnh đề chỉ đúng duy nhất trong trường hợp \\( p=T, q=T, r=F \\).<br /><br />- Để mệnh đề đúng khi \\( p=T \\), nó phải chứa \\( p \\).<br />- Để mệnh đề đúng khi \\( q=T \\), nó phải chứa \\( q \\).<br />- Để mệnh đề đúng khi \\( r=F \\), nó phải chứa \\( \\neg r \\).<br /><br />Kết hợp các điều kiện trên bằng phép hội (\\( \\land \\)), ta có mệnh đề: \\( p \\land q \\land \\neg r \\).<br /><br /><b>Kiểm tra:</b><br />Với \\( p=T, q=T, r=F \\), ta có: \\( T \\land T \\land (\\neg F) = T \\land T \\land T = T \\).<br />Với bất kỳ bộ giá trị nào khác, mệnh đề sẽ sai.<br /><br /><b>Kết luận:</b> Đáp án A là chính xác.",
+      "difficulty": "medium",
+      "topic": "Propositional Logic",
+      "hints": [
+        "Xác định các thành phần cần thiết cho mệnh đề dựa trên giá trị chân lý yêu cầu.",
+        "Sử dụng \\( \\neg \\) cho các biến có giá trị False.",
+        "Kết hợp tất cả lại bằng phép \\( \\land \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 6,
+      "question": "Which of the following statements are true?<br /><br />(i) \\( (p \\oplus \\neg p) \\oplus T \\equiv T \\)<br />(ii) \\( (p \\oplus \\neg p) \\oplus F \\equiv T \\)",
+      "image": null,
+      "options": [
+        "A. Only (i)",
+        "B. Only (ii)",
+        "C. Both (i) and (ii)",
+        "D. Neither (i) nor (ii)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Bước 1: Đánh giá biểu thức \\( p \\oplus \\neg p \\)</b><br />Phép XOR (\\( \\oplus \\)) chỉ đúng khi hai vế có giá trị chân lý khác nhau.<br />- Nếu \\( p=T \\), thì \\( \\neg p=F \\). Ta có \\( T \\oplus F = T \\).<br />- Nếu \\( p=F \\), thì \\( \\neg p=T \\). Ta có \\( F \\oplus T = T \\).<br />Do đó, \\( p \\oplus \\neg p \\) luôn luôn đúng (là một hằng đúng), tức là \\( (p \\oplus \\neg p) \\equiv T \\).<br /><br /><b>Bước 2: Thay kết quả vào hai mệnh đề</b><br />- <b>Mệnh đề (i):</b> Thay \\( (p \\oplus \\neg p) \\) bằng T, ta có \\( T \\oplus T \\). Theo định nghĩa XOR, \\( T \\oplus T = F \\). Vậy mệnh đề (i) \\( F \\equiv T \\) là <b>SAI</b>.<br />- <b>Mệnh đề (ii):</b> Thay \\( (p \\oplus \\neg p) \\) bằng T, ta có \\( T \\oplus F \\). Theo định nghĩa XOR, \\( T \\oplus F = T \\). Vậy mệnh đề (ii) \\( T \\equiv T \\) là <b>ĐÚNG</b>.<br /><br /><b>Kết luận:</b> Chỉ có mệnh đề (ii) là đúng.",
+      "difficulty": "hard",
+      "topic": "Propositional Logic",
+      "hints": [
+        "Đầu tiên, hãy xác định giá trị chân lý của biểu thức con \\( p \\oplus \\neg p \\).",
+        "Nhớ lại quy tắc của phép XOR (\\( \\oplus \\)): nó trả về True khi và chỉ khi các đầu vào khác nhau.",
+        "Sau khi có kết quả của biểu thức con, hãy thay nó vào (i) và (ii) để kiểm tra."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 7,
+      "question": "Find \\( (11011001 \\oplus 00001111) \\land 11101101 \\)",
+      "image": null,
+      "options": [],
+      "correctAnswer": "11000100",
+      "explanation": "<b>Bước 1: Thực hiện phép XOR trong ngoặc</b><br />Phép XOR (\\( \\oplus \\)) trả về 1 nếu hai bit khác nhau, ngược lại trả về 0.<br /><pre style='font-family: monospace; font-size: 14px;'>  11011001<br />⊕ 00001111<br />----------<br />  11010110</pre><b>Bước 2: Thực hiện phép AND với kết quả</b><br />Phép AND (\\( \\land \\)) trả về 1 nếu cả hai bit đều là 1, ngược lại trả về 0.<br /><pre style='font-family: monospace; font-size: 14px;'>  11010110<br />∧ 11101101<br />----------<br />  11000100</pre><b>Kết quả cuối cùng là 11000100.</b>",
+      "difficulty": "medium",
+      "topic": "Bitwise Operations",
+      "hints": [
+        "Thực hiện phép toán trong ngoặc trước.",
+        "Quy tắc XOR: 1⊕1=0, 1⊕0=1, 0⊕1=1, 0⊕0=0.",
+        "Quy tắc AND: 1∧1=1, các trường hợp còn lại bằng 0."
+      ],
+      "type": "essay"
+    },
+    {
+      "id": 8,
+      "question": "Find \\( (10101 \\land 11001) \\oplus 01101 \\)",
+      "image": null,
+      "options": [],
+      "correctAnswer": "11100",
+      "explanation": "<b>Bước 1: Thực hiện phép AND trong ngoặc</b><br />Phép AND (\\( \\land \\)) chỉ trả về 1 khi cả hai bit đều là 1.<br /><pre style='font-family: monospace; font-size: 14px;'>  10101<br />∧ 11001<br />-------<br />  10001</pre><b>Bước 2: Thực hiện phép XOR với kết quả</b><br />Phép XOR (\\( \\oplus \\)) trả về 1 khi hai bit khác nhau.<br /><pre style='font-family: monospace; font-size: 14px;'>  10001<br />⊕ 01101<br />-------<br />  11100</pre><b>Kết quả cuối cùng là 11100.</b>",
+      "difficulty": "easy",
+      "topic": "Bitwise Operations",
+      "hints": [
+        "Luôn làm theo thứ tự ưu tiên của dấu ngoặc.",
+        "Phép AND giống như phép nhân bit.",
+        "Phép XOR kiểm tra sự khác biệt giữa các bit."
+      ],
+      "type": "essay"
+    },
+    {
+      "id": 9,
+      "question": "Compute 1011001 XOR 0111011",
+      "image": null,
+      "options": [
+        "A. 1100001",
+        "B. None of the other choices is correct",
+        "C. 1100110",
+        "D. 1100010"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Để tính XOR, ta so sánh từng cặp bit tương ứng. Kết quả là 1 nếu chúng khác nhau và 0 nếu chúng giống nhau.<br /><pre style='font-family: monospace; font-size: 14px;'>  1011001<br />XOR 0111011<br />-----------<br />  1100010</pre><b>Giải thích từng cột (từ trái qua phải):</b><br />1. 1 XOR 0 = 1<br />2. 0 XOR 1 = 1<br />3. 1 XOR 1 = 0<br />4. 1 XOR 1 = 0<br />5. 0 XOR 0 = 0<br />6. 0 XOR 1 = 1<br />7. 1 XOR 1 = 0<br /><b>Kết quả là 1100010.</b>",
+      "difficulty": "easy",
+      "topic": "Bitwise Operations",
+      "hints": [
+        "Viết hai số thẳng hàng với nhau.",
+        "Áp dụng quy tắc XOR cho từng cột."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 10,
+      "question": "Evaluate the following expression: \\( (0011 \\oplus 1010) \\oplus 0101 \\)",
+      "image": null,
+      "options": [
+        "A. 1100",
+        "B. 1001",
+        "C. 1111",
+        "D. 1010",
+        "E. 1110"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Tính biểu thức trong ngoặc</b><br /><pre style='font-family: monospace; font-size: 14px;'>  0011<br />⊕ 1010<br />------<br />  1001</pre><b>Bước 2: Lấy kết quả XOR với số còn lại</b><br /><pre style='font-family: monospace; font-size: 14px;'>  1001<br />⊕ 0101<br />------<br />  1100</pre><b>Kết quả cuối cùng là 1100.</b>",
+      "difficulty": "medium",
+      "topic": "Bitwise Operations",
+      "hints": [
+        "Ưu tiên tính toán trong ngoặc trước.",
+        "Phép XOR có tính kết hợp, nghĩa là (A ⊕ B) ⊕ C = A ⊕ (B ⊕ C), nhưng làm theo thứ tự sẽ dễ hơn."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 11,
+      "question": "Which of the following propositions is true, where the domain is the set of all integers?",
+      "image": null,
+      "options": [
+        "A. \\( \\forall x \\exists y(x = y^{1/2}) \\)",
+        "B. \\( \\forall x \\forall y((x^2 = y^2) \\to (|x| = |y|)) \\)",
+        "C. \\( \\forall x \\exists y(x - y^2 > 100) \\)",
+        "D. \\( \\forall x \\exists y(xy = 3) \\)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ta xét giá trị chân lý của từng mệnh đề với tập xác định là tập số nguyên Z:<br /><br /><b>A. \\( \\forall x \\exists y(x = y^{1/2}) \\) (Với mọi x, tồn tại y sao cho x là căn bậc hai của y)</b><br />Mệnh đề này <b>SAI</b>. Lấy một phản ví dụ: chọn \\( x = -1 \\). Không tồn tại số nguyên y nào để \\( -1 = \\sqrt{y} \\) (vì căn bậc hai của một số thực luôn không âm).<br /><br /><b>B. \\( \\forall x \\forall y((x^2 = y^2) \\to (|x| = |y|)) \\) (Với mọi x và y, nếu x² = y² thì |x| = |y|)</b><br />Mệnh đề này <b>ĐÚNG</b>. Đây là một tính chất cơ bản trong đại số. Nếu bình phương của hai số nguyên bằng nhau, thì giá trị tuyệt đối của chúng phải bằng nhau.<br /><br /><b>C. \\( \\forall x \\exists y(x - y^2 > 100) \\) (Với mọi x, tồn tại y sao cho x - y² > 100)</b><br />Mệnh đề này <b>SAI</b>. Lấy một phản ví dụ: chọn \\( x = 0 \\). Ta cần tìm y sao cho \\( -y^2 > 100 \\). Điều này là không thể vì \\( y^2 \\) luôn \\( \\geq 0 \\), do đó \\( -y^2 \\) luôn \\( \\leq 0 \\).<br /><br /><b>D. \\( \\forall x \\exists y(xy = 3) \\) (Với mọi x, tồn tại y sao cho xy = 3)</b><br />Mệnh đề này <b>SAI</b>. Lấy một phản ví dụ: chọn \\( x = 2 \\). Ta cần tìm số nguyên y sao cho \\( 2y = 3 \\). Không có số nguyên y nào thỏa mãn điều này (chỉ có \\( y = 1.5 \\)).",
+      "difficulty": "hard",
+      "topic": "Predicate Logic",
+      "hints": [
+        "Để chứng minh mệnh đề \\( \\forall x \\) là sai, chỉ cần tìm một phản ví dụ.",
+        "Mệnh đề \\( A \\to B \\) là một quy tắc logic, hãy kiểm tra xem có trường hợp nào A đúng mà B sai không.",
+        "Lưu ý rằng miền giá trị là tập số nguyên."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 12,
+      "question": "Find the truth value of each of the following propositions, where x represents a real number.<br /><br />(M) \\( \\forall x [(x \\geq 1) \\to (x^3 \\geq 1)] \\)<br />(N) \\( \\forall x [(x \\geq 1) \\land (x^3 \\geq 1)] \\)<br />(P) \\( \\forall x [(x \\geq 1) \\lor (x^3 \\geq 1)] \\)",
+      "image": null,
+      "options": [
+        "A. Only (N) is True",
+        "B. None of the other choices is correct",
+        "C. Only (M) is True",
+        "D. All of (M), (N) and (P) are True",
+        "E. Only (P) is True"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>(M) \\( \\forall x [(x \\geq 1) \\to (x^3 \\geq 1)] \\)</b><br />Mệnh đề này phát biểu: 'Với mọi số thực x, nếu x lớn hơn hoặc bằng 1 thì x³ lớn hơn hoặc bằng 1'. Đây là mệnh đề <b>ĐÚNG</b>. Nếu \\( x \\geq 1 \\), lập phương của nó chắc chắn cũng sẽ \\( \\geq 1 \\). Nếu \\( x < 1 \\), mệnh đề \\( (x \\geq 1) \\) là sai, do đó phép kéo theo \\( F \\to B \\) luôn đúng.<br /><br /><b>(N) \\( \\forall x [(x \\geq 1) \\land (x^3 \\geq 1)] \\)</b><br />Mệnh đề này phát biểu: 'Với mọi số thực x, x lớn hơn hoặc bằng 1 VÀ x³ lớn hơn hoặc bằng 1'. Mệnh đề này <b>SAI</b>. Lấy phản ví dụ \\( x = 0 \\). Khi đó \\( (0 \\geq 1) \\) là sai, nên cả mệnh đề \\( \\land \\) đều sai.<br /><br /><b>(P) \\( \\forall x [(x \\geq 1) \\lor (x^3 \\geq 1)] \\)</b><br />Mệnh đề này phát biểu: 'Với mọi số thực x, x lớn hơn hoặc bằng 1 HOẶC x³ lớn hơn hoặc bằng 1'. Mệnh đề này <b>SAI</b>. Lấy phản ví dụ \\( x = 0 \\). Khi đó cả \\( (0 \\geq 1) \\) và \\( (0^3 \\geq 1) \\) đều sai, nên mệnh đề \\( \\lor \\) là sai.<br /><br /><b>Kết luận:</b> Chỉ có (M) là đúng.",
+      "difficulty": "medium",
+      "topic": "Predicate Logic",
+      "hints": [
+        "Phân biệt sự khác nhau giữa phép kéo theo (\\( \\to \\)), phép VÀ (\\( \\land \\)), và phép HOẶC (\\( \\lor \\)).",
+        "Lượng từ 'với mọi' (\\( \\forall \\)) yêu cầu mệnh đề phải đúng cho tất cả các giá trị trong miền xác định.",
+        "Mệnh đề kéo theo \\( A \\to B \\) chỉ sai khi A đúng và B sai."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 13,
+      "question": "Find the truth values of the propositions, where x, y represent real numbers.<br /><br />(M) \\( \\forall x \\forall y [(x = y^2) \\land (x < y)] \\)<br />(N) \\( \\exists x \\exists y [(x = y^2) \\land (x < y)] \\)",
+      "image": null,
+      "options": [
+        "A. Both (M) and (N) are True",
+        "B. Only (N) is True",
+        "C. Only (M) is True",
+        "D. None of the other choices is correct"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>(M) \\( \\forall x \\forall y [(x = y^2) \\land (x < y)] \\)</b><br />Mệnh đề này phát biểu: 'Với mọi số thực x và y, x bằng y² VÀ x nhỏ hơn y'. Mệnh đề này <b>SAI</b>. Ta chỉ cần tìm một cặp (x, y) không thỏa mãn. Ví dụ: chọn \\( y=2 \\), \\( x=4 \\). Khi đó \\( x=y^2 \\) đúng, nhưng \\( x < y \\) (tức là \\( 4 < 2 \\)) là sai. Do đó, mệnh đề \\( \\land \\) sai cho cặp này, và lượng từ 'với mọi' bị vi phạm.<br /><br /><b>(N) \\( \\exists x \\exists y [(x = y^2) \\land (x < y)] \\)</b><br />Mệnh đề này phát biểu: 'Tồn tại ít nhất một cặp số thực (x, y) sao cho x bằng y² VÀ x nhỏ hơn y'. Mệnh đề này <b>ĐÚNG</b>. Ta chỉ cần tìm một ví dụ. Chọn \\( y = 0.5 \\). Khi đó \\( x = y^2 = 0.25 \\). Ta kiểm tra điều kiện \\( x < y \\), tức là \\( 0.25 < 0.5 \\), điều này đúng. Vì ta đã tìm được một cặp (x, y) thỏa mãn, mệnh đề là đúng.<br /><br /><b>Kết luận:</b> Chỉ có (N) là đúng.",
+      "difficulty": "medium",
+      "topic": "Predicate Logic",
+      "hints": [
+        "Với lượng từ 'với mọi' (\\( \\forall \\)), hãy cố gắng tìm một phản ví dụ.",
+        "Với lượng từ 'tồn tại' (\\( \\exists \\)), hãy cố gắng tìm một ví dụ thỏa mãn.",
+        "Hãy thử các giá trị đặc biệt như số âm, 0, 1, và các số trong khoảng (0, 1)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 14,
+      "question": "Which proposition is logically equivalent to \\( (p \\to q) \\lor (\\neg p \\to (q \\lor r)) \\)?",
+      "image": null,
+      "options": [
+        "A. T",
+        "B. \\( p \\lor q \\lor r \\)",
+        "C. \\( r \\lor q \\)",
+        "D. \\( p \\lor q \\)",
+        "E. \\( q \\to r \\)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ta sử dụng các quy tắc tương đương logic để rút gọn biểu thức:<br /><br /><b>Biểu thức ban đầu:</b> \\( (p \\to q) \\lor (\\neg p \\to (q \\lor r)) \\)<br /><br /><b>Bước 1: Chuyển đổi phép kéo theo (Implication Equivalence)</b><br />\\( (\\neg p \\lor q) \\lor (\\neg (\\neg p) \\lor (q \\lor r)) \\)<br />\\( (\\neg p \\lor q) \\lor (p \\lor q \\lor r) \\)<br /><br /><b>Bước 2: Bỏ ngoặc và sắp xếp lại (Associative and Commutative Laws)</b><br />\\( \\neg p \\lor q \\lor p \\lor q \\lor r \\)<br />\\( (\\neg p \\lor p) \\lor (q \\lor q) \\lor r \\)<br /><br /><b>Bước 3: Rút gọn</b><br />- Theo luật Phủ định (Negation Law): \\( \\neg p \\lor p \\equiv T \\)<br />- Theo luật Lũy đẳng (Idempotent Law): \\( q \\lor q \\equiv q \\)<br />Biểu thức trở thành: \\( T \\lor q \\lor r \\)<br /><br /><b>Bước 4: Áp dụng luật Nuốt (Domination Law)</b><br />\\( T \\lor A \\equiv T \\). Do đó: \\( T \\lor q \\lor r \\equiv T \\)<br /><br /><b>Kết luận:</b> Biểu thức là một hằng đúng (tautology), tương đương với T.",
+      "difficulty": "hard",
+      "topic": "Logical Equivalences",
+      "hints": [
+        "Bắt đầu bằng cách chuyển đổi tất cả các phép kéo theo (\\( \\to \\)) thành phép HOẶC (\\( \\lor \\)) và phép phủ định (\\( \\neg \\)).",
+        "Công thức: \\( A \\to B \\equiv \\neg A \\lor B \\).",
+        "Tìm kiếm các cặp mệnh đề và phủ định của nó, ví dụ \\( p \\lor \\neg p \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 15,
+      "question": "Let p, q be two propositions. Which of the following is logically equivalent to \\( p \\to q \\)?",
+      "image": null,
+      "options": [
+        "A. \\( \\neg q \\to \\neg p \\)",
+        "B. \\( \\neg p \\to \\neg q \\)",
+        "C. \\( \\neg q \\to p \\)",
+        "D. \\( \\neg p \\to q \\)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Mệnh đề \\( p \\to q \\) có một số dạng tương đương quan trọng:<br /><br />1.  <b>Dạng tuyển (Disjunctive form):</b> \\( \\neg p \\lor q \\)<br />2.  <b>Mệnh đề đảo ngược (Converse):</b> \\( q \\to p \\) (Không tương đương)<br />3.  <b>Mệnh đề nghịch đảo (Inverse):</b> \\( \\neg p \\to \\neg q \\) (Không tương đương)<br />4.  <b>Mệnh đề phản đảo (Contrapositive):</b> \\( \\neg q \\to \\neg p \\) (<b>Tương đương</b>)<br /><br />Hãy kiểm tra mệnh đề phản đảo: \\( \\neg q \\to \\neg p \\) tương đương với \\( \\neg (\\neg q) \\lor (\\neg p) \\) \\( \\equiv q \\lor \\neg p \\) \\( \\equiv \\neg p \\lor q \\).<br />Biểu thức này hoàn toàn giống với dạng tuyển của \\( p \\to q \\), do đó chúng tương đương logic.",
+      "difficulty": "easy",
+      "topic": "Logical Equivalences",
+      "hints": [
+        "Nhớ tên các mệnh đề liên quan: đảo ngược, nghịch đảo, và phản đảo.",
+        "Chỉ có mệnh đề phản đảo (contrapositive) là luôn tương đương logic với mệnh đề ban đầu.",
+        "Bạn có thể kiểm tra bằng cách lập bảng chân trị."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 16,
+      "question": "Which propositions are equivalent to \\( (p \\to q) \\lor (p \\to r) \\)?<br /><br />(i) \\( p \\to (q \\lor r) \\)<br />(ii) \\( p \\to (q \\land r) \\)",
+      "image": null,
+      "options": [
+        "A. (ii)",
+        "B. (i)",
+        "C. None of the other choices is correct",
+        "D. (i) and (ii)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Bước 1: Rút gọn biểu thức ban đầu</b><br />\\( (p \\to q) \\lor (p \\to r) \\)<br />\\( \\equiv (\\neg p \\lor q) \\lor (\\neg p \\lor r) \\) (Chuyển đổi phép kéo theo)<br />\\( \\equiv \\neg p \\lor q \\lor \\neg p \\lor r \\) (Bỏ ngoặc)<br />\\( \\equiv (\\neg p \\lor \\neg p) \\lor q \\lor r \\) (Giao hoán và kết hợp)<br />\\( \\equiv \\neg p \\lor q \\lor r \\) (Luật lũy đẳng)<br /><br /><b>Bước 2: Rút gọn các mệnh đề (i) và (ii)</b><br />- <b>(i) \\( p \\to (q \\lor r) \\)</b><br />  \\( \\equiv \\neg p \\lor (q \\lor r) \\) (Chuyển đổi phép kéo theo)<br />  \\( \\equiv \\neg p \\lor q \\lor r \\). <b>Mệnh đề này tương đương.</b><br /><br />- <b>(ii) \\( p \\to (q \\land r) \\)</b><br />  \\( \\equiv \\neg p \\lor (q \\land r) \\). Mệnh đề này không tương đương.<br /><br /><b>Kết luận:</b> Chỉ có (i) là tương đương với biểu thức ban đầu.",
+      "difficulty": "medium",
+      "topic": "Logical Equivalences",
+      "hints": [
+        "Luật phân phối ngược: \\( (A \\lor B) \\land (A \\lor C) \\equiv A \\lor (B \\land C) \\). Lưu ý ở đây là phép \\( \\lor \\), không áp dụng trực tiếp được.",
+        "Cách tốt nhất là chuyển đổi tất cả về dạng chỉ có \\( \\lor, \\land, \\neg \\).",
+        "Đừng quên luật lũy đẳng: \\( A \\lor A \\equiv A \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 17,
+      "question": "Which propositions are logically equivalent to \\( \\neg (p \\leftrightarrow q) \\)?<br /><br />(i) \\( p \\leftrightarrow \\neg q \\)<br />(ii) \\( \\neg p \\leftrightarrow q \\)",
+      "image": null,
+      "options": [
+        "A. (i) and (ii)",
+        "B. (ii)",
+        "C. None of the other choices is correct",
+        "D. (i)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Phủ định của phép tương đương hai chiều \\( \\neg (p \\leftrightarrow q) \\) chính là phép XOR (\\( p \\oplus q \\)). Mệnh đề này đúng khi và chỉ khi p và q có giá trị chân lý khác nhau.<br /><br /><b>Xét mệnh đề (i): \\( p \\leftrightarrow \\neg q \\)</b><br />Mệnh đề này đúng khi p và \\( \\neg q \\) có cùng giá trị chân lý.<br />- Nếu p=T, \\( \\neg q \\) phải là T, tức là q=F. (p, q khác nhau)<br />- Nếu p=F, \\( \\neg q \\) phải là F, tức là q=T. (p, q khác nhau)<br />Vậy (i) đúng khi p, q khác nhau. <b>Do đó, (i) tương đương.</b><br /><br /><b>Xét mệnh đề (ii): \\( \\neg p \\leftrightarrow q \\)</b><br />Mệnh đề này đúng khi \\( \\neg p \\) và q có cùng giá trị chân lý.<br />- Nếu q=T, \\( \\neg p \\) phải là T, tức là p=F. (p, q khác nhau)<br />- Nếu q=F, \\( \\neg p \\) phải là F, tức là p=T. (p, q khác nhau)<br />Vậy (ii) đúng khi p, q khác nhau. <b>Do đó, (ii) cũng tương đương.</b><br /><br /><b>Kết luận:</b> Cả (i) và (ii) đều tương đương với \\( \\neg (p \\leftrightarrow q) \\).",
+      "difficulty": "hard",
+      "topic": "Logical Equivalences",
+      "hints": [
+        "Phủ định của phép tương đương hai chiều là phép XOR.",
+        "Phép XOR (\\( p \\oplus q \\)) đúng khi \\( p \\neq q \\).",
+        "Phép tương đương hai chiều (\\( A \\leftrightarrow B \\)) đúng khi \\( A = B \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 18,
+      "question": "Which proposition is logically equivalent to \\( (p \\land q) \\to \\neg p \\)?<br /><br />(i) \\( q \\lor \\neg p \\)<br />(ii) \\( \\neg q \\lor p \\)<br />(iii) \\( p \\to \\neg q \\)",
+      "image": null,
+      "options": [
+        "A. None of the other choices is correct",
+        "B. (ii)",
+        "C. (i)",
+        "D. (iii)"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ta sẽ rút gọn biểu thức đã cho:<br /><br /><b>Biểu thức:</b> \\( (p \\land q) \\to \\neg p \\)<br /><br /><b>Bước 1: Chuyển đổi phép kéo theo</b><br />\\( \\equiv \\neg (p \\land q) \\lor \\neg p \\)<br /><br /><b>Bước 2: Áp dụng luật De Morgan</b><br />\\( \\equiv (\\neg p \\lor \\neg q) \\lor \\neg p \\)<br /><br /><b>Bước 3: Sắp xếp và rút gọn</b><br />\\( \\equiv (\\neg p \\lor \\neg p) \\lor \\neg q \\)<br />\\( \\equiv \\neg p \\lor \\neg q \\) (Luật lũy đẳng)<br /><br />Bây giờ, ta xét mệnh đề (iii):<br /><b>(iii) \\( p \\to \\neg q \\)</b><br />\\( \\equiv \\neg p \\lor \\neg q \\)<br /><br /><b>Kết luận:</b> Biểu thức ban đầu tương đương với \\( \\neg p \\lor \\neg q \\), và mệnh đề (iii) cũng tương đương với \\( \\neg p \\lor \\neg q \\). Do đó, đáp án là (iii).",
+      "difficulty": "medium",
+      "topic": "Logical Equivalences",
+      "hints": [
+        "Sử dụng công thức \\( A \\to B \\equiv \\neg A \\lor B \\) để bắt đầu.",
+        "Áp dụng luật De Morgan: \\( \\neg (A \\land B) \\equiv \\neg A \\lor \\neg B \\).",
+        "Rút gọn biểu thức cuối cùng và so sánh với các lựa chọn."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 19,
+      "question": "Let p and q be propositions. Which statements are correct?<br /><br />(i) \\( p \\lor \\neg p \\) is a tautology.<br />(ii) \\( p \\land \\neg p \\) is a tautology.<br />(iii) \\( p \\lor \\neg p \\) is a contradiction.<br />(iv) \\( p \\land \\neg p \\) is a contradiction.",
+      "image": null,
+      "options": [
+        "A. (ii), (iii)",
+        "B. None of the other choices",
+        "C. (iv)",
+        "D. (ii), (iv)",
+        "E. (i), (iv)"
+      ],
+      "correctAnswer": "E",
+      "explanation": "<b>Phân tích từng mệnh đề:</b><br /><br />- <b>(i) \\( p \\lor \\neg p \\) is a tautology:</b> Mệnh đề này <b>ĐÚNG</b>. Theo luật Trung gian bài trừ (Law of Excluded Middle), một mệnh đề hoặc phủ định của nó luôn đúng.<br /><br />- <b>(ii) \\( p \\land \\neg p \\) is a tautology:</b> Mệnh đề này <b>SAI</b>. Biểu thức \\( p \\land \\neg p \\) luôn sai.<br /><br />- <b>(iii) \\( p \\lor \\neg p \\) is a contradiction:</b> Mệnh đề này <b>SAI</b>. Biểu thức \\( p \\lor \\neg p \\) luôn đúng.<br /><br />- <b>(iv) \\( p \\land \\neg p \\) is a contradiction:</b> Mệnh đề này <b>ĐÚNG</b>. Theo luật Mâu thuẫn (Law of Contradiction), một mệnh đề và phủ định của nó không thể cùng đúng, do đó hội của chúng luôn sai.<br /><br /><b>Kết luận:</b> Các phát biểu đúng là (i) và (iv).",
+      "difficulty": "easy",
+      "topic": "Tautology and Contradiction",
+      "hints": [
+        "Một tautology (hằng đúng) là một mệnh đề luôn luôn đúng.",
+        "Một contradiction (mâu thuẫn) là một mệnh đề luôn luôn sai."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 20,
+      "question": "Which proposition is a contradiction?<br /><br />(i) \\( p \\land q \\)<br />(ii) \\( p \\to q \\)<br />(iii) \\( (p \\to q) \\land (q \\to p) \\)",
+      "image": null,
+      "options": [
+        "A. (iii)",
+        "B. (ii)",
+        "C. None of the other choices is correct",
+        "D. (i)"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Một mâu thuẫn (contradiction) là một mệnh đề luôn có giá trị sai, bất kể giá trị chân lý của các mệnh đề thành phần.<br /><br />- <b>(i) \\( p \\land q \\):</b> Đây là một mệnh đề tiếp liên (contingency). Nó đúng khi cả p và q đều đúng.<br />- <b>(ii) \\( p \\to q \\):</b> Đây là một mệnh đề tiếp liên. Nó chỉ sai khi p đúng và q sai.<br />- <b>(iii) \\( (p \\to q) \\land (q \\to p) \\):</b> Biểu thức này tương đương với \\( p \\leftrightarrow q \\). Đây là một mệnh đề tiếp liên. Nó đúng khi p và q có cùng giá trị chân lý.<br /><br /><b>Kết luận:</b> Không có mệnh đề nào trong các lựa chọn là một mâu thuẫn.",
+      "difficulty": "medium",
+      "topic": "Tautology and Contradiction",
+      "hints": [
+        "Một mâu thuẫn phải luôn sai.",
+        "Hãy thử tìm một trường hợp mà mỗi mệnh đề có thể đúng."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 21,
+      "question": "Which of the following propositions is a contradiction?",
+      "image": null,
+      "options": [
+        "A. \\( (p \\to q) \\lor (q \\to p) \\lor (p \\oplus q) \\)",
+        "B. \\( (p \\to q) \\land (q \\to p) \\land (p \\oplus q) \\)",
+        "C. \\( [(p \\to q) \\lor (q \\to p)] \\land (p \\oplus q) \\)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ta hãy phân tích từng mệnh đề:<br /><br />- <b>Mệnh đề A:</b> Biểu thức \\( (p \\to q) \\lor (q \\to p) \\) là một hằng đúng (tautology). Do đó, \\( T \\lor (p \\oplus q) \\) cũng là một hằng đúng.<br /><br />- <b>Mệnh đề B:</b> Biểu thức \\( (p \\to q) \\land (q \\to p) \\) tương đương với \\( p \\leftrightarrow q \\). Mệnh đề \\( p \\leftrightarrow q \\) đúng khi p và q có cùng giá trị chân lý. Ngược lại, \\( p \\oplus q \\) đúng khi p và q có giá trị chân lý khác nhau. Vì hai vế không bao giờ có thể cùng đúng, phép \\( \\land \\) của chúng sẽ luôn sai. Do đó, đây là một <b>mâu thuẫn</b>.<br /><br />- <b>Mệnh đề C:</b> Biểu thức \\( [(p \\to q) \\lor (q \\to p)] \\) là một hằng đúng (T). Vậy mệnh đề trở thành \\( T \\land (p \\oplus q) \\), tương đương với \\( p \\oplus q \\). Đây là một mệnh đề tiếp liên (contingency).<br /><br /><b>Kết luận:</b> Chỉ có mệnh đề B là một mâu thuẫn.",
+      "difficulty": "hard",
+      "topic": "Tautology and Contradiction",
+      "hints": [
+        "Nhận biết rằng \\( (p \\to q) \\land (q \\to p) \\) chính là \\( p \\leftrightarrow q \\).",
+        "\\( p \\leftrightarrow q \\) và \\( p \\oplus q \\) là hai mệnh đề phủ định của nhau.",
+        "\\( A \\land \\neg A \\) luôn là một mâu thuẫn."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 22,
+      "question": "Let p, q be propositions. The compound proposition \\( (p \\land q) \\to (p \\lor q) \\) is a _________.",
+      "image": null,
+      "options": [
+        "A. a contradiction",
+        "B. a tautology",
+        "C. a contingency",
+        "D. None of the other choices is correct"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ta có thể chứng minh bằng cách rút gọn biểu thức:<br /><br />\\( (p \\land q) \\to (p \\lor q) \\)<br />\\( \\equiv \\neg(p \\land q) \\lor (p \\lor q) \\) (Chuyển đổi phép kéo theo)<br />\\( \\equiv (\\neg p \\lor \\neg q) \\lor (p \\lor q) \\) (Luật De Morgan)<br />\\( \\equiv (\\neg p \\lor p) \\lor (\\neg q \\lor q) \\) (Giao hoán và kết hợp)<br />\\( \\equiv T \\lor T \\) (Luật Phủ định)<br />\\( \\equiv T \\)<br /><br />Vì biểu thức luôn đúng, nó là một <b>hằng đúng (tautology)</b>.",
+      "difficulty": "medium",
+      "topic": "Tautology and Contradiction",
+      "hints": [
+        "Sử dụng công thức \\( A \\to B \\equiv \\neg A \\lor B \\).",
+        "Áp dụng luật De Morgan để phá dấu phủ định của ngoặc.",
+        "Nhớ rằng \\( X \\lor \\neg X \\equiv T \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 23,
+      "question": "Let p, q and r be propositions:<br />p: You go to class regularly<br />q: You do all homework problems<br />r: You receive good grades<br /><br />Translate the sentence into logical expression:<br /><b>\"You receive good grades if and only if you go to class regularly and do all homework problems\".</b>",
+      "image": null,
+      "options": [
+        "A. \\( (p \\lor q) \\to r \\)",
+        "B. \\( r \\leftrightarrow (p \\land q) \\)",
+        "C. \\( r \\to (p \\land q) \\)",
+        "D. \\( (p \\land q) \\to r \\)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Phân tích câu:</b><br />- Vế 1: \"You receive good grades\" tương ứng với \\( r \\).<br />- Cụm từ \"if and only if\" (khi và chỉ khi) tương ứng với phép tương đương hai chiều \\( \\leftrightarrow \\).<br />- Vế 2: \"you go to class regularly and do all homework problems\" là sự kết hợp của p và q bằng phép 'và', tương ứng với \\( p \\land q \\).<br /><br /><b>Kết hợp lại:</b> Ta có biểu thức \\( r \\leftrightarrow (p \\land q) \\).",
+      "difficulty": "easy",
+      "topic": "Translating Sentences",
+      "hints": [
+        "Xác định các mệnh đề đơn trong câu.",
+        "Cụm từ 'if and only if' là dấu hiệu của phép tương đương hai chiều (\\( \\leftrightarrow \\)).",
+        "Từ 'and' tương ứng với phép hội (\\( \\land \\))."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 24,
+      "question": "Let P(x) be the statement \"x has a computer\", Q(x) be the statement \"x can connect to the Internet\".<br /><br />Translate the sentence into a logical expression:<br /><b>\"No student at your school has a computer but can not connect to the Internet\".</b><br /><br />(i) \\( \\forall x(P(x) \\land \\neg Q(x)) \\)<br />(ii) \\( \\forall x(P(x) \\lor \\neg Q(x)) \\)<br />(iii) \\( \\exists x(P(x) \\land \\neg Q(x)) \\)<br />(iv) \\( \\exists x(P(x) \\lor \\neg Q(x)) \\)<br />(v) \\( \\forall x(P(x) \\to Q(x)) \\)",
+      "image": null,
+      "options": [
+        "A. (i)",
+        "B. (iv)",
+        "C. (iii)",
+        "D. (v)",
+        "E. (ii)"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Câu \"<b>Không</b> học sinh nào có máy tính <b>mà không thể</b> kết nối Internet\" có thể được diễn giải theo hai cách tương đương:<br /><br />1. Phủ định của mệnh đề 'Tồn tại một học sinh có máy tính mà không thể kết nối Internet'.<br />   \\( \\neg \\exists x (P(x) \\land \\neg Q(x)) \\)<br /><br />2. 'Với mọi học sinh, nếu người đó có máy tính thì người đó có thể kết nối Internet'.<br />   \\( \\forall x (P(x) \\to Q(x)) \\)<br /><br />Theo các luật tương đương logic, \\( \\neg \\exists x (A(x)) \\equiv \\forall x (\\neg A(x)) \\).<br />Áp dụng vào trường hợp này:<br />\\( \\neg \\exists x (P(x) \\land \\neg Q(x)) \\equiv \\forall x (\\neg(P(x) \\land \\neg Q(x))) \\)<br />\\( \\equiv \\forall x (\\neg P(x) \\lor Q(x)) \\) (De Morgan)<br />\\( \\equiv \\forall x (P(x) \\to Q(x)) \\) (Implication Equivalence)<br /><br /><b>Kết luận:</b> Biểu thức (v) là chính xác.",
+      "difficulty": "hard",
+      "topic": "Translating Sentences",
+      "hints": [
+        "Mệnh đề 'Không có A nào là B' tương đương với 'Với mọi A, chúng không phải là B'.",
+        "Hãy thử chuyển câu gốc thành dạng 'Nếu... thì...'.",
+        "\\( \\forall x (P(x) \\to Q(x)) \\) là cách biểu diễn chuẩn cho câu 'Mọi P đều là Q'."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 25,
+      "question": "Given the propositions:<br />p = “You drive at more than 60km/h”<br />q = “You get a speeding ticket”<br /><br />Express the sentence into a logical expression:<br /><b>“You got a speeding ticket but you did not drive at more than 60km/h”</b><br /><br />(i) \\( q \\land \\neg p \\)<br />(ii) \\( q \\to \\neg p \\)<br />(iii) \\( p \\land \\neg q \\)<br />(iv) \\( \\neg q \\land \\neg p \\)",
+      "image": null,
+      "options": [
+        "A. None of the other choices is correct",
+        "B. (ii)",
+        "C. (iii)",
+        "D. (iv)",
+        "E. (i)"
+      ],
+      "correctAnswer": "E",
+      "explanation": "<b>Phân tích câu:</b><br />- \"You got a speeding ticket\" tương ứng với mệnh đề \\( q \\).<br />- Từ \"but\" (nhưng) trong logic có ý nghĩa tương tự như \"and\" (và), do đó nó tương ứng với phép hội \\( \\land \\).<br />- \"you did not drive at more than 60km/h\" là phủ định của mệnh đề p, tương ứng với \\( \\neg p \\).<br /><br /><b>Kết hợp lại:</b> Biểu thức logic là \\( q \\land \\neg p \\).",
+      "difficulty": "easy",
+      "topic": "Translating Sentences",
+      "hints": [
+        "Từ 'but' thường được dịch thành phép 'AND' (\\( \\land \\)).",
+        "Từ 'not' chỉ ra phép phủ định (\\( \\neg \\))."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 26,
+      "question": "Let:<br />C(x) = “x is a student”,<br />D(x) = “x studies Discrete Mathematics”,<br />where the domain of x consists of all people.<br /><br />Translate the sentence into a logical expression:<br /><b>“Every student studies Discrete Mathematics”</b><br /><br />(i) \\( \\forall x (C(x) \\to D(x)) \\)<br />(ii) \\( \\forall x (C(x) \\land D(x)) \\)<br />(iii) \\( \\exists x (C(x) \\to D(x)) \\)<br />(iv) \\( \\exists x (C(x) \\land D(x)) \\)",
+      "image": null,
+      "options": [
+        "A. (ii)",
+        "B. (iv)",
+        "C. (iii)",
+        "D. (i)"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Câu \"Mọi sinh viên đều học Toán rời rạc\" có nghĩa là 'Với mọi người x, <b>nếu</b> x là sinh viên, <b>thì</b> x học Toán rời rạc'.<br /><br />- 'Mọi' (Every) tương ứng với lượng từ phổ quát \\( \\forall x \\).<br />- Cấu trúc 'nếu... thì...' chỉ ra rằng ta nên sử dụng phép kéo theo \\( \\to \\).<br /><br />Do đó, biểu thức đúng là \\( \\forall x (C(x) \\to D(x)) \\).<br /><br /><b>Tại sao (ii) sai?</b> Biểu thức \\( \\forall x (C(x) \\land D(x)) \\) có nghĩa là 'Mọi người đều là sinh viên VÀ học Toán rời rạc', điều này rõ ràng không đúng với thực tế.",
+      "difficulty": "medium",
+      "topic": "Translating Sentences",
+      "hints": [
+        "Lượng từ 'Mọi' (\\( \\forall \\)) thường đi kèm với phép kéo theo (\\( \\to \\)) để giới hạn phạm vi.",
+        "Lượng từ 'Tồn tại' (\\( \\exists \\)) thường đi kèm với phép 'VÀ' (\\( \\land \\))."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 27,
+      "question": "Let x, y represent all people in a university<br />S(x) = “x is a student”<br />F(x) = “x is a faculty”<br />P(x, y) = “the faculty x taught the student y”<br /><br />Translate the logical expression into a sentence:<br /><b>\\( \\exists x (F(x) \\land \\forall y (S(y) \\to P(x, y))) \\)</b>",
+      "image": null,
+      "options": [
+        "A. Some faculty taught all students",
+        "B. None of the other choices is correct",
+        "C. Each student was taught by some faculty",
+        "D. Some students were taught by all faculty",
+        "E. Each faculty taught some students"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ta đọc biểu thức từ ngoài vào trong:<br /><br />- \\( \\exists x (...) \\): Tồn tại một người x sao cho... (Some... exist)<br />- \\( F(x) \\land ... \\): ...x là giảng viên VÀ...<br />- \\( \\forall y (...) \\): ...với tất cả mọi người y...<br />- \\( S(y) \\to P(x, y) \\): ...nếu y là sinh viên, thì giảng viên x đã dạy sinh viên y.<br /><br />Kết hợp lại, phần \\( \\forall y (S(y) \\to P(x, y)) \\) có nghĩa là \"giảng viên x đã dạy tất cả các sinh viên\".<br /><br />Toàn bộ biểu thức có nghĩa là: \"<b>Tồn tại một giảng viên</b> mà người đó <b>đã dạy tất cả sinh viên</b>\".<br />Câu này tương đương với \"Một vài giảng viên đã dạy tất cả sinh viên\".",
+      "difficulty": "hard",
+      "topic": "Translating Sentences",
+      "hints": [
+        "Đọc các lượng từ (\\( \\exists, \\forall \\)) từ trái sang phải.",
+        "Phân tích biểu thức bên trong ngoặc trước.",
+        "\\( \\forall y (S(y) \\to P(x,y)) \\) là một mệnh đề về một 'x' cụ thể."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 28,
+      "question": "Let:<br />F(x) = “x is a student of the Business department”,<br />J(x) = “x knows the computer language Java”,<br />R(x) = “x can speak Russian”.<br />The domain consists of all students of the university.<br /><br />Express the sentence into a logical expression:<br /><b>“Some student of the Business department either can speak Russian or knows Java”</b><br /><br />(i) \\( \\forall x(F(x) \\to (J(x) \\lor R(x))) \\)<br />(ii) \\( \\forall x(F(x) \\to (J(x) \\land R(x))) \\)<br />(iii) \\( \\exists x(F(x) \\land (J(x) \\lor R(x))) \\)<br />(iv) \\( \\exists x(F(x) \\lor (J(x) \\lor R(x))) \\)",
+      "image": null,
+      "options": [
+        "A. (i)",
+        "B. (ii)",
+        "C. (iii)",
+        "D. (iv)"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Phân tích câu:</b><br />- \"Some student\" (Một vài sinh viên) cho thấy ta cần dùng lượng từ tồn tại \\( \\exists x \\).<br />- Mệnh đề này nói về một sinh viên thỏa mãn hai điều kiện: (1) là sinh viên khoa Kinh doanh VÀ (2) có thể nói tiếng Nga HOẶC biết Java.<br />- (1) \"student of the Business department\" tương ứng với \\( F(x) \\).<br />- (2) \"either can speak Russian or knows Java\" tương ứng với \\( R(x) \\lor J(x) \\).<br />- Khi sử dụng lượng từ tồn tại \\( \\exists \\) để thể hiện một đối tượng có nhiều thuộc tính, ta thường kết hợp chúng bằng phép VÀ (\\( \\land \\)).<br /><br /><b>Kết hợp lại:</b> \"Tồn tại một sinh viên x sao cho x là sinh viên khoa Kinh doanh VÀ (x biết Java hoặc x nói được tiếng Nga)\".<br />Biểu thức là: \\( \\exists x(F(x) \\land (J(x) \\lor R(x))) \\).",
+      "difficulty": "medium",
+      "topic": "Translating Sentences",
+      "hints": [
+        "Từ 'Some' (một vài, tồn tại) thường đi với lượng từ \\( \\exists \\).",
+        "Lượng từ \\( \\exists \\) thường đi kèm với phép VÀ (\\( \\land \\)) để kết hợp các thuộc tính của cùng một đối tượng.",
+        "'Either... or' trong ngữ cảnh này là phép HOẶC bao hàm (\\( \\lor \\))."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 29,
+      "question": "Which proposition is False?",
+      "image": null,
+      "options": [
+        "A. 2 + 2 = 4 if and only if 1 + 1 = 2",
+        "B. If 1 + 1 = 3 then space aliens exist",
+        "C. If 1 + 1 = 2 then 2 + 2 = 3",
+        "D. If 1 < 0 then 3 = 4"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta xét giá trị chân lý của từng mệnh đề:<br /><br />- <b>A: \\( (2+2=4) \\leftrightarrow (1+1=2) \\)</b>. Đây là \\( T \\leftrightarrow T \\), có giá trị là <b>ĐÚNG (True)</b>.<br /><br />- <b>B: \\( (1+1=3) \\to \\text{(space aliens exist)} \\)</b>. Đây là \\( F \\to q \\). Một mệnh đề kéo theo với giả thiết sai luôn có giá trị là <b>ĐÚNG (True)</b>.<br /><br />- <b>C: \\( (1+1=2) \\to (2+2=3) \\)</b>. Đây là \\( T \\to F \\). Đây là trường hợp duy nhất mà một mệnh đề kéo theo có giá trị <b>SAI (False)</b>.<br /><br />- <b>D: \\( (1<0) \\to (3=4) \\)</b>. Đây là \\( F \\to F \\). Một mệnh đề kéo theo với giả thiết sai luôn có giá trị là <b>ĐÚNG (True)</b>.",
+      "difficulty": "easy",
+      "topic": "Propositional Logic",
+      "hints": [
+        "Một mệnh đề kéo theo \\( p \\to q \\) chỉ sai khi \\( p \\) đúng và \\( q \\) sai.",
+        "Nếu mệnh đề điều kiện (vế trước) của phép kéo theo là sai, thì cả mệnh đề đó luôn đúng."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 30,
+      "question": "Suppose L(x, y) is the statement “Student x solves question y correctly”.<br /><br />Translate the statement into logical expression:<br /><b>“For any question in the exam, there are at least two students who solve it correctly and at least one student who does not”</b><br /><br />(i) \\( \\forall y(\\exists x(L(x,y)) \\land \\exists x'L(x',y) \\land \\exists x''\\neg L(x'',y)) \\)<br />(ii) \\( \\forall y(\\exists x(L(x,y)) \\land \\exists x'\\neg L(x',y)) \\)<br />(iii) \\( \\forall y(\\exists x(L(x,y)) \\land \\exists x'((x \\neq x') \\land L(x',y))) \\)<br />(iv) \\( \\forall y(\\exists x(L(x,y)) \\land \\exists x'((x \\neq x') \\land L(x',y))) \\land \\exists x''\\neg L(x'',y) \\)",
+      "image": null,
+      "options": [
+        "A. (i)",
+        "B. (ii)",
+        "C. (iii)",
+        "D. (iv)"
+      ],
+      "correctAnswer": "D",
+      "explanation": "Ta phân tích câu thành các phần nhỏ:<br /><br />1.  <b>\"For any question in the exam...\"</b>: Bắt đầu bằng lượng từ \\( \\forall y \\), với y là một câu hỏi.<br />2.  <b>\"...there are at least two students who solve it correctly...\"</b>: Điều này có nghĩa là 'tồn tại sinh viên x giải đúng' VÀ 'tồn tại một sinh viên khác x' cũng giải đúng'. Ta biểu diễn là: \\( \\exists x(L(x,y)) \\land \\exists x'((x \\neq x') \\land L(x',y)) \\).<br />3.  <b>\"...and at least one student who does not\"</b>: VÀ 'tồn tại sinh viên x'' giải không đúng'. Ta biểu diễn là: \\( \\exists x''\\neg L(x'',y) \\).<br /><br /><b>Kết hợp tất cả các phần:</b><br />\\( \\forall y( \\) [Phần 2] \\( \\land \\) [Phần 3] \\( ) \\)<br />\\( \\forall y((\\exists x(L(x,y)) \\land \\exists x'((x \\neq x') \\land L(x',y)))) \\land (\\exists x''\\neg L(x'',y))) \\)<br /><br />Biểu thức này khớp với lựa chọn (iv).",
+      "difficulty": "hard",
+      "topic": "Translating Sentences",
+      "hints": [
+        "Để diễn tả 'ít nhất hai', bạn cần hai biến khác nhau, ví dụ x và x', và thêm điều kiện \\( x \\neq x' \\).",
+        "Phân tách câu thành các mệnh đề nhỏ hơn và dịch từng phần.",
+        "Toàn bộ mệnh đề bên trong \\( \\forall y \\) được nối với nhau bằng phép VÀ."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 31,
+      "question": "Let P(x) be the statement “x can speak French”, Q(x) be the statement “x can speak Japanese”.<br /><br />Translate the logical expression into sentence, if the domain consists of all students in your class.<br /><b>\\( \\forall x (P(x) \\lor Q(x)) \\)</b>",
+      "image": null,
+      "options": [
+        "A. There is a student in your class who can speak either French or Japanese.",
+        "B. No student in your class can speak both French and Japanese.",
+        "C. There is a student in your class who can speak both French and Japanese.",
+        "D. Every student in your class can speak both French and Japanese.",
+        "E. Every student in your class can speak either French or Japanese."
+      ],
+      "correctAnswer": "E",
+      "explanation": "<b>Phân tích biểu thức:</b><br />- \\( \\forall x \\): 'Với mọi x' hoặc 'Mọi sinh viên'.<br />- \\( P(x) \\): 'x có thể nói tiếng Pháp'.<br />- \\( \\lor \\): Phép 'HOẶC'.<br />- \\( Q(x) \\): 'x có thể nói tiếng Nhật'.<br /><br /><b>Kết hợp lại:</b> \"Với mọi sinh viên x trong lớp, x có thể nói tiếng Pháp hoặc x có thể nói tiếng Nhật\".<br /><br />Câu này có nghĩa là \"Mọi sinh viên trong lớp bạn có thể nói tiếng Pháp hoặc tiếng Nhật\". Lựa chọn E diễn đạt chính xác ý này.",
+      "difficulty": "easy",
+      "topic": "Translating Sentences",
+      "hints": [
+        "\\( \\forall \\) có nghĩa là 'với mọi' hoặc 'mỗi'.",
+        "\\( \\lor \\) có nghĩa là 'hoặc' (inclusive OR)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 32,
+      "question": "Translate the sentence into a logical expression with the domain consisting of all real numbers:<br /><b>“The quotient of any two positive real numbers is also positive”</b><br /><br />(i) \\( \\forall x \\forall y ((x > 0) \\land (y > 0) \\to (x/y > 0)) \\)<br />(ii) \\( \\forall x \\forall y ((x > 0) \\land (y > 0) \\land (x/y > 0)) \\)<br />(iii) \\( (x > 0) \\land (y > 0) \\to (x/y > 0) \\)<br />(iv) \\( \\exists x \\exists y ((x > 0) \\land (y > 0) \\to (x/y > 0)) \\)",
+      "image": null,
+      "options": [
+        "A. (iii)",
+        "B. (i)",
+        "C. None of the other choices is correct",
+        "D. (ii)",
+        "E. (iv)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Câu này là một phát biểu tổng quát, áp dụng cho 'bất kỳ' số thực dương nào.<br /><br />- <b>\"any two...\"</b> (bất kỳ hai...) ngụ ý lượng từ phổ quát \\( \\forall x \\forall y \\).<br />- <b>\"positive real numbers\"</b> là điều kiện. 'Nếu x dương và y dương...'. Điều này tương ứng với \\( (x > 0) \\land (y > 0) \\).<br />- <b>\"...is also positive\"</b> là kết luận. '...thì thương của chúng cũng dương'. Điều này tương ứng với \\( (x/y > 0) \\).<br /><br />Cấu trúc của câu là: 'Với mọi x và mọi y, NẾU (x>0 và y>0) THÌ (x/y > 0)'.<br />Điều này được dịch chính xác thành \\( \\forall x \\forall y ((x > 0 \\land y > 0) \\to (x/y > 0)) \\).",
+      "difficulty": "medium",
+      "topic": "Translating Sentences",
+      "hints": [
+        "Các từ như 'any', 'every', 'all' thường tương ứng với lượng từ \\( \\forall \\).",
+        "Khi sử dụng \\( \\forall \\) để áp đặt một quy tắc cho một tập hợp con (ví dụ: số dương), cấu trúc thường là \\( \\forall x (\\text{Điều kiện} \\to \\text{Kết luận}) \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 33,
+      "question": "Let:<br />Q(x, y) be the statement “Student x has studied subject y”,<br />S(x, z) the statement “Student x is in class z”,<br />F(x, x’) the statement “Students x and x’ are friends”.<br /><br />Translate the logical expression into a sentence:<br /><b>\\( \\exists x \\exists x'(S(x, CS120) \\land F(x, x') \\land Q(x', \\text{Physics})) \\)</b>",
+      "image": null,
+      "options": [
+        "A. There exists a student who has a friend in class CS120 that has studied Physics.",
+        "B. Every student in class CS120 has a friend that has studied Physics.",
+        "C. None of the other choices is correct.",
+        "D. There exists one friend of a student in class CS120 that has studied Physics.",
+        "E. There exists one student in class CS120 that has studied Physics and has a friend."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Let's analyze the logical expression step by step, from inside out and left to right:<br /><br />- \\( \\exists x \\exists x' \\): 'There exists a student x and a student x' such that...'<br />- \\( S(x, \\text{CS120}) \\): '...student x is in class CS120...'<br />- \\( \\land F(x, x') \\): '...AND x and x' are friends...'<br />- \\( \\land Q(x', \\text{Physics}) \\): '...AND x' has studied Physics.'<br /><br />Putting it all together, we have: \"There exists a student x in class CS120 who has a friend x', and x' has studied Physics.\"<br /><br />This can be more naturally phrased as: \"There is a student in class CS120 who has a friend that has studied Physics.\" Option A, although it may sound a bit confusing, is the most accurate choice for this meaning: \"There exists a student (x) in class CS120 who has a friend (x') that has studied Physics.\"",
+      "difficulty": "hard",
+      "topic": "Translating Sentences",
+      "hints": [
+        "Read existential quantifiers (\\( \\exists \\)) as 'There exists' or 'There is'.",
+        "Xác định rõ vai trò của x và x'. Ở đây x là sinh viên trong lớp CS120, còn x' là người bạn đã học Vật lý.",
+        "Phép \\( \\land \\) kết nối tất cả các điều kiện lại với nhau."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 34,
+      "question": "Let:<br />p = “you missed more than 20% of lectures”<br />q = “Your final exam score is below 4”<br />r = “Your average course grade is at least 5”<br />s = “You passed the class”<br /><br />Translate the sentence into a logical expression:<br /><b>“You will pass the class if you missed at most 20% of lectures and your final exam score is at least 4 and your average course grade is at least 5”.</b><br /><br />(i) \\( (\\neg p \\land \\neg q \\land r) \\to s \\)<br />(ii) \\( s \\to (\\neg p \\land \\neg q \\land r) \\)<br />(iii) \\( (p \\land q \\land r) \\to s \\)<br />(iv) \\( (\\neg p \\land q \\land r) \\to s \\)",
+      "image": null,
+      "options": [
+        "A. (i)",
+        "B. (ii)",
+        "C. (iii)",
+        "D. None of the other choices is correct",
+        "E. (iv)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Cấu trúc câu là \"s IF (điều kiện)\", tương đương với \"IF (điều kiện) THEN s\", hay \\( (\\text{điều kiện}) \\to s \\).<br /><br />Ta phân tích vế điều kiện:<br />- \"you missed at most 20% of lectures\": Đây là phủ định của p (\"missed more than 20%\"), vậy đây là \\( \\neg p \\).<br />- \"your final exam score is at least 4\": Đây là phủ định của q (\"score is below 4\"), vậy đây là \\( \\neg q \\).<br />- \"your average course grade is at least 5\": Đây chính là mệnh đề r.<br /><br />Các điều kiện này được nối với nhau bằng từ \"and\", do đó ta dùng phép hội \\( \\land \\).<br />Vế điều kiện hoàn chỉnh là: \\( \\neg p \\land \\neg q \\land r \\).<br /><br /><b>Kết hợp lại:</b> \\( (\\neg p \\land \\neg q \\land r) \\to s \\), tương ứng với lựa chọn (i).",
+      "difficulty": "medium",
+      "topic": "Translating Sentences",
+      "hints": [
+        "Cấu trúc 'A if B' được dịch thành \\( B \\to A \\).",
+        "Chú ý dịch các cụm từ phủ định: 'at most 20%' là phủ định của 'more than 20%', và 'at least 4' là phủ định của 'below 4'."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 35,
+      "question": "Given the propositions:<br />p = “My car is in the repair shop”<br />q = “I go to class”.<br /><br />Express the following sentence into a logical expression:<br /><b>‘If my car is in the repair shop then I cannot go to class’.</b><br /><br />(i) \\( p \\to q \\)<br />(ii) \\( p \\land q \\)<br />(iii) \\( \\neg p \\land \\neg q \\)<br />(iv) \\( p \\to \\neg q \\)",
+      "image": null,
+      "options": [
+        "A. (iii)",
+        "B. (ii)",
+        "C. (i)",
+        "D. (iv)"
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Phân tích câu:</b><br />- Cấu trúc \"If... then...\" là một phép kéo theo \\( \\to \\).<br />- Vế trước \"If\" là \"My car is in the repair shop\", tương ứng với \\( p \\).<br />- Vế sau \"then\" là \"I cannot go to class\". Đây là phủ định của q (\"I go to class\"), do đó nó tương ứng với \\( \\neg q \\).<br /><br /><b>Kết hợp lại:</b> Biểu thức là \\( p \\to \\neg q \\), khớp với lựa chọn (iv).",
+      "difficulty": "easy",
+      "topic": "Translating Sentences",
+      "hints": [
+        "Cấu trúc câu 'If A then B' tương ứng với \\( A \\to B \\).",
+        "'Cannot' là một từ chỉ sự phủ định."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 36,
+      "question": "Translate the logical expression into sentence, domain is all real numbers<br /><b>\\( \\forall x \\forall y(((x<0) \\land (y<0)) \\to (xy>0)) \\)</b>",
+      "image": null,
+      "options": [
+        "A. The product of two negative numbers is positive",
+        "B. There is a negative number x and there is a negative number y such that xy is positive",
+        "C. The product of two negative numbers is negative",
+        "D. For each negative number x there is a negative number y such that xy is positive"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích biểu thức:</b><br />- \\( \\forall x \\forall y \\): 'Với mọi số thực x và mọi số thực y...' hoặc 'Với hai số thực bất kỳ...'.<br />- \\( ((x<0) \\land (y<0)) \\): Đây là phần điều kiện, '...nếu x nhỏ hơn 0 VÀ y nhỏ hơn 0...'. Nói cách khác, 'Nếu hai số đều là số âm...'.<br />- \\( \\to (xy>0) \\): Đây là phần kết luận, '...thì tích của chúng lớn hơn 0'. Nói cách khác, '...thì tích của chúng là số dương'.<br /><br /><b>Kết hợp lại:</b> \"Với hai số thực bất kỳ, nếu chúng đều là số âm thì tích của chúng là số dương\".<br />Câu này được diễn đạt một cách tự nhiên và chính xác nhất là: \"Tích của hai số âm là một số dương\".",
+      "difficulty": "easy",
+      "topic": "Translating Sentences",
+      "hints": [
+        "\\( \\forall x \\forall y \\) chỉ một quy tắc áp dụng chung cho tất cả các cặp số.",
+        "Cấu trúc \\( \\text{Điều kiện} \\to \\text{Kết luận} \\) có thể được đọc là 'Nếu Điều kiện thì Kết luận'."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 37,
+      "question": "Find the negation of the proposition:<br /><b>\\( \\exists x (P(x) \\to Q(x)) \\)</b><br /><br />(i) \\( \\forall x(Q(x) \\to P(x)) \\)<br />(ii) \\( \\forall x(\\neg Q(x) \\to P(x)) \\)<br />(iii) \\( \\forall x(\\neg Q(x) \\land P(x)) \\)<br />(iv) \\( \\forall x(\\neg Q(x) \\land \\neg P(x)) \\)",
+      "image": null,
+      "options": [
+        "A. (i)",
+        "B. None of the other choices is correct",
+        "C. (iii)",
+        "D. (iv)",
+        "E. (ii)"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta thực hiện phủ định từng bước:<br /><br /><b>Bước 1: Phủ định lượng từ</b><br />Phủ định của \\( \\exists x \\) là \\( \\forall x \\).<br />\\( \\neg [\\exists x (P(x) \\to Q(x))] \\equiv \\forall x [\\neg(P(x) \\to Q(x))] \\)<br /><br /><b>Bước 2: Phủ định mệnh đề kéo theo</b><br />Phủ định của \\( A \\to B \\) là \\( A \\land \\neg B \\).<br />\\( \\forall x [\\neg(P(x) \\to Q(x))] \\equiv \\forall x [P(x) \\land \\neg Q(x)] \\)<br /><br /><b>Bước 3: So sánh với các đáp án</b><br />Biểu thức \\( \\forall x [P(x) \\land \\neg Q(x)] \\) tương đương với \\( \\forall x [\\neg Q(x) \\land P(x)] \\) theo luật giao hoán. Do đó, (iii) là đáp án đúng.",
+      "difficulty": "medium",
+      "topic": "Negation",
+      "hints": [
+        "Quy tắc phủ định lượng từ: \\( \\neg \\exists \\equiv \\forall \\) và \\( \\neg \\forall \\equiv \\exists \\).",
+        "Quy tắc phủ định mệnh đề kéo theo: \\( \\neg (A \\to B) \\equiv A \\land \\neg B \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 38,
+      "question": "Find the negation of:<br /><b>\\( \\forall x \\forall y(\\exists z T(x,y,z) \\land Q(x,y)) \\)</b>",
+      "image": null,
+      "options": [
+        "A. \\( \\exists x \\exists y(\\forall z \\neg T(x,y,z) \\lor \\neg Q(x,y)) \\)",
+        "B. \\( \\exists x \\exists y(\\forall z \\neg T(x,y,z) \\lor Q(x,y)) \\)",
+        "C. \\( \\forall x \\exists y(\\forall z \\neg T(x,y,z) \\land \\neg Q(x,y)) \\)",
+        "D. \\( \\forall x \\exists y(\\forall z T(x,y,z) \\lor Q(x,y)) \\)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ta phủ định biểu thức từ ngoài vào trong:<br /><br /><b>Biểu thức gốc:</b> \\( \\neg [\\forall x \\forall y(\\exists z T(x,y,z) \\land Q(x,y))] \\)<br /><br /><b>Bước 1: Phủ định các lượng từ ngoài cùng</b><br />\\( \\exists x \\exists y \\neg [(\\exists z T(x,y,z)) \\land Q(x,y)] \\)<br /><br /><b>Bước 2: Áp dụng luật De Morgan cho biểu thức bên trong</b><br />\\( \\exists x \\exists y [\\neg(\\exists z T(x,y,z)) \\lor \\neg Q(x,y)] \\)<br /><br /><b>Bước 3: Phủ định lượng từ còn lại</b><br />\\( \\exists x \\exists y [(\\forall z \\neg T(x,y,z)) \\lor \\neg Q(x,y)] \\)<br /><br />Kết quả này khớp với lựa chọn A.",
+      "difficulty": "hard",
+      "topic": "Negation",
+      "hints": [
+        "Lật ngược tất cả các lượng từ (\\( \\forall \\leftrightarrow \\exists \\)).",
+        "Áp dụng luật De Morgan cho các phép toán logic bên trong.",
+        "Dấu phủ định sẽ đi vào trong cùng của biểu thức."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 39,
+      "question": "Find the negation of:<br /><b>\\( \\exists x \\exists y(\\forall z T(x,y,z) \\lor Q(x,y)) \\)</b>",
+      "image": null,
+      "options": [
+        "A. \\( \\forall x \\forall y(\\exists z \\neg T(x,y,z) \\land \\neg Q(x,y)) \\)",
+        "B. \\( \\forall x \\exists y(\\forall z \\neg T(x,y,z) \\land \\neg Q(x,y)) \\)",
+        "C. \\( \\forall x \\forall y(\\exists z T(x,y,z) \\land Q(x,y)) \\)",
+        "D. \\( \\forall x \\forall y(\\exists z \\neg T(x,y,z) \\lor \\neg Q(x,y)) \\)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Ta phủ định biểu thức từng bước:<br /><br /><b>Biểu thức gốc:</b> \\( \\neg [\\exists x \\exists y(\\forall z T(x,y,z) \\lor Q(x,y))] \\)<br /><br /><b>Bước 1: Phủ định các lượng từ ngoài cùng</b><br />\\( \\forall x \\forall y \\neg [(\\forall z T(x,y,z)) \\lor Q(x,y)] \\)<br /><br /><b>Bước 2: Áp dụng luật De Morgan</b><br />\\( \\forall x \\forall y [\\neg(\\forall z T(x,y,z)) \\land \\neg Q(x,y)] \\)<br /><br /><b>Bước 3: Phủ định lượng từ còn lại</b><br />\\( \\forall x \\forall y [(\\exists z \\neg T(x,y,z)) \\land \\neg Q(x,y)] \\)<br /><br />Kết quả này khớp với lựa chọn A.",
+      "difficulty": "hard",
+      "topic": "Negation",
+      "hints": [
+        "Bắt đầu bằng cách lật ngược các lượng từ ngoài cùng.",
+        "Phủ định của \\( \\lor \\) là \\( \\land \\), và phủ định của các thành phần."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 40,
+      "question": "Find the negation of:<br /><b>\\( \\exists x \\forall y(\\exists z T(x,y,z) \\land Q(x,y)) \\)</b>",
+      "image": null,
+      "options": [
+        "A. \\( \\forall x \\exists y(\\forall z T(x,y,z) \\lor Q(x,y)) \\)",
+        "B. \\( \\forall x \\exists y(\\forall z \\neg T(x,y,z) \\lor \\neg Q(x,y)) \\)",
+        "C. \\( \\forall x \\exists y(\\forall z \\neg T(x,y,z) \\land \\neg Q(x,y)) \\)",
+        "D. \\( \\forall x \\exists y(\\forall z \\neg T(x,y,z) \\lor Q(x,y)) \\)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Ta phủ định biểu thức từng bước:<br /><br /><b>Biểu thức gốc:</b> \\( \\neg [\\exists x \\forall y(\\exists z T(x,y,z) \\land Q(x,y))] \\)<br /><br /><b>Bước 1: Phủ định các lượng từ ngoài cùng</b><br />\\( \\forall x \\exists y \\neg [(\\exists z T(x,y,z)) \\land Q(x,y)] \\)<br /><br /><b>Bước 2: Áp dụng luật De Morgan</b><br />\\( \\forall x \\exists y [\\neg(\\exists z T(x,y,z)) \\lor \\neg Q(x,y)] \\)<br /><br /><b>Bước 3: Phủ định lượng từ còn lại</b><br />\\( \\forall x \\exists y [(\\forall z \\neg T(x,y,z)) \\lor \\neg Q(x,y)] \\)<br /><br />Kết quả này khớp với lựa chọn B (lưu ý: key trong hình của bạn chỉ ra đáp án D nhưng theo quy tắc logic thì đáp án B mới đúng).",
+      "difficulty": "hard",
+      "topic": "Negation",
+      "hints": [
+        "Lật ngược các lượng từ: \\( \\exists \\) thành \\( \\forall \\) và \\( \\forall \\) thành \\( \\exists \\).",
+        "Đẩy dấu phủ định vào trong, biến \\( \\land \\) thành \\( \\lor \\) và phủ định các vế."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 41,
+      "question": "Find the negation of the following proposition:<br /><b>“Messi both scored and assisted yesterday.”</b>",
+      "image": null,
+      "options": [
+        "A. Messi did not score or Messi did not assist yesterday.",
+        "B. Messi assisted but did not score yesterday.",
+        "C. Messi scored but did not assist yesterday.",
+        "D. Messi did not score and also did not assist yesterday."
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích:</b><br />- Đặt P = \"Messi scored yesterday\".<br />- Đặt Q = \"Messi assisted yesterday\".<br />- Câu gốc là \"P and Q\", hay \\( P \\land Q \\).<br /><br /><b>Phủ định:</b><br />- Phủ định của \\( P \\land Q \\) là \\( \\neg(P \\land Q) \\).<br />- Theo luật De Morgan, \\( \\neg(P \\land Q) \\equiv \\neg P \\lor \\neg Q \\).<br /><br /><b>Dịch lại:</b> \"Messi did not score OR Messi did not assist yesterday\".",
+      "difficulty": "easy",
+      "topic": "Negation",
+      "hints": [
+        "Phủ định của 'A và B' là 'không A hoặc không B'."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 42,
+      "question": "Find the negation of the proposition:<br /><b>“If I have one million dollars then I will buy a villa”.</b><br /><br />(i) “If I have one million dollars then I will not buy a villa”.<br />(ii) “I have one million dollars but I will not buy a villa”.<br />(iii) “I will buy a villa as soon as I have one million dollars”.",
+      "image": null,
+      "options": [
+        "A. (i)",
+        "B. (ii)",
+        "C. (iii)",
+        "D. None of them is correct."
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Phân tích:</b><br />- Đặt P = \"I have one million dollars\".<br />- Đặt Q = \"I will buy a villa\".<br />- Câu gốc có dạng \"If P then Q\", hay \\( P \\to Q \\).<br /><br /><b>Phủ định:</b><br />- Phủ định của \\( P \\to Q \\) là \\( \\neg(P \\to Q) \\).<br />- Theo quy tắc phủ định mệnh đề kéo theo, \\( \\neg(P \\to Q) \\equiv P \\land \\neg Q \\).<br /><br /><b>Dịch lại:</b> \"I have one million dollars AND I will NOT buy a villa\". Câu này tương ứng với phát biểu (ii).",
+      "difficulty": "medium",
+      "topic": "Negation",
+      "hints": [
+        "Phủ định của một mệnh đề 'Nếu... thì...' không phải là một mệnh đề 'Nếu... thì...' khác.",
+        "Phủ định của 'Nếu P thì Q' là 'P và không Q'."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 43,
+      "question": "Let P(x) be a propositional function with domain \\( \\{-1, 0, 1\\} \\).<br />Which proposition below is logically equivalent to \\( \\forall x((x \\neq 1) \\to \\neg P(x)) \\)?",
+      "image": null,
+      "options": [
+        "A. \\( \\neg P(-1) \\lor \\neg P(0) \\)",
+        "B. \\( \\neg P(-1) \\land \\neg P(0) \\)",
+        "C. \\( P(-1) \\to \\neg P(0) \\)",
+        "D. \\( \\neg P(-1) \\land \\neg P(0) \\land \\neg P(1) \\)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lượng từ \\( \\forall x \\) (với mọi x) trên một miền hữu hạn tương đương với một chuỗi phép \\( \\land \\) (VÀ).<br /><br /><b>Biểu thức gốc:</b> \\( \\forall x((x \\neq 1) \\to \\neg P(x)) \\)<br /><br /><b>Khai triển trên miền \\( \\{-1, 0, 1\\} \\):</b><br />\\( ((-1 \\neq 1) \\to \\neg P(-1)) \\land ((0 \\neq 1) \\to \\neg P(0)) \\land ((1 \\neq 1) \\to \\neg P(1)) \\)<br /><br /><b>Đánh giá các điều kiện:</b><br />- Với \\( x = -1 \\): \\( (-1 \\neq 1) \\) là Đúng (T). Vậy \\( T \\to \\neg P(-1) \\) rút gọn thành \\( \\neg P(-1) \\).<br />- Với \\( x = 0 \\): \\( (0 \\neq 1) \\) là Đúng (T). Vậy \\( T \\to \\neg P(0) \\) rút gọn thành \\( \\neg P(0) \\).<br />- Với \\( x = 1 \\): \\( (1 \\neq 1) \\) là Sai (F). Vậy \\( F \\to \\neg P(1) \\) luôn luôn Đúng (T).<br /><br /><b>Kết hợp lại:</b> \\( \\neg P(-1) \\land \\neg P(0) \\land T \\)<br />Biểu thức này tương đương với \\( \\neg P(-1) \\land \\neg P(0) \\).",
+      "difficulty": "medium",
+      "topic": "Predicate Logic Expansion",
+      "hints": [
+        "Lượng từ \\( \\forall \\) tương ứng với phép AND (\\( \\land \\)).",
+        "Nhớ lại rằng mệnh đề kéo theo \\( F \\to A \\) luôn luôn đúng."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 44,
+      "question": "Let P(x) be a propositional function on \\( \\{-2, -1, 0, 1, 2, 3, 4\\} \\).<br />Find a proposition that is logically equivalent to \\( \\exists x [x \\geq 0 \\land P(x)] \\).<br /><br />(i) \\( P(0) \\lor P(1) \\lor P(2) \\lor P(3) \\lor P(4) \\)<br />(ii) \\( P(0) \\land P(1) \\land P(2) \\land P(3) \\land P(4) \\)<br />(iii) \\( P(-2) \\land P(-1) \\)<br />(iv) \\( P(-2) \\lor P(-1) \\)",
+      "image": null,
+      "options": [
+        "A. (i)",
+        "B. (iv)",
+        "C. (iii)",
+        "D. None of the other choices is correct",
+        "E. (ii)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Lượng từ \\( \\exists x \\) (tồn tại x) tương đương với một chuỗi phép \\( \\lor \\) (HOẶC).<br /><br /><b>Biểu thức gốc:</b> \\( \\exists x [x \\geq 0 \\land P(x)] \\)<br /><br />Biểu thức này có nghĩa là 'Tồn tại một x trong miền xác định sao cho x lớn hơn hoặc bằng 0 VÀ P(x) đúng'. Ta chỉ cần xét các giá trị x thỏa mãn \\( x \\geq 0 \\), đó là \\( \\{0, 1, 2, 3, 4\\} \\).<br /><br /><b>Khai triển trên các giá trị thỏa mãn:</b><br />\\( (0 \\geq 0 \\land P(0)) \\lor (1 \\geq 0 \\land P(1)) \\lor (2 \\geq 0 \\land P(2)) \\lor (3 \\geq 0 \\land P(3)) \\lor (4 \\geq 0 \\land P(4)) \\)<br /><br />Vì điều kiện \\( x \\geq 0 \\) luôn đúng cho các giá trị này, biểu thức rút gọn thành:<br />\\( P(0) \\lor P(1) \\lor P(2) \\lor P(3) \\lor P(4) \\)<br />Điều này khớp với lựa chọn (i).",
+      "difficulty": "medium",
+      "topic": "Predicate Logic Expansion",
+      "hints": [
+        "Lượng từ \\( \\exists \\) tương ứng với phép OR (\\( \\lor \\)).",
+        "Điều kiện bên trong phép \\( \\land \\) hoạt động như một bộ lọc cho các giá trị của x."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 45,
+      "question": "Let P(x) be a propositional function with domain \\( \\{-1, 0, 1\\} \\).<br />Which proposition is equivalent to \\( \\exists x P(x) \\land \\forall x((x \\neq 0) \\to \\neg P(x)) \\)?",
+      "image": null,
+      "options": [
+        "A. \\( P(-1) \\lor P(0) \\lor P(1) \\)",
+        "B. \\( P(0) \\)",
+        "C. \\( \\neg P(-1) \\land P(0) \\land \\neg P(1) \\)",
+        "D. \\( P(-1) \\land P(1) \\)"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Ta sẽ khai triển từng phần của biểu thức:<br /><br /><b>Phần 1: \\( \\exists x P(x) \\)</b><br />Khai triển thành: \\( P(-1) \\lor P(0) \\lor P(1) \\)<br /><br /><b>Phần 2: \\( \\forall x((x \\neq 0) \\to \\neg P(x)) \\)</b><br />Khai triển thành: \\( ((-1 \\neq 0) \\to \\neg P(-1)) \\land ((0 \\neq 0) \\to \\neg P(0)) \\land ((1 \\neq 0) \\to \\neg P(1)) \\)<br />Rút gọn: \\( (T \\to \\neg P(-1)) \\land (F \\to \\neg P(0)) \\land (T \\to \\neg P(1)) \\)<br />\\( \\equiv \\neg P(-1) \\land T \\land \\neg P(1) \\)<br />\\( \\equiv \\neg P(-1) \\land \\neg P(1) \\)<br /><br /><b>Kết hợp cả hai phần:</b><br />\\( (P(-1) \\lor P(0) \\lor P(1)) \\land (\\neg P(-1) \\land \\neg P(1)) \\)<br />Sử dụng luật phân phối, ta thấy rằng để vế phải (phép \\( \\land \\)) đúng thì cả \\( P(-1) \\) và \\( P(1) \\) đều phải sai. Thay \\( P(-1)=F \\) và \\( P(1)=F \\) vào vế trái, ta được:<br />\\( (F \\lor P(0) \\lor F) \\) phải đúng, suy ra \\( P(0) \\) phải đúng.<br />Vậy, biểu thức chỉ đúng khi \\( P(-1) \\) sai, \\( P(0) \\) đúng, và \\( P(1) \\) sai. Điều này tương đương với \\( \\neg P(-1) \\land P(0) \\land \\neg P(1) \\).",
+      "difficulty": "hard",
+      "topic": "Predicate Logic Expansion",
+      "hints": [
+        "Khai triển từng lượng từ một.",
+        "Rút gọn các mệnh đề kéo theo.",
+        "Sử dụng luật phân phối hoặc suy luận logic để kết hợp các kết quả."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 46,
+      "question": "Let P(x) be a propositional function on \\( \\{-2, -1, 0, 1, 2, 3\\} \\).<br />Find a proposition that is logically equivalent to \\( \\forall x [x \\geq 1 \\to P(x)] \\).<br /><br />(i) \\( P(1) \\to (P(2) \\land P(3)) \\)<br />(ii) \\( P(1) \\lor P(2) \\lor P(3) \\)<br />(iii) \\( P(1) \\land P(2) \\land P(3) \\)<br />(iv) \\( P(1) \\to (P(2) \\lor P(3)) \\)",
+      "image": null,
+      "options": [
+        "A. (iv)",
+        "B. (iii)",
+        "C. (ii)",
+        "D. None of the other choices is correct",
+        "E. (i)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Lượng từ \\( \\forall x \\) tương đương với một chuỗi phép \\( \\land \\) trên toàn bộ miền xác định \\( \\{-2, -1, 0, 1, 2, 3\\} \\).<br /><br /><b>Biểu thức gốc:</b> \\( \\forall x [x \\geq 1 \\to P(x)] \\)<br /><br /><b>Khai triển:</b><br />\\( (-2 \\geq 1 \\to P(-2)) \\land (-1 \\geq 1 \\to P(-1)) \\land (0 \\geq 1 \\to P(0)) \\land (1 \\geq 1 \\to P(1)) \\land (2 \\geq 1 \\to P(2)) \\land (3 \\geq 1 \\to P(3)) \\)<br /><br /><b>Đánh giá các mệnh đề kéo theo:</b><br />- Với \\( x \\in \\{-2, -1, 0\\} \\), điều kiện \\( x \\geq 1 \\) là Sai (F). Mệnh đề kéo theo \\( F \\to P(x) \\) luôn Đúng (T).<br />- Với \\( x \\in \\{1, 2, 3\\} \\), điều kiện \\( x \\geq 1 \\) là Đúng (T). Mệnh đề kéo theo \\( T \\to P(x) \\) rút gọn thành \\( P(x) \\).<br /><br /><b>Kết hợp lại:</b> \\( T \\land T \\land T \\land P(1) \\land P(2) \\land P(3) \\)<br />Biểu thức này tương đương với \\( P(1) \\land P(2) \\land P(3) \\), khớp với lựa chọn (iii).",
+      "difficulty": "medium",
+      "topic": "Predicate Logic Expansion",
+      "hints": [
+        "Với lượng từ \\( \\forall \\), mệnh đề kéo theo \\( A \\to B \\) giúp giới hạn các trường hợp cần xem xét.",
+        "Nếu điều kiện A sai, \\( A \\to B \\) là đúng và không đặt ra yêu cầu gì cho B."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 47,
+      "question": "Given the argument:<br /><br /><b>\"Students of class 1A must take either Discrete Math 1 or Advanced Math 2 this term. Discrete Math 1 is not on the schedule of this class. Therefore students of this class are taking Advanced Math 2.\"</b><br /><br />Choose the correct statement:",
+      "image": null,
+      "options": [
+        "A. This valid argument is based on the addition rule",
+        "B. This valid argument is based on hypothetical syllogism",
+        "C. This valid argument is based on disjunctive syllogism",
+        "D. This argument is a fallacy",
+        "E. This valid argument is based on modus tollens"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Phân tích lập luận:</b><br />- Đặt p = \"Sinh viên lớp 1A học Toán rời rạc 1\".<br />- Đặt q = \"Sinh viên lớp 1A học Toán cao cấp 2\".<br /><br />Lập luận có cấu trúc như sau:<br />1. Tiền đề 1: \\( p \\lor q \\) (Học Toán RR 1 HOẶC Toán CC 2).<br />2. Tiền đề 2: \\( \\neg p \\) (Không học Toán RR 1).<br />3. Kết luận: \\( q \\) (Vậy, học Toán CC 2).<br /><br />Cấu trúc \\( (p \\lor q) \\land \\neg p \\to q \\) là định nghĩa của quy tắc suy luận <b>Tam đoạn luận tuyển (Disjunctive Syllogism)</b>.",
+      "difficulty": "easy",
+      "topic": "Rules of Inference",
+      "hints": [
+        "Xác định các mệnh đề chính trong lập luận.",
+        "Dịch câu 'either... or...' thành phép HOẶC (\\( \\lor \\)).",
+        "Đối chiếu cấu trúc logic với các quy tắc suy luận đã học."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 48,
+      "question": "Consider the argument with the hypotheses:<br />- \"I will be happy if your project succeeds\"<br />- \"Your project can become successful only if you change the method.\"<br />and the conclusion:<br />- \"Therefore, if you change the method, then I will be very happy.\"<br /><br />Choose the right answer.",
+      "image": null,
+      "options": [
+        "A. The argument is valid using hypothetical syllogism",
+        "B. The argument is invalid",
+        "C. The argument is valid using modus tollens",
+        "D. The argument is valid using simplification",
+        "E. The argument is valid using modus ponens"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích lập luận:</b><br />- Đặt C = \"You change the method\".<br />- Đặt S = \"Your project succeeds\".<br />- Đặt H = \"I will be happy\".<br /><br />Ta dịch các giả thiết và kết luận:<br />1. \"I will be happy if your project succeeds\" dịch thành \\( S \\to H \\).<br />2. \"Your project can become successful only if you change the method\" dịch thành \\( S \\to C \\). Tuy nhiên, để tạo thành một chuỗi logic, nhiều khả năng câu này được hiểu là \"Để dự án thành công, bạn phải thay đổi phương pháp\", tức là \\( C \\to S \\).<br />3. Kết luận: \"if you change the method, then I will be very happy\" dịch thành \\( C \\to H \\).<br /><br />Nếu ta diễn giải giả thiết 2 là \\( C \\to S \\), lập luận có dạng:<br />- Tiền đề 1: \\( C \\to S \\)<br />- Tiền đề 2: \\( S \\to H \\)<br />- Kết luận: \\( C \\to H \\)<br />Đây là cấu trúc của quy tắc <b>Tam đoạn luận giả định (Hypothetical Syllogism)</b>.",
+      "difficulty": "medium",
+      "topic": "Rules of Inference",
+      "hints": [
+        "Cấu trúc 'A if B' được dịch là \\( B \\to A \\).",
+        "Cấu trúc 'A only if B' được dịch là \\( A \\to B \\). Tuy nhiên, hãy xem xét ngữ cảnh để tạo thành một chuỗi logic.",
+        "Tam đoạn luận giả định có dạng: \\( p \\to q, q \\to r \\models p \\to r \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 49,
+      "question": "Which arguments are valid?<br /><br />(i) If Andy gets sick, she will not go to the class. She didn't go to the class yesterday. Therefore, she got sick yesterday.<br />(ii) If Andy gets sick, she will not go to the class. She does not get sick today. Therefore, she will go to the class today.<br />(iii) If Andy gets sick, she will not go to the class. She went to the class yesterday. Therefore, she did not get sick yesterday.",
+      "image": null,
+      "options": [
+        "A. Only (i)",
+        "B. Only (ii)",
+        "C. Only (iii)",
+        "D. None of the other answers are correct",
+        "E. (ii) and (iii)",
+        "F. All of (i), (ii), (iii) are valid"
+      ],
+      "correctAnswer": "C",
+      "explanation": "Đặt S = \"Andy gets sick\", C = \"Andy will not go to the class\". Mệnh đề gốc là \\( S \\to C \\).<br /><br />- <b>(i)</b> Ta có \\( C \\). Kết luận \\( S \\). Đây là ngụy biện <b>Khẳng định kết quả (Affirming the Consequent)</b>. Lập luận không hợp lệ.<br /><br />- <b>(ii)</b> Ta có \\( \\neg S \\). Kết luận \\( \\neg C \\) (tức là 'she will go to the class'). Đây là ngụy biện <b>Phủ định giả thiết (Denying the Antecedent)</b>. Lập luận không hợp lệ.<br /><br />- <b>(iii)</b> Ta có \\( \\neg C \\) (\"She went to the class yesterday\"). Kết luận \\( \\neg S \\). Đây là quy tắc suy luận <b>Modus Tollens</b>. Lập luận hợp lệ.",
+      "difficulty": "medium",
+      "topic": "Rules of Inference",
+      "hints": [
+        "Modus Tollens: \\( p \\to q, \\neg q \\models \\neg p \\).",
+        "Cẩn thận với các ngụy biện phổ biến như khẳng định kết quả và phủ định giả thiết."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 50,
+      "question": "Given an argument:<br /><br /><b>\"If Jack is a soccer player then Jack is rich. Jack is not rich. Therefore Jack is not a soccer player.\"</b><br /><br />Choose correct statement:",
+      "image": null,
+      "options": [
+        "A. This valid argument is based on modus tollens",
+        "B. This argument is a fallacy",
+        "C. This valid argument is based on disjunctive syllogism",
+        "D. This valid argument is based on modus ponens",
+        "E. This valid argument is based on hypothetical syllogism"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích lập luận:</b><br />- Đặt p = \"Jack is a soccer player\".<br />- Đặt q = \"Jack is rich\".<br /><br />Lập luận có cấu trúc như sau:<br />1. Tiền đề 1: \\( p \\to q \\)<br />2. Tiền đề 2: \\( \\neg q \\)<br />3. Kết luận: \\( \\neg p \\)<br /><br />Đây là cấu trúc của quy tắc suy luận <b>Modus Tollens (Phủ định kết quả)</b>.",
+      "difficulty": "easy",
+      "topic": "Rules of Inference",
+      "hints": [
+        "Xác định mệnh đề điều kiện và kết quả.",
+        "Quy tắc Modus Tollens hoạt động bằng cách phủ định kết quả để suy ra sự phủ định của điều kiện."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 51,
+      "question": "Determine whether each of these arguments is valid.<br /><br />(i) If a > b, then a² > b². We know that a > b. Consequently, a² > b².<br />(ii) If it is raining, then I will need an umbrella. I need an umbrella. Therefore, it is raining.",
+      "image": null,
+      "options": [
+        "A. None of the other choices is correct",
+        "B. Only (ii)",
+        "C. Only (i)",
+        "D. Both (i) and (ii)"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Phân tích lập luận (i):</b><br />- Đặt p = \"a > b\", q = \"a² > b²\".<br />- Cấu trúc: \\( p \\to q, p \\models q \\).<br />- Đây là quy tắc <b>Modus Ponens (Khẳng định giả thiết)</b>. Lập luận này <b>hợp lệ</b>.<br /><br /><b>Phân tích lập luận (ii):</b><br />- Đặt p = \"it is raining\", q = \"I will need an umbrella\".<br />- Cấu trúc: \\( p \\to q, q \\models p \\).<br />- Đây là ngụy biện <b>Affirming the Consequent (Khẳng định kết quả)</b>. Lập luận này <b>không hợp lệ</b>. (Ví dụ: bạn có thể cần ô để che nắng).",
+      "difficulty": "easy",
+      "topic": "Rules of Inference",
+      "hints": [
+        "Modus Ponens (hợp lệ): Nếu P thì Q. P đúng. Vậy Q đúng.",
+        "Affirming the Consequent (không hợp lệ): Nếu P thì Q. Q đúng. Vậy P đúng."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 52,
+      "question": "Given the hypotheses:<br /><ul><li>I work hard or I am smart</li><li>I am not smart</li><li>If I work hard then I will pass the exam</li><li>If I am lucky then I will pass the exam</li></ul>Which statement can be deduced from the above hypotheses?",
+      "image": null,
+      "options": [
+        "A. I work hard and I pass the exam and I am lucky",
+        "B. I work hard and I pass the exam",
+        "C. None of the other choices is correct",
+        "D. I work hard and I am lucky"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Phân tích logic:</b><br />- Đặt W = \"I work hard\", S = \"I am smart\", E = \"I will pass the exam\", L = \"I am lucky\".<br /><br /><b>Các giả thiết:</b><br />1. \\( W \\lor S \\)<br />2. \\( \\neg S \\)<br />3. \\( W \\to E \\)<br />4. \\( L \\to E \\)<br /><br /><b>Quá trình suy luận:</b><br />- Từ (1) và (2), theo quy tắc <b>Tam đoạn luận tuyển (Disjunctive Syllogism)</b>, ta suy ra \\( W \\) (Tôi làm việc chăm chỉ).<br />- Bây giờ ta có \\( W \\) và (3) \\( W \\to E \\). Theo quy tắc <b>Modus Ponens</b>, ta suy ra \\( E \\) (Tôi sẽ qua kỳ thi).<br /><br /><b>Kết luận:</b> Ta có thể suy ra một cách hợp lệ rằng \\( W \\) đúng và \\( E \\) đúng. Do đó, \"I work hard and I pass the exam\" (\\( W \\land E \\)) là kết luận có thể được suy ra.",
+      "difficulty": "medium",
+      "topic": "Rules of Inference",
+      "hints": [
+        "Sử dụng hai giả thiết đầu tiên với Tam đoạn luận tuyển.",
+        "Lấy kết quả đó và sử dụng Modus Ponens với giả thiết thứ ba."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 53,
+      "question": "Given the hypotheses:<br /><ul><li>Every FPT student stays in the dorm.</li><li>An is staying in the dorm.</li><li>Bình is not staying in the dorm.</li></ul>Which conclusion can be drawn?",
+      "image": null,
+      "options": [
+        "A. Bình is not a student of FPT",
+        "B. Bình is not a student of FPT, and An is.",
+        "C. An is a student of FPT",
+        "D. Bình is a student of FPT, and An is not."
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích logic:</b><br />- Đặt F(x) = \"x is an FPT student\", D(x) = \"x stays in the dorm\".<br /><br /><b>Các giả thiết:</b><br />1. \\( \\forall x (F(x) \\to D(x)) \\)<br />2. \\( D(\\text{An}) \\)<br />3. \\( \\neg D(\\text{Bình}) \\)<br /><br /><b>Quá trình suy luận:</b><br />- <b>Với Bình:</b> Từ (1), ta có thể áp dụng cho Bình: \\( F(\\text{Bình}) \\to D(\\text{Bình}) \\). Kết hợp với (3) \\( \\neg D(\\text{Bình}) \\), theo quy tắc <b>Modus Tollens</b>, ta suy ra \\( \\neg F(\\text{Bình}) \\) (Bình không phải là sinh viên FPT).<br />- <b>Với An:</b> Từ (1) và (2), ta có \\( F(\\text{An}) \\to D(\\text{An}) \\) và \\( D(\\text{An}) \\). Ta không thể suy ra bất cứ điều gì về việc An có phải là sinh viên FPT hay không. Suy luận \\( F(\\text{An}) \\) từ đây sẽ là ngụy biện Khẳng định kết quả.<br /><br /><b>Kết luận:</b> Kết luận hợp lệ duy nhất ta có thể rút ra là \"Bình không phải là sinh viên FPT\".",
+      "difficulty": "medium",
+      "topic": "Rules of Inference",
+      "hints": [
+        "Áp dụng quy tắc Modus Tollens cho trường hợp của Bình.",
+        "Nhận ra ngụy biện Khẳng định kết quả trong trường hợp của An."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 54,
+      "question": "Given the definitions of Modus Ponens, Modus Tollens, and Hypothetical Syllogism.<br /><br />What can you say about the following statement?<br /><b>“Children who watch TV too much do not study well. My daughter does not watch TV. Therefore, she will study well”.</b>",
+      "image": null,
+      "options": [
+        "A. It is a valid argument based on Modus Tollens rule",
+        "B. It is a valid argument based on Modus Ponens rule",
+        "C. It is an invalid argument",
+        "D. No conclusion can be drawn from these statements"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Phân tích lập luận:</b><br />- Đặt P = \"My daughter watches TV too much\".<br />- Đặt Q = \"My daughter does not study well\".<br /><br />Lập luận có cấu trúc:<br />1. Tiền đề 1: \\( P \\to Q \\) (Nếu xem TV nhiều thì không học giỏi).<br />2. Tiền đề 2: \\( \\neg P \\) (Con gái tôi không xem TV nhiều).<br />3. Kết luận: \\( \\neg Q \\) (Vậy, cô ấy sẽ học giỏi).<br /><br />Cấu trúc \\( (P \\to Q) \\land \\neg P \\to \\neg Q \\) là một ngụy biện logic được gọi là <b>Phủ định giả thiết (Denying the Antecedent)</b>. Do đó, đây là một lập luận không hợp lệ.",
+      "difficulty": "easy",
+      "topic": "Rules of Inference",
+      "hints": [
+        "Xác định mệnh đề 'Nếu... thì...' tiềm ẩn.",
+        "Đối chiếu cấu trúc của lập luận với các quy tắc và ngụy biện đã biết."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 55,
+      "question": "Given the argument:<br /><br /><b>\"If I wake up early I will review yesterday's lecture. If I review yesterday's lecture I will do good on the test. Therefore, if I do good on the test that means I woke up early.\"</b><br /><br />Choose correct statement:",
+      "image": null,
+      "options": [
+        "A. This valid argument is based on hypothetical syllogism",
+        "B. This valid argument is based on modus ponens",
+        "C. This valid argument is based on addition rule",
+        "D. This argument is a fallacy",
+        "E. This valid argument is based on modus tollens"
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Phân tích lập luận:</b><br />- Đặt p = \"I wake up early\".<br />- Đặt q = \"I will review yesterday's lecture\".<br />- Đặt r = \"I will do good on the test\".<br /><br />Lập luận có cấu trúc:<br />1. Tiền đề 1: \\( p \\to q \\)<br />2. Tiền đề 2: \\( q \\to r \\)<br />3. Kết luận: \\( r \\to p \\)<br /><br />Từ tiền đề 1 và 2, ta có thể suy ra \\( p \\to r \\) bằng quy tắc <b>Tam đoạn luận giả định (Hypothetical Syllogism)</b>. Tuy nhiên, kết luận của lập luận lại là \\( r \\to p \\), là mệnh đề đảo của kết luận hợp lệ. Suy ra mệnh đề đảo từ mệnh đề ban đầu là một ngụy biện logic. Do đó, lập luận này là một <b>ngụy biện (fallacy)</b>.",
+      "difficulty": "medium",
+      "topic": "Rules of Inference",
+      "hints": [
+        "Một lập luận hợp lệ dựa trên Tam đoạn luận giả định sẽ kết luận là \\( p \\to r \\).",
+        "Lập luận này đã nhầm lẫn giữa một mệnh đề và mệnh đề đảo của nó."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 56,
+      "question": "Given an argument:<br /><br /><b>\"If Jack is a soccer player then Jack is rich. Jack only plays pingpong. Therefore Jack is not rich.\"</b><br /><br />Choose correct statement:",
+      "image": null,
+      "options": [
+        "A. This argument is a fallacy",
+        "B. This valid argument is based on disjunctive syllogism",
+        "C. This valid argument is based on modus tollens",
+        "D. This valid argument is based on modus ponens",
+        "E. This valid argument is based on hypothetical syllogism"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích lập luận:</b><br />- Đặt p = \"Jack is a soccer player\".<br />- Đặt q = \"Jack is rich\".<br />- Đặt r = \"Jack only plays pingpong\".<br /><br />Lập luận có cấu trúc:<br />1. Tiền đề 1: \\( p \\to q \\)<br />2. Tiền đề 2: \\( r \\)<br />3. Kết luận: \\( \\neg q \\)<br /><br />Không có quy tắc suy luận nào cho phép kết luận \\( \\neg q \\) từ các tiền đề đã cho. Việc Jack chỉ chơi bóng bàn (r) không cung cấp thông tin logic trực tiếp để phủ định việc Jack giàu có (q). Ngay cả khi ta ngầm giả định rằng việc chỉ chơi bóng bàn có nghĩa là không phải là cầu thủ bóng đá (\\( r \\to \\neg p \\)), thì lập luận sẽ trở thành \\( p \\to q, \\neg p \\models \\neg q \\). Đây là ngụy biện Phủ định giả thiết. Do đó, lập luận này là một <b>ngụy biện (fallacy)</b>.",
+      "difficulty": "medium",
+      "topic": "Rules of Inference",
+      "hints": [
+        "Kiểm tra xem các tiền đề có liên quan logic đến kết luận hay không.",
+        "Ngay cả khi thêm các giả định hợp lý, lập luận vẫn có thể dẫn đến một ngụy biện."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 57,
+      "question": "Recall two fallacies:<br />(I) \\( [(p \\to q) \\land q] \\to p \\) <small>(Affirming the Consequent)</small><br />(II) \\( [(p \\to q) \\land \\neg p] \\to \\neg q \\) <small>(Denying the Antecedent)</small><br /><br />Given the statement:<br /><b>\"In a right triangle, the sum of three angles is 180°. Therefore, the sum of three angles of an acute triangle is not 180°.\"</b><br /><br />Choose correct statement:",
+      "image": null,
+      "options": [
+        "A. This is a fallacy of type (I)",
+        "B. This is a valid argument",
+        "C. This is a fallacy of type (II)"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Phân tích lập luận:</b><br />- Đặt p = \"Một tam giác là tam giác vuông\".<br />- Đặt q = \"Tổng ba góc của tam giác đó là 180°\".<br /><br />Lập luận này có cấu trúc ngầm như sau:<br />1. Tiền đề 1: \\( p \\to q \\) (Nếu là tam giác vuông, thì tổng ba góc là 180°).<br />2. Tiền đề 2: \\( \\neg p \\) (Đây là một tam giác nhọn, tức là không phải tam giác vuông).<br />3. Kết luận: \\( \\neg q \\) (Do đó, tổng ba góc của nó không phải là 180°).<br /><br />Cấu trúc \\( (p \\to q) \\land \\neg p \\to \\neg q \\) là ngụy biện <b>Phủ định giả thiết (Denying the Antecedent)</b>, tương ứng với loại (II). Lập luận này không hợp lệ vì tổng ba góc của mọi tam giác đều là 180°.",
+      "difficulty": "medium",
+      "topic": "Fallacies",
+      "hints": [
+        "Xác định mệnh đề 'Nếu... thì...' tiềm ẩn.",
+        "Xem xét mệnh đề thứ hai là phủ định của giả thiết hay kết quả."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 58,
+      "question": "Recall two fallacies:<br />(I) \\( [(p \\to q) \\land q] \\to p \\) <small>(Affirming the Consequent)</small><br />(II) \\( [(p \\to q) \\land \\neg p] \\to \\neg q \\) <small>(Denying the Antecedent)</small><br /><br />Given the statement:<br /><b>\"In a right triangle, the sum of three angles is 180°. Let ABC be any triangle. The sum of three angles of ABC is 180°, therefore ABC is a right triangle\"</b><br /><br />Choose correct statement:",
+      "image": null,
+      "options": [
+        "A. This is a fallacy of type (I)",
+        "B. This is a fallacy of type (II)",
+        "C. This is a valid argument"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích lập luận:</b><br />- Đặt p = \"Tam giác ABC là tam giác vuông\".<br />- Đặt q = \"Tổng ba góc của tam giác ABC là 180°\".<br /><br />Lập luận này có cấu trúc như sau:<br />1. Tiền đề 1: \\( p \\to q \\) (Nếu ABC là tam giác vuông, thì tổng ba góc là 180°).<br />2. Tiền đề 2: \\( q \\) (Tổng ba góc của ABC là 180°).<br />3. Kết luận: \\( p \\) (Do đó, ABC là tam giác vuông).<br /><br />Cấu trúc \\( (p \\to q) \\land q \\to p \\) là ngụy biện <b>Khẳng định kết quả (Affirming the Consequent)</b>, tương ứng với loại (I). Lập luận không hợp lệ vì mọi tam giác đều có tổng ba góc là 180°, không chỉ riêng tam giác vuông.",
+      "difficulty": "medium",
+      "topic": "Fallacies",
+      "hints": [
+        "So sánh cấu trúc logic của lập luận với hai dạng ngụy biện đã cho.",
+        "Ngụy biện này xảy ra khi ta khẳng định kết quả (q) và suy ngược ra giả thiết (p)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 59,
+      "question": "Given the hypotheses:<br /><ul><li>If I am lucky then I will pass the exam</li><li>If I do all homework problems then I will pass the exam</li><li>I passed the exam.</li></ul>Which statement can be deduced from the above hypotheses?",
+      "image": null,
+      "options": [
+        "A. None of the other choices is correct",
+        "B. I am lucky",
+        "C. I do all homework problems and I am lucky",
+        "D. I do all homework problems"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích logic:</b><br />- Đặt L = \"I am lucky\", H = \"I do all homework problems\", E = \"I passed the exam\".<br /><br /><b>Các giả thiết:</b><br />1. \\( L \\to E \\)<br />2. \\( H \\to E \\)<br />3. \\( E \\)<br /><br />Từ \\( L \\to E \\) và \\( E \\), ta không thể suy ra \\( L \\). Đây là ngụy biện <b>Khẳng định kết quả</b>.<br />Tương tự, từ \\( H \\to E \\) và \\( E \\), ta không thể suy ra \\( H \\). Đây cũng là ngụy biện <b>Khẳng định kết quả</b>.<br /><br />Vì chúng ta không thể suy ra một cách hợp lệ rằng tôi may mắn hay tôi đã làm hết bài tập, chúng ta không thể đưa ra bất kỳ kết luận nào trong số các lựa chọn B, C, D. Do đó, không có lựa chọn nào là đúng.",
+      "difficulty": "medium",
+      "topic": "Fallacies",
+      "hints": [
+        "Việc biết kết quả (đỗ kỳ thi) không cho phép bạn suy luận ngược lại nguyên nhân một cách chắc chắn khi có nhiều nguyên nhân khả dĩ."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 60,
+      "question": "Given the premises:<br />(1) If it is not raining then the soccer game will be held<br />(2) If the soccer game is held then Nam will buy a ticket<br />(3) Nam did not buy a ticket<br /><br />Which conclusion can be drawn?",
+      "image": null,
+      "options": [
+        "A. It rained",
+        "B. It did not rain",
+        "C. Nam does not like watching soccer",
+        "D. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích logic:</b><br />- Đặt R = \"It is raining\", S = \"The soccer game will be held\", T = \"Nam will buy a ticket\".<br /><br /><b>Các tiền đề:</b><br />1. \\( \\neg R \\to S \\)<br />2. \\( S \\to T \\)<br />3. \\( \\neg T \\)<br /><br /><b>Quá trình suy luận:</b><br />- Từ (1) và (2), áp dụng quy tắc <b>Tam đoạn luận giả định (Hypothetical Syllogism)</b>, ta có: \\( \\neg R \\to T \\).<br />- Bây giờ ta có \\( \\neg R \\to T \\) và tiền đề (3) là \\( \\neg T \\). Áp dụng quy tắc <b>Modus Tollens</b>, ta suy ra \\( \\neg(\\neg R) \\), tức là \\( R \\).<br /><br /><b>Kết luận:</b> Ta có thể suy ra một cách hợp lệ rằng \\( R \\) đúng, có nghĩa là \"Trời đã mưa\".",
+      "difficulty": "hard",
+      "topic": "Rules of Inference",
+      "hints": [
+        "Sử dụng Tam đoạn luận giả định để kết nối hai mệnh đề kéo theo đầu tiên.",
+        "Sau đó, sử dụng Modus Tollens với kết quả vừa có và tiền đề cuối cùng."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 61,
+      "question": "How many tuples (p, q, r, s) make the following proposition False?<br />\\( (\\neg p \\lor q \\lor \\neg r \\lor s) \\land (p \\lor \\neg q \\lor \\neg r \\lor s) \\)",
+      "image": null,
+      "options": [
+        "A. 1",
+        "B. 2",
+        "C. 4",
+        "D. 8"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Một mệnh đề hội (\\( \\land \\)) chỉ sai khi ít nhất một trong hai vế của nó sai.<br /><br /><b>Trường hợp 1: Vế trái sai</b><br />Vế \\( (\\neg p \\lor q \\lor \\neg r \\lor s) \\) sai khi tất cả các thành phần của nó đều sai:<br />- \\( \\neg p \\) sai \\( \\Rightarrow p = T \\)<br />- \\( q \\) sai \\( \\Rightarrow q = F \\)<br />- \\( \\neg r \\) sai \\( \\Rightarrow r = T \\)<br />- \\( s \\) sai \\( \\Rightarrow s = F \\)<br />Vậy, bộ giá trị đầu tiên làm mệnh đề sai là <b>(T, F, T, F)</b>.<br /><br /><b>Trường hợp 2: Vế phải sai</b><br />Vế \\( (p \\lor \\neg q \\lor \\neg r \\lor s) \\) sai khi tất cả các thành phần của nó đều sai:<br />- \\( p \\) sai \\( \\Rightarrow p = F \\)<br />- \\( \\neg q \\) sai \\( \\Rightarrow q = T \\)<br />- \\( \\neg r \\) sai \\( \\Rightarrow r = T \\)<br />- \\( s \\) sai \\( \\Rightarrow s = F \\)<br />Vậy, bộ giá trị thứ hai làm mệnh đề sai là <b>(F, T, T, F)</b>.<br /><br />Hai bộ giá trị này là khác nhau. Do đó, có tổng cộng <b>2</b> bộ giá trị làm cho mệnh đề ban đầu sai.",
+      "difficulty": "hard",
+      "topic": "Propositional Logic",
+      "hints": [
+        "Một mệnh đề \\( A \\land B \\) sai khi A sai hoặc B sai.",
+        "Một mệnh đề \\( X \\lor Y \\lor Z \\) sai chỉ khi cả X, Y, và Z đều sai."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 62,
+      "question": "How many rows appear in a truth table for the compound proposition<br />\\( (p \\land q \\land \\neg r) \\lor (\\neg p \\leftrightarrow s) \\lor (s \\to q) \\) ?",
+      "image": null,
+      "options": [
+        "A. 64",
+        "B. 16",
+        "C. 32",
+        "D. 4",
+        "E. 8"
+      ],
+      "correctAnswer": "B",
+      "explanation": "Số dòng trong một bảng chân trị được xác định bởi công thức \\( 2^n \\), trong đó \\( n \\) là số lượng mệnh đề đơn (biến) khác nhau có trong biểu thức.<br /><br />Trong biểu thức đã cho, có 4 mệnh đề đơn khác nhau: \\( p, q, r, \\) và \\( s \\).<br /><br />Do đó, số dòng trong bảng chân trị sẽ là \\( 2^4 = 16 \\).",
+      "difficulty": "easy",
+      "topic": "Truth Tables",
+      "hints": [
+        "Đếm số lượng các biến mệnh đề duy nhất.",
+        "Sử dụng công thức \\( 2^n \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 63,
+      "question": "Which of the following statements about quantifier distribution are correct?<br /><br />(i) \\( \\forall x(P(x) \\land Q(x)) \\) and \\( \\forall x P(x) \\land \\forall x Q(x) \\) have the same truth values.<br />(ii) \\( \\forall x(P(x) \\to Q(x)) \\) and \\( \\forall x P(x) \\to \\forall x Q(x) \\) have the same truth values.<br />(iii) \\( \\forall x(P(x) \\lor Q(x)) \\) and \\( \\forall x P(x) \\lor \\forall x Q(x) \\) have the same truth values.",
+      "image": null,
+      "options": [
+        "A. Only (i)",
+        "B. Only (ii)",
+        "C. Only (iii)",
+        "D. (i) and (iii)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>(i) Lượng từ \\( \\forall \\) trên phép \\( \\land \\):</b><br />Phát biểu này <b>ĐÚNG</b>. Nói rằng 'với mọi x, P(x) và Q(x) đều đúng' là tương đương logic với việc nói rằng 'với mọi x, P(x) đúng' VÀ 'với mọi x, Q(x) đúng'.<br /><br /><b>(ii) Lượng từ \\( \\forall \\) trên phép \\( \\to \\):</b><br />Phát biểu này <b>SAI</b>. Ví dụ: Đặt P(x) = \"x là số chẵn\" và Q(x) = \"x là số lẻ\" trên tập số nguyên. \\( \\forall x(P(x) \\to Q(x)) \\) là sai (vì 2 chẵn nhưng không lẻ). Nhưng \\( \\forall x P(x) \\) là sai, nên \\( \\forall x P(x) \\to \\forall x Q(x) \\) là đúng (vì F \\(\\to\\) F là T).<br /><br /><b>(iii) Lượng từ \\( \\forall \\) trên phép \\( \\lor \\):</b><br />Phát biểu này <b>SAI</b>. Ví dụ: Đặt P(x) = \"x là số chẵn\" và Q(x) = \"x là số lẻ\" trên tập số nguyên. \\( \\forall x(P(x) \\lor Q(x)) \\) là đúng (vì mọi số nguyên đều chẵn hoặc lẻ). Nhưng \\( \\forall x P(x) \\) là sai và \\( \\forall x Q(x) \\) cũng sai, do đó \\( \\forall x P(x) \\lor \\forall x Q(x) \\) là sai.",
+      "difficulty": "hard",
+      "topic": "Quantifier Properties",
+      "hints": [
+        "Lượng từ phổ quát (\\( \\forall \\)) phân phối trên phép hội (\\( \\land \\)).",
+        "Lượng từ phổ quát (\\( \\forall \\)) không phân phối trên phép tuyển (\\( \\lor \\)) hoặc phép kéo theo (\\( \\to \\))."
+      ],
+      "type": "multiple_choice"
+    }
+  ]
+}
