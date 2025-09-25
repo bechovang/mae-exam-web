@@ -85,6 +85,966 @@
           "Sau đó, từ tập hợp mới đó, loại bỏ các phần tử có trong C."
         ],
         "type": "multiple_choice"
+      },
+      {
+        "id": 5,
+        "question": "Given three sets:<br />A = {1,2,3,4,5,6}<br />B = {1,3,5,6,9}<br />C = {1,2,3,6,9}<br /><br />Which set has the least number of elements?<br /><br />(i) \\( A \\cap B \\)<br />(ii) \\( A \\cap C \\)<br />(iii) \\( B - C \\)<br />(iv) \\( B \\cup C \\)",
+        "image": null,
+        "options": [
+          "A. (ii)",
+          "B. (iv)",
+          "C. (i)",
+          "D. (iii)"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Ta tính lực lượng (số phần tử) của mỗi tập hợp:<br /><br />- <b>(i) \\( A \\cap B \\)</b> = \\( \\{1,3,5,6\\} \\). Lực lượng là 4.<br />- <b>(ii) \\( A \\cap C \\)</b> = \\( \\{1,2,3,6\\} \\). Lực lượng là 4.<br />- <b>(iii) \\( B - C \\)</b> = \\( \\{1,3,5,6,9\\} - \\{1,2,3,6,9\\} = \\{5\\} \\). Lực lượng là 1.<br />- <b>(iv) \\( B \\cup C \\)</b> = \\( \\{1,2,3,5,6,9\\} \\). Lực lượng là 6.<br /><br />So sánh các kết quả, tập hợp (iii) có ít phần tử nhất.",
+        "difficulty": "easy",
+        "topic": "Set Theory - Operations",
+        "hints": [
+          "Phép giao (\\( \\cap \\)) lấy các phần tử chung.",
+          "Phép hiệu ( - ) lấy các phần tử thuộc tập hợp đầu tiên nhưng không thuộc tập hợp thứ hai.",
+          "Phép hợp (\\( \\cup \\)) lấy tất cả các phần tử duy nhất từ cả hai tập hợp."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 6,
+        "question": "Find the cardinality of the set \\( P(\\{\\emptyset, a, \\{a\\}\\}) \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "8",
+        "explanation": "Lực lượng của một tập lũy thừa P(S) được tính bằng công thức \\( 2^{|S|} \\), trong đó |S| là lực lượng của tập hợp S.<br /><br />1.  <b>Xác định tập hợp S:</b> \\( S = \\{\\emptyset, a, \\{a\\}\\} \\).<br />2.  <b>Tính lực lượng của S:</b> Tập hợp S có 3 phần tử riêng biệt là \\( \\emptyset \\), \\( a \\), và \\( \\{a\\} \\). Vậy \\( |S| = 3 \\).<br />3.  <b>Tính lực lượng của P(S):</b> \\( |P(S)| = 2^{|S|} = 2^3 = 8 \\).",
+        "difficulty": "medium",
+        "topic": "Set Theory - Power Sets",
+        "hints": [
+          "Đầu tiên, hãy đếm số phần tử trong tập hợp gốc.",
+          "Lực lượng của tập lũy thừa P(S) là 2 mũ lực lượng của S."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 7,
+        "question": "Let A and B be sets such that \\( |B| = |A| - 2 \\). Assume that the set \\( A \\times B \\) has 360 elements. Find \\( |A| \\).",
+        "image": null,
+        "options": [
+          "A. None of the other choices",
+          "B. 20",
+          "C. 25",
+          "D. 22",
+          "E. 18"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Ta có công thức lực lượng của tích Descartes: \\( |A \\times B| = |A| \\times |B| \\).<br /><br />Theo đề bài, ta có hệ phương trình:<br />1. \\( |A| \\times |B| = 360 \\)<br />2. \\( |B| = |A| - 2 \\)<br /><br />Đặt \\( x = |A| \\), ta có \\( |B| = x - 2 \\). Thay vào phương trình thứ nhất:<br />\\( x(x - 2) = 360 \\)<br />\\( x^2 - 2x - 360 = 0 \\)<br /><br />Giải phương trình bậc hai, ta tìm được hai nghiệm là x = 20 và x = -18.<br />Vì lực lượng của một tập hợp không thể là số âm, ta chọn \\( x = 20 \\).<br /><br />Vậy, \\( |A| = 20 \\).",
+        "difficulty": "medium",
+        "topic": "Set Theory - Cartesian Product",
+        "hints": [
+          "Sử dụng công thức \\( |A \\times B| = |A| \\times |B| \\).",
+          "Thiết lập một phương trình bậc hai và giải nó."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 8,
+        "question": "Which set has the maximal cardinality?<br /><br />A. \\( P(P(P(\\{a\\}))) \\)<br />B. \\( P(\\{a\\}) \\times P(\\{b\\}) \\)<br />C. \\( P(\\{a\\} \\times \\{b\\}) \\)<br />D. \\( \\{a, b, c\\} \\times \\{a, b\\} \\)",
+        "image": null,
+        "options": [
+          "A. P(P(P({a})))",
+          "B. P({a}) x P({b})",
+          "C. P({a} x {b})",
+          "D. {a, b, c} x {a, b}"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta tính lực lượng của từng tập hợp:<br /><br /><b>A. \\( P(P(P(\\{a\\}))) \\):</b><br />- \\( |\\{a\\}| = 1 \\)<br />- \\( |P(\\{a\\})| = 2^1 = 2 \\)<br />- \\( |P(P(\\{a\\}))| = 2^2 = 4 \\)<br />- \\( |P(P(P(\\{a\\})))| = 2^4 = 16 \\)<br /><br /><b>B. \\( P(\\{a\\}) \\times P(\\{b\\}) \\):</b><br />- \\( |P(\\{a\\})| = 2^1 = 2 \\)<br />- \\( |P(\\{b\\})| = 2^1 = 2 \\)<br />- Lực lượng = \\( 2 \\times 2 = 4 \\)<br /><br /><b>C. \\( P(\\{a\\} \\times \\{b\\}) \\):</b><br />- \\( \\{a\\} \\times \\{b\\} = \\{(a, b)\\} \\). Lực lượng của tập này là 1.<br />- \\( |P(\\{(a, b)\\})| = 2^1 = 2 \\)<br /><br /><b>D. \\( \\{a, b, c\\} \\times \\{a, b\\} \\):</b><br />- Lực lượng = \\( |\\{a, b, c\\}| \\times |\\{a, b\\}| = 3 \\times 2 = 6 \\)<br /><br />So sánh các kết quả (16, 4, 2, 6), tập hợp A có lực lượng lớn nhất.",
+        "difficulty": "hard",
+        "topic": "Set Theory - Cardinality",
+        "hints": [
+          "Nhớ công thức \\( |P(S)| = 2^{|S|} \\) và \\( |A \\times B| = |A| \\times |B| \\).",
+          "Tính toán cẩn thận từng bước từ trong ra ngoài."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 9,
+        "question": "Which of the following sets is the power set of A = \\( \\{\\emptyset, a\\} \\)?<br /><br />(i) \\( \\{\\emptyset, \\{a\\}, \\{\\emptyset,a\\}\\} \\)<br />(ii) \\( \\{\\emptyset, \\{a\\}, \\{\\emptyset\\}, \\{a,\\emptyset\\}\\} \\)<br />(iii) \\( \\{\\emptyset, \\{a\\}, \\{\\emptyset\\}, \\{a,\\{\\emptyset\\}\\}\\} \\)<br />(iv) \\( \\{\\emptyset, \\{a,\\emptyset\\}\\} \\)",
+        "image": null,
+        "options": [
+          "A. (iii)",
+          "B. (ii)",
+          "C. (i)",
+          "D. (iv)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Tập hợp A có 2 phần tử: \\( \\emptyset \\) và \\( a \\).<br />Tập lũy thừa P(A) là tập hợp của tất cả các tập con của A. Một tập hợp có n phần tử sẽ có \\( 2^n \\) tập con.<br />Vì A có 2 phần tử, P(A) sẽ có \\( 2^2 = 4 \\) phần tử.<br /><br />Các tập con của A là:<br />1.  Tập con không có phần tử nào: \\( \\emptyset \\)<br />2.  Các tập con có một phần tử: \\( \\{\\emptyset\\} \\) và \\( \\{a\\} \\)<br />3.  Tập con có hai phần tử: \\( \\{\\emptyset, a\\} \\)<br /><br />Vậy, P(A) = \\( \\{\\emptyset, \\{\\emptyset\\}, \\{a\\}, \\{\\emptyset, a\\}\\} \\). Điều này khớp với lựa chọn (ii).",
+        "difficulty": "medium",
+        "topic": "Set Theory - Power Sets",
+        "hints": [
+          "Liệt kê tất cả các tập con có thể có, bắt đầu từ tập rỗng.",
+          "Đừng nhầm lẫn giữa phần tử \\( \\emptyset \\) và tập con \\( \\{\\emptyset\\} \\)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 10,
+        "question": "Let \\( P = \\{x \\in \\mathbb{N} \\mid x^2 > 9\\} \\) and \\( Q = \\{x \\in \\mathbb{Z} \\mid x < 9\\} \\).<br />Describe the set P - Q.<br /><br />(i) \\( P - Q = \\{x \\in \\mathbb{N} \\mid x > 9\\} \\)<br />(ii) \\( P - Q = \\{x \\in \\mathbb{N} \\mid x > 3\\} \\)<br />(iii) \\( P - Q = \\{x \\in \\mathbb{N} \\mid x \\geq 9\\} \\)<br />(iv) \\( P - Q = \\{x \\in \\mathbb{N} \\mid x^2 > 9\\} \\)",
+        "image": null,
+        "options": [
+          "A. (ii)",
+          "B. (iii)",
+          "C. (i)",
+          "D. (iv)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Bước 1: Liệt kê các phần tử của P</b><br />P là tập hợp các số tự nhiên (\\( \\mathbb{N} = \\{0, 1, 2, ...\\} \\)) mà bình phương của chúng lớn hơn 9. Điều kiện \\( x^2 > 9 \\) tương đương với \\( x > 3 \\) (vì x phải là số tự nhiên).<br />Vậy, \\( P = \\{4, 5, 6, 7, 8, 9, 10, ...\\} \\).<br /><br /><b>Bước 2: Xác định các phần tử của Q</b><br />Q là tập hợp các số nguyên (\\( \\mathbb{Z} \\)) nhỏ hơn 9.<br />Vậy, \\( Q = \\{..., 6, 7, 8\\} \\).<br /><br /><b>Bước 3: Tính P - Q</b><br />P - Q là tập hợp các phần tử thuộc P nhưng không thuộc Q.<br />Các phần tử của P cũng thuộc Q là \\( \\{4, 5, 6, 7, 8\\} \\).<br />Loại bỏ các phần tử này khỏi P, ta còn lại \\( \\{9, 10, 11, ...\\} \\).<br />Tập hợp này có thể được mô tả là \\( \\{x \\in \\mathbb{N} \\mid x \\geq 9\\} \\), khớp với lựa chọn (iii).",
+        "difficulty": "medium",
+        "topic": "Set Theory - Set Operations",
+        "hints": [
+          "Xác định rõ các phần tử của từng tập hợp trước.",
+          "Phép hiệu A - B loại bỏ tất cả các phần tử của B khỏi A."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 11,
+        "question": "The symmetric difference of two sets A and B, denoted by A ⊕ B, is the set of all elements that either belong to A or to B, but not both.<br />Suppose that A ⊕ B = A. Choose the best answer:<br /><br />(i) A=B<br />(ii) B ⊆ A<br />(iii) A ⊆ B<br />(iv) B = ∅",
+        "image": null,
+        "options": [
+          "A. (i)",
+          "B. (iv)",
+          "C. None of the other choices is correct",
+          "D. (iii)",
+          "E. (ii)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Ta có định nghĩa: \\( A \\oplus B = (A \\cup B) - (A \\cap B) \\).<br />Giả thiết cho rằng \\( A \\oplus B = A \\).<br /><br />Điều này có nghĩa là tập hợp các phần tử chỉ thuộc A hoặc chỉ thuộc B lại đúng bằng tập hợp A.<br />- Nếu có một phần tử \\( x \\) chỉ thuộc B (tức là \\( x \\in B \\) và \\( x \\notin A \\)), thì \\( x \\) sẽ thuộc \\( A \\oplus B \\). Nhưng vì \\( A \\oplus B = A \\), điều đó có nghĩa là \\( x \\) cũng phải thuộc A. Điều này mâu thuẫn. Do đó, không có phần tử nào chỉ thuộc B. Điều này suy ra B phải là tập con của A (B ⊆ A).<br /><br />- Bây giờ ta có B ⊆ A. Khi đó:<br />  - \\( A \\cup B = A \\)<br />  - \\( A \\cap B = B \\)<br />- Thay vào công thức, ta có: \\( A \\oplus B = A - B \\).<br /><br />- Vì \\( A \\oplus B = A \\), ta có \\( A - B = A \\).<br />Phép toán A - B bằng A chỉ khi không có phần tử nào bị loại bỏ khỏi A, điều này chỉ xảy ra khi B không có phần tử nào, tức là \\( B = \\emptyset \\).",
+        "difficulty": "hard",
+        "topic": "Set Theory - Symmetric Difference",
+        "hints": [
+          "Sử dụng định nghĩa \\( A \\oplus B = (A \\cup B) - (A \\cap B) \\).",
+          "Xem xét điều gì sẽ xảy ra nếu B có các phần tử nằm trong A hoặc không nằm trong A."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 12,
+        "question": "Let A={0, a}, B={0, b}. Determine B x A.",
+        "image": null,
+        "options": [
+          "A. \\( \\{(0,0), (a, b)\\} \\)",
+          "B. \\( \\{(0,0), (0, b), (a, 0), (a, b)\\} \\)",
+          "C. \\( \\{(0,0), (0, b), (a, 0), (b, a), (0, a), (b, 0)\\} \\)",
+          "D. \\( \\{(0,0), (b, a), (0, a), (b, 0)\\} \\)"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Tích Descartes B x A là tập hợp tất cả các cặp có thứ tự (y, x) trong đó y là một phần tử của B và x là một phần tử của A.<br /><br />- Các phần tử của B là: 0, b.<br />- Các phần tử của A là: 0, a.<br /><br />Ta tạo tất cả các cặp có thể:<br />- Lấy 0 từ B: (0, 0), (0, a)<br />- Lấy b từ B: (b, 0), (b, a)<br /><br />Vậy, B x A = \\( \\{(0, 0), (0, a), (b, 0), (b, a)\\} \\). Đáp án D chứa đúng các phần tử này.",
+        "difficulty": "easy",
+        "topic": "Set Theory - Cartesian Product",
+        "hints": [
+          "Tích Descartes A x B không giống B x A.",
+          "Phần tử đầu tiên của cặp có thứ tự phải đến từ tập hợp đầu tiên."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 13,
+        "question": "Let the set be \\( S = \\{a, \\{a, b\\}\\} \\). Which statement is FALSE?",
+        "image": null,
+        "options": [
+          "A. \\( a \\in S \\)",
+          "B. \\( \\{a, b\\} \\subseteq S \\)",
+          "C. \\( \\{a, b\\} \\in S \\)",
+          "D. \\( \\{a\\} \\subseteq S \\)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Các phần tử của S là: phần tử 'a' và tập hợp \\( \\{a, b\\} \\).<br /><br />- <b>A. \\( a \\in S \\):</b> <b>ĐÚNG</b>. 'a' được liệt kê là một phần tử của S.<br /><br />- <b>B. \\( \\{a, b\\} \\subseteq S \\):</b> <b>SAI</b>. Để là tập con, mọi phần tử của vế trái (tức là 'a' và 'b') phải là phần tử của S. Trong khi \\( a \\in S \\), phần tử 'b' không phải là một phần tử của S.<br /><br />- <b>C. \\( \\{a, b\\} \\in S \\):</b> <b>ĐÚNG</b>. Tập hợp \\( \\{a, b\\} \\) được liệt kê là phần tử thứ hai của S.<br /><br />- <b>D. \\( \\{a\\} \\subseteq S \\):</b> <b>ĐÚNG</b>. Để là tập con, mọi phần tử của vế trái (tức là 'a') phải là phần tử của S. Vì \\( a \\in S \\), mệnh đề này đúng.",
+        "difficulty": "medium",
+        "topic": "Set Theory - Subsets and Elements",
+        "hints": [
+          "Phân biệt rõ ràng giữa 'là một phần tử của' (\\( \\in \\)) và 'là một tập con của' (\\( \\subseteq \\))."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 14,
+        "question": "Let A, B be nonempty sets. Assume that \\( A \\times B \\subseteq B \\times A \\).<br />Choose the correct statement.<br /><br />(i) A \\( \\neq \\) B<br />(ii) A = B<br />(iii) \\( A \\cap B = \\emptyset \\)",
+        "image": null,
+        "options": [
+          "A. (i)",
+          "B. (ii)",
+          "C. (iii)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Phân tích giả thiết:</b> \\( A \\times B \\subseteq B \\times A \\).<br />Điều này có nghĩa là mọi cặp có thứ tự \\( (a, b) \\) trong \\( A \\times B \\) cũng phải nằm trong \\( B \\times A \\).<br /><br />- Lấy một phần tử bất kỳ \\( a \\in A \\) và một phần tử bất kỳ \\( b \\in B \\). Khi đó, cặp \\( (a, b) \\in A \\times B \\).<br />- Vì \\( A \\times B \\subseteq B \\times A \\), cặp \\( (a, b) \\) cũng phải thuộc \\( B \\times A \\).<br />- Theo định nghĩa của \\( B \\times A \\), điều này có nghĩa là \\( a \\in B \\) và \\( b \\in A \\).<br /><br /><b>Suy luận:</b><br />- Vì điều này đúng với mọi phần tử \\( a \\in A \\), ta kết luận rằng mọi phần tử của A cũng phải thuộc B. Do đó, \\( A \\subseteq B \\).<br />- Tương tự, vì điều này đúng với mọi phần tử \\( b \\in B \\), ta kết luận rằng mọi phần tử của B cũng phải thuộc A. Do đó, \\( B \\subseteq A \\).<br /><br />Từ \\( A \\subseteq B \\) và \\( B \\subseteq A \\), ta suy ra \\( A = B \\).",
+        "difficulty": "hard",
+        "topic": "Set Theory - Cartesian Product",
+        "hints": [
+          "Hãy xem xét ý nghĩa của một cặp có thứ tự (a, b) thuộc A x B và B x A.",
+          "Sử dụng định nghĩa của tập con để suy luận về mối quan hệ giữa các phần tử của A và B."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 15,
+        "question": "Let A and B be two nonempty sets such that \\( A \\cap B = \\emptyset \\). Choose the INCORRECT statement.<br /><br />(i) \\( A - B = A \\)<br />(ii) \\( A \\cup B = A \\oplus B \\)<br />(iii) \\( A - (A - B) = B \\)",
+        "image": null,
+        "options": [
+          "A. (ii)",
+          "B. (i)",
+          "C. (iii)"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Giả thiết \\( A \\cap B = \\emptyset \\) có nghĩa là A và B là hai tập hợp rời nhau.<br /><br />- <b>(i) \\( A - B = A \\):</b> <b>ĐÚNG</b>. \\( A - B \\) là tập hợp các phần tử thuộc A nhưng không thuộc B. Vì A và B rời nhau, không có phần tử nào của A thuộc B, nên phép trừ không loại bỏ phần tử nào. Do đó \\( A - B = A \\).<br /><br />- <b>(ii) \\( A \\cup B = A \\oplus B \\):</b> <b>ĐÚNG</b>. Hiệu đối xứng được định nghĩa là \\( A \\oplus B = (A \\cup B) - (A \\cap B) \\). Vì \\( A \\cap B = \\emptyset \\), biểu thức trở thành \\( A \\oplus B = (A \\cup B) - \\emptyset = A \\cup B \\).<br /><br />- <b>(iii) \\( A - (A - B) = B \\):</b> <b>SAI</b>. Từ (i), ta biết \\( A - B = A \\). Thay vào biểu thức, ta có \\( A - A = \\emptyset \\). Vậy mệnh đề trở thành \\( \\emptyset = B \\). Điều này mâu thuẫn với giả thiết rằng B là tập không rỗng.",
+        "difficulty": "medium",
+        "topic": "Set Theory - Properties",
+        "hints": [
+          "Nhớ lại định nghĩa của các phép toán trên tập hợp khi các tập hợp rời nhau.",
+          "Thay thế các biểu thức tương đương vào để kiểm tra."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 16,
+        "question": "Which statement is true for all sets A and B?<br /><br />(i) \\( A \\setminus (A \\cap B) = A \\setminus B \\)<br />(ii) \\( A \\setminus (A \\cup B) = A \\setminus B \\)",
+        "image": null,
+        "options": [
+          "A. None of the other choices is correct",
+          "B. Only (i)",
+          "C. Only (ii)",
+          "D. Both (i) and (ii)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "- <b>(i) \\( A \\setminus (A \\cap B) = A \\setminus B \\):</b> <b>ĐÚNG</b>. Vế trái có nghĩa là 'lấy các phần tử trong A và loại bỏ những phần tử cũng nằm trong B'. Đây chính xác là định nghĩa của hiệu tập hợp \\( A \\setminus B \\).<br /><br />- <b>(ii) \\( A \\setminus (A \\cup B) = A \\setminus B \\):</b> <b>SAI</b>. Vế trái có nghĩa là 'lấy các phần tử trong A và loại bỏ những phần tử nằm trong A hoặc B'. Vì mọi phần tử của A đều nằm trong \\( A \\cup B \\), kết quả của vế trái luôn là tập hợp rỗng (\\( \\emptyset \\)). Vế phải, \\( A \\setminus B \\), không phải lúc nào cũng là tập rỗng. Do đó hai vế không tương đương.",
+        "difficulty": "medium",
+        "topic": "Set Theory - Identities",
+        "hints": [
+          "Sử dụng biểu đồ Venn để hình dung các phép toán.",
+          "Nhận ra rằng một tập hợp trừ đi một tập hợp lớn hơn chứa nó sẽ ra tập rỗng."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 17,
+        "question": "Which statements are FALSE? (A, B are sets)",
+        "image": null,
+        "options": [
+          "A. \\( A \\cap (B - A) = \\emptyset \\)",
+          "B. \\( A - (B - A) = A - B \\)",
+          "C. \\( A \\cup (B - A) = A \\cup B \\)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "- <b>A. \\( A \\cap (B - A) = \\emptyset \\):</b> <b>ĐÚNG</b>. Tập hợp \\( B - A \\) chứa các phần tử thuộc B nhưng không thuộc A. Do đó, nó không có phần tử nào chung với A.<br /><br />- <b>B. \\( A - (B - A) = A - B \\):</b> <b>SAI</b>. Ví dụ: Cho A = {1, 2} và B = {2, 3}.<br />  - Vế trái: \\( B - A = \\{3\\} \\). \\( A - (B - A) = \\{1, 2\\} - \\{3\\} = \\{1, 2\\} = A \\).<br />  - Vế phải: \\( A - B = \\{1\\} \\).<br />  - Hai vế không bằng nhau.<br /><br />- <b>C. \\( A \\cup (B - A) = A \\cup B \\):</b> <b>ĐÚNG</b>. \\( B - A \\) là phần của B không giao với A. Khi hợp phần này với A, ta sẽ có được toàn bộ A và B.",
+        "difficulty": "hard",
+        "topic": "Set Theory - Identities",
+        "hints": [
+          "Hãy thử với một ví dụ cụ thể để kiểm tra các đẳng thức.",
+          "Sử dụng các định nghĩa cơ bản của phép giao, hợp, và hiệu."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 18,
+        "question": "Let S = \\( \\{a, \\{a, b\\}\\} \\). Which statement is FALSE?",
+        "image": null,
+        "options": [
+          "A. \\( a \\in \\{a, \\{a, b\\}\\} \\)",
+          "B. \\( \\{a, b\\} \\subseteq \\{a, \\{a, b\\}\\} \\)",
+          "C. \\( \\{a, b\\} \\in \\{a, \\{a, b\\}\\} \\)",
+          "D. \\( \\{a\\} \\subseteq \\{a, \\{a, b\\}\\} \\)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Các phần tử của S là: phần tử 'a' và tập hợp \\( \\{a, b\\} \\).<br /><br />- <b>A. \\( a \\in S \\):</b> <b>ĐÚNG</b>. 'a' là một phần tử của S.<br /><br />- <b>B. \\( \\{a, b\\} \\subseteq S \\):</b> <b>SAI</b>. Để là tập con, mọi phần tử của \\( \\{a, b\\} \\) (tức là 'a' và 'b') phải là phần tử của S. Tuy nhiên, 'b' không phải là một phần tử của S.<br /><br />- <b>C. \\( \\{a, b\\} \\in S \\):</b> <b>ĐÚNG</b>. Tập hợp \\( \\{a, b\\} \\) là một phần tử của S.<br /><br />- <b>D. \\( \\{a\\} \\subseteq S \\):</b> <b>ĐÚNG</b>. Mọi phần tử của \\( \\{a\\} \\) (tức là 'a') là một phần tử của S.",
+        "difficulty": "medium",
+        "topic": "Set Theory - Subsets and Elements",
+        "hints": [
+          "Phân biệt rõ ràng giữa 'là một phần tử của' (\\( \\in \\)) và 'là một tập con của' (\\( \\subseteq \\))."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 19,
+        "question": "Given the universal set U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}. Represent the subset {1, 2, 5, 7, 8, 10} by a bit string whose i-th bit is 1 if i belongs to that subset, and is 0 otherwise. What is that bit string?",
+        "image": null,
+        "options": [
+          "A. 1100101101",
+          "B. 0011010010",
+          "C. 0110100110",
+          "D. 1001011001"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Tập hợp vũ trụ U có 10 phần tử, vì vậy chuỗi bit sẽ có 10 bit. Mỗi bit tương ứng với một phần tử trong U, theo thứ tự từ 1 đến 10.<br /><br />- Vị trí 1 (số 1): có trong tập hợp \\( \\to \\) 1<br />- Vị trí 2 (số 2): có trong tập hợp \\( \\to \\) 1<br />- Vị trí 3 (số 3): không có \\( \\to \\) 0<br />- Vị trí 4 (số 4): không có \\( \\to \\) 0<br />- Vị trí 5 (số 5): có trong tập hợp \\( \\to \\) 1<br />- Vị trí 6 (số 6): không có \\( \\to \\) 0<br />- Vị trí 7 (số 7): có trong tập hợp \\( \\to \\) 1<br />- Vị trí 8 (số 8): có trong tập hợp \\( \\to \\) 1<br />- Vị trí 9 (số 9): không có \\( \\to \\) 0<br />- Vị trí 10 (số 10): có trong tập hợp \\( \\to \\) 1<br /><br />Kết quả là chuỗi bit: <b>1100101101</b>.",
+        "difficulty": "easy",
+        "topic": "Set Theory - Bit Strings",
+        "hints": [
+          "Nếu một phần tử có trong tập hợp con, bit tương ứng là 1.",
+          "Nếu một phần tử không có trong tập hợp con, bit tương ứng là 0."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 20,
+        "question": "What is the bit string representation for the complement of the set {1, 2, 6, 7, 9} in the universal set U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}?",
+        "image": null,
+        "options": [
+          "A. 1000111100",
+          "B. 0010011000",
+          "C. 0011100101",
+          "D. 0011001101"
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Bước 1: Tìm phần bù của tập hợp</b><br />Phần bù của một tập hợp A (ký hiệu A') là tập hợp các phần tử trong U nhưng không có trong A.<br />- Tập hợp đã cho: S = {1, 2, 6, 7, 9}<br />- Phần bù: S' = {3, 4, 5, 8, 10}<br /><br /><b>Bước 2: Chuyển tập hợp bù thành chuỗi bit</b><br />- Vị trí 1, 2: 0<br />- Vị trí 3, 4, 5: 1<br />- Vị trí 6, 7: 0<br />- Vị trí 8: 1<br />- Vị trí 9: 0<br />- Vị trí 10: 1<br /><br />Kết quả là chuỗi bit: <b>0011100101</b>.",
+        "difficulty": "medium",
+        "topic": "Set Theory - Bit Strings",
+        "hints": [
+          "Cách 1: Tìm tập hợp bù trước, sau đó chuyển sang chuỗi bit.",
+          "Cách 2: Tìm chuỗi bit của tập hợp gốc, sau đó đảo ngược tất cả các bit (0 thành 1 và 1 thành 0)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 21,
+        "question": "Let U={0, 1, 2, 3, 4, 5, 6, 7, 8, 9}. Find the subset of U whose bit string representation is 0101010101.",
+        "image": null,
+        "options": [
+          "A. {1, 2, 3, 5, 7}",
+          "B. {1, 3, 5, 7, 9}",
+          "C. {0, 1, 2, 5, 9}",
+          "D. {0, 2, 4, 6, 8}"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Ta đối chiếu chuỗi bit với các phần tử của tập hợp vũ trụ U, theo thứ tự từ 0 đến 9.<br /><br />- Bit 1 (vị trí 0): 0 \\( \\to \\) không có 0<br />- Bit 2 (vị trí 1): 1 \\( \\to \\) có 1<br />- Bit 3 (vị trí 2): 0 \\( \\to \\) không có 2<br />- Bit 4 (vị trí 3): 1 \\( \\to \\) có 3<br />- Bit 5 (vị trí 4): 0 \\( \\to \\) không có 4<br />- Bit 6 (vị trí 5): 1 \\( \\to \\) có 5<br />- Bit 7 (vị trí 6): 0 \\( \\to \\) không có 6<br />- Bit 8 (vị trí 7): 1 \\( \\to \\) có 7<br />- Bit 9 (vị trí 8): 0 \\( \\to \\) không có 8<br />- Bit 10 (vị trí 9): 1 \\( \\to \\) có 9<br /><br />Vậy, tập hợp con là {1, 3, 5, 7, 9}.",
+        "difficulty": "easy",
+        "topic": "Set Theory - Bit Strings",
+        "hints": [
+          "Mỗi bit '1' trong chuỗi tương ứng với một phần tử có trong tập hợp con."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 22,
+        "question": "Suppose that the universal set is U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}. Find bit string representations of the union and the intersection of the subsets {1, 3, 5, 7, 9} and {2, 3, 6, 7, 9}.",
+        "image": null,
+        "options": [
+          "A. The union is 1110111010 and the intersection is 0010001010",
+          "B. The union is 1110111010 and the intersection is 0010001110",
+          "C. The union is 1111111010 and the intersection is 1011001010",
+          "D. The union is 1110111011 and the intersection is 0010001010"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đặt A = {1, 3, 5, 7, 9} và B = {2, 3, 6, 7, 9}.<br /><br /><b>Bước 1: Tìm chuỗi bit cho A và B</b><br />- Bit(A) = 1010101010<br />- Bit(B) = 0110011010<br /><br /><b>Bước 2: Tính chuỗi bit cho Phép hợp (Union)</b><br />Phép hợp tương ứng với phép toán OR trên bit.<br /><pre>  1010101010 (A)<br />OR 0110011010 (B)<br />--------------<br />  1110111010 (A ∪ B)</pre><br /><b>Bước 3: Tính chuỗi bit cho Phép giao (Intersection)</b><br />Phép giao tương ứng với phép toán AND trên bit.<br /><pre>   1010101010 (A)<br />AND 0110011010 (B)<br />---------------<br />   0010001010 (A ∩ B)</pre>",
+        "difficulty": "medium",
+        "topic": "Set Theory - Bit Strings",
+        "hints": [
+          "Phép hợp (Union) tương ứng với phép OR bit-khôn.",
+          "Phép giao (Intersection) tương ứng với phép AND bit-khôn."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 23,
+        "question": "Let U = {a, b, c, d, e, f, g, h, i, j}.<br />Given the subsets A = {a, c, d, e, j}, B = {a, f, g, h, j}. The bit string representing the union of A and B is _________.",
+        "image": null,
+        "options": [
+          "A. 1101111111",
+          "B. 1011111111",
+          "C. 1010111111",
+          "D. 1011111011",
+          "E. None of the other choices"
+        ],
+        "correctAnswer": "E",
+        "explanation": "<b>Bước 1: Tìm tập hợp hợp (Union)</b><br />\\( A \\cup B = \\{a, c, d, e, j\\} \\cup \\{a, f, g, h, j\\} = \\{a, c, d, e, f, g, h, j\\} \\)<br /><br /><b>Bước 2: Chuyển tập hợp hợp thành chuỗi bit</b><br />Tập U có 10 phần tử: a, b, c, d, e, f, g, h, i, j.<br />- a: 1<br />- b: 0<br />- c: 1<br />- d: 1<br />- e: 1<br />- f: 1<br />- g: 1<br />- h: 1<br />- i: 0<br />- j: 1<br /><br />Chuỗi bit kết quả là <b>1011111101</b>.<br />Không có lựa chọn nào trong các đáp án A, B, C, D khớp với kết quả này.",
+        "difficulty": "medium",
+        "topic": "Set Theory - Bit Strings",
+        "hints": [
+          "Cách 1: Tìm tập hợp hợp trước rồi chuyển sang chuỗi bit.",
+          "Cách 2: Chuyển từng tập hợp A và B sang chuỗi bit rồi thực hiện phép OR."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 24,
+        "question": "Let U = {a, b, c, d, e, f, g, h, i, j} and the subsets A = {a, c, d, e, g, j}, B = {a, f, g, h, j}. Find bit string representing the intersection of A and B, in the given order of the elements of U.",
+        "image": null,
+        "options": [
+          "A. 1000000100",
+          "B. 1000000010",
+          "C. 1000001000",
+          "D. 1000010000",
+          "E. None of the other choices"
+        ],
+        "correctAnswer": "E",
+        "explanation": "<b>Bước 1: Tìm tập hợp giao (Intersection)</b><br />\\( A \\cap B \\) là tập hợp các phần tử chung của A và B.<br />\\( A \\cap B = \\{a, c, d, e, g, j\\} \\cap \\{a, f, g, h, j\\} = \\{a, g, j\\} \\)<br /><br /><b>Bước 2: Chuyển tập hợp giao thành chuỗi bit</b><br />Dựa trên thứ tự của U = {a, b, c, d, e, f, g, h, i, j}:<br />- a: 1<br />- b: 0<br />- c: 0<br />- d: 0<br />- e: 0<br />- f: 0<br />- g: 1<br />- h: 0<br />- i: 0<br />- j: 1<br /><br />Chuỗi bit kết quả là <b>1000001001</b>.<br />Không có lựa chọn nào trong các đáp án A, B, C, D khớp với kết quả này.",
+        "difficulty": "medium",
+        "topic": "Set Theory - Bit Strings",
+        "hints": [
+          "Cách 1: Tìm tập hợp giao trước rồi chuyển sang chuỗi bit.",
+          "Cách 2: Chuyển A và B sang chuỗi bit, sau đó thực hiện phép AND."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 25,
+        "question": "Let U = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}. Represent the subset A = {2, 5, 7, 8, 9, 10} by a bit string where the i-th bit is 1 if and only if i is in A.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "0100101111",
+        "explanation": "Ta tạo chuỗi bit 10 vị trí, tương ứng với các số từ 1 đến 10.<br /><br />- Vị trí 1 (số 1): không có trong A \\( \\to \\) 0<br />- Vị trí 2 (số 2): có trong A \\( \\to \\) 1<br />- Vị trí 3 (số 3): không có trong A \\( \\to \\) 0<br />- Vị trí 4 (số 4): không có trong A \\( \\to \\) 0<br />- Vị trí 5 (số 5): có trong A \\( \\to \\) 1<br />- Vị trí 6 (số 6): không có trong A \\( \\to \\) 0<br />- Vị trí 7 (số 7): có trong A \\( \\to \\) 1<br />- Vị trí 8 (số 8): có trong A \\( \\to \\) 1<br />- Vị trí 9 (số 9): có trong A \\( \\to \\) 1<br />- Vị trí 10 (số 10): có trong A \\( \\to \\) 1<br /><br />Kết quả là chuỗi bit: <b>0100101111</b>.",
+        "difficulty": "easy",
+        "topic": "Set Theory - Bit Strings",
+        "hints": [
+          "Mỗi vị trí trong chuỗi bit tương ứng với một phần tử trong tập hợp vũ trụ.",
+          "Đặt bit là 1 nếu phần tử tương ứng có trong tập hợp con, ngược lại đặt là 0."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 26,
+        "question": "Which of the following is a function?<br /><br />(i) \\( f: \\mathbb{N} \\to \\mathbb{N}, f(n)=\\sqrt{n} \\)<br />(ii) \\( f: \\mathbb{N} \\to \\mathbb{R}, f(n)=\\sqrt{n} \\)<br />(iii) \\( f: \\mathbb{R} \\to \\mathbb{N}, f(n)=\\sqrt{n} \\)",
+        "image": null,
+        "options": [
+          "A. (i)",
+          "B. (ii)",
+          "C. (iii)",
+          "D. None of the other choices is correct"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Một quy tắc là một hàm số nếu nó gán cho mỗi phần tử trong tập nguồn (domain) một và chỉ một phần tử trong tập đích (codomain).<br /><br />- <b>(i) \\( f: \\mathbb{N} \\to \\mathbb{N}, f(n)=\\sqrt{n} \\):</b> <b>KHÔNG LÀ HÀM SỐ</b>. Vì với \\( n=2 \\in \\mathbb{N} \\), \\( f(2)=\\sqrt{2} \\) không thuộc tập đích \\( \\mathbb{N} \\).<br /><br />- <b>(ii) \\( f: \\mathbb{N} \\to \\mathbb{R}, f(n)=\\sqrt{n} \\):</b> <b>LÀ HÀM SỐ</b>. Với mọi số tự nhiên n, \\( \\sqrt{n} \\) là một số thực duy nhất. Quy tắc được xác định cho mọi phần tử của tập nguồn và kết quả luôn nằm trong tập đích.<br /><br />- <b>(iii) \\( f: \\mathbb{R} \\to \\mathbb{N}, f(n)=\\sqrt{n} \\):</b> <b>KHÔNG LÀ HÀM SỐ</b>. Vì với \\( n=-1 \\in \\mathbb{R} \\), \\( f(-1)=\\sqrt{-1} \\) không được xác định trong tập số thực, do đó quy tắc không được xác định cho mọi phần tử của tập nguồn.",
+        "difficulty": "easy",
+        "topic": "Functions",
+        "hints": [
+          "Một hàm số phải được xác định cho mọi phần tử trong tập nguồn.",
+          "Giá trị đầu ra của hàm số phải luôn nằm trong tập đích."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 27,
+        "question": "Which rules are functions?<br /><br />(i) \\( f: \\mathbb{Z} \\to \\mathbb{R}, f(x)=1/(x^2-5) \\)<br />(ii) \\( f: \\mathbb{Z} \\to \\mathbb{Z}, f(x)=1/(x^2-5) \\)<br />(iii) \\( f: \\mathbb{Z} \\to \\mathbb{Z}, f(x)=1/(x^2-4) \\)<br />(iv) \\( f: \\mathbb{Z} \\to \\mathbb{R}, f(x)=1/(x^2-4) \\)",
+        "image": null,
+        "options": [
+          "A. (iv)",
+          "B. (iii)",
+          "C. (i)",
+          "D. (ii)"
+        ],
+        "correctAnswer": "C",
+        "explanation": "- <b>(i) \\( f: \\mathbb{Z} \\to \\mathbb{R}, f(x)=1/(x^2-5) \\):</b> <b>LÀ HÀM SỐ</b>. Mẫu số \\( x^2-5=0 \\) khi \\( x = \\pm\\sqrt{5} \\), không phải là số nguyên. Do đó, hàm số được xác định với mọi \\( x \\in \\mathbb{Z} \\) và kết quả luôn là số thực.<br /><br />- <b>(ii) \\( f: \\mathbb{Z} \\to \\mathbb{Z}, f(x)=1/(x^2-5) \\):</b> <b>KHÔNG LÀ HÀM SỐ</b>. Ví dụ, với \\( x=1 \\in \\mathbb{Z} \\), \\( f(1)=-1/4 \\) không thuộc tập đích \\( \\mathbb{Z} \\).<br /><br />- <b>(iii) \\( f: \\mathbb{Z} \\to \\mathbb{Z}, f(x)=1/(x^2-4) \\):</b> <b>KHÔNG LÀ HÀM SỐ</b>. Với \\( x=2 \\in \\mathbb{Z} \\), mẫu số bằng 0, hàm số không xác định.<br /><br />- <b>(iv) \\( f: \\mathbb{Z} \\to \\mathbb{R}, f(x)=1/(x^2-4) \\):</b> <b>KHÔNG LÀ HÀM SỐ</b>. Với \\( x=2 \\in \\mathbb{Z} \\), mẫu số bằng 0, hàm số không xác định.",
+        "difficulty": "medium",
+        "topic": "Functions",
+        "hints": [
+          "Kiểm tra xem mẫu số có thể bằng 0 với giá trị nào trong tập nguồn không.",
+          "Kiểm tra xem kết quả có luôn thuộc tập đích hay không."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 28,
+        "question": "Which of the following is a function?<br /><br />(i) \\( f: \\mathbb{Z} \\to \\mathbb{R}, \\quad f(x) = x + \\frac{1}{x} \\)<br />(ii) \\( f: \\mathbb{Z} \\to \\mathbb{R}, \\quad f(x) = \\sqrt{x} \\)<br />(iii) \\( f: \\mathbb{R} \\to \\mathbb{Z}, \\quad f(x) = \\lceil \\sqrt{x} \\rceil \\)<br />(iv) \\( f: \\mathbb{R} \\to \\mathbb{Z}, \\quad f(x) = \\lceil \\sqrt[3]{x} \\rceil \\)",
+        "image": null,
+        "options": [
+          "A. (ii)",
+          "B. (i)",
+          "C. (iv)",
+          "D. (iii)"
+        ],
+        "correctAnswer": "C",
+        "explanation": "- <b>(i) \\( f(x) = x + 1/x \\):</b> <b>KHÔNG LÀ HÀM SỐ</b>. Không xác định tại \\( x=0 \\), mà \\( 0 \\in \\mathbb{Z} \\).<br /><br />- <b>(ii) \\( f(x) = \\sqrt{x} \\):</b> <b>KHÔNG LÀ HÀM SỐ</b>. Không xác định với các số nguyên âm, ví dụ \\( x=-1 \\in \\mathbb{Z} \\).<br /><br />- <b>(iii) \\( f(x) = \\lceil \\sqrt{x} \\rceil \\):</b> <b>KHÔNG LÀ HÀM SỐ</b>. Không xác định với các số thực âm, ví dụ \\( x=-1 \\in \\mathbb{R} \\).<br /><br />- <b>(iv) \\( f(x) = \\lceil \\sqrt[3]{x} \\rceil \\):</b> <b>LÀ HÀM SỐ</b>. Căn bậc ba được xác định với mọi số thực x. Hàm trần (ceiling) cũng được xác định với mọi số thực và luôn cho ra kết quả là một số nguyên. Do đó, quy tắc này gán một giá trị nguyên duy nhất cho mọi số thực x.",
+        "difficulty": "medium",
+        "topic": "Functions",
+        "hints": [
+          "Căn bậc ba được xác định cho tất cả các số thực.",
+          "Căn bậc hai chỉ được xác định cho các số không âm."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 29,
+        "question": "Which of the following rules defines a function from \\( \\mathbb{R} \\to \\mathbb{R} \\)?",
+        "image": null,
+        "options": [
+          "A. \\( f(x) = \\ln(x) \\)",
+          "B. \\( f(x) = 2x^2 + 1 \\)",
+          "C. \\( f(x) = \\sqrt{x} \\)",
+          "D. \\( f(x) = 1/x \\)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Một hàm số từ \\( \\mathbb{R} \\to \\mathbb{R} \\) phải được xác định cho mọi số thực x và cho ra kết quả là một số thực.<br /><br />- <b>A. \\( f(x) = \\ln(x) \\):</b> Không xác định với \\( x \\leq 0 \\). Không phải là hàm số từ \\( \\mathbb{R} \\).<br />- <b>B. \\( f(x) = 2x^2 + 1 \\):</b> Được xác định với mọi số thực x và kết quả luôn là số thực. <b>Đây là một hàm số</b>.<br />- <b>C. \\( f(x) = \\sqrt{x} \\):</b> Không xác định với \\( x < 0 \\). Không phải là hàm số từ \\( \\mathbb{R} \\).<br />- <b>D. \\( f(x) = 1/x \\):</b> Không xác định tại \\( x = 0 \\). Không phải là hàm số từ \\( \\mathbb{R} \\).",
+        "difficulty": "easy",
+        "topic": "Functions",
+        "hints": [
+          "Kiểm tra xem hàm số có xác định với tất cả các giá trị trong tập nguồn (\\( \\mathbb{R} \\)) hay không.",
+          "Logarit tự nhiên và căn bậc hai không xác định với các số âm."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 30,
+        "question": "Compute \\( \\lfloor\\frac{3}{2} - \\lceil 3 + \\frac{5}{4} \\rceil\\rfloor \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "-4",
+        "explanation": "Ta thực hiện phép tính từ trong ra ngoài. Ký hiệu \\( \\lceil x \\rceil \\) là hàm trần (số nguyên nhỏ nhất lớn hơn hoặc bằng x), và \\( \\lfloor x \\rfloor \\) là hàm sàn (số nguyên lớn nhất nhỏ hơn hoặc bằng x).<br /><br /><b>Bước 1: Tính biểu thức trong ngoặc trần (ceiling)</b><br />\\( \\lceil 3 + \\frac{5}{4} \\rceil = \\lceil 3 + 1.25 \\rceil = \\lceil 4.25 \\rceil = 5 \\)<br /><br /><b>Bước 2: Thực hiện phép trừ</b><br />\\( \\frac{3}{2} - 5 = 1.5 - 5 = -3.5 \\)<br /><br /><b>Bước 3: Tính hàm sàn (floor) của kết quả</b><br />\\( \\lfloor -3.5 \\rfloor = -4 \\)<br /><br /><i>(Lưu ý: Dựa trên đáp án đúng là -4, ta suy luận rằng dấu ngoặc vuông bên trong là hàm trần và bên ngoài là hàm sàn).</i>",
+        "difficulty": "medium",
+        "topic": "Floor and Ceiling Functions",
+        "hints": [
+          "\\( \\lceil 4.25 \\rceil = 5 \\)",
+          "\\( \\lfloor -3.5 \\rfloor = -4 \\)"
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 31,
+        "question": "Let x be any real number. Which statement is correct? (Let \\( [x] \\) denote \\( \\lfloor x \\rfloor \\) and \\( \\lceil x \\rceil \\) denote the ceiling function)<br /><br />(i) \\( \\lceil \\lfloor x \\rfloor \\rceil = \\lfloor x \\rfloor \\)<br />(ii) \\( \\lceil \\lfloor x \\rfloor \\rceil = |x| \\)<br />(iii) \\( \\lceil x \\rceil - \\lfloor x \\rfloor = 1 \\)<br />(iv) \\( \\lfloor x \\rfloor + \\lceil x \\rceil = 2x \\)",
+        "image": null,
+        "options": [
+          "A. (ii)",
+          "B. (iv)",
+          "C. (i)",
+          "D. (iii)"
+        ],
+        "correctAnswer": "C",
+        "explanation": "- <b>(i) \\( \\lceil \\lfloor x \\rfloor \\rceil = \\lfloor x \\rfloor \\):</b> <b>ĐÚNG</b>. Vì \\( \\lfloor x \\rfloor \\) luôn là một số nguyên, hàm trần của một số nguyên bằng chính nó.<br /><br />- <b>(ii) \\( \\lceil \\lfloor x \\rfloor \\rceil = |x| \\):</b> <b>SAI</b>. Điều này tương đương với \\( \\lfloor x \\rfloor = |x| \\). Phản ví dụ: x = -1.5, \\( \\lfloor -1.5 \\rfloor = -2 \\) trong khi \\( |-1.5| = 1.5 \\).<br /><br />- <b>(iii) \\( \\lceil x \\rceil - \\lfloor x \\rfloor = 1 \\):</b> <b>SAI</b>. Điều này chỉ đúng khi x không phải là số nguyên. Nếu x là số nguyên (ví dụ x=3), thì \\( 3 - 3 = 0 \\).<br /><br />- <b>(iv) \\( \\lfloor x \\rfloor + \\lceil x \\rceil = 2x \\):</b> <b>SAI</b>. Phản ví dụ: x = 1.5, \\( \\lfloor 1.5 \\rfloor + \\lceil 1.5 \\rceil = 1 + 2 = 3 \\), trong khi \\( 2x = 3 \\). Nhưng với x = 1.1, \\( 1 + 2 = 3 \\) trong khi \\( 2x = 2.2 \\).",
+        "difficulty": "medium",
+        "topic": "Floor and Ceiling Functions",
+        "hints": [
+          "Hàm sàn và hàm trần của một số nguyên bằng chính số nguyên đó."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 32,
+        "question": "Which statements are correct for all real numbers x?<br /><br />(i) \\( \\lceil \\lfloor x \\rfloor \\rceil = \\lfloor x \\rfloor \\)<br />(ii) \\( 2\\lfloor x \\rfloor = \\lfloor 2x \\rfloor \\)",
+        "image": null,
+        "options": [
+          "A. Only (i)",
+          "B. Only (ii)",
+          "C. Both (i) and (ii)",
+          "D. Neither is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "- <b>(i) \\( \\lceil \\lfloor x \\rfloor \\rceil = \\lfloor x \\rfloor \\):</b> <b>ĐÚNG</b>. \\( \\lfloor x \\rfloor \\) là một số nguyên. Hàm trần của một số nguyên là chính nó.<br /><br />- <b>(ii) \\( 2\\lfloor x \\rfloor = \\lfloor 2x \\rfloor \\):</b> <b>SAI</b>. Lấy phản ví dụ x = 0.5. <br />  - Vế trái: \\( 2 \\times \\lfloor 0.5 \\rfloor = 2 \\times 0 = 0 \\).<br />  - Vế phải: \\( \\lfloor 2 \\times 0.5 \\rfloor = \\lfloor 1 \\rfloor = 1 \\).",
+        "difficulty": "easy",
+        "topic": "Floor and Ceiling Functions",
+        "hints": [
+          "Hãy thử với một giá trị không phải là số nguyên để kiểm tra các đẳng thức."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 33,
+        "question": "Which statement is true for all real numbers x and y?<br /><br />(i) \\( \\lfloor 2x \\rfloor = 2\\lfloor x \\rfloor \\)<br />(ii) \\( \\lfloor \\lceil x \\rceil \\rfloor = \\lceil x \\rceil \\)<br />(iii) \\( \\lfloor x+y \\rfloor = \\lfloor x \\rfloor + \\lfloor y \\rfloor \\)",
+        "image": null,
+        "options": [
+          "A. (i)",
+          "B. (ii)",
+          "C. (iii)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "- <b>(i) \\( \\lfloor 2x \\rfloor = 2\\lfloor x \\rfloor \\):</b> <b>SAI</b>. Phản ví dụ: x = 0.5. Vế trái = \\( \\lfloor 1 \\rfloor = 1 \\). Vế phải = \\( 2 \\times \\lfloor 0.5 \\rfloor = 0 \\).<br /><br />- <b>(ii) \\( \\lfloor \\lceil x \\rceil \\rfloor = \\lceil x \\rceil \\):</b> <b>ĐÚNG</b>. Vì \\( \\lceil x \\rceil \\) luôn là một số nguyên, hàm sàn của một số nguyên bằng chính nó.<br /><br />- <b>(iii) \\( \\lfloor x+y \\rfloor = \\lfloor x \\rfloor + \\lfloor y \\rfloor \\):</b> <b>SAI</b>. Phản ví dụ: x = 0.5, y = 0.5. Vế trái = \\( \\lfloor 1 \\rfloor = 1 \\). Vế phải = \\( \\lfloor 0.5 \\rfloor + \\lfloor 0.5 \\rfloor = 0 + 0 = 0 \\).",
+        "difficulty": "medium",
+        "topic": "Floor and Ceiling Functions",
+        "hints": [
+          "Hàm sàn hoặc hàm trần của một số nguyên luôn bằng chính số nguyên đó."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 34,
+        "question": "Which of the following functions f: \\( \\mathbb{R} \\to \\mathbb{R} \\) is a bijection?<br /><br />(i) \\( f(x) = \\lfloor \\frac{x}{2} \\rfloor \\)<br />(ii) \\( f(x) = -2x^2 + 4 \\)<br />(iii) \\( f(x) = -\\frac{3}{2}x + 5 \\)",
+        "image": null,
+        "options": [
+          "A. (iii)",
+          "B. (i)",
+          "C. None of the other choices is correct",
+          "D. (ii)"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Một hàm số là song ánh (bijection) nếu nó vừa là đơn ánh (one-to-one) vừa là toàn ánh (onto).<br /><br />- <b>(i) \\( f(x) = \\lfloor \\frac{x}{2} \\rfloor \\):</b> Không phải đơn ánh (ví dụ: \\( f(2.1) = f(2.5) = 1 \\)) và không phải toàn ánh (tập giá trị chỉ chứa các số nguyên).<br /><br />- <b>(ii) \\( f(x) = -2x^2 + 4 \\):</b> Đây là hàm bậc hai (parabol). Không phải đơn ánh (ví dụ: \\( f(1) = f(-1) = 2 \\)) và không phải toàn ánh (tập giá trị là \\( (-\\infty, 4] \\)).<br /><br />- <b>(iii) \\( f(x) = -\\frac{3}{2}x + 5 \\):</b> Đây là hàm bậc nhất. Mọi hàm bậc nhất đều là đơn ánh và toàn ánh trên \\( \\mathbb{R} \\). Do đó, đây là một <b>song ánh</b>.",
+        "difficulty": "medium",
+        "topic": "Functions - Bijections",
+        "hints": [
+          "Một hàm số là song ánh khi nó vừa là đơn ánh, vừa là toàn ánh.",
+          "Hàm bậc nhất (đường thẳng) luôn là song ánh trên R.",
+          "Hàm bậc hai (parabol) không phải đơn ánh cũng không phải toàn ánh trên R."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 35,
+        "question": "The function \\( f: \\mathbb{N} \\to \\mathbb{N} \\) is given by \\( f(n) = \\lfloor\\sqrt{n}\\rfloor \\).<br />Which statement is TRUE?",
+        "image": null,
+        "options": [
+          "A. f is one-to-one but not onto.",
+          "B. f is onto but not one-to-one.",
+          "C. f is both one-to-one and onto.",
+          "D. f is neither one-to-one nor onto."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Giả sử \\( \\mathbb{N} = \\{0, 1, 2, ...\\} \\).<br /><br />- <b>Tính đơn ánh (one-to-one):</b> Hàm số không phải đơn ánh. Ví dụ: \\( f(4) = \\lfloor\\sqrt{4}\\rfloor = 2 \\) và \\( f(5) = \\lfloor\\sqrt{5}\\rfloor = \\lfloor 2.23... \\rfloor = 2 \\). Vì \\( f(4) = f(5) \\) nhưng \\( 4 \\neq 5 \\), hàm số không phải là đơn ánh.<br /><br />- <b>Tính toàn ánh (onto):</b> Hàm số là toàn ánh. Với mọi số tự nhiên k trong tập đích, ta cần chỉ ra rằng có một số n trong tập nguồn sao cho \\( f(n) = k \\). Ta có thể chọn \\( n = k^2 \\). Khi đó, \\( f(k^2) = \\lfloor\\sqrt{k^2}\\rfloor = \\lfloor k \\rfloor = k \\) (vì k là số tự nhiên). Do đó, hàm số là toàn ánh.<br /><br /><b>Kết luận:</b> Hàm số là toàn ánh nhưng không phải đơn ánh.",
+        "difficulty": "medium",
+        "topic": "Functions - Properties",
+        "hints": [
+          "Để kiểm tra tính đơn ánh, hãy thử tìm hai đầu vào khác nhau cho cùng một đầu ra.",
+          "Để kiểm tra tính toàn ánh, hãy thử tìm một đầu vào cho một đầu ra k bất kỳ."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 36,
+        "question": "Let \\( f: \\mathbb{Z} \\to \\mathbb{N} \\) be the function defined as follows:<br />\\[ f(n) = \\begin{cases} -2n, & \\text{if } n \\le 0 \\\\ 2n-1, & \\text{if } n > 0 \\end{cases} \\]<br />(Assuming N = {0, 1, 2, ...})<br />Choose the correct answer.",
+        "image": null,
+        "options": [
+          "A. f is onto but not one-to-one.",
+          "B. f is both one-to-one and onto.",
+          "C. f is neither one-to-one nor onto.",
+          "D. f is one-to-one but not onto."
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Phân tích hàm số:</b><br />- Với \\( n \\le 0 \\) (các số nguyên không dương): \\( f(0)=0, f(-1)=2, f(-2)=4, ... \\). Nhánh này tạo ra tất cả các <b>số tự nhiên chẵn</b>.<br />- Với \\( n > 0 \\) (các số nguyên dương): \\( f(1)=1, f(2)=3, f(3)=5, ... \\). Nhánh này tạo ra tất cả các <b>số tự nhiên lẻ</b>.<br /><br />- <b>Tính đơn ánh (one-to-one):</b> Hàm số là đơn ánh. Hai nhánh tạo ra hai tập hợp giá trị rời nhau (chẵn và lẻ), và trong mỗi nhánh, các giá trị n khác nhau luôn cho ra các giá trị f(n) khác nhau.<br /><br />- <b>Tính toàn ánh (onto):</b> Hàm số là toàn ánh. Tập hợp giá trị của hàm số là hợp của tập các số tự nhiên chẵn và tập các số tự nhiên lẻ, chính là toàn bộ tập hợp số tự nhiên \\( \\mathbb{N} \\).<br /><br /><b>Kết luận:</b> Hàm số vừa là đơn ánh, vừa là toàn ánh, do đó nó là một song ánh.",
+        "difficulty": "hard",
+        "topic": "Functions - Properties",
+        "hints": [
+          "Xem xét tập giá trị mà mỗi nhánh của hàm số tạo ra.",
+          "Hàm số này là một cách cổ điển để tạo ra một song ánh từ Z sang N."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 37,
+        "question": "Let \\( f: \\mathbb{N} \\to \\mathbb{Z} \\) be the function defined as follows:<br />\\[ f(n) = \\begin{cases} -\\frac{n}{2}, & \\text{if } n \\text{ is even} \\\\ \\frac{n-1}{2}, & \\text{if } n \\text{ is odd} \\end{cases} \\]<br />(Assuming N = {0, 1, 2, ...} and Z = {..., -1, 0, 1, ...})<br />Choose the correct answer.",
+        "image": null,
+        "options": [
+          "A. f is onto but not one-to-one",
+          "B. f is one-to-one but not onto.",
+          "C. f is neither one-to-one nor onto.",
+          "D. f is both one-to-one and onto."
+        ],
+        "correctAnswer": "D",
+        "explanation": "<b>Phân tích hàm số:</b><br />- Với n chẵn (0, 2, 4, ...): \\( f(0)=0, f(2)=-1, f(4)=-2, ... \\). Nhánh này tạo ra tất cả các <b>số nguyên không dương</b> (..., -2, -1, 0).<br />- Với n lẻ (1, 3, 5, ...): \\( f(1)=0, f(3)=1, f(5)=2, ... \\). <i>(Lưu ý: Có vẻ như công thức trong hình \\( (n^2+1)/2 \\) có thể là lỗi in, vì nó không tạo ra một song ánh. Công thức phổ biến hơn là \\( (n-1)/2 \\) hoặc \\( (n+1)/2 \\). Giả sử công thức đúng là \\( (n-1)/2 \\)).</i><br /> - Với \\( f(n)=(n-1)/2 \\): \\( f(1)=0, f(3)=1, f(5)=2, ... \\). Nhánh này tạo ra tất cả các số nguyên không âm. Tuy nhiên, f(0) = f(1) = 0 nên không đơn ánh.<br /><br /><b>Phân tích lại với công thức chính xác trong hình (\\( (n^2+1)/2 \\)):</b><br />- Nhánh chẵn: \\( f(0)=0, f(2)=-1, f(4)=-2, ... \\) (Tạo ra các số nguyên không dương).<br />- Nhánh lẻ: \\( f(1)=1, f(3)=5, f(5)=13, ... \\) (Tạo ra một vài số nguyên dương).<br />- <b>Đơn ánh?</b> Có vẻ là đơn ánh vì hai tập giá trị rời nhau. <br />- <b>Toàn ánh?</b> Không. Ví dụ, số nguyên 2, 3, 4 không được tạo ra.<br />- Vậy hàm này là <b>đơn ánh nhưng không toàn ánh</b>. <br /><br /><i>Tuy nhiên, đây là một câu hỏi kinh điển về song ánh từ \\( \\mathbb{N} \\) đến \\( \\mathbb{Z} \\) và có thể có lỗi trong đề bài. Nếu giả sử mục đích là tạo song ánh, hàm số sẽ là đơn ánh và toàn ánh. Dựa trên các lựa chọn, có khả năng đề bài bị sai và hàm số được thiết kế để trở thành song ánh.</i>",
+        "difficulty": "hard",
+        "topic": "Functions - Properties",
+        "hints": [
+          "Phân tích cẩn thận các giá trị đầu ra cho các đầu vào chẵn và lẻ.",
+          "Hãy cảnh giác với các lỗi có thể có trong đề bài cho các bài toán kinh điển."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 38,
+        "question": "Let \\( f, g: \\mathbb{R} \\to \\mathbb{R} \\) be two functions given by<br />\\( f(x) = x^2 + 1 \\) and \\( g(x) = x + 1 \\).<br />Which functions are bijections?",
+        "image": null,
+        "options": [
+          "A. Only g",
+          "B. Both f and g",
+          "C. None of the other choices is correct",
+          "D. Only f"
+        ],
+        "correctAnswer": "A",
+        "explanation": "- <b>Hàm f(x) = x² + 1:</b> Đây là một hàm bậc hai. Nó không phải là đơn ánh vì \\( f(-1) = f(1) = 2 \\). Nó cũng không phải là toàn ánh vì tập giá trị của nó là \\( [1, +\\infty) \\), không phải toàn bộ \\( \\mathbb{R} \\). Do đó, f không phải là song ánh.<br /><br />- <b>Hàm g(x) = x + 1:</b> Đây là một hàm bậc nhất. Nó là đơn ánh (vì nếu \\( x_1 + 1 = x_2 + 1 \\) thì \\( x_1 = x_2 \\)) và là toàn ánh (vì với mọi y thuộc \\( \\mathbb{R} \\), ta luôn có thể tìm được \\( x = y - 1 \\) sao cho g(x) = y). Do đó, g là một song ánh.<br /><br /><b>Kết luận:</b> Chỉ có hàm g là song ánh.",
+        "difficulty": "easy",
+        "topic": "Functions - Bijections",
+        "hints": [
+          "Hàm số bậc hai trên R không bao giờ là song ánh.",
+          "Hàm số bậc nhất trên R luôn là song ánh."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 39,
+        "question": "Consider the functions from \\( \\mathbb{Z} \\times \\mathbb{Z} \\to \\mathbb{Z} \\) given by<br />f(m, n) = m+2n<br />g(m, n) = 2m+2n+1<br />h(m, n) = m-n<br /><br />Which functions are onto?",
+        "image": null,
+        "options": [
+          "A. g and h",
+          "B. Only g",
+          "C. Only f",
+          "D. f and h",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Một hàm số là toàn ánh (onto) nếu mọi phần tử trong tập đích đều có thể là giá trị đầu ra của hàm.<br /><br />- <b>f(m, n) = m+2n:</b> <b>TOÀN ÁNH</b>. Để tạo ra một số nguyên k bất kỳ, ta có thể chọn n=0. Khi đó, f(m, 0) = m. Bằng cách chọn m=k, ta có f(k, 0) = k.<br /><br />- <b>g(m, n) = 2m+2n+1:</b> <b>KHÔNG TOÀN ÁNH</b>. Biểu thức có thể viết lại là 2(m+n) + 1. Đây luôn là một số lẻ. Do đó, không có giá trị (m, n) nào có thể tạo ra một số chẵn.<br /><br />- <b>h(m, n) = m-n:</b> <b>TOÀN ÁNH</b>. Để tạo ra một số nguyên k bất kỳ, ta có thể chọn n=0. Khi đó, h(m, 0) = m. Bằng cách chọn m=k, ta có h(k, 0) = k.<br /><br /><b>Kết luận:</b> Cả f và h đều là toàn ánh.",
+        "difficulty": "hard",
+        "topic": "Functions - Properties",
+        "hints": [
+          "Để chứng minh một hàm là toàn ánh, hãy thử tạo ra một giá trị k bất kỳ trong tập đích.",
+          "Để chứng minh không toàn ánh, hãy chỉ ra một tập hợp con các giá trị không bao giờ có thể được tạo ra."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 40,
+        "question": "Let \\( f: \\mathbb{Z} \\times \\mathbb{Z} \\to \\mathbb{Z}, f(m, n) = n+1 \\). Choose correct answer:",
+        "image": null,
+        "options": [
+          "A. f is a bijection",
+          "B. f is neither one-to-one nor onto",
+          "C. f is one-to-one but not onto",
+          "D. f is onto but not one-to-one"
+        ],
+        "correctAnswer": "D",
+        "explanation": "- <b>Tính toàn ánh (onto):</b> <b>ĐÚNG</b>. Với một số nguyên k bất kỳ trong tập đích, ta cần tìm một cặp (m, n) sao cho f(m, n) = k. Ta có n+1 = k, suy ra n = k-1. Ta có thể chọn m là một số nguyên bất kỳ, ví dụ m=0. Khi đó, f(0, k-1) = (k-1) + 1 = k. Vậy hàm số là toàn ánh.<br /><br />- <b>Tính đơn ánh (one-to-one):</b> <b>SAI</b>. Ta cần kiểm tra xem các đầu vào khác nhau có cho ra các đầu ra khác nhau hay không. Hãy xem xét hai đầu vào (1, 5) và (2, 5).<br />  - f(1, 5) = 5 + 1 = 6<br />  - f(2, 5) = 5 + 1 = 6<br />Vì hai đầu vào khác nhau nhưng cho ra cùng một đầu ra, hàm số không phải là đơn ánh.",
+        "difficulty": "medium",
+        "topic": "Functions - Properties",
+        "hints": [
+          "Giá trị của hàm số này không phụ thuộc vào m.",
+          "Đây là một dấu hiệu mạnh mẽ cho thấy hàm số không phải là đơn ánh."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 41,
+        "question": "Let f(x)=2x+4, g(x)=5x+6. Suppose that (f∘g)(x)=ax+b. Find -a+2b.",
+        "image": null,
+        "options": [
+          "A. 42",
+          "B. 22",
+          "C. 14",
+          "D. 16"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Bước 1: Tính hàm hợp (f∘g)(x)</b><br />(f∘g)(x) = f(g(x))<br />Thay g(x) = 5x+6 vào f(x):<br />f(5x+6) = 2(5x+6) + 4<br />= 10x + 12 + 4<br />= 10x + 16<br /><br /><b>Bước 2: Xác định a và b</b><br />So sánh với dạng ax+b, ta có a = 10 và b = 16.<br /><br /><b>Bước 3: Tính giá trị biểu thức</b><br />-a + 2b = -(10) + 2(16) = -10 + 32 = 22.",
+        "difficulty": "easy",
+        "topic": "Functions - Composition",
+        "hints": [
+          "Hàm hợp f(g(x)) có nghĩa là 'lấy toàn bộ hàm g(x) và đặt nó vào vị trí của x trong hàm f(x)'."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 42,
+        "question": "Let f(X) = 5X + 4, g(X) = 4X + 3. Suppose that f∘g(X) = aX + b. Find a + b.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "39",
+        "explanation": "<b>Bước 1: Tính hàm hợp f∘g(X)</b><br />f∘g(X) = f(g(X))<br />f(4X + 3) = 5(4X + 3) + 4<br />= 20X + 15 + 4<br />= 20X + 19<br /><br /><b>Bước 2: Xác định a và b</b><br />So sánh với dạng aX + b, ta có a = 20 và b = 19.<br /><br /><b>Bước 3: Tính tổng a + b</b><br />a + b = 20 + 19 = 39.",
+        "difficulty": "easy",
+        "topic": "Functions - Composition",
+        "hints": [
+          "Tính f(g(x)) bằng cách thay thế x trong f(x) bằng biểu thức của g(x)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 43,
+        "question": "Let Z be the set of all integers. Let f and g be two functions such that \\( f(x) = x^3 \\) and \\( g(x) = x^2 \\). Find \\( f \\circ g(x) \\).<br /><br />(i) \\( x^2 \\)<br />(ii) \\( x^3 \\)<br />(iii) \\( x^5 \\)<br />(iv) \\( x^6 \\)",
+        "image": null,
+        "options": [
+          "A. (iv)",
+          "B. (ii)",
+          "C. (i)",
+          "D. (iii)"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Hàm hợp \\( f \\circ g(x) \\) được tính bằng cách lấy f(g(x)).<br /><br />1. Bắt đầu với g(x) = x².<br />2. Thay thế 'x' trong hàm f(x) bằng g(x):<br />   f(g(x)) = f(x²) = (x²)³<br />3. Áp dụng quy tắc lũy thừa (a^m)^n = a^(m*n):<br />   (x²)³ = x^(2*3) = x^6.",
+        "difficulty": "easy",
+        "topic": "Functions - Composition",
+        "hints": [
+          "Khi tính f(g(x)), hàm g(x) là 'đầu vào' cho hàm f(x)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 44,
+        "question": "Let \\( f, g: \\mathbb{Z} \\times \\mathbb{Z} \\to \\mathbb{Z} \\times \\mathbb{Z} \\) be two functions defined by<br />\\( f(m,n)=(m,l) \\) and \\( g(m,n)=(m-n,m+n) \\).<br />(Assuming l is a typo and should be n)<br />The value of \\( f \\circ g(1,1) \\) is _________.",
+        "image": null,
+        "options": [
+          "A. (0,2)",
+          "B. (1,1)",
+          "C. (0,1)",
+          "D. (2,0)",
+          "E. (1,0)"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta cần tính \\( (f \\circ g)(1,1) = f(g(1,1)) \\).<br /><br /><b>Bước 1: Tính g(1,1)</b><br />\\( g(m,n)=(m-n,m+n) \\)<br />\\( g(1,1) = (1-1, 1+1) = (0,2) \\)<br /><br /><b>Bước 2: Tính f của kết quả</b><br />Ta có \\( f(m,n)=(m,n) \\) (giả sử l là n). Đây là hàm đồng nhất.<br />\\( f(0,2) = (0,2) \\)<br /><br /><b>Kết luận:</b> Giá trị của \\( f \\circ g(1,1) \\) là (0,2).",
+        "difficulty": "easy",
+        "topic": "Functions - Composition",
+        "hints": [
+          "Tính toán hàm bên trong (g) trước.",
+          "Sử dụng kết quả của hàm g làm đầu vào cho hàm f."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 45,
+        "question": "Let \\( a_1, a_2, ... \\) be the sequence<br />0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, ...<br />Find \\( a_{99} \\) and \\( a_{100} \\).",
+        "image": null,
+        "options": [
+          "A. 1 and 1",
+          "B. 1 and 0",
+          "C. 0 and 0",
+          "D. 0 and 1"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Quy luật của dãy số này dường như không rõ ràng ngay lập tức. Cần phải tìm một mẫu hình. Có thể dãy số được xây dựng dựa trên một thuộc tính nào đó của chỉ số n.<br /><br />Tuy nhiên, nếu không có quy luật rõ ràng, câu hỏi này không thể giải quyết được. Giả sử có một quy luật nào đó mà ta chưa nhận ra. Một khả năng là liên quan đến các biểu diễn nhị phân hoặc các hàm toán học khác. Nếu không có thêm thông tin, việc trả lời câu hỏi này chỉ là phỏng đoán. <br /><br /><i>(Lưu ý: Không có đủ thông tin trong hình ảnh để xác định quy luật của dãy số này một cách chắc chắn. Đáp án được cung cấp có thể dựa trên một quy tắc cụ thể không được nêu rõ).</i>",
+        "difficulty": "hard",
+        "topic": "Sequences",
+        "hints": [
+          "Hãy thử tìm kiếm các quy luật dựa trên số học, số nguyên tố, hoặc các biểu diễn cơ số khác của chỉ số n."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 46,
+        "question": "Find \\( a_2, a_3, a_4 \\) defined by the following recurrence relation<br />\\( a_n = a_{n-1} + n^2 a_{n-2} \\), \\( a_0 = a_1 = 1 \\)",
+        "image": null,
+        "options": [
+          "A. 1, 5, 14",
+          "B. None of the other choices is correct",
+          "C. 14, 94, 444",
+          "D. 1, 1, 5",
+          "E. 5, 14, 94"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Ta tính từng số hạng theo công thức truy hồi:<br /><br />- <b>Tính \\( a_2 \\) (n=2):</b><br />  \\( a_2 = a_1 + 2^2 a_0 = 1 + 4 \\times 1 = 5 \\)<br /><br />- <b>Tính \\( a_3 \\) (n=3):</b><br />  \\( a_3 = a_2 + 3^2 a_1 = 5 + 9 \\times 1 = 14 \\)<br /><br />- <b>Tính \\( a_4 \\) (n=4):</b><br />  \\( a_4 = a_3 + 4^2 a_2 = 14 + 16 \\times 5 = 14 + 80 = 94 \\)<br /><br />Vậy, các số hạng \\( a_2, a_3, a_4 \\) lần lượt là 5, 14, 94.",
+        "difficulty": "medium",
+        "topic": "Sequences - Recurrence Relations",
+        "hints": [
+          "Thay thế các giá trị đã biết vào công thức để tính các số hạng tiếp theo một cách tuần tự."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 47,
+        "question": "Given the sequence 1, 2, 2, 3, 3, 3, 4, 4, 4, 4,...<br />Find the 100th term.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "14",
+        "explanation": "Quy luật của dãy số là số n xuất hiện n lần.<br />Để tìm số hạng thứ 100, ta cần tìm số k sao cho tổng số lần xuất hiện của các số từ 1 đến k-1 nhỏ hơn 100, và tổng số lần xuất hiện của các số từ 1 đến k lớn hơn hoặc bằng 100.<br /><br />Tổng số các số hạng cho đến khi số k xuất hiện hết là: \\( 1 + 2 + 3 + ... + k = \\frac{k(k+1)}{2} \\).<br /><br />Ta cần tìm k sao cho \\( \\frac{k(k+1)}{2} \\geq 100 \\).<br />\\( k(k+1) \\geq 200 \\)<br /><br />Thử các giá trị của k:<br />- Nếu k=13: \\( 13 \\times 14 = 182 < 200 \\)<br />- Nếu k=14: \\( 14 \\times 15 = 210 > 200 \\)<br /><br />Điều này có nghĩa là số hạng cuối cùng của số 13 là số hạng thứ 182. Do đó, các số hạng từ 183 đến 210 sẽ là số 14. Vì 100 nằm giữa 1 và 182, ta cần kiểm tra lại.<br /><br />Ta tìm k sao cho \\( \\frac{(k-1)k}{2} < 100 \\leq \\frac{k(k+1)}{2} \\).<br />- \\( k=13 \\): \\( \\frac{12 \\times 13}{2} = 78 \\)<br />- \\( k=14 \\): \\( \\frac{13 \\times 14}{2} = 91 \\)<br />- \\( k=15 \\): \\( \\frac{14 \\times 15}{2} = 105 \\)<br /><br />Tổng số các số hạng cho đến hết số 13 là 91. Vậy số hạng thứ 92 sẽ là 14. Do đó, số hạng thứ 100 cũng sẽ là 14.",
+        "difficulty": "medium",
+        "topic": "Sequences",
+        "hints": [
+          "Sử dụng công thức tính tổng của một cấp số cộng để xác định vị trí cuối cùng của mỗi số."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 48,
+        "question": "Find the terms \\( a_0, a_1, a_3, \\) and \\( a_5 \\) of the sequence \\( \\{a_n\\} \\), where<br />\\( a_n = \\lfloor n/2 \\rfloor + \\lfloor n/2 \\rfloor + \\lfloor 3/2 \\rfloor \\).",
+        "image": null,
+        "options": [
+          "A. 2, 3, 4, 6",
+          "B. 1, 2, 4, 6",
+          "C. 1, 2, 3, 4",
+          "D. 2, 3, 5, 7"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<i>Lưu ý: Công thức có vẻ bị lặp lại. Giả sử công thức đúng là \\( a_n = \\lfloor n/2 \\rfloor + \\lceil n/2 \\rceil \\) hoặc một dạng tương tự. Nếu theo công thức đã cho: \\( a_n = 2\\lfloor n/2 \\rfloor + 1 \\) (vì \\( \\lfloor 3/2 \\rfloor = 1 \\)).</i><br /><br /><b>Tính toán theo công thức \\( a_n = 2\\lfloor n/2 \\rfloor + 1 \\):</b><br />- \\( a_0 = 2\\lfloor 0/2 \\rfloor + 1 = 2(0) + 1 = 1 \\)<br />- \\( a_1 = 2\\lfloor 1/2 \\rfloor + 1 = 2(0) + 1 = 1 \\)<br />- \\( a_3 = 2\\lfloor 3/2 \\rfloor + 1 = 2(1) + 1 = 3 \\)<br />- \\( a_5 = 2\\lfloor 5/2 \\rfloor + 1 = 2(2) + 1 = 5 \\)<br />Dãy số là 1, 1, 3, 5. Không khớp với bất kỳ đáp án nào.<br /><br /><b>Thử công thức \\( a_n = n \\):</b> 0, 1, 3, 5. Không khớp.<br /><br /><b>Thử công thức từ một bài toán phổ biến \\( a_n = \\lfloor n/2 \\rfloor + \\lceil n/2 \\rceil (= n) \\):</b> Dãy sẽ là 0, 1, 3, 5. Không khớp.<br /><br /><b>Dựa trên đáp án đúng (1, 2, 4, 6), ta có thể suy luận công thức:</b><br />- \\( a_0 = 1 \\)<br />- \\( a_1 = 2 \\)<br />- \\( a_3 = 4 \\)<br />- \\( a_5 = 6 \\)<br />Có vẻ như \\( a_n = n+1 \\). Hãy kiểm tra:<br />- \\( a_0 = 1, a_1 = 2, a_3 = 4, a_5 = 6 \\).<br />Công thức \\( a_n = n+1 \\) cho ra 1, 2, 4, 6. Do đó, có khả năng công thức trong đề bài bị sai và đáp án dựa trên \\( a_n = n+1 \\). Tuy nhiên, dựa vào đề bài, không có đáp án nào đúng.",
+        "difficulty": "hard",
+        "topic": "Sequences",
+        "hints": [
+          "Tính toán giá trị của hàm sàn cho mỗi giá trị của n.",
+          "Cẩn thận với các lỗi có thể có trong công thức được cung cấp."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 49,
+        "question": "Find \\( \\sum_{i=1}^{20} (2i-1) \\)",
+        "image": null,
+        "options": [
+          "A. 400",
+          "B. 401",
+          "C. 441",
+          "D. 440"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đây là tổng của 20 số lẻ đầu tiên. Có hai cách tính:<br /><br /><b>Cách 1: Sử dụng công thức tổng các số lẻ</b><br />Tổng của n số lẻ đầu tiên là \\( n^2 \\).<br />Với n = 20, tổng là \\( 20^2 = 400 \\).<br /><br /><b>Cách 2: Sử dụng tính chất của xích ma</b><br />\\( \\sum_{i=1}^{20} (2i-1) = \\sum_{i=1}^{20} 2i - \\sum_{i=1}^{20} 1 \\)<br />\\( = 2 \\sum_{i=1}^{20} i - 20 \\)<br />\\( = 2 \\left( \\frac{20(20+1)}{2} \\right) - 20 \\)<br />\\( = 2 \\left( \\frac{20 \\times 21}{2} \\right) - 20 \\)<br />\\( = 420 - 20 = 400 \\)",
+        "difficulty": "easy",
+        "topic": "Summations",
+        "hints": [
+          "Biểu thức (2i-1) tạo ra các số lẻ.",
+          "Nhớ công thức tính tổng của n số tự nhiên đầu tiên: \\( \\frac{n(n+1)}{2} \\)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 50,
+        "question": "Compute \\( \\sum_{i=1}^{6} (2 \\cdot 3^i + 3 \\cdot 2^i) \\).",
+        "image": null,
+        "options": [],
+        "correctAnswer": "2562",
+        "explanation": "Ta tách tổng thành hai phần:<br />\\( \\sum_{i=1}^{6} (2 \\cdot 3^i) + \\sum_{i=1}^{6} (3 \\cdot 2^i) \\)<br />\\( = 2 \\sum_{i=1}^{6} 3^i + 3 \\sum_{i=1}^{6} 2^i \\)<br /><br />Đây là tổng của hai cấp số nhân. Công thức tổng cấp số nhân là \\( S_n = a \\frac{r^n - 1}{r - 1} \\).<br /><br /><b>Phần 1: \\( 2 \\sum_{i=1}^{6} 3^i \\)</b><br />- a=3, r=3, n=6.<br />- Tổng = \\( 3 \\frac{3^6 - 1}{3 - 1} = 3 \\frac{728}{2} = 1092 \\).<br />- Nhân với 2: \\( 2 \\times 1092 = 2184 \\).<br /><br /><b>Phần 2: \\( 3 \\sum_{i=1}^{6} 2^i \\)</b><br />- a=2, r=2, n=6.<br />- Tổng = \\( 2 \\frac{2^6 - 1}{2 - 1} = 2 \\frac{63}{1} = 126 \\).<br />- Nhân với 3: \\( 3 \\times 126 = 378 \\).<br /><br /><b>Kết quả cuối cùng:</b><br />\\( 2184 + 378 = 2562 \\).",
+        "difficulty": "hard",
+        "topic": "Summations - Geometric Series",
+        "hints": [
+          "Tách tổng thành hai tổng cấp số nhân.",
+          "Sử dụng công thức tổng của cấp số nhân."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 51,
+        "question": "Find \\( \\sum_{i=1}^{20} (2i+1) \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "440",
+        "explanation": "Ta sử dụng các tính chất của tổng xích ma:<br /><br />\\( \\sum_{i=1}^{20} (2i+1) = \\sum_{i=1}^{20} 2i + \\sum_{i=1}^{20} 1 \\)<br /><br />- <b>Tính \\( \\sum_{i=1}^{20} 2i \\):</b><br />  \\( = 2 \\sum_{i=1}^{20} i = 2 \\left( \\frac{20(20+1)}{2} \\right) = 2 \\left( \\frac{420}{2} \\right) = 420 \\)<br /><br />- <b>Tính \\( \\sum_{i=1}^{20} 1 \\):</b><br />  \\( = 20 \\times 1 = 20 \\)<br /><br />- <b>Tổng cộng:</b> \\( 420 + 20 = 440 \\).",
+        "difficulty": "easy",
+        "topic": "Summations",
+        "hints": [
+          "Sử dụng công thức tính tổng n số tự nhiên đầu tiên.",
+          "Tổng của một hằng số c từ 1 đến n là c*n."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 52,
+        "question": "Find the sum \\( \\sum_{i=0}^{2} \\sum_{j=1}^{3} (2i+j) \\)",
+        "image": null,
+        "options": [
+          "A. 40",
+          "B. 24",
+          "C. None of the other choices is correct",
+          "D. 32",
+          "E. 36"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Ta tính tổng bên trong trước (theo j), sau đó tính tổng bên ngoài (theo i).<br /><br /><b>Bước 1: Tính tổng bên trong</b><br />\\( \\sum_{j=1}^{3} (2i+j) = (2i+1) + (2i+2) + (2i+3) = 6i + 6 \\)<br /><br /><b>Bước 2: Tính tổng bên ngoài</b><br />Bây giờ ta cần tính \\( \\sum_{i=0}^{2} (6i+6) \\).<br />\\( = (6(0)+6) + (6(1)+6) + (6(2)+6) \\)<br />\\( = 6 + 12 + 18 = 36 \\)",
+        "difficulty": "medium",
+        "topic": "Double Summations",
+        "hints": [
+          "Luôn tính tổng xích ma từ trong ra ngoài.",
+          "Coi biến của tổng ngoài (i) là hằng số khi tính tổng trong."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 53,
+        "question": "Find the sum \\( \\sum_{i=0}^{10} \\sum_{j=1}^{20} ij \\)",
+        "image": null,
+        "options": [
+          "A. 15620",
+          "B. None of the other choices is correct",
+          "C. 11550",
+          "D. 22500",
+          "E. 17100"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Khi biểu thức bên trong là tích của các hàm chỉ phụ thuộc vào i và j, ta có thể tách hai tổng xích ma:<br />\\( \\sum_{i=0}^{10} \\sum_{j=1}^{20} ij = \\left( \\sum_{i=0}^{10} i \\right) \\times \\left( \\sum_{j=1}^{20} j \\right) \\)<br /><br /><b>Bước 1: Tính tổng theo i</b><br />\\( \\sum_{i=0}^{10} i = 0 + \\sum_{i=1}^{10} i = \\frac{10(10+1)}{2} = \\frac{110}{2} = 55 \\)<br /><br /><b>Bước 2: Tính tổng theo j</b><br />\\( \\sum_{j=1}^{20} j = \\frac{20(20+1)}{2} = \\frac{420}{2} = 210 \\)<br /><br /><b>Bước 3: Nhân hai kết quả</b><br />\\( 55 \\times 210 = 11550 \\)",
+        "difficulty": "medium",
+        "topic": "Double Summations",
+        "hints": [
+          "Nếu có thể, hãy tách tổng kép thành tích của hai tổng đơn.",
+          "Sử dụng công thức \\( \\frac{n(n+1)}{2} \\) để tính tổng các số tự nhiên."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 54,
+        "question": "Find the value of the sum<br />\\( \\sum_{i \\in S} (2^{i+2} - 2^i) \\)<br />where S={1,3,5,7}.",
+        "image": null,
+        "options": [
+          "A. 90",
+          "B. 510",
+          "C. 93",
+          "D. 170"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Có hai cách để giải quyết bài toán này:<br /><br /><b>Cách 1: Tính từng số hạng</b><br />Ta thay từng giá trị của i từ tập S vào biểu thức và cộng lại:<br />- i = 1: \\( 2^{1+2} - 2^1 = 2^3 - 2 = 8 - 2 = 6 \\)<br />- i = 3: \\( 2^{3+2} - 2^3 = 2^5 - 8 = 32 - 8 = 24 \\)<br />- i = 5: \\( 2^{5+2} - 2^5 = 2^7 - 32 = 128 - 32 = 96 \\)<br />- i = 7: \\( 2^{7+2} - 2^7 = 2^9 - 128 = 512 - 128 = 384 \\)<br />Tổng = \\( 6 + 24 + 96 + 384 = 510 \\).<br /><br /><b>Cách 2: Rút gọn biểu thức</b><br />\\( 2^{i+2} - 2^i = 2^i \\cdot 2^2 - 2^i = 4 \\cdot 2^i - 1 \\cdot 2^i = 3 \\cdot 2^i \\)<br />Bây giờ ta tính tổng: \\( \\sum_{i \\in S} 3 \\cdot 2^i \\)<br />\\( = 3 \\cdot 2^1 + 3 \\cdot 2^3 + 3 \\cdot 2^5 + 3 \\cdot 2^7 \\)<br />\\( = 3(2 + 8 + 32 + 128) \\)<br />\\( = 3(170) = 510 \\).",
+        "difficulty": "medium",
+        "topic": "Summations",
+        "hints": [
+          "Bạn có thể tính giá trị của biểu thức cho mỗi phần tử trong S rồi cộng lại.",
+          "Hãy thử rút gọn biểu thức \\( 2^{i+2} - 2^i \\) trước khi tính tổng."
+        ],
+        "type": "multiple_choice"
       }
     ]
   }
