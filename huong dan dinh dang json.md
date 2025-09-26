@@ -168,6 +168,37 @@ Dành cho công thức dài, hiển thị riêng dòng.
 
 ---
 
+### 4.4. ✨ **Khối mã (code) và inline code bằng backticks**
+
+Hệ thống hỗ trợ hiển thị thuật toán/đoạn mã đẹp mắt bằng backticks.
+
+- Sử dụng khối mã (fenced code) với ba dấu backtick: ``` ... ```
+- Có thể chỉ định ngôn ngữ ngay sau ba backtick đầu (tùy chọn): `pascal`, `text`, `pseudo`, v.v.
+- Dùng `<br />` để xuống dòng trong JSON; hệ thống sẽ tự chuyển thành xuống dòng thực trong khối mã.
+- Khoảng trắng được giữ nguyên, nên bạn có thể thụt đầu dòng (2 dấu cách hoặc 1 tab) cho đẹp.
+
+Ví dụ trong `question`:
+
+```json
+"question": "Given the algorithm:<br />```pascal<br />procedure XYZ(a₁,...,aₙ: integers)<br />  k:=0<br />  for i:=1 to n do<br />    if aᵢ mod 2 = 0 then k:=aᵢ<br />```<br />Find the output value of k?"
+```
+
+Ví dụ inline code trong `hints`/`explanation`:
+
+```json
+"hints": [
+  "Mẹo: Câu lệnh `k:=aᵢ` là phép gán (override)."
+]
+```
+
+Ghi chú hiển thị:
+
+- Khối mã được bo góc, nền tối, có viền và kéo ngang khi dài.
+- Inline code có nền nhẹ, chữ mono; hỗ trợ dark mode.
+- Không cần tự bọc `<pre>`/`<code>`; chỉ dùng backticks là đủ.
+
+---
+
 ## 5. ↩️ **Quy Tắc Xuống Dòng và In Đậm**
 
 | Trường        | Cách xuống dòng                                            | In đậm             |
@@ -287,6 +318,8 @@ Hiển thị:
 | **Trường `correctAnswer`**     | Ký tự A,B,C,D cho trắc nghiệm, lời giải cho tự luận |
 | **Toán inline**                | `\\( ... \\)`                                       |
 | **Toán block**                 | `\\[ ... \\]`                                       |
+| **Khối mã (code block)**       | Dùng backticks: ```lang ... ``` (lang tùy chọn)     |
+| **Inline code**                | Dùng backtick đơn: ``...``                          |
 | **Xuống dòng trong `question`** | `<br />`                                            |
 | **Xuống dòng trong `explanation`** | `<br />`                                        |
 | **Xuống dòng trong `correctAnswer` (tự luận)** | `<br />`                    |

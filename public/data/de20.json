@@ -1,0 +1,87 @@
+{
+    "examId": "de3_toan_roi_rac_luyen_them",
+    "title": "CHương 3 - Luyện thêm",
+    "description": "Các câu hỏi luyện tập về thuật toán, phân tích độ phức tạp.",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Given the algorithm:<br />```<br />procedure XYZ(a₁,...,aₙ: integers)<br />  k:=0<br />  for i:=1 to n do<br />    if aᵢ mod 2 = 0 then k:=aᵢ<br />```<br />Find the output value of k if the input is the sequence: 1, 2, 3, 7, 8, 6, 9, 12, 11.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "The correct answer is <b>12</b>.",
+        "explanation": "<h3>Tư duy 'Ghi đè' Siêu Tốc</h3><br /><b>1. Phân tích thuật toán:</b><br />- Thuật toán này duyệt qua từng phần tử của dãy số.<br />- Mỗi khi nó gặp một số chẵn (\\(a_i \\pmod{2} = 0\\)), nó sẽ <b>ghi đè</b> giá trị hiện tại của \\(k\\) bằng giá trị của số chẵn đó.<br />- Điều này có nghĩa là \\(k\\) sẽ luôn giữ giá trị của số chẵn <b>cuối cùng</b> mà nó tìm thấy.<br /><br /><b>2. Trace thuật toán:</b><br />- Dãy số: 1, 2, 3, 7, 8, 6, 9, <b>12</b>, 11<br />- \\(k\\) ban đầu = 0.<br />- Gặp số 2, \\(k\\) thành 2.<br />- Gặp số 8, \\(k\\) bị ghi đè thành 8.<br />- Gặp số 6, \\(k\\) bị ghi đè thành 6.<br />- Gặp số 12, \\(k\\) bị ghi đè thành 12.<br />- Hết các số chẵn.<br /><br /><b>Kết luận:</b> Giá trị cuối cùng của \\(k\\) là <b>12</b>.",
+        "difficulty": "easy",
+        "topic": "Algorithms (Tracing)",
+        "hints": [
+          "Mẹo: Câu lệnh `k:=aᵢ` là một phép gán, nó thay thế hoàn toàn giá trị cũ.",
+          "Thuật toán này tìm số chẵn cuối cùng trong dãy.",
+          "Hãy quét dãy từ trái sang phải và ghi lại giá trị của k mỗi khi gặp một số chẵn."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 2,
+        "question": "Given the algorithm:<br />```<br />procedure XYZ(a₁,...,aₙ: Integers)<br />  k:=0<br />  for i:=1 to n do<br />    if aᵢ mod 2 = 0 then k:=k+aᵢ<br />```<br />Find the output value of k if the input is the sequence: 1, 2, 3, 7, 8, 6, 9, 12, 11.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "The correct answer is <b>28</b>.",
+        "explanation": "<h3>Tư duy 'Tích lũy' Siêu Tốc</h3><br /><b>1. Phân tích thuật toán:</b><br />- Thuật toán này duyệt qua từng phần tử của dãy số.<br />- Mỗi khi nó gặp một số chẵn (\\(a_i \\pmod{2} = 0\\)), nó sẽ <b>cộng dồn</b> giá trị của số chẵn đó vào biến \\(k\\).<br />- Về bản chất, thuật toán này tính <b>tổng của tất cả các số chẵn</b> trong dãy.<br /><br /><b>2. Tìm và cộng các số chẵn:</b><br />- Dãy số: 1, <b>2</b>, 3, 7, <b>8</b>, <b>6</b>, 9, <b>12</b>, 11<br />- Các số chẵn là: 2, 8, 6, 12.<br />- Tổng: \\(k = 0 + 2 + 8 + 6 + 12 = 28\\).<br /><br /><b>Kết luận:</b> Giá trị cuối cùng của \\(k\\) là <b>28</b>.",
+        "difficulty": "easy",
+        "topic": "Algorithms (Tracing)",
+        "hints": [
+          "Mẹo: Câu lệnh `k:=k+aᵢ` là một phép cộng dồn (tích lũy).",
+          "Thuật toán này tính tổng các số chẵn trong dãy.",
+          "Hãy gạch chân tất cả các số chẵn và cộng chúng lại."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 3,
+        "question": "Given the algorithm:<br />```<br />Procedure LN(m, n : integers)<br />  while (m ≠ n)<br />    if m > n then m := m - n<br />    else n := n - m;<br />  Print(m)<br />```<br />If m=36, n=44, what is the output of the algorithm?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "The correct answer is <b>4</b>.",
+        "explanation": "<h3>Nhận dạng Thuật toán Euclidean</h3><br /><b>1. Phân tích thuật toán:</b><br />- Đây chính là <b>thuật toán Euclidean</b> để tìm Ước Chung Lớn Nhất (GCD), được cài đặt bằng phép trừ liên tiếp.<br />- Vòng lặp `while` sẽ tiếp tục cho đến khi `m` và `n` bằng nhau, và giá trị chung đó chính là `gcd(m, n)` ban đầu.<br /><br /><b>2. Trace thuật toán:</b><br />- (m, n) ban đầu: (36, 44)<br />- n > m: n = 44 - 36 = 8 → (36, 8)<br />- m > n: m = 36 - 8 = 28 → (28, 8)<br />- m > n: m = 28 - 8 = 20 → (20, 8)<br />- m > n: m = 20 - 8 = 12 → (12, 8)<br />- m > n: m = 12 - 8 = 4 → (4, 8)<br />- n > m: n = 8 - 4 = 4 → (4, 4)<br />- Vòng lặp dừng lại vì m = n.<br /><br /><b>3. Kết quả:</b> Thuật toán in ra giá trị cuối cùng của m là <b>4</b>.",
+        "difficulty": "medium",
+        "topic": "Algorithms (Euclidean Algorithm)",
+        "hints": [
+          "Đây là thuật toán Euclidean tìm GCD bằng phép trừ.",
+          "Kết quả cuối cùng chính là gcd(36, 44).",
+          "Hãy liên tục lấy số lớn trừ đi số bé cho đến khi chúng bằng nhau."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 4,
+        "question": "Find the output value of n if Input a = 200.<br />```<br />Procedure XYZ(a: integer)<br />  n:=0<br />  while a ≠ 0<br />    n := n + (a mod 2)<br />    a := ⌊a / 2⌋<br />  Print(n)<br />```",
+        "image": null,
+        "options": [],
+        "correctAnswer": "The correct answer is <b>3</b>.",
+        "explanation": "<h3>Nhận dạng thuật toán 'Đếm bit 1'</h3><br /><b>1. Phân tích thuật toán:</b><br />- Vòng lặp `while` chạy đến khi `a` bằng 0.<br />- Bên trong vòng lặp:<br />  - `a mod 2` lấy ra bit cuối cùng (bit 0 hoặc 1) của `a` trong dạng nhị phân.<br />  - `n := n + ...` cộng dồn bit này vào `n`.<br />  - `a := ⌊a / 2⌋` tương đương với việc dịch bit của `a` sang phải 1 đơn vị (loại bỏ bit cuối cùng).<br />- Về bản chất, thuật toán này đang <b>đếm số lượng bit 1</b> trong biểu diễn nhị phân của `a`.<br /><br /><b>2. Chuyển 200 sang nhị phân:</b><br />- 200 ÷ 2 = 100 dư 0<br />- 100 ÷ 2 = 50  dư 0<br />- 50  ÷ 2 = 25  dư 0<br />- 25  ÷ 2 = 12  dư 1<br />- 12  ÷ 2 = 6   dư 0<br />- 6   ÷ 2 = 3   dư 0<br />- 3   ÷ 2 = 1   dư 1<br />- 1   ÷ 2 = 0   dư 1<br />- Đọc ngược số dư: \\( (200)_{10} = (11001000)_2 \\).<br /><br /><b>3. Đếm số bit 1:</b><br />- Chuỗi `11001000` có <b>3</b> bit 1.<br /><br /><b>Kết luận:</b> Giá trị cuối cùng của `n` là <b>3</b>.",
+        "difficulty": "medium",
+        "topic": "Algorithms (Bitwise Operations)",
+        "hints": [
+          "Mẹo: `a mod 2` lấy ra bit cuối cùng của `a`.",
+          "Mẹo: `⌊a / 2⌋` tương đương với dịch bit sang phải (right shift).",
+          "Thuật toán này thực chất là đếm số bit 1 trong dạng nhị phân của `a`."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 5,
+        "question": "Given the algorithm:<br />```<br />procedure XYZ(c, a₁,...,aₙ: real)<br />  p:= 1<br />  y:= 0<br />  for i:=1 to n-1 do<br />    for j:=1 to (n-i) do<br />      begin<br />        p := p * c<br />        y := y + aᵢ * p<br />      end<br />```<br />Let n = 10. Count the total number of additions and multiplications.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>Total Additions:</b> 45<br /><b>Total Multiplications:</b> 90",
+        "explanation": "<h3>Phân tích độ phức tạp theo số phép toán</h3><br /><b>1. Phân tích các phép toán bên trong:</b><br />- Vòng lặp `j` là vòng lặp sâu nhất. Mỗi lần nó chạy, nó thực hiện:<br />  - `p := p * c`: <b>1 phép nhân</b>.<br />  - `y := y + aᵢ * p`: <b>1 phép nhân</b> (`aᵢ * p`) và <b>1 phép cộng</b> (`y + ...`).<br />- Tổng cộng: <b>1 phép cộng</b> và <b>2 phép nhân</b> mỗi lần vòng lặp `j` chạy.<br /><br /><b>2. Đếm tổng số lần vòng lặp `j` chạy:</b><br />- Vòng lặp `i` chạy từ 1 đến `n-1` (tức là 1 đến 9).<br />- Vòng lặp `j` chạy `n-i` lần.<br />- Tổng số lần chạy của `j` là:<br />\\[ \\sum_{i=1}^{9} (10-i) = (10-1) + (10-2) + \\dots + (10-9) \\]<br />\\[ = 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 \\]<br />\\[ = \\frac{9(10)}{2} = 45 \\text{ lần} \\]<br /><br /><b>3. Tính toán kết quả cuối cùng:</b><br />- <b>Tổng số phép cộng:</b> (Số lần `j` chạy) × (Số phép cộng mỗi lần) = \\( 45 \\times 1 = 45 \\).<br />- <b>Tổng số phép nhân:</b> (Số lần `j` chạy) × (Số phép nhân mỗi lần) = \\( 45 \\times 2 = 90 \\).",
+        "difficulty": "hard",
+        "topic": "Algorithms (Complexity Analysis)",
+        "hints": [
+          "Tập trung vào các phép toán bên trong vòng lặp sâu nhất.",
+          "Đếm xem mỗi lần vòng lặp trong chạy, có bao nhiêu phép cộng và nhân.",
+          "Tính tổng số lần vòng lặp trong được thực thi."
+        ],
+        "type": "essay"
+      }
+    ]
+  }

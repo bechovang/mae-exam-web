@@ -19,12 +19,47 @@ export default function SimpleMath({ children, className = "" }: SimpleMathProps
   const mathRef = useRef<HTMLSpanElement>(null);
   const [isMathJaxProcessed, setIsMathJaxProcessed] = useState(false);
 
+  const escapeHtml = (str: string) =>
+    str
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/\"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+
+  const formatCodeBlocks = (raw: string) => {
+    if (!raw) return raw;
+
+    // Replace fenced code blocks ```lang ... ```
+    const fencedRegex = /```(\w+)?([\s\S]*?)```/g;
+    let formatted = raw.replace(fencedRegex, (_match, lang, content) => {
+      const language = (lang || 'plain').toString().trim();
+      // Convert <br /> to real newlines inside code blocks
+      const withNewlines = (content || '')
+        .replace(/^\s*<br\s*\/?>/gi, '')
+        .replace(/<br\s*\/?>(\s*)/gi, '\n')
+        .trim();
+      const escaped = escapeHtml(withNewlines);
+      return `<pre class="code-block"><code class="code language-${language}">${escaped}</code></pre>`;
+    });
+
+    // Replace inline code `...` (avoid spanning across <br />)
+    const inlineRegex = /`([^`]+)`/g;
+    formatted = formatted.replace(inlineRegex, (_m, inner) => {
+      const escaped = escapeHtml(inner);
+      return `<code class="inline-code">${escaped}</code>`;
+    });
+
+    return formatted;
+  };
+
   useEffect(() => {
     const currentRef = mathRef.current;
     if (!currentRef) return;
 
-    // Set raw content initially
-    currentRef.innerHTML = children;
+    // Preprocess content: format code blocks and inline code
+    const processed = formatCodeBlocks(children);
+    currentRef.innerHTML = processed;
     setIsMathJaxProcessed(false); // Mark as not processed yet for this new child
 
     const doTypeset = () => {
