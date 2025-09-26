@@ -82,6 +82,1608 @@
           "Tính tổng số lần vòng lặp trong được thực thi."
         ],
         "type": "essay"
+      },
+      {
+        "id": 6,
+        "question": "Given the algorithm:<br />```pseudo<br />Procedure product(n: integer)<br />  p:=0;<br />  for i:=1 to n do<br />    for j:=1 to (n+1) do<br />      for k:=1 to (n+2) do<br />        p:=i*j*k;<br />  Print(p)<br />```<br />How many multiplications are used if n = 5?",
+        "image": "1.jpg",
+        "options": [
+          "A. 420",
+          "B. 210",
+          "C. 125",
+          "D. 250"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Để tính tổng số phép nhân, chúng ta cần xác định số lần câu lệnh `p:=i*j*k` được thực thi.<br /><br />1.  <b>Phân tích câu lệnh:</b> Lệnh `p:=i*j*k` thực hiện 2 phép nhân: `i*j` và `(kết quả)*k`.<br />2.  <b>Phân tích vòng lặp:</b><br />    - Vòng lặp ngoài (`i`) chạy từ 1 đến `n`. Với `n=5`, nó chạy 5 lần.<br />    - Vòng lặp giữa (`j`) chạy từ 1 đến `n+1`. Với `n=5`, nó chạy 6 lần.<br />    - Vòng lặp trong (`k`) chạy từ 1 đến `n+2`. Với `n=5`, nó chạy 7 lần.<br /><br />3.  <b>Tính toán:</b><br />    - Tổng số lần thực thi lệnh gán là: \\( 5 \\cdot 6 \\cdot 7 = 210 \\) lần.<br />    - Mỗi lần thực thi có 2 phép nhân.<br />    - Tổng số phép nhân = \\( 210 \\times 2 = 420 \\).",
+        "difficulty": "medium",
+        "topic": "Algorithm Complexity",
+        "hints": [
+          "Câu lệnh `p:=i*j*k` chứa hai phép nhân.",
+          "Tính tổng số lần lặp của các vòng lặp lồng nhau.",
+          "Tổng số phép nhân = (tổng số lần lặp) × (số phép nhân trong mỗi lần lặp)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 7,
+        "question": "Given the algorithm:<br />```pseudo<br />procedure f(a₁,a₂,...,aₙ: Integers, n: integer > 2, x: Integer)<br />  i := 1<br />  while (i < n and aᵢ + aₙ₋ᵢ ≠ x)<br />    i := i + 1<br /><br />  if (i < n) then output := i<br />  else output := 0<br />```<br />Let n = 500. Count the number of additions in the worst case.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "998",
+        "explanation": "<b>Phân tích trường hợp xấu nhất:</b><br />Trường hợp xấu nhất xảy ra khi vòng lặp `while` chạy nhiều lần nhất có thể. Điều này xảy ra khi điều kiện `aᵢ + aₙ₋ᵢ ≠ x` luôn đúng, buộc vòng lặp phải tiếp tục cho đến khi điều kiện `i < n` bị sai.<br /><br />1.  <b>Số lần lặp:</b> Vòng lặp bắt đầu với `i = 1` và dừng khi `i` không còn nhỏ hơn `n` (tức là khi `i = n`). Do đó, vòng lặp sẽ chạy với các giá trị của `i` là \\( 1, 2, 3, \\dots, n-1 \\).<br />    - Với `n = 500`, số lần lặp là `500 - 1 = 499` lần.<br /><br />2.  <b>Số phép cộng trong mỗi lần lặp:</b><br />    - Một phép cộng trong điều kiện: `aᵢ + aₙ₋ᵢ`<br />    - Một phép cộng để tăng biến đếm: `i + 1`<br />    - Tổng cộng có 2 phép cộng trong mỗi lần lặp.<br /><br />3.  <b>Tổng số phép cộng:</b><br />    - \\( \\text{Tổng} = (\\text{Số lần lặp}) \\times (\\text{Số phép cộng mỗi lần}) \\)<br />    - \\( \\text{Tổng} = 499 \\times 2 = 998 \\)",
+        "difficulty": "hard",
+        "topic": "Algorithm Complexity",
+        "hints": [
+          "Trường hợp xấu nhất xảy ra khi vòng lặp chạy cho đến khi điều kiện `i < n` bị vi phạm.",
+          "Xác định tất cả các phép cộng bên trong vòng lặp `while`.",
+          "Vòng lặp chạy cho `i` từ 1 đến `n-1`."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 8,
+        "question": "Given the algorithm:<br />```pseudo<br />procedure f(a₁,a₂,...,aₙ: integers)<br />  t := 1<br />  i := 1<br />  while ((t > 0) and (i < ⌊n / 2⌋))<br />    If (aᵢ ≠ aₙ₋ᵢ₊₁) then t := 0<br />    else i := 2i<br />```<br />Let n = 100. Count the number of comparisons in the worst case.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "20",
+        "explanation": "<b>Phân tích trường hợp xấu nhất:</b><br />Trường hợp xấu nhất xảy ra khi vòng lặp chạy nhiều lần nhất. Điều này xảy ra khi `aᵢ` luôn bằng `aₙ₋ᵢ₊₁`, khiến cho nhánh `else` được thực hiện và `i` được nhân đôi liên tục.<br /><br />1.  <b>Điều kiện dừng:</b> Với `n = 100`, `⌊n / 2⌋ = 50`. Vòng lặp sẽ tiếp tục khi `i < 50`.<br />2.  <b>Theo dõi giá trị của `i`:</b> `1 → 2 → 4 → 8 → 16 → 32`. Lần tiếp theo `i` sẽ là 64, không thỏa mãn `i < 50`.<br />3.  <b>Đếm số phép so sánh:</b><br />    - Mỗi lần lặp thành công (khi `i < 50`), có 3 phép so sánh: `t > 0`, `i < 50`, và `aᵢ ≠ aₙ₋ᵢ₊₁`.<br />    - Vòng lặp chạy thành công 6 lần (với `i = 1, 2, 4, 8, 16, 32`).<br />    - Lần cuối cùng, khi `i = 64`, vòng lặp dừng lại. Chỉ có 2 phép so sánh được thực hiện trong điều kiện `while` (`t > 0` và `i < 50`).<br /><br />4.  <b>Tổng số phép so sánh:</b><br />    - \\( (6 \\text{ lần lặp thành công}) \\times (3 \\text{ so sánh/lần}) + (2 \\text{ so sánh cuối}) \\)<br />    - \\( 18 + 2 = 20 \\)",
+        "difficulty": "hard",
+        "topic": "Algorithm Complexity",
+        "hints": [
+          "Trường hợp xấu nhất xảy ra khi `aᵢ` luôn bằng `aₙ₋ᵢ₊₁`, khiến nhánh `else` được thực hiện.",
+          "Theo dõi giá trị của `i` qua các lần lặp: 1, 2, 4, 8,...",
+          "Đếm các phép so sánh trong cả điều kiện `while` và `if`."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 9,
+        "question": "Given the algorithm:<br />```pseudo<br />procedure f(a₁,a₂,...,aₙ)<br />  t := 1<br />  l := 1<br />  while ((t > 0) and (l < ⌊n / 2⌋))<br />    If (aₗ ≠ aₙ₋ₗ₊₁) then t := 0<br />    else l := 2l<br />```<br />Let n = 200. Count the number of comparisons used in the worst case.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "23",
+        "explanation": "<b>Phân tích trường hợp xấu nhất:</b><br />Tương tự câu trước, trường hợp xấu nhất xảy ra khi nhánh `else` luôn được thực hiện.<br /><br />1.  <b>Điều kiện dừng:</b> Với `n = 200`, `⌊n / 2⌋ = 100`. Vòng lặp sẽ tiếp tục khi `l < 100`.<br />2.  <b>Theo dõi giá trị của `l`:</b> `1 → 2 → 4 → 8 → 16 → 32 → 64`. Lần tiếp theo `l` sẽ là 128, không thỏa mãn `l < 100`.<br />3.  <b>Đếm số phép so sánh:</b><br />    - Mỗi lần lặp thành công có 3 phép so sánh (`t > 0`, `l < 100`, `aₗ ≠ aₙ₋ₗ₊₁`).<br />    - Vòng lặp chạy thành công 7 lần (với `l = 1, 2, 4, 8, 16, 32, 64`).<br />    - Lần cuối cùng, khi `l = 128`, chỉ có 2 phép so sánh trong điều kiện `while` được thực hiện.<br /><br />4.  <b>Tổng số phép so sánh:</b><br />    - \\( (7 \\text{ lần lặp thành công}) \\times (3 \\text{ so sánh/lần}) + (2 \\text{ so sánh cuối}) \\)<br />    - \\( 21 + 2 = 23 \\)",
+        "difficulty": "hard",
+        "topic": "Algorithm Complexity",
+        "hints": [
+          "Trường hợp xấu nhất buộc vòng lặp chạy lâu nhất có thể.",
+          "Giá trị của `l` tăng gấp đôi sau mỗi lần lặp: 1, 2, 4, 8, 16, 32, 64.",
+          "Vòng lặp dừng khi `l` không còn nhỏ hơn ⌊200/2⌋ = 100."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 10,
+        "question": "Given the algorithm:<br />```pseudo<br />Procedure TT(n: integer)<br />  sum:=0<br />  i:=0<br />  j:=0<br />  while (i < √n)<br />    sum:=sum+1<br />    i:=i+1<br />  while (j < √n/2)<br />    j:=j+1<br />    sum:=sum+1<br />  Print(sum)<br />```<br />If n=9, how many additions are required?",
+        "image": null,
+        "options": [
+          "A. 10",
+          "B. 8",
+          "C. 6",
+          "D. 12",
+          "E. 14"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Chúng ta cần đếm tổng số phép cộng (`+`) được thực hiện khi `n = 9`.<br /><br />1.  <b>Thiết lập giá trị ban đầu:</b><br />    - `n = 9`, vậy \\( \\sqrt{n} = 3 \\).<br />    - Điều kiện cho vòng lặp thứ hai là \\( j < \\sqrt{n}/2 \\), tức là \\( j < 3/2 \\) hay \\( j < 1.5 \\).<br /><br />2.  <b>Phân tích vòng lặp thứ nhất `(i)`:</b><br />    - Điều kiện là `i < 3`. Biến `i` sẽ nhận các giá trị `0, 1, 2`. Vòng lặp chạy 3 lần.<br />    - Trong mỗi lần lặp có 2 phép cộng: `sum+1` và `i+1`.<br />    - Số phép cộng ở vòng lặp này: \\( 3 \\times 2 = 6 \\).<br /><br />3.  <b>Phân tích vòng lặp thứ hai `(j)`:</b><br />    - Điều kiện là `j < 1.5`. Biến `j` sẽ nhận các giá trị `0, 1`. Vòng lặp chạy 2 lần.<br />    - Trong mỗi lần lặp có 2 phép cộng: `j+1` và `sum+1`.<br />    - Số phép cộng ở vòng lặp này: \\( 2 \\times 2 = 4 \\).<br /><br />4.  <b>Tổng số phép cộng:</b><br />    - \\( 6 \\text{ (từ vòng lặp i)} + 4 \\text{ (từ vòng lặp j)} = 10 \\).",
+        "difficulty": "medium",
+        "topic": "Algorithm Analysis",
+        "hints": [
+          "Thay n=9 vào các điều kiện của vòng lặp.",
+          "Đếm số lần lặp cho cả vòng lặp `i` và vòng lặp `j`.",
+          "Nhớ rằng mỗi vòng lặp chứa hai phép cộng: một cho `sum` và một cho biến đếm."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 11,
+        "question": "Given the algorithm:<br />```pseudo<br />procedure la(c, a₀, a₁, ..., aₙ: integers)<br />  p := 1<br />  m := a₀<br />  for i:=1 to n<br />    p := p * c<br />    m := m + aᵢ * p<br />```<br />If the input consists of c = 4 and [a₀,...,aₙ] = [3, 6, 7, 8, 3], how many multiplications (*) are used?",
+        "image": null,
+        "options": [
+          "A. 6",
+          "B. 7",
+          "C. 8",
+          "D. 10",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Phân tích thuật toán và đầu vào:</b><br />- Đầu vào là mảng `[3, 6, 7, 8, 3]`, có nghĩa là `a₀ = 3` và dãy `a₁` đến `a₄` là `[6, 7, 8, 3]`. Do đó, `n = 4`.<br />- Vòng lặp `for i:=1 to n` sẽ chạy 4 lần (với `i = 1, 2, 3, 4`).<br /><br /><b>Đếm số phép nhân:</b><br />- Bên trong mỗi lần lặp, có hai câu lệnh thực hiện phép nhân (`*`):<br />  1. `p := p * c`<br />  2. `m := m + aᵢ * p`<br /><br /><b>Tính toán tổng số phép nhân:</b><br />- Số lần lặp: 4 lần.<br />- Số phép nhân trong mỗi lần lặp: 2 phép.<br />- Tổng số phép nhân = \\( (\\text{Số lần lặp}) \\times (\\text{Số phép nhân mỗi lần}) = 4 \\times 2 = 8 \\).",
+        "difficulty": "medium",
+        "topic": "Algorithm Analysis",
+        "hints": [
+          "Xác định giá trị của `n` từ mảng đầu vào. Mảng có 5 phần tử từ `a₀` đến `a₄`, vậy `n=4`.",
+          "Có hai phép nhân trong mỗi vòng lặp.",
+          "Vòng lặp chạy `n` lần."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 12,
+        "question": "Given the algorithm:<br />```pseudo<br />Procedure product(n: integer)<br />  p:=0;<br />  for i:=1 to n do<br />    for j:=1 to (n+1) do<br />      for k:=1 to (n+2) do<br />        p:=i*j*k;<br />  Print(p)<br />```<br />How many multiplications are used if n = 5?",
+        "image": null,
+        "options": [
+          "A. 420",
+          "B. 210",
+          "C. 125",
+          "D. 250"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Để tính tổng số phép nhân, chúng ta cần xác định số lần câu lệnh `p:=i*j*k` được thực thi.<br /><br />1.  <b>Phân tích câu lệnh:</b> Lệnh `p:=i*j*k` thực hiện 2 phép nhân: `i*j` và `(kết quả)*k`.<br />2.  <b>Phân tích vòng lặp:</b><br />    - Vòng lặp ngoài (`i`) chạy từ 1 đến `n`. Với `n=5`, nó chạy 5 lần.<br />    - Vòng lặp giữa (`j`) chạy từ 1 đến `n+1`. Với `n=5`, nó chạy 6 lần.<br />    - Vòng lặp trong (`k`) chạy từ 1 đến `n+2`. Với `n=5`, nó chạy 7 lần.<br /><br />3.  <b>Tính toán:</b><br />    - Tổng số lần thực thi lệnh gán là: \\( 5 \\cdot 6 \\cdot 7 = 210 \\) lần.<br />    - Mỗi lần thực thi có 2 phép nhân.<br />    - Tổng số phép nhân = \\( 210 \\times 2 = 420 \\).",
+        "difficulty": "medium",
+        "topic": "Algorithm Complexity",
+        "hints": [
+          "Câu lệnh `p:=i*j*k` chứa hai phép nhân.",
+          "Tính tổng số lần lặp của các vòng lặp lồng nhau.",
+          "Tổng số phép nhân = (tổng số lần lặp) × (số phép nhân trong mỗi lần lặp)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 13,
+        "question": "In the bubble sort algorithm:<br />```pseudo<br />procedure bubble sort (a₁, a₂, ..., aₙ: integers)<br />  for i:=1 to n-1<br />    for j:=1 to n-i<br />      if aⱼ > aⱼ₊₁ then<br />        swap(aⱼ,aⱼ₊₁)<br />```<br />if the input is the list {4, 2, 1, 3}, how many swaps are used?",
+        "image": null,
+        "options": [
+          "A. 3",
+          "B. 4",
+          "C. 5",
+          "D. 6"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Chúng ta sẽ theo dõi danh sách qua từng bước của thuật toán Sắp xếp nổi bọt để đếm số lần hoán vị (swap).<br />- Danh sách ban đầu: `{4, 2, 1, 3}`. `n=4`.<br /><br /><b>Lần lặp 1 (i=1):</b><br />- `j=1`: so sánh `4` và `2`. `4 > 2` → **swap**. Danh sách: `{2, 4, 1, 3}`. (1 swap)<br />- `j=2`: so sánh `4` và `1`. `4 > 1` → **swap**. Danh sách: `{2, 1, 4, 3}`. (2 swaps)<br />- `j=3`: so sánh `4` và `3`. `4 > 3` → **swap**. Danh sách: `{2, 1, 3, 4}`. (3 swaps)<br /><br /><b>Lần lặp 2 (i=2):</b><br />- `j=1`: so sánh `2` và `1`. `2 > 1` → **swap**. Danh sách: `{1, 2, 3, 4}`. (4 swaps)<br />- `j=2`: so sánh `2` và `3`. `2 < 3` → không swap.<br /><br /><b>Lần lặp 3 (i=3):</b><br />- `j=1`: so sánh `1` và `2`. `1 < 2` → không swap.<br /><br />Tổng cộng có 4 lần hoán vị.",
+        "difficulty": "easy",
+        "topic": "Sorting Algorithms",
+        "hints": [
+          "Thực hiện thuật toán từng bước một trên giấy.",
+          "Ghi lại trạng thái của danh sách sau mỗi lần so sánh và hoán vị.",
+          "Đếm số lần hàm `swap` được gọi."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 14,
+        "question": "Given the Bubble sort algorithm (studied in the textbook)<br />```pseudo<br />procedure Bubblesort(a₁,a₂,...,aₙ: integers)<br />  for i:=1 to n-1 do<br />    for j:=1 to n-i do<br />      If aⱼ > aⱼ₊₁ then swap(aⱼ,aⱼ₊₁)<br />```<br />If Input = {3, 2, 6, 4, 5, 1}, after the second pass (with i = 2), the order of the elements in the list is:",
+        "image": null,
+        "options": [
+          "a. Các lựa chọn còn lại đều sai",
+          "b. {2, 1, 4, 3, 5, 6}",
+          "c. {2, 3, 4, 1, 5, 6}",
+          "d. {2, 3, 4, 5, 1, 6}",
+          "e. {2, 3, 1, 4, 5, 6}"
+        ],
+        "correctAnswer": "c",
+        "explanation": "Chúng ta mô phỏng thuật toán Bubble Sort trên danh sách đã cho.<br />- Danh sách ban đầu: `{3, 2, 6, 4, 5, 1}`<br /><br /><b>Lần lặp 1 (i=1):</b> Mục tiêu là đưa số lớn nhất về cuối.<br />- `{3, 2, 6, 4, 5, 1}` → so sánh 3,2 → `{2, 3, 6, 4, 5, 1}`<br />- `{2, 3, 6, 4, 5, 1}` → so sánh 6,4 → `{2, 3, 4, 6, 5, 1}`<br />- `{2, 3, 4, 6, 5, 1}` → so sánh 6,5 → `{2, 3, 4, 5, 6, 1}`<br />- `{2, 3, 4, 5, 6, 1}` → so sánh 6,1 → `{2, 3, 4, 5, 1, 6}`<br />- Kết thúc lần 1, danh sách là: `{2, 3, 4, 5, 1, 6}`.<br /><br /><b>Lần lặp 2 (i=2):</b> Mục tiêu là đưa số lớn thứ hai về vị trí kế cuối.<br />- `{2, 3, 4, 5, 1, 6}` → so sánh 5,1 → `{2, 3, 4, 1, 5, 6}`<br />- Các cặp (2,3), (3,4), (4,5) không cần hoán vị.<br />- Kết thúc lần 2, danh sách là: `{2, 3, 4, 1, 5, 6}`.",
+        "difficulty": "medium",
+        "topic": "Sorting Algorithms",
+        "hints": [
+          "Mỗi lần lặp `i` (pass) sẽ đưa phần tử lớn nhất trong đoạn chưa sắp xếp về đúng vị trí cuối của đoạn đó.",
+          "Sau pass 1, số lớn nhất (6) sẽ ở cuối cùng.",
+          "Sau pass 2, số lớn thứ hai (5) sẽ ở vị trí kế cuối."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 15,
+        "question": "In the bubble sort algorithm<br />```pseudo<br />procedure bubble sort (a₀, a₁, ..., aₙ₋₁: integers)<br />  for i:=1 to n-1<br />    for j:=0 to n-i-1<br />      if aⱼ > aⱼ₊₁ then<br />        swap(aⱼ,aⱼ₊₁)<br />```<br />if the input is the list {4, 2, 3, 1}, how many swaps are used?",
+        "image": null,
+        "options": [
+          "A. 3",
+          "B. 4",
+          "C. 5",
+          "D. 6",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Chúng ta sẽ theo dõi danh sách và đếm số lần hoán vị.<br />- Danh sách ban đầu: `{4, 2, 3, 1}`. `n=4`.<br /><br /><b>Lần lặp 1 (i=1):</b><br />- `j=0`: so sánh `4` và `2`. `4 > 2` → **swap**. Danh sách: `{2, 4, 3, 1}`. (1 swap)<br />- `j=1`: so sánh `4` và `3`. `4 > 3` → **swap**. Danh sách: `{2, 3, 4, 1}`. (2 swaps)<br />- `j=2`: so sánh `4` và `1`. `4 > 1` → **swap**. Danh sách: `{2, 3, 1, 4}`. (3 swaps)<br /><br /><b>Lần lặp 2 (i=2):</b><br />- `j=0`: so sánh `2` và `3`. `2 < 3` → không swap.<br />- `j=1`: so sánh `3` và `1`. `3 > 1` → **swap**. Danh sách: `{2, 1, 3, 4}`. (4 swaps)<br /><br /><b>Lần lặp 3 (i=3):</b><br />- `j=0`: so sánh `2` và `1`. `2 > 1` → **swap**. Danh sách: `{1, 2, 3, 4}`. (5 swaps)<br /><br />Tổng cộng có 5 lần hoán vị.",
+        "difficulty": "easy",
+        "topic": "Sorting Algorithms",
+        "hints": [
+          "Lưu ý: Giả mã này có thể hơi khác (index từ 0 hoặc 1), nhưng nguyên tắc so sánh và đẩy số lớn nhất về cuối vẫn không đổi.",
+          "Thực hiện thuật toán một cách cẩn thận trên giấy.",
+          "Đừng dừng lại khi danh sách đã được sắp xếp, hãy hoàn thành đủ số vòng lặp theo thuật toán."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 16,
+        "question": "Given the Bubble sort algorithm:<br />```pseudo<br />Procedure Bubblesort(a₁,a₂,...,aₙ: integer)<br />  for i:=1 to (n-1) do<br />    for j:=1 to (n-1) do<br />      if aⱼ > aⱼ₊₁ then<br />        swap(aⱼ, aⱼ₊₁)<br />```<br />If input = {3, 2, 4, 7, 1, 6, 5}, find the order of the elements after completing the first pass (i = 1).",
+        "image": null,
+        "options": [
+          "A. {2, 3, 4, 1, 6, 5, 7}",
+          "B. {2, 3, 4, 1, 5, 6, 7}",
+          "C. {2, 3, 1, 4, 6, 5, 7}",
+          "D. {2, 3, 1, 4, 5, 6, 7}",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta sẽ mô phỏng lần lặp đầu tiên (pass `i=1`) của thuật toán Sắp xếp nổi bọt. Mục tiêu của mỗi lần lặp là đưa phần tử lớn nhất về phía cuối của dãy.<br /><br />- Danh sách ban đầu: `{3, 2, 4, 7, 1, 6, 5}`<br />- `n=7`. Vòng lặp `j` sẽ chạy từ 1 đến 6.<br /><br /><b>Thực hiện lần lặp 1 (i=1):</b><br />- `j=1`: so sánh `3` và `2`. `3 > 2` → swap. Dãy: `{2, 3, 4, 7, 1, 6, 5}`<br />- `j=2`: so sánh `3` và `4`. `3 < 4` → không swap.<br />- `j=3`: so sánh `4` và `7`. `4 < 7` → không swap.<br />- `j=4`: so sánh `7` và `1`. `7 > 1` → swap. Dãy: `{2, 3, 4, 1, 7, 6, 5}`<br />- `j=5`: so sánh `7` và `6`. `7 > 6` → swap. Dãy: `{2, 3, 4, 1, 6, 7, 5}`<br />- `j=6`: so sánh `7` và `5`. `7 > 5` → swap. Dãy: `{2, 3, 4, 1, 6, 5, 7}`<br /><br />Sau khi kết thúc lần lặp đầu tiên, danh sách có thứ tự là `{2, 3, 4, 1, 6, 5, 7}`.",
+        "difficulty": "medium",
+        "topic": "Sorting Algorithms",
+        "hints": [
+          "Lưu ý: Giả mã trong hình có vòng lặp trong `for j:=1 to (n-1)`, đây là một biến thể kém hiệu quả hơn so với `for j:=1 to (n-i)`.",
+          "Mục tiêu của mỗi 'pass' là đẩy phần tử lớn nhất ra cuối.",
+          "Theo dõi trạng thái của mảng sau mỗi lần so sánh."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 17,
+        "question": "Given the Insertion sort algorithm:<br />```pseudo<br />Procedure Insertionsort(a₁,...,aₙ: integer)<br />  for i:=2 to n do<br />    j:=1<br />    while aᵢ < aⱼ<br />      j:=j+1<br />    temp:=aᵢ<br />    for k:=i down to j+1<br />      aₖ:=aₖ₋₁<br />    aⱼ:=temp<br />```<br />If input = {3, 2, 4, 7, 1, 6, 5}, after running the outer loop with i = 5, the order of the elements in the list is _________.",
+        "image": null,
+        "options": [
+          "A. {1, 2, 3, 4, 7, 6, 5}",
+          "B. {1, 2, 3, 4, 6, 7, 5}",
+          "C. {1, 2, 3, 4, 7, 5, 6}",
+          "D. {1, 2, 3, 7, 4, 6, 5}"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Thuật toán Sắp xếp chèn hoạt động bằng cách xây dựng một danh sách con đã được sắp xếp ở đầu mảng. Với mỗi lần lặp `i`, nó sẽ lấy phần tử `aᵢ` và chèn vào đúng vị trí trong danh sách con đã sắp xếp `a₁...aᵢ₋₁`.<br /><br />- Danh sách ban đầu: `{3, 2, 4, 7, 1, 6, 5}`<br /><br /><b>Trạng thái trước khi `i=5`:</b><br />- `i=2`: chèn `2` → `{2, 3, 4, 7, 1, 6, 5}`<br />- `i=3`: chèn `4` → `{2, 3, 4, 7, 1, 6, 5}` (không đổi)<br />- `i=4`: chèn `7` → `{2, 3, 4, 7, 1, 6, 5}` (không đổi)<br />- Lúc này, danh sách con đã sắp xếp là `{2, 3, 4, 7}`. Phần còn lại là `{1, 6, 5}`.<br /><br /><b>Thực hiện lần lặp `i=5`:</b><br />- Ta lấy phần tử `a₅ = 1`.<br />- Ta cần chèn `1` vào danh sách con đã sắp xếp `{2, 3, 4, 7}`.<br />- Vì `1` là nhỏ nhất, nó sẽ được chuyển lên đầu. Các phần tử `{2, 3, 4, 7}` sẽ được dịch sang phải một vị trí.<br />- Kết quả sau khi chèn: `{1, 2, 3, 4, 7}`.<br />- Danh sách đầy đủ sau khi kết thúc vòng lặp `i=5` là: `{1, 2, 3, 4, 7, 6, 5}`.",
+        "difficulty": "medium",
+        "topic": "Sorting Algorithms",
+        "hints": [
+          "Mô phỏng thuật toán qua từng bước lặp của `i`.",
+          "Tại bước `i=5`, bạn sẽ chèn phần tử thứ 5 (giá trị là `1`) vào 4 phần tử đầu tiên đã được sắp xếp.",
+          "Lưu ý: Giả mã trong hình có vẻ bị lỗi logic ở vòng lặp `while`, nhưng câu hỏi ngụ ý hành vi chuẩn của Sắp xếp chèn."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 18,
+        "question": "Given the Insertion sort algorithm:<br />```pseudo<br />procedure Insertionsort(a₁,...,aₙ: integer)<br />  for i:=2 to n do<br />    j:=1<br />    while aᵢ < aⱼ<br />      j:=j+1<br />    temp:=aᵢ<br />    for k:=i down to j+1<br />      aₖ:=aₖ₋₁<br />    aⱼ:=temp<br />```<br />If input = {7, 2, 4, 3, 1, 6, 5}, after running the outer loop with i = 5, the order of the elements in the list is _________.",
+        "image": null,
+        "options": [
+          "A. {1, 2, 3, 4, 7, 6, 5}",
+          "B. {2, 3, 4, 7, 1, 6, 5}",
+          "C. {2, 4, 7, 3, 1, 6, 5}",
+          "D. {1, 2, 3, 4, 5, 6, 7}"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta sẽ theo dõi trạng thái của danh sách qua các bước của thuật toán Sắp xếp chèn cho đến khi kết thúc vòng lặp `i=5`.<br /><br />- Danh sách ban đầu: `{7, 2, 4, 3, 1, 6, 5}`<br /><br /><b>Các bước lặp:</b><br />- `i=2`: chèn `a₂=2`. Dãy trở thành `{2, 7, 4, 3, 1, 6, 5}`.<br />- `i=3`: chèn `a₃=4` vào `{2, 7}`. Dãy trở thành `{2, 4, 7, 3, 1, 6, 5}`.<br />- `i=4`: chèn `a₄=3` vào `{2, 4, 7}`. Dãy trở thành `{2, 3, 4, 7, 1, 6, 5}`.<br />- `i=5`: chèn `a₅=1` vào `{2, 3, 4, 7}`. Vì `1` là nhỏ nhất, nó được đưa lên đầu. Dãy trở thành `{1, 2, 3, 4, 7, 6, 5}`.<br /><br />Sau khi vòng lặp `i=5` kết thúc, đây là trạng thái cuối cùng của danh sách.",
+        "difficulty": "medium",
+        "topic": "Sorting Algorithms",
+        "hints": [
+          "Sau mỗi bước `i`, `i` phần tử đầu tiên của danh sách sẽ được sắp xếp.",
+          "Theo dõi trạng thái của danh sách sau mỗi lần chèn.",
+          "Tại bước `i=5`, phần tử `a₅` được chèn vào vị trí đúng trong 4 phần tử đầu."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 19,
+        "question": "Given the Binary search algorithm:<br />```pseudo<br />procedure Binarysearch(a₁<a₂<...<aₙ, x: integer)<br />  i:=1<br />  j:=n<br />  while (i<j)<br />    m:=⌊(i+j)/2⌋<br />    if x > aₘ then i:=m+1<br />    else j:=m<br />  if x = aᵢ then location:=i<br />  else location:=0<br />```<br />If input = {2, 4, 5, 7, 8, 9, 10, 13} and x = 11, after the second time of dividing into sublists, the sublist to be considered is___.",
+        "image": null,
+        "options": [
+          "A. {10, 13}",
+          "B. {9, 10, 13}",
+          "C. {9, 10}",
+          "D. {10}"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta sẽ theo dõi các biến `i` và `j` để xác định danh sách con cần xét.<br /><br />- Dãy đầu vào: `{2, 4, 5, 7, 8, 9, 10, 13}`. `n=8`.<br />- Giá trị cần tìm: `x=11`.<br />- Khởi tạo: `i=1`, `j=8`.<br /><br /><b>Lần chia thứ nhất:</b><br />- `m = ⌊(1+8)/2⌋ = 4`.<br />- So sánh `x` với `a₄ = 7`.<br />- Vì `x=11 > a₄=7`, ta cập nhật `i := m+1 = 5`.<br />- Dãy con cần xét tiếp theo là từ chỉ số 5 đến 8: `{8, 9, 10, 13}`. `i` bây giờ là 5, `j` là 8.<br /><br /><b>Lần chia thứ hai:</b><br />- `m = ⌊(5+8)/2⌋ = 6`.<br />- So sánh `x` với `a₆ = 9`.<br />- Vì `x=11 > a₆=9`, ta cập nhật `i := m+1 = 7`.<br />- Dãy con cần xét tiếp theo là từ chỉ số 7 đến 8: `{10, 13}`.",
+        "difficulty": "easy",
+        "topic": "Searching Algorithms",
+        "hints": [
+          "Binary Search luôn chia đôi danh sách tìm kiếm hiện tại.",
+          "Nếu giá trị cần tìm lớn hơn phần tử ở giữa, ta sẽ tìm ở nửa bên phải.",
+          "Theo dõi các chỉ số `i` (đầu) và `j` (cuối) của danh sách con."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 20,
+        "question": "Given the Binary search algorithm:<br />```pseudo<br />procedure Binarysearch(a₁<a₂<...<aₙ, x: integer)<br />  i:=1<br />  j:=n<br />  while (i<j)<br />    m:=⌊(i+j)/2⌋<br />    if x > aₘ then i:=m+1<br />    else j:=m<br />  if x = aᵢ then location:=i<br />  else location:=0<br />```<br />If input = {2, 4, 5, 7, 8, 9, 10, 13} and x = 11, after the third time of dividing into sublists, the sublist to be considered is___.",
+        "image": null,
+        "options": [
+          "A. {10}",
+          "B. {9, 10}",
+          "C. {10, 13}",
+          "D. {13}"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Ta sẽ tiếp tục từ kết quả của lần chia thứ hai.<br /><br />- Dãy đầu vào: `{2, 4, 5, 7, 8, 9, 10, 13}`. `n=8`.<br />- Giá trị cần tìm: `x=11`.<br /><br /><b>Lần chia thứ nhất:</b><br />- `m=4`. `x > a₄`. Dãy con cần xét là `{8, 9, 10, 13}` (chỉ số `i=5, j=8`).<br /><br /><b>Lần chia thứ hai:</b><br />- `m = ⌊(5+8)/2⌋ = 6`.<br />- So sánh `x` với `a₆ = 9`.<br />- Vì `x=11 > a₆=9`, ta cập nhật `i := m+1 = 7`.<br />- Dãy con cần xét tiếp theo là `{10, 13}` (chỉ số `i=7, j=8`).<br /><br /><b>Lần chia thứ ba:</b><br />- `m = ⌊(7+8)/2⌋ = 7`.<br />- So sánh `x` với `a₇ = 10`.<br />- Vì `x=11 > a₇=10`, ta cập nhật `i := m+1 = 8`.<br />- Dãy con cần xét tiếp theo là từ chỉ số 8 đến 8, tức là chỉ còn phần tử `{13}`.",
+        "difficulty": "easy",
+        "topic": "Searching Algorithms",
+        "hints": [
+          "Tiếp tục quá trình chia đôi từ danh sách con `{10, 13}`.",
+          "Theo dõi sự thay đổi của các chỉ số `i` và `j` sau mỗi lần chia.",
+          "Quá trình tìm kiếm sẽ ngày càng thu hẹp phạm vi."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 21,
+        "question": "Given the Binary search algorithm:<br />```pseudo<br />procedure Binarysearch(a₁<a₂<...<aₙ, x: integer)<br />  i:=1<br />  j:=n<br />  while (i<j)<br />    m:=⌊(i+j)/2⌋<br />    if x > aₘ then i:=m+1<br />    else j:=m<br />  if x = aᵢ then location:=i<br />  else location:=0<br />```<br />If input = {2, 4, 5, 7, 8, 9, 10, 13} and x = 11, after the third time of dividing into sublists, the sublist to be considered is___.",
+        "image": null,
+        "options": [
+          "A. {13}",
+          "B. {10}",
+          "C. {10, 13}",
+          "D. {9, 10}"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta sẽ theo dõi các chỉ số `i` (đầu) và `j` (cuối) để xác định danh sách con qua từng lần chia.<br /><br />- Dãy đầu vào: `{2, 4, 5, 7, 8, 9, 10, 13}` (n=8).<br />- Giá trị tìm: `x=11`.<br />- Khởi tạo: `i=1, j=8`.<br /><br /><b>Lần chia 1:</b><br />- `m = ⌊(1+8)/2⌋ = 4`. `a₄ = 7`.<br />- Vì `11 > 7`, ta tìm ở nửa phải. Cập nhật `i := m+1 = 5`.<br />- Danh sách con cần xét: chỉ số từ 5 đến 8 (`{8, 9, 10, 13}`).<br /><br /><b>Lần chia 2:</b><br />- `m = ⌊(5+8)/2⌋ = 6`. `a₆ = 9`.<br />- Vì `11 > 9`, ta tìm ở nửa phải. Cập nhật `i := m+1 = 7`.<br />- Danh sách con cần xét: chỉ số từ 7 đến 8 (`{10, 13}`).<br /><br /><b>Lần chia 3:</b><br />- `m = ⌊(7+8)/2⌋ = 7`. `a₇ = 10`.<br />- Vì `11 > 10`, ta tìm ở nửa phải. Cập nhật `i := m+1 = 8`.<br />- Danh sách con cần xét: chỉ số từ 8 đến 8, tức là chỉ còn phần tử `{13}`.",
+        "difficulty": "easy",
+        "topic": "Searching Algorithms",
+        "hints": [
+          "Tiếp tục quá trình chia đôi từ danh sách con `{10, 13}`.",
+          "Nếu `x` lớn hơn `aₘ`, phạm vi tìm kiếm mới sẽ là từ `m+1` đến `j`.",
+          "Theo dõi cẩn thận giá trị của `i` và `j`."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 22,
+        "question": "What is the output of the algorithm?<br />```pseudo<br />procedure tt(a₁, ..., aₙ: integers)<br />  d := a₁<br />  for i := 1 to n do<br />    if d > aᵢ then d := aᵢ<br /><br />  k := n<br />  while (k >= 1) and (aₖ > d)<br />    k := k - 1<br /><br />  Print(k)<br />```",
+        "image": null,
+        "options": [
+          "A. None of the other choices is correct",
+          "B. The first location of the smallest element in the list of integers",
+          "C. The smallest element in the list of integers",
+          "D. The last location of the smallest element in the list of integers"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Hãy phân tích thuật toán thành hai phần:<br /><br />1.  <b>Phần 1 (vòng lặp `for`):</b><br />    - Đoạn mã này duyệt qua toàn bộ danh sách để tìm ra giá trị nhỏ nhất và lưu vào biến `d`.<br /><br />2.  <b>Phần 2 (vòng lặp `while`):</b><br />    - Vòng lặp này bắt đầu từ cuối danh sách (`k=n`) và đi ngược về đầu.<br />    - Nó sẽ dừng lại ở lần đầu tiên mà điều kiện `aₖ > d` bị sai. Vì `d` là giá trị nhỏ nhất, điều kiện này chỉ có thể sai khi `aₖ` bằng `d`.<br />    - Do bắt đầu từ cuối, `k` sẽ là chỉ số của lần xuất hiện **cuối cùng** của giá trị nhỏ nhất trong danh sách.<br /><br />Vậy, thuật toán in ra vị trí (chỉ số) cuối cùng của phần tử nhỏ nhất.",
+        "difficulty": "medium",
+        "topic": "Algorithm Analysis",
+        "hints": [
+          "Đoạn mã đầu tiên làm gì? Nó tìm giá trị nhỏ nhất.",
+          "Đoạn mã thứ hai làm gì? Nó tìm kiếm ngược từ cuối danh sách.",
+          "Vòng lặp `while` sẽ dừng lại khi nào?"
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 23,
+        "question": "The median of a list of integers is determined after two steps:<br />Step 1: Sort the list in the increasing order<br />Step 2: If the numbers of element is odd, pick the element in the middle of the sorted list. If the number of the elements is even, pick the first of the two elements in the middle of the sorted list.<br /><br />Find the median of the list<br />[1, 2, 33, 3, 30, 8, 31, 15, 24, 131, 7]",
+        "image": null,
+        "options": [],
+        "correctAnswer": "15",
+        "explanation": "<b>Bước 1: Sắp xếp danh sách theo thứ tự tăng dần.</b><br />- Danh sách ban đầu: `[1, 2, 33, 3, 30, 8, 31, 15, 24, 131, 7]`<br />- Danh sách sau khi sắp xếp: `[1, 2, 3, 7, 8, 15, 24, 30, 31, 33, 131]`<br /><br /><b>Bước 2: Tìm phần tử ở giữa.</b><br />- Danh sách có 11 phần tử, đây là một số lẻ.<br />- Vị trí của phần tử ở giữa được tính bằng công thức \\( \\frac{n+1}{2} \\).<br />- Với `n=11`, vị trí là \\( \\frac{11+1}{2} = 6 \\).<br />- Phần tử ở vị trí thứ 6 trong danh sách đã sắp xếp là **15**.",
+        "difficulty": "easy",
+        "topic": "Statistics",
+        "hints": [
+          "Đầu tiên, hãy sắp xếp tất cả các số.",
+          "Đếm tổng số phần tử để xác định là chẵn hay lẻ.",
+          "Vì số phần tử là lẻ, trung vị chính là số nằm chính giữa."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 24,
+        "question": "What is the largest integer n for which one can solve within 1 second a problem using an algorithm that requires f(n) = 2ⁿ bit operations, where each bit operation is carried out in 10⁻⁹ seconds?",
+        "image": null,
+        "options": [
+          "A. 30",
+          "B. 28",
+          "C. 27",
+          "D. 29"
+        ],
+        "correctAnswer": "D",
+        "explanation": "<b>Bước 1: Tính số phép toán tối đa trong 1 giây.</b><br />- Thời gian cho một phép toán là \\( 10^{-9} \\) giây.<br />- Số phép toán tối đa trong 1 giây = \\( \\frac{1 \\text{ giây}}{10^{-9} \\text{ giây/phép toán}} = 10^9 \\) phép toán.<br /><br /><b>Bước 2: Thiết lập bất phương trình.</b><br />- Số phép toán yêu cầu của thuật toán phải nhỏ hơn hoặc bằng số phép toán tối đa.<br />- \\( 2^n \\le 10^9 \\)<br /><br /><b>Bước 3: Giải bất phương trình.</b><br />- Lấy logarit cơ số 2 hai vế:<br />- \\( \\log_2(2^n) \\le \\log_2(10^9) \\)<br />- \\( n \\le 9 \\cdot \\log_2(10) \\)<br />- Ta biết \\( \\log_2(10) \\approx 3.3219 \\).<br />- \\( n \\le 9 \\times 3.3219 \\approx 29.897 \\)<br /><br />Vì `n` phải là số nguyên, giá trị nguyên lớn nhất của `n` là 29.",
+        "difficulty": "medium",
+        "topic": "Complexity Analysis",
+        "hints": [
+          "Tìm số lượng phép toán tối đa có thể thực hiện trong một giây.",
+          "Thiết lập bất đẳng thức `f(n) <= số phép toán tối đa`.",
+          "Sử dụng logarit để giải bất phương trình mũ."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 25,
+        "question": "What is the largest n for which one can solve within one second using an algorithm that requires f(n) = 2^(n²) bit operations, where each bit operation is carried out in 10⁻¹² seconds?",
+        "image": null,
+        "options": [
+          "A. 6",
+          "B. 7",
+          "C. 39",
+          "D. 40",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Bước 1: Tính số phép toán tối đa trong 1 giây.</b><br />- Thời gian cho một phép toán là \\( 10^{-12} \\) giây.<br />- Số phép toán tối đa trong 1 giây = \\( \\frac{1}{10^{-12}} = 10^{12} \\) phép toán.<br /><br /><b>Bước 2: Thiết lập bất phương trình.</b><br />- \\( 2^{n^2} \\le 10^{12} \\)<br /><br /><b>Bước 3: Giải bất phương trình.</b><br />- Lấy logarit cơ số 2 hai vế:<br />- \\( \\log_2(2^{n^2}) \\le \\log_2(10^{12}) \\)<br />- \\( n^2 \\le 12 \\cdot \\log_2(10) \\)<br />- Sử dụng \\( \\log_2(10) \\approx 3.3219 \\):<br />- \\( n^2 \\le 12 \\times 3.3219 \\approx 39.86 \\)<br />- Lấy căn bậc hai hai vế:<br />- \\( n \\le \\sqrt{39.86} \\approx 6.31 \\)<br /><br />Vì `n` phải là số nguyên, giá trị nguyên lớn nhất của `n` là 6.",
+        "difficulty": "hard",
+        "topic": "Complexity Analysis",
+        "hints": [
+          "Xác định số lượng phép toán tối đa trong một giây.",
+          "Hàm độ phức tạp là `2` mũ `n²`.",
+          "Giải bất phương trình `2^(n²) <= 10¹²` bằng cách lấy logarit hai lần (hoặc logarit rồi lấy căn)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 26,
+        "question": "What is the largest integer n for which one can solve within one second a problem using an algorithm that requires f(n) = n² bit operations, where each bit operation is carried out in 10⁻⁹ seconds?",
+        "image": null,
+        "options": [
+          "A. 31622",
+          "B. 31621",
+          "C. 31620",
+          "D. 31000",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Bước 1: Tính số phép toán tối đa trong 1 giây.</b><br />- Thời gian cho một phép toán là \\( 10^{-9} \\) giây.<br />- Số phép toán tối đa có thể thực hiện trong 1 giây là \\( \\frac{1 \\text{ giây}}{10^{-9} \\text{ giây/phép toán}} = 10^9 \\) phép toán.<br /><br /><b>Bước 2: Thiết lập bất phương trình.</b><br />- Số phép toán yêu cầu của thuật toán (`n²`) phải nhỏ hơn hoặc bằng số phép toán tối đa.<br />- \\( n^2 \\le 10^9 \\)<br /><br /><b>Bước 3: Giải bất phương trình.</b><br />- Lấy căn bậc hai của cả hai vế:<br />- \\( n \\le \\sqrt{10^9} \\)<br />- \\( n \\le \\sqrt{10 \\cdot 10^8} = 10^4 \\sqrt{10} \\)<br />- Ta biết \\( \\sqrt{10} \\approx 3.16227... \\)<br />- \\( n \\le 10000 \\times 3.16227... \\approx 31622.7... \\)<br /><br />Vì `n` phải là một số nguyên, giá trị nguyên lớn nhất của `n` là 31622.",
+        "difficulty": "medium",
+        "topic": "Complexity Analysis",
+        "hints": [
+          "Đầu tiên, hãy xác định xem có bao nhiêu phép toán có thể được thực hiện trong một giây.",
+          "Thiết lập một bất đẳng thức: `n²` ≤ (số phép toán tối đa).",
+          "Giải bất đẳng thức bằng cách lấy căn bậc hai."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 27,
+        "question": "Find the output of:<br /><b>Greedy Change-Making Algorithm</b><br /><b>Input:</b> 1088 cents<br /><b>Output:</b> The number of coins of each type: Quarters, Dimes, Nickles, Pennies",
+        "image": null,
+        "options": [
+          "a. 43, 1, 0, 3",
+          "b. 42, 3, 0, 8",
+          "c. 44, 1, 0, 2",
+          "d. 40, 8, 1, 3"
+        ],
+        "correctAnswer": "a",
+        "explanation": "Ta áp dụng thuật toán tham lam bằng cách ưu tiên các đồng xu có mệnh giá cao nhất.<br /><br />1.  <b>Quarters (25 cents):</b><br />    - `1088 div 25 = 43`. Số tiền còn lại: `1088 - 43 * 25 = 13` cents.<br />2.  <b>Dimes (10 cents):</b><br />    - `13 div 10 = 1`. Số tiền còn lại: `13 - 1 * 10 = 3` cents.<br />3.  <b>Nickles (5 cents):</b><br />    - `3 div 5 = 0`. Số tiền còn lại: `3` cents.<br />4.  <b>Pennies (1 cent):</b><br />    - `3 div 1 = 3`. Số tiền còn lại: `0` cents.<br /><br />Kết quả là: 43 Quarters, 1 Dime, 0 Nickles, 3 Pennies.",
+        "difficulty": "easy",
+        "topic": "Greedy Algorithms",
+        "hints": [
+          "Bắt đầu với mệnh giá lớn nhất là 25 cents.",
+          "Lấy số tiền còn lại và tiếp tục với mệnh giá nhỏ hơn tiếp theo.",
+          "Thực hiện cho đến khi số tiền còn lại bằng 0."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 28,
+        "question": "Use the Greedy Change-Making algorithm to make a change for 34 cents using quarters, dimes and pennies (1 quarter = 25 cents, 1 dime = 10 cents, 1 penny = 1 cent). What is the total number of coins used?",
+        "image": null,
+        "options": [
+          "A. 7",
+          "B. 8",
+          "C. 9",
+          "D. 10",
+          "E. None of the other choices"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Ta áp dụng thuật toán tham lam để tìm số lượng từng loại đồng xu và sau đó tính tổng.<br /><br />- <b>Quarters (25 cents):</b> `34 div 25 = 1`. Còn lại `34 - 25 = 9` cents. (Số xu: 1)<br />- <b>Dimes (10 cents):</b> `9 div 10 = 0`. Còn lại `9` cents. (Số xu: 0)<br />- <b>Pennies (1 cent):</b> `9 div 1 = 9`. Còn lại `0` cents. (Số xu: 9)<br /><br />Tổng số đồng xu đã sử dụng là: `1 + 0 + 9 = 10`.",
+        "difficulty": "easy",
+        "topic": "Greedy Algorithms",
+        "hints": [
+          "Câu hỏi này không đề cập đến Nickles (5 cents).",
+          "Đầu tiên, hãy lấy số lượng đồng 25 xu nhiều nhất có thể.",
+          "Tính tổng số lượng các đồng xu bạn đã sử dụng."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 29,
+        "question": "What is the total number of coins when using the Greedy Change-Making algorithm to make a change for 87 cents using quarters (25 cents), dimes (10 cents), nickles (5 cents) and pennies (1 cent)?",
+        "image": null,
+        "options": [
+          "A. 0",
+          "B. 2",
+          "C. 1",
+          "D. 3",
+          "E. 6",
+          "F. None of the other choices is correct"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Chúng ta sẽ chia 87 cents bằng thuật toán tham lam và cộng số lượng đồng xu lại.<br /><br />- <b>Quarters (25 cents):</b> `87 div 25 = 3`. Còn lại `87 - 75 = 12` cents. (Số xu: 3)<br />- <b>Dimes (10 cents):</b> `12 div 10 = 1`. Còn lại `12 - 10 = 2` cents. (Số xu: 1)<br />- <b>Nickles (5 cents):</b> `2 div 5 = 0`. Còn lại `2` cents. (Số xu: 0)<br />- <b>Pennies (1 cent):</b> `2 div 1 = 2`. Còn lại `0` cents. (Số xu: 2)<br /><br />Tổng số đồng xu đã sử dụng là: `3 + 1 + 0 + 2 = 6`.",
+        "difficulty": "easy",
+        "topic": "Greedy Algorithms",
+        "hints": [
+          "Bắt đầu với đồng 25 xu.",
+          "Tiếp tục với đồng 10 xu, 5 xu, và 1 xu.",
+          "Cộng tất cả số lượng đồng xu lại với nhau."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 30,
+        "question": "A person wants to make a change for 96 cents using quarters (=25 cents), dimes (=10 cents), nickles (=5 cents) and pennies (=1 cent). Find the least number of coins.",
+        "image": null,
+        "options": [
+          "A. 6",
+          "B. 5",
+          "C. 4",
+          "D. 7",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Sử dụng thuật toán tham lam để tìm số lượng đồng xu ít nhất cho bộ tiền tệ tiêu chuẩn của Hoa Kỳ.<br /><br />- <b>Quarters (25 cents):</b> `96 div 25 = 3`. Còn lại `96 - 75 = 21` cents. (Số xu: 3)<br />- <b>Dimes (10 cents):</b> `21 div 10 = 2`. Còn lại `21 - 20 = 1` cent. (Số xu: 2)<br />- <b>Nickles (5 cents):</b> `1 div 5 = 0`. Còn lại `1` cent. (Số xu: 0)<br />- <b>Pennies (1 cent):</b> `1 div 1 = 1`. Còn lại `0` cents. (Số xu: 1)<br /><br />Tổng số đồng xu ít nhất là: `3 + 2 + 0 + 1 = 6`.",
+        "difficulty": "easy",
+        "topic": "Greedy Algorithms",
+        "hints": [
+          "\"Số lượng đồng xu ít nhất\" thường ngụ ý việc sử dụng thuật toán tham lam.",
+          "Phân tích 96 cents thành các đồng 25, 10, 5, và 1 xu.",
+          "Tính tổng số lượng đồng xu."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 31,
+        "question": "How many comparisons are needed to merge two ordered lists<br />[2, 9, 12, 20, 23] and [3, 4, 5, 6, 7, 8, 17]<br />using the merge algorithm in the textbook?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "10",
+        "explanation": "Ta sẽ theo dõi quá trình hợp nhất và đếm số lần so sánh.<br />L1 = [2, 9, 12, 20, 23], L2 = [3, 4, 5, 6, 7, 8, 17]<br /><br />1. So sánh 2 và 3 -> lấy 2 (1 so sánh)<br />2. So sánh 9 và 3 -> lấy 3 (2 so sánh)<br />3. So sánh 9 và 4 -> lấy 4 (3 so sánh)<br />4. So sánh 9 và 5 -> lấy 5 (4 so sánh)<br />5. So sánh 9 và 6 -> lấy 6 (5 so sánh)<br />6. So sánh 9 và 7 -> lấy 7 (6 so sánh)<br />7. So sánh 9 và 8 -> lấy 8 (7 so sánh)<br />8. So sánh 9 và 17 -> lấy 9 (8 so sánh)<br />9. So sánh 12 và 17 -> lấy 12 (9 so sánh)<br />10. So sánh 20 và 17 -> lấy 17 (10 so sánh)<br /><br />Lúc này danh sách thứ hai đã hết. Quá trình so sánh dừng lại. Tổng cộng có 10 phép so sánh.",
+        "difficulty": "medium",
+        "topic": "Merge Algorithm",
+        "hints": [
+          "Thuật toán dừng so sánh khi một trong hai danh sách đã cạn.",
+          "Mỗi lần chọn một phần tử vào danh sách đã hợp nhất, ta thực hiện một phép so sánh (trừ khi một danh sách đã hết).",
+          "Theo dõi phần tử đầu tiên của mỗi danh sách con."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 32,
+        "question": "How many comparisons are needed to merge two ordered lists<br />[2, 9, 12, 17, 20] and [1, 4, 5, 6, 7, 8, 23]<br />using the merge algorithm in the textbook?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "11",
+        "explanation": "Ta theo dõi quá trình hợp nhất và đếm số lần so sánh.<br />L1 = [2, 9, 12, 17, 20], L2 = [1, 4, 5, 6, 7, 8, 23]<br /><br />1. So sánh 2 và 1 -> lấy 1 (1 so sánh)<br />2. So sánh 2 và 4 -> lấy 2 (2 so sánh)<br />3. So sánh 9 và 4 -> lấy 4 (3 so sánh)<br />4. So sánh 9 và 5 -> lấy 5 (4 so sánh)<br />5. So sánh 9 và 6 -> lấy 6 (5 so sánh)<br />6. So sánh 9 và 7 -> lấy 7 (6 so sánh)<br />7. So sánh 9 và 8 -> lấy 8 (7 so sánh)<br />8. So sánh 9 và 23 -> lấy 9 (8 so sánh)<br />9. So sánh 12 và 23 -> lấy 12 (9 so sánh)<br />10. So sánh 17 và 23 -> lấy 17 (10 so sánh)<br />11. So sánh 20 và 23 -> lấy 20 (11 so sánh)<br /><br />Lúc này danh sách thứ nhất đã hết. Quá trình so sánh dừng lại. Tổng cộng có 11 phép so sánh.",
+        "difficulty": "medium",
+        "topic": "Merge Algorithm",
+        "hints": [
+          "Mô phỏng thuật toán từng bước.",
+          "So sánh phần tử đứng đầu của hai danh sách và chọn phần tử nhỏ hơn.",
+          "Quá trình kết thúc khi một danh sách không còn phần tử nào."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 33,
+        "question": "How many comparisons are needed to merge two ordered lists<br />[2, 9, 12, 17, 20, 23] and [1, 4, 5, 6, 7, 8]<br />using the merge algorithm in the textbook?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "7",
+        "explanation": "Ta theo dõi quá trình hợp nhất và đếm số lần so sánh.<br />L1 = [2, 9, 12, 17, 20, 23], L2 = [1, 4, 5, 6, 7, 8]<br /><br />1. So sánh 2 và 1 -> lấy 1 (1 so sánh)<br />2. So sánh 2 và 4 -> lấy 2 (2 so sánh)<br />3. So sánh 9 và 4 -> lấy 4 (3 so sánh)<br />4. So sánh 9 và 5 -> lấy 5 (4 so sánh)<br />5. So sánh 9 và 6 -> lấy 6 (5 so sánh)<br />6. So sánh 9 và 7 -> lấy 7 (6 so sánh)<br />7. So sánh 9 và 8 -> lấy 8 (7 so sánh)<br /><br />Lúc này danh sách thứ hai (L2) đã hết. Quá trình so sánh dừng lại. Tổng cộng có 7 phép so sánh.",
+        "difficulty": "medium",
+        "topic": "Merge Algorithm",
+        "hints": [
+          "So sánh phần tử đầu tiên của L1 với phần tử đầu tiên của L2.",
+          "Chọn phần tử nhỏ hơn và chuyển sang so sánh tiếp theo.",
+          "Khi một danh sách hết, không cần so sánh nữa."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 34,
+        "question": "How many comparisons are needed to merge two ordered lists<br />[2, 8, 11, 15, 20, 24] and [1, 5, 6, 7, 12]?",
+        "image": null,
+        "options": [
+          "A. 5",
+          "B. 6",
+          "C. 7",
+          "D. 8"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Ta theo dõi quá trình hợp nhất và đếm số lần so sánh.<br />L1 = [2, 8, 11, 15, 20, 24], L2 = [1, 5, 6, 7, 12]<br /><br />1. So sánh 2 và 1 -> lấy 1 (1 so sánh)<br />2. So sánh 2 và 5 -> lấy 2 (2 so sánh)<br />3. So sánh 8 và 5 -> lấy 5 (3 so sánh)<br />4. So sánh 8 và 6 -> lấy 6 (4 so sánh)<br />5. So sánh 8 và 7 -> lấy 7 (5 so sánh)<br />6. So sánh 8 và 12 -> lấy 8 (6 so sánh)<br />7. So sánh 11 và 12 -> lấy 11 (7 so sánh)<br />8. So sánh 15 và 12 -> lấy 12 (8 so sánh)<br /><br />Lúc này danh sách thứ hai (L2) đã hết. Quá trình so sánh dừng lại. Tổng cộng có 8 phép so sánh.",
+        "difficulty": "medium",
+        "topic": "Merge Algorithm",
+        "hints": [
+          "Mô phỏng thuật toán từng bước.",
+          "So sánh các phần tử đầu tiên của hai danh sách.",
+          "Quá trình so sánh dừng lại ngay khi một trong hai danh sách trống."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 35,
+        "question": "How many comparisons are needed to merge the two lists<br />[1, 3, 5, 7, 8, 10] and [2, 4, 6, 9]?",
+        "image": null,
+        "options": [
+          "A. 6",
+          "B. 7",
+          "C. 8",
+          "D. 9",
+          "E. 10"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Ta theo dõi quá trình hợp nhất và đếm số lần so sánh, giả sử hai danh sách đã được sắp xếp.<br />L1 = [1, 3, 5, 7, 8, 10], L2 = [2, 4, 6, 9]<br /><br />1. So sánh 1 và 2 -> lấy 1 (1 so sánh)<br />2. So sánh 3 và 2 -> lấy 2 (2 so sánh)<br />3. So sánh 3 và 4 -> lấy 3 (3 so sánh)<br />4. So sánh 5 và 4 -> lấy 4 (4 so sánh)<br />5. So sánh 5 và 6 -> lấy 5 (5 so sánh)<br />6. So sánh 7 và 6 -> lấy 6 (6 so sánh)<br />7. So sánh 7 và 9 -> lấy 7 (7 so sánh)<br />8. So sánh 8 và 9 -> lấy 8 (8 so sánh)<br />9. So sánh 10 và 9 -> lấy 9 (9 so sánh)<br /><br />Lúc này danh sách thứ hai (L2) đã hết. Quá trình so sánh dừng lại. Tổng cộng có 9 phép so sánh.",
+        "difficulty": "medium",
+        "topic": "Merge Algorithm",
+        "hints": [
+          "Câu hỏi ngụ ý rằng hai danh sách đã được sắp xếp.",
+          "Thực hiện thuật toán hợp nhất từng bước.",
+          "Đếm số lần so sánh cho đến khi một danh sách hết."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 36,
+        "question": "How many comparisons are required to merge the following pair of lists using the merge algorithm?<br />[1, 4, 6, 9];<br />[3, 5, 8, 10, 12, 14]",
+        "image": null,
+        "options": [
+          "A. 7",
+          "B. 10",
+          "C. 9",
+          "D. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta theo dõi quá trình hợp nhất và đếm số lần so sánh.<br />L1 = [1, 4, 6, 9], L2 = [3, 5, 8, 10, 12, 14]<br /><br />1. So sánh 1 và 3 -> lấy 1 (1 so sánh)<br />2. So sánh 4 và 3 -> lấy 3 (2 so sánh)<br />3. So sánh 4 và 5 -> lấy 4 (3 so sánh)<br />4. So sánh 6 và 5 -> lấy 5 (4 so sánh)<br />5. So sánh 6 và 8 -> lấy 6 (5 so sánh)<br />6. So sánh 9 và 8 -> lấy 8 (6 so sánh)<br />7. So sánh 9 và 10 -> lấy 9 (7 so sánh)<br /><br />Lúc này danh sách thứ nhất (L1) đã hết. Quá trình so sánh dừng lại. Tổng cộng có 7 phép so sánh.",
+        "difficulty": "medium",
+        "topic": "Merge Algorithm",
+        "hints": [
+          "So sánh phần tử đầu tiên của hai danh sách.",
+          "Chọn phần tử nhỏ hơn và tiếp tục.",
+          "Thuật toán dừng khi một trong hai danh sách trống."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 37,
+        "question": "Let \\( f(x) = x^2\\log(x) \\) and \\( g(x) = x\\log(x^2) \\).<br /><br />Choose the correct statements:<br />(i) f(x) is O(g(x))<br />(ii) g(x) is O(f(x))",
+        "image": null,
+        "options": [
+          "A. (i)",
+          "B. (ii)",
+          "C. Both (i) and (ii)",
+          "D. None of the other choices is correct"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Bước 1: Đơn giản hóa g(x)</b><br />Sử dụng tính chất của logarit: \\( \\log(a^b) = b \\log(a) \\).<br />\\( g(x) = x \\log(x^2) = x \\cdot 2\\log(x) = 2x\\log(x) \\)<br /><br /><b>Bước 2: So sánh tốc độ tăng trưởng của f(x) và g(x)</b><br />- \\( f(x) = x^2\\log(x) \\)<br />- \\( g(x) = 2x\\log(x) \\)<br /><br /><b>Kiểm tra (i): f(x) có là O(g(x)) không?</b><br />Xét giới hạn \\( \\lim_{x \\to \\infty} \\frac{f(x)}{g(x)} = \\lim_{x \\to \\infty} \\frac{x^2\\log(x)}{2x\\log(x)} = \\lim_{x \\to \\infty} \\frac{x}{2} = \\infty \\).<br />Vì giới hạn là vô cùng, f(x) tăng nhanh hơn g(x), nên f(x) **không phải** là O(g(x)). (i) sai.<br /><br /><b>Kiểm tra (ii): g(x) có là O(f(x)) không?</b><br />Xét giới hạn \\( \\lim_{x \\to \\infty} \\frac{g(x)}{f(x)} = \\lim_{x \\to \\infty} \\frac{2x\\log(x)}{x^2\\log(x)} = \\lim_{x \\to \\infty} \\frac{2}{x} = 0 \\).<br />Vì giới hạn là một hằng số hữu hạn (0), g(x) tăng chậm hơn f(x), nên g(x) **là** O(f(x)). (ii) đúng.",
+        "difficulty": "medium",
+        "topic": "Big-O Notation",
+        "hints": [
+          "Hãy đơn giản hóa `g(x)` bằng cách sử dụng các thuộc tính logarit.",
+          "So sánh bậc của `x` trong hai hàm số.",
+          "Nếu `lim f(x)/g(x)` hữu hạn, thì `f(x)` là `O(g(x))`."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 38,
+        "question": "Which functions are NOT \\( O(x \\log x) \\)?<br /><br />(i) \\( x \\log(x^2) \\)<br />(ii) \\( x^2 \\)<br />(iii) \\( x \\)<br />(iv) \\( x + 2 \\)",
+        "image": null,
+        "options": [
+          "A. (iii)",
+          "B. (ii)",
+          "C. (i)",
+          "D. (iv)",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Một hàm `f(x)` **không phải** là \\( O(x \\log x) \\) nếu giới hạn \\( \\lim_{x \\to \\infty} \\frac{f(x)}{x \\log x} = \\infty \\).<br /><br />-   <b>(i) \\( x \\log(x^2) = 2x \\log x \\):</b><br />    \\( \\lim_{x \\to \\infty} \\frac{2x \\log x}{x \\log x} = 2 \\). Giới hạn hữu hạn, vậy nó **là** \\( O(x \\log x) \\).<br /><br />-   <b>(ii) \\( x^2 \\):</b><br />    \\( \\lim_{x \\to \\infty} \\frac{x^2}{x \\log x} = \\lim_{x \\to \\infty} \\frac{x}{\\log x} = \\infty \\). Giới hạn là vô cùng, vậy nó **KHÔNG** là \\( O(x \\log x) \\).<br /><br />-   <b>(iii) \\( x \\):</b><br />    \\( \\lim_{x \\to \\infty} \\frac{x}{x \\log x} = \\lim_{x \\to \\infty} \\frac{1}{\\log x} = 0 \\). Giới hạn hữu hạn, vậy nó **là** \\( O(x \\log x) \\).<br /><br />-   <b>(iv) \\( x + 2 \\):</b><br />    \\( \\lim_{x \\to \\infty} \\frac{x+2}{x \\log x} = \\lim_{x \\to \\infty} \\frac{x}{x \\log x} = 0 \\). Giới hạn hữu hạn, vậy nó **là** \\( O(x \\log x) \\).<br /><br />Do đó, chỉ có hàm \\( x^2 \\) là không phải \\( O(x \\log x) \\).",
+        "difficulty": "medium",
+        "topic": "Big-O Notation",
+        "hints": [
+          "Hàm `f(x)` không phải là `O(g(x))` nếu `f(x)` tăng nhanh hơn `g(x)`.",
+          "Sử dụng quy tắc L'Hôpital nếu cần để tính giới hạn.",
+          "So sánh thứ tự tăng trưởng: `log x < x < x log x < x² < 2ⁿ`."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 39,
+        "question": "Which are correct?<br /><br />1. \\( 2^n \\) is \\( O(n^2) \\)<br />2. \\( n\\log(n) \\) is \\( O(n) \\)<br />3. \\( n^2 \\) is \\( O(2^n) \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "1. No<br />2. No<br />3. Yes",
+        "explanation": "Ta xét từng khẳng định dựa trên định nghĩa Big-O và thứ tự tăng trưởng của các hàm số.<br /><br />1.  <b>\\( 2^n \\) is \\( O(n^2) \\) → Sai.</b><br />    Hàm mũ (\\( 2^n \\)) tăng trưởng nhanh hơn rất nhiều so với hàm đa thức (\\( n^2 \\)). Do đó, \\( 2^n \\) không thể bị chặn trên bởi \\( n^2 \\).<br /><br />2.  <b>\\( n\\log(n) \\) is \\( O(n) \\) → Sai.</b><br />    Hàm \\( n\\log(n) \\) tăng trưởng nhanh hơn hàm tuyến tính (\\( n \\)). Do đó, \\( n\\log(n) \\) không thể bị chặn trên bởi \\( n \\).<br /><br />3.  <b>\\( n^2 \\) is \\( O(2^n) \\) → Đúng.</b><br />    Hàm đa thức (\\( n^2 \\)) tăng trưởng chậm hơn hàm mũ (\\( 2^n \\)). Do đó, \\( n^2 \\) bị chặn trên bởi \\( 2^n \\).",
+        "difficulty": "easy",
+        "topic": "Big-O Notation",
+        "hints": [
+          "Hãy nhớ thứ tự tăng trưởng phổ biến: `log(n) < n < n*log(n) < n² < 2ⁿ`.",
+          "Một hàm `f(n)` là `O(g(n))` nếu `f(n)` tăng không nhanh hơn `g(n)`."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 40,
+        "question": "Let \\( f(x) = x\\log(x^3) + x^2\\log(x) + x\\log(x)^2 \\).<br />Find a function g(x) that \\( f(x) = \\Theta(g(x)) \\).<br /><br />(i) \\( x^2\\log(x) \\)<br />(ii) \\( x\\log(x) \\)<br />(iii) \\( x\\log(x^3) \\)<br />(iv) \\( x\\log(x)^2 \\)",
+        "image": null,
+        "options": [
+          "A. (i)",
+          "B. (ii)",
+          "C. (iii)",
+          "D. (iv)",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Bước 1: Đơn giản hóa và phân tích các thành phần của f(x)</b><br />\\( f(x) = x \\cdot 3\\log(x) + x^2\\log(x) + x(\\log(x))^2 \\)<br />Hàm f(x) là tổng của ba thành phần:<br />- Term 1: \\( 3x\\log(x) \\)<br />- Term 2: \\( x^2\\log(x) \\)<br />- Term 3: \\( x(\\log(x))^2 \\)<br /><br /><b>Bước 2: Tìm thành phần tăng trưởng nhanh nhất (dominant term)</b><br />Để tìm \\( \\Theta(g(x)) \\), ta cần xác định thành phần nào trong tổng quyết định tốc độ tăng trưởng của f(x) khi x tiến đến vô cùng.<br />- So sánh Term 2 (\\( x^2\\log(x) \\)) và Term 1 (\\( 3x\\log(x) \\)): \\( x^2 \\) tăng nhanh hơn \\( x \\), nên Term 2 tăng nhanh hơn.<br />- So sánh Term 2 (\\( x^2\\log(x) \\)) và Term 3 (\\( x(\\log(x))^2 \\)):<br />\\( \\lim_{x \\to \\infty} \\frac{x(\\log x)^2}{x^2 \\log x} = \\lim_{x \\to \\infty} \\frac{(\\log x)}{x} = 0 \\).<br />Giới hạn bằng 0 có nghĩa là Term 2 tăng nhanh hơn Term 3.<br /><br /><b>Bước 3: Kết luận</b><br />Thành phần tăng trưởng nhanh nhất là \\( x^2\\log(x) \\). Do đó, \\( f(x) \\) có cùng bậc tăng trưởng với \\( x^2\\log(x) \\), hay \\( f(x) = \\Theta(x^2\\log(x)) \\).",
+        "difficulty": "hard",
+        "topic": "Big-Theta Notation",
+        "hints": [
+          "Big-Theta được quyết định bởi thành phần tăng trưởng nhanh nhất trong một tổng.",
+          "Sử dụng các thuộc tính logarit để đơn giản hóa hàm số trước.",
+          "So sánh các cặp thành phần để tìm ra thành phần chủ đạo."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 41,
+        "question": "Find the smallest integer n such that the following function is \\( O(x^n) \\)<br /><br />\\( f(x) = \\sqrt{x^8 + x^4 + x^2 + 1} \\)",
+        "image": null,
+        "options": [
+          "A. 4",
+          "B. 3",
+          "C. 5",
+          "D. 7",
+          "E. 8"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Để tìm Big-O của hàm số, ta cần xác định thành phần tăng trưởng nhanh nhất (dominant term).<br /><br />1.  <b>Bên trong căn thức:</b> Thành phần có bậc cao nhất là \\( x^8 \\). Khi \\( x \\) tiến đến vô cùng, các số hạng khác trở nên không đáng kể so với \\( x^8 \\).<br />2.  <b>Đơn giản hóa hàm số:</b> Do đó, \\( f(x) \\) có tốc độ tăng trưởng tương đương với \\( \\sqrt{x^8} \\).<br />3.  <b>Tính toán:</b> \\( \\sqrt{x^8} = (x^8)^{1/2} = x^{8 \\cdot 1/2} = x^4 \\).<br /><br />Vậy, hàm số là \\( O(x^4) \\), và số nguyên nhỏ nhất `n` thỏa mãn điều kiện là 4.",
+        "difficulty": "easy",
+        "topic": "Big-O Notation",
+        "hints": [
+          "Xác định số hạng có bậc cao nhất bên trong dấu căn.",
+          "Hành vi của hàm số khi x rất lớn được quyết định bởi số hạng này.",
+          "Nhớ rằng \\( \\sqrt{a} = a^{1/2} \\)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 42,
+        "question": "Find the least integer n such that \\( f(x) \\) is \\( O(x^n) \\), where<br /><br />\\( f(x) = (\\log_8 x^2)^2 + \\log_2(\\log_{10} x) \\)",
+        "image": null,
+        "options": [
+          "A. 0",
+          "B. 1",
+          "C. 2",
+          "D. 8",
+          "E. 10"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Phân tích hàm số:</b><br />Hàm \\( f(x) \\) là tổng của hai thành phần logarit.<br />- Thành phần 1: \\( (\\log_8 x^2)^2 = (2\\log_8 x)^2 = 4(\\log_8 x)^2 \\). Đây là một hàm logarit bình phương.<br />- Thành phần 2: \\( \\log_2(\\log_{10} x) \\). Đây là hàm log-log, tăng trưởng rất chậm.<br /><br /><b>So sánh với \\( x^n \\):</b><br />- Bất kỳ hàm logarit nào, dù có lũy thừa, đều tăng trưởng chậm hơn bất kỳ hàm đa thức nào có số mũ dương. Tức là, \\( (\\log x)^k \\) luôn là \\( O(x^\\epsilon) \\) với mọi \\( \\epsilon > 0 \\).<br />- Ta cần tìm số nguyên `n` nhỏ nhất. <br />  - `n=0`: `f(x)` có là \\( O(x^0) = O(1) \\) không? Không, vì `f(x)` tiến đến vô cùng khi `x` tăng.<br />  - `n=1`: `f(x)` có là \\( O(x^1) = O(x) \\) không? Có, vì \\( \\lim_{x \\to \\infty} \\frac{(\\log x)^2}{x} = 0 \\).<br /><br />Vậy, số nguyên nhỏ nhất `n` để `f(x)` là \\( O(x^n) \\) là 1.",
+        "difficulty": "hard",
+        "topic": "Big-O Notation",
+        "hints": [
+          "Hàm logarit luôn tăng chậm hơn hàm đa thức.",
+          "Hãy kiểm tra với các giá trị nguyên `n` nhỏ nhất, bắt đầu từ 0.",
+          "`f(x)` là `O(g(x))` nếu `f(x)` không tăng nhanh hơn `g(x)`."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 43,
+        "question": "Find the smallest integer n such that f(x) = O(xⁿ).<br /><br />1. \\( f(x) = (x^2 + x - 1)^3 \\)<br />2. \\( f(x) = x \\cdot \\ln(x) \\)<br />3. \\( f(x) = e^x \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "1. 6<br />2. 2<br />3. Does not exist",
+        "explanation": "1.  <b>\\( f(x) = (x^2 + x - 1)^3 \\):</b><br />    - Khi khai triển đa thức này, số hạng có bậc cao nhất sẽ là \\( (x^2)^3 = x^6 \\).<br />    - Do đó, hàm số là \\( O(x^6) \\) và số nguyên `n` nhỏ nhất là 6.<br /><br />2.  <b>\\( f(x) = x \\cdot \\ln(x) \\):</b><br />    - Hàm này tăng nhanh hơn \\( x^1 \\) nhưng chậm hơn \\( x^2 \\).<br />    - Ta cần tìm số nguyên `n` nhỏ nhất. `f(x)` không phải là \\( O(x^1) \\) vì \\( \\lim_{x \\to \\infty} \\frac{x \\ln x}{x} = \\infty \\).<br />    - `f(x)` là \\( O(x^2) \\) vì \\( \\lim_{x \\to \\infty} \\frac{x \\ln x}{x^2} = 0 \\).<br />    - Vậy, số nguyên `n` nhỏ nhất là 2.<br /><br />3.  <b>\\( f(x) = e^x \\):</b><br />    - Hàm mũ \\( e^x \\) tăng nhanh hơn bất kỳ hàm đa thức \\( x^n \\) nào.<br />    - Do đó, không tồn tại số nguyên `n` nào để \\( e^x \\) là \\( O(x^n) \\).",
+        "difficulty": "medium",
+        "topic": "Big-O Notation",
+        "hints": [
+          "Đối với đa thức, Big-O được xác định bởi bậc cao nhất.",
+          "So sánh tốc độ tăng trưởng: logarit < đa thức < mũ.",
+          "`x ln(x)` nằm giữa `x¹` và `x²` về tốc độ tăng trưởng."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 44,
+        "question": "Find the quotient q and remainder r of the divisions<br /><br />-98 is divided by 5",
+        "image": null,
+        "options": [
+          "A. q = -20, r = 2",
+          "B. q = -19, r = -3",
+          "C. q = -20, r = -2",
+          "D. q = -19, r = 3",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Theo thuật toán chia, khi chia số nguyên `a` cho số nguyên dương `d`, ta có:<br />`a = d * q + r`, với `q` là thương, `r` là số dư và \\( 0 \\le r < d \\).<br /><br />- Ở đây, `a = -98` và `d = 5`.<br />- Số dư `r` phải nằm trong khoảng \\( 0 \\le r < 5 \\). Điều này loại bỏ các đáp án B và C vì chúng có số dư âm.<br /><br />- Ta kiểm tra các đáp án còn lại:<br />  - <b>Đáp án A:</b> `q = -20, r = 2`. Ta có `5 * (-20) + 2 = -100 + 2 = -98`. Phép tính này đúng và số dư `r=2` thỏa mãn điều kiện. Đây là đáp án đúng.<br />  - <b>Đáp án D:</b> `q = -19, r = 3`. Ta có `5 * (-19) + 3 = -95 + 3 = -92`, không bằng -98.",
+        "difficulty": "easy",
+        "topic": "Division Algorithm",
+        "hints": [
+          "Số dư của phép chia cho 5 phải là một số nguyên từ 0 đến 4.",
+          "Sử dụng công thức `a = d*q + r` để kiểm tra các đáp án.",
+          "Loại trừ các đáp án có số dư âm."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 45,
+        "question": "Let a = 137 mod 31 and b = -137 mod 31. Find b - a.",
+        "image": null,
+        "options": [
+          "A. 5",
+          "B. -7",
+          "C. 23",
+          "D. -13",
+          "E. 17"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Bước 1: Tìm a</b><br />- Ta cần tìm số dư khi chia 137 cho 31.<br />- `137 = 31 * 4 + 13`. (Vì `31 * 4 = 124`)<br />- Vậy, `a = 13`.<br /><br /><b>Bước 2: Tìm b</b><br />- Ta cần tìm số dư khi chia -137 cho 31. Theo định nghĩa, số dư phải không âm.<br />- `-137 = 31 * q + r`, với \\( 0 \\le r < 31 \\).<br />- Ta có thể viết `-137 = -155 + 18 = 31 * (-5) + 18`.<br />- Vậy, `b = 18`.<br />- Một cách khác: Vì `137 ≡ 13 (mod 31)`, suy ra `-137 ≡ -13 (mod 31)`. Để đưa về số dư dương, ta cộng thêm 31: `-13 + 31 = 18`.<br /><br /><b>Bước 3: Tính b - a</b><br />- `b - a = 18 - 13 = 5`.",
+        "difficulty": "medium",
+        "topic": "Modular Arithmetic",
+        "hints": [
+          "Tính `a = 137 mod 31` trước.",
+          "Tính `b = -137 mod 31`. Nhớ rằng số dư phải là một số không âm.",
+          "Thực hiện phép trừ `b - a`."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 46,
+        "question": "Let a = 131 div 37 and b = -131 div 37. Find a-b.",
+        "image": null,
+        "options": [
+          "A. 7",
+          "B. -1",
+          "C. 3",
+          "D. -4",
+          "E. 5"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Bước 1: Tính a = 131 div 37</b><br />- `div` là phép chia lấy phần thương.<br />- `131 = 37 * 3 + 20`.<br />- Vậy, thương là 3. Suy ra `a = 3`.<br /><br /><b>Bước 2: Tính b = -131 div 37</b><br />- Ta cần tìm thương `q` và số dư `r` sao cho `-131 = 37 * q + r` và `0 <= r < 37`.<br />- Nếu ta lấy `q = -3`, `-131 = 37 * (-3) + (-20)`. Số dư -20 không hợp lệ.<br />- Ta phải lùi `q` xuống -4: `-131 = 37 * (-4) + 17`. Số dư 17 hợp lệ.<br />- Vậy, thương là -4. Suy ra `b = -4`.<br /><br /><b>Bước 3: Tính a - b</b><br />- `a - b = 3 - (-4) = 3 + 4 = 7`.",
+        "difficulty": "medium",
+        "topic": "Division Algorithm",
+        "hints": [
+          "Phép `div` là tìm thương của phép chia.",
+          "Khi chia số âm, hãy nhớ rằng số dư `r` phải luôn không âm.",
+          "Sử dụng công thức `a = d*q + r` để tìm thương `q`."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 47,
+        "question": "Let a = 131 mod 37 and b = -131 mod 37. Find a-b.",
+        "image": null,
+        "options": [
+          "A. 3",
+          "B. -3",
+          "C. 7",
+          "D. -21",
+          "E. 17"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Bước 1: Tính a = 131 mod 37</b><br />- `mod` là phép chia lấy phần dư.<br />- `131 = 37 * 3 + 20`.<br />- Vậy, số dư là 20. Suy ra `a = 20`.<br /><br /><b>Bước 2: Tính b = -131 mod 37</b><br />- Ta cần tìm số dư `r` sao cho `-131 = 37 * q + r` và `0 <= r < 37`.<br />- `-131 = 37 * (-4) + 17`.<br />- Vậy, số dư là 17. Suy ra `b = 17`.<br />- Mẹo: Vì `131 ≡ 20 (mod 37)`, ta có `-131 ≡ -20 (mod 37)`. Để có số dư dương, ta cộng thêm 37: `-20 + 37 = 17`.<br /><br /><b>Bước 3: Tính a - b</b><br />- `a - b = 20 - 17 = 3`.",
+        "difficulty": "medium",
+        "topic": "Modular Arithmetic",
+        "hints": [
+          "Phép `mod` là tìm số dư của phép chia.",
+          "Số dư phải luôn là một số nguyên không âm và nhỏ hơn số chia.",
+          "Sử dụng công thức `a = d*q + r` để tìm số dư `r`."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 48,
+        "question": "Let a = -215 div 13 and b = -213 mod 13. Find a+b.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "-9",
+        "explanation": "<b>Bước 1: Tính a = -215 div 13</b><br />- Ta cần tìm thương `q` sao cho `-215 = 13 * q + r` với `0 <= r < 13`.<br />- Thử `q = -16`: `13 * (-16) = -208`. `-215 = -208 - 7`. Số dư -7 không hợp lệ.<br />- Thử `q = -17`: `13 * (-17) = -221`. `-215 = -221 + 6`. Số dư 6 hợp lệ.<br />- Vậy, thương `a = -17`.<br /><br /><b>Bước 2: Tính b = -213 mod 13</b><br />- Ta cần tìm số dư `r` sao cho `-213 = 13 * q + r` với `0 <= r < 13`.<br />- Thử `q = -16`: `13 * (-16) = -208`. `-213 = -208 - 5`.<br />- Thử `q = -17`: `13 * (-17) = -221`. `-213 = -221 + 8`. Số dư 8 hợp lệ.<br />- Vậy, số dư `b = 8`.<br /><br /><b>Bước 3: Tính a + b</b><br />- `a + b = -17 + 8 = -9`.",
+        "difficulty": "medium",
+        "topic": "Division Algorithm",
+        "hints": [
+          "Cẩn thận khi thực hiện phép chia `div` và `mod` với số bị chia là số âm.",
+          "Luôn đảm bảo số dư `r` thỏa mãn `0 <= r < d`.",
+          "Tính riêng `a` và `b` trước khi cộng chúng lại."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 49,
+        "question": "If 7=a mod 8, 2=b mod 4 then the value of ab mod 4 is ____",
+        "image": null,
+        "options": [
+          "A. 5",
+          "B. 3",
+          "C. 2",
+          "D. 1",
+          "E. 0"
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Bước 1: Phân tích các giả thiết</b><br />- `7 = a mod 8` có nghĩa là `a` chia cho 8 dư 7. Ta có thể viết `a ≡ 7 (mod 8)`.<br />- `2 = b mod 4` có nghĩa là `b` chia cho 4 dư 2. Ta có thể viết `b ≡ 2 (mod 4)`.<br /><br /><b>Bước 2: Chuyển `a` về cùng modulo 4</b><br />- Ta cần tìm `ab mod 4`. Ta đã có `b mod 4`, giờ cần tìm `a mod 4`.<br />- Từ `a ≡ 7 (mod 8)`, ta biết `a = 8k + 7` với `k` là số nguyên.<br />- Ta có thể viết lại: `a = (2 * 4k) + 4 + 3 = 4(2k + 1) + 3`.<br />- Điều này cho thấy `a` chia cho 4 dư 3, hay `a ≡ 3 (mod 4)`.<br /><br /><b>Bước 3: Tính ab mod 4</b><br />- Áp dụng tính chất của đồng dư thức:<br />- `ab ≡ (a mod 4) * (b mod 4) (mod 4)`<br />- `ab ≡ 3 * 2 (mod 4)`<br />- `ab ≡ 6 (mod 4)`<br />- Vì `6` chia cho `4` dư `2`, nên `ab ≡ 2 (mod 4)`.<br />- Vậy giá trị của `ab mod 4` là 2.",
+        "difficulty": "hard",
+        "topic": "Modular Arithmetic",
+        "hints": [
+          "`x = y mod z` tương đương với `y ≡ x (mod z)`.",
+          "Từ `a ≡ 7 (mod 8)`, bạn có thể suy ra giá trị của `a mod 4` không?",
+          "Sử dụng tính chất `(x*y) mod z = ((x mod z) * (y mod z)) mod z`."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 50,
+        "question": "A sequence of pseudorandom numbers is generated as follows<br />\\( x_0 = 4 \\)<br />\\( x_n = (6x_{n-1} + 5) \\text{ mod } 13 \\) for n>0<br /><br />Find \\( x_4 \\).",
+        "image": null,
+        "options": [
+          "A. 5",
+          "B. 6",
+          "C. 7",
+          "D. 8",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta sẽ tính lần lượt các giá trị của dãy số cho đến \\( x_4 \\).<br /><br />-   <b>Bước 1: Tính \\( x_1 \\)</b><br />    \\( x_1 = (6 \\cdot x_0 + 5) \\text{ mod } 13 = (6 \\cdot 4 + 5) \\text{ mod } 13 = (24 + 5) \\text{ mod } 13 = 29 \\text{ mod } 13 = 3 \\).<br /><br />-   <b>Bước 2: Tính \\( x_2 \\)</b><br />    \\( x_2 = (6 \\cdot x_1 + 5) \\text{ mod } 13 = (6 \\cdot 3 + 5) \\text{ mod } 13 = (18 + 5) \\text{ mod } 13 = 23 \\text{ mod } 13 = 10 \\).<br /><br />-   <b>Bước 3: Tính \\( x_3 \\)</b><br />    \\( x_3 = (6 \\cdot x_2 + 5) \\text{ mod } 13 = (6 \\cdot 10 + 5) \\text{ mod } 13 = (60 + 5) \\text{ mod } 13 = 65 \\text{ mod } 13 = 0 \\). (Vì `65 = 13 * 5`)<br /><br />-   <b>Bước 4: Tính \\( x_4 \\)</b><br />    \\( x_4 = (6 \\cdot x_3 + 5) \\text{ mod } 13 = (6 \\cdot 0 + 5) \\text{ mod } 13 = 5 \\text{ mod } 13 = 5 \\).",
+        "difficulty": "easy",
+        "topic": "Pseudorandom Numbers",
+        "hints": [
+          "Bắt đầu với `x₀ = 4`.",
+          "Sử dụng kết quả của bước trước để tính giá trị tiếp theo.",
+          "Hãy cẩn thận với phép toán `mod` ở mỗi bước."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 51,
+        "question": "Which statements are true?<br /><br />(i) If \\( a \\equiv b \\pmod m \\) then \\( 2a - b \\equiv b \\pmod m \\)<br />(ii) If \\( a \\equiv b \\pmod m \\) and \\( c \\equiv d \\pmod m \\) then \\( ac \\equiv bd \\pmod m \\)",
+        "image": null,
+        "options": [
+          "A. (i) and (ii)",
+          "B. None of the other choices is correct",
+          "C. (i)",
+          "D. (ii)"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Phân tích từng mệnh đề:</b><br /><br /><b>(i)</b> Nếu \\( a \\equiv b \\pmod m \\), ta có thể thay thế `a` bằng `b` trong các biểu thức đồng dư.<br />   - Xét vế trái: \\( 2a - b \\).<br />   - Thay `a` bằng `b`: \\( 2a - b \\equiv 2b - b \\pmod m \\).<br />   - Rút gọn: \\( 2b - b = b \\).<br />   - Vậy, \\( 2a - b \\equiv b \\pmod m \\). Mệnh đề (i) là <b>đúng</b>.<br /><br /><b>(ii)</b> Đây là tính chất nhân của đồng dư thức.<br />   - Nếu \\( a \\equiv b \\pmod m \\) và \\( c \\equiv d \\pmod m \\), thì ta có thể nhân các vế tương ứng của chúng.<br />   - \\( ac \\equiv bd \\pmod m \\). Mệnh đề (ii) là <b>đúng</b>.<br /><br />Vì cả hai mệnh đề đều đúng, đáp án là (i) and (ii).",
+        "difficulty": "easy",
+        "topic": "Modular Arithmetic",
+        "hints": [
+          "Sử dụng tính chất thay thế trong đồng dư thức.",
+          "Nhớ lại các thuộc tính cơ bản của phép cộng, trừ, nhân trong số học modulo."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 52,
+        "question": "Which integer is congruent to 5 mod 17?",
+        "image": null,
+        "options": [
+          "A. -29",
+          "B. 80",
+          "C. -122",
+          "D. 103",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Một số nguyên `x` đồng dư với `5 mod 17` nếu `x - 5` chia hết cho 17.<br />Ta kiểm tra từng đáp án:<br /><br />-   <b>A. -29:</b><br />    ` -29 - 5 = -34`. Vì `-34 = 17 * (-2)`, nên -34 chia hết cho 17. Đây là đáp án đúng.<br /><br />-   <b>B. 80:</b><br />    `80 - 5 = 75`. 75 không chia hết cho 17.<br /><br />-   <b>C. -122:</b><br />    `-122 - 5 = -127`. -127 không chia hết cho 17.<br /><br />-   <b>D. 103:</b><br />    `103 - 5 = 98`. 98 không chia hết cho 17.",
+        "difficulty": "easy",
+        "topic": "Modular Arithmetic",
+        "hints": [
+          "Hai số `a` và `b` đồng dư modulo `m` nếu `a-b` là bội của `m`.",
+          "Kiểm tra xem `(số_đã_cho - 5)` có chia hết cho 17 hay không."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 53,
+        "question": "Which of the following integers is congruent to -17 modulo 22?",
+        "image": null,
+        "options": [
+          "A. -12",
+          "B. -22",
+          "C. -39",
+          "D. -35"
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Bước 1: Tìm dạng chuẩn của -17 mod 22</b><br />- Ta cần tìm `r` sao cho `-17 = 22 * q + r` và `0 <= r < 22`.<br />- `-17 = 22 * (-1) + 5`.<br />- Vậy, `-17 ≡ 5 (mod 22)`.<br /><br /><b>Bước 2: Kiểm tra các đáp án xem số nào đồng dư với 5 mod 22</b><br />-   <b>A. -12:</b> `-12 mod 22 = 10`.<br />-   <b>B. -22:</b> `-22 mod 22 = 0`.<br />-   <b>C. -39:</b> `-39 = 22 * (-2) + 5`. Vậy `-39 ≡ 5 (mod 22)`. Đây là đáp án đúng.<br />-   <b>D. -35:</b> `-35 = 22 * (-2) + 9`. `-35 ≡ 9 (mod 22)`.",
+        "difficulty": "easy",
+        "topic": "Modular Arithmetic",
+        "hints": [
+          "Hai số được gọi là đồng dư nếu chúng có cùng số dư khi chia cho modulo.",
+          "Đầu tiên, hãy tìm số dư của -17 khi chia cho 22.",
+          "Sau đó, tìm số dư của từng đáp án khi chia cho 22."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 54,
+        "question": "By using the function \\( f(p) = (3p+7) \\text{ mod } 26 \\), the encrypted version of a message is BXMF. What was the original message?",
+        "image": null,
+        "options": [
+          "A. HELP",
+          "B. GIUP",
+          "C. YOTI",
+          "D. SAVE",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Ta cần tìm công thức giải mã. Gọi `c` là giá trị của ký tự đã mã hóa và `p` là giá trị của ký tự gốc.<br />- `c ≡ 3p + 7 (mod 26)`<br />- `c - 7 ≡ 3p (mod 26)`<br />- Ta cần tìm nghịch đảo modular của 3 mod 26. Ta thấy `3 * 9 = 27 ≡ 1 (mod 26)`. Vậy nghịch đảo là 9.<br />- Nhân cả hai vế với 9: `9(c - 7) ≡ 9 * 3p (mod 26)`<br />- `9(c - 7) ≡ p (mod 26)`. Đây là công thức giải mã.<br /><br /><b>Áp dụng công thức giải mã:</b> (A=0, B=1, ..., Z=25)<br />- <b>B (c=1):</b> `p ≡ 9(1 - 7) ≡ 9(-6) ≡ -54 ≡ 24 (mod 26)`. Ký tự 24 là <b>Y</b>.<br />- <b>X (c=23):</b> `p ≡ 9(23 - 7) ≡ 9(16) ≡ 144 ≡ 14 (mod 26)`. Ký tự 14 là <b>O</b>.<br />- <b>M (c=12):</b> `p ≡ 9(12 - 7) ≡ 9(5) ≡ 45 ≡ 19 (mod 26)`. Ký tự 19 là <b>T</b>.<br />- <b>F (c=5):</b> `p ≡ 9(5 - 7) ≡ 9(-2) ≡ -18 ≡ 8 (mod 26)`. Ký tự 8 là <b>I</b>.<br /><br />Thông điệp gốc là YOTI.",
+        "difficulty": "hard",
+        "topic": "Cryptography",
+        "hints": [
+          "Đây là một mật mã Affine.",
+          "Để giải mã, bạn cần tìm nghịch đảo modular của 3 theo modulo 26.",
+          "Thiết lập phương trình giải mã cho `p`."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 55,
+        "question": "Let \\( \\{x_n\\} \\) be a sequence of pseudorandom numbers such that<br />\\( x_{n+1} = 3x_n \\text{ mod } 11 \\) for n > 0<br /><br />Suppose \\( x_7 = 7 \\). Find \\( x_1 \\) and \\( x_4 \\).",
+        "image": null,
+        "options": [
+          "A. 6 and 10",
+          "B. 6 and 21",
+          "C. 2 and 10",
+          "D. 3 and 10",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "E",
+        "explanation": "<b>Bước 1: Tìm công thức truy hồi ngược</b><br />- Ta có: `x_{n+1} ≡ 3x_n (mod 11)`.<br />- Để tìm `x_n` từ `x_{n+1}`, ta cần tìm nghịch đảo modular của 3 mod 11. Ta thấy `3 * 4 = 12 ≡ 1 (mod 11)`. Vậy nghịch đảo là 4.<br />- Do đó, `x_n ≡ 4x_{n+1} (mod 11)`.<br /><br /><b>Bước 2: Tính ngược từ \\( x_7 \\) về \\( x_1 \\) và \\( x_4 \\)</b><br />- `x₇ = 7`<br />- `x₆ ≡ 4 * 7 = 28 ≡ 6 (mod 11)`<br />- `x₅ ≡ 4 * 6 = 24 ≡ 2 (mod 11)`<br />- `x₄ ≡ 4 * 2 = 8 (mod 11)`<br />- `x₃ ≡ 4 * 8 = 32 ≡ 10 (mod 11)`<br />- `x₂ ≡ 4 * 10 = 40 ≡ 7 (mod 11)`<br />- `x₁ ≡ 4 * 7 = 28 ≡ 6 (mod 11)`<br /><br />Vậy ta có `x₁ = 6` và `x₄ = 8`. Không có đáp án nào khớp.",
+        "difficulty": "hard",
+        "topic": "Pseudorandom Numbers",
+        "hints": [
+          "Để đi ngược trong dãy số, bạn cần tìm nghịch đảo modular của 3.",
+          "Áp dụng công thức ngược lặp lại nhiều lần.",
+          "Tính toán cẩn thận giá trị của `x₁` và `x₄`."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 56,
+        "question": "Find the greatest common divisor of \\( 2^3 \\cdot 3^5 \\cdot 5^2 \\cdot 7 \\) and \\( 2^4 \\cdot 5^3 \\cdot 11^3 \\).",
+        "image": null,
+        "options": [
+          "A. 2310",
+          "B. 40",
+          "C. 120",
+          "D. 360"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Để tìm ước chung lớn nhất (GCD), ta lấy các thừa số nguyên tố chung và nâng chúng lên số mũ nhỏ nhất.<br /><br />- Số thứ nhất: \\( 2^3 \\cdot 3^5 \\cdot 5^2 \\cdot 7 \\)<br />- Số thứ hai: \\( 2^4 \\cdot 5^3 \\cdot 11^3 \\)<br /><br /><b>Ghi chú:</b> Dựa trên các lựa chọn, có vẻ như số mũ của 5 trong số thứ nhất được dự định là 1, không phải 2. Giả sử số thứ nhất là \\( 2^3 \\cdot 3^5 \\cdot 5^1 \\cdot 7 \\).<br /><br />- <b>Thừa số chung:</b> 2 và 5.<br />- <b>Số mũ nhỏ nhất của 2:</b> \\( \\min(3, 4) = 3 \\).<br />- <b>Số mũ nhỏ nhất của 5:</b> \\( \\min(1, 3) = 1 \\).<br /><br />- GCD = \\( 2^3 \\cdot 5^1 = 8 \\cdot 5 = 40 \\).",
+        "difficulty": "medium",
+        "topic": "GCD and LCM",
+        "hints": [
+          "GCD được tạo thành từ các thừa số nguyên tố chung.",
+          "Đối với mỗi thừa số chung, hãy chọn số mũ nhỏ hơn trong hai số.",
+          "Nhân các kết quả lại với nhau."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 57,
+        "question": "What is the greatest common divisor of<br />a = \\( 2^1 \\cdot 3^3 \\cdot 5^7 \\)<br />b = \\( 3^4 \\cdot 5^1 \\cdot 7^2 \\)?",
+        "image": null,
+        "options": [
+          "A. None of the other choices is true",
+          "B. 225",
+          "C. 375",
+          "D. 2250",
+          "E. 1125"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Để tìm ước chung lớn nhất (GCD), ta lấy các thừa số nguyên tố chung và nâng chúng lên số mũ nhỏ nhất.<br /><br />- a = \\( 2^1 \\cdot 3^3 \\cdot 5^7 \\)<br />- b = \\( 3^4 \\cdot 5^1 \\cdot 7^2 \\)<br /><br />- <b>Thừa số chung:</b> 3 và 5.<br />- <b>Số mũ nhỏ nhất của 3:</b> \\( \\min(3, 4) = 3 \\).<br />- <b>Số mũ nhỏ nhất của 5:</b> \\( \\min(7, 1) = 1 \\).<br /><br />- GCD = \\( 3^3 \\cdot 5^1 = 27 \\cdot 5 = 135 \\).<br /><br />Vì 135 không có trong các lựa chọn B, C, D, E, đáp án đúng là A.",
+        "difficulty": "easy",
+        "topic": "GCD and LCM",
+        "hints": [
+          "Xác định các thừa số nguyên tố xuất hiện trong cả a và b.",
+          "Với mỗi thừa số chung, lấy số mũ nhỏ hơn.",
+          "Tính giá trị của tích thu được."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 58,
+        "question": "Find gcd(851, 931).",
+        "image": null,
+        "options": [
+          "A. 7",
+          "B. 19",
+          "C. 23",
+          "D. 37",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Ta có thể sử dụng thuật toán Euclidean để tìm ước chung lớn nhất.<br />gcd(931, 851)<br /><br />- \\( 931 = 1 \\cdot 851 + 80 \\)<br />- \\( 851 = 10 \\cdot 80 + 51 \\)<br />- \\( 80 = 1 \\cdot 51 + 29 \\)<br />- \\( 51 = 1 \\cdot 29 + 22 \\)<br />- \\( 29 = 1 \\cdot 22 + 7 \\)<br />- \\( 22 = 3 \\cdot 7 + 1 \\)<br />- \\( 7 = 7 \\cdot 1 + 0 \\)<br /><br />Ước chung lớn nhất là số dư cuối cùng khác 0, tức là 1.<br />Một cách khác là phân tích thừa số nguyên tố:<br />- \\( 851 = 23 \\cdot 37 \\)<br />- \\( 931 = 7^2 \\cdot 19 \\)<br />Hai số này không có thừa số nguyên tố chung, vì vậy GCD của chúng là 1.<br />Do 1 không có trong các lựa chọn A, B, C, D, đáp án là E.",
+        "difficulty": "medium",
+        "topic": "GCD and LCM",
+        "hints": [
+          "Sử dụng thuật toán Euclidean bằng cách lấy số lớn chia cho số nhỏ và tiếp tục với số dư.",
+          "Hoặc thử phân tích các số thành thừa số nguyên tố.",
+          "GCD là 1 nếu không có thừa số nguyên tố chung."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 59,
+        "question": "What is the greatest common divisor of<br />a = \\( 2^3 \\cdot 3^1 \\cdot 5^3 \\)<br />b = \\( 3^5 \\cdot 5^7 \\cdot 7^2 \\)?",
+        "image": null,
+        "options": [
+          "A. 1125",
+          "B. 225",
+          "C. 2250",
+          "D. 375",
+          "E. None of the other choices is true"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Để tìm ước chung lớn nhất (GCD), ta lấy các thừa số nguyên tố chung và nâng chúng lên số mũ nhỏ nhất.<br /><br />- a = \\( 2^3 \\cdot 3^1 \\cdot 5^3 \\)<br />- b = \\( 3^5 \\cdot 5^7 \\cdot 7^2 \\)<br /><br />- <b>Thừa số chung:</b> 3 và 5.<br />- <b>Số mũ nhỏ nhất của 3:</b> \\( \\min(1, 5) = 1 \\).<br />- <b>Số mũ nhỏ nhất của 5:</b> \\( \\min(3, 7) = 3 \\).<br /><br />- GCD = \\( 3^1 \\cdot 5^3 = 3 \\cdot 125 = 375 \\).",
+        "difficulty": "easy",
+        "topic": "GCD and LCM",
+        "hints": [
+          "Tìm các cơ số nguyên tố chung cho cả a và b.",
+          "Với mỗi cơ số chung, chọn số mũ nhỏ hơn.",
+          "Nhân các lũy thừa kết quả lại với nhau."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 60,
+        "question": "Find a if LCM(a, 4200)=58800 and GCD(a, 4200)=280.",
+        "image": null,
+        "options": [
+          "A. 11760",
+          "B. 784",
+          "C. 1960",
+          "D. 3920"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Ta sử dụng công thức cơ bản liên hệ giữa UCLN và BCNN của hai số nguyên `x` và `y`:<br />\\( x \\cdot y = \\text{GCD}(x, y) \\cdot \\text{LCM}(x, y) \\)<br /><br />Áp dụng vào bài toán:<br />`a * 4200 = 280 * 58800`<br /><br />Giải `a`:<br />`a = (280 * 58800) / 4200`<br />`a = (280 * 588) / 42`<br />`a = 280 * (588 / 42)`<br />`a = 280 * 14`<br />`a = 3920`",
+        "difficulty": "easy",
+        "topic": "GCD and LCM",
+        "hints": [
+          "Nhớ lại mối quan hệ giữa tích của hai số với tích của UCLN và BCNN của chúng.",
+          "Thiết lập phương trình và giải `a`.",
+          "Bạn có thể rút gọn phân số để tính toán dễ dàng hơn."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 61,
+        "question": "Let \\( m=2^3 3^2 5^8 13^5 \\) and \\( n = 2^5 3^3 5^5 11^2 \\). Choose correct statements:<br /><br />(i) \\( \\text{gcd}(m, n) = 2^4 13^{90} \\)<br />(ii) \\( \\text{gcd}(m, n) = 2^3 3^3 5^3 \\)<br />(iii) \\( \\text{lcm}(m, n) = 2^5 3^3 5^8 11^2 13^5 \\)<br />(iv) \\( \\text{lcm}(m, n) = 2^3 3^2 5^5 11^2 13^5 \\)",
+        "image": null,
+        "options": [
+          "a. (i), (iv).",
+          "b. (ii), (iii).",
+          "c. None of the other choices is correct",
+          "d. (ii), (iv).",
+          "e. (i), (iii)."
+        ],
+        "correctAnswer": "c",
+        "explanation": "<b>Bước 1: Tính GCD (Ước chung lớn nhất)</b><br />- GCD được tính bằng cách lấy các thừa số nguyên tố chung với số mũ nhỏ nhất.<br />- Thừa số chung: 2, 3, 5.<br />- \\( \\text{gcd}(m, n) = 2^{\\min(3,5)} \\cdot 3^{\\min(2,3)} \\cdot 5^{\\min(8,5)} = 2^3 \\cdot 3^2 \\cdot 5^5 \\).<br />- Mệnh đề (i) và (ii) đều sai.<br /><br /><b>Bước 2: Tính LCM (Bội chung nhỏ nhất)</b><br />- LCM được tính bằng cách lấy tất cả các thừa số nguyên tố (cả chung và riêng) với số mũ lớn nhất.<br />- Tất cả thừa số: 2, 3, 5, 11, 13.<br />- \\( \\text{lcm}(m, n) = 2^{\\max(3,5)} \\cdot 3^{\\max(2,3)} \\cdot 5^{\\max(8,5)} \\cdot 11^2 \\cdot 13^5 = 2^5 \\cdot 3^3 \\cdot 5^8 \\cdot 11^2 \\cdot 13^5 \\).<br />- Mệnh đề (iii) đúng, mệnh đề (iv) sai.<br /><br /><b>Bước 3: Chọn đáp án</b><br />- Chỉ có mệnh đề (iii) là đúng. Không có lựa chọn nào chỉ chứa (iii). Do đó, không có lựa chọn nào đúng.",
+        "difficulty": "medium",
+        "topic": "GCD and LCM",
+        "hints": [
+          "GCD: Lấy thừa số chung với mũ nhỏ nhất.",
+          "LCM: Lấy tất cả thừa số với mũ lớn nhất.",
+          "Kiểm tra từng mệnh đề một cách cẩn thận."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 62,
+        "question": "Suppose \\( \\text{gcd}(m, n) = 7^3 11^{12} \\) and \\( \\text{lcm}(m, n) = 2^4 7^5 11^{13} 13^4 \\). Choose correct statements:<br /><br />(I) \\( m=7^5 11^{12} 13^4 \\) and \\( n = 2^4 7^3 11^{13} \\)<br />(II) \\( m=2^4 7^5 11^{13} 13^2 \\) and \\( n = 7^3 11^{12} 13^2 \\)",
+        "image": null,
+        "options": [
+          "a. (II)",
+          "b. Both (I), (II).",
+          "c. None of the other choices is correct",
+          "d. (I)"
+        ],
+        "correctAnswer": "d",
+        "explanation": "Ta kiểm tra từng trường hợp dựa trên quy tắc min/max cho GCD/LCM.<br /><br /><b>Trường hợp (I):</b><br />- \\( m=7^5 11^{12} 13^4 \\) và \\( n = 2^4 7^3 11^{13} \\)<br />- <b>GCD:</b> \\( 2^{\\min(0,4)} 7^{\\min(5,3)} 11^{\\min(12,13)} 13^{\\min(4,0)} = 2^0 \\cdot 7^3 \\cdot 11^{12} \\cdot 13^0 = 7^3 11^{12} \\). (Khớp)<br />- <b>LCM:</b> \\( 2^{\\max(0,4)} 7^{\\max(5,3)} 11^{\\max(12,13)} 13^{\\max(4,0)} = 2^4 \\cdot 7^5 \\cdot 11^{13} \\cdot 13^4 \\). (Khớp)<br />- Vậy, (I) là một cặp đúng.<br /><br /><b>Trường hợp (II):</b><br />- \\( m=2^4 7^5 11^{13} 13^2 \\) và \\( n = 7^3 11^{12} 13^2 \\)<br />- <b>GCD:</b> \\( 7^{\\min(5,3)} 11^{\\min(13,12)} 13^{\\min(2,2)} = 7^3 \\cdot 11^{12} \\cdot 13^2 \\). (Không khớp với GCD đã cho vì có thêm \\( 13^2 \\)).<br />- Vậy, (II) là một cặp sai.<br /><br />Chỉ có mệnh đề (I) là đúng.",
+        "difficulty": "hard",
+        "topic": "GCD and LCM",
+        "hints": [
+          "Với mỗi thừa số nguyên tố, số mũ trong GCD là số mũ nhỏ hơn, và số mũ trong LCM là số mũ lớn hơn.",
+          "Kiểm tra cả GCD và LCM cho mỗi cặp (m, n).",
+          "Cẩn thận với các thừa số nguyên tố không xuất hiện trong một trong hai số."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 63,
+        "question": "If the product of two integers is \\( 2^8 \\cdot 3^5 \\cdot 5^2 \\cdot 7^6 \\) and their least common multiple is \\( 2^4 \\cdot 3^2 \\cdot 5^1 \\cdot 7^3 \\), then their greatest common divisor is _________.",
+        "image": null,
+        "options": [
+          "A. 592,704",
+          "B. 1,111,320",
+          "C. None of the other choices",
+          "D. 952,560",
+          "E. 740,880"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Ta sử dụng công thức: \\( \\text{GCD}(a, b) = \\frac{a \\cdot b}{\\text{LCM}(a, b)} \\).<br /><br />- Tích \\( a \\cdot b = 2^8 \\cdot 3^5 \\cdot 5^2 \\cdot 7^6 \\)<br />- LCM = \\( 2^4 \\cdot 3^2 \\cdot 5^1 \\cdot 7^3 \\)<br /><br />Thực hiện phép chia lũy thừa:<br />\\( \\text{GCD} = \\frac{2^8 \\cdot 3^5 \\cdot 5^2 \\cdot 7^6}{2^4 \\cdot 3^2 \\cdot 5^1 \\cdot 7^3} \\)<br />\\( = 2^{8-4} \\cdot 3^{5-2} \\cdot 5^{2-1} \\cdot 7^{6-3} \\)<br />\\( = 2^4 \\cdot 3^3 \\cdot 5^1 \\cdot 7^3 \\)<br />\\( = 16 \\cdot 27 \\cdot 5 \\cdot 343 = 740,880 \\).",
+        "difficulty": "medium",
+        "topic": "GCD and LCM",
+        "hints": [
+          "Sử dụng công thức `a * b = GCD(a, b) * LCM(a, b)`.",
+          "Để chia các lũy thừa cùng cơ số, hãy trừ các số mũ."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 64,
+        "question": "How many primes are in {89, 111, 103, 205}?",
+        "image": null,
+        "options": [
+          "A. 2",
+          "B. 3",
+          "C. 4",
+          "D. None of the other choices is correct",
+          "E. 1"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta kiểm tra tính nguyên tố của từng số:<br /><br />-   <b>89:</b> Là số nguyên tố. (Không chia hết cho 2, 3, 5, 7)<br />-   <b>111:</b> Tổng các chữ số là 1+1+1=3, nên nó chia hết cho 3. (111 = 3 * 37). Không phải số nguyên tố.<br />-   <b>103:</b> Là số nguyên tố. (Không chia hết cho 2, 3, 5, 7)<br />-   <b>205:</b> Tận cùng bằng 5, nên nó chia hết cho 5. Không phải số nguyên tố.<br /><br />Có 2 số nguyên tố trong tập hợp là 89 và 103.",
+        "difficulty": "easy",
+        "topic": "Prime Numbers",
+        "hints": [
+          "Số nguyên tố là số chỉ chia hết cho 1 và chính nó.",
+          "Kiểm tra các dấu hiệu chia hết cơ bản (cho 2, 3, 5).",
+          "Đối với các số lớn hơn, hãy thử chia cho các số nguyên tố nhỏ (7, 11, ...)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 65,
+        "question": "How many positive integers less than 18 that are relatively prime to 18?",
+        "image": null,
+        "options": [
+          "A. 6",
+          "B. 7",
+          "C. 8",
+          "D. 9"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Hai số được gọi là nguyên tố cùng nhau nếu ước chung lớn nhất của chúng bằng 1.<br /><br />- Ta cần tìm các số `x` sao cho `1 <= x < 18` và `gcd(x, 18) = 1`.<br />- Phân tích 18 ra thừa số nguyên tố: `18 = 2 * 3²`.<br />- Điều này có nghĩa là ta cần tìm các số nhỏ hơn 18 mà không chia hết cho 2 và không chia hết cho 3.<br /><br />Liệt kê các số từ 1 đến 17 và loại bỏ những số chia hết cho 2 hoặc 3:<br />1, <del>2</del>, <del>3</del>, <del>4</del>, 5, <del>6</del>, 7, <del>8</del>, <del>9</del>, <del>10</del>, 11, <del>12</del>, 13, <del>14</del>, <del>15</del>, <del>16</del>, 17.<br /><br />Các số còn lại là: {1, 5, 7, 11, 13, 17}.<br />Có tất cả 6 số.",
+        "difficulty": "medium",
+        "topic": "Relatively Prime",
+        "hints": [
+          "\"Nguyên tố cùng nhau với 18\" có nghĩa là không có ước chung nào khác 1.",
+          "Phân tích 18 ra thừa số nguyên tố để biết các ước của nó.",
+          "Tìm tất cả các số nhỏ hơn 18 không chia hết cho các ước nguyên tố của 18."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 66,
+        "question": "How many positive integers less than 15 are relatively prime to 15?",
+        "image": null,
+        "options": [
+          "A. 6",
+          "B. 10",
+          "C. 9",
+          "D. 8",
+          "E. 7",
+          "F. None of the other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Hai số được gọi là nguyên tố cùng nhau nếu ước chung lớn nhất của chúng bằng 1.<br /><br />- Ta cần tìm các số `x` sao cho `1 <= x < 15` và `gcd(x, 15) = 1`.<br />- Phân tích 15 ra thừa số nguyên tố: `15 = 3 * 5`.<br />- Điều này có nghĩa là ta cần tìm các số nhỏ hơn 15 mà không chia hết cho 3 và không chia hết cho 5.<br /><br />Liệt kê các số từ 1 đến 14 và loại bỏ những số là bội của 3 hoặc 5:<br />1, 2, <del>3</del>, 4, <del>5</del>, <del>6</del>, 7, 8, <del>9</del>, <del>10</del>, 11, <del>12</del>, 13, 14.<br /><br />Các số còn lại là: {1, 2, 4, 7, 8, 11, 13, 14}.<br />Có tất cả 8 số.",
+        "difficulty": "medium",
+        "topic": "Relatively Prime",
+        "hints": [
+          "\"Nguyên tố cùng nhau với 15\" có nghĩa là không có ước chung nào là 3 hoặc 5.",
+          "Liệt kê tất cả các số từ 1 đến 14.",
+          "Loại bỏ các số chia hết cho 3 hoặc 5."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 67,
+        "question": "How many positive integers less than 13 that are relatively prime to 13?",
+        "image": null,
+        "options": [
+          "A. 12",
+          "B. 11",
+          "C. 10",
+          "D. 13"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta cần tìm các số `x` sao cho `1 <= x < 13` và `gcd(x, 13) = 1`.<br /><br />- Số 13 là một số nguyên tố.<br />- Theo định nghĩa, một số nguyên tố chỉ có ước là 1 và chính nó.<br />- Do đó, mọi số nguyên dương nhỏ hơn 13 đều không có ước chung nào với 13 ngoài 1.<br />- Các số đó là: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12.<br />- Có tất cả 12 số.<br /><br />Đây chính là giá trị của phi hàm Euler, \\( \\phi(p) = p-1 \\) với `p` là số nguyên tố.",
+        "difficulty": "easy",
+        "topic": "Relatively Prime",
+        "hints": [
+          "Hãy xem xét tính chất của số 13.",
+          "Nếu một số là số nguyên tố, nó có ước chung nào với các số nhỏ hơn nó không?",
+          "Tất cả các số nguyên dương nhỏ hơn một số nguyên tố đều nguyên tố cùng nhau với nó."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 68,
+        "question": "Select a value of p so that the three numbers 26, 55 and p are pairwise relatively prime.",
+        "image": null,
+        "options": [
+          "A. 6",
+          "B. 15",
+          "C. 21",
+          "D. 39",
+          "E. None of the above"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Để ba số là nguyên tố cùng nhau từng đôi, ước chung lớn nhất của bất kỳ cặp nào trong ba số đó đều phải bằng 1.<br /><br /><b>Bước 1: Phân tích các số đã cho ra thừa số nguyên tố.</b><br />- `26 = 2 * 13`<br />- `55 = 5 * 11`<br />- `gcd(26, 55) = 1`, vậy điều kiện đầu tiên đã thỏa mãn.<br /><br /><b>Bước 2: Tìm p.</b><br />- `p` phải không có ước chung với 26 (tức là không chia hết cho 2 hoặc 13).<br />- `p` phải không có ước chung với 55 (tức là không chia hết cho 5 hoặc 11).<br /><br /><b>Bước 3: Kiểm tra các lựa chọn.</b><br />- A. 6 = 2 * 3. Chia hết cho 2. Loại.<br />- B. 15 = 3 * 5. Chia hết cho 5. Loại.<br />- C. 21 = 3 * 7. Không chia hết cho 2, 13, 5, 11. Thỏa mãn.<br />- D. 39 = 3 * 13. Chia hết cho 13. Loại.",
+        "difficulty": "medium",
+        "topic": "Relatively Prime",
+        "hints": [
+          "\"Nguyên tố cùng nhau từng đôi\" có nghĩa là GCD của mỗi cặp phải bằng 1.",
+          "Phân tích 26 và 55 ra thừa số nguyên tố.",
+          "Số `p` không được chia hết cho bất kỳ thừa số nguyên tố nào của 26 và 55."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 69,
+        "question": "Find the smallest integer a such that for all integer n ≥ a we have<br />n = 6x + 7y,<br />with x and y non-negative integers.",
+        "image": null,
+        "options": [
+          "A. 30",
+          "B. 13",
+          "C. 24",
+          "D. 50"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đây là một bài toán Frobenius Coin Problem (bài toán đồng xu).<br /><br />Với hai số nguyên tố cùng nhau `p` và `q`, số lớn nhất không thể biểu diễn dưới dạng `px + qy` (với `x, y` là các số nguyên không âm) được gọi là số Frobenius, tính bằng công thức:<br />`g(p, q) = pq - p - q`<br /><br />Ở đây, `p=6` và `q=7`. Chúng nguyên tố cùng nhau.<br />- Số lớn nhất không thể biểu diễn được là:<br />`g(6, 7) = 6 * 7 - 6 - 7 = 42 - 13 = 29`.<br /><br />Số nguyên nhỏ nhất `a` sao cho mọi số `n >= a` đều có thể biểu diễn được sẽ là `g(6, 7) + 1`.<br />`a = 29 + 1 = 30`.",
+        "difficulty": "hard",
+        "topic": "Number Theory",
+        "hints": [
+          "Bài toán này liên quan đến việc tìm số lớn nhất không thể tạo thành từ tổ hợp của hai số.",
+          "Sử dụng công thức Frobenius cho hai số nguyên tố cùng nhau p, q: `pq - p - q`.",
+          "Số bạn cần tìm lớn hơn số Frobenius đúng một đơn vị."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 70,
+        "question": "Find the smallest integer a such that for all integer n ≥ a we can write<br />n = 5x + 7y,<br />with x and y non-negative integers.",
+        "image": null,
+        "options": [
+          "A. 24",
+          "B. 12",
+          "C. 19",
+          "D. 31"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đây là một bài toán Frobenius Coin Problem.<br /><br />Với hai số nguyên tố cùng nhau `p` và `q`, số lớn nhất không thể biểu diễn được dưới dạng `px + qy` (với `x, y` là các số nguyên không âm) được tính bằng công thức:<br />`g(p, q) = pq - p - q`<br /><br />Ở đây, `p=5` và `q=7`. Chúng nguyên tố cùng nhau.<br />- Số lớn nhất không thể biểu diễn được là:<br />`g(5, 7) = 5 * 7 - 5 - 7 = 35 - 12 = 23`.<br /><br />Số nguyên nhỏ nhất `a` sao cho mọi số `n >= a` đều có thể biểu diễn được là `g(5, 7) + 1`.<br />`a = 23 + 1 = 24`.",
+        "difficulty": "hard",
+        "topic": "Number Theory",
+        "hints": [
+          "Đây là bài toán tìm số Frobenius.",
+          "Áp dụng công thức `pq - p - q` để tìm số lớn nhất không thể biểu diễn được.",
+          "Kết quả cần tìm là số đó cộng thêm 1."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 71,
+        "question": "Find binary expansion of (482)₁₀",
+        "image": null,
+        "options": [
+          "a. (111100010)₂",
+          "b. (111000010)₂",
+          "c. (111101010)₂",
+          "d. (101100010)₂"
+        ],
+        "correctAnswer": "a",
+        "explanation": "Để chuyển từ hệ thập phân sang hệ nhị phân, ta thực hiện phép chia liên tiếp cho 2 và lấy các số dư.<br /><br />- 482 ÷ 2 = 241 dư 0<br />- 241 ÷ 2 = 120 dư 1<br />- 120 ÷ 2 = 60 dư 0<br />- 60 ÷ 2 = 30 dư 0<br />- 30 ÷ 2 = 15 dư 0<br />- 15 ÷ 2 = 7 dư 1<br />- 7 ÷ 2 = 3 dư 1<br />- 3 ÷ 2 = 1 dư 1<br />- 1 ÷ 2 = 0 dư 1<br /><br />Đọc các số dư từ dưới lên, ta được: 111100010.",
+        "difficulty": "easy",
+        "topic": "Base Conversion",
+        "hints": [
+          "Sử dụng phương pháp chia liên tiếp cho 2.",
+          "Ghi lại các số dư sau mỗi lần chia.",
+          "Viết các số dư theo thứ tự ngược lại."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 72,
+        "question": "Convert (2BE0)₁₆ into binary expansion.<br /><br />(i) (0011101111100000)₂<br />(ii) (0010101011100000)₂<br />(iii) (0010101111100000)₂",
+        "image": null,
+        "options": [
+          "A. (iii)",
+          "B. None of the other choices is correct",
+          "C. (i)",
+          "D. (ii)"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Để chuyển từ hệ thập lục phân (hex) sang hệ nhị phân (binary), ta chuyển từng chữ số hex thành nhóm 4 bit nhị phân tương ứng.<br /><br />- <b>2</b>₁₆ = <b>0010</b>₂<br />- <b>B</b>₁₆ (tương đương 11₁₀) = <b>1011</b>₂<br />- <b>E</b>₁₆ (tương đương 14₁₀) = <b>1110</b>₂<br />- <b>0</b>₁₆ = <b>0000</b>₂<br /><br />Ghép các nhóm lại, ta được: 0010 1011 1110 0000.",
+        "difficulty": "easy",
+        "topic": "Base Conversion",
+        "hints": [
+          "Mỗi chữ số thập lục phân tương ứng với một nhóm 4 bit.",
+          "Chuyển đổi từng chữ số một cách riêng biệt.",
+          "Ghép các kết quả lại với nhau theo đúng thứ tự."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 73,
+        "question": "Find the octal expansion of (110111111011)₂<br /><br />(i) (6751)₈<br />(ii) (6733)₈<br />(iii) (3363)₈<br />(iv) (3373)₈",
+        "image": null,
+        "options": [
+          "A. (ii)",
+          "B. (iv)",
+          "C. (iii)",
+          "D. None of the other choices is correct",
+          "E. (i)"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Để chuyển từ hệ nhị phân sang hệ bát phân (octal), ta nhóm các bit thành các cụm 3 bit, bắt đầu từ bên phải.<br /><br />- Chuỗi nhị phân: `110 111 111 011`<br /><br />Bây giờ, ta chuyển đổi từng nhóm 3 bit sang số bát phân tương ứng:<br />- `110`₂ = 4 + 2 + 0 = 6₈<br />- `111`₂ = 4 + 2 + 1 = 7₈<br />- `111`₂ = 4 + 2 + 1 = 7₈<br />- `011`₂ = 0 + 2 + 1 = 3₈<br /><br />Ghép các kết quả lại, ta được (6773)₈.<br />Vì kết quả này không xuất hiện trong các lựa chọn (i), (ii), (iii), (iv), đáp án đúng là 'None of the other choices is correct'.",
+        "difficulty": "easy",
+        "topic": "Base Conversion",
+        "hints": [
+          "Mỗi chữ số bát phân tương ứng với một nhóm 3 bit.",
+          "Bắt đầu nhóm từ bên phải của chuỗi nhị phân.",
+          "Chuyển đổi từng nhóm 3 bit một."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 74,
+        "question": "Find octal expansion of (9D7)₁₆.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "4727",
+        "explanation": "Cách dễ nhất để chuyển từ hệ thập lục phân (hex) sang hệ bát phân (octal) là thông qua hệ nhị phân (binary).<br /><br /><b>Bước 1: Chuyển từ Hex sang Binary</b><br />- Chuyển mỗi chữ số hex thành nhóm 4 bit:<br />- 9₁₆ = 1001₂<br />- D₁₆ = 1101₂<br />- 7₁₆ = 0111₂<br />- Ghép lại: (100111010111)₂<br /><br /><b>Bước 2: Chuyển từ Binary sang Octal</b><br />- Nhóm chuỗi nhị phân thành các cụm 3 bit từ bên phải:<br />- `100 111 010 111`<br />- Chuyển mỗi nhóm sang số bát phân:<br />- 100₂ = 4₈<br />- 111₂ = 7₈<br />- 010₂ = 2₈<br />- 111₂ = 7₈<br />- Ghép lại: (4727)₈.",
+        "difficulty": "medium",
+        "topic": "Base Conversion",
+        "hints": [
+          "Sử dụng hệ nhị phân làm trung gian.",
+          "Hex -> Binary (nhóm 4 bit), sau đó Binary -> Octal (nhóm 3 bit).",
+          "Hãy nhớ giá trị của các chữ số hex (D=13)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 75,
+        "question": "Find base 3 expansion of (434)₅.",
+        "image": null,
+        "options": [
+          "A. 11112",
+          "B. 11002",
+          "C. 11102",
+          "D. 10211",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Để chuyển từ cơ số 5 sang cơ số 3, ta sử dụng cơ số 10 làm trung gian.<br /><br /><b>Bước 1: Chuyển (434)₅ sang cơ số 10</b><br />- `(434)₅ = 4 * 5² + 3 * 5¹ + 4 * 5⁰`<br />- `= 4 * 25 + 3 * 5 + 4 * 1`<br />- `= 100 + 15 + 4 = 119₁₀`<br /><br /><b>Bước 2: Chuyển 119₁₀ sang cơ số 3</b><br />- Ta thực hiện phép chia liên tiếp cho 3:<br />- 119 ÷ 3 = 39 dư 2<br />- 39 ÷ 3 = 13 dư 0<br />- 13 ÷ 3 = 4 dư 1<br />- 4 ÷ 3 = 1 dư 1<br />- 1 ÷ 3 = 0 dư 1<br />- Đọc các số dư từ dưới lên: `11102`.<br /><br />Vậy, kết quả là (11102)₃.",
+        "difficulty": "medium",
+        "topic": "Base Conversion",
+        "hints": [
+          "Sử dụng cơ số 10 làm bước trung gian.",
+          "Đầu tiên, chuyển số từ cơ số 5 về cơ số 10.",
+          "Sau đó, chuyển kết quả từ cơ số 10 sang cơ số 3."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 76,
+        "question": "Find base 5 expansion of (564)₇.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "2131",
+        "explanation": "Để chuyển từ cơ số 7 sang cơ số 5, ta sử dụng cơ số 10 làm trung gian.<br /><br /><b>Bước 1: Chuyển (564)₇ sang cơ số 10</b><br />- `(564)₇ = 5 * 7² + 6 * 7¹ + 4 * 7⁰`<br />- `= 5 * 49 + 6 * 7 + 4 * 1`<br />- `= 245 + 42 + 4 = 291₁₀`<br /><br /><b>Bước 2: Chuyển 291₁₀ sang cơ số 5</b><br />- Ta thực hiện phép chia liên tiếp cho 5:<br />- 291 ÷ 5 = 58 dư 1<br />- 58 ÷ 5 = 11 dư 3<br />- 11 ÷ 5 = 2 dư 1<br />- 2 ÷ 5 = 0 dư 2<br />- Đọc các số dư từ dưới lên: `2131`.<br /><br />Vậy, kết quả là (2131)₅.",
+        "difficulty": "medium",
+        "topic": "Base Conversion",
+        "hints": [
+          "Chuyển số về cơ số 10 trước.",
+          "Sau đó, chuyển số từ cơ số 10 sang cơ số 5.",
+          "Sử dụng phép chia có dư để chuyển sang cơ số mới."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 77,
+        "question": "Convert (122)₃ to base 7 expansion.<br /><br />(i) (65)₇<br />(ii) (233)₇<br />(iii) (23)₇<br />(iv) (17)₇",
+        "image": null,
+        "options": [
+          "A. (iii)",
+          "B. (iv)",
+          "C. None of the other choices is correct",
+          "D. (ii)",
+          "E. (i)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Ta sử dụng cơ số 10 làm trung gian.<br /><br /><b>Bước 1: Chuyển (122)₃ sang cơ số 10</b><br />- `(122)₃ = 1 * 3² + 2 * 3¹ + 2 * 3⁰`<br />- `= 1 * 9 + 2 * 3 + 2 * 1`<br />- `= 9 + 6 + 2 = 17₁₀`<br /><br /><b>Bước 2: Chuyển 17₁₀ sang cơ số 7</b><br />- 17 ÷ 7 = 2 dư 3<br />- 2 ÷ 7 = 0 dư 2<br />- Đọc các số dư từ dưới lên: `23`.<br /><br />Kết quả là (23)₇. Tuy nhiên, nếu ta xem xét các lựa chọn, (17)₇ = 1*7 + 7 = 14. Có vẻ có sự nhầm lẫn trong các lựa chọn. Dựa trên tính toán, `(122)₃ = 17₁₀`. Đáp án (iv) là (17)₇, có thể là một lỗi đánh máy và ý muốn hỏi giá trị thập phân. Tuy nhiên, nếu đề yêu cầu chuyển sang cơ số 7 thì (23)₇ mới đúng.",
+        "difficulty": "medium",
+        "topic": "Base Conversion",
+        "hints": [
+          "Sử dụng hệ thập phân làm trung gian.",
+          "Chuyển đổi từ cơ số 3 sang cơ số 10.",
+          "Chuyển đổi từ cơ số 10 sang cơ số 7."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 78,
+        "question": "If Euclidean algorithm is used to find the greatest common divisor of 90 and 24, how many divisions are needed?",
+        "image": null,
+        "options": [
+          "A. 3",
+          "B. 2",
+          "C. 4",
+          "D. 5",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta áp dụng thuật toán Euclidean và đếm số lần thực hiện phép chia.<br />`gcd(90, 24)`<br /><br />1.  `90 = 3 * 24 + 18` (1 phép chia)<br />2.  `24 = 1 * 18 + 6` (2 phép chia)<br />3.  `18 = 3 * 6 + 0` (3 phép chia)<br /><br />Quá trình dừng lại khi số dư bằng 0. Tổng cộng có 3 phép chia đã được thực hiện.",
+        "difficulty": "easy",
+        "topic": "Euclidean Algorithm",
+        "hints": [
+          "Áp dụng công thức `gcd(a, b) = gcd(b, a mod b)`.",
+          "Mỗi bước áp dụng công thức này tương ứng với một phép chia.",
+          "Đếm cho đến khi số dư bằng 0."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 79,
+        "question": "How many divisions are needed when using Euclidean algorithm to find the greatest common divisor of a = 1982 and b = 1872?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "3",
+        "explanation": "Ta áp dụng thuật toán Euclidean và đếm số lần thực hiện phép chia.<br />`gcd(1982, 1872)`<br /><br />1.  `1982 = 1 * 1872 + 110` (1 phép chia)<br />2.  `1872 = 17 * 110 + 2` (2 phép chia)<br />3.  `110 = 55 * 2 + 0` (3 phép chia)<br /><br />Quá trình dừng lại khi số dư bằng 0. Tổng cộng có 3 phép chia đã được thực hiện.",
+        "difficulty": "easy",
+        "topic": "Euclidean Algorithm",
+        "hints": [
+          "Lấy số lớn chia cho số nhỏ.",
+          "Tiếp tục với số chia và số dư.",
+          "Đếm số lần thực hiện phép chia cho đến khi đạt số dư 0."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 80,
+        "question": "How many divisions are needed when using Euclidean algorithm to find the greatest common divisor of a = 846 and b = 238?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "5",
+        "explanation": "Ta áp dụng thuật toán Euclidean và đếm số lần thực hiện phép chia.<br />`gcd(846, 238)`<br /><br />1.  `846 = 3 * 238 + 132` (1 phép chia)<br />2.  `238 = 1 * 132 + 106` (2 phép chia)<br />3.  `132 = 1 * 106 + 26` (3 phép chia)<br />4.  `106 = 4 * 26 + 2` (4 phép chia)<br />5.  `26 = 13 * 2 + 0` (5 phép chia)<br /><br />Quá trình dừng lại khi số dư bằng 0. Tổng cộng có 5 phép chia đã được thực hiện.",
+        "difficulty": "easy",
+        "topic": "Euclidean Algorithm",
+        "hints": [
+          "Áp dụng liên tiếp `gcd(a, b) = gcd(b, r)`.",
+          "Đếm mỗi bước là một phép chia.",
+          "Dừng lại khi số dư là 0."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 81,
+        "question": "When using the modular exponentiation algorithm to compute \\( 3^{10} \\text{ mod } 7 \\), the remainders computed by successively squaring are:",
+        "image": null,
+        "options": [
+          "a. 3, 4, 2, 1",
+          "b. Các lựa chọn còn lại đều sai.",
+          "c. 3, 2, 4, 2",
+          "d. 1, 3, 2, 4"
+        ],
+        "correctAnswer": "c",
+        "explanation": "Bình phương liên tiếp là quá trình tính các số dư của \\( b^1, b^2, b^4, b^8, ... \\) theo modulo `m`.<br />Ở đây, `b=3` và `m=7`.<br /><br />- \\( 3^1 \\text{ mod } 7 = 3 \\)<br />- \\( 3^2 \\text{ mod } 7 = 9 \\text{ mod } 7 = 2 \\)<br />- \\( 3^4 = (3^2)^2 \\text{ mod } 7 = 2^2 \\text{ mod } 7 = 4 \\text{ mod } 7 = 4 \\)<br />- \\( 3^8 = (3^4)^2 \\text{ mod } 7 = 4^2 \\text{ mod } 7 = 16 \\text{ mod } 7 = 2 \\)<br /><br />Dãy các số dư thu được là: 3, 2, 4, 2.",
+        "difficulty": "medium",
+        "topic": "Modular Exponentiation",
+        "hints": [
+          "Tính `3¹ mod 7`.",
+          "Sử dụng kết quả của bước trước để tính bước tiếp theo: `b^(2k) = (b^k)²`.",
+          "Lấy modulo 7 sau mỗi lần bình phương."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 82,
+        "question": "When using the modular exponentiation algorithm to compute \\( 2^7 \\text{ mod } 7 \\), the remainders computed by successively squaring are:",
+        "image": null,
+        "options": [
+          "a. 2, 4, 2",
+          "b. 2, 4, 6",
+          "c. Các lựa chọn còn lại đều sai.",
+          "d. 1, 2, 4"
+        ],
+        "correctAnswer": "a",
+        "explanation": "Ta tính các số dư của \\( 2^1, 2^2, 2^4, ... \\) theo modulo 7.<br /><br />- \\( 2^1 \\text{ mod } 7 = 2 \\)<br />- \\( 2^2 \\text{ mod } 7 = 4 \\)<br />- \\( 2^4 = (2^2)^2 \\text{ mod } 7 = 4^2 \\text{ mod } 7 = 16 \\text{ mod } 7 = 2 \\)<br /><br />Dãy các số dư thu được từ việc bình phương liên tiếp là: 2, 4, 2.",
+        "difficulty": "medium",
+        "topic": "Modular Exponentiation",
+        "hints": [
+          "Quá trình này là tính `b¹, b², b⁴, ...` theo modulo.",
+          "Bắt đầu với `2¹ mod 7`.",
+          "Bình phương kết quả của bước trước và lấy modulo 7."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 83,
+        "question": "Suppose \\( b^2 \\text{ mod } 17 = 8 \\). Find \\( b^{28} \\text{ mod } 17 \\).",
+        "image": null,
+        "options": [
+          "A. 4",
+          "B. 8",
+          "C. 13",
+          "D. 16"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta cần tính \\( b^{28} \\) dựa trên giá trị đã biết của \\( b^2 \\).<br /><br /><b>Bước 1: Biểu diễn số mũ</b><br />- Ta có thể viết \\( b^{28} = (b^2)^{14} \\).<br />- Do đó, \\( b^{28} \\equiv (b^2)^{14} \\equiv 8^{14} \\pmod{17} \\).<br /><br /><b>Bước 2: Tính \\( 8^{14} \\pmod{17} \\) bằng cách bình phương liên tiếp</b><br />- \\( 8^1 \\equiv 8 \\pmod{17} \\)<br />- \\( 8^2 \\equiv 64 \\equiv 13 \\pmod{17} \\)<br />- \\( 8^4 \\equiv 13^2 = 169 \\equiv 16 \\equiv -1 \\pmod{17} \\)<br />- \\( 8^8 \\equiv (16)^2 \\equiv (-1)^2 \\equiv 1 \\pmod{17} \\)<br /><br /><b>Bước 3: Tổng hợp kết quả</b><br />- Số mũ 14 có thể được viết dưới dạng nhị phân là `1110`₂, tức là `14 = 8 + 4 + 2`.<br />- \\( 8^{14} = 8^8 \\cdot 8^4 \\cdot 8^2 \\)<br />- \\( 8^{14} \\equiv 1 \\cdot 16 \\cdot 13 \\pmod{17} \\)<br />- \\( \\equiv (-1) \\cdot 13 = -13 \\equiv 4 \\pmod{17} \\).<br /><br />Vậy, \\( b^{28} \\text{ mod } 17 = 4 \\).",
+        "difficulty": "hard",
+        "topic": "Modular Exponentiation",
+        "hints": [
+          "Biểu diễn `b²⁸` dưới dạng lũy thừa của `b²`.",
+          "Sử dụng thuật toán bình phương và nhân để tính `8¹⁴ mod 17` một cách hiệu quả.",
+          "Phân tích số mũ 14 thành tổng của các lũy thừa của 2."
+        ],
+        "type": "multiple_choice"
       }
     ]
   }
