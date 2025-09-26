@@ -1,0 +1,153 @@
+{
+    "examId": "chuong3_slide",
+    "title": "Bài tập chương 3 trong slide bài giảng",
+    "description": "Các câu hỏi về thiết kế thuật toán, đánh giá độ phức tạp (Big-O) và đánh giá độ phức tạc (Big-Omega).",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Devise an algorithm that finds the first term of a sequence of integers that equals some previous term in the sequence. Give a big-oh estimate for this algorithm.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>Algorithm (Pseudocode):</b><br />```<br />procedure findFirstDuplicate(a₁, a₂, ..., aₙ):<br />  for i := 2 to n<br />    for j := 1 to i - 1<br />      if aᵢ = aⱼ then<br />        return aᵢ<br />  return \"no duplicate found\"<br />```<br /><br /><b>Big-O Estimate:</b> \\( O(n^2) \\)",
+        "explanation": "<h3>Tư duy xây dựng thuật toán</h3><br /><b>Ý tưởng cốt lõi:</b> Ta cần so sánh mỗi phần tử với TẤT CẢ các phần tử đứng trước nó.<br /><br /><b>1. Lặp qua từng phần tử:</b><br />- Ta bắt đầu từ phần tử thứ hai (vị trí \\(i=2\\)) và đi đến cuối dãy.<br />- Với mỗi phần tử \\(a_i\\) đang xét, ta phải 'nhìn lại' phía sau.<br /><br /><b>2. 'Nhìn lại' để so sánh:</b><br />- Ta dùng một vòng lặp thứ hai (vòng lặp con) để quét qua tất cả các phần tử đứng trước \\(a_i\\), tức là từ \\(a_1\\) đến \\(a_{i-1}\\).<br />- Nếu tìm thấy một phần tử \\(a_j\\) nào đó bằng với \\(a_i\\), ta đã tìm thấy sự lặp lại đầu tiên. Ta trả về giá trị \\(a_i\\) và kết thúc thuật toán.<br /><br /><h3>Phân tích Độ phức tạp (Big-O)</h3><br />- Thuật toán sử dụng hai vòng lặp lồng nhau.<br />- Vòng lặp ngoài chạy khoảng \\(n\\) lần.<br />- Vòng lặp trong chạy khoảng \\(i\\) lần, và trong trường hợp xấu nhất (không có sự lặp lại), \\(i\\) sẽ tiến gần đến \\(n\\).<br />- Tổng số phép so sánh sẽ xấp xỉ \\( 1 + 2 + 3 + \\cdots + (n-1) = \\frac{n(n-1)}{2} \\).<br />- Biểu thức này có bậc cao nhất là \\(n^2\\). Do đó, độ phức tạp của thuật toán là \\( O(n^2) \\).",
+        "difficulty": "medium",
+        "topic": "Algorithms (Design and Analysis)",
+        "hints": [
+          "Mẹo thiết kế: Dùng hai vòng lặp lồng nhau để so sánh mỗi phần tử với tất cả các phần tử trước nó.",
+          "Độ phức tạp của hai vòng lặp lồng nhau thường là O(n²).",
+          "Hãy nghĩ đến trường hợp xấu nhất: sự lặp lại xảy ra ở cuối dãy, hoặc không có sự lặp lại nào."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 2,
+        "question": "Give a big-O estimate for the number of additions used in this segment of an algorithm.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "The algorithm segment is missing from the question.<br /><br />However, the general method is to count the number of additions performed inside the loops. For example, in a nested loop structure `for i=1 to n, for j=1 to n`, an operation like `sum := sum + 1` would be performed \\(n^2\\) times, resulting in an \\(O(n^2)\\) estimate.",
+        "explanation": "Câu hỏi này yêu cầu đưa ra ước lượng Big-O cho số lượng <b>phép cộng</b> được sử dụng trong một đoạn mã thuật toán, tuy nhiên, <b>đoạn mã đó không được cung cấp trong đề bài.</b><br /><br /><h3>Phương pháp giải chung cho dạng bài này</h3><br />Để giải quyết dạng bài này, bạn cần thực hiện các bước sau:<br /><br /><b>1. Xác định các vòng lặp:</b> Xem xét các vòng lặp (for, while) trong đoạn mã. Chú ý đến giới hạn trên của các biến lặp (ví dụ: chạy từ 1 đến \\(n\\), 1 đến \\(n^2\\), v.v.).<br /><br /><b>2. Tìm các phép cộng:</b> Xác định tất cả các vị trí có dấu '+' trong đoạn mã nằm bên trong các vòng lặp.<br /><br /><b>3. Đếm số lần thực hiện:</b><br />- Nếu một phép cộng nằm trong một vòng lặp đơn chạy \\(n\\) lần, nó sẽ được thực hiện \\(O(n)\\) lần.<br />- Nếu một phép cộng nằm trong hai vòng lặp lồng nhau, mỗi vòng chạy \\(n\\) lần, nó sẽ được thực hiện \\(O(n^2)\\) lần.<br />- Nếu các vòng lặp có giới hạn khác nhau (ví dụ: `for i=1 to n`, `for j=1 to i`), bạn cần tính tổng số lần thực hiện một cách cẩn thận. Ví dụ này sẽ cho ra \\(O(n^2)\\).<br /><br /><b>4. Lấy bậc cao nhất:</b> Ước lượng Big-O chính là bậc cao nhất của tổng số phép cộng đã đếm được.",
+        "difficulty": "medium",
+        "topic": "Algorithms (Complexity Analysis)",
+        "hints": [
+          "Để tìm Big-O, hãy tập trung vào vòng lặp có số lần lặp lại nhiều nhất.",
+          "Đếm xem có bao nhiêu phép cộng được thực hiện trong mỗi lần lặp của vòng lặp sâu nhất.",
+          "Nhân số phép cộng đó với tổng số lần lặp để có ước lượng."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 3,
+        "question": "Show that \\( \\frac{n^3 + 1}{2n + 3} \\) is \\( \\Omega(n^2) \\).",
+        "image": null,
+        "options": [],
+        "correctAnswer": "To show \\( f(n) = \\frac{n^3 + 1}{2n + 3} \\) is \\( \\Omega(n^2) \\), we need to find constants \\(C > 0\\) and \\(k\\) such that \\( f(n) \\ge C \\cdot n^2 \\) for all \\( n \\ge k \\).<br /><br />For \\( n \\ge 1 \\):<br />\\[ \\frac{n^3 + 1}{2n + 3} > \\frac{n^3}{2n + 3n} = \\frac{n^3}{5n} = \\frac{1}{5}n^2 \\]<br />We can choose \\( C = \\frac{1}{5} \\) and \\( k = 1 \\). Therefore, the function is \\( \\Omega(n^2) \\).",
+        "explanation": "<h3>Tư duy siêu tốc: Tìm chặn dưới</h3><br />Để chứng minh \\( f(n) \\) là \\( \\Omega(g(n)) \\), ta cần chứng minh \\( f(n) \\) luôn 'lớn hơn hoặc bằng' một phiên bản thu nhỏ của \\( g(n) \\) (tức là \\( C \\cdot g(n) \\)) khi \\(n\\) đủ lớn.<br /><br /><b>Chiến lược:</b><br />- Làm cho <b>tử số nhỏ lại</b> một cách hợp lý.<br />- Làm cho <b>mẫu số lớn lên</b> một cách hợp lý.<br />Điều này sẽ tạo ra một phân số chắc chắn nhỏ hơn phân số ban đầu, giúp ta tìm ra chặn dưới.<br /><br /><b>Các bước chứng minh:</b><br />1. <b>Xét tử số:</b> Với \\( n \\ge 1 \\), ta có \\( n^3 + 1 > n^3 \\).<br />2. <b>Xét mẫu số:</b> Với \\( n \\ge 1 \\), ta có \\( 2n + 3 \\le 2n + 3n = 5n \\). (Ta thay 3 bằng 3n để có thể gộp lại, điều này luôn đúng khi n≥1).<br />3. <b>Kết hợp lại:</b><br />\\[ f(n) = \\frac{n^3 + 1}{2n + 3} > \\frac{\\text{Tử số nhỏ hơn}}{\\text{Mẫu số lớn hơn}} = \\frac{n^3}{5n} = \\frac{1}{5} n^2 \\]<br />4. <b>Kết luận:</b><br />- Ta đã chỉ ra rằng \\( f(n) \\ge \\frac{1}{5} n^2 \\) với mọi \\( n \\ge 1 \\).<br />- Theo định nghĩa của Big-Omega, với hằng số \\( C = 1/5 \\) và \\( k = 1 \\), ta kết luận \\( \\frac{n^3 + 1}{2n + 3} \\) là \\( \\Omega(n^2) \\).",
+        "difficulty": "medium",
+        "topic": "Algorithms (Asymptotic Notation)",
+        "hints": [
+          "Thần chú Big-Omega (Ω): Tìm một chặn dưới (lower bound).",
+          "Mẹo: Để tìm chặn dưới cho phân số, hãy làm tử số nhỏ đi và mẫu số lớn lên.",
+          "Cách nhẩm nhanh: Bậc của tử là 3, bậc của mẫu là 1. Bậc của cả biểu thức là 3-1=2. Vậy nó sẽ là Θ(n²), và do đó cũng là Ω(n²)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 4,
+        "question": "Find the least integer \\(k\\) such that \\(f(x)\\) is \\(O(x^k)\\) for each of these functions.<br /><br />1) \\( f(x) = 3x + x^2 + x \\log x \\)<br />2) \\( f(x) = \\sqrt{x^3} + (\\log x)^4 \\)<br />3) \\( f(x) = \\frac{x^3 + x^2 + 1}{x \\log x + 1} \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "1) <b>k = 2</b><br /><br />2) <b>k = 2</b><br /><br />3) <b>k = 2</b>",
+        "explanation": "<h3>Bí quyết siêu tốc: Tìm 'kẻ thống trị'</h3><br />Để tìm Big-O, ta chỉ cần tìm số hạng có tốc độ tăng trưởng nhanh nhất (số hạng 'thống trị') khi \\(x\\) tiến đến vô cùng.<br /><br /><b>1) \\( f(x) = 3x + x^2 + x \\log x \\)</b><br />- So sánh các số hạng: \\(x^2\\) tăng nhanh hơn \\(x \\log x\\), và \\(x \\log x\\) tăng nhanh hơn \\(3x\\).<br />- 'Kẻ thống trị' ở đây là \\(x^2\\).<br />- Vậy, \\(f(x)\\) là \\(O(x^2)\\). Số nguyên \\(k\\) nhỏ nhất là <b>2</b>.<br /><br />---<br /><b>2) \\( f(x) = \\sqrt{x^3} + (\\log x)^4 \\)</b><br />- Viết lại số hạng đầu: \\( \\sqrt{x^3} = x^{3/2} \\).<br />- <b>Quy tắc vàng:</b> Mọi hàm đa thức (polynomial) \\(x^a\\) (với \\(a > 0\\)) đều tăng nhanh hơn mọi hàm logarit \\((\\log x)^b\\).<br />- 'Kẻ thống trị' ở đây là \\(x^{3/2}\\).<br />- Ta cần tìm số nguyên \\(k\\) nhỏ nhất sao cho \\(x^{3/2}\\) là \\(O(x^k)\\). Số nguyên nhỏ nhất lớn hơn hoặc bằng 3/2 (tức 1.5) là <b>2</b>.<br /><br />---<br /><b>3) \\( f(x) = \\frac{x^3 + x^2 + 1}{x \\log x + 1} \\)</b><br />- <b>Ước lượng nhanh:</b> Lấy số hạng thống trị của tử chia cho số hạng thống trị của mẫu.<br />- Tử số xấp xỉ \\(x^3\\).<br />- Mẫu số xấp xỉ \\(x \\log x\\).<br />- Tốc độ tăng trưởng xấp xỉ \\( \\frac{x^3}{x \\log x} = \\frac{x^2}{\\log x} \\).<br />- Ta biết \\( \\frac{x^2}{\\log x} \\) tăng chậm hơn \\(x^2\\) một chút, nhưng nó vẫn là \\(O(x^2)\\) (vì \\(\\frac{x^2}{\\log x} \\le C \\cdot x^2\\)). Số nguyên \\(k\\) nhỏ nhất cần tìm là <b>2</b>.",
+        "difficulty": "medium",
+        "topic": "Algorithms (Big-O Notation)",
+        "hints": [
+          "Thần chú Big-O: Tìm số hạng tăng nhanh nhất.",
+          "Quy tắc so sánh: x² > x log x > x.",
+          "Quy tắc vàng: Đa thức (xⁿ) luôn 'thắng' logarit (logⁿ x)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 5,
+        "question": "Which positive integers less than 14 are relatively prime to 14?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "The integers are: <b>1, 3, 5, 9, 11, 13</b>.",
+        "explanation": "<h3>Tư duy 'Sàng lọc' Siêu Tốc</h3><br />Hai số được gọi là 'nguyên tố cùng nhau' (relatively prime) nếu ước chung lớn nhất (GCD) của chúng là 1.<br /><br /><b>1. Phân tích số 14 ra thừa số nguyên tố:</b><br />\\[ 14 = 2 \\times 7 \\]<br />Điều này có nghĩa là một số sẽ <b>KHÔNG</b> nguyên tố cùng nhau với 14 nếu nó chia hết cho 2 hoặc chia hết cho 7.<br /><br /><b>2. Liệt kê các số cần kiểm tra:</b><br />\\( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 \\)<br /><br /><b>3. Sàng lọc (Loại bỏ):</b><br />- <b>Loại bỏ các số chẵn (chia hết cho 2):</b> 2, 4, 6, 8, 10, 12.<br />- <b>Loại bỏ các bội của 7:</b> 7.<br /><br /><b>4. Kết quả còn lại:</b><br />Các số không bị loại bỏ là: \\( 1, 3, 5, 9, 11, 13 \\). Đây chính là các số nguyên tố cùng nhau với 14.<br /><br /><b>Lưu ý:</b> Số 1 luôn nguyên tố cùng nhau với mọi số nguyên dương khác.",
+        "difficulty": "easy",
+        "topic": "Number Theory (Relatively Prime)",
+        "hints": [
+          "Thần chú: 'Nguyên tố cùng nhau' ⇔ GCD = 1.",
+          "Phân tích 14 ra thừa số nguyên tố (2 và 7).",
+          "Loại bỏ tất cả các số chẵn và các bội của 7 ra khỏi danh sách từ 1 đến 13."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 6,
+        "question": "Convert \\( (1011011)_2 \\) into<br /><br />a) its decimal expansion.<br />b) its octal format.<br />c) a base 3 expansion.<br />d) a base 13 expansion.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "a) <b>Decimal (base 10):</b> 91<br /><br />b) <b>Octal (base 8):</b> \\( (133)_8 \\)<br /><br />c) <b>Base 3:</b> \\( (10101)_3 \\)<br /><br />d) <b>Base 13:</b> \\( (70)_{13} \\)",
+        "explanation": "<h3>Bí quyết: Lấy hệ 10 làm 'trạm trung chuyển'</h3><br /><b>a) Chuyển sang Thập phân (Hệ 10):</b><br />- Viết ra các vị trí và giá trị lũy thừa của 2:<br />\\[ (1 \\cdot 2^6) + (0 \\cdot 2^5) + (1 \\cdot 2^4) + (1 \\cdot 2^3) + (0 \\cdot 2^2) + (1 \\cdot 2^1) + (1 \\cdot 2^0) \\]<br />\\[ = 64 + 0 + 16 + 8 + 0 + 2 + 1 = 91 \\]<br />- Vậy \\( (1011011)_2 = 91_{10} \\).<br /><br />---<br /><b>b) Chuyển sang Bát phân (Hệ 8): Mẹo nhóm 3 bit</b><br />- Từ hệ 2 sang hệ 8 (vì \\(8=2^3\\)), ta nhóm 3 bit từ phải sang trái.<br />- \\( (001)(011)(011)_2 \\) (Thêm số 0 ở đầu cho đủ nhóm)<br />- Chuyển từng nhóm sang số tương ứng: \\( 1, 3, 3 \\).<br />- Kết quả: \\( (133)_8 \\).<br /><br />---<br /><b>c) Chuyển sang Hệ 3: Dùng phép chia liên tiếp</b><br />- Lấy số thập phân 91 chia liên tiếp cho 3 và ghi lại số dư:<br />  - \\( 91 \\div 3 = 30 \\) dư <b>1</b><br />  - \\( 30 \\div 3 = 10 \\) dư <b>0</b><br />  - \\( 10 \\div 3 = 3 \\) dư <b>1</b><br />  - \\( 3 \\div 3 = 1 \\) dư <b>0</b><br />  - \\( 1 \\div 3 = 0 \\) dư <b>1</b><br />- Đọc số dư từ dưới lên: \\( 10101 \\).<br />- Kết quả: \\( (10101)_3 \\).<br /><br />---<br /><b>d) Chuyển sang Hệ 13: Dùng phép chia liên tiếp</b><br />- Lấy số thập phân 91 chia liên tiếp cho 13:<br />  - \\( 91 \\div 13 = 7 \\) dư <b>0</b><br />  - \\( 7 \\div 13 = 0 \\) dư <b>7</b><br />- Đọc số dư từ dưới lên: \\( 70 \\).<br />- Kết quả: \\( (70)_{13} \\). (Lưu ý: Trong hệ > 10, các chữ số từ 10 trở lên được thay bằng A, B, C...)",
+        "difficulty": "medium",
+        "topic": "Number Systems (Base Conversion)",
+        "hints": [
+          "Luôn chuyển về hệ 10 làm bước trung gian.",
+          "Mẹo hệ 8: Nhóm 3 bit từ phải sang trái.",
+          "Mẹo hệ 16: Nhóm 4 bit từ phải sang trái.",
+          "Từ hệ 10 sang hệ bất kỳ: Dùng phép chia liên tiếp và đọc ngược số dư."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 7,
+        "question": "Encrypt the message ONE PIECE by translating the letters into numbers, applying the given encryption function, and then translating the numbers back into letters.<br /><br />a) \\( f(p) = (p + 4) \\pmod{26} \\)<br />b) \\( f(p) = (p + 21) \\pmod{26} \\)<br />c) \\( f(p) = (7p + 11) \\pmod{26} \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>Original message (numerical):</b> 14 13 4 15 8 4 2 4<br /><br />a) <b>Encrypted (numerical):</b> 18 17 8 19 12 8 6 8<br />   <b>Encrypted message:</b> SRI TMI GI<br /><br />b) <b>Encrypted (numerical):</b> 9 8 25 10 3 25 23 25<br />   <b>Encrypted message:</b> JIZ KDZ XZ<br /><br />c) <b>Encrypted (numerical):</b> 5 24 13 12 15 13 25 13<br />   <b>Encrypted message:</b> FYN MPN ZN",
+        "explanation": "<h3>Bí quyết: Lập bảng và tính toán theo modulo 26</h3><br />Đầu tiên, ta chuyển thông điệp gốc sang dạng số (A=0, B=1, ..., Z=25).<br /><b>ONE PIECE</b> → <b>14 13 4 15 8 4 2 4</b><br /><br />---<br /><b>a) Mật mã Caesar (dịch vòng +4): \\( f(p) = p + 4 \\)</b><br />- 14+4=18 (S), 13+4=17 (R), 4+4=8 (I), 15+4=19 (T), 8+4=12 (M), 4+4=8 (I), 2+4=6 (G), 4+4=8 (I)<br />- Kết quả: <b>SRI TMI GI</b><br /><br />---<br /><b>b) Mật mã Caesar (dịch vòng +21): \\( f(p) = p + 21 \\)</b><br />- Mẹo: Dịch +21 tương đương với dịch -5 (vì \\(21 \\equiv -5 \\pmod{26}\\)).<br />- 14-5=9 (J), 13-5=8 (I), 4-5=-1≡25 (Z), 15-5=10 (K), 8-5=3 (D), 4-5=-1≡25 (Z), 2-5=-3≡23 (X), 4-5=-1≡25 (Z)<br />- Kết quả: <b>JIZ KDZ XZ</b><br /><br />---<br /><b>c) Mật mã Affine: \\( f(p) = 7p + 11 \\)</b><br />- O(14): \\(7(14) + 11 = 98 + 11 = 109\\). \\(109 \\pmod{26} = 5\\) (F).<br />- N(13): \\(7(13) + 11 = 91 + 11 = 102\\). \\(102 \\pmod{26} = 24\\) (Y).<br />- E(4): \\(7(4) + 11 = 28 + 11 = 39\\). \\(39 \\pmod{26} = 13\\) (N).<br />- P(15): \\(7(15) + 11 = 105 + 11 = 116\\). \\(116 \\pmod{26} = 12\\) (M).<br />- I(8): \\(7(8) + 11 = 56 + 11 = 67\\). \\(67 \\pmod{26} = 15\\) (P).<br />- E(4): 13 (N).<br />- C(2): \\(7(2) + 11 = 14 + 11 = 25\\). \\(25 \\pmod{26} = 25\\) (Z).<br />- E(4): 13 (N).<br />- Kết quả: <b>FYN MPN ZN</b>.",
+        "difficulty": "medium",
+        "topic": "Cryptography (Caesar and Affine Ciphers)",
+        "hints": [
+          "Bước 1: Chuyển chữ sang số (A=0, B=1, ...).",
+          "Bước 2: Áp dụng công thức f(p) cho từng số.",
+          "Bước 3: Lấy kết quả mod 26 (chia cho 26 lấy dư).",
+          "Bước 4: Chuyển số kết quả về lại chữ."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 8,
+        "question": "Find \\( 5^{123456789} \\pmod{3124} \\).",
+        "image": null,
+        "options": [],
+        "correctAnswer": "This requires Euler's totient theorem, as 3124 is not prime.<br /><br />1. Prime factorization of 3124: \\( 3124 = 4 \\times 781 = 2^2 \\times 11 \\times 71 \\).<br />2. Euler's totient function \\( \\phi(3124) = 3124(1-\\frac{1}{2})(1-\\frac{1}{11})(1-\\frac{1}{71}) = 1400 \\).<br />3. We need to compute \\( 123456789 \\pmod{1400} \\). This is 1189.<br />4. The problem reduces to computing \\( 5^{1189} \\pmod{3124} \\).<br /><br />This is computationally intensive and best done with a computer. The final answer would be the result of this modular exponentiation.",
+        "explanation": "<h3>Bí quyết: Dùng định lý Euler để hạ bậc số mũ</h3><br />Khi số mũ quá lớn, ta không thể tính trực tiếp. Ta phải tìm cách rút gọn số mũ.<br /><br /><b>1. Kiểm tra:</b> 3124 không phải là số nguyên tố.<br />   - Do đó, ta không thể dùng Định lý nhỏ Fermat. Ta phải dùng phiên bản tổng quát hơn là <b>Định lý Euler</b>.<br /><br /><b>2. Định lý Euler:</b> Nếu \\( \\text{gcd}(a, n) = 1 \\), thì \\( a^{\\phi(n)} \\equiv 1 \\pmod{n} \\).<br />   - Ở đây, a = 5 và n = 3124. gcd(5, 3124) = 1, vậy có thể áp dụng.<br /><br /><b>3. Tính hàm phi Euler (\\(\\phi(n)\\)):</b><br />   - Phân tích 3124 ra thừa số nguyên tố: \\( 3124 = 2^2 \\times 11 \\times 71 \\).<br />   - Áp dụng công thức: \\( \\phi(n) = n \\prod_{p|n} (1 - \\frac{1}{p}) \\).<br />   - \\( \\phi(3124) = 3124 (1 - \\frac{1}{2}) (1 - \\frac{1}{11}) (1 - \\frac{1}{71}) = 3124 \\cdot \\frac{1}{2} \\cdot \\frac{10}{11} \\cdot \\frac{70}{71} = 1400 \\).<br /><br /><b>4. Rút gọn số mũ:</b><br />- Ta cần tính số mũ theo modulo \\(\\phi(n)\\): \\( 123456789 \\pmod{1400} \\).<br />- \\( 123456789 = 1400 \\times 88183 + 589 \\). Vậy số dư là 589.<br /><br /><b>5. Bài toán cuối cùng:</b><br />- Bài toán ban đầu trở thành tìm \\( 5^{589} \\pmod{3124} \\).<br />- Đây là một phép tính lũy thừa theo modulo lớn, cần dùng thuật toán <b>Bình phương và Nhân</b> (Binary Exponentiation) hoặc máy tính chuyên dụng để giải.",
+        "difficulty": "hard",
+        "topic": "Number Theory (Modular Exponentiation)",
+        "hints": [
+          "Số mũ quá lớn → phải dùng định lý Fermat hoặc Euler để hạ bậc.",
+          "Vì modulus (3124) không phải số nguyên tố, phải dùng định lý Euler.",
+          "Tính φ(n), sau đó tính (số mũ) mod φ(n)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 9,
+        "question": "What sequence of pseudorandom numbers is generated using the linear congruential generator \\( x_{n+1} = (3x_n + 2) \\pmod{13} \\) with seed \\( x_0 = 1 \\)?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "The sequence is: <b>1, 5, 4, 1, 5, 4, ...</b><br /><br />The sequence starts repeating after the 3rd term.",
+        "explanation": "<h3>Bí quyết: Tính toán lặp lại một cách cẩn thận</h3><br />Đây là một bài toán áp dụng công thức truy hồi một cách tuần tự.<br /><br /><b>- Hạt giống (Seed):</b> \\( x_0 = 1 \\)<br /><br /><b>- Công thức:</b> \\( x_{n+1} = (3x_n + 2) \\pmod{13} \\)<br /><br /><b>1. Tính \\(x_1\\):</b><br />   - \\( x_1 = (3x_0 + 2) \\pmod{13} \\)<br />   - \\( x_1 = (3 \\cdot 1 + 2) \\pmod{13} = 5 \\pmod{13} = 5 \\).<br /><br /><b>2. Tính \\(x_2\\):</b><br />   - \\( x_2 = (3x_1 + 2) \\pmod{13} \\)<br />   - \\( x_2 = (3 \\cdot 5 + 2) \\pmod{13} = 17 \\pmod{13} = 4 \\).<br /><br /><b>3. Tính \\(x_3\\):</b><br />   - \\( x_3 = (3x_2 + 2) \\pmod{13} \\)<br />   - \\( x_3 = (3 \\cdot 4 + 2) \\pmod{13} = 14 \\pmod{13} = 1 \\).<br /><br /><b>4. Tính \\(x_4\\):</b><br />   - \\( x_4 = (3x_3 + 2) \\pmod{13} \\)<br />   - \\( x_4 = (3 \\cdot 1 + 2) \\pmod{13} = 5 \\pmod{13} = 5 \\).<br /><br /><b>Phát hiện chu kỳ:</b><br />- Ta thấy \\(x_3 = x_0 = 1\\) và \\(x_4 = x_1 = 5\\). Dãy số đã bắt đầu lặp lại chu kỳ (1, 5, 4).<br />- Dãy số tạo ra là <b>1, 5, 4, 1, 5, 4, ...</b>",
+        "difficulty": "easy",
+        "topic": "Number Theory (Pseudorandom Generation)",
+        "hints": [
+          "Bắt đầu với x₀.",
+          "Dùng kết quả của bước trước làm đầu vào cho bước tiếp theo.",
+          "Tiếp tục tính cho đến khi một số hạng lặp lại, đó là lúc chu kỳ bắt đầu."
+        ],
+        "type": "essay"
+      }
+    ]
+  }
