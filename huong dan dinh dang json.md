@@ -176,11 +176,21 @@ Hệ thống hỗ trợ hiển thị thuật toán/đoạn mã đẹp mắt bằ
 - Có thể chỉ định ngôn ngữ ngay sau ba backtick đầu (tùy chọn): `pascal`, `text`, `pseudo`, v.v.
 - Dùng `<br />` để xuống dòng trong JSON; hệ thống sẽ tự chuyển thành xuống dòng thực trong khối mã.
 - Khoảng trắng được giữ nguyên, nên bạn có thể thụt đầu dòng (2 dấu cách hoặc 1 tab) cho đẹp.
+- Để thụt dòng BÊN TRONG code block khi viết trong JSON: đặt khoảng trắng ngay sau `<br />`.
+  - Dùng tab: `\t` (hoặc tab thật). Không dùng `\\t` vì sẽ ra đúng chữ "\t".
+  - Dùng dấu cách: thêm 2 dấu cách sau `<br />`.
+  - Renderer giữ nguyên tab/khoảng trắng sau `<br />` và hiển thị tab với độ rộng 2.
 
 Ví dụ trong `question`:
 
 ```json
-"question": "Given the algorithm:<br />```pascal<br />procedure XYZ(a₁,...,aₙ: integers)<br />  k:=0<br />  for i:=1 to n do<br />    if aᵢ mod 2 = 0 then k:=aᵢ<br />```<br />Find the output value of k?"
+"question": "Given the algorithm:<br />```pseudo<br />procedure XYZ(a₁,...,aₙ: integers)<br />\tk:=0<br />\tfor i:=1 to n do<br />\t\tif aᵢ mod 2 = 0 then k:=aᵢ<br />```<br />Find the output value of k?"
+```
+
+Ví dụ thụt sâu hơn (2 tab):
+
+```json
+"question": "...<br />```text<br />\t\tinner-level example<br />```"
 ```
 
 Ví dụ inline code trong `hints`/`explanation`:

@@ -92,3 +92,8 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+/* Code block styling (tab width for tabs) */
+.code-block .code {
+  tab-size: 2;
+}

@@ -5,7 +5,7 @@
     "questions": [
       {
         "id": 1,
-        "question": "Given the algorithm:<br />```<br />procedure XYZ(a₁,...,aₙ: integers)<br />  k:=0<br />  for i:=1 to n do<br />    if aᵢ mod 2 = 0 then k:=aᵢ<br />```<br />Find the output value of k if the input is the sequence: 1, 2, 3, 7, 8, 6, 9, 12, 11.",
+        "question": "Given the algorithm:<br />```<br />procedure XYZ(a₁,...,aₙ: integers)<br />\tk:=0<br />\tfor i:=1 to n do<br />\t\tif aᵢ mod 2 = 0 then k:=aᵢ<br />```<br />Find the output value of k if the input is the sequence: 1, 2, 3, 7, 8, 6, 9, 12, 11.",
         "image": null,
         "options": [],
         "correctAnswer": "The correct answer is <b>12</b>.",
@@ -21,7 +21,7 @@
       },
       {
         "id": 2,
-        "question": "Given the algorithm:<br />```<br />procedure XYZ(a₁,...,aₙ: Integers)<br />  k:=0<br />  for i:=1 to n do<br />    if aᵢ mod 2 = 0 then k:=k+aᵢ<br />```<br />Find the output value of k if the input is the sequence: 1, 2, 3, 7, 8, 6, 9, 12, 11.",
+        "question": "Given the algorithm:<br />```<br />procedure XYZ(a₁,...,aₙ: Integers)<br />\tk:=0<br />\tfor i:=1 to n do<br />\t\tif aᵢ mod 2 = 0 then k:=k+aᵢ<br />```<br />Find the output value of k if the input is the sequence: 1, 2, 3, 7, 8, 6, 9, 12, 11.",
         "image": null,
         "options": [],
         "correctAnswer": "The correct answer is <b>28</b>.",
@@ -37,7 +37,7 @@
       },
       {
         "id": 3,
-        "question": "Given the algorithm:<br />```<br />Procedure LN(m, n : integers)<br />  while (m ≠ n)<br />    if m > n then m := m - n<br />    else n := n - m;<br />  Print(m)<br />```<br />If m=36, n=44, what is the output of the algorithm?",
+        "question": "Given the algorithm:<br />```<br />Procedure LN(m, n : integers)<br />\twhile (m ≠ n)<br />\t\tif m > n then m := m - n<br />\t\telse n := n - m;<br />\tPrint(m)<br />```<br />If m=36, n=44, what is the output of the algorithm?",
         "image": null,
         "options": [],
         "correctAnswer": "The correct answer is <b>4</b>.",
@@ -53,7 +53,7 @@
       },
       {
         "id": 4,
-        "question": "Find the output value of n if Input a = 200.<br />```<br />Procedure XYZ(a: integer)<br />  n:=0<br />  while a ≠ 0<br />    n := n + (a mod 2)<br />    a := ⌊a / 2⌋<br />  Print(n)<br />```",
+        "question": "Find the output value of n if Input a = 200.<br />```<br />Procedure XYZ(a: integer)<br />\tn:=0<br />\twhile a ≠ 0<br />\t\tn := n + (a mod 2)<br />\t\ta := ⌊a / 2⌋<br />\tPrint(n)<br />```",
         "image": null,
         "options": [],
         "correctAnswer": "The correct answer is <b>3</b>.",
@@ -69,7 +69,7 @@
       },
       {
         "id": 5,
-        "question": "Given the algorithm:<br />```<br />procedure XYZ(c, a₁,...,aₙ: real)<br />  p:= 1<br />  y:= 0<br />  for i:=1 to n-1 do<br />    for j:=1 to (n-i) do<br />      begin<br />        p := p * c<br />        y := y + aᵢ * p<br />      end<br />```<br />Let n = 10. Count the total number of additions and multiplications.",
+        "question": "Given the algorithm:<br />```<br />procedure XYZ(c, a₁,...,aₙ: real)<br />\tp:= 1<br />\ty:= 0<br />\tfor i:=1 to n-1 do<br />\t\tfor j:=1 to (n-i) do<br />\t\t\tbegin<br />\t\t\t\tp := p * c<br />\t\t\t\ty := y + aᵢ * p<br />\t\t\tend<br />```<br />Let n = 10. Count the total number of additions and multiplications.",
         "image": null,
         "options": [],
         "correctAnswer": "<b>Total Additions:</b> 45<br /><b>Total Multiplications:</b> 90",

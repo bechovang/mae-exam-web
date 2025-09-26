@@ -34,12 +34,14 @@ export default function SimpleMath({ children, className = "" }: SimpleMathProps
     const fencedRegex = /```(\w+)?([\s\S]*?)```/g;
     let formatted = raw.replace(fencedRegex, (_match, lang, content) => {
       const language = (lang || 'plain').toString().trim();
-      // Convert <br /> to real newlines inside code blocks
-      const withNewlines = (content || '')
+      // Convert <br /> to real newlines inside code blocks, preserving indentation (tabs/spaces) after <br />
+      const normalized = (content || '')
         .replace(/^\s*<br\s*\/?>/gi, '')
-        .replace(/<br\s*\/?>(\s*)/gi, '\n')
-        .trim();
-      const escaped = escapeHtml(withNewlines);
+        .replace(/<br\s*\/?>(\s*)/gi, '\n$1')
+        // Do not trim() entire block; only remove extra blank lines at edges
+        .replace(/^\n+/, '')
+        .replace(/\n+$/, '');
+      const escaped = escapeHtml(normalized);
       return `<pre class="code-block"><code class="code language-${language}">${escaped}</code></pre>`;
     });
 
