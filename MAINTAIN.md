@@ -2,94 +2,139 @@
 
 Tài liệu này cung cấp các hướng dẫn cần thiết để bảo trì, cập nhật và mở rộng ứng dụng MathPractice.
 
-## 1. Cấu trúc Dự án
+## 1) Cấu trúc dự án
 
-Dưới đây là mô tả về các thư mục và tệp quan trọng trong dự án:
+Mô tả nhanh các thư mục và tệp quan trọng:
 
 ```
 /
-├── app/                  # Chứa các trang chính của ứng dụng (Next.js App Router)
-│   ├── page.tsx          # Trang chủ (đăng nhập/chọn tên)
-│   ├── select-exam/      # Trang chọn bộ đề luyện tập
+├── app/                  # Next.js App Router
+│   ├── page.tsx          # Trang chủ (nhập tên)
+│   ├── select-exam/      # Trang chọn đề luyện tập
 │   ├── practice/         # Trang làm bài luyện tập
-│   ├── results/          # Trang hiển thị kết quả
-│   └── layout.tsx        # Layout chung của toàn bộ ứng dụng
-├── components/           # Các component React tái sử dụng
-│   └── ui/               # Các component từ shadcn/ui (Button, Card, etc.)
-├── public/               # Chứa các tài sản tĩnh
-│   └── data/             # Nơi lưu trữ các tệp JSON của bộ đề (ví dụ: de1.json)
-├── styles/               # (Nếu có) Chứa các tệp CSS global
-├── lib/                  # (Nếu có) Chứa các hàm tiện ích
-└── README.md             # Tài liệu giới thiệu dự án
+│   ├── results/          # Trang xem kết quả
+│   └── layout.tsx        # Layout chung, ThemeProvider
+├── components/           # Component tái sử dụng
+│   ├── SimpleMath.tsx    # Render MathJax (inline/block)
+│   ├── MathRenderer.tsx  # Trình render toán học
+│   └── ui/               # Thư viện shadcn/ui
+├── public/
+│   ├── data/             # Bộ đề JSON: de1.json, de2.json, ...
+│   └── images/           # (tuỳ chọn) ảnh đề cho trang kết quả
+├── styles/               # CSS toàn cục
+├── lib/                  # Tiện ích (nếu có)
+├── README.md             # Giới thiệu dự án
+└── MAINTAIN.md           # Tài liệu bảo trì (tệp này)
 ```
 
-## 2. Quản lý Dữ liệu Đề thi
+## 2) Dữ liệu đề thi (JSON)
 
-### Định dạng File JSON
+- Mỗi bộ đề là một tệp `.json` trong `public/data/` với tên: `de<ID>.json` (ví dụ: `de1.json`).
+- Trường `examId` phải khớp với tên tệp (ví dụ: `de1`).
 
-Mỗi bộ đề luyện tập là một tệp `.json` được lưu trong thư mục `public/data/`. Tên tệp phải theo định dạng `de<ID>.json`, ví dụ: `de1.json`, `de2.json`.
-
-Cấu trúc của một tệp JSON phải tuân thủ định dạng sau:
+### 2.1. Cấu trúc JSON khuyến nghị
 
 ```json
 {
-  "examId": "de1", // ID định danh, khớp với tên file
-  "title": "Đề 1", // Tên của bộ đề
-  "description": "AI hints and explanations", // Mô tả ngắn gọn
+  "examId": "de1",
+  "title": "Đề 1",
+  "description": "AI hints and explanations",
   "questions": [
     {
-      "id": 1, // ID của câu hỏi (số nguyên)
-      "question": "Nội dung câu hỏi. Hỗ trợ MathJax, ví dụ: \\( x^2 + y^2 = z^2 \\)",
-      "image": null, // Đường dẫn đến hình ảnh nếu có, ví dụ: "/images/de1/cau1.png"
+      "id": 1,
+      "question": "Nội dung. Hỗ trợ \\( ... \\) và \\[ ... \\]",
+      "image": null,
       "options": [
         "A. Lựa chọn 1",
         "B. Lựa chọn 2",
-        "C. Lựa chọn 3"
+        "C. Lựa chọn 3",
+        "D. Lựa chọn 4"
       ],
-      "correctAnswer": "A", // Đáp án đúng
-      "explanation": "Giải thích chi tiết cho câu trả lời. Hỗ trợ HTML và MathJax.",
-      "difficulty": "medium", // Độ khó (easy, medium, hard)
-      "topic": "Linear Algebra", // Chủ đề của câu hỏi
-      "hints": [
-        "Gợi ý 1",
-        "Gợi ý 2"
-      ]
+      "correctAnswer": "A",
+      "explanation": "Giải thích chi tiết (HTML + MathJax)",
+      "difficulty": "easy | medium | hard",
+      "topic": "Chủ đề",
+      "hints": ["Gợi ý 1", "Gợi ý 2"],
+      "type": "multiple_choice | essay"  
     }
-    // ... các câu hỏi khác
   ]
 }
 ```
 
-**Lưu ý quan trọng:**
+Lưu ý:
+- `options` phải bắt đầu bằng chữ cái phương án viết hoa + dấu chấm, ví dụ: `"A. ..."`. Ứng dụng suy luận phương án từ ký tự đầu tiên.
+- `type` là tuỳ chọn. Nếu `type: "essay"`, câu hỏi là tự luận:
+  - Nút “Kiểm tra đáp án” sẽ hiển thị `correctAnswer` như nội dung đáp án mẫu.
+  - `explanation` vẫn được hiển thị ở phần giải thích chi tiết.
+- `image` có thể là đường dẫn trong `public/` (ví dụ: `/images/de1/1.jpg`).
+- Có thể dùng HTML cơ bản trong `explanation` và MathJax với `\\( ... \\)` (inline), `\\[ ... \\]` (block).
 
-- **MathJax**: Để hiển thị công thức toán, sử dụng `\\(` và `\\)` cho inline math, và `\\[` và `\\]` cho display math.
-- **HTML**: Bạn có thể sử dụng các thẻ HTML cơ bản (như `<b>`, `<i>`, `<br>`, `<ul>`, `<li>`) trong trường `explanation` để định dạng nội dung.
+### 2.2. Thêm bộ đề mới
 
-### Thêm một Bộ đề mới
+1. Tạo tệp `de<ID>.json` theo cấu trúc trên và đặt vào `public/data/`.
+2. Đảm bảo `examId` khớp với tên tệp (ví dụ: `de20.json` có `examId: "de20"`).
+3. Ứng dụng tự quét dải đề từ `de1.json` đến `deN.json`. Nếu cần mở rộng dải quét, cập nhật hằng số bên dưới.
 
-1.  **Chuẩn bị file JSON**: Tạo một tệp `.json` mới với cấu trúc như đã mô tả ở trên.
-2.  **Đặt tên file**: Đặt tên tệp theo quy tắc `de<ID>.json`. Ví dụ, để thêm đề số 11, bạn tạo tệp `de11.json`.
-3.  **Thêm vào thư mục `public/data/`**: Sao chép tệp vừa tạo vào thư mục `public/data/`.
-4.  **Cập nhật hằng số (nếu cần)**: Trong file `app/select-exam/page.tsx`, có một hằng số `MAX_EXAMS_TO_CHECK`. Nếu bạn thêm một đề có ID lớn hơn giá trị hiện tại của hằng số này, hãy tăng giá trị đó lên để ứng dụng có thể phát hiện ra đề mới.
+```ts
+// app/select-exam/page.tsx
+const MAX_EXAMS_TO_CHECK = 25; // Tăng nếu thêm đề có ID lớn hơn 25
+```
 
-    ```typescript
-    // app/select-exam/page.tsx
-    const MAX_EXAMS_TO_CHECK = 10; // Tăng giá trị này nếu ID đề mới > 10
-    ```
+Trang chọn đề sẽ hiển thị thẻ đề có tiêu đề và mô tả lấy trực tiếp từ JSON.
 
-Ứng dụng sẽ tự động phát hiện và hiển thị bộ đề mới trên trang chọn đề.
+## 3) Trang luyện tập (Practice)
 
-## 3. Tùy chỉnh Giao diện (Styling)
+- Tải dữ liệu từ `/data/de{practiceId}.json` theo tham số URL.
+- Lưu tiến độ vào `localStorage` theo các khoá:
+  - `practiceAnswers_{id}`: đáp án người dùng
+  - `practiceResults_{id}`: trạng thái đúng/sai, thời gian mỗi câu
+  - `practiceNotes_{id}`: ghi chú mỗi câu
+  - `practiceTime_{id}`: tổng thời gian đã luyện tập
+- Hỗ trợ “Học với AI”: sinh prompt và mở `aistudio.google.com/prompts/new_chat`.
+- Câu tự luận (`type: "essay"`): khi “Kiểm tra đáp án”, coi là đã trả lời; hiển thị `correctAnswer` và `explanation`.
 
-- **Tailwind CSS**: Dự án sử dụng Tailwind CSS để styling. Bạn có thể chỉnh sửa các class utility trực tiếp trong các file component.
-- **Dark Mode**: Chế độ tối/sáng được quản lý bởi `ThemeProvider` trong `app/layout.tsx` và `ThemeToggle` component. Để tùy chỉnh màu sắc cho dark mode, sử dụng tiền tố `dark:`, ví dụ: `bg-white dark:bg-black`.
-- **Global Styles**: Các style toàn cục có thể được định nghĩa trong `app/globals.css`.
+### 3.1. Phím tắt (Keyboard Shortcuts)
 
-## 4. Quản lý Dependencies
+- A/B/C/D/E/F hoặc 1/2/3/4/5/6: Chọn phương án
+- N, Space, →: Câu tiếp theo
+- P, ←: Câu trước
+- H: Hiện/ẩn gợi ý
+- T: Hiện/ẩn ghi chú
+- R: Làm lại câu hiện tại
+- Ctrl/Cmd + G: Đi đến câu số…
+- ?: Mở bảng phím tắt
+- Esc: Hộp thoại thoát
 
-- Dự án sử dụng `npm` để quản lý các gói thư viện.
-- Để thêm một thư viện mới, chạy: `npm install <ten-thu-vien>`.
-- Để xóa một thư viện, chạy: `npm uninstall <ten-thu-vien>`.
-- Sau khi thay đổi dependencies, hãy đảm bảo bạn commit cả file `package.json` và `package-lock.json`.
+## 4) Trang kết quả (Results)
 
-Cảm ơn bạn đã đóng góp vào việc bảo trì và phát triển dự án! 
+- Đọc dữ liệu kết quả từ `localStorage` khoá `results_de{examId}` (định dạng do trang thi tạo ra).
+- Nếu thiếu mảng `questions`, trang sẽ tự sinh danh sách mặc định (ảnh: `/images/de{examId}/{i}.jpg`).
+- Cho phép tải kết quả (.txt) và phóng to/thu nhỏ ảnh câu hỏi.
+
+## 5) Giao diện (Styling)
+
+- Sử dụng Tailwind CSS. Chỉnh sửa utility classes trực tiếp trong component.
+- Dark Mode thông qua `ThemeProvider` trong `app/layout.tsx` và `ThemeToggle`.
+- Style toàn cục: `app/globals.css` hoặc `styles/globals.css` (tuỳ cấu hình hiện tại).
+
+## 6) Chạy và build
+
+Script chính (tham chiếu `package.json`):
+
+```bash
+npm run dev     # Chạy chế độ phát triển
+npm run build   # Build production
+npm start       # Chạy server production sau khi build
+npm run lint    # Kiểm tra lint
+```
+
+Lưu ý: Khoá phụ thuộc hiện dùng Next.js 15, React 19, TypeScript 5. Có thể dùng npm hoặc pnpm tuỳ môi trường (repo có cả `package-lock.json` và `pnpm-lock.yaml`). Nên thống nhất một công cụ quản lý gói trong CI/CD.
+
+## 7) Quy ước và lưu ý quan trọng
+
+- Tên tệp đề: `de<ID>.json` (liền, không dấu cách). `examId` phải trùng quy tắc này.
+- Phương án lựa chọn phải theo định dạng `"A. ..."`, `"B. ..."`, ... để ứng dụng nhận diện chữ cái phương án.
+- Với đề lớn hơn `MAX_EXAMS_TO_CHECK`, tăng hằng số để trang chọn đề phát hiện đề mới.
+- Tham khảo thêm tệp `huong dan dinh dang json.md` để định dạng nội dung tốt hơn.
+
+Cảm ơn bạn đã đóng góp vào việc bảo trì và phát triển dự án!

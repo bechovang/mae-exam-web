@@ -44,8 +44,6 @@ import {
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import SimpleMath from "@/components/SimpleMath"
-import { PDFDownloadLink } from "@react-pdf/renderer"
-import ExamPDF from "@/components/ExamPDF"
 import { ThemeToggle } from "@/components/theme-toggle"
 import confetti from 'canvas-confetti'
 
@@ -616,20 +614,6 @@ Hãy bắt đầu bài giảng của bạn.
                         ); 
                         })}
                     </div>
-                    </div>
-                    <div className="pt-2">
-                      {practiceData && (
-                        <PDFDownloadLink
-                          document={<ExamPDF exam={{ examId: practiceData.examId, title: practiceData.title, description: practiceData.description, questions: practiceData.questions }} />}
-                          fileName={`${practiceData.examId}_de_va_loi_giai.pdf`}
-                        >
-                          {({ loading }) => (
-                            <Button className="w-full" variant="outline">
-                              {loading ? "Đang tạo PDF..." : "Tải Đề PDF (có lời giải)"}
-                            </Button>
-                          )}
-                        </PDFDownloadLink>
-                      )}
                     </div>
                 </CardContent>
                 <CardFooter className="grid grid-cols-2 gap-2">
