@@ -1,0 +1,634 @@
+{
+    "examId": "de21",
+    "title": "MAD chương 4 BT luyện thêm",
+    "description": "Bộ câu hỏi để luyện tập các khái niệm của quy nạp toán học, bao gồm trường hợp cơ sở, giả thiết quy nạp và bước quy nạp.",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Given that<br />\\[ 1^3 + 2^3 + \\cdots + n^3 = \\left(\\frac{n(n+1)}{2}\\right)^2 \\]<br />for all \\( n \\ge 1 \\).<br />Which of the following equations is true in the inductive step of a proof by mathematical induction?",
+        "image": null,
+        "options": [
+          "A. \\( 1^3 + \\cdots + (k+1)^3 = \\left(\\frac{k(k+1)}{2}\\right)^2 + k^3 \\)",
+          "B. \\( 1^3 + \\cdots + (k+1)^3 = \\left(\\frac{k(k+1)}{2}\\right)^2 + (k+1)^3 \\)",
+          "C. \\( 1^3 + \\cdots + (k+1)^3 = \\left(\\frac{k(k-1)}{2}\\right)^2 + (k+1)^3 \\)",
+          "D. \\( 1^3 + \\cdots + (k+1)^3 = \\left(\\frac{k(k-1)}{2}\\right)^2 + k^3 \\)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Trong phương pháp quy nạp toán học, sau khi giả sử mệnh đề đúng với \\( n = k \\), ta cần chứng minh nó đúng với \\( n = k + 1 \\).<br /><br /><b>Bước giả thiết quy nạp (n=k):</b><br />Giả sử: \\( 1^3 + 2^3 + \\cdots + k^3 = \\left(\\frac{k(k+1)}{2}\\right)^2 \\)<br /><br /><b>Bước chứng minh (n=k+1):</b><br />Ta xét vế trái của mệnh đề với \\( n = k+1 \\):<br />\\( 1^3 + 2^3 + \\cdots + k^3 + (k+1)^3 \\)<br />Ta tách tổng này ra để sử dụng giả thiết quy nạp:<br />\\( = (1^3 + 2^3 + \\cdots + k^3) + (k+1)^3 \\)<br />Thay giả thiết quy nạp vào, ta được:<br />\\( = \\left(\\frac{k(k+1)}{2}\\right)^2 + (k+1)^3 \\)<br /><br />Đây chính là phương trình ở đáp án (ii).",
+        "difficulty": "medium",
+        "topic": "Mathematical Induction",
+        "hints": [
+          "Hãy tập trung vào bước chứng minh (n = k+1) trong quy nạp.",
+          "Vế trái của bước n = k+1 bằng tổng đến k cộng với số hạng thứ (k+1).",
+          "Sử dụng giả thiết quy nạp cho tổng đến k."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 2,
+        "question": "Given that<br />\\[ 1 + 3 + \\cdots + (2n - 1) = n^2 \\]<br />for all \\( n \\ge 1 \\).<br />Which of the following equations is true in the inductive step?",
+        "image": null,
+        "options": [
+          "A. \\( 1 + 3 + \\cdots + (2k + 1) = k^2 + (2k + 1) \\)",
+          "B. \\( 1 + 3 + \\cdots + (2k + 1) = k^2 + 2 \\)",
+          "C. \\( 1 + 3 + \\cdots + (2k + 1) = 1 + 2 + \\cdots + (2k-1) + 2 \\)",
+          "D. \\( 1 + 3 + \\cdots + (2k + 1) = (k-1)^2 + (2k+1) \\)"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Bước giả thiết quy nạp (n=k):</b><br />Giả sử: \\( 1 + 3 + \\cdots + (2k - 1) = k^2 \\)<br /><br /><b>Bước chứng minh (n=k+1):</b><br />Ta cần chứng minh \\( 1 + 3 + \\cdots + (2(k+1) - 1) = (k+1)^2 \\).<br />Số hạng cuối cùng là \\( 2(k+1)-1 = 2k+2-1 = 2k+1 \\).<br />Vế trái trở thành:<br />\\( 1 + 3 + \\cdots + (2k - 1) + (2k + 1) \\)<br />Áp dụng giả thiết quy nạp cho phần \\( (1 + 3 + \\cdots + (2k - 1)) \\), ta có:<br />\\( = k^2 + (2k + 1) \\)<br />Đây chính là phương trình ở đáp án (i).<br /><br /><b>Mở rộng:</b> \\( k^2 + 2k + 1 \\) chính là hằng đẳng thức \\( (k+1)^2 \\), do đó mệnh đề được chứng minh.",
+        "difficulty": "medium",
+        "topic": "Mathematical Induction",
+        "hints": [
+          "Số hạng thứ n là (2n-1). Vậy số hạng thứ (k+1) là bao nhiêu?",
+          "Tách tổng đến (k+1) thành (tổng đến k) + (số hạng thứ k+1).",
+          "Áp dụng giả thiết quy nạp cho tổng đến k."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 3,
+        "question": "In the inductive proof of the proposition<br />\\[ 1^2 + 2^2 + \\cdots + n^2 = \\frac{n(n+1)(2n+1)}{6} \\]<br />for all \\( n \\ge 1 \\), which of the following equations is used?",
+        "image": null,
+        "options": [
+          "A. \\( 1^2 + \\cdots + (k+1)^2 = \\frac{k(k+1)(2k+1)}{6} + k^2 + 1 \\)",
+          "B. \\( 1^2 + \\cdots + (k+1)^2 = \\frac{k(k+1)(2k+1)}{6} + (2k+1) \\)",
+          "C. \\( 1^2 + \\cdots + (k+1)^2 = \\frac{k(k+1)(2k+1)}{6} + (k+1)^2 \\)",
+          "D. \\( 1^2 + \\cdots + (k+1)^2 = \\frac{k(k+1)(2k+1)}{6} + k^2 \\)"
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Bước giả thiết quy nạp (n=k):</b><br />Giả sử: \\( 1^2 + 2^2 + \\cdots + k^2 = \\frac{k(k+1)(2k+1)}{6} \\)<br /><br /><b>Bước chứng minh (n=k+1):</b><br />Ta xét vế trái của mệnh đề với \\( n = k+1 \\):<br />\\( 1^2 + 2^2 + \\cdots + k^2 + (k+1)^2 \\)<br />Để sử dụng giả thiết quy nạp, ta nhóm các số hạng từ \\( 1^2 \\) đến \\( k^2 \\):<br />\\( = (1^2 + 2^2 + \\cdots + k^2) + (k+1)^2 \\)<br />Thay giả thiết quy nạp vào, ta có:<br />\\( = \\frac{k(k+1)(2k+1)}{6} + (k+1)^2 \\)<br /><br />Đây là phương trình cần sử dụng trong bước chứng minh, tương ứng với đáp án (iii).",
+        "difficulty": "medium",
+        "topic": "Mathematical Induction",
+        "hints": [
+          "Quy nạp toán học gồm 3 bước: cơ sở, giả thiết quy nạp và chứng minh.",
+          "Câu hỏi này đang hỏi về bước chứng minh cho n=k+1.",
+          "Hãy viết vế trái của mệnh đề với n=k+1 và thay thế phần tổng đến k bằng giả thiết quy nạp."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 4,
+        "question": "Let \\( P(n) \\) be the statement that<br />\\[ 1^2 + 3^2 + 5^2 + \\cdots + (2n+1)^2 = \\frac{(n+1)(2n+1)(2n+3)}{3} \\]<br />for the nonnegative integer \\( n \\).<br />What is the inductive hypothesis in a proof by mathematical induction?",
+        "image": null,
+        "options": [
+          "A. \\( P(k) \\) is true for some integer \\( k > 0 \\).",
+          "B. \\( P(k) \\) is true for some integer \\( k \\ge 0 \\).",
+          "C. \\( P(k+1) \\) is true for some integer \\( k > 0 \\).",
+          "D. \\( P(k+1) \\) is true for some integer \\( k \\ge 0 \\)."
+        ],
+        "correctAnswer": "B",
+        "explanation": "Giả thiết quy nạp là bước thứ hai trong chứng minh quy nạp. Nó bao gồm hai phần:<br /><br />1.  <b>Giả sử mệnh đề đúng với một giá trị cụ thể:</b> Ta giả sử mệnh đề \\( P(n) \\) là đúng với \\( n = k \\).<br />2.  <b>Điều kiện của k:</b> Giá trị \\( k \\) này phải thuộc tập xác định của \\( n \\) và phải lớn hơn hoặc bằng giá trị ở bước cơ sở.<br /><br />Trong bài này:<br />-   Mệnh đề là \\( P(n) \\).<br />-   Tập xác định của \\( n \\) là 'số nguyên không âm' (nonnegative integer), tức là \\( n \\ge 0 \\).<br /><br />Do đó, giả thiết quy nạp phải là: 'Giả sử \\( P(k) \\) đúng với một số nguyên \\( k \\ge 0 \\) nào đó'. Điều này khớp với đáp án (ii).",
+        "difficulty": "easy",
+        "topic": "Mathematical Induction",
+        "hints": [
+          "Giả thiết quy nạp là bước 'giả sử P(k) đúng'.",
+          "Hãy chú ý đến tập xác định của n được cho trong đề bài: 'nonnegative integer'.",
+          "Số nguyên không âm bắt đầu từ 0."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 5,
+        "question": "Let \\( P(n) \\) be the statement that<br />\\[ 1^2 + 3^2 + 5^2 + \\cdots + (2n+1)^2 = \\frac{(n+1)(2n+1)(2n+3)}{3} \\]<br />for the nonnegative integer \\( n \\).<br />Which statement needs to be proven true in the basic step by mathematical induction?",
+        "image": null,
+        "options": [
+          "A. \\( P(0) \\)",
+          "B. \\( P(1) \\)",
+          "C. \\( P(k) \\) for all nonnegative integer k",
+          "D. \\( P(k) \\) for some nonnegative integer k"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Bước cơ sở (basic step) là bước đầu tiên của chứng minh quy nạp. Ta phải chứng minh mệnh đề đúng với giá trị khởi đầu (nhỏ nhất) của biến số.<br /><br />-   Trong đề bài, biến số là \\( n \\).<br />-   Tập xác định của \\( n \\) là 'số nguyên không âm' (nonnegative integer).<br />-   Số nguyên không âm nhỏ nhất là 0.<br /><br />Vì vậy, trong bước cơ sở, chúng ta phải chứng minh mệnh đề \\( P(n) \\) đúng với \\( n=0 \\), tức là chứng minh \\( P(0) \\) là đúng.<br /><br /><b>Kiểm tra P(0):</b><br />- Vế trái: \\( (2 \\cdot 0 + 1)^2 = 1^2 = 1 \\)<br />- Vế phải: \\( \\frac{(0+1)(2 \\cdot 0+1)(2 \\cdot 0+3)}{3} = \\frac{1 \\cdot 1 \\cdot 3}{3} = 1 \\)<br />Vế trái = Vế phải, vậy \\( P(0) \\) đúng.",
+        "difficulty": "easy",
+        "topic": "Mathematical Induction",
+        "hints": [
+          "Bước cơ sở là bước kiểm tra mệnh đề với giá trị nhỏ nhất của n.",
+          "Đọc kỹ đề để xác định giá trị n nhỏ nhất là bao nhiêu.",
+          "'Nonnegative integer' nghĩa là số nguyên lớn hơn hoặc bằng 0."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 6,
+        "question": "Let \\( P(n) \\) be the statement that \\( n! < n^n \\), where \\( n \\) is an integer greater than 1. What do you need to prove in the basic step if using induction method?",
+        "image": null,
+        "options": [
+          "A. Show that \\( P(2) \\) is true",
+          "B. Show that \\( P(1) \\) is true",
+          "C. Show that \\( P(4) \\) is true",
+          "D. Show that \\( P(3) \\) is true"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Bước cơ sở (basic step) trong chứng minh quy nạp là bước chứng minh mệnh đề đúng với giá trị nhỏ nhất của \\( n \\).<br /><br />- Đề bài cho biết mệnh đề áp dụng cho '\\( n \\) là một số nguyên lớn hơn 1' (an integer greater than 1).<br />- Số nguyên nhỏ nhất lớn hơn 1 là 2.<br /><br />Do đó, chúng ta cần phải chứng minh rằng mệnh đề \\( P(n) \\) là đúng với \\( n=2 \\), tức là chứng minh \\( P(2) \\) đúng.",
+        "difficulty": "easy",
+        "topic": "Mathematical Induction",
+        "hints": [
+          "Bước cơ sở là bước đầu tiên trong phương pháp quy nạp.",
+          "Hãy xác định giá trị nhỏ nhất của n dựa trên điều kiện của đề bài.",
+          "\"Integer greater than 1\" có nghĩa là \\( n > 1 \\)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 7,
+        "question": "In the strong induction proof of the following problem:<br /><b>Problem:</b> Prove that \\( P(n) \\) = \"for all \\( n \\ge 24 \\) we have \\( n = 5a + 7b \\) with a, b non-negative integers\" is true.<br />In order to prove \\( P(k+1) \\) is true, we should ______.",
+        "image": null,
+        "options": [
+          "A. use \\( P(k-4) \\) = \"k - 4 = 5x + 7y, (x, y are in N)\" is true and \\( k+1 = k-4+5 \\)",
+          "B. use \\( P(k-2) \\) = \"k - 2 = 5x + 7y, (x, y are in N)\" is true and \\( k+1 = k-2+3 \\)",
+          "C. use \\( P(k-1) \\) = \"k - 1 = 5x + 7y, (x, y are in N)\" is true and \\( k+1 = k-1+2 \\)",
+          "D. use \\( P(k-3) \\) = \"k - 3 = 5x + 7y, (x, y are in N)\" is true and \\( k+1 = k-3+4 \\)"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đây là một bài toán sử dụng quy nạp mạnh (strong induction). Để chứng minh \\( P(k+1) \\) đúng, ta giả sử \\( P(i) \\) đúng với mọi \\( i \\) từ trường hợp cơ sở cho đến \\( k \\).<br /><br />Ta cần biểu diễn \\( k+1 \\) thông qua một giá trị nhỏ hơn mà ta đã giả sử là đúng. Mục tiêu là làm xuất hiện thừa số 5 hoặc 7.<br /><br />-   Chọn đáp án A: Ta sử dụng \\( P(k-4) \\). Ta có thể viết lại \\( k+1 \\) thành \\( (k-4) + 5 \\).<br />-   Vì ta giả sử \\( P(k-4) \\) đúng, nên tồn tại \\( x, y \\ge 0 \\) sao cho \\( k-4 = 5x + 7y \\).<br />-   Khi đó, \\( k+1 = (5x + 7y) + 5 = 5(x+1) + 7y \\).<br />-   Vì \\( x \\ge 0 \\) nên \\( x+1 \\ge 1 \\). Biểu thức mới có dạng \\( 5a + 7b \\) với \\( a=x+1 \\) và \\( b=y \\) là các số nguyên không âm.<br /><br />Các đáp án khác không hoạt động vì việc cộng thêm 2, 3, hoặc 4 không giúp đưa biểu thức về dạng \\( 5a + 7b \\).",
+        "difficulty": "hard",
+        "topic": "Strong Induction",
+        "hints": [
+          "Quy nạp mạnh cho phép bạn giả sử P(i) đúng với mọi i trong khoảng [giá trị cơ sở, k].",
+          "Hãy thử liên hệ k+1 với một trường hợp trước đó bằng cách trừ đi một trong các số cơ bản (5 hoặc 7).",
+          "Mối quan hệ \\( k+1 = (k-4) + 5 \\) là chìa khóa của bài toán."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 8,
+        "question": "Find a recursive definition for the set<br />\\( S = \\{ (a, b) | \\text{a, b are positive integers and a+b is an even number} \\} \\)",
+        "image": null,
+        "options": [
+          "A. (i) \\( (1, 1) \\in S \\). If \\( (a, b) \\in S \\) then \\( (a+2, b+2) \\in S \\)",
+          "B. (ii) \\( (1, 1) \\in S \\). If \\( (a, b) \\in S \\) then \\( (a, b+2) \\in S \\) and \\( (a+2, b) \\in S \\)",
+          "C. (iii) \\( (1, 1) \\in S \\). If \\( (a, b) \\in S \\) then \\( (a, b+2) \\in S, (a+2, b) \\in S, (a+1, b+1) \\in S \\)",
+          "D. (iv) \\( (1, 1) \\in S \\). If \\( (a, b) \\in S \\) then \\( (a+1, b+1) \\in S \\)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Tập hợp S chứa các cặp số nguyên dương \\( (a, b) \\) sao cho tổng \\( a+b \\) là số chẵn. Điều này tương đương với việc \\( a \\) và \\( b \\) phải có cùng tính chẵn lẻ (cùng chẵn hoặc cùng lẻ).<br /><br /><b>Bước cơ sở (Basis step):</b> Ta cần một phần tử khởi đầu. \\( (1, 1) \\) là cặp số nguyên dương nhỏ nhất có cùng tính chẵn lẻ (cùng lẻ). `1+1=2` là số chẵn, vậy \\( (1,1) \\in S \\).<br /><br /><b>Bước đệ quy (Recursive step):</b> Nếu \\( (a,b) \\in S, nghĩa là \\( a \\) và \\( b \\) cùng tính chẵn lẻ.<br />- Khi đó, \\( a+2 \\) sẽ có cùng tính chẵn lẻ với \\( a \\), và \\( b+2 \\) sẽ có cùng tính chẵn lẻ với \\( b \\).<br />- Do đó, các cặp \\( (a+2, b) \\) và \\( (a, b+2) \\) cũng sẽ chứa hai số có cùng tính chẵn lẻ, và chúng cũng thuộc S.<br /><br /><b>Phân tích đáp án (ii):</b> Định nghĩa này bắt đầu với cặp số lẻ \\( (1,1) \\) và chỉ tạo ra các cặp số lẻ khác. Nó không tạo ra được cặp số chẵn nào (ví dụ \\( (2,2) \\)). Tuy nhiên, trong các lựa chọn đưa ra, đây là định nghĩa hợp lệ và mô tả đúng một phần quan trọng của tập hợp S.",
+        "difficulty": "hard",
+        "topic": "Recursive Definitions",
+        "hints": [
+          "Tổng a+b là số chẵn khi và chỉ khi a và b có cùng tính chẵn lẻ.",
+          "Kiểm tra xem bước đệ quy có tạo ra các phần tử thực sự thuộc tập S hay không.",
+          "Định nghĩa đệ quy cần một điểm bắt đầu (bước cơ sở) và một quy tắc tạo phần tử mới (bước đệ quy)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 9,
+        "question": "Let S be the set defined recursively as follows:<br /><b>Basis step:</b> \\( 2 \\in S \\)<br /><b>Recursive step:</b> If \\( x \\in S \\) then \\( 2x \\in S \\)<br />What is S?",
+        "image": null,
+        "options": [
+          "A. (i) \\( S = \\{ 2^{n+1} | n = 1, 2, ... \\} \\)",
+          "B. (ii) \\( S = \\{ 2^n | n = 1, 2, ... \\} \\)",
+          "C. (iii) \\( S = \\{ 2n | n = 1, 2, ... \\} \\)",
+          "D. None of the other choices is correct"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Ta hãy xây dựng các phần tử của tập S theo định nghĩa.<br /><br />-   <b>Bước cơ sở:</b> Ta có \\( 2 \\in S \\).<br />-   <b>Bước đệ quy:</b><br />    -   Vì \\( 2 \\in S \\), áp dụng quy tắc, \\( 2 \\cdot 2 = 4 \\) cũng thuộc S.<br />    -   Vì \\( 4 \\in S \\), áp dụng quy tắc, \\( 2 \\cdot 4 = 8 \\) cũng thuộc S.<br />    -   Vì \\( 8 \\in S \\), áp dụng quy tắc, \\( 2 \\cdot 8 = 16 \\) cũng thuộc S.<br />-   ... và cứ thế tiếp tục.<br /><br />Các phần tử của S là: \\( \\{2, 4, 8, 16, ...\\} \\).<br />Đây chính là tập hợp các lũy thừa của 2, bắt đầu từ \\( 2^1 \\).<br />Do đó, S có thể được viết dưới dạng \\( S = \\{ 2^n | n = 1, 2, 3, ... \\} \\).",
+        "difficulty": "easy",
+        "topic": "Recursive Definitions",
+        "hints": [
+          "Bắt đầu với phần tử cơ sở.",
+          "Áp dụng quy tắc đệ quy lặp đi lặp lại để tạo ra một vài phần tử đầu tiên của tập hợp.",
+          "Tìm quy luật chung của các phần tử được tạo ra."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 10,
+        "question": "Given the set S defined as follows:<br /><b>Basic step:</b> \\( 1 \\in S \\).<br /><b>Recursive step:</b> If \\( x, y \\in S \\) then \\( x - y \\in S \\)<br />What is S?",
+        "image": null,
+        "options": [
+          "A. The set of integers",
+          "B. The set of even positive integers",
+          "C. The set of integers not greater than 1",
+          "D. The set of positive integers"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Hãy cùng xây dựng các phần tử của tập hợp S từ định nghĩa đệ quy.<br /><br />-   <b>Bước cơ sở:</b> Ta có \\( 1 \\in S \\).<br />-   <b>Bước đệ quy:</b><br />    -   Lấy \\( x=1, y=1 \\). Ta có \\( x - y = 1 - 1 = 0 \\). Vậy \\( 0 \\in S \\).<br />    -   Bây giờ tập S chứa \\( \\{0, 1\\} \\).<br />    -   Lấy \\( x=0, y=1 \\). Ta có \\( x - y = 0 - 1 = -1 \\). Vậy \\( -1 \\in S \\).<br />    -   Bây giờ tập S chứa \\( \\{-1, 0, 1\\} \\).<br />    -   Lấy \\( x=1, y=-1 \\). Ta có \\( x - y = 1 - (-1) = 2 \\). Vậy \\( 2 \\in S \\).<br />    -   Lấy \\( x=-1, y=1 \\). Ta có \\( x - y = -1 - 1 = -2 \\). Vậy \\( -2 \\in S \\).<br /><br />Bằng cách lặp lại phép trừ giữa các phần tử đã có, ta có thể tạo ra mọi số nguyên (dương, âm, và số 0). Do đó, tập S chính là tập hợp tất cả các số nguyên (\\( \\mathbb{Z} \\)).",
+        "difficulty": "medium",
+        "topic": "Recursive Definitions",
+        "hints": [
+          "Hãy tạo ra một vài phần tử đầu tiên của tập hợp.",
+          "Đừng quên sử dụng các phần tử mới được tạo ra trong các bước tiếp theo.",
+          "Kiểm tra xem bạn có thể tạo ra số dương, số âm và số 0 hay không."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 11,
+        "question": "Let S be the subset of the set of ordered pairs of integers defined recursively by<br /><b>Basis step:</b> \\( (0, 0) \\in S \\)<br /><b>Recursive step:</b> If \\( (a, b) \\in S \\), then \\( (a+2, b+3) \\in S \\) and \\( (a+3, b+2) \\in S \\).<br /><br />Which element is in S?",
+        "image": null,
+        "options": [
+          "A. (7, 8)",
+          "B. (6, 7)",
+          "C. (8, 9)",
+          "D. (5, 10)"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Một tính chất quan trọng của tập S là với mọi phần tử \\( (x, y) \\in S \\), tổng \\( x+y \\) phải là một bội số của 5.<br /><br /><b>Chứng minh:</b><br />- <b>Bước cơ sở:</b> \\( (0, 0) \\in S \\) và \\( 0+0 = 0 \\), là bội của 5.<br />- <b>Bước đệ quy:</b> Giả sử \\( (a, b) \\in S \\) và \\( a+b \\) là bội của 5.<br />  - Phần tử mới \\( (a+2, b+3) \\) có tổng là \\( (a+2) + (b+3) = (a+b) + 5 \\). Vì \\( a+b \\) là bội của 5, nên \\( (a+b)+5 \\) cũng là bội của 5.<br />  - Phần tử mới \\( (a+3, b+2) \\) có tổng là \\( (a+3) + (b+2) = (a+b) + 5 \\), cũng là bội của 5.<br /><br /><b>Kiểm tra các đáp án:</b><br />A. (7, 8) -> Tổng là 15 (bội của 5). Có khả năng thuộc S.<br />B. (6, 7) -> Tổng là 13 (không phải bội của 5). Chắc chắn không thuộc S.<br />C. (8, 9) -> Tổng là 17 (không phải bội của 5). Chắc chắn không thuộc S.<br />D. (5, 10) -> Tổng là 15 (bội của 5). Có khả năng thuộc S.<br /><br /><b>Kiểm tra (7, 8):</b><br />Ta cần tìm số lần áp dụng quy tắc 1 (p lần) và quy tắc 2 (q lần) sao cho:<br />\\( 2p + 3q = 7 \\)<br />\\( 3p + 2q = 8 \\)<br />Giải hệ phương trình này ta được \\( p = 2, q = 1 \\). Vì p, q là số nguyên không âm, nên (7, 8) thuộc S.",
+        "difficulty": "medium",
+        "topic": "Recursive Definitions",
+        "hints": [
+          "Tìm một tính chất bất biến (invariant) của các phần tử trong S. Hãy thử xét tổng của hai thành phần.",
+          "Tổng của các thành phần của một phần tử trong S luôn là bội số của 5.",
+          "Sau khi loại trừ, hãy thử giải hệ phương trình để xác nhận một phần tử có thể được tạo ra từ (0,0) hay không."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 12,
+        "question": "Let S be the subset of the set of ordered pairs of integers defined recursively by<br /><b>Basis step:</b> \\( (0, 0) \\in S \\)<br /><b>Recursive step:</b> If \\( (a, b) \\in S \\), then \\( (a+2, b+3) \\in S \\) and \\( (a+3, b+2) \\in S \\).<br /><br />Which element is NOT in S?",
+        "image": null,
+        "options": [
+          "A. (10, 15)",
+          "B. (10, 10)",
+          "C. (10, 5)",
+          "D. (5, 5)"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Như đã chứng minh ở câu trước, một phần tử \\( (x, y) \\) chỉ có thể thuộc S nếu tổng \\( x+y \\) là bội số của 5.<br /><br /><b>Kiểm tra tổng các đáp án:</b><br />A. (10, 15) -> Tổng 25 (bội của 5).<br />B. (10, 10) -> Tổng 20 (bội của 5).<br />C. (10, 5) -> Tổng 15 (bội của 5).<br />D. (5, 5) -> Tổng 10 (bội của 5).<br />Tất cả đều vượt qua bài kiểm tra tổng. Ta phải kiểm tra xem chúng có thể được tạo ra hay không.<br /><br />Mọi phần tử \\( (x,y) \\) trong S phải thỏa mãn \\( x = 2p + 3q \\) và \\( y = 3p + 2q \\) với \\( p, q \\) là các số nguyên không âm.<br /><br /><b>Kiểm tra đáp án (10, 5):</b><br />Ta cần giải hệ:<br />\\( 2p + 3q = 10 \\)<br />\\( 3p + 2q = 5 \\)<br />Nhân phương trình đầu với 3 và phương trình hai với 2:<br />\\( 6p + 9q = 30 \\)<br />\\( 6p + 4q = 10 \\)<br />Trừ vế theo vế, ta được \\( 5q = 20 \\) => \\( q = 4 \\).<br />Thay \\( q=4 \\) vào phương trình đầu: \\( 2p + 3(4) = 10 \\) => \\( 2p + 12 = 10 \\) => \\( 2p = -2 \\) => \\( p = -1 \\).<br />Vì \\( p \\) là số âm, nên cặp (10, 5) không thể được tạo ra từ (0, 0). Do đó, nó không thuộc S.",
+        "difficulty": "hard",
+        "topic": "Recursive Definitions",
+        "hints": [
+          "Tất cả các đáp án đều có tổng là bội của 5, vì vậy bạn cần kiểm tra sâu hơn.",
+          "Một phần tử (x,y) thuộc S nếu hệ phương trình \\( x=2p+3q, y=3p+2q \\) có nghiệm p, q là số nguyên không âm.",
+          "Hãy giải hệ phương trình cho từng đáp án."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 13,
+        "question": "Given the set S defined as follows:<br /><b>Basic step:</b> \\( 2 \\in S \\).<br /><b>Recursive step:</b> If \\( x \\in S \\) then \\( x^2 \\in S \\)<br /><br />What is S?",
+        "image": null,
+        "options": [
+          "A. The set of even positive integers.",
+          "B. \\( S = \\{2^n | n = 1, 2, ...\\} \\)",
+          "C. \\( S = \\{2^{2^n} | n = 0, 1, 2, ...\\} \\)",
+          "D. None of the other choices is correct"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Ta xây dựng các phần tử của tập S từ định nghĩa:<br /><br />-   <b>Bước cơ sở:</b> \\( 2 \\in S \\). Ta có thể viết \\( 2 = 2^1 = 2^{2^0} \\).<br />-   <b>Bước đệ quy 1:</b> Vì \\( 2 \\in S \\), nên \\( 2^2 = 4 \\) cũng thuộc S. Ta có thể viết \\( 4 = 2^2 = 2^{2^1} \\).<br />-   <b>Bước đệ quy 2:</b> Vì \\( 4 \\in S \\), nên \\( 4^2 = 16 \\) cũng thuộc S. Ta có thể viết \\( 16 = (2^2)^2 = 2^4 = 2^{2^2} \\).<br />-   <b>Bước đệ quy 3:</b> Vì \\( 16 \\in S \\), nên \\( 16^2 = 256 \\) cũng thuộc S. Ta có thể viết \\( 256 = (2^4)^2 = 2^8 = 2^{2^3} \\).<br /><br />Các phần tử của S có dạng \\( 2, 2^2, 2^4, 2^8, 2^{16}, ... \\). Số mũ của 2 lần lượt là \\( 1, 2, 4, 8, 16, ... \\), tức là các lũy thừa của 2: \\( 2^0, 2^1, 2^2, 2^3, ... \\).<br />Vậy, tập hợp S có dạng tổng quát là \\( S = \\{2^{2^n} | n = 0, 1, 2, ...\\} \\).",
+        "difficulty": "medium",
+        "topic": "Recursive Definitions",
+        "hints": [
+          "Tạo ra 3-4 phần tử đầu tiên của tập hợp để tìm ra quy luật.",
+          "Chú ý đến quy luật của các số mũ.",
+          "Công thức lũy thừa của lũy thừa: \\( (a^m)^n = a^{m \\cdot n} \\)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 14,
+        "question": "Find \\( f(0) \\) if \\( f(n) = 2f(n - 1) - 8 \\) for all positive integers n, and \\( f(1) = 0 \\).",
+        "image": null,
+        "options": [
+          "A. Cannot determine",
+          "B. 4",
+          "C. 8",
+          "D. -8",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Công thức truy hồi \\( f(n) = 2f(n - 1) - 8 \\) được cho là đúng với 'tất cả số nguyên dương n' (all positive integers n).<br /><br />Điều này có nghĩa là ta có thể áp dụng công thức này khi \\( n = 1 \\).<br /><br />Thay \\( n = 1 \\) vào công thức:<br />\\( f(1) = 2f(1 - 1) - 8 \\)<br />\\( f(1) = 2f(0) - 8 \\)<br /><br />Theo đề bài, ta có \\( f(1) = 0 \\). Thay giá trị này vào phương trình trên:<br />\\( 0 = 2f(0) - 8 \\)<br /><br />Bây giờ ta giải phương trình để tìm \\( f(0) \\):<br />\\( 8 = 2f(0) \\)<br />\\( f(0) = \\frac{8}{2} = 4 \\)",
+        "difficulty": "easy",
+        "topic": "Recurrence Relations",
+        "hints": [
+          "Công thức truy hồi đúng cho mọi n>0, bao gồm cả n=1.",
+          "Thay n=1 vào công thức để tạo ra một phương trình chứa f(0).",
+          "Sử dụng giá trị f(1) đã cho để giải phương trình đó."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 15,
+        "question": "Find \\( f(16) \\) if \\( f(2) = 5 \\) and \\( f(n) = (f(\\sqrt{n}))^2 \\).",
+        "image": null,
+        "options": [
+          "A. None of the other choices is correct",
+          "B. 5",
+          "C. 625",
+          "D. 25",
+          "E. 1225"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Ta sẽ tính toán theo từng bước, bắt đầu từ \\( f(16) \\) và sử dụng công thức truy hồi để quay về giá trị đã biết là \\( f(2) \\).<br /><br /><b>Bước 1: Tính \\( f(16) \\)</b><br />Áp dụng công thức với \\( n = 16 \\):<br />\\( f(16) = (f(\\sqrt{16}))^2 = (f(4))^2 \\)<br /><br /><b>Bước 2: Tính \\( f(4) \\)</b><br />Để tìm \\( f(16) \\), ta cần giá trị của \\( f(4) \\). Áp dụng công thức với \\( n = 4 \\):<br />\\( f(4) = (f(\\sqrt{4}))^2 = (f(2))^2 \\)<br /><br /><b>Bước 3: Sử dụng giá trị đã biết</b><br />Đề bài cho \\( f(2) = 5 \\). Thay vào kết quả của Bước 2:<br />\\( f(4) = (5)^2 = 25 \\)<br /><br /><b>Bước 4: Hoàn thành tính toán</b><br />Bây giờ ta có \\( f(4) = 25 \\). Thay giá trị này trở lại vào phương trình ở Bước 1:<br />\\( f(16) = (25)^2 = 625 \\)",
+        "difficulty": "medium",
+        "topic": "Recurrence Relations",
+        "hints": [
+          "Đây là một bài toán truy hồi. Hãy bắt đầu từ f(16) và giảm dần n.",
+          "Bạn cần tính f(4) trước khi tính được f(16).",
+          "Sử dụng giá trị f(2)=5 ở bước cuối cùng."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 21,
+        "question": "Given the recurrence relation<br />\\[ f_n = 2f_{n-3} - 5f_{n-4} + 2^n \\]<br />How many initial conditions are needed to determine all further terms?",
+        "image": null,
+        "options": [
+          "A. 1",
+          "B. 2",
+          "C. 3",
+          "D. 4",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Số điều kiện ban đầu cần thiết cho một công thức truy hồi tuyến tính được xác định bởi 'bậc' của nó.<br /><br />Bậc của công thức truy hồi là hiệu số giữa chỉ số lớn nhất và chỉ số nhỏ nhất của các số hạng trong dãy.<br /><br />- Chỉ số lớn nhất là \\( n \\).<br />- Chỉ số nhỏ nhất là \\( n-4 \\).<br /><br />Hiệu số (bậc) là \\( n - (n-4) = 4 \\).<br /><br />Điều này có nghĩa là để tính một số hạng bất kỳ, ta cần biết 4 số hạng liền trước nó. Do đó, ta cần cung cấp 4 giá trị ban đầu (ví dụ: \\(f_0, f_1, f_2, f_3\\)) để có thể xác định duy nhất tất cả các số hạng tiếp theo của dãy.",
+        "difficulty": "easy",
+        "topic": "Recurrence Relations",
+        "hints": [
+          "Hãy xem xét số hạng có chỉ số nhỏ nhất trong công thức.",
+          "Bậc của công thức truy hồi chính là số điều kiện ban đầu cần thiết.",
+          "Bậc = (chỉ số lớn nhất) - (chỉ số nhỏ nhất)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 22,
+        "question": "Given the recursive algorithm<br />```pseudo<br />Procedure function(n: positive integer)<br />  if (n = 1) then<br />    function(n) := 1<br />  else if (n = 2) then<br />    function(n) := 1<br />  else<br />    function(n) := function(n-1) + function(n-2)<br />```<br />Find the value of function(n) when n = 7.",
+        "image": null,
+        "options": [
+          "A. 5",
+          "B. 3",
+          "C. 13",
+          "D. 1"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Thuật toán này định nghĩa dãy số Fibonacci, với hai giá trị ban đầu là \\( f(1)=1 \\) và \\( f(2)=1 \\). Ta tính toán lần lượt:<br /><br />- \\( f(1) = 1 \\)<br />- \\( f(2) = 1 \\)<br />- \\( f(3) = f(2) + f(1) = 1 + 1 = 2 \\)<br />- \\( f(4) = f(3) + f(2) = 2 + 1 = 3 \\)<br />- \\( f(5) = f(4) + f(3) = 3 + 2 = 5 \\)<br />- \\( f(6) = f(5) + f(4) = 5 + 3 = 8 \\)<br />- \\( f(7) = f(6) + f(5) = 8 + 5 = 13 \\)<br /><br />Vậy giá trị của function(7) là 13.",
+        "difficulty": "easy",
+        "topic": "Recursive Algorithms",
+        "hints": [
+          "Đây là định nghĩa đệ quy của dãy Fibonacci.",
+          "Hãy tính các giá trị f(3), f(4), ... một cách tuần tự.",
+          "Mỗi số hạng bằng tổng của hai số hạng đứng ngay trước nó."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 23,
+        "question": "Given the recursive algorithm.<br />```pseudo<br />procedure fac(n: non-negative integer)<br />  if n = 0 then<br />    fac(n) := 1<br />  else<br />    fac(n) := n * fac(n-1)<br /><br />print(fac(n))<br />```<br />Find output if n = 5.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Thuật toán này tính giai thừa của một số nguyên không âm. Ta cần tìm \\( fac(5) \\).<br /><br />Quá trình gọi đệ quy diễn ra như sau:<br />- \\( fac(5) = 5 * fac(4) \\)<br />- \\( fac(4) = 4 * fac(3) \\)<br />- \\( fac(3) = 3 * fac(2) \\)<br />- \\( fac(2) = 2 * fac(1) \\)<br />- \\( fac(1) = 1 * fac(0) \\)<br />- \\( fac(0) = 1 \\) (trường hợp cơ sở)<br /><br />Bây giờ, kết quả được trả về ngược lên:<br />- \\( fac(1) = 1 * 1 = 1 \\)<br />- \\( fac(2) = 2 * 1 = 2 \\)<br />- \\( fac(3) = 3 * 2 = 6 \\)<br />- \\( fac(4) = 4 * 6 = 24 \\)<br />- \\( fac(5) = 5 * 24 = 120 \\)<br /><br /><b>Đầu ra là 120.</b>",
+        "explanation": "Đây là một định nghĩa đệ quy kinh điển của hàm giai thừa (factorial). Trường hợp cơ sở là \\( 0! = 1 \\), và bước đệ quy là \\( n! = n * (n-1)! \\).",
+        "difficulty": "easy",
+        "topic": "Recursive Algorithms",
+        "hints": [
+          "Thuật toán này tính n! (n giai thừa).",
+          "Bắt đầu từ n=5 và gọi đệ quy xuống đến trường hợp cơ sở n=0.",
+          "Sau đó nhân các kết quả ngược trở lên."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 24,
+        "question": "Given the recursive algorithm<br />```pseudo<br />procedure T(a: real number, n: nonnegative integer)<br />  if n = 0 then<br />    return 1<br />  else<br />    return a * T(a, n-1)<br />```<br />Find output if a = 2, n = 3.",
+        "image": null,
+        "options": [
+          "A. None of the other choices is correct",
+          "B. 5",
+          "C. 6",
+          "D. 9",
+          "E. 8"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Thuật toán này tính lũy thừa \\( a^n \\). Ta cần tìm giá trị của \\( T(2, 3) \\).<br /><br />Quá trình gọi đệ quy như sau:<br />-   \\( T(2, 3) = 2 * T(2, 2) \\)<br />-   \\( T(2, 2) = 2 * T(2, 1) \\)<br />-   \\( T(2, 1) = 2 * T(2, 0) \\)<br />-   \\( T(2, 0) = 1 \\) (trường hợp cơ sở)<br /><br />Kết quả được trả về ngược lên:<br />-   \\( T(2, 1) = 2 * 1 = 2 \\)<br />-   \\( T(2, 2) = 2 * 2 = 4 \\)<br />-   \\( T(2, 3) = 2 * 4 = 8 \\)<br /><br />Vậy đầu ra là 8.",
+        "difficulty": "easy",
+        "topic": "Recursive Algorithms",
+        "hints": [
+          "Hãy xác định xem thuật toán này đang tính toán điều gì. Nó có giống hàm lũy thừa không?",
+          "Lần theo các bước gọi đệ quy từ T(2, 3) xuống T(2, 0).",
+          "Nhân các kết quả ngược trở lên từ trường hợp cơ sở."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 25,
+        "question": "Given the recursive algorithm<br />```pseudo<br />Procedure AL(n: integer)<br />  If n=0 then AL(n):=1<br />  else if n=1 then AL(n):=2<br />  else if n=2 then AL(n):=3<br />  else AL(n):=AL(n-1)*AL(n-2)*AL(n-3)<br />```<br />Find the value of AL(5).",
+        "image": null,
+        "options": [
+          "A. 6",
+          "B. 3",
+          "C. 36",
+          "D. 648",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Ta cần tính \\( AL(5) \\) bằng cách sử dụng các giá trị cơ sở và công thức đệ quy.<br /><br /><b>Các giá trị cơ sở:</b><br />- \\( AL(0) = 1 \\)<br />- \\( AL(1) = 2 \\)<br />- \\( AL(2) = 3 \\)<br /><br /><b>Bước 1: Tính \\( AL(3) \\)</b><br />\\( AL(3) = AL(2) * AL(1) * AL(0) = 3 * 2 * 1 = 6 \\)<br /><br /><b>Bước 2: Tính \\( AL(4) \\)</b><br />\\( AL(4) = AL(3) * AL(2) * AL(1) = 6 * 3 * 2 = 36 \\)<br /><br /><b>Bước 3: Tính \\( AL(5) \\)</b><br />\\( AL(5) = AL(4) * AL(3) * AL(2) = 36 * 6 * 3 = 648 \\)",
+        "difficulty": "medium",
+        "topic": "Recursive Algorithms",
+        "hints": [
+          "Bạn cần tính tuần tự AL(3) và AL(4) trước khi tính được AL(5).",
+          "Ghi lại các kết quả trung gian để tránh nhầm lẫn.",
+          "Mỗi số hạng bằng tích của ba số hạng đứng ngay trước nó."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 21,
+        "question": "Given the recurrence relation<br />\\[ f_n = 2f_{n-3} - 5f_{n-4} + 2^n \\]<br />How many initial conditions are needed to determine all further terms?",
+        "image": null,
+        "options": [
+          "A. 1",
+          "B. 2",
+          "C. 3",
+          "D. 4",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Số điều kiện ban đầu cần thiết cho một công thức truy hồi tuyến tính được xác định bởi 'bậc' của nó.<br /><br />Bậc của công thức truy hồi là hiệu số giữa chỉ số lớn nhất và chỉ số nhỏ nhất của các số hạng trong dãy.<br /><br />- Chỉ số lớn nhất là \\( n \\).<br />- Chỉ số nhỏ nhất là \\( n-4 \\).<br /><br />Hiệu số (bậc) là \\( n - (n-4) = 4 \\).<br /><br />Điều này có nghĩa là để tính một số hạng bất kỳ, ta cần biết 4 số hạng liền trước nó. Do đó, ta cần cung cấp 4 giá trị ban đầu (ví dụ: \\(f_0, f_1, f_2, f_3\\)) để có thể xác định duy nhất tất cả các số hạng tiếp theo của dãy.",
+        "difficulty": "easy",
+        "topic": "Recurrence Relations",
+        "hints": [
+          "Hãy xem xét số hạng có chỉ số nhỏ nhất trong công thức.",
+          "Bậc của công thức truy hồi chính là số điều kiện ban đầu cần thiết.",
+          "Bậc = (chỉ số lớn nhất) - (chỉ số nhỏ nhất)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 22,
+        "question": "Given the recursive algorithm<br />```pseudo<br />Procedure function(n: positive integer)<br />  if (n = 1) then<br />    function(n) := 1<br />  else if (n = 2) then<br />    function(n) := 1<br />  else<br />    function(n) := function(n-1) + function(n-2)<br />```<br />Find the value of function(n) when n = 7.",
+        "image": null,
+        "options": [
+          "A. 5",
+          "B. 3",
+          "C. 13",
+          "D. 1"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Thuật toán này định nghĩa dãy số Fibonacci, với hai giá trị ban đầu là \\( f(1)=1 \\) và \\( f(2)=1 \\). Ta tính toán lần lượt:<br /><br />- \\( f(1) = 1 \\)<br />- \\( f(2) = 1 \\)<br />- \\( f(3) = f(2) + f(1) = 1 + 1 = 2 \\)<br />- \\( f(4) = f(3) + f(2) = 2 + 1 = 3 \\)<br />- \\( f(5) = f(4) + f(3) = 3 + 2 = 5 \\)<br />- \\( f(6) = f(5) + f(4) = 5 + 3 = 8 \\)<br />- \\( f(7) = f(6) + f(5) = 8 + 5 = 13 \\)<br /><br />Vậy giá trị của function(7) là 13.",
+        "difficulty": "easy",
+        "topic": "Recursive Algorithms",
+        "hints": [
+          "Đây là định nghĩa đệ quy của dãy Fibonacci.",
+          "Hãy tính các giá trị f(3), f(4), ... một cách tuần tự.",
+          "Mỗi số hạng bằng tổng của hai số hạng đứng ngay trước nó."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 23,
+        "question": "Given the recursive algorithm.<br />```pseudo<br />procedure fac(n: non-negative integer)<br />  if n = 0 then<br />    fac(n) := 1<br />  else<br />    fac(n) := n * fac(n-1)<br /><br />print(fac(n))<br />```<br />Find output if n = 5.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Thuật toán này tính giai thừa của một số nguyên không âm. Ta cần tìm \\( fac(5) \\).<br /><br />Quá trình gọi đệ quy diễn ra như sau:<br />- \\( fac(5) = 5 * fac(4) \\)<br />- \\( fac(4) = 4 * fac(3) \\)<br />- \\( fac(3) = 3 * fac(2) \\)<br />- \\( fac(2) = 2 * fac(1) \\)<br />- \\( fac(1) = 1 * fac(0) \\)<br />- \\( fac(0) = 1 \\) (trường hợp cơ sở)<br /><br />Bây giờ, kết quả được trả về ngược lên:<br />- \\( fac(1) = 1 * 1 = 1 \\)<br />- \\( fac(2) = 2 * 1 = 2 \\)<br />- \\( fac(3) = 3 * 2 = 6 \\)<br />- \\( fac(4) = 4 * 6 = 24 \\)<br />- \\( fac(5) = 5 * 24 = 120 \\)<br /><br /><b>Đầu ra là 120.</b>",
+        "explanation": "Đây là một định nghĩa đệ quy kinh điển của hàm giai thừa (factorial). Trường hợp cơ sở là \\( 0! = 1 \\), và bước đệ quy là \\( n! = n * (n-1)! \\).",
+        "difficulty": "easy",
+        "topic": "Recursive Algorithms",
+        "hints": [
+          "Thuật toán này tính n! (n giai thừa).",
+          "Bắt đầu từ n=5 và gọi đệ quy xuống đến trường hợp cơ sở n=0.",
+          "Sau đó nhân các kết quả ngược trở lên."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 24,
+        "question": "Given the recursive algorithm<br />--------------------------------------------------<br />procedure T(a: real number, n: nonnegative integer)<br />  if n = 0 then<br />    return 1<br />  else<br />    return a * T(a, n-1)<br />--------------------------------------------------<br />Find output if a = 2, n = 3.",
+        "image": null,
+        "options": [
+          "A. None of the other choices is correct",
+          "B. 5",
+          "C. 6",
+          "D. 9",
+          "E. 8"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Thuật toán này tính lũy thừa \\( a^n \\). Ta cần tìm giá trị của \\( T(2, 3) \\).<br /><br />Quá trình gọi đệ quy như sau:<br />-   \\( T(2, 3) = 2 * T(2, 2) \\)<br />-   \\( T(2, 2) = 2 * T(2, 1) \\)<br />-   \\( T(2, 1) = 2 * T(2, 0) \\)<br />-   \\( T(2, 0) = 1 \\) (trường hợp cơ sở)<br /><br />Kết quả được trả về ngược lên:<br />-   \\( T(2, 1) = 2 * 1 = 2 \\)<br />-   \\( T(2, 2) = 2 * 2 = 4 \\)<br />-   \\( T(2, 3) = 2 * 4 = 8 \\)<br /><br />Vậy đầu ra là 8.",
+        "difficulty": "easy",
+        "topic": "Recursive Algorithms",
+        "hints": [
+          "Hãy xác định xem thuật toán này đang tính toán điều gì. Nó có giống hàm lũy thừa không?",
+          "Lần theo các bước gọi đệ quy từ T(2, 3) xuống T(2, 0).",
+          "Nhân các kết quả ngược trở lên từ trường hợp cơ sở."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 25,
+        "question": "Given the recursive algorithm<br />```pseudo<br />Procedure AL(n: integer)<br />  If n=0 then AL(n):=1<br />  else if n=1 then AL(n):=2<br />  else if n=2 then AL(n):=3<br />  else AL(n):=AL(n-1)*AL(n-2)*AL(n-3)<br />```<br />Find the value of AL(5).",
+        "image": null,
+        "options": [
+          "A. 6",
+          "B. 3",
+          "C. 36",
+          "D. 648",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Ta cần tính \\( AL(5) \\) bằng cách sử dụng các giá trị cơ sở và công thức đệ quy.<br /><br /><b>Các giá trị cơ sở:</b><br />- \\( AL(0) = 1 \\)<br />- \\( AL(1) = 2 \\)<br />- \\( AL(2) = 3 \\)<br /><br /><b>Bước 1: Tính \\( AL(3) \\)</b><br />\\( AL(3) = AL(2) * AL(1) * AL(0) = 3 * 2 * 1 = 6 \\)<br /><br /><b>Bước 2: Tính \\( AL(4) \\)</b><br />\\( AL(4) = AL(3) * AL(2) * AL(1) = 6 * 3 * 2 = 36 \\)<br /><br /><b>Bước 3: Tính \\( AL(5) \\)</b><br />\\( AL(5) = AL(4) * AL(3) * AL(2) = 36 * 6 * 3 = 648 \\)",
+        "difficulty": "medium",
+        "topic": "Recursive Algorithms",
+        "hints": [
+          "Bạn cần tính tuần tự AL(3) và AL(4) trước khi tính được AL(5).",
+          "Ghi lại các kết quả trung gian để tránh nhầm lẫn.",
+          "Mỗi số hạng bằng tích của ba số hạng đứng ngay trước nó."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 26,
+        "question": "Find a recursive relation for the sequence \\( \\{a_n = n^2 - n + 1\\} \\).",
+        "image": null,
+        "options": [
+          "A. \\( a_1 = 1, a_{n+1} = a_n + 2n + 1, \\quad n \\ge 1 \\)",
+          "B. \\( a_1 = 1, a_{n+1} = a_n + 2n, \\quad n \\ge 1 \\)",
+          "C. \\( a_1 = 1, a_{n+1} = a_n + 2n - 1, \\quad n \\ge 1 \\)",
+          "D. \\( a_1 = 1, a_{n+1} = a_n + 2n - 2, \\quad n \\ge 1 \\)",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Để tìm công thức truy hồi, ta cần tìm mối liên hệ giữa \\( a_{n+1} \\) và \\( a_n \\).<br /><br /><b>Bước 1: Tìm điều kiện ban đầu</b><br />Với \\( n=1 \\), ta có \\( a_1 = 1^2 - 1 + 1 = 1 \\). Tất cả các đáp án đều có điều kiện ban đầu này.<br /><br /><b>Bước 2: Viết biểu thức cho \\( a_{n+1} \\)</b><br />\\( a_{n+1} = (n+1)^2 - (n+1) + 1 \\)<br />\\( = (n^2 + 2n + 1) - n - 1 + 1 \\)<br />\\( = n^2 + n + 1 \\)<br /><br /><b>Bước 3: Tìm hiệu số \\( a_{n+1} - a_n \\)</b><br />\\( a_{n+1} - a_n = (n^2 + n + 1) - (n^2 - n + 1) \\)<br />\\( = n^2 + n + 1 - n^2 + n - 1 \\)<br />\\( = 2n \\)<br /><br />Từ đó suy ra: \\( a_{n+1} = a_n + 2n \\).<br />Đây chính là công thức ở đáp án (ii).",
+        "difficulty": "medium",
+        "topic": "Recurrence Relations",
+        "hints": [
+          "Hãy viết biểu thức cho cả aₙ và aₙ₊₁.",
+          "Xét hiệu số aₙ₊₁ - aₙ để tìm mối liên hệ.",
+          "Đừng quên kiểm tra điều kiện ban đầu (a₁)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 27,
+        "question": "Given a recursive relation<br />\\[ a_n = -3a_{n-1} + 4a_{n-2} \\]<br />Which of the following formulas satisfy this relation?<br /><br />(i) \\( a_n = -12 \\)<br />(ii) \\( a_n = (-4)^n \\)<br />(iii) \\( a_n = -1 \\)",
+        "image": null,
+        "options": [
+          "A. (ii)",
+          "B. (i), (ii) and (iii)",
+          "C. (iii)",
+          "D. None of the other choices is correct",
+          "E. (i)"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Ta sẽ thay từng công thức vào phương trình truy hồi để kiểm tra.<br /><br /><b>Kiểm tra (i): \\( a_n = -12 \\)</b><br />Vế phải = \\( -3(-12) + 4(-12) = 36 - 48 = -12 \\).<br />Vế trái = \\( a_n = -12 \\).<br />=> Vế trái = Vế phải. Công thức này thỏa mãn.<br /><br /><b>Kiểm tra (ii): \\( a_n = (-4)^n \\)</b><br />Vế phải = \\( -3(-4)^{n-1} + 4(-4)^{n-2} \\)<br />\\( = -3\\frac{(-4)^n}{-4} + 4\\frac{(-4)^n}{(-4)^2} \\)<br />\\( = \\frac{3}{4}(-4)^n + \\frac{4}{16}(-4)^n = \\frac{3}{4}(-4)^n + \\frac{1}{4}(-4)^n = (-4)^n \\).<br />Vế trái = \\( a_n = (-4)^n \\).<br />=> Vế trái = Vế phải. Công thức này thỏa mãn.<br /><br /><b>Kiểm tra (iii): \\( a_n = -1 \\)</b><br />Vế phải = \\( -3(-1) + 4(-1) = 3 - 4 = -1 \\).<br />Vế trái = \\( a_n = -1 \\).<br />=> Vế trái = Vế phải. Công thức này thỏa mãn.<br /><br />Vậy cả ba công thức đều thỏa mãn.",
+        "difficulty": "medium",
+        "topic": "Recurrence Relations",
+        "hints": [
+          "Thay từng biểu thức của aₙ vào cả hai vế của phương trình truy hồi.",
+          "Sử dụng các quy tắc về lũy thừa để đơn giản hóa biểu thức.",
+          "Nếu hai vế bằng nhau, công thức đó là một nghiệm."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 28,
+        "question": "Which sequence that does NOT satisfy the recursive relation<br />\\[ a_n = 8a_{n-1} - 16a_{n-2} \\]",
+        "image": null,
+        "options": [
+          "A. \\( a_n = n4^n \\)",
+          "B. None of the other choices is correct",
+          "C. \\( a_n = 2^n \\)",
+          "D. \\( a_n = 4^n \\)"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Phương trình đặc trưng của công thức truy hồi này là:<br />\\( r^2 = 8r - 16 \\)<br />\\( \\Rightarrow r^2 - 8r + 16 = 0 \\)<br />\\( \\Rightarrow (r-4)^2 = 0 \\)<br />Phương trình có một nghiệm kép \\( r=4 \\).<br /><br />Nghiệm tổng quát của công thức truy hồi có dạng:<br />\\( a_n = c_1 \\cdot 4^n + c_2 \\cdot n \\cdot 4^n \\)<br /><br />-   Dãy \\( a_n = 4^n \\) là một nghiệm (với \\( c_1=1, c_2=0 \\)).<br />-   Dãy \\( a_n = n4^n \\) là một nghiệm (với \\( c_1=0, c_2=1 \\)).<br /><br /><b>Kiểm tra dãy \\( a_n = 2^n \\)</b>:<br />Thay vào vế phải của công thức truy hồi:<br />\\( 8a_{n-1} - 16a_{n-2} = 8(2^{n-1}) - 16(2^{n-2}) \\)<br />\\( = 8(\\frac{2^n}{2}) - 16(\\frac{2^n}{4}) = 4 \\cdot 2^n - 4 \\cdot 2^n = 0 \\).<br />Vì \\( a_n = 2^n \\) không phải lúc nào cũng bằng 0, nên \\( a_n \\neq 8a_{n-1} - 16a_{n-2} \\).<br />Do đó, dãy \\( a_n = 2^n \\) không thỏa mãn.",
+        "difficulty": "medium",
+        "topic": "Recurrence Relations",
+        "hints": [
+          "Tìm nghiệm của phương trình đặc trưng để xác định dạng nghiệm tổng quát.",
+          "Nghiệm kép r sẽ cho nghiệm dạng c₁rⁿ + c₂nrⁿ.",
+          "Bạn cũng có thể thay trực tiếp từng dãy số vào công thức để kiểm tra."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 29,
+        "question": "Given the sequence<br />\\( a_0 = 1, a_n = a_0 + a_1 + \\cdots + a_{n-1} \\) for \\( n=1, 2, 3, ... \\)<br /><br />Find \\( a_5 \\).",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Ta tính các giá trị của dãy một cách tuần tự:<br /><br />- <b>\\( a_0 = 1 \\)</b> (cho trước)<br /><br />- <b>\\( a_1 = a_0 = 1 \\)</b><br /><br />- <b>\\( a_2 = a_0 + a_1 = 1 + 1 = 2 \\)</b><br /><br />- <b>\\( a_3 = a_0 + a_1 + a_2 = 1 + 1 + 2 = 4 \\)</b><br /><br />- <b>\\( a_4 = a_0 + a_1 + a_2 + a_3 = 4 + 4 = 8 \\)</b> (ta có thể dùng \\( a_3 + a_3 \\))<br /><br />- <b>\\( a_5 = a_0 + a_1 + a_2 + a_3 + a_4 = 8 + 8 = 16 \\)</b> (tương tự, \\( a_5 = a_4 + a_4 \\))<br /><br /><b>Đáp án cuối cùng là 16.</b>",
+        "explanation": "Đây là một dãy số thú vị. Ta có thể thấy rằng với \\( n \\ge 2 \\), \\( a_n = (a_0 + ... + a_{n-2}) + a_{n-1} = a_{n-1} + a_{n-1} = 2a_{n-1} \\).<br /><br />Do đó, dãy số là: 1, 1, 2, 4, 8, 16, ... (gồm số 1 và các lũy thừa của 2).",
+        "difficulty": "easy",
+        "topic": "Sequences",
+        "hints": [
+          "Hãy tính tuần tự a₁, a₂, a₃, ...",
+          "Để ý rằng tổng các số hạng đến aₙ₋₂ chính là aₙ₋₁.",
+          "Từ đó suy ra aₙ = 2aₙ₋₁ với n ≥ 2."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 30,
+        "question": "Given the sequence \\( a_0 = 2 \\) and \\( a_n = a_{n-1}^2 - 1 \\) for \\( n > 0 \\).<br />Find \\( a_4 \\).",
+        "image": null,
+        "options": [
+          "A. 3968",
+          "B. 63",
+          "C. 2454",
+          "D. 75",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta tính các giá trị của dãy một cách tuần tự, bắt đầu từ \\( a_0 \\).<br /><br />- <b>\\( a_0 = 2 \\)</b><br /><br />- <b>\\( a_1 = a_0^2 - 1 = 2^2 - 1 = 4 - 1 = 3 \\)</b><br /><br />- <b>\\( a_2 = a_1^2 - 1 = 3^2 - 1 = 9 - 1 = 8 \\)</b><br /><br />- <b>\\( a_3 = a_2^2 - 1 = 8^2 - 1 = 64 - 1 = 63 \\)</b><br /><br />- <b>\\( a_4 = a_3^2 - 1 = 63^2 - 1 = 3969 - 1 = 3968 \\)</b>",
+        "difficulty": "medium",
+        "topic": "Sequences",
+        "hints": [
+          "Đây là bài toán tính toán tuần tự.",
+          "Bắt đầu với a₀=2 để tính a₁.",
+          "Sử dụng kết quả vừa tính được để tính số hạng tiếp theo.",
+          "Hãy cẩn thận với phép tính bình phương."
+        ],
+        "type": "multiple_choice"
+      }
+    ]
+}
