@@ -629,6 +629,159 @@
           "Hãy cẩn thận với phép tính bình phương."
         ],
         "type": "multiple_choice"
+      },
+      {
+        "id": 31,
+        "question": "Given a sequence \\( \\{a_n\\} \\) satisfying the recurrence relation<br />\\( a_1 = 1, a_n = a_{n-1} + 3^n \\) for \\( n=2, 3, ... \\).<br /><br />Find \\( a_4 \\).",
+        "image": null,
+        "options": [
+          "A. 112",
+          "B. 118",
+          "C. 114",
+          "D. 116",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Ta tính các số hạng của dãy một cách tuần tự:<br /><br />-   <b>Giá trị ban đầu:</b> \\( a_1 = 1 \\)<br /><br />-   <b>Tính \\( a_2 \\) (với n=2):</b><br />    \\( a_2 = a_1 + 3^2 = 1 + 9 = 10 \\)<br /><br />-   <b>Tính \\( a_3 \\) (với n=3):</b><br />    \\( a_3 = a_2 + 3^3 = 10 + 27 = 37 \\)<br /><br />-   <b>Tính \\( a_4 \\) (với n=4):</b><br />    \\( a_4 = a_3 + 3^4 = 37 + 81 = 118 \\)",
+        "difficulty": "medium",
+        "topic": "Recurrence Relations",
+        "hints": [
+          "Đây là bài toán tính toán tuần tự.",
+          "Sử dụng giá trị a₁ để tính a₂.",
+          "Sử dụng giá trị a₂ để tính a₃, và cứ thế tiếp tục."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 32,
+        "question": "Let \\( a_n = 2^n + 4(3^n) + n \\) for \\( n = 0, 1, 2, ... \\).<br />Find \\( a_0, a_2 \\) and \\( a_4 \\).",
+        "image": null,
+        "options": [
+          "A. 5, 42, 344",
+          "B. 5, 42, 430",
+          "C. None of the other choices is correct",
+          "D. 5, 36, 344",
+          "E. 5, 36, 430"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta chỉ cần thay các giá trị của \\( n \\) vào công thức đã cho.<br /><br />-   <b>Với n = 0:</b><br />    \\( a_0 = 2^0 + 4(3^0) + 0 = 1 + 4(1) + 0 = 5 \\)<br /><br />-   <b>Với n = 2:</b><br />    \\( a_2 = 2^2 + 4(3^2) + 2 = 4 + 4(9) + 2 = 4 + 36 + 2 = 42 \\)<br /><br />-   <b>Với n = 4:</b><br />    \\( a_4 = 2^4 + 4(3^4) + 4 = 16 + 4(81) + 4 = 16 + 324 + 4 = 344 \\)<br /><br />Vậy các giá trị cần tìm là 5, 42, và 344.",
+        "difficulty": "easy",
+        "topic": "Sequences",
+        "hints": [
+          "Thay lần lượt n=0, n=2, và n=4 vào công thức.",
+          "Nhớ rằng bất kỳ số nào mũ 0 cũng bằng 1.",
+          "Hãy tính toán cẩn thận các phép lũy thừa và nhân chia trước, cộng trừ sau."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 33,
+        "question": "Given a recursive relation<br />\\[ a_n = -3a_{n-1} + 4a_{n-2} \\]<br />Which of the following formulas satisfy this relation?<br /><br />(i) \\( a_n = -12 \\)<br />(ii) \\( a_n = (-4)^n \\)<br />(iii) \\( a_n = -1 \\)",
+        "image": null,
+        "options": [
+          "A. (ii)",
+          "B. (i), (ii) and (iii)",
+          "C. (ii) and (iii)",
+          "D. (i)",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Ta sẽ thay từng công thức vào vế phải của phương trình truy hồi để kiểm tra xem nó có bằng vế trái (\\(a_n\\)) hay không.<br /><br /><b>Kiểm tra (i): \\( a_n = -12 \\)</b><br />Vế phải = \\( -3(-12) + 4(-12) = 36 - 48 = -12 \\). Bằng vế trái. => Thỏa mãn.<br /><br /><b>Kiểm tra (ii): \\( a_n = (-4)^n \\)</b><br />Vế phải = \\( -3(-4)^{n-1} + 4(-4)^{n-2} = -3\\frac{(-4)^n}{-4} + 4\\frac{(-4)^n}{16} = \\frac{3}{4}(-4)^n + \\frac{1}{4}(-4)^n = (-4)^n \\). Bằng vế trái. => Thỏa mãn.<br /><br /><b>Kiểm tra (iii): \\( a_n = -1 \\)</b><br />Vế phải = \\( -3(-1) + 4(-1) = 3 - 4 = -1 \\). Bằng vế trái. => Thỏa mãn.<br /><br />Vậy cả ba công thức đều thỏa mãn.",
+        "difficulty": "medium",
+        "topic": "Recurrence Relations",
+        "hints": [
+          "Thay trực tiếp biểu thức của aₙ, aₙ₋₁, aₙ₋₂ vào công thức truy hồi.",
+          "Đối với công thức hằng số, việc kiểm tra rất nhanh chóng.",
+          "Đối với công thức lũy thừa, hãy sử dụng quy tắc \\( a^{n-k} = a^n / a^k \\) để đưa về cùng số mũ."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 34,
+        "question": "Give a recursive definition of the sequence \\( \\{a_n = 10^n\\}, n=0, 1, 2, 3, ... \\)",
+        "image": null,
+        "options": [
+          "A. (i) \\( a_0=0, a_n=10a_{n-1} \\) for \\( n=1, 2, 3,... \\)",
+          "B. (ii) \\( a_0=1, a_n=10a_{n-1} \\) for \\( n=1, 2, 3,... \\)",
+          "C. (iii) \\( a_1=10, a_n=10a_{n-1} \\) for \\( n=2, 3,... \\)",
+          "D. (iv) \\( a_0=1, a_n=a_{n-1} \\) for \\( n=1, 2, 3,... \\)",
+          "E. None of the other choices"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Một định nghĩa đệ quy cần có hai phần: một trường hợp cơ sở và một bước đệ quy.<br /><br />1.  <b>Trường hợp cơ sở (Basis step):</b> Ta cần giá trị đầu tiên của dãy. Với \\( n=0 \\), \\( a_0 = 10^0 = 1 \\).<br />2.  <b>Bước đệ quy (Recursive step):</b> Ta cần biểu diễn \\( a_n \\) qua các số hạng trước đó. Ta thấy:<br />    \\( a_n = 10^n = 10 \\cdot 10^{n-1} = 10 \\cdot a_{n-1} \\).<br /><br />Kết hợp cả hai, ta có định nghĩa đệ quy hoàn chỉnh là:<br />\\( a_0 = 1 \\) và \\( a_n = 10a_{n-1} \\) cho \\( n \\ge 1 \\).<br />Điều này khớp với đáp án (ii).",
+        "difficulty": "easy",
+        "topic": "Recursive Definitions",
+        "hints": [
+          "Một định nghĩa đệ quy luôn cần một điểm dừng (trường hợp cơ sở).",
+          "Hãy tìm giá trị của a₀.",
+          "Tìm mối quan hệ giữa aₙ và aₙ₋₁."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 35,
+        "question": "Which of the following algorithms are recursive?<br /><br />(i)<br />```pseudo<br />procedure A(n: nonnegative even integer)<br />  if n = 0 then A(n) := 1<br />  else A(n) := A(n-2) * 3<br />```<br />(ii)<br />```pseudo<br />procedure A(n: nonnegative even integer)<br />  if n = 0 then y := 1<br />  else<br />    begin<br />      y := 1; m = n div 2;<br />      for i:=1 to m<br />        y := y*3;<br />    end<br />```",
+        "image": null,
+        "options": [
+          "A. Only (i)",
+          "B. Both of them",
+          "C. Only (ii)",
+          "D. None of them"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Một thuật toán được gọi là đệ quy nếu nó tự gọi lại chính nó trong định nghĩa của nó.<br /><br />-   <b>Thuật toán (i):</b> Trong phần `else`, thủ tục `A(n)` gọi lại chính nó với một giá trị khác là `A(n-2)`. Do đó, đây là một thuật toán đệ quy.<br /><br />-   <b>Thuật toán (ii):</b> Thuật toán này sử dụng một vòng lặp `for` để thực hiện phép tính. Nó không hề gọi lại thủ tục `A` ở bất kỳ đâu bên trong nó. Do đó, đây là một thuật toán lặp (iterative), không phải đệ quy.<br /><br />Vậy, chỉ có thuật toán (i) là đệ quy.",
+        "difficulty": "easy",
+        "topic": "Recursive Algorithms",
+        "hints": [
+          "Đệ quy có nghĩa là 'tự gọi lại chính mình'.",
+          "Tìm xem trong thân của thủ tục có lời gọi đến chính thủ tục đó hay không.",
+          "Các cấu trúc vòng lặp như 'for' hoặc 'while' là đặc trưng của giải thuật lặp, không phải đệ quy."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 36,
+        "question": "Given the recursive algorithm<br />--------------------------------------------------<br />```pseudo<br />procedure P(a: real number, n: positive integer)<br />\tif n = 1 then<br />\t\treturn 1<br />\telse<br />\t\treturn a + P(a, n-1)<br />```<br />--------------------------------------------------<br />Find output if a = 3, n = 5.",
+        "image": null,
+        "options": [
+          "A. 13",
+          "B. 15",
+          "C. 125",
+          "D. 243",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta cần tìm giá trị của \\( P(3, 5) \\). Hãy lần theo các bước gọi đệ quy:<br /><br />-   \\( P(3, 5) = 3 + P(3, 4) \\)<br />-   \\( P(3, 4) = 3 + P(3, 3) \\)<br />-   \\( P(3, 3) = 3 + P(3, 2) \\)<br />-   \\( P(3, 2) = 3 + P(3, 1) \\)<br />-   \\( P(3, 1) = 1 \\) (đây là trường hợp cơ sở)<br /><br />Bây giờ ta thay thế kết quả ngược trở lên:<br />-   \\( P(3, 2) = 3 + 1 = 4 \\)<br />-   \\( P(3, 3) = 3 + 4 = 7 \\)<br />-   \\( P(3, 4) = 3 + 7 = 10 \\)<br />-   \\( P(3, 5) = 3 + 10 = 13 \\)<br /><br /><b>Ghi chú:</b> Công thức tường minh cho thuật toán này là \\( P(a, n) = (n-1)a + 1 \\). Với a=3, n=5, ta có \\( (5-1)*3 + 1 = 13 \\).",
+        "difficulty": "medium",
+        "topic": "Recursive Algorithms",
+        "hints": [
+          "Bắt đầu từ P(3, 5) và theo dõi các lời gọi đệ quy cho đến khi n=1.",
+          "Trường hợp cơ sở (điểm dừng) là khi n=1, hàm trả về 1.",
+          "Sau khi đạt đến điểm dừng, hãy tính toán và trả kết quả ngược lên."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 37,
+        "question": "Given the recursive algorithm<br />--------------------------------------------------<br />```pseudo<br />procedure T(n: integer)<br />\tif n < 3 then<br />\t\treturn 3<br />\telse if (n mod 2 = 0) then<br />\t\treturn n<br />\telse<br />\t\treturn 3*T(n-1) - 2<br />```<br />--------------------------------------------------<br />Find ouput if n = 9.",
+        "image": null,
+        "options": [
+          "A. 22",
+          "B. 25",
+          "C. 27",
+          "D. 9",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta cần tìm giá trị của \\( T(9) \\).<br /><br /><b>Bước 1: Tính \\( T(9) \\)</b><br />-   \\( n = 9 \\). Vì \\( 9 \\ge 3 \\) và 9 là số lẻ (9 mod 2 \\( \\neq \\) 0), ta thực hiện nhánh `else` cuối cùng:<br />    \\( T(9) = 3 * T(9-1) - 2 = 3 * T(8) - 2 \\)<br /><br /><b>Bước 2: Tính \\( T(8) \\)</b><br />-   Để tính \\( T(9) \\), ta cần \\( T(8) \\).<br />-   \\( n = 8 \\). Vì \\( 8 \\ge 3 \\) và 8 là số chẵn (8 mod 2 = 0), ta thực hiện nhánh `else if`:<br />    \\( T(8) = 8 \\)<br /><br /><b>Bước 3: Hoàn thành tính toán</b><br />-   Bây giờ ta thay kết quả của \\( T(8) \\) vào biểu thức của \\( T(9) \\):<br />    \\( T(9) = 3 * 8 - 2 = 24 - 2 = 22 \\)",
+        "difficulty": "medium",
+        "topic": "Recursive Algorithms",
+        "hints": [
+          "Kiểm tra các điều kiện (if/else if/else) một cách cẩn thận cho mỗi giá trị của n.",
+          "Lời gọi T(9) sẽ cần giá trị của T(8).",
+          "Hãy tính T(8) trước, sau đó dùng kết quả đó để tính T(9)."
+        ],
+        "type": "multiple_choice"
       }
     ]
 }
