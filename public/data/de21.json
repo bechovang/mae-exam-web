@@ -579,18 +579,18 @@
         "options": [
           "A. (ii)",
           "B. (i), (ii) and (iii)",
-          "C. (ii) and (iii)",
-          "D. (i)",
-          "E. None of the other choices is correct"
+          "C. (iii)",
+          "D. None of the other choices is correct",
+          "E. (i)"
         ],
         "correctAnswer": "B",
-        "explanation": "Ta sẽ thay từng công thức vào vế phải của phương trình truy hồi để kiểm tra xem nó có bằng vế trái (\\(a_n\\)) hay không.<br /><br /><b>Kiểm tra (i): \\( a_n = -12 \\)</b><br />Vế phải = \\( -3(-12) + 4(-12) = 36 - 48 = -12 \\). Bằng vế trái. => Thỏa mãn.<br /><br /><b>Kiểm tra (ii): \\( a_n = (-4)^n \\)</b><br />Vế phải = \\( -3(-4)^{n-1} + 4(-4)^{n-2} = -3\\frac{(-4)^n}{-4} + 4\\frac{(-4)^n}{16} = \\frac{3}{4}(-4)^n + \\frac{1}{4}(-4)^n = (-4)^n \\). Bằng vế trái. => Thỏa mãn.<br /><br /><b>Kiểm tra (iii): \\( a_n = -1 \\)</b><br />Vế phải = \\( -3(-1) + 4(-1) = 3 - 4 = -1 \\). Bằng vế trái. => Thỏa mãn.<br /><br />Vậy cả ba công thức đều thỏa mãn.",
+        "explanation": "<b>Phương pháp giải:</b><br />Ý tưởng chính là thay từng công thức được cho vào phương trình truy hồi \\( a_n = -3a_{n-1} + 4a_{n-2} \\) để kiểm tra xem hai vế có bằng nhau hay không.<br /><br />---<br /><br /><b>Kiểm tra (i): \\( a_n = -12 \\)</b><br />Nếu \\( a_n = -12 \\) thì \\( a_{n-1} = -12 \\) và \\( a_{n-2} = -12 \\).<br />- Vế trái: \\( a_n = -12 \\)<br />- Vế phải: \\( -3(-12) + 4(-12) = 36 - 48 = -12 \\)<br />=> Vế trái = Vế phải. <b>Công thức (i) thỏa mãn.</b><br /><br /><b>Kiểm tra (ii): \\( a_n = (-4)^n \\)</b><br />Ta có: \\( a_{n-1} = (-4)^{n-1} \\) và \\( a_{n-2} = (-4)^{n-2} \\).<br />- Vế trái: \\( a_n = (-4)^n \\)<br />- Vế phải: \\( -3a_{n-1} + 4a_{n-2} = -3(-4)^{n-1} + 4(-4)^{n-2} \\)<br />Rút thừa số chung \\( (-4)^{n-2} \\) ra ngoài:<br />\\( = (-4)^{n-2} \\cdot [-3(-4) + 4] \\)<br />\\( = (-4)^{n-2} \\cdot [12 + 4] \\)<br />\\( = (-4)^{n-2} \\cdot 16 \\)<br />\\( = (-4)^{n-2} \\cdot (-4)^2 = (-4)^{n-2+2} = (-4)^n \\)<br />=> Vế trái = Vế phải. <b>Công thức (ii) thỏa mãn.</b><br /><br /><b>Kiểm tra (iii): \\( a_n = -1 \\)</b><br />Nếu \\( a_n = -1 \\) thì \\( a_{n-1} = -1 \\) và \\( a_{n-2} = -1 \\).<br />- Vế trái: \\( a_n = -1 \\)<br />- Vế phải: \\( -3(-1) + 4(-1) = 3 - 4 = -1 \\)<br />=> Vế trái = Vế phải. <b>Công thức (iii) thỏa mãn.</b><br /><br />---<br /><br />Vì cả ba công thức đều thỏa mãn, đáp án đúng là B.",
         "difficulty": "medium",
         "topic": "Recurrence Relations",
         "hints": [
-          "Thay trực tiếp biểu thức của aₙ, aₙ₋₁, aₙ₋₂ vào công thức truy hồi.",
-          "Đối với công thức hằng số, việc kiểm tra rất nhanh chóng.",
-          "Đối với công thức lũy thừa, hãy sử dụng quy tắc \\( a^{n-k} = a^n / a^k \\) để đưa về cùng số mũ."
+          "Đối với các công thức là hằng số (ví dụ: aₙ = -12), chỉ cần thay số đó vào cả hai vế của phương trình truy hồi và tính toán.",
+          "Đối với công thức dạng lũy thừa (ví dụ: aₙ = (-4)ⁿ), hãy rút thừa số chung có số mũ nhỏ nhất ra ngoài để đơn giản hóa biểu thức.",
+          "Bạn có thể kiểm tra các trường hợp hằng số trước vì chúng thường dễ tính hơn."
         ],
         "type": "multiple_choice"
       },
