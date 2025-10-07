@@ -321,7 +321,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 21,
+        "id": 16,
         "question": "Given the recurrence relation<br />\\[ f_n = 2f_{n-3} - 5f_{n-4} + 2^n \\]<br />How many initial conditions are needed to determine all further terms?",
         "image": null,
         "options": [
@@ -343,7 +343,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 22,
+        "id": 17,
         "question": "Given the recursive algorithm<br />```pseudo<br />Procedure function(n: positive integer)<br />  if (n = 1) then<br />    function(n) := 1<br />  else if (n = 2) then<br />    function(n) := 1<br />  else<br />    function(n) := function(n-1) + function(n-2)<br />```<br />Find the value of function(n) when n = 7.",
         "image": null,
         "options": [
@@ -364,7 +364,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 23,
+        "id": 18,
         "question": "Given the recursive algorithm.<br />```pseudo<br />procedure fac(n: non-negative integer)<br />  if n = 0 then<br />    fac(n) := 1<br />  else<br />    fac(n) := n * fac(n-1)<br /><br />print(fac(n))<br />```<br />Find output if n = 5.",
         "image": null,
         "options": [],
@@ -380,7 +380,7 @@
         "type": "essay"
       },
       {
-        "id": 24,
+        "id": 19,
         "question": "Given the recursive algorithm<br />```pseudo<br />procedure T(a: real number, n: nonnegative integer)<br />  if n = 0 then<br />    return 1<br />  else<br />    return a * T(a, n-1)<br />```<br />Find output if a = 2, n = 3.",
         "image": null,
         "options": [
@@ -402,7 +402,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 25,
+        "id": 20,
         "question": "Given the recursive algorithm<br />```pseudo<br />Procedure AL(n: integer)<br />  If n=0 then AL(n):=1<br />  else if n=1 then AL(n):=2<br />  else if n=2 then AL(n):=3<br />  else AL(n):=AL(n-1)*AL(n-2)*AL(n-3)<br />```<br />Find the value of AL(5).",
         "image": null,
         "options": [
@@ -423,111 +423,9 @@
         ],
         "type": "multiple_choice"
       },
+      
       {
         "id": 21,
-        "question": "Given the recurrence relation<br />\\[ f_n = 2f_{n-3} - 5f_{n-4} + 2^n \\]<br />How many initial conditions are needed to determine all further terms?",
-        "image": null,
-        "options": [
-          "A. 1",
-          "B. 2",
-          "C. 3",
-          "D. 4",
-          "E. None of the other choices is correct"
-        ],
-        "correctAnswer": "D",
-        "explanation": "Số điều kiện ban đầu cần thiết cho một công thức truy hồi tuyến tính được xác định bởi 'bậc' của nó.<br /><br />Bậc của công thức truy hồi là hiệu số giữa chỉ số lớn nhất và chỉ số nhỏ nhất của các số hạng trong dãy.<br /><br />- Chỉ số lớn nhất là \\( n \\).<br />- Chỉ số nhỏ nhất là \\( n-4 \\).<br /><br />Hiệu số (bậc) là \\( n - (n-4) = 4 \\).<br /><br />Điều này có nghĩa là để tính một số hạng bất kỳ, ta cần biết 4 số hạng liền trước nó. Do đó, ta cần cung cấp 4 giá trị ban đầu (ví dụ: \\(f_0, f_1, f_2, f_3\\)) để có thể xác định duy nhất tất cả các số hạng tiếp theo của dãy.",
-        "difficulty": "easy",
-        "topic": "Recurrence Relations",
-        "hints": [
-          "Hãy xem xét số hạng có chỉ số nhỏ nhất trong công thức.",
-          "Bậc của công thức truy hồi chính là số điều kiện ban đầu cần thiết.",
-          "Bậc = (chỉ số lớn nhất) - (chỉ số nhỏ nhất)."
-        ],
-        "type": "multiple_choice"
-      },
-      {
-        "id": 22,
-        "question": "Given the recursive algorithm<br />```pseudo<br />Procedure function(n: positive integer)<br />  if (n = 1) then<br />    function(n) := 1<br />  else if (n = 2) then<br />    function(n) := 1<br />  else<br />    function(n) := function(n-1) + function(n-2)<br />```<br />Find the value of function(n) when n = 7.",
-        "image": null,
-        "options": [
-          "A. 5",
-          "B. 3",
-          "C. 13",
-          "D. 1"
-        ],
-        "correctAnswer": "C",
-        "explanation": "Thuật toán này định nghĩa dãy số Fibonacci, với hai giá trị ban đầu là \\( f(1)=1 \\) và \\( f(2)=1 \\). Ta tính toán lần lượt:<br /><br />- \\( f(1) = 1 \\)<br />- \\( f(2) = 1 \\)<br />- \\( f(3) = f(2) + f(1) = 1 + 1 = 2 \\)<br />- \\( f(4) = f(3) + f(2) = 2 + 1 = 3 \\)<br />- \\( f(5) = f(4) + f(3) = 3 + 2 = 5 \\)<br />- \\( f(6) = f(5) + f(4) = 5 + 3 = 8 \\)<br />- \\( f(7) = f(6) + f(5) = 8 + 5 = 13 \\)<br /><br />Vậy giá trị của function(7) là 13.",
-        "difficulty": "easy",
-        "topic": "Recursive Algorithms",
-        "hints": [
-          "Đây là định nghĩa đệ quy của dãy Fibonacci.",
-          "Hãy tính các giá trị f(3), f(4), ... một cách tuần tự.",
-          "Mỗi số hạng bằng tổng của hai số hạng đứng ngay trước nó."
-        ],
-        "type": "multiple_choice"
-      },
-      {
-        "id": 23,
-        "question": "Given the recursive algorithm.<br />```pseudo<br />procedure fac(n: non-negative integer)<br />  if n = 0 then<br />    fac(n) := 1<br />  else<br />    fac(n) := n * fac(n-1)<br /><br />print(fac(n))<br />```<br />Find output if n = 5.",
-        "image": null,
-        "options": [],
-        "correctAnswer": "Thuật toán này tính giai thừa của một số nguyên không âm. Ta cần tìm \\( fac(5) \\).<br /><br />Quá trình gọi đệ quy diễn ra như sau:<br />- \\( fac(5) = 5 * fac(4) \\)<br />- \\( fac(4) = 4 * fac(3) \\)<br />- \\( fac(3) = 3 * fac(2) \\)<br />- \\( fac(2) = 2 * fac(1) \\)<br />- \\( fac(1) = 1 * fac(0) \\)<br />- \\( fac(0) = 1 \\) (trường hợp cơ sở)<br /><br />Bây giờ, kết quả được trả về ngược lên:<br />- \\( fac(1) = 1 * 1 = 1 \\)<br />- \\( fac(2) = 2 * 1 = 2 \\)<br />- \\( fac(3) = 3 * 2 = 6 \\)<br />- \\( fac(4) = 4 * 6 = 24 \\)<br />- \\( fac(5) = 5 * 24 = 120 \\)<br /><br /><b>Đầu ra là 120.</b>",
-        "explanation": "Đây là một định nghĩa đệ quy kinh điển của hàm giai thừa (factorial). Trường hợp cơ sở là \\( 0! = 1 \\), và bước đệ quy là \\( n! = n * (n-1)! \\).",
-        "difficulty": "easy",
-        "topic": "Recursive Algorithms",
-        "hints": [
-          "Thuật toán này tính n! (n giai thừa).",
-          "Bắt đầu từ n=5 và gọi đệ quy xuống đến trường hợp cơ sở n=0.",
-          "Sau đó nhân các kết quả ngược trở lên."
-        ],
-        "type": "essay"
-      },
-      {
-        "id": 24,
-        "question": "Given the recursive algorithm<br />--------------------------------------------------<br />procedure T(a: real number, n: nonnegative integer)<br />  if n = 0 then<br />    return 1<br />  else<br />    return a * T(a, n-1)<br />--------------------------------------------------<br />Find output if a = 2, n = 3.",
-        "image": null,
-        "options": [
-          "A. None of the other choices is correct",
-          "B. 5",
-          "C. 6",
-          "D. 9",
-          "E. 8"
-        ],
-        "correctAnswer": "E",
-        "explanation": "Thuật toán này tính lũy thừa \\( a^n \\). Ta cần tìm giá trị của \\( T(2, 3) \\).<br /><br />Quá trình gọi đệ quy như sau:<br />-   \\( T(2, 3) = 2 * T(2, 2) \\)<br />-   \\( T(2, 2) = 2 * T(2, 1) \\)<br />-   \\( T(2, 1) = 2 * T(2, 0) \\)<br />-   \\( T(2, 0) = 1 \\) (trường hợp cơ sở)<br /><br />Kết quả được trả về ngược lên:<br />-   \\( T(2, 1) = 2 * 1 = 2 \\)<br />-   \\( T(2, 2) = 2 * 2 = 4 \\)<br />-   \\( T(2, 3) = 2 * 4 = 8 \\)<br /><br />Vậy đầu ra là 8.",
-        "difficulty": "easy",
-        "topic": "Recursive Algorithms",
-        "hints": [
-          "Hãy xác định xem thuật toán này đang tính toán điều gì. Nó có giống hàm lũy thừa không?",
-          "Lần theo các bước gọi đệ quy từ T(2, 3) xuống T(2, 0).",
-          "Nhân các kết quả ngược trở lên từ trường hợp cơ sở."
-        ],
-        "type": "multiple_choice"
-      },
-      {
-        "id": 25,
-        "question": "Given the recursive algorithm<br />```pseudo<br />Procedure AL(n: integer)<br />  If n=0 then AL(n):=1<br />  else if n=1 then AL(n):=2<br />  else if n=2 then AL(n):=3<br />  else AL(n):=AL(n-1)*AL(n-2)*AL(n-3)<br />```<br />Find the value of AL(5).",
-        "image": null,
-        "options": [
-          "A. 6",
-          "B. 3",
-          "C. 36",
-          "D. 648",
-          "E. None of the other choices is correct"
-        ],
-        "correctAnswer": "D",
-        "explanation": "Ta cần tính \\( AL(5) \\) bằng cách sử dụng các giá trị cơ sở và công thức đệ quy.<br /><br /><b>Các giá trị cơ sở:</b><br />- \\( AL(0) = 1 \\)<br />- \\( AL(1) = 2 \\)<br />- \\( AL(2) = 3 \\)<br /><br /><b>Bước 1: Tính \\( AL(3) \\)</b><br />\\( AL(3) = AL(2) * AL(1) * AL(0) = 3 * 2 * 1 = 6 \\)<br /><br /><b>Bước 2: Tính \\( AL(4) \\)</b><br />\\( AL(4) = AL(3) * AL(2) * AL(1) = 6 * 3 * 2 = 36 \\)<br /><br /><b>Bước 3: Tính \\( AL(5) \\)</b><br />\\( AL(5) = AL(4) * AL(3) * AL(2) = 36 * 6 * 3 = 648 \\)",
-        "difficulty": "medium",
-        "topic": "Recursive Algorithms",
-        "hints": [
-          "Bạn cần tính tuần tự AL(3) và AL(4) trước khi tính được AL(5).",
-          "Ghi lại các kết quả trung gian để tránh nhầm lẫn.",
-          "Mỗi số hạng bằng tích của ba số hạng đứng ngay trước nó."
-        ],
-        "type": "multiple_choice"
-      },
-      {
-        "id": 26,
         "question": "Find a recursive relation for the sequence \\( \\{a_n = n^2 - n + 1\\} \\).",
         "image": null,
         "options": [
@@ -549,7 +447,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 27,
+        "id": 22,
         "question": "Given a recursive relation<br />\\[ a_n = -3a_{n-1} + 4a_{n-2} \\]<br />Which of the following formulas satisfy this relation?<br /><br />(i) \\( a_n = -12 \\)<br />(ii) \\( a_n = (-4)^n \\)<br />(iii) \\( a_n = -1 \\)",
         "image": null,
         "options": [
@@ -571,7 +469,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 28,
+        "id": 23,
         "question": "Which sequence that does NOT satisfy the recursive relation<br />\\[ a_n = 8a_{n-1} - 16a_{n-2} \\]",
         "image": null,
         "options": [
@@ -592,7 +490,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 29,
+        "id": 24,
         "question": "Given the sequence<br />\\( a_0 = 1, a_n = a_0 + a_1 + \\cdots + a_{n-1} \\) for \\( n=1, 2, 3, ... \\)<br /><br />Find \\( a_5 \\).",
         "image": null,
         "options": [],
@@ -608,7 +506,7 @@
         "type": "essay"
       },
       {
-        "id": 30,
+        "id": 25,
         "question": "Given the sequence \\( a_0 = 2 \\) and \\( a_n = a_{n-1}^2 - 1 \\) for \\( n > 0 \\).<br />Find \\( a_4 \\).",
         "image": null,
         "options": [
@@ -631,7 +529,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 31,
+        "id": 26,
         "question": "Given a sequence \\( \\{a_n\\} \\) satisfying the recurrence relation<br />\\( a_1 = 1, a_n = a_{n-1} + 3^n \\) for \\( n=2, 3, ... \\).<br /><br />Find \\( a_4 \\).",
         "image": null,
         "options": [
@@ -653,7 +551,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 32,
+        "id": 27,
         "question": "Let \\( a_n = 2^n + 4(3^n) + n \\) for \\( n = 0, 1, 2, ... \\).<br />Find \\( a_0, a_2 \\) and \\( a_4 \\).",
         "image": null,
         "options": [
@@ -675,7 +573,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 33,
+        "id": 28,
         "question": "Given a recursive relation<br />\\[ a_n = -3a_{n-1} + 4a_{n-2} \\]<br />Which of the following formulas satisfy this relation?<br /><br />(i) \\( a_n = -12 \\)<br />(ii) \\( a_n = (-4)^n \\)<br />(iii) \\( a_n = -1 \\)",
         "image": null,
         "options": [
@@ -697,7 +595,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 34,
+        "id": 29,
         "question": "Give a recursive definition of the sequence \\( \\{a_n = 10^n\\}, n=0, 1, 2, 3, ... \\)",
         "image": null,
         "options": [
@@ -719,7 +617,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 35,
+        "id": 30,
         "question": "Which of the following algorithms are recursive?<br /><br />(i)<br />```pseudo<br />procedure A(n: nonnegative even integer)<br />  if n = 0 then A(n) := 1<br />  else A(n) := A(n-2) * 3<br />```<br />(ii)<br />```pseudo<br />procedure A(n: nonnegative even integer)<br />  if n = 0 then y := 1<br />  else<br />    begin<br />      y := 1; m = n div 2;<br />      for i:=1 to m<br />        y := y*3;<br />    end<br />```",
         "image": null,
         "options": [
@@ -740,7 +638,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 36,
+        "id": 31,
         "question": "Given the recursive algorithm<br />--------------------------------------------------<br />```pseudo<br />procedure P(a: real number, n: positive integer)<br />\tif n = 1 then<br />\t\treturn 1<br />\telse<br />\t\treturn a + P(a, n-1)<br />```<br />--------------------------------------------------<br />Find output if a = 3, n = 5.",
         "image": null,
         "options": [
@@ -762,7 +660,7 @@
         "type": "multiple_choice"
       },
       {
-        "id": 37,
+        "id": 32,
         "question": "Given the recursive algorithm<br />--------------------------------------------------<br />```pseudo<br />procedure T(n: integer)<br />\tif n < 3 then<br />\t\treturn 3<br />\telse if (n mod 2 = 0) then<br />\t\treturn n<br />\telse<br />\t\treturn 3*T(n-1) - 2<br />```<br />--------------------------------------------------<br />Find ouput if n = 9.",
         "image": null,
         "options": [
