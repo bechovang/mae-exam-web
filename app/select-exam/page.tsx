@@ -1,19 +1,27 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
+import { useEffect, useMemo, useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { FileText, BookOpen, Clock, Target, AlertTriangle, Info, Loader2 } from "lucide-react"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { Input } from "@/components/ui/input"
+import { Select as UISelect, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/components/ui/pagination"
 
 // Interface for the data structure expected from deX.json files
 interface FetchedExamData {
   examId: string;
   title: string;
   description: string;
-  // questions: any[]; // We might use questions.length later if needed
+  questions?: any[];
+}
+
+// Manifest structure for available exam IDs
+interface ExamsManifest {
+  available: number[];
 }
 
 // Interface for the data structure used to render exam cards
@@ -24,14 +32,29 @@ interface ExamCardDisplayData {
   descriptionToDisplay: string; // description from JSON, or a placeholder
   isLoading: boolean; // True while attempting to fetch this specific exam
   isAvailable: boolean; // True if successfully loaded, false otherwise
+  topics: string[];
+  difficulties: string[];
+  questionCount: number;
+  modifiedAt: number;
 }
 
-const MAX_EXAMS_TO_CHECK = 25; // Check for de1.json up to de25.json
+const MAX_EXAMS_TO_CHECK = 50; // Allow up to 50 exams
 
 export default function SelectPracticePage() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const [studentName, setStudentName] = useState("")
   const [practiceSets, setPracticeSets] = useState<ExamCardDisplayData[]>([])
+  const [allTopics, setAllTopics] = useState<string[]>([])
+  const [allDifficulties, setAllDifficulties] = useState<string[]>([])
+
+  // Controls
+  const [searchText, setSearchText] = useState<string>("")
+  const [topicFilter, setTopicFilter] = useState<string>("")
+  const [difficultyFilter, setDifficultyFilter] = useState<string>("")
+  const [sortBy, setSortBy] = useState<"newest" | "oldest" | "id-asc" | "id-desc" | "title-asc" | "title-desc">("id-asc")
+  const [pageSize, setPageSize] = useState<number>(12)
+  const [page, setPage] = useState<number>(1)
 
   useEffect(() => {
     const name = localStorage.getItem("studentName")
@@ -41,58 +64,148 @@ export default function SelectPracticePage() {
     }
     setStudentName(name)
 
+    // initialize preferences from URL or localStorage
+    const prefsRaw = localStorage.getItem("select-exam:prefs")
+    const prefs = prefsRaw ? JSON.parse(prefsRaw) : {}
+    const pageParam = Number((searchParams && searchParams.get("page")) || prefs.page || 1)
+    const sizeParam = Number((searchParams && searchParams.get("size")) || prefs.size || 12)
+    const searchParam = ((searchParams && searchParams.get("search")) || prefs.search || "") as string
+    const topicParam = ((searchParams && searchParams.get("topic")) || prefs.topic || "") as string
+    const diffParam = ((searchParams && searchParams.get("difficulty")) || prefs.difficulty || "") as string
+    const sortParam = ((searchParams && searchParams.get("sort")) || "id-asc") as
+      | "newest" | "oldest" | "id-asc" | "id-desc" | "title-asc" | "title-desc"
+    setPage(isNaN(pageParam) ? 1 : pageParam)
+    setPageSize(isNaN(sizeParam) ? 12 : sizeParam)
+    setSearchText(searchParam)
+    setTopicFilter(topicParam)
+    setDifficultyFilter(diffParam)
+    setSortBy(sortParam)
+
+  }, [router, searchParams]);
+
+  // Load exam data once on mount (using manifest to avoid 404 spam)
+  useEffect(() => {
     const loadAllExamData = async () => {
-      const examIdsToTry = Array.from({ length: MAX_EXAMS_TO_CHECK }, (_, i) => i + 1);
-
-      // Initial placeholder state
-      const initialPlaceholderSets: ExamCardDisplayData[] = examIdsToTry.map(id => ({
-        id,
-        examIdToDisplay: `de${id}`,
-        titleToDisplay: `Đề ${id}`,
-        descriptionToDisplay: "Đang kiểm tra trạng thái...",
-        isLoading: true,
-        isAvailable: false,
-      }));
-      setPracticeSets(initialPlaceholderSets);
-
-      const settledPromises = await Promise.allSettled(
-        examIdsToTry.map(async (id) => {
-          const response = await fetch(`/data/de${id}.json`);
-          if (!response.ok) {
-            throw new Error(`File de${id}.json not found or not accessible`);
+      try {
+        // Try load manifest first
+        let examIdsToTry: number[] = []
+        try {
+          const manifestResp = await fetch('/data/manifest.json', { cache: 'no-cache' })
+          if (manifestResp.ok) {
+            const manifest: ExamsManifest = await manifestResp.json()
+            if (Array.isArray(manifest.available) && manifest.available.length > 0) {
+              examIdsToTry = manifest.available
+            }
           }
-          const data: FetchedExamData = await response.json();
-          return { id, ...data }; // Return id along with fetched data
-        })
-      );
+        } catch {}
 
-      const updatedSets = initialPlaceholderSets.map((placeholderSet, index) => {
-        const result = settledPromises[index];
-        if (result.status === "fulfilled") {
-          const loadedData = result.value;
-          return {
-            id: placeholderSet.id, // Ensure 'id' is the numeric id
-            examIdToDisplay: loadedData.examId,
-            titleToDisplay: loadedData.title,
-            descriptionToDisplay: loadedData.description,
-            isLoading: false,
-            isAvailable: true,
-          };
-        } else {
-          // Fetch failed for this ID (e.g., file not found)
-          return {
-            ...placeholderSet,
-            descriptionToDisplay: "Dữ liệu đề thi không tồn tại.",
-            isLoading: false,
-            isAvailable: false,
-          };
+        // Fallback: probe a smaller default range if no manifest
+        if (examIdsToTry.length === 0) {
+          examIdsToTry = Array.from({ length: Math.min(24, MAX_EXAMS_TO_CHECK) }, (_, i) => i + 1)
         }
-      });
-      setPracticeSets(updatedSets);
-    };
 
-    loadAllExamData();
-  }, [router]);
+        // Initial placeholder state for just the IDs we intend to load
+        const initialPlaceholderSets: ExamCardDisplayData[] = examIdsToTry.map(id => ({
+          id,
+          examIdToDisplay: `de${id}`,
+          titleToDisplay: `Đề ${id}`,
+          descriptionToDisplay: 'Đang kiểm tra trạng thái...',
+          isLoading: true,
+          isAvailable: false,
+          topics: [],
+          difficulties: [],
+          questionCount: 0,
+          modifiedAt: 0,
+        }))
+        setPracticeSets(initialPlaceholderSets)
+
+        // Fetch details for each available exam id
+        const settledPromises = await Promise.allSettled(
+          examIdsToTry.map(async (id) => {
+            const response = await fetch(`/data/de${id}.json`, { cache: 'no-cache' })
+            if (!response.ok) {
+              throw new Error(`File de${id}.json not found or not accessible`)
+            }
+            const data: FetchedExamData = await response.json()
+            const lastMod = response.headers.get('last-modified')
+            const modifiedAt = lastMod ? new Date(lastMod).getTime() : 0
+            const topicsSet = new Set<string>()
+            const diffsSet = new Set<string>()
+            if (Array.isArray(data.questions)) {
+              for (const q of data.questions) {
+                const t = (q && (q as any).topic) as string | undefined
+                const d = (q && (q as any).difficulty) as string | undefined
+                if (t) topicsSet.add(t)
+                if (d) diffsSet.add(d)
+              }
+            }
+            return {
+              id,
+              data,
+              modifiedAt,
+              topics: Array.from(topicsSet),
+              difficulties: Array.from(diffsSet),
+              questionCount: Array.isArray(data.questions) ? data.questions.length : 0,
+            }
+          })
+        )
+
+        const updatedSets = initialPlaceholderSets.map((placeholderSet, index) => {
+          const result = settledPromises[index]
+          if (result.status === 'fulfilled') {
+            const loaded = result.value as unknown as {
+              id: number;
+              data: FetchedExamData;
+              modifiedAt: number;
+              topics: string[];
+              difficulties: string[];
+              questionCount: number;
+            }
+            return {
+              id: placeholderSet.id,
+              examIdToDisplay: loaded.data.examId,
+              titleToDisplay: loaded.data.title,
+              descriptionToDisplay: loaded.data.description,
+              isLoading: false,
+              isAvailable: true,
+              topics: loaded.topics,
+              difficulties: loaded.difficulties,
+              questionCount: loaded.questionCount,
+              modifiedAt: loaded.modifiedAt,
+            }
+          } else {
+            return {
+              ...placeholderSet,
+              descriptionToDisplay: 'Dữ liệu đề thi không tồn tại.',
+              isLoading: false,
+              isAvailable: false,
+              topics: [],
+              difficulties: [],
+              questionCount: 0,
+              modifiedAt: 0,
+            }
+          }
+        })
+        setPracticeSets(updatedSets)
+
+        // Aggregate filters
+        const topicsAgg = new Set<string>()
+        const diffsAgg = new Set<string>()
+        for (const e of updatedSets) {
+          if (e.isAvailable) {
+            e.topics.forEach(t => t && topicsAgg.add(t))
+            e.difficulties.forEach(d => d && diffsAgg.add(d))
+          }
+        }
+        setAllTopics(Array.from(topicsAgg).sort())
+        setAllDifficulties(Array.from(diffsAgg).sort())
+      } catch (e) {
+        // If something unexpected happens, keep current state
+      }
+    }
+
+    loadAllExamData()
+  }, [])
 
   const handleSelectPractice = (practice: ExamCardDisplayData) => {
     if (!practice.isAvailable || practice.isLoading) {
@@ -104,8 +217,67 @@ export default function SelectPracticePage() {
     router.push(`/practice/${practice.id}`)
   }
 
-  // getDifficultyColor is no longer used as difficulty is not displayed per card
-  // const getDifficultyColor = (difficulty: string) => { ... }
+  // Derived list: filter, search, sort
+  const filteredSorted = useMemo(() => {
+    const term = searchText.trim().toLowerCase()
+    let arr = practiceSets.filter(e => e.isAvailable && !e.isLoading)
+    if (term) {
+      arr = arr.filter(e =>
+        e.examIdToDisplay.toLowerCase().includes(term) ||
+        e.titleToDisplay.toLowerCase().includes(term) ||
+        e.descriptionToDisplay.toLowerCase().includes(term)
+      )
+    }
+    if (topicFilter) arr = arr.filter(e => e.topics.includes(topicFilter))
+    if (difficultyFilter) arr = arr.filter(e => e.difficulties.includes(difficultyFilter))
+    const parseId = (x: string, fallback: number) => {
+      const m = x.match(/\d+/)
+      return m ? parseInt(m[0], 10) : fallback
+    }
+    switch (sortBy) {
+      case "newest":
+        arr = [...arr].sort((a, b) => (b.modifiedAt || 0) - (a.modifiedAt || 0) || parseId(b.examIdToDisplay, b.id) - parseId(a.examIdToDisplay, a.id))
+        break
+      case "oldest":
+        arr = [...arr].sort((a, b) => (a.modifiedAt || 0) - (b.modifiedAt || 0) || parseId(a.examIdToDisplay, a.id) - parseId(b.examIdToDisplay, b.id))
+        break
+      case "id-asc":
+        arr = [...arr].sort((a, b) => a.id - b.id)
+        break
+      case "id-desc":
+        arr = [...arr].sort((a, b) => b.id - a.id)
+        break
+      case "title-asc":
+        arr = [...arr].sort((a, b) => a.titleToDisplay.localeCompare(b.titleToDisplay))
+        break
+      case "title-desc":
+        arr = [...arr].sort((a, b) => b.titleToDisplay.localeCompare(a.titleToDisplay))
+        break
+      default:
+        break
+    }
+    return arr
+  }, [practiceSets, searchText, topicFilter, difficultyFilter, sortBy])
+
+  const totalPages = Math.max(1, Math.ceil(filteredSorted.length / Math.max(1, pageSize)))
+  const currentPage = Math.min(Math.max(1, page), totalPages)
+  const pageItems = useMemo(() => {
+    const start = (currentPage - 1) * pageSize
+    return filteredSorted.slice(start, start + pageSize)
+  }, [filteredSorted, currentPage, pageSize])
+
+  // Persist and sync URL
+  useEffect(() => {
+    const params = new URLSearchParams()
+    params.set("page", String(currentPage))
+    params.set("size", String(pageSize))
+    if (searchText) params.set("search", searchText)
+    if (topicFilter) params.set("topic", topicFilter)
+    if (difficultyFilter) params.set("difficulty", difficultyFilter)
+    if (sortBy) params.set("sort", sortBy)
+    router.push(`/select-exam?${params.toString()}`)
+    localStorage.setItem("select-exam:prefs", JSON.stringify({ page: currentPage, size: pageSize, search: searchText, topic: topicFilter, difficulty: difficultyFilter, sort: sortBy }))
+  }, [currentPage, pageSize, searchText, topicFilter, difficultyFilter, sortBy, router])
 
   return (
     <div className="flex min-h-screen flex-col bg-gradient-to-br from-blue-50 to-indigo-100 dark:from-gray-900 dark:to-gray-950 p-4">
@@ -143,11 +315,66 @@ export default function SelectPracticePage() {
                 </div>
               </div>
             </div>
+            {/* Controls */}
+            <div className="mt-6 grid grid-cols-1 md:grid-cols-12 gap-3">
+              <div className="md:col-span-5">
+                <Input
+                  placeholder="Tìm kiếm theo ID, tiêu đề, mô tả..."
+                  value={searchText}
+                  onChange={(e) => { setPage(1); setSearchText(e.target.value) }}
+                />
+              </div>
+              <div className="md:col-span-2">
+                <UISelect value={topicFilter} onValueChange={(v) => { setPage(1); setTopicFilter(v === "__ALL__" ? "" : v) }}>
+                  <SelectTrigger className="w-full"><SelectValue placeholder="Chủ đề" /></SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="__ALL__">Tất cả chủ đề</SelectItem>
+                    {allTopics.map(t => (
+                      <SelectItem key={t} value={t}>{t}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </UISelect>
+              </div>
+              <div className="md:col-span-2">
+                <UISelect value={difficultyFilter} onValueChange={(v) => { setPage(1); setDifficultyFilter(v === "__ALL__" ? "" : v) }}>
+                  <SelectTrigger className="w-full"><SelectValue placeholder="Độ khó" /></SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="__ALL__">Tất cả độ khó</SelectItem>
+                    {allDifficulties.map(d => (
+                      <SelectItem key={d} value={d}>{d}</SelectItem>
+                    ))}
+                  </SelectContent>
+                </UISelect>
+              </div>
+              <div className="md:col-span-1">
+                <UISelect value={String(pageSize)} onValueChange={(v) => { setPage(1); setPageSize(Number(v)) }}>
+                  <SelectTrigger className="w-full"><SelectValue placeholder="Kích thước" /></SelectTrigger>
+                  <SelectContent>
+                    {[8,12,24,48].map(s => (
+                      <SelectItem key={s} value={String(s)}>{s}/trang</SelectItem>
+                    ))}
+                  </SelectContent>
+                </UISelect>
+              </div>
+              <div className="md:col-span-2">
+                <UISelect value={sortBy} onValueChange={(v) => { setPage(1); setSortBy(v as any) }}>
+                  <SelectTrigger className="w-full"><SelectValue placeholder="Sắp xếp" /></SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="newest">Mới nhất</SelectItem>
+                    <SelectItem value="oldest">Cũ nhất</SelectItem>
+                    <SelectItem value="id-asc">Tên file ↑</SelectItem>
+                    <SelectItem value="id-desc">Tên file ↓</SelectItem>
+                    <SelectItem value="title-asc">Title A→Z</SelectItem>
+                    <SelectItem value="title-desc">Title Z→A</SelectItem>
+                  </SelectContent>
+                </UISelect>
+              </div>
+            </div>
           </CardContent>
         </Card>
 
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {practiceSets.map((practice) => (
+          {pageItems.map((practice) => (
             <Card
               key={practice.id}
               className={`transition-all duration-300 border-2 flex flex-col ${
@@ -206,6 +433,46 @@ export default function SelectPracticePage() {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Pagination controls */}
+        <div className="mt-6">
+          <div className="flex items-center justify-between mb-2 text-sm text-gray-600 dark:text-gray-400">
+            <span>Trang {currentPage}/{totalPages} • Tổng {filteredSorted.length} đề</span>
+            <div className="flex items-center gap-2">
+              <span>Nhảy tới</span>
+              <Input
+                className="w-24"
+                type="number"
+                min={1}
+                value={currentPage}
+                onChange={(e) => {
+                  const val = parseInt(e.target.value || "1", 10)
+                  if (isNaN(val)) return
+                  if (val < 1) { setPage(1); return }
+                  if (val > totalPages) { setPage(totalPages); return }
+                  setPage(val)
+                }}
+              />
+            </div>
+          </div>
+          <Pagination>
+            <PaginationContent>
+              <PaginationItem>
+                <PaginationPrevious href="#" onClick={(e) => { e.preventDefault(); setPage(Math.max(1, currentPage - 1)) }} />
+              </PaginationItem>
+              {Array.from({ length: totalPages }, (_, i) => i + 1).slice(Math.max(0, currentPage - 3), Math.min(totalPages, currentPage + 2)).map(p => (
+                <PaginationItem key={p}>
+                  <PaginationLink href="#" isActive={p === currentPage} onClick={(e) => { e.preventDefault(); setPage(p) }}>
+                    {p}
+                  </PaginationLink>
+                </PaginationItem>
+              ))}
+              <PaginationItem>
+                <PaginationNext href="#" onClick={(e) => { e.preventDefault(); setPage(Math.min(totalPages, currentPage + 1)) }} />
+              </PaginationItem>
+            </PaginationContent>
+          </Pagination>
         </div>
 
         <div className="mt-8 text-center">
