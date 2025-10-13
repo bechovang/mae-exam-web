@@ -1,0 +1,171 @@
+{
+    "examId": "de21",
+    "title": "MAD chương 6 (counting) BT trên slide",
+    "description": "Bộ câu hỏi để luyện tập các khái niệm của counting, bao gồm các quy tắc đếm, công thức tính số hoán vị, số chỉnh hợp, số tổ hợp.",
+    "questions": [
+        {
+            "id": 1,
+            "question": "How many license plates can be made using either two uppercase English letters followed by four digits or two digits followed by four uppercase English letters?",
+            "image": null,
+            "options": [],
+            "correctAnswer": "<b>Phân tích bài toán thành 2 trường hợp riêng biệt:</b><br /><br /><b>Trường hợp 1: Hai chữ cái viết hoa đứng trước, bốn chữ số đứng sau.</b><br />- Số cách chọn 2 chữ cái viết hoa: \\( 26 \\cdot 26 = 26^2 \\)<br />- Số cách chọn 4 chữ số: \\( 10 \\cdot 10 \\cdot 10 \\cdot 10 = 10^4 \\)<br />- Tổng số biển số trong trường hợp này (theo Quy tắc Nhân): \\( 26^2 \\cdot 10^4 = 676 \\cdot 10000 = 6,760,000 \\)<br /><br /><b>Trường hợp 2: Hai chữ số đứng trước, bốn chữ cái viết hoa đứng sau.</b><br />- Số cách chọn 2 chữ số: \\( 10 \\cdot 10 = 10^2 \\)<br />- Số cách chọn 4 chữ cái viết hoa: \\( 26 \\cdot 26 \\cdot 26 \\cdot 26 = 26^4 \\)<br />- Tổng số biển số trong trường hợp này (theo Quy tắc Nhân): \\( 10^2 \\cdot 26^4 = 100 \\cdot 456,976 = 45,697,600 \\)<br /><br /><b>Kết luận:</b><br />Vì hai trường hợp này là riêng biệt (hoặc dạng này hoặc dạng kia), ta áp dụng Quy tắc Cộng để tìm tổng số biển số:<br />\\( 6,760,000 + 45,697,600 = 52,457,600 \\)<br /><br />Vậy, có <b>52,457,600</b> biển số có thể được tạo ra.",
+            "explanation": "Đây là một bài toán đếm cơ bản sử dụng kết hợp hai quy tắc chính:<br /><br />1. <b>Quy tắc Nhân (Product Rule):</b> Được sử dụng khi một công việc được thực hiện qua nhiều bước liên tiếp. Ta đã dùng quy tắc này để tính số biển số trong mỗi trường hợp (chọn chữ cái VÀ chọn chữ số).<br /><br />2. <b>Quy tắc Cộng (Sum Rule):</b> Được sử dụng khi một công việc có thể được thực hiện bằng một trong nhiều phương án loại trừ lẫn nhau. Ta đã dùng quy tắc này để cộng kết quả của hai trường hợp (biển số dạng 1 HOẶC dạng 2).<br /><br /><b>Mẹo:</b> Khi đề bài có từ \"và\" (followed by), hãy nghĩ đến Quy tắc Nhân. Khi có từ \"hoặc\" (or), hãy nghĩ đến Quy tắc Cộng.",
+            "difficulty": "medium",
+            "topic": "Counting Principles",
+            "hints": [
+              "Hãy chia bài toán thành hai trường hợp riêng biệt.",
+              "Áp dụng Quy tắc Nhân cho mỗi trường hợp.",
+              "Sử dụng Quy tắc Cộng để kết hợp kết quả của hai trường hợp."
+            ],
+            "type": "essay"
+        },
+        {
+            "id": 2,
+            "question": "How many positive divisors does the integer 300 have?",
+            "image": null,
+            "options": [],
+            "correctAnswer": "Để tìm số ước số dương của một số nguyên, ta thực hiện các bước sau:<br /><br /><b>Bước 1: Phân tích số 300 ra thừa số nguyên tố.</b><br />\\( 300 = 3 \\cdot 100 = 3 \\cdot 10^2 = 3 \\cdot (2 \\cdot 5)^2 = 2^2 \\cdot 3^1 \\cdot 5^2 \\)<br /><br /><b>Bước 2: Áp dụng công thức tính số ước.</b><br />Nếu một số N có dạng phân tích thừa số nguyên tố là \\( p_1^{a_1} \\cdot p_2^{a_2} \\cdots p_k^{a_k} \\), thì số ước số dương của N là:<br />\\[ (a_1 + 1)(a_2 + 1)\\cdots(a_k + 1) \\]<br /><br />Áp dụng vào số 300 với \\( a_1=2, a_2=1, a_3=2 \\):<br />Số ước = \\( (2 + 1)(1 + 1)(2 + 1) = 3 \\cdot 2 \\cdot 3 = 18 \\)<br /><br /><b>Kết luận:</b> Số 300 có <b>18</b> ước số dương.",
+            "explanation": "Phương pháp này dựa trên một định lý cơ bản trong Số học. Một ước bất kỳ của 300 phải có dạng \\( 2^x \\cdot 3^y \\cdot 5^z \\), trong đó:<br /><br />- Số mũ của 2 (x) có thể là 0, 1, hoặc 2 (<b>3 lựa chọn</b>).<br />- Số mũ của 3 (y) có thể là 0, hoặc 1 (<b>2 lựa chọn</b>).<br />- Số mũ của 5 (z) có thể là 0, 1, hoặc 2 (<b>3 lựa chọn</b>).<br /><br />Theo Quy tắc Nhân, tổng số cách kết hợp các số mũ này (và do đó là tổng số ước) là:<br />\\( 3 \\times 2 \\times 3 = 18 \\)<br />Đây chính là cách công thức \\( (a+1)(b+1)(c+1) \\) được hình thành.",
+            "difficulty": "easy",
+            "topic": "Number Theory",
+            "hints": [
+              "Bước đầu tiên là phân tích 300 ra thừa số nguyên tố.",
+              "Sử dụng công thức tính số ước dựa trên số mũ của các thừa số nguyên tố."
+            ],
+            "type": "essay"
+        },
+        {
+            "id": 3,
+            "question": "The name of a variable in the C programming language is a string that can contain uppercase letters, lowercase letters, digits, or underscores. Further, the first character in the string must be a letter, either uppercase or lowercase, or an underscore. If the name of a variable is determined by its first eight characters, how many different variables can be named in C? (Note that the name of a variable may contain fewer than eight characters.)",
+            "image": null,
+            "options": [],
+            "correctAnswer": "<b>Phân tích các ký tự hợp lệ:</b><br />- Chữ cái viết hoa: 26<br />- Chữ cái viết thường: 26<br />- Chữ số: 10<br />- Dấu gạch dưới: 1<br /><br /><b>Số lựa chọn cho từng vị trí:</b><br />- <b>Ký tự đầu tiên:</b> Phải là chữ cái hoặc dấu gạch dưới. <br />Số cách chọn: \\( 26 + 26 + 1 = 53 \\) cách.<br />- <b>Các ký tự tiếp theo (từ vị trí thứ 2 trở đi):</b> Có thể là chữ cái, chữ số, hoặc dấu gạch dưới.<br />Số cách chọn: \\( 26 + 26 + 10 + 1 = 63 \\) cách.<br /><br /><b>Tính toán cho từng độ dài (từ 1 đến 8):</b><br />Vì tên biến có thể có ít hơn 8 ký tự, ta phải tính tổng số tên biến cho mỗi độ dài từ 1 đến 8.<br />- Độ dài 1: \\( 53 \\)<br />- Độ dài 2: \\( 53 \\cdot 63^1 \\)<br />- Độ dài 3: \\( 53 \\cdot 63^2 \\)<br />- Độ dài 4: \\( 53 \\cdot 63^3 \\)<br />- Độ dài 5: \\( 53 \\cdot 63^4 \\)<br />- Độ dài 6: \\( 53 \\cdot 63^5 \\)<br />- Độ dài 7: \\( 53 \\cdot 63^6 \\)<br />- Độ dài 8: \\( 53 \\cdot 63^7 \\)<br /><br /><b>Tổng số tên biến:</b><br />Áp dụng Quy tắc Cộng, tổng số tên biến là:<br />\\( S = 53 \\cdot (1 + 63^1 + 63^2 + ... + 63^7) \\)<br /><br />Đây là tổng của một cấp số nhân với \\( u_1=1, q=63 \\) và 8 số hạng. Tổng này bằng:<br />\\[ 1 + 63 + \\dots + 63^7 = \\sum_{i=0}^{7} 63^i = \\frac{63^8 - 1}{63 - 1} = \\frac{63^8 - 1}{62} \\]<br />Vậy, tổng số tên biến là:<br />\\[ 53 \\cdot \\frac{63^8 - 1}{62} \\]",
+            "explanation": "Đây là một bài toán đếm phức tạp đòi hỏi sự phân tích cẩn thận và áp dụng cả Quy tắc Nhân và Quy tắc Cộng.<br /><br />1. <b>Xác định tập ký tự:</b> Bước quan trọng đầu tiên là xác định chính xác số lượng ký tự hợp lệ cho vị trí đầu tiên và các vị trí tiếp theo.<br />- Vị trí đầu tiên (đặc biệt): 53 lựa chọn.<br />- Các vị trí sau (tổng quát): 63 lựa chọn.<br /><br />2. <b>Áp dụng Quy tắc Nhân:</b> Đối với mỗi độ dài cụ thể, số lượng tên biến được tính bằng cách nhân số lựa chọn cho từng vị trí.<br /><br />3. <b>Áp dụng Quy tắc Cộng:</b> Vì tên biến có thể có độ dài 1, HOẶC 2, HOẶC 3, ..., HOẶC 8, chúng ta phải cộng kết quả của tất cả các trường hợp độ dài này lại với nhau.<br /><br />Công thức tổng cấp số nhân \\( \\sum_{i=0}^{n-1} q^i = \\frac{q^n - 1}{q - 1} \\) là một công cụ hữu ích để tính toán kết quả cuối cùng một cách nhanh chóng.",
+            "difficulty": "hard",
+            "topic": "Counting Principles",
+            "hints": [
+              "Xác định số ký tự hợp lệ cho vị trí đầu tiên.",
+              "Xác định số ký tự hợp lệ cho các vị trí còn lại.",
+              "Bài toán yêu cầu tính tổng số tên biến có độ dài từ 1 ĐẾN 8.",
+              "Sử dụng công thức tổng của một cấp số nhân để tính kết quả cuối cùng."
+            ],
+            "type": "essay"
+        },
+        {
+            "id": 4,
+            "question": "How many functions are there from the set \\( \\{1, 2, \\dots, n\\} \\), where \\( n \\) is a positive integer, to the set \\( \\{0, 1\\} \\)?<br /><b>(a)</b> that are one-to-one?<br /><b>(b)</b> that assign 0 to both 1 and \\( n \\)?<br /><b>(c)</b> that assign 1 to exactly one of the positive integers less than \\( n \\)?",
+            "image": null,
+            "options": [],
+            "correctAnswer": "<b>(a) One-to-one functions (Hàm đơn ánh):</b><br />Một hàm đơn ánh yêu cầu mỗi phần tử trong tập nguồn phải ánh xạ đến một phần tử duy nhất trong tập đích. Tập nguồn có \\( n \\) phần tử, tập đích có 2 phần tử.<br />- <b>Nếu \\( n > 2 \\):</b> Theo Nguyên lý chuồng bồ câu, không thể tồn tại hàm đơn ánh. Số hàm là <b>0</b>.<br />- <b>Nếu \\( n = 2 \\):</b> Có 2 hàm đơn ánh: \\( f(1)=0, f(2)=1 \\) và \\( f(1)=1, f(2)=0 \\).<br />- <b>Nếu \\( n = 1 \\):</b> Có 2 hàm đơn ánh: \\( f(1)=0 \\) và \\( f(1)=1 \\).<br /><br /><b>(b) Assign 0 to both 1 and \\( n \\) (Gán 0 cho cả 1 và n):</b><br />Điều kiện là \\( f(1) = 0 \\) và \\( f(n) = 0 \\).<br />- <b>Nếu \\( n = 1 \\):</b> Điều kiện trở thành \\( f(1)=0 \\). Chỉ có <b>1</b> hàm.<br />- <b>Nếu \\( n \\ge 2 \\):</b> Giá trị của \\( f(1) \\) và \\( f(n) \\) đã được cố định. Còn lại \\( n-2 \\) phần tử trong tập nguồn (từ 2 đến \\( n-1 \\)). Mỗi phần tử này có thể nhận giá trị 0 hoặc 1 (2 lựa chọn).<br />Theo Quy tắc Nhân, số hàm là: \\( 2^{n-2} \\).<br /><br /><b>(c) Assign 1 to exactly one of the positive integers less than \\( n \\) (Gán 1 cho đúng một số nguyên dương nhỏ hơn n):</b><br />Các số nguyên dương nhỏ hơn \\( n \\) là tập \\( \\{1, 2, \\dots, n-1\\} \\).<br />- <b>Bước 1: Chọn một số trong \\( n-1 \\) số này để gán giá trị 1.</b> Có \\( C(n-1, 1) = n-1 \\) cách chọn.<br />- <b>Bước 2: Gán giá trị 0 cho \\( n-2 \\) số còn lại</b> trong tập trên. Có 1 cách.<br />- <b>Bước 3: Gán giá trị cho \\( f(n) \\).</b> Đề bài không ràng buộc \\( f(n) \\), nên \\( f(n) \\) có 2 lựa chọn (0 hoặc 1).<br />Theo Quy tắc Nhân, tổng số hàm là: \\( (n-1) \\times 1 \\times 2 = 2(n-1) \\). (Công thức này đúng cho \\( n \\ge 1 \\)).",
+            "explanation": "Bài toán này kiểm tra khả năng áp dụng các nguyên tắc đếm cơ bản vào việc xây dựng hàm số với các điều kiện ràng buộc.<br /><br /><b>(a) Hàm đơn ánh (one-to-one):</b> Chìa khóa là so sánh kích thước của tập nguồn (domain) và tập đích (codomain). Nếu |domain| > |codomain|, không thể có hàm đơn ánh theo Nguyên lý chuồng bồ câu.<br /><br /><b>(b) Ràng buộc giá trị:</b> Khi ảnh của một số phần tử đã được cố định, ta chỉ cần đếm số cách gán giá trị cho các phần tử còn lại. Sử dụng Quy tắc Nhân cho các lựa chọn độc lập.<br /><br /><b>(c) Kết hợp lựa chọn và gán giá trị:</b> Bài toán yêu cầu kết hợp cả hai bước: dùng tổ hợp để 'chọn' các phần tử thỏa mãn điều kiện, sau đó dùng quy tắc nhân để tính số cách gán giá trị cho các phần tử còn lại (bao gồm cả các phần tử không bị ràng buộc).",
+            "difficulty": "hard",
+            "topic": "Functions and Combinatorics",
+            "hints": [
+              "a) Hãy xem xét Nguyên lý chuồng bồ câu (Pigeonhole Principle).",
+              "b) Khi \\( f(1) \\) và \\( f(n) \\) đã cố định, còn lại bao nhiêu phần tử chưa được xác định ảnh?",
+              "c) Chia bài toán thành 3 bước: chọn vị trí cho số 1, xử lý các vị trí còn lại nhỏ hơn n, và cuối cùng là xử lý vị trí n."
+            ],
+            "type": "essay"
+        },
+        {
+            "id": 5,
+            "question": "The diagram in Figure below shows the keypad for an automatic teller machine. As you can see, the same sequence of keys represents a variety of different PINs. For instance, 2133, AZDE, and BQ3F are all keyed in exactly the same way.<br /><br /><b>(a)</b> How many different PINs are represented by the same sequence of keys as 2133?<br /><b>(b)</b> How many different PINs are represented by the same sequence of keys as 5031?<br /><b>(c)</b> At an automatic teller machine, each PIN corresponds to a four-digit numeric sequence. For instance, TWJM corresponds to 8956. How many such numeric sequences contain no repeated digit?",
+            "image": "/data/image_exam/de22cau5.png",
+            "options": [],
+            "correctAnswer": "<b>Phân tích số lựa chọn cho mỗi phím (bao gồm cả số và chữ cái):</b><br />- Phím 0: 1 lựa chọn (0)<br />- Phím 1: 3 lựa chọn (1, Q, Z)<br />- Phím 2: 4 lựa chọn (2, A, B, C)<br />- Phím 3: 4 lựa chọn (3, D, E, F)<br />- Phím 4: 4 lựa chọn (4, G, H, I)<br />- Phím 5: 4 lựa chọn (5, J, K, L)<br />- Phím 6: 4 lựa chọn (6, M, N, O)<br />- Phím 7: 4 lựa chọn (7, P, R, S)<br />- Phím 8: 4 lựa chọn (8, T, U, V)<br />- Phím 9: 4 lựa chọn (9, W, X, Y)<br /><br /><b>(a) Dãy phím 2133:</b><br />Ta áp dụng Quy tắc Nhân cho số lựa chọn của mỗi phím trong dãy:<br />- Phím 2: 4 lựa chọn<br />- Phím 1: 3 lựa chọn<br />- Phím 3: 4 lựa chọn<br />- Phím 3: 4 lựa chọn<br />Tổng số mã PIN khác nhau: \\( 4 \\times 3 \\times 4 \\times 4 = 192 \\).<br /><br /><b>(b) Dãy phím 5031:</b><br />Tương tự, ta áp dụng Quy tắc Nhân:<br />- Phím 5: 4 lựa chọn<br />- Phím 0: 1 lựa chọn<br />- Phím 3: 4 lựa chọn<br />- Phím 1: 3 lựa chọn<br />Tổng số mã PIN khác nhau: \\( 4 \\times 1 \\times 4 \\times 3 = 48 \\).<br /><br /><b>(c) Dãy số có 4 chữ số không lặp lại:</b><br />Đây là bài toán chọn 4 chữ số khác nhau từ tập 10 chữ số \\( \\{0, 1, ..., 9\\} \\) và sắp xếp chúng. Đây là một chỉnh hợp chập 4 của 10.<br />- Vị trí đầu tiên: 10 lựa chọn<br />- Vị trí thứ hai: 9 lựa chọn (vì không được lặp)<br />- Vị trí thứ ba: 8 lựa chọn<br />- Vị trí thứ tư: 7 lựa chọn<br />Số dãy số là: \\( 10 \\times 9 \\times 8 \\times 7 = 5040 \\).<br />Công thức toán học: \\( P(10, 4) = \\frac{10!}{(10-4)!} = 5040 \\).",
+            "explanation": "Bài toán này sử dụng các nguyên tắc đếm cơ bản trong các bối cảnh khác nhau.<br /><br /><b>Câu (a) và (b)</b> là ứng dụng trực tiếp của <b>Quy tắc Nhân (Product Rule)</b>. Tổng số kết quả bằng tích của số lựa chọn cho mỗi bước độc lập (mỗi lần nhấn phím).<br /><br /><b>Câu (c)</b> là một bài toán về <b>chỉnh hợp (Permutation)</b> không lặp. Ta cần tìm số cách sắp xếp có thứ tự \\( k \\) phần tử từ một tập \\( n \\) phần tử, được tính bằng công thức \\( P(n, k) = \\frac{n!}{(n-k)!} \\). Trong trường hợp này, \\( n=10 \\) (số chữ số) và \\( k=4 \\) (độ dài của dãy).",
+            "difficulty": "medium",
+            "topic": "Applied Combinatorics",
+            "hints": [
+              "a), b): Hãy đếm tổng số ký tự (cả số và chữ cái) tương ứng với mỗi phím trong dãy, sau đó nhân chúng lại với nhau.",
+              "c): Bài toán hỏi về 'dãy số' (sequence), nghĩa là thứ tự các chữ số là quan trọng.",
+              "c): Đây là bài toán chọn 4 chữ số khác nhau từ 10 chữ số và sắp xếp chúng. Hãy nghĩ đến chỉnh hợp."
+            ],
+            "type": "essay"
+        },
+        {
+            "id": 6,
+            "question": "How many positive integers between 5 and 31<br /><b>(a)</b> are divisible by 3? Which integers are these?<br /><b>(b)</b> are divisible by 4? Which integers are these?<br /><b>(c)</b> are divisible by 3 and by 4? Which integers are these?",
+            "image": null,
+            "options": [],
+            "correctAnswer": "Phạm vi xét là các số nguyên \\( x \\) sao cho \\( 5 < x < 31 \\), tức là từ 6 đến 30.<br /><br /><b>(a) Divisible by 3 (Chia hết cho 3):</b><br />- Các số đó là: 6, 9, 12, 15, 18, 21, 24, 27, 30.<br />- Có <b>9</b> số nguyên.<br />- Cách tính: \\( \\lfloor \\frac{30}{3} \\rfloor - \\lfloor \\frac{5}{3} \\rfloor = 10 - 1 = 9 \\).<br /><br /><b>(b) Divisible by 4 (Chia hết cho 4):</b><br />- Các số đó là: 8, 12, 16, 20, 24, 28.<br />- Có <b>6</b> số nguyên.<br />- Cách tính: \\( \\lfloor \\frac{30}{4} \\rfloor - \\lfloor \\frac{5}{4} \\rfloor = 7 - 1 = 6 \\).<br /><br /><b>(c) Divisible by 3 and by 4 (Chia hết cho 3 và 4):</b><br />Một số chia hết cho cả 3 và 4 thì sẽ chia hết cho BCNN(3, 4) = 12.<br />- Các số đó là: 12, 24.<br />- Có <b>2</b> số nguyên.<br />- Cách tính: \\( \\lfloor \\frac{30}{12} \\rfloor - \\lfloor \\frac{5}{12} \\rfloor = 2 - 0 = 2 \\).",
+            "explanation": "Để đếm số lượng các số chia hết cho \\( k \\) trong một khoảng từ \\( a \\) đến \\( b \\), ta có thể sử dụng công thức:<br />\\[ \\text{Số lượng} = \\lfloor \\frac{b}{k} \\rfloor - \\lfloor \\frac{a-1}{k} \\rfloor \\]<br />Trong đó \\( \\lfloor x \\rfloor \\) là hàm sàn (lấy phần nguyên dưới của x).<br /><br />- <b>Câu (a):</b> Đếm các bội số của 3 trong khoảng (5, 31).<br />- <b>Câu (b):</b> Đếm các bội số của 4 trong khoảng (5, 31).<br />- <b>Câu (c):</b> Khi một số phải chia hết cho 'a VÀ b', nó phải chia hết cho Bội chung nhỏ nhất (BCNN) của a và b.",
+            "difficulty": "easy",
+            "topic": "Divisibility",
+            "hints": [
+              "Lưu ý rằng 'between 5 and 31' có nghĩa là không bao gồm 5 và 31.",
+              "Để tìm các số chia hết cho a và b, hãy tìm các số chia hết cho BCNN(a, b).",
+              "Bạn có thể liệt kê các số để kiểm tra lại kết quả."
+            ],
+            "type": "essay"
+        },
+        {
+            "id": 7,
+            "question": "How many positive integers between 1000 and 9999 inclusive<br /><b>(a)</b> are divisible by 9?<br /><b>(b)</b> have distinct digits?<br /><b>(c)</b> are not divisible by 3?<br /><b>(d)</b> are divisible by 5 and 7?<br /><b>(e)</b> are divisible by 5 or 7?<br /><b>(f)</b> are not divisible by either 5 or 7?<br /><b>(g)</b> are divisible by 5 but not by 7?",
+            "image": null,
+            "options": [],
+            "correctAnswer": "Tổng số các số nguyên trong khoảng [1000, 9999] là \\( 9999 - 1000 + 1 = 9000 \\).<br /><br /><b>(a) Divisible by 9:</b> \\( \\lfloor \\frac{9999}{9} \\rfloor - \\lfloor \\frac{999}{9} \\rfloor = 1111 - 111 = 1000 \\).<br /><br /><b>(b) Have distinct digits (Các chữ số khác nhau):</b><br />Số có 4 chữ số `abcd` với `a, b, c, d` khác nhau.<br />- `a` có 9 lựa chọn (từ 1 đến 9).<br />- `b` có 9 lựa chọn (0-9, trừ `a`).<br />- `c` có 8 lựa chọn (0-9, trừ `a` và `b`).<br />- `d` có 7 lựa chọn (0-9, trừ `a`, `b`, `c`).<br />Tổng số: \\( 9 \\times 9 \\times 8 \\times 7 = 4536 \\).<br /><br /><b>(c) Not divisible by 3:</b><br />Số các số chia hết cho 3: \\( \\lfloor \\frac{9999}{3} \\rfloor - \\lfloor \\frac{999}{3} \\rfloor = 3333 - 333 = 3000 \\).<br />Số các số không chia hết cho 3: \\( 9000 - 3000 = 6000 \\).<br /><br /><b>(d) Divisible by 5 and 7:</b> Chia hết cho BCNN(5, 7) = 35.<br />Số lượng: \\( \\lfloor \\frac{9999}{35} \\rfloor - \\lfloor \\frac{999}{35} \\rfloor = 285 - 28 = 257 \\).<br /><br /><b>(e) Divisible by 5 or 7 (Sử dụng nguyên lý bao hàm-loại trừ):</b><br />\\( |A \\cup B| = |A| + |B| - |A \\cap B| \\)<br />- Chia hết cho 5: \\( \\lfloor \\frac{9999}{5} \\rfloor - \\lfloor \\frac{999}{5} \\rfloor = 1999 - 199 = 1800 \\).<br />- Chia hết cho 7: \\( \\lfloor \\frac{9999}{7} \\rfloor - \\lfloor \\frac{999}{7} \\rfloor = 1428 - 142 = 1286 \\).<br />- Tổng: \\( 1800 + 1286 - 257 = 2829 \\).<br /><br /><b>(f) Not divisible by either 5 or 7:</b><br />Đây là phần bù của câu (e).<br />Số lượng: \\( 9000 - 2829 = 6171 \\).<br /><br /><b>(g) Divisible by 5 but not by 7:</b><br />Lấy số lượng chia hết cho 5 trừ đi số lượng chia hết cho cả 5 và 7.<br />Số lượng: \\( |A| - |A \\cap B| = 1800 - 257 = 1543 \\).",
+            "explanation": "Đây là một bộ bài tập toàn diện về các nguyên tắc đếm trong số học.<br /><br />- <b>Nguyên lý Bù trừ (Complement Rule):</b> Dùng cho câu (c) và (f). Số lượng phần tử KHÔNG có tính chất P bằng (Tổng số) - (Số lượng phần tử có tính chất P).<br />- <b>Chỉnh hợp (Permutation):</b> Dùng cho câu (b) để đếm các dãy số có các chữ số khác nhau, nơi thứ tự là quan trọng và không có sự lặp lại.<br />- <b>Nguyên lý Bao hàm - Loại trừ (Inclusion-Exclusion Principle):</b> Rất quan trọng cho câu (e) để đếm các phần tử có tính chất A 'HOẶC' B. Công thức tổng quát là \\( |A \\cup B| = |A| + |B| - |A \\cap B| \\) để tránh đếm trùng các phần tử thuộc cả A và B.",
+            "difficulty": "hard",
+            "topic": "Inclusion-Exclusion Principle",
+            "hints": [
+              "b) Chữ số đầu tiên không thể là 0.",
+              "d) 'and' có nghĩa là chia hết cho Bội chung nhỏ nhất.",
+              "e) 'or' gợi ý việc sử dụng Nguyên lý Bao hàm - Loại trừ.",
+              "f) Đây là phần bù của câu (e).",
+              "g) Tìm tất cả các số chia hết cho 5 và loại bỏ những số cũng chia hết cho 7."
+            ],
+            "type": "essay"
+        },
+        {
+            "id": 8,
+            "question": "Use a tree diagram to determine the number of subsets of \\( \\{3, 7, 9, 11, 24\\} \\) with the property that the sum of the elements in the subset is less than 28.",
+            "image": null,
+            "options": [],
+            "correctAnswer": "Để giải bài toán này, chúng ta có thể dựng một sơ đồ cây quyết định. Tại mỗi cấp, ta quyết định có đưa phần tử tiếp theo từ tập \\( S = \\{3, 7, 9, 11, 24\\} \\) vào tập con hay không. Chúng ta theo dõi tổng hiện tại và cắt bỏ bất kỳ nhánh nào có tổng bằng hoặc lớn hơn 28.<br /><br />Bằng cách duyệt cây một cách có hệ thống, ta tìm được các tập con hợp lệ (có tổng < 28) như sau:<br />- <b>Kích thước 0:</b> \\( \\{\\} \\) (tổng=0)<br />- <b>Kích thước 1:</b> \\( \\{3\\} \\), \\( \\{7\\} \\), \\( \\{9\\} \\), \\( \\{11\\} \\), \\( \\{24\\} \\)<br />- <b>Kích thước 2:</b><br />  \\( \\{3, 7\\} \\) (tổng=10)<br />  \\( \\{3, 9\\} \\) (tổng=12)<br />  \\( \\{3, 11\\} \\) (tổng=14)<br />  \\( \\{3, 24\\} \\) (tổng=27)<br />  \\( \\{7, 9\\} \\) (tổng=16)<br />  \\( \\{7, 11\\} \\) (tổng=18)<br />  \\( \\{9, 11\\} \\) (tổng=20)<br />- <b>Kích thước 3:</b><br />  \\( \\{3, 7, 9\\} \\) (tổng=19)<br />  \\( \\{3, 7, 11\\} \\) (tổng=21)<br />  \\( \\{3, 9, 11\\} \\) (tổng=23)<br />  \\( \\{7, 9, 11\\} \\) (tổng=27)<br /><br />Đếm tất cả các tập hợp con này, ta có: \\( 1 + 5 + 7 + 4 = 17 \\).<br /><br /><b>Kết luận:</b> Có <b>17</b> tập hợp con thỏa mãn điều kiện.",
+            "explanation": "Phương pháp sơ đồ cây là một cách trực quan để liệt kê tất cả các trường hợp có thể xảy ra trong các bài toán đếm.<br /><br />1. <b>Nút gốc (Root):</b> Đại diện cho tập hợp rỗng, với tổng bằng 0.<br />2. <b>Các cấp của cây (Levels):</b> Mỗi cấp tương ứng với việc xem xét một phần tử trong tập hợp ban đầu (ví dụ: cấp 1 xét số 3, cấp 2 xét số 7, ...).<br />3. <b>Các nhánh (Branches):</b> Tại mỗi nút, ta rẽ hai nhánh: một nhánh 'bao gồm' phần tử đang xét (cộng giá trị của nó vào tổng) và một nhánh 'không bao gồm' (giữ nguyên tổng).<br />4. <b>Cắt tỉa (Pruning):</b> Bất cứ khi nào tổng tại một nút bằng hoặc vượt quá 28, chúng ta sẽ không tiếp tục phát triển nhánh đó nữa.<br /><br />Các 'lá' hợp lệ của cây (các điểm cuối của các nhánh không bị cắt tỉa) sẽ tương ứng với các tập hợp con thỏa mãn điều kiện.",
+            "difficulty": "medium",
+            "topic": "Tree Diagrams",
+            "hints": [
+              "Bắt đầu với tập rỗng (tổng = 0).",
+              "Tại mỗi bước, quyết định xem có nên thêm phần tử tiếp theo vào tập hợp hay không.",
+              "Nếu tổng hiện tại cộng với phần tử tiếp theo >= 28, đừng đi theo nhánh đó.",
+              "Đừng quên đếm cả tập hợp rỗng."
+            ],
+            "type": "essay"
+        },
+        {
+            "id": 9,
+            "question": "Find a recurrence relation for the number of ternary strings of length n that do not contain two consecutive 0s.<br /><b>(a)</b> What are the initial conditions?<br /><b>(b)</b> How many ternary strings of length six do not contain two consecutive 0s?",
+            "image": null,
+            "options": [],
+            "correctAnswer": "Gọi \\( a_n \\) là số chuỗi tam phân (gồm các ký tự 0, 1, 2) có độ dài \\( n \\) không chứa hai số 0 liên tiếp ('00').<br /><br />Ta có thể xây dựng một chuỗi hợp lệ độ dài \\( n \\) bằng cách thêm một ký tự vào cuối một chuỗi hợp lệ ngắn hơn.<br />- <b>Trường hợp 1: Chuỗi kết thúc bằng 1 hoặc 2.</b><br />Phần tiền tố dài \\( n-1 \\) có thể là một chuỗi hợp lệ bất kỳ. Có \\( a_{n-1} \\) tiền tố như vậy. Do đó, ta có \\( 2 \\cdot a_{n-1} \\) chuỗi.<br />- <b>Trường hợp 2: Chuỗi kết thúc bằng 0.</b><br />Ký tự ở vị trí \\( n-1 \\) không được là 0. Nó phải là 1 hoặc 2. Phần tiền tố dài \\( n-2 \\) có thể là một chuỗi hợp lệ bất kỳ. Do đó, ta có \\( 2 \\cdot a_{n-2} \\) chuỗi (có dạng `...10` hoặc `...20`).<br /><br />Kết hợp các trường hợp trên, ta có hệ thức truy hồi: \\( a_n = 2a_{n-1} + 2a_{n-2} \\).<br /><br /><b>(a) Điều kiện ban đầu:</b><br />- Với \\( n=1 \\): Các chuỗi \"0\", \"1\", \"2\". Cả 3 đều hợp lệ. Vậy \\( a_1 = 3 \\).<br />- Với \\( n=2 \\): Có \\( 3^2 = 9 \\) chuỗi. Chỉ có chuỗi \"00\" là không hợp lệ. Vậy có \\( 9 - 1 = 8 \\) chuỗi hợp lệ. \\( a_2 = 8 \\).<br />Vậy, điều kiện ban đầu là \\( a_1 = 3 \\) và \\( a_2 = 8 \\).<br /><br /><b>(b) Số chuỗi tam phân độ dài 6:</b><br />Ta tính các số hạng của dãy:<br />\\( a_1 = 3 \\)<br />\\( a_2 = 8 \\)<br />\\( a_3 = 2a_2 + 2a_1 = 2(8) + 2(3) = 16 + 6 = 22 \\)<br />\\( a_4 = 2a_3 + 2a_2 = 2(22) + 2(8) = 44 + 16 = 60 \\)<br />\\( a_5 = 2a_4 + 2a_3 = 2(60) + 2(22) = 120 + 44 = 164 \\)<br />\\( a_6 = 2a_5 + 2a_4 = 2(164) + 2(60) = 328 + 120 = 448 \\)<br /><br />Có <b>448</b> chuỗi tam phân độ dài 6 không chứa hai số 0 liên tiếp.",
+            "explanation": "Đây là một bài toán kinh điển về việc thiết lập hệ thức truy hồi.<br /><br /><b>Tư duy chính:</b> Xây dựng một đối tượng hợp lệ (chuỗi) có kích thước `n` từ các đối tượng hợp lệ có kích thước nhỏ hơn (`n-1`, `n-2`, ...).<br /><br />1. <b>Phân loại các chuỗi hợp lệ:</b> Ta chia các chuỗi hợp lệ độ dài \\( n \\) thành các nhóm dựa trên ký tự cuối cùng của chúng. Ở đây, có 2 nhóm chính:<br />    - Nhóm kết thúc bằng ký tự không bị hạn chế (1 hoặc 2).<br />    - Nhóm kết thúc bằng ký tự bị hạn chế (0).<br /><br />2. <b>Liên kết với các chuỗi ngắn hơn:</b><br />    - Nếu chuỗi kết thúc bằng 1 hoặc 2, phần còn lại (dài \\( n-1 \\)) chỉ cần là một chuỗi hợp lệ bất kỳ.<br />    - Nếu chuỗi kết thúc bằng 0, ký tự trước đó không được là 0. Điều này tạo ra một ràng buộc mạnh hơn, buộc ta phải nhìn lại chuỗi có độ dài \\( n-2 \\).<br /><br />3. <b>Tổng hợp các trường hợp:</b> Sử dụng Quy tắc Cộng để cộng số lượng chuỗi từ các trường hợp riêng biệt đã phân tích để có được công thức tổng quát.",
+            "difficulty": "hard",
+            "topic": "Recurrence Relations",
+            "hints": [
+              "Gọi \\( a_n \\) là số chuỗi hợp lệ có độ dài n.",
+              "Hãy xem xét các chuỗi hợp lệ độ dài n có thể kết thúc bằng ký tự nào: 0, 1, hoặc 2.",
+              "Nếu một chuỗi kết thúc bằng 0, ký tự đứng trước nó phải là gì?",
+              "Tính toán các giá trị ban đầu (n=1, n=2) bằng cách liệt kê."
+            ],
+            "type": "essay"
+        },
+        {
+            "id": 10,
+            "question": "Messages are transmitted over a communications channel using two signals. The transmittal of one signal requires 1 microsecond, and the transmittal of the other signal requires 2 microseconds.<br /><br /><b>(a)</b> Find a recurrence relation for the number of different messages consisting of sequences of these two signals, where each signal in the message is immediately followed by the next signal, that can be sent in n microseconds.<br /><b>(b)</b> What are the initial conditions?<br /><b>(c)</b> How many different messages can be sent in 10 microseconds using these two signals?",
+            "image": null,
+            "options": [],
+            "correctAnswer": "Gọi \\( a_n \\) là số thông điệp khác nhau có thể được gửi trong đúng \\( n \\) micro giây.<br /><br /><b>(a) Hệ thức truy hồi:</b><br />Một thông điệp có thời lượng \\( n \\) có thể được hình thành theo hai cách loại trừ lẫn nhau:<br />1. Bằng cách nối thêm một tín hiệu 1-micro giây vào cuối một thông điệp hợp lệ có thời lượng \\( n-1 \\). Có \\( a_{n-1} \\) cách để làm điều này.<br />2. Bằng cách nối thêm một tín hiệu 2-micro giây vào cuối một thông điệp hợp lệ có thời lượng \\( n-2 \\). Có \\( a_{n-2} \\) cách để làm điều này.<br />Theo Quy tắc Cộng, tổng số cách là tổng của hai trường hợp trên.<br />Hệ thức truy hồi là: \\( a_n = a_{n-1} + a_{n-2} \\) với \\( n \\ge 3 \\).<br /><br /><b>(b) Điều kiện ban đầu:</b><br />- Với \\( n=1 \\): Chỉ có một thông điệp duy nhất là tín hiệu 1-micro giây. Vậy, \\( a_1 = 1 \\).<br />- Với \\( n=2 \\): Có hai thông điệp: hai tín hiệu 1-micro giây (1+1) hoặc một tín hiệu 2-micro giây. Vậy, \\( a_2 = 2 \\).<br />Điều kiện ban đầu là \\( a_1 = 1 \\) và \\( a_2 = 2 \\).<br /><br /><b>(c) Số thông điệp trong 10 micro giây:</b><br />Ta tính các số hạng của dãy bằng hệ thức truy hồi:<br />\\( a_1 = 1 \\)<br />\\( a_2 = 2 \\)<br />\\( a_3 = a_2 + a_1 = 2 + 1 = 3 \\)<br />\\( a_4 = a_3 + a_2 = 3 + 2 = 5 \\)<br />\\( a_5 = 5 + 3 = 8 \\)<br />\\( a_6 = 8 + 5 = 13 \\)<br />\\( a_7 = 13 + 8 = 21 \\)<br />\\( a_8 = 21 + 13 = 34 \\)<br />\\( a_9 = 34 + 21 = 55 \\)<br />\\( a_{10} = 55 + 34 = 89 \\)<br /><br />Có <b>89</b> thông điệp khác nhau có thể được gửi trong 10 micro giây.",
+            "explanation": "Bài toán này là một ví dụ kinh điển về hệ thức truy hồi, có liên quan chặt chẽ đến dãy Fibonacci. Chiến lược chính là phân tích xem một lời giải có kích thước `n` có thể được xây dựng từ các lời giải có kích thước nhỏ hơn như thế nào.<br /><br />Bằng cách xem xét 'bước cuối cùng' (tín hiệu cuối cùng được truyền đi), chúng ta có thể chia bài toán thành các bài toán con độc lập nhỏ hơn:<br />- Nếu tín hiệu cuối cùng là loại 1-micro giây thì sao?<br />- Nếu đó là loại 2-micro giây thì sao?<br /><br />Cách tiếp cận này giúp tránh đếm lặp và đảm bảo bao quát tất cả các khả năng. Dãy số \\( a_n \\) thu được là một dãy Fibonacci bị dịch chuyển. Nếu dãy Fibonacci chuẩn là \\( F_1=1, F_2=1, F_3=2, ... \\), thì dãy của chúng ta là \\( a_n = F_{n+1} \\).",
+            "difficulty": "medium",
+            "topic": "Recurrence Relations",
+            "hints": [
+              "Gọi \\( a_n \\) là số thông điệp có thể được gửi trong n micro giây.",
+              "Hãy xem xét tín hiệu cuối cùng được gửi. Có những khả năng nào?",
+              "Cấu trúc của bài toán này rất giống với dãy Fibonacci."
+            ],
+            "type": "essay"
+        }
+    ]
+}
