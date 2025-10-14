@@ -1,53 +1,115 @@
-prompt json: 
-Prompt cho google ai studio hiểu chuyển ảnh để làm web thi FE MAE : https://ideone.com/pA2bEG
+# MathPractice — Nền tảng luyện tập Toán học
 
-# MathPractice - Nền tảng Luyện tập Toán học
-
-Chào mừng bạn đến với MathPractice, một ứng dụng web tương tác được thiết kế để giúp người dùng luyện tập và nâng cao kỹ năng toán học thông qua các bộ đề trắc nghiệm. Ứng dụng cung cấp phản hồi tức thì và giải thích chi tiết cho từng câu hỏi, tạo ra một môi trường học tập hiệu quả và không áp lực.
+MathPractice is an interactive web app for math practice using exam-like question sets. It delivers instant feedback and detailed explanations, with a modern, responsive UI and dark mode.
 
 ## ✨ Tính năng chính
 
-- **Luyện tập tương tác**: Chọn từ nhiều bộ đề khác nhau để bắt đầu.
-- **Phản hồi tức thì**: Nhận ngay kết quả và xem giải thích chi tiết sau mỗi câu trả lời.
-- **Không áp lực thời gian**: Tập trung vào việc học mà không cần lo lắng về đồng hồ đếm ngược.
-- **Giao diện hiện đại**: Trải nghiệm người dùng mượt mà với giao diện sáng/tối (Light/Dark mode).
-- **Hỗ trợ Công thức Toán học**: Hiển thị đẹp mắt các công thức phức tạp nhờ tích hợp MathJax.
-- **Cá nhân hóa**: Nhập tên của bạn để theo dõi quá trình luyện tập.
+- **Luyện tập tương tác**: Chọn nhiều bộ đề, làm bài, xem giải thích chi tiết.
+- **Phản hồi tức thì**: Đúng/sai và giải thích sau mỗi câu hỏi.
+- **Không giới hạn thời gian**: Tập trung vào học thay vì đếm giờ.
+- **Hỗ trợ công thức**: Hiển thị đẹp công thức với MathJax (\( ... \), \[ ... \]).
+- **Giao diện hiện đại**: shadcn/ui + Tailwind, hỗ trợ Dark/Light.
 
-## 🚀 Công nghệ sử dụng
+## 🧰 Công nghệ
 
-- **Framework**: [Next.js](https://nextjs.org/) 14
-- **Ngôn ngữ**: [TypeScript](https://www.typescriptlang.org/)
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **UI Components**: [shadcn/ui](https://ui.shadcn.com/)
-- **State Management**: React Hooks (useState, useEffect)
-- **Rendering Toán học**: [MathJax](https://www.mathjax.org/)
+- **Framework**: Next.js 15
+- **Ngôn ngữ**: TypeScript
+- **UI**: shadcn/ui, Tailwind CSS
+- **Icons**: lucide-react
+- **Math**: MathJax
 
-## 🛠️ Hướng dẫn Cài đặt và Chạy
+## 📁 Cấu trúc dự án (rút gọn)
 
-1.  **Clone repository** về máy của bạn:
-    ```bash
-    git clone <URL_CUA_REPOSITORY>
-    cd <TEN_THU_MUC>
-    ```
+```text
+app/                # App Router (Next.js)
+  select-exam/      # Trang chọn đề
+  practice/[id]/    # Trang luyện tập
+  results/[id]/     # Trang kết quả
+components/         # Component chung + ui/
+public/data/        # Dữ liệu đề: de1.json, de2.json, ... + manifest.json
+```
 
-2.  **Cài đặt các dependencies** cần thiết:
-    ```bash
-    npm install
-    ```
+## 🔢 Dữ liệu đề thi (JSON)
 
-3.  **Chạy ứng dụng** ở chế độ development:
-    ```bash
-    npm run dev
-    ```
+- Mỗi đề là một tệp `public/data/de<ID>.json` (ví dụ: `de22.json`).
+- Trường `examId` bên trong JSON nên khớp với tên file (ví dụ: `"de22"`).
 
-4.  Mở trình duyệt và truy cập vào `http://localhost:3000` để bắt đầu trải nghiệm.
+Ví dụ cấu trúc:
 
-## 👨‍💻 Đội ngũ phát triển
+```json
+{
+  "examId": "de1",
+  "title": "Đề 1",
+  "description": "AI hints and explanations",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Nội dung, hỗ trợ \\(...\\) và \\[...\\]",
+      "image": null,
+      "options": ["A. ...", "B. ...", "C. ...", "D. ..."],
+      "correctAnswer": "A",
+      "explanation": "Giải thích chi tiết (có thể HTML + MathJax)",
+      "difficulty": "easy | medium | hard",
+      "topic": "Tên chủ đề",
+      "type": "multiple_choice | essay"
+    }
+  ]
+}
+```
 
-Dự án được phát triển bởi:
+Lưu ý:
 
-- **Nguyễn Ngọc Phúc**
-- **Mai Thế Duy**
+- `options` nên bắt đầu bằng chữ cái phương án + dấu chấm, ví dụ: `"A. ..."`.
+- `type: "essay"` biến câu hỏi thành tự luận (hiện đáp án mẫu và giải thích khi bấm kiểm tra).
+- `image` (tuỳ chọn) trỏ tới tài nguyên trong `public/`.
 
-Cảm ơn bạn đã sử dụng MathPractice!
+## 📄 manifest.json (tối ưu tốc độ)
+
+`public/data/manifest.json` liệt kê các ID đề hiện có để trang `select-exam` chỉ tải đúng tệp, tránh hàng loạt 404.
+
+Ví dụ:
+
+```json
+{ "available": [1,2,3,4,5,6,11,12,13,14,15,16,17,18,19,20,21,22,23] }
+```
+
+Khi thêm đề mới `deNN.json`, hãy thêm `NN` vào mảng `available`, rồi reload trang.
+
+## 🚀 Chạy dự án
+
+```bash
+npm install
+npm run dev
+# mở http://localhost:3000
+```
+
+Build production:
+
+```bash
+npm run build
+npm start
+```
+
+Lint:
+
+```bash
+npm run lint
+```
+
+## 🔍 Tìm kiếm, lọc, sắp xếp
+
+- Tìm theo ID, tiêu đề, mô tả.
+- Lọc theo `Chủ đề`, `Độ khó` (sinh từ dữ liệu các đề được tải).
+- Sắp xếp: Mới nhất/Cũ nhất, **Tên file ↑/↓ (mặc định ↑)**, Tiêu đề A→Z/Z→A.
+
+## 🧪 Gợi ý kiểm thử nhanh
+
+- Mở DevTools → Network → kiểm tra `deNN.json` trả đúng nội dung mới sửa.
+- Khi dữ liệu thay đổi, hard refresh (Ctrl+Shift+R) để chắc chắn không dùng phiên bản cũ trong cache.
+
+## 👥 Tác giả
+
+- Nguyễn Ngọc Phúc
+- Mai Thế Duy
+
+— Cảm ơn bạn đã sử dụng MathPractice!
