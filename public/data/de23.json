@@ -943,9 +943,9 @@
         "type": "multiple_choice"
       },
       {
-        "id": 47,
+        "id": 46,
         "question": "Apply the Dijkstra algorithm to find the shortest path from A to Z. What are the first 4 vertices chosen?<br />(See picture)",
-        "image": "/data/image_exam/de23cau47.png",
+        "image": "/data/image_exam/de23cau46.png",
         "options": [
           "A. A-B-C-E",
           "B. A-B-E-Z",
