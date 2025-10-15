@@ -1,0 +1,1054 @@
+{
+    "examId": "de23",
+    "title": "MAD chương 9 - Graph - BT luyện thêm",
+    "description": "Bài luyện tập về đồ thị, bậc đỉnh, số cạnh, và định lý bắt tay.",
+    "questions": [
+      {
+        "id": 1,
+        "question": "How many vertices are needed to construct a graph with 6 edges in which every vertex is of degree 3?",
+        "image": null,
+        "options": [
+          "A. 3",
+          "B. 4",
+          "C. 5",
+          "D. 6",
+          "E. None of the other choices"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Chúng ta sử dụng <b>Định lý Bắt tay (Handshaking Theorem)</b> cho đồ thị vô hướng.<br /><br /><b>Định lý phát biểu rằng:</b> Tổng bậc của tất cả các đỉnh trong một đồ thị bằng hai lần số cạnh.<br />\\[ \\sum_{v \\in V} \\text{deg}(v) = 2|E| \\]<br /><br /><b>Áp dụng vào bài toán:</b><br />- Gọi \\( n \\) là số đỉnh cần tìm.<br />- Mỗi đỉnh có bậc là 3, vậy tổng bậc là \\( n \\times 3 \\).<br />- Số cạnh \\( |E| \\) là 6.<br /><br />Ta có phương trình:<br />\\[ 3n = 2 \\times 6 \\]<br />\\[ 3n = 12 \\]<br />\\[ n = 4 \\]<br /><br />Vậy, cần 4 đỉnh để xây dựng đồ thị thỏa mãn điều kiện.",
+        "difficulty": "easy",
+        "topic": "Graph Theory",
+        "hints": [
+          "Nhớ lại Định lý Bắt tay (Handshaking Theorem).",
+          "Tổng bậc của tất cả các đỉnh bằng 2 lần số cạnh."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 2,
+        "question": "The number of edges in a graph with 7 vertices, 2 of degree 4, 1 of degree 2 and 4 of degree 1, is ____",
+        "image": null,
+        "options": [
+          "A. 6",
+          "B. 7",
+          "C. 8",
+          "D. 9",
+          "E. None of the other choices"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Để tìm số cạnh, ta tiếp tục sử dụng <b>Định lý Bắt tay (Handshaking Theorem)</b>.<br />\\[ \\sum_{v \\in V} \\text{deg}(v) = 2|E| \\]<br /><br /><b>Bước 1: Tính tổng bậc của tất cả các đỉnh</b><br />- Có 2 đỉnh bậc 4: \\( 2 \\times 4 = 8 \\)<br />- Có 1 đỉnh bậc 2: \\( 1 \\times 2 = 2 \\)<br />- Có 4 đỉnh bậc 1: \\( 4 \\times 1 = 4 \\)<br />Tổng bậc = \\( 8 + 2 + 4 = 14 \\).<br /><br /><b>Bước 2: Tìm số cạnh \\( |E| \\)</b><br />Ta có:<br />\\[ 14 = 2 \\times |E| \\]<br />\\[ |E| = \\frac{14}{2} = 7 \\]<br /><br />Vậy, đồ thị có 7 cạnh.",
+        "difficulty": "easy",
+        "topic": "Graph Theory",
+        "hints": [
+          "Tính tổng bậc của tất cả các đỉnh trước.",
+          "Áp dụng công thức: Số cạnh = (Tổng bậc) / 2."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 3,
+        "question": "Let G be a simple graph whose vertices all have degree 3. If G has 30 edges, how many vertices does G have?",
+        "image": null,
+        "options": [
+          "A. 20",
+          "B. 10",
+          "C. 80",
+          "D. 40",
+          "E. 60"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Bài toán này tương tự câu đầu tiên, ta vẫn áp dụng <b>Định lý Bắt tay (Handshaking Theorem)</b>.<br />\\[ \\sum_{v \\in V} \\text{deg}(v) = 2|E| \\]<br /><br /><b>Phân tích:</b><br />- Gọi \\( n \\) là số đỉnh của đồ thị G.<br />- Tất cả các đỉnh đều có bậc 3, nên tổng bậc là \\( n \\times 3 \\).<br />- Số cạnh \\( |E| \\) là 30.<br /><br />Ta có phương trình:<br />\\[ 3n = 2 \\times 30 \\]<br />\\[ 3n = 60 \\]<br />\\[ n = \\frac{60}{3} = 20 \\]<br /><br />Vậy, đồ thị G có 20 đỉnh.",
+        "difficulty": "easy",
+        "topic": "Graph Theory",
+        "hints": [
+          "Xác định tổng bậc theo biến số đỉnh (n).",
+          "Xác định tổng số cạnh đã cho.",
+          "Thiết lập phương trình và giải."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 4,
+        "question": "Given a simple graph with 5 vertices. The degrees of 4 vertices are 1, 3, 3, 4. Which of the following numbers could be the degree of the fifth vertex?",
+        "image": null,
+        "options": [
+          "A. 1",
+          "B. 2",
+          "C. None of the other choices is correct",
+          "D. 3",
+          "E. 5",
+          "F. 1 and 3"
+        ],
+        "correctAnswer": "F",
+        "explanation": "Để giải quyết bài toán này, chúng ta cần sử dụng hai tính chất quan trọng của đồ thị.<br /><br /><b>Tính chất 1: Tổng bậc phải là số chẵn</b><br />Theo hệ quả của Định lý Bắt tay, tổng bậc của một đồ thị luôn là một số chẵn.<br />- Tổng bậc của 4 đỉnh đã biết là: \\( 1 + 3 + 3 + 4 = 11 \\).<br />- Gọi \\( d \\) là bậc của đỉnh thứ năm. Tổng bậc của cả đồ thị là \\( 11 + d \\).<br />- Để \\( 11 + d \\) là số chẵn, \\( d \\) phải là một số lẻ. Điều này loại bỏ đáp án B (2).<br /><br /><b>Tính chất 2: Bậc tối đa của một đỉnh</b><br />Trong một đơn đồ thị có \\( n \\) đỉnh, bậc của một đỉnh bất kỳ không thể lớn hơn \\( n-1 \\) (vì một đỉnh chỉ có thể nối với tối đa \\( n-1 \\) đỉnh còn lại).<br />- Đồ thị này có \\( n=5 \\) đỉnh.<br />- Vậy, bậc tối đa của mỗi đỉnh là \\( 5-1 = 4 \\).<br />- Điều này có nghĩa là \\( d \\le 4 \\). Điều này loại bỏ đáp án E (5).<br /><br /><b>Kết luận:</b><br />Từ hai tính chất trên, \\( d \\) phải là số lẻ và \\( d \\le 4 \\). Các giá trị thỏa mãn là 1 và 3.<br />Vậy, bậc của đỉnh thứ năm có thể là 1 hoặc 3.",
+        "difficulty": "medium",
+        "topic": "Graph Theory",
+        "hints": [
+          "Tổng bậc của một đồ thị luôn là số chẵn.",
+          "Trong một đơn đồ thị có n đỉnh, bậc lớn nhất của một đỉnh là bao nhiêu?",
+          "Kết hợp cả hai điều kiện để tìm ra câu trả lời."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 5,
+        "question": "Which of the following sequences can be the degree sequence of a simple undirected graph?<br />(i) 3, 3, 3, 3, 3, 3<br />(ii) 2, 3, 3, 5, 3, 6<br />(iii) 0, 1, 1, 1, 3, 4, 5",
+        "image": null,
+        "options": [
+          "A. (ii)",
+          "B. (i) and (ii)",
+          "C. (iii)",
+          "D. (i)",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Một dãy số có thể là dãy bậc của một đơn đồ thị nếu nó thỏa mãn hai điều kiện cơ bản sau:<br /><br /><b>1. Tổng các bậc phải là một số chẵn.</b><br /><b>2. Bậc lớn nhất \\( \\Delta \\) không được lớn hơn \\( n-1 \\)</b>, với \\( n \\) là số đỉnh (số phần tử của dãy).<br /><br />Hãy kiểm tra từng dãy:<br /><br /><b>Dãy (i): (3, 3, 3, 3, 3, 3)</b><br />- Số đỉnh \\( n = 6 \\).<br />- Tổng bậc = \\( 6 \\times 3 = 18 \\) (là số chẵn) -> <b>Thỏa mãn.</b><br />- Bậc lớn nhất \\( \\Delta = 3 \\). Ta có \\( 3 \\le n-1 = 5 \\) -> <b>Thỏa mãn.</b><br />-> Dãy (i) <b>CÓ THỂ</b> là dãy bậc của một đơn đồ thị (ví dụ, đồ thị lưỡng phân đầy đủ \\( K_{3,3} \\)).<br /><br /><b>Dãy (ii): (2, 3, 3, 5, 3, 6)</b><br />- Số đỉnh \\( n = 6 \\).<br />- Bậc lớn nhất \\( \\Delta = 6 \\). Ta có \\( 6 > n-1 = 5 \\) -> <b>KHÔNG thỏa mãn.</b><br />-> Dãy (ii) không thể là dãy bậc của một đơn đồ thị.<br /><br /><b>Dãy (iii): (0, 1, 1, 1, 3, 4, 5)</b><br />- Số đỉnh \\( n = 7 \\).<br />- Tổng bậc = \\( 0 + 1 + 1 + 1 + 3 + 4 + 5 = 15 \\) (là số lẻ) -> <b>KHÔNG thỏa mãn.</b><br />-> Dãy (iii) không thể là dãy bậc của một đồ thị.<br /><br /><b>Kết luận:</b> Chỉ có dãy (i) thỏa mãn các điều kiện cần.",
+        "difficulty": "medium",
+        "topic": "Graph Theory",
+        "hints": [
+          "Kiểm tra xem tổng của dãy số có phải là số chẵn không.",
+          "Kiểm tra xem phần tử lớn nhất có nhỏ hơn số lượng phần tử của dãy không.",
+          "Cả hai điều kiện phải được thỏa mãn."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 6,
+        "question": "Which of the following is the sequence of degrees of a simple graph?",
+        "image": null,
+        "options": [
+          "A. 0, 2, 2, 2, 3",
+          "B. 1, 2, 3, 3",
+          "C. 2, 2, 3, 3, 3, 4",
+          "D. 1, 1, 2, 4",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Một dãy số có thể là dãy bậc của một đơn đồ thị nếu nó thỏa mãn hai điều kiện cần:<br /><br /><b>1. Tổng các bậc phải là số chẵn (Hệ quả Định lý Bắt tay).</b><br /><b>2. Bậc lớn nhất \\( \\Delta \\) phải nhỏ hơn hoặc bằng \\( n-1 \\)</b>, với \\( n \\) là số đỉnh (số phần tử trong dãy).<br /><br />Hãy kiểm tra từng đáp án:<br />- <b>A. (0, 2, 2, 2, 3):</b> Tổng = 9 (lẻ) -> <b>Loại.</b><br />- <b>B. (1, 2, 3, 3):</b> Tổng = 9 (lẻ) -> <b>Loại.</b><br />- <b>C. (2, 2, 3, 3, 3, 4):</b> Tổng = 17 (lẻ) -> <b>Loại.</b><br />- <b>D. (1, 1, 2, 4):</b><br />  - Tổng = 8 (chẵn) -> Thỏa mãn điều kiện 1.<br />  - Số đỉnh \\( n = 4 \\). Bậc lớn nhất \\( \\Delta = 4 \\).<br />  - Điều kiện 2 yêu cầu \\( \\Delta \\le n-1 \\), tức là \\( 4 \\le 3 \\), điều này sai -> <b>Loại.</b><br /><br />Vì tất cả các dãy đều vi phạm ít nhất một điều kiện, không có dãy nào hợp lệ.",
+        "difficulty": "medium",
+        "topic": "Graph Theory",
+        "hints": [
+          "Hãy kiểm tra tổng của các bậc trước. Nó phải là số chẵn.",
+          "Kiểm tra bậc lớn nhất. Nó không thể lớn hơn hoặc bằng số đỉnh."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 7,
+        "question": "Does there exist a simple undirected graph with 5 vertices whose degrees are:<br />(i) 2, 2, 3, 4, 2<br />(ii) 2, 1, 2, 1, 2<br />(iii) 1, 3, 4, 1, 5",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>Phân tích từng dãy bậc:</b><br /><br /><b>(i) Dãy (2, 2, 3, 4, 2)</b><br />- Tổng bậc = \\( 2+2+3+4+2 = 13 \\).<br />- Vì tổng bậc là số lẻ, nên <b>không tồn tại</b> đồ thị như vậy.<br /><br /><b>(ii) Dãy (2, 1, 2, 1, 2) hay (2, 2, 2, 1, 1)</b><br />- Số đỉnh \\( n = 5 \\).<br />- Tổng bậc = \\( 2+1+2+1+2 = 8 \\). (Chẵn - Thỏa mãn)<br />- Bậc lớn nhất \\( \\Delta = 2 \\). Ta có \\( 2 \\le n-1 = 4 \\). (Thỏa mãn)<br />- Dãy này thỏa mãn các điều kiện cần và có thể vẽ được đồ thị (ví dụ: một đường đi P3 nối với một đường đi P2). Vậy <b>tồn tại</b> đồ thị này.<br /><br /><b>(iii) Dãy (1, 3, 4, 1, 5)</b><br />- Số đỉnh \\( n = 5 \\).<br />- Bậc lớn nhất \\( \\Delta = 5 \\).<br />- Trong một đơn đồ thị 5 đỉnh, bậc lớn nhất chỉ có thể là 4. Vì \\( 5 > 4 \\), nên <b>không tồn tại</b> đồ thị như vậy.",
+        "explanation": "Để xác định sự tồn tại của một đơn đồ thị từ dãy bậc cho trước, ta cần kiểm tra các điều kiện sau:<br /><br />1. <b>Tổng bậc phải là số chẵn:</b> Đây là điều kiện bắt buộc theo Định lý Bắt tay.<br />2. <b>Bậc lớn nhất phải nhỏ hơn số đỉnh:</b> Trong một đơn đồ thị \\( n \\) đỉnh, một đỉnh có thể nối với tối đa \\( n-1 \\) đỉnh còn lại, do đó bậc lớn nhất \\( \\Delta \\le n-1 \\).<br />3. <b>(Nâng cao) Định lý Havel-Hakimi:</b> Dùng để kiểm tra chắc chắn một dãy có phải là dãy bậc (graphical) hay không. Tuy nhiên, hai điều kiện đầu tiên thường đủ để loại bỏ các trường hợp sai trong các câu hỏi trắc nghiệm.",
+        "difficulty": "hard",
+        "topic": "Graph Theory",
+        "hints": [
+          "Tính tổng bậc của mỗi dãy. Nếu lẻ, hãy loại ngay lập tức.",
+          "So sánh bậc lớn nhất với (số đỉnh - 1).",
+          "Nếu cả hai điều kiện trên đều thỏa mãn, khả năng cao là dãy đó hợp lệ."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 8,
+        "question": "Let G be a simple graph. The complementary graph of G is the graph G' having the same set of vertices, and there is an edge connecting u and v in G' if and only if there is no edge connecting u and v in G.<br /><br />If G has 10 vertices and 20 edges, how many edges does G' have?",
+        "image": null,
+        "options": [
+          "A. 25",
+          "B. 20",
+          "C. 70",
+          "D. 45",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Để tìm số cạnh của đồ thị bù G', chúng ta thực hiện theo các bước sau:<br /><br /><b>Bước 1: Tính số cạnh tối đa có thể có.</b><br />Số cạnh tối đa trong một đơn đồ thị \\( n \\) đỉnh chính là số cạnh của đồ thị đầy đủ \\( K_n \\).<br />Công thức: \\( |E(K_n)| = \\frac{n(n-1)}{2} \\)<br />Với \\( n=10 \\), số cạnh tối đa là:<br />\\[ |E(K_{10})| = \\frac{10(10-1)}{2} = \\frac{10 \\times 9}{2} = 45 \\text{ cạnh} \\]<br /><br /><b>Bước 2: Tính số cạnh của đồ thị bù G'.</b><br />Đồ thị bù G' chứa tất cả các cạnh mà G không có. Do đó:<br />\\[ |E(G')| = |E(K_n)| - |E(G)| \\]<br />\\[ |E(G')| = 45 - 20 = 25 \\text{ cạnh} \\]<br /><br />Vậy, đồ thị bù G' có 25 cạnh.",
+        "difficulty": "medium",
+        "topic": "Graph Theory",
+        "hints": [
+          "Đồ thị bù G' và đồ thị gốc G kết hợp lại sẽ tạo thành một đồ thị đầy đủ Kₙ.",
+          "Tìm tổng số cạnh của đồ thị đầy đủ với 10 đỉnh.",
+          "Lấy tổng số cạnh đó trừ đi số cạnh của G."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 9,
+        "question": "Let G be a simple graph. The complementary graph of G is the simple graph G' having the same set of vertices, and there is an edge connecting u and v in G' if and only if there is no edge connecting u and v in G.<br /><br />If G has v vertices and e edges, how many edges does G' have?",
+        "image": null,
+        "options": [
+          "A. None of the other choices is correct",
+          "B. e",
+          "C. v(v-1)/2-e+1",
+          "D. v(v-1)/2-e",
+          "E. v"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Đây là bài toán tổng quát của câu hỏi trước.<br /><br /><b>Lý luận:</b><br />1. Một đơn đồ thị với \\( v \\) đỉnh sẽ trở thành đồ thị đầy đủ \\( K_v \\) nếu nó có tất cả các cạnh có thể có.<br />2. Số cạnh của đồ thị đầy đủ \\( K_v \\) được tính bằng công thức: \\( \\frac{v(v-1)}{2} \\).<br />3. Đồ thị G đã có sẵn \\( e \\) cạnh.<br />4. Đồ thị bù G' chứa chính xác những cạnh còn thiếu để G trở thành đồ thị đầy đủ.<br /><br />Do đó, số cạnh của G' là tổng số cạnh có thể có trừ đi số cạnh G đã có.<br />\\[ |E(G')| = |E(K_v)| - |E(G)| \\]<br />\\[ |E(G')| = \\frac{v(v-1)}{2} - e \\]<br />Công thức này thể hiện mối quan hệ giữa một đồ thị và phần bù của nó.",
+        "difficulty": "medium",
+        "topic": "Graph Theory",
+        "hints": [
+          "Hãy suy nghĩ về tổng số cạnh của G và G' cộng lại.",
+          "Tổng số cạnh của một đồ thị và phần bù của nó luôn bằng số cạnh của một đồ thị đầy đủ có cùng số đỉnh."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 10,
+        "question": "Let n > 3, n is odd. Which of the following graphs is bipartite?",
+        "image": null,
+        "options": [
+          "A. Qn",
+          "B. Kn",
+          "C. Cn",
+          "D. Wn",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Một đồ thị được gọi là <b>lưỡng phân (bipartite)</b> nếu nó không chứa bất kỳ chu trình có độ dài lẻ nào.<br /><br />Hãy phân tích các lựa chọn dựa trên điều kiện \\( n > 3 \\) và \\( n \\) là số lẻ:<br /><br />- <b>B. Kn (Đồ thị đầy đủ):</b> Với \\( n > 2 \\), \\( K_n \\) luôn chứa chu trình tam giác (\\( C_3 \\)), là một chu trình lẻ. Do đó, \\( K_n \\) không lưỡng phân.<br /><br />- <b>C. Cn (Đồ thị vòng):</b> Một đồ thị vòng \\( C_n \\) là lưỡng phân khi và chỉ khi \\( n \\) là số chẵn. Vì \\( n \\) lẻ, \\( C_n \\) là một chu trình lẻ. Do đó, \\( C_n \\) không lưỡng phân.<br /><br />- <b>D. Wn (Đồ thị bánh xe):</b> Đồ thị \\( W_n \\) được tạo từ \\( C_n \\) bằng cách thêm một đỉnh trung tâm. Vì \\( W_n \\) chứa \\( C_n \\) (một chu trình lẻ) làm đồ thị con, nên \\( W_n \\) cũng không lưỡng phân.<br /><br />- <b>A. Qn (Đồ thị n-lập phương):</b> Mọi đồ thị n-lập phương \\( Q_n \\) đều là đồ thị lưỡng phân với mọi \\( n \\ge 1 \\). Ta có thể chia các đỉnh thành hai tập: tập các đỉnh có số bit '1' là chẵn, và tập các đỉnh có số bit '1' là lẻ. Một cạnh chỉ nối một đỉnh từ tập này sang tập kia. Do đó, \\( Q_n \\) luôn lưỡng phân.<br /><br />Vậy, \\( Q_n \\) là đồ thị lưỡng phân duy nhất trong các lựa chọn.",
+        "difficulty": "hard",
+        "topic": "Graph Theory",
+        "hints": [
+          "Đặc điểm nhận dạng quan trọng nhất của đồ thị lưỡng phân là gì?",
+          "Một đồ thị là lưỡng phân nếu và chỉ nếu nó không có chu trình độ dài lẻ.",
+          "Hãy xem xét xem các đồ thị Kₙ, Cₙ, Wₙ có chứa chu trình lẻ khi n lẻ hay không."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 11,
+        "question": "Find all bipartite graphs in the list:<br />\\( K_4, W_4, C_4, K_{3,4} \\)",
+        "image": null,
+        "options": [
+          "A. (i) \\( K_4, W_4 \\)",
+          "B. (ii) \\( W_4, C_4 \\)",
+          "C. (iii) \\( C_4, K_{3,4} \\)",
+          "D. None of the other choices is correct"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Một đồ thị là <b>lưỡng phân (bipartite)</b> nếu các đỉnh của nó có thể được chia thành hai tập hợp riêng biệt U và V sao cho mọi cạnh đều nối một đỉnh trong U với một đỉnh trong V. Một cách kiểm tra nhanh là: <b>Một đồ thị là lưỡng phân khi và chỉ khi nó không chứa chu trình có độ dài lẻ.</b><br /><br />- <b>\\( K_4 \\) (Đồ thị đầy đủ 4 đỉnh):</b> Chứa nhiều chu trình tam giác (\\( C_3 \\)), là chu trình lẻ. -> <b>Không lưỡng phân.</b><br />- <b>\\( W_4 \\) (Đồ thị bánh xe 4 đỉnh):</b> Chứa các chu trình tam giác tạo bởi đỉnh trung tâm và hai đỉnh liền kề trên vành. -> <b>Không lưỡng phân.</b><br />- <b>\\( C_4 \\) (Đồ thị vòng 4 đỉnh):</b> Là một hình vuông, không có chu trình lẻ. Các đỉnh có thể được chia thành hai tập {v1, v3} và {v2, v4}. -> <b>Là đồ thị lưỡng phân.</b><br />- <b>\\( K_{3,4} \\) (Đồ thị lưỡng phân đầy đủ):</b> Theo định nghĩa, mọi đồ thị lưỡng phân đầy đủ đều là đồ thị lưỡng phân. -> <b>Là đồ thị lưỡng phân.</b><br /><br />Vậy, các đồ thị lưỡng phân trong danh sách là \\( C_4 \\) và \\( K_{3,4} \\).",
+        "difficulty": "medium",
+        "topic": "Graph Theory",
+        "hints": [
+          "Đặc điểm chính của đồ thị lưỡng phân là nó không có chu trình lẻ.",
+          "Đồ thị Kₙ (với n>2) và Wₙ luôn chứa chu trình tam giác (C₃).",
+          "Đồ thị Cₙ là lưỡng phân khi và chỉ khi n là số chẵn."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 12,
+        "question": "The adjacency list to represent the given graph is ____<br />(See picture)",
+        "image": "/data/image_exam/de23cau12.png",
+        "options": [
+          "A. (i)",
+          "B. (ii)",
+          "C. (iii)",
+          "D. (iv)",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Danh sách kề (adjacency list) của một đỉnh liệt kê tất cả các đỉnh nối trực tiếp với nó.<br />Hãy kiểm tra từng đỉnh của đồ thị trong hình:<br /><br />- <b>Đỉnh a:</b> kề với <b>b, f</b><br />- <b>Đỉnh b:</b> kề với <b>a, c</b><br />- <b>Đỉnh c:</b> kề với <b>b, d, e, f</b><br />- <b>Đỉnh d:</b> kề với <b>c, e</b><br />- <b>Đỉnh e:</b> kề với <b>c, d, f</b><br />- <b>Đỉnh f:</b> kề với <b>a, c, e</b><br /><br />So sánh với các lựa chọn, ta thấy danh sách (iii) khớp chính xác với tất cả các đỉnh.",
+        "difficulty": "easy",
+        "topic": "Graph Representation",
+        "hints": [
+          "Đối với mỗi đỉnh, hãy nhìn vào hình và viết ra tất cả các đỉnh mà nó được nối tới.",
+          "So sánh danh sách bạn viết tay với từng lựa chọn một cách cẩn thận."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 13,
+        "question": "What is the sum of the numbers in the second row of the adjacency matrix, in the order a,b,c,d,e, of the given graph?<br />(See picture)",
+        "image": "/data/image_exam/de23cau13.png",
+        "options": [
+          "A. 1",
+          "B. 3",
+          "C. 2",
+          "D. 4"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Một tính chất quan trọng của ma trận kề trong một đơn đồ thị:<br /><b>Tổng các giá trị trên một hàng bằng bậc (degree) của đỉnh tương ứng với hàng đó.</b><br /><br />1. Thứ tự các đỉnh được cho là: a, b, c, d, e.<br />2. Hàng thứ hai của ma trận kề tương ứng với đỉnh thứ hai trong thứ tự, đó là đỉnh <b>b</b>.<br />3. Câu hỏi thực chất là: \"Bậc của đỉnh b là bao nhiêu?\".<br />4. Nhìn vào đồ thị, ta thấy đỉnh <b>b</b> được nối với 3 đỉnh khác là <b>a, c, và d</b>.<br /><br />Vậy, bậc của đỉnh b là 3, và tổng các số trong hàng thứ hai của ma trận kề cũng là 3.",
+        "difficulty": "easy",
+        "topic": "Graph Representation",
+        "hints": [
+          "Tổng của một hàng trong ma trận kề chính là bậc của đỉnh đó.",
+          "Xác định đỉnh nào tương ứng với hàng thứ hai.",
+          "Đếm số cạnh nối với đỉnh đó."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 14,
+        "question": "Fill in the blank:<br />The adjacent matrix of .... has .... 1s",
+        "image": null,
+        "options": [
+          "A. (iii) \\( K_n, n(n-1) \\)",
+          "B. (ii) \\( Q_n, 2^n \\)",
+          "C. None of the other choices is correct",
+          "D. (iv) \\( C_n, n \\)",
+          "E. (i) \\( W_n, 2n \\)"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Trong ma trận kề của một đơn đồ thị vô hướng, mỗi cạnh được biểu diễn bởi hai số 1 (một ở ô (i, j) và một ở ô (j, i)).<br />Do đó, <b>tổng số lượng số 1 trong ma trận kề bằng hai lần số cạnh của đồ thị.</b><br />\\[ \\text{Số lượng 1s} = 2 \\times |E| \\]<br /><br />Hãy kiểm tra các lựa chọn:<br />- <b>(i) \\( W_n \\):</b> Có \\( 2n \\) cạnh. Số 1s phải là \\( 2 \\times (2n) = 4n \\). -> Sai.<br />- <b>(ii) \\( Q_n \\):</b> Có \\( n2^{n-1} \\) cạnh. Số 1s phải là \\( 2 \\times (n2^{n-1}) = n2^n \\). -> Sai.<br />- <b>(iii) \\( K_n \\):</b> Có \\( \\frac{n(n-1)}{2} \\) cạnh. Số 1s phải là \\( 2 \\times \\frac{n(n-1)}{2} = n(n-1) \\). -> <b>Đúng.</b><br />- <b>(iv) \\( C_n \\):</b> Có \\( n \\) cạnh. Số 1s phải là \\( 2 \\times n = 2n \\). -> Sai.",
+        "difficulty": "medium",
+        "topic": "Special Graphs",
+        "hints": [
+          "Số lượng số 1 trong ma trận kề của đồ thị vô hướng bằng 2 lần số cạnh.",
+          "Nhớ lại công thức tính số cạnh cho các loại đồ thị đặc biệt."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 15,
+        "question": "How many 0s are there in the adjacency matrix of the graph \\( K_{m,n} \\)?",
+        "image": null,
+        "options": [
+          "A. (i) \\( mn \\)",
+          "B. (ii) \\( 2mn \\)",
+          "C. (iii) \\( m^2 + n^2 \\)",
+          "D. (iv) \\( m^2 + n^2 + mn \\)"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Ta có thể tìm số lượng số 0 bằng cách lấy tổng số phần tử trong ma trận trừ đi số lượng số 1.<br /><br />1. <b>Tổng số đỉnh:</b> Đồ thị \\( K_{m,n} \\) có \\( m+n \\) đỉnh.<br />2. <b>Kích thước ma trận kề:</b> Ma trận sẽ có kích thước \\( (m+n) \\times (m+n) \\).<br />3. <b>Tổng số phần tử:</b> \\( (m+n)^2 = m^2 + 2mn + n^2 \\).<br />4. <b>Số cạnh của \\( K_{m,n} \\):</b> \\( |E| = mn \\).<br />5. <b>Số lượng số 1:</b> Số lượng số 1 bằng 2 lần số cạnh, tức là \\( 2mn \\).<br />6. <b>Số lượng số 0:</b><br />\\[ \\text{Số 0s} = (\\text{Tổng số phần tử}) - (\\text{Số 1s}) \\]<br />\\[ \\text{Số 0s} = (m^2 + 2mn + n^2) - (2mn) \\]<br />\\[ \\text{Số 0s} = m^2 + n^2 \\]<br /><br />Vậy, có \\( m^2 + n^2 \\) số 0 trong ma trận kề của \\( K_{m,n} \\).",
+        "difficulty": "medium",
+        "topic": "Graph Representation",
+        "hints": [
+          "Số 0 = (Tổng số ô trong ma trận) - (Số 1).",
+          "Tổng số ô = (tổng số đỉnh)², và số 1 = 2 * (số cạnh).",
+          "Đồ thị K_{m,n} có bao nhiêu đỉnh và bao nhiêu cạnh?"
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 16,
+        "question": "How many 1s are there in the incident matrix of the graph \\( K_3 \\)?",
+        "image": null,
+        "options": [
+          "A. 6",
+          "B. 9",
+          "C. 3",
+          "D. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Trong ma trận liên thuộc (incident matrix) của một đồ thị:<br />- Mỗi hàng tương ứng với một đỉnh.<br />- Mỗi cột tương ứng với một cạnh.<br />- Một cạnh bất kỳ luôn nối chính xác hai đỉnh. Do đó, mỗi cột trong ma trận liên thuộc sẽ có chính xác <b>hai số 1</b>.<br /><br /><b>Các bước giải:</b><br />1. Xác định số cạnh của đồ thị \\( K_3 \\) (đồ thị đầy đủ 3 đỉnh, hình tam giác). Số cạnh là 3.<br />2. Vì mỗi cạnh đóng góp hai số 1 vào ma trận, tổng số lượng số 1 là:<br />\\[ \\text{Số 1s} = 2 \\times (\\text{Số cạnh}) \\]<br />\\[ \\text{Số 1s} = 2 \\times 3 = 6 \\]<br /><br />Vậy, có 6 số 1 trong ma trận liên thuộc của \\( K_3 \\).",
+        "difficulty": "easy",
+        "topic": "Graph Representation",
+        "hints": [
+          "Số lượng số 1 trong ma trận liên thuộc bằng 2 lần số cạnh.",
+          "Đồ thị K₃ là một hình tam giác. Nó có bao nhiêu cạnh?"
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 17,
+        "question": "How many 1s are there in the adjacency matrix of the following graph?<br />(See picture)",
+        "image": "/data/image_exam/de23cau17.png",
+        "options": [
+          "A. 5",
+          "B. 8",
+          "C. 10",
+          "D. 16"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Trong ma trận kề (adjacency matrix) của một đồ thị vô hướng:<br />- Mỗi cạnh (nối giữa hai đỉnh u và v) được biểu diễn bởi hai số 1: một ở vị trí (u, v) và một ở vị trí (v, u).<br />- Do đó, <b>tổng số lượng số 1 trong ma trận kề bằng hai lần số cạnh</b> của đồ thị.<br /><br /><b>Các bước giải:</b><br />1. Đếm số cạnh của đồ thị trong hình. Bằng cách đếm các đường nối, ta thấy có <b>8 cạnh</b>.<br />2. Tính tổng số lượng số 1:<br />\\[ \\text{Số 1s} = 2 \\times (\\text{Số cạnh}) \\]<br />\\[ \\text{Số 1s} = 2 \\times 8 = 16 \\]<br /><br />Vậy, có 16 số 1 trong ma trận kề của đồ thị đã cho.",
+        "difficulty": "easy",
+        "topic": "Graph Representation",
+        "hints": [
+          "Tổng số 1 trong ma trận kề bằng 2 nhân với tổng số cạnh.",
+          "Hãy đếm cẩn thận số đường nối trong đồ thị."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 18,
+        "question": "Are these two graphs isomorphic? If not, what is the reason?<br />(See picture)",
+        "image": "/data/image_exam/de23cau18.png",
+        "options": [
+          "A. No, they are not isomorphic because in the graph on the left, each vertex of degree 2 is adjacent to a vertex of degree 4, and the graph on the right does not have that property",
+          "B. No, they are not isomorphic because they do not have the same number of vertices of degree 3",
+          "C. No, they are not isomorphic because they do not have the same number of vertices of degree 4",
+          "D. Yes, they are isomorphic",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Để kiểm tra tính đẳng cấu, ta so sánh các bất biến của chúng.<br /><br />1. <b>Số đỉnh, số cạnh, dãy bậc:</b><br />- Cả hai đồ thị đều có 6 đỉnh và 9 cạnh.<br />- Dãy bậc của cả hai đều là \\( (2, 2, 3, 3, 4, 4) \\).<br />-> Các bất biến cơ bản này giống nhau, ta phải kiểm tra sâu hơn.<br /><br />2. <b>Cấu trúc lân cận:</b><br />- <b>Đồ thị trái:</b> Xét hai đỉnh bậc 2. Mỗi đỉnh bậc 2 đều kề với một đỉnh bậc 3 và một đỉnh bậc 4.<br />- <b>Đồ thị phải:</b> Xét hai đỉnh bậc 2.<br />  - Đỉnh bậc 2 bên trái kề với hai đỉnh bậc 4.<br />  - Đỉnh bậc 2 bên phải kề với hai đỉnh bậc 3.<br /><br />Vì cấu trúc kề của các đỉnh bậc 2 không tương ứng với nhau, hai đồ thị này <b>không đẳng cấu</b>. Lựa chọn A mô tả đúng một trong những khác biệt này: đồ thị bên phải không có thuộc tính mà mọi đỉnh bậc 2 đều kề với một đỉnh bậc 4 (cụ thể, đỉnh bậc 2 bên phải không kề với đỉnh bậc 4 nào).",
+        "difficulty": "hard",
+        "topic": "Graph Isomorphism",
+        "hints": [
+          "Bắt đầu bằng cách so sánh số đỉnh, số cạnh và dãy bậc.",
+          "Nếu chúng giống nhau, hãy kiểm tra các đỉnh lân cận.",
+          "So sánh các đỉnh cùng bậc ở cả hai đồ thị: các hàng xóm của chúng có cùng bậc không?"
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 19,
+        "question": "Are these two graphs isomorphic? If not, what is the reason?<br />(See picture)",
+        "image": "/data/image_exam/de23cau19.png",
+        "options": [
+          "A. Yes, they are isomorphic",
+          "B. No, they are not isomorphic because they do not have the same number of edges",
+          "C. No, they are not isomorphic because they do not have the same number of vertices of degree 4",
+          "D. No, they are not isomorphic because they do not have the same number of simple circuits of length 3"
+        ],
+        "correctAnswer": "D",
+        "explanation": "<b>Phân tích:</b> Có một sự không nhất quán trong hình ảnh vì đồ thị bên trái có 5 đỉnh trong khi đồ thị bên phải (là \\( K_4 \\)) chỉ có 4 đỉnh. Đây có thể là lỗi trong đề bài.<br /><br />Giả sử rằng đồ thị bên phải được dự định là <b>đồ thị bánh xe \\( W_4 \\)</b> (có 5 đỉnh: 4 đỉnh ngoài và 1 đỉnh trung tâm), một ví dụ phổ biến.<br /><br />Dưới giả định này, ta so sánh các bất biến:<br />- <b>Đồ thị trái:</b><br />  - Đỉnh: 5, Cạnh: 7<br />  - Dãy bậc: (2, 3, 3, 3, 3)<br />  - Số chu trình tam giác (\\( C_3 \\)): 1<br />- <b>Đồ thị \\( W_4 \\) (giả định cho đồ thị phải):</b><br />  - Đỉnh: 5, Cạnh: 8<br />  - Dãy bậc: (3, 3, 3, 3, 4)<br />  - Số chu trình tam giác (\\( C_3 \\)): 4<br /><br />Cả hai đồ thị có số cạnh, dãy bậc và số chu trình tam giác khác nhau. Tất cả các lý do B, C, D đều đúng dưới giả định này. Tuy nhiên, số lượng chu trình tam giác là một bất biến cấu trúc rất mạnh mẽ để phân biệt hai đồ thị.",
+        "difficulty": "hard",
+        "topic": "Graph Isomorphism",
+        "hints": [
+          "Kiểm tra các bất biến cơ bản nhất trước: số đỉnh và số cạnh.",
+          "Số chu trình có độ dài k (ví dụ: tam giác) là một bất biến của đồ thị.",
+          "Nếu có sự không nhất quán trong đề bài, hãy đưa ra một giả định hợp lý (ví dụ: thay thế bằng một đồ thị phổ biến)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 20,
+        "question": "Are these two graphs isomorphic? If not, what is the reason?<br />(See picture)",
+        "image": "/data/image_exam/de23cau20.png",
+        "options": [
+          "A. No, they are not isomorphic because the edge connecting the two vertices of degree 3 in the graph on the left is a cut edge, and the graph on the right does not have that property",
+          "B. No, they are not isomorphic because the graph on the left is not connected, and the graph on the right is connected",
+          "C. No, they are not isomorphic because they do not have the same number of simple circuits of length 3",
+          "D. Yes, they are isomorphic"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Cả hai đồ thị được hiển thị đều là các cách vẽ khác nhau của cùng một cấu trúc đồ thị nổi tiếng: <b>Đồ thị Petersen</b>.<br /><br /><b>Các thuộc tính chung của cả hai đồ thị:</b><br />- <b>Số đỉnh:</b> 10<br />- <b>Số cạnh:</b> 15<br />- <b>Dãy bậc:</b> Tất cả các đỉnh đều có bậc 3 (đồ thị 3-chính quy).<br />- <b>Chu trình:</b> Chúng không có chu trình độ dài 3 hoặc 4. Chu trình ngắn nhất có độ dài 5.<br /><br />Vì cả hai hình ảnh đều biểu diễn cùng một đồ thị trừu tượng, chúng <b>đẳng cấu</b> với nhau theo định nghĩa. Hình bên phải là một trong những cách vẽ phổ biến nhất của đồ thị Petersen.",
+        "difficulty": "hard",
+        "topic": "Graph Isomorphism",
+        "hints": [
+          "Hãy thử xác định xem các đồ thị có phải là một đồ thị đặc biệt nào đó mà bạn biết không.",
+          "Cả hai đồ thị này đều là đồ thị Petersen, chỉ được vẽ khác nhau.",
+          "Hai đồ thị là đẳng cấu nếu chúng có cùng cấu trúc cơ bản, bất kể chúng được vẽ như thế nào."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 21,
+        "question": "Are these two graphs isomorphic? If not, what is the reason?<br />(See picture)",
+        "image": "/data/image_exam/de23cau21.png",
+        "options": [
+          "A. No, they are not isomorphic because they do not have the same number of simple circuits of length 3",
+          "B. No, they are not isomorphic because they do not have the same number of edges",
+          "C. No, they are not isomorphic because they do not have the same number of vertices of degree 4",
+          "D. Yes, they are isomorphic"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Để hai đồ thị đẳng cấu, chúng phải có cùng các thuộc tính cơ bản (bất biến). Hãy kiểm tra các thuộc tính của hai đồ thị:<br /><br /><b>Đồ thị bên trái:</b><br />- Số đỉnh: 8<br />- Bậc của mỗi đỉnh: Mỗi đỉnh đều nối với 2 đỉnh liền kề và 1 đỉnh đối diện, vậy tất cả các đỉnh đều có bậc 3. Đây là đồ thị 3-chính quy.<br />- Số cạnh = \\( (8 \\times 3) / 2 = 12 \\).<br /><br /><b>Đồ thị bên phải:</b> (Đây là đồ thị lưỡng phân đầy đủ \\( K_{4,4} \\))<br />- Số đỉnh: 8<br />- Bậc của mỗi đỉnh: Mỗi đỉnh đều nối với 4 đỉnh ở tập còn lại, vậy tất cả các đỉnh đều có bậc 4. Đây là đồ thị 4-chính quy.<br />- Số cạnh = \\( (8 \\times 4) / 2 = 16 \\).<br /><br /><b>So sánh:</b><br />Hai đồ thị có số cạnh khác nhau (12 vs 16) và dãy bậc khác nhau (toàn bậc 3 vs toàn bậc 4). Vì chúng không có cùng số cạnh, chúng <b>không thể đẳng cấu</b>.",
+        "difficulty": "medium",
+        "topic": "Graph Isomorphism",
+        "hints": [
+          "Đếm số đỉnh và số cạnh của mỗi đồ thị.",
+          "Xác định bậc của các đỉnh trong mỗi đồ thị.",
+          "Nếu bất kỳ thuộc tính cơ bản nào khác nhau, chúng không đẳng cấu."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 22,
+        "question": "How many non-isomorphic trees of 4 vertices?",
+        "image": null,
+        "options": [
+          "A. 4",
+          "B. None of the other choices is correct",
+          "C. 3",
+          "D. 2",
+          "E. 1"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Một cây có \\( n \\) đỉnh sẽ có đúng \\( n-1 \\) cạnh. Với \\( n=4 \\), ta cần tìm tất cả các cách sắp xếp 3 cạnh trên 4 đỉnh mà không tạo ra chu trình.<br /><br />Có hai cấu trúc cây khác biệt (không đẳng cấu) với 4 đỉnh:<br /><br />1. <b>Đường đi \\( P_4 \\):</b> Các đỉnh được sắp xếp thành một hàng. Dãy bậc là (1, 2, 2, 1).<br />   `o---o---o---o`<br /><br />2. <b>Đồ thị hình sao \\( K_{1,3} \\):</b> Một đỉnh trung tâm nối với 3 đỉnh còn lại. Dãy bậc là (3, 1, 1, 1).<br />   `   o`<br />   `   |`<br />   `o---o---o`<br /><br />Bất kỳ cây nào khác có 4 đỉnh đều sẽ có cấu trúc giống hệt một trong hai loại trên. Do đó, có 2 cây không đẳng cấu.",
+        "difficulty": "easy",
+        "topic": "Trees",
+        "hints": [
+          "Cây có n đỉnh thì có n-1 cạnh.",
+          "Hãy thử vẽ tất cả các cách nối 4 đỉnh bằng 3 cạnh mà không tạo vòng lặp."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 23,
+        "question": "How many nonisomorphic simple undirected graphs are there with 4 vertices and 4 or 5 edges?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Có tổng cộng <b>3</b> đồ thị không đẳng cấu thỏa mãn điều kiện.<br /><br />Ta xét hai trường hợp:<br /><br /><b>Trường hợp 1: 4 đỉnh và 4 cạnh</b><br />1. <b>Chu trình \\( C_4 \\):</b> Bốn đỉnh tạo thành một hình vuông. Dãy bậc: (2, 2, 2, 2).<br />2. <b>Chu trình \\( C_3 \\) với một cạnh thừa:</b> Một tam giác với một đỉnh có một cạnh nối ra ngoài. Dãy bậc: (1, 2, 2, 3).<br />-> Có <b>2</b> đồ thị trong trường hợp này.<br /><br /><b>Trường hợp 2: 4 đỉnh và 5 cạnh</b><br />- Đồ thị đầy đủ 4 đỉnh (\\( K_4 \\)) có \\( \\frac{4(3)}{2} = 6 \\) cạnh.<br />- Một đồ thị có 5 cạnh chính là đồ thị \\( K_4 \\) bị xóa đi 1 cạnh. Bất kể bạn xóa cạnh nào trong \\( K_4 \\), đồ thị thu được đều có cùng cấu trúc.<br />-> Có <b>1</b> đồ thị trong trường hợp này (đồ thị \\( K_4-e \\)).<br /><br /><b>Tổng cộng:</b> \\( 2 + 1 = 3 \\) đồ thị.",
+        "explanation": "Bài toán này yêu cầu liệt kê và đếm các cấu trúc đồ thị không đẳng cấu. Cách tiếp cận là chia bài toán thành các trường hợp nhỏ hơn dựa trên số cạnh và liệt kê tất cả các cấu trúc có thể có trong mỗi trường hợp.<br /><br />- <b>Với 4 cạnh:</b> Ta có thể bắt đầu từ một chu trình (\\( C_4 \\)) hoặc một tam giác (\\( C_3 \\)) và thêm các cạnh còn lại.<br />- <b>Với 5 cạnh:</b> Sử dụng khái niệm đồ thị bù (complementary graph) là cách hiệu quả nhất. Một đồ thị 5 cạnh là bù của một đồ thị 1 cạnh. Vì chỉ có một cấu trúc cho đồ thị 4 đỉnh 1 cạnh, nên cũng chỉ có một cấu trúc cho đồ thị 4 đỉnh 5 cạnh.",
+        "difficulty": "hard",
+        "topic": "Graph Theory",
+        "hints": [
+          "Chia bài toán thành hai phần: (4 đỉnh, 4 cạnh) và (4 đỉnh, 5 cạnh).",
+          "Với 5 cạnh, hãy nghĩ về đồ thị bù của nó.",
+          "Vẽ ra các trường hợp để đảm bảo bạn không bỏ sót."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 24,
+        "question": "Given an undirected multigraph with three vertices A, B, C and the adjacency matrix (in that order of vertices):<br />\\[ A = \\begin{pmatrix} 0 & 3 & 1 \\\\ 3 & 1 & 1 \\\\ 1 & 1 & 1 \\end{pmatrix} \\]<br />How many paths of length 2 from B to C?",
+        "image": null,
+        "options": [
+          "A. 2",
+          "B. 4",
+          "C. 5",
+          "D. 7"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Số đường đi có độ dài \\( k \\) từ đỉnh \\( i \\) đến đỉnh \\( j \\) trong một đồ thị được cho bởi phần tử ở hàng \\( i \\), cột \\( j \\) của ma trận \\( A^k \\), trong đó A là ma trận kề.<br /><br />Ở đây, ta cần tìm số đường đi có độ dài 2 từ B đến C. Điều này tương ứng với phần tử ở hàng 2, cột 3 của ma trận \\( A^2 \\).<br /><br />Ta tính \\( A^2 = A \\times A \\).<br />\\[ A^2 = \\begin{pmatrix} 0 & 3 & 1 \\\\ 3 & 1 & 1 \\\\ 1 & 1 & 1 \\end{pmatrix} \\begin{pmatrix} 0 & 3 & 1 \\\\ 3 & 1 & 1 \\\\ 1 & 1 & 1 \\end{pmatrix} \\]<br /><br />Phần tử ở hàng 2, cột 3 của \\( A^2 \\) được tính bằng cách lấy tích vô hướng của (hàng 2 của A) và (cột 3 của A):<br />\\[ (A^2)_{2,3} = (3 \\cdot 1) + (1 \\cdot 1) + (1 \\cdot 1) \\]<br />\\[ (A^2)_{2,3} = 3 + 1 + 1 = 5 \\]<br /><br />Vậy, có 5 đường đi có độ dài 2 từ B đến C.",
+        "difficulty": "medium",
+        "topic": "Graph Representation",
+        "hints": [
+          "Số đường đi độ dài k từ i đến j là phần tử (i, j) của ma trận Aᵏ.",
+          "Bạn chỉ cần tính một phần tử của ma trận A², không cần tính toàn bộ ma trận."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 25,
+        "question": "How many paths of length 3 from a to d?<br />(See picture)",
+        "image": "/data/image_exam/de23cau25.png",
+        "options": [
+          "A. 5",
+          "B. 7",
+          "C. 8",
+          "D. None of the other choices is correct",
+          "E. 6"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đồ thị được vẽ là một <b>đồ thị đầy đủ 4 đỉnh \\( K_4 \\)</b>, với các đỉnh là a, b, c, d. Mỗi đỉnh được nối với tất cả các đỉnh khác.<br /><br />Để tìm số đường đi có độ dài 3 từ a đến d, ta sử dụng phương pháp ma trận kề. Số đường đi này là phần tử ở hàng 'a', cột 'd' của ma trận \\( A^3 \\).<br /><br />1. <b>Ma trận kề \\( A \\) của \\( K_4 \\) (theo thứ tự a,b,c,d):</b><br />\\[ A = \\begin{pmatrix} 0 & 1 & 1 & 1 \\\\ 1 & 0 & 1 & 1 \\\\ 1 & 1 & 0 & 1 \\\\ 1 & 1 & 1 & 0 \\end{pmatrix} \\]<br />2. <b>Tính \\( A^2 \\):</b><br />\\[ A^2 = \\begin{pmatrix} 3 & 2 & 2 & 2 \\\\ 2 & 3 & 2 & 2 \\\\ 2 & 2 & 3 & 2 \\\\ 2 & 2 & 2 & 3 \\end{pmatrix} \\]<br />3. <b>Tính phần tử (1, 4) của \\( A^3 \\):</b><br />Ta lấy tích vô hướng của (hàng 1 của \\( A^2 \\)) và (cột 4 của \\( A \\)):<br />\\[ (A^3)_{1,4} = (3 \\cdot 1) + (2 \\cdot 1) + (2 \\cdot 1) + (2 \\cdot 0) \\]<br />\\[ (A^3)_{1,4} = 3 + 2 + 2 + 0 = 7 \\]<br /><br />Vậy, có 7 đường đi có độ dài 3 từ a đến d.",
+        "difficulty": "hard",
+        "topic": "Graph Theory",
+        "hints": [
+          "Xác định loại đồ thị. Đồ thị này là K₄.",
+          "Sử dụng lũy thừa ma trận kề để tìm số đường đi.",
+          "Bạn cần tìm phần tử ở hàng 1, cột 4 của ma trận A³."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 26,
+        "question": "Let u, v be two vertices on different sides of the bipartite graph \\( K_{2,3} \\). How many paths of length 3 from u to v?",
+        "image": null,
+        "options": [
+          "A. 4",
+          "B. 2",
+          "C. 0",
+          "D. 8",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Trong lý thuyết đồ thị, \"path\" thường được hiểu là \"walk\" (đường đi cho phép lặp lại đỉnh và cạnh), và số lượng đường đi được tính bằng lũy thừa ma trận kề.<br /><br />1. Gọi hai tập đỉnh là \\( V_1 \\) (có 2 đỉnh) và \\( V_2 \\) (có 3 đỉnh). Đỉnh \\( u \\in V_1 \\) và \\( v \\in V_2 \\).<br />2. Một đường đi có độ dài 3 từ \\( V_1 \\) đến \\( V_2 \\) phải có dạng: \\( V_1 \\to V_2 \\to V_1 \\to V_2 \\).<br />3. Ta có thể liệt kê số lựa chọn ở mỗi bước:<br />   - Từ \\( u \\) (trong \\( V_1 \\)), có 3 cách để đi đến một đỉnh trong \\( V_2 \\).<br />   - Từ đỉnh đó (trong \\( V_2 \\)), có 2 cách để đi đến một đỉnh trong \\( V_1 \\).<br />   - Từ đỉnh đó (trong \\( V_1 \\)), có 3 cách để đi đến một đỉnh trong \\( V_2 \\). Tuy nhiên, đích đến của chúng ta đã được cố định là \\( v \\), nên chỉ có 1 cách nối từ đỉnh trung gian trong \\( V_1 \\) đến \\( v \\).<br />4. Tổng số đường đi = (số lựa chọn cho đỉnh trung gian thứ nhất trong \\( V_2 \\)) x (số lựa chọn cho đỉnh trung gian thứ hai trong \\( V_1 \\)) = \\( 3 \\times 2 = 6 \\).<br /><br />Vì 6 không có trong các lựa chọn A, B, C, D, đáp án đúng là E.<br /><br /><b>Lưu ý:</b> Nếu \"path\" được hiểu là \"simple path\" (đường đi không lặp đỉnh), ta có đường đi dạng \\( u \\to v' \\to u' \\to v \\), với \\( u' \\neq u \\) và \\( v' \\neq v \\). Sẽ có 1 lựa chọn cho \\( u' \\) và 2 lựa chọn cho \\( v' \\). Do đó có \\( 1 \\times 2 = 2 \\) simple paths. Tuy nhiên, cách hiểu theo \"walk\" là tiêu chuẩn cho dạng bài toán này.",
+        "difficulty": "hard",
+        "topic": "Graph Theory",
+        "hints": [
+          "Một đường đi có độ dài lẻ trong đồ thị lưỡng phân sẽ nối hai đỉnh thuộc hai tập khác nhau.",
+          "Sử dụng phương pháp nhân để đếm số lựa chọn ở mỗi bước của đường đi.",
+          "Câu hỏi này thường ám chỉ 'walk' (cho phép lặp đỉnh)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 27,
+        "question": "Let u, v be two vertices of the graph \\( K_{2,2} \\), one on each side. How many paths of length 4 between u and v?",
+        "image": null,
+        "options": [
+          "A. 0",
+          "B. 2",
+          "C. 4",
+          "D. 8",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Đây là một tính chất cơ bản của đồ thị lưỡng phân.<br /><br />1. Gọi hai tập đỉnh là \\( V_1 \\) và \\( V_2 \\). Đỉnh \\( u \\in V_1 \\) và đỉnh \\( v \\in V_2 \\).<br />2. Bất kỳ đường đi nào bắt đầu từ một đỉnh trong \\( V_1 \\) sẽ xen kẽ giữa các đỉnh của \\( V_1 \\) và \\( V_2 \\).<br />   - Độ dài 1: kết thúc tại \\( V_2 \\).<br />   - Độ dài 2: kết thúc tại \\( V_1 \\).<br />   - Độ dài 3: kết thúc tại \\( V_2 \\).<br />   - Độ dài 4: kết thúc tại \\( V_1 \\).<br />3. Một đường đi có độ dài <b>chẵn</b> bắt đầu từ \\( V_1 \\) phải kết thúc tại \\( V_1 \\).<br />4. Một đường đi có độ dài <b>lẻ</b> bắt đầu từ \\( V_1 \\) phải kết thúc tại \\( V_2 \\).<br /><br />Vì câu hỏi yêu cầu tìm đường đi có độ dài 4 (chẵn) từ \\( u \\in V_1 \\) đến \\( v \\in V_2 \\), điều này là không thể. Do đó, số lượng đường đi là 0.",
+        "difficulty": "easy",
+        "topic": "Graph Theory",
+        "hints": [
+          "Hãy xem xét vị trí của đỉnh cuối sau mỗi bước đi trong đồ thị lưỡng phân.",
+          "Một đường đi có độ dài chẵn luôn bắt đầu và kết thúc ở cùng một tập đỉnh."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 28,
+        "question": "How many vertices in the strongly connected component containing A?<br />(See picture)",
+        "image": "/data/image_exam/de23cau28.png",
+        "options": [
+          "A. 6",
+          "B. 5",
+          "C. 4",
+          "D. 3",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Một <b>thành phần liên thông mạnh (Strongly Connected Component - SCC)</b> là một tập hợp các đỉnh trong đó có đường đi từ đỉnh này đến mọi đỉnh khác trong cùng tập hợp.<br /><br />1. Đồ thị trong hình là một đồ thị có hướng với 5 đỉnh.<br />2. Quan sát các cạnh bên ngoài, ta thấy chúng tạo thành một chu trình lớn đi qua cả 5 đỉnh: (đỉnh trên cùng -> đỉnh trên phải -> ... -> đỉnh trên trái -> đỉnh trên cùng).<br />3. Sự tồn tại của một chu trình đi qua một tập hợp các đỉnh đảm bảo rằng tất cả các đỉnh đó đều thuộc cùng một thành phần liên thông mạnh.<br />4. Vì có một chu trình đi qua tất cả 5 đỉnh, nên cả 5 đỉnh này tạo thành một SCC duy nhất.<br /><br />Do đó, thành phần liên thông mạnh chứa đỉnh A (và bất kỳ đỉnh nào khác) có 5 đỉnh.",
+        "difficulty": "medium",
+        "topic": "Directed Graphs",
+        "hints": [
+          "Tìm kiếm các chu trình có hướng trong đồ thị.",
+          "Tất cả các đỉnh trên cùng một chu trình có hướng đều thuộc cùng một SCC."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 29,
+        "question": "How many vertices in the strongly connected component containing A?<br />(See picture)",
+        "image": "/data/image_exam/de23cau29.png",
+        "options": [
+          "A. 4",
+          "B. 3",
+          "C. 2",
+          "D. 1",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Để xác định thành phần liên thông mạnh (SCC) chứa đỉnh A, ta cần tìm tập hợp các đỉnh v sao cho có đường đi từ A đến v và có đường đi từ v về A.<br /><br />1. <b>Tìm các đỉnh có thể đến được từ A:</b><br />   - Từ A, ta có thể đi đến các đỉnh ở hàng giữa và hàng trên bên phải.<br />2. <b>Tìm các đỉnh có thể đến được A:</b><br />   - Nhìn vào các mũi tên, ta thấy chỉ có đỉnh ở hàng dưới bên trái có thể đi đến A.<br /><br />Bằng cách kiểm tra cẩn thận, ta thấy không có bất kỳ chu trình có hướng nào trong đồ thị này. Một đồ thị có hướng không có chu trình được gọi là <b>Đồ thị có hướng không chu trình (Directed Acyclic Graph - DAG)</b>.<br /><br />Trong một DAG, không thể đi từ một đỉnh rồi quay trở lại chính nó thông qua các đỉnh khác. Do đó, mỗi thành phần liên thông mạnh trong một DAG chỉ bao gồm đúng một đỉnh.<br /><br />Vì vậy, SCC chứa A chỉ bao gồm chính nó. Số đỉnh là 1.",
+        "difficulty": "medium",
+        "topic": "Directed Graphs",
+        "hints": [
+          "Một SCC yêu cầu phải có đường đi hai chiều giữa các đỉnh của nó.",
+          "Hãy kiểm tra xem đồ thị có chu trình hay không.",
+          "Trong một đồ thị có hướng không chu trình (DAG), mỗi đỉnh là một SCC riêng biệt."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 30,
+        "question": "How many strongly connected components are there in this graph?<br />(See picture)",
+        "image": "/data/image_exam/de23cau30.png",
+        "options": [
+          "A. 5",
+          "B. 4",
+          "C. 3",
+          "D. 2",
+          "E. 1"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Để tìm số lượng thành phần liên thông mạnh (SCC), ta cần phân chia các đỉnh của đồ thị thành các tập hợp con mà trong đó tất cả các đỉnh đều liên thông mạnh với nhau.<br /><br />1. Quan sát các cạnh trên vòng ngoài cùng của đồ thị (hình bát giác). Các mũi tên chỉ theo một chiều, tạo thành một chu trình có hướng lớn đi qua tất cả 8 đỉnh.<br />2. Vì tất cả 8 đỉnh đều nằm trên cùng một chu trình có hướng, điều này có nghĩa là từ một đỉnh bất kỳ, ta có thể đi đến bất kỳ đỉnh nào khác trên chu trình và quay trở lại.<br />3. Điều này thỏa mãn định nghĩa của một thành phần liên thông mạnh. Do đó, tất cả 8 đỉnh của đồ thị thuộc về cùng một SCC.<br />4. Các cạnh bên trong chỉ cung cấp thêm các đường đi giữa các đỉnh này, củng cố thêm tính liên thông mạnh nhưng không tạo ra một SCC mới.<br /><br />Vì tất cả các đỉnh đều thuộc một SCC duy nhất, đồ thị này chỉ có 1 thành phần liên thông mạnh.",
+        "difficulty": "easy",
+        "topic": "Directed Graphs",
+        "hints": [
+          "Tìm chu trình lớn nhất trong đồ thị.",
+          "Nếu một chu trình có hướng bao gồm tất cả các đỉnh, thì chỉ có một SCC."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 31,
+        "question": "Let S be the set of all graphs with degree sequence [2, 2, 2, 2, 2, 2].<br />Which of the following is TRUE?<br /><br />(i) ∃G ∈ S: G has an Euler circuit<br />(ii) ∃G ∈ S: G has an Euler path, but no Euler circuits<br />(iii) ∀G ∈ S: G has no Euler paths",
+        "image": null,
+        "options": [
+          "A. (i)",
+          "B. (ii)",
+          "C. (iii)",
+          "D. None of the other choices"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Để phân tích các mệnh đề, ta cần nhớ các điều kiện cho đường đi và chu trình Euler:<br />- <b>Chu trình Euler:</b> Tồn tại khi và chỉ khi đồ thị liên thông và mọi đỉnh có bậc chẵn.<br />- <b>Đường đi Euler:</b> Tồn tại khi và chỉ khi đồ thị liên thông và có 0 hoặc 2 đỉnh bậc lẻ.<br /><br />Dãy bậc đã cho là (2, 2, 2, 2, 2, 2). Mọi đỉnh đều có bậc chẵn.<br /><br /><b>Phân tích mệnh đề (i): ∃G ∈ S: G has an Euler circuit</b> (Tồn tại một đồ thị G trong S có chu trình Euler).<br />- Ta có thể xây dựng một đồ thị với dãy bậc này không? Có. Ví dụ, đồ thị vòng \\( C_6 \\).<br />- Đồ thị \\( C_6 \\) có 6 đỉnh, mỗi đỉnh có bậc 2. Nó liên thông và mọi đỉnh đều có bậc chẵn.<br />- Do đó, \\( C_6 \\) có chu trình Euler. Vì \\( C_6 \\in S \\), nên mệnh đề (i) là <b>TRUE</b>.<br /><br /><b>Phân tích mệnh đề (ii): ∃G ∈ S: G has an Euler path, but no Euler circuits</b> (Tồn tại G trong S chỉ có đường đi Euler).<br />- Điều này đòi hỏi đồ thị phải liên thông và có đúng 2 đỉnh bậc lẻ. Dãy bậc đã cho không có đỉnh bậc lẻ nào. Mệnh đề này là <b>FALSE</b>.<br /><br /><b>Phân tích mệnh đề (iii): ∀G ∈ S: G has no Euler paths</b> (Mọi đồ thị G trong S đều không có đường đi Euler).<br />- Mệnh đề này sai, vì ta đã chỉ ra một phản ví dụ là \\( C_6 \\), một đồ thị thuộc S và có đường đi Euler (thực chất là chu trình). Mệnh đề này là <b>FALSE</b>.",
+        "difficulty": "medium",
+        "topic": "Eulerian Paths",
+        "hints": [
+          "Hãy nghĩ đến một ví dụ cụ thể cho dãy bậc đã cho, chẳng hạn như đồ thị vòng C₆.",
+          "Một đồ thị không liên thông (ví dụ: hai tam giác C₃ rời rạc) cũng có dãy bậc này nhưng không có chu trình Euler."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 32,
+        "question": "Given a simple graph G with the adjacency matrix (See picture).<br />Choose the correct statement.",
+        "image": "/data/image_exam/de23cau32.png",
+        "options": [
+          "A. None of the other choices is correct",
+          "B. G does not have Euler paths",
+          "C. G has Euler paths but no Euler circuits",
+          "D. G has Euler circuits"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Bậc của một đỉnh trong đồ thị tương ứng với tổng các giá trị trên hàng (hoặc cột) của nó trong ma trận kề.<br /><br />Hãy tính bậc của 5 đỉnh:<br />- Đỉnh 1 (hàng 1): \\( 0+1+0+0+1 = 2 \\)<br />- Đỉnh 2 (hàng 2): \\( 1+0+1+0+1 = 3 \\) <b>(Lẻ)</b><br />- Đỉnh 3 (hàng 3): \\( 0+1+0+1+0 = 2 \\)<br />- Đỉnh 4 (hàng 4): \\( 0+0+1+0+1 = 2 \\)<br />- Đỉnh 5 (hàng 5): \\( 1+1+0+1+0 = 3 \\) <b>(Lẻ)</b><br /><br />Đồ thị có đúng 2 đỉnh bậc lẻ (đỉnh 2 và đỉnh 5). Ma trận cũng cho thấy đồ thị là liên thông.<br /><br />Theo định lý Euler:<br />- Một đồ thị có <b>đường đi Euler</b> nếu nó liên thông và có đúng 0 hoặc 2 đỉnh bậc lẻ.<br />- Một đồ thị có <b>chu trình Euler</b> nếu nó liên thông và có đúng 0 đỉnh bậc lẻ.<br /><br />Vì đồ thị này có 2 đỉnh bậc lẻ, nó có đường đi Euler nhưng không có chu trình Euler.",
+        "difficulty": "easy",
+        "topic": "Eulerian Paths",
+        "hints": [
+          "Bậc của một đỉnh bằng tổng các số trên hàng của nó trong ma trận kề.",
+          "Đếm số đỉnh có bậc lẻ để xác định sự tồn tại của đường đi/chu trình Euler."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 33,
+        "question": "Choose an Euler circuit of the graph<br />(See picture)",
+        "image": "/data/image_exam/de23cau33.png",
+        "options": [
+          "A. The graph has no Euler circuits",
+          "B. d - e - f - b - e - i - j - f - c - a - d - h - g - c - a - d",
+          "C. a - d - e - b - f - j - i - e - d - c - f - j - i - e - d - h - g - c - a",
+          "D. a - d - e - b - f - j - i - e - f - c - d - h - g - c - a"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Một đồ thị có chu trình Euler khi và chỉ khi nó liên thông và tất cả các đỉnh của nó đều có bậc chẵn.<br /><br />Hãy kiểm tra bậc của một vài đỉnh trong đồ thị:<br />- <b>deg(a):</b> nối với b, c, d -> bậc 3 <b>(Lẻ)</b><br />- <b>deg(b):</b> nối với a, e, f -> bậc 3 <b>(Lẻ)</b><br /><br />Ngay khi tìm thấy một đỉnh có bậc lẻ, ta có thể kết luận ngay rằng đồ thị <b>không có chu trình Euler</b>. Không cần phải kiểm tra các đỉnh còn lại hay các đường đi được liệt kê trong các lựa chọn khác.",
+        "difficulty": "easy",
+        "topic": "Eulerian Paths",
+        "hints": [
+          "Điều kiện đầu tiên cần kiểm tra là bậc của tất cả các đỉnh.",
+          "Nếu bạn tìm thấy dù chỉ một đỉnh có bậc lẻ, đồ thị không thể có chu trình Euler."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 34,
+        "question": "Find all values of m and n such that the complete bi-partite graph Km,n have Hamilton circuits.",
+        "image": null,
+        "options": [
+          "A. None of the other choices is correct",
+          "B. m = n and m ≥ 2",
+          "C. m = n and m ≥ 3",
+          "D. m > n and n ≥ 2",
+          "E. m > n and n ≥ 3"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Một chu trình Hamilton phải đi qua tất cả các đỉnh của đồ thị đúng một lần.<br /><br />1. Trong đồ thị lưỡng phân \\( K_{m,n} \\), một đường đi phải luôn xen kẽ giữa hai tập đỉnh (tập có m đỉnh và tập có n đỉnh).<br />2. Để tạo thành một chu trình, đường đi phải quay trở lại đỉnh xuất phát. Điều này chỉ có thể xảy ra nếu sau khi đi qua tất cả các đỉnh, đỉnh cuối cùng có thể nối lại với đỉnh đầu tiên. Trong một đường đi xen kẽ, điều này yêu cầu số đỉnh trong hai tập phải bằng nhau.<br />   -> Do đó, điều kiện cần là <b>\\( m = n \\)</b>.<br /><br />3. Ta cần xem xét số đỉnh.<br />   - Nếu \\( m = n = 1 \\), đồ thị \\( K_{1,1} \\) chỉ là một cạnh. Nó không thể có chu trình.<br />   - Nếu \\( m = n \\ge 2 \\), ta luôn có thể xây dựng một chu trình Hamilton. Ví dụ, trong \\( K_{2,2} \\) (là \\( C_4 \\)), ta có chu trình. Trong \\( K_{3,3} \\), ta có thể đi theo một vòng tròn xen kẽ qua tất cả 6 đỉnh.<br />   -> Do đó, điều kiện thứ hai là <b>\\( m \\ge 2 \\)</b> (và vì \\( m=n \\), nên \\( n \\ge 2 \\)).<br /><br />Kết hợp lại, điều kiện để \\( K_{m,n} \\) có chu trình Hamilton là \\( m = n \\ge 2 \\).",
+        "difficulty": "medium",
+        "topic": "Hamiltonian Paths",
+        "hints": [
+          "Trong đồ thị lưỡng phân, một chu trình phải có số đỉnh chẵn.",
+          "Để một chu trình đi qua tất cả các đỉnh, số đỉnh ở hai bên phải bằng nhau."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 35,
+        "question": "Which of the following propositions is TRUE?<br /><br />(i) If \\( K_n \\) has a Hamilton path, then \\( K_n \\) has an Hamilton circuit.<br />(ii) If \\( W_n \\) has a Hamilton path, then \\( K_n \\) has an Euler path.<br />(iii) If \\( K_{n,n} \\) has an Euler path, then \\( Q_n \\) has a Hamilton circuit.",
+        "image": null,
+        "options": [
+          "A. (i)",
+          "B. (ii)",
+          "C. (iii)",
+          "D. None of the other choices"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Ta phân tích tính đúng sai của từng mệnh đề kéo theo (If A then B).<br /><br /><b>(i) If \\( K_n \\) has a Hamilton path, then \\( K_n \\) has an Hamilton circuit.</b><br />- Mệnh đề A (giả thiết): \"\\( K_n \\) has a Hamilton path\". Điều này đúng với mọi \\( n \\ge 1 \\).<br />- Mệnh đề B (kết luận): \"\\( K_n \\) has an Hamilton circuit\". Điều này chỉ đúng với \\( n=1 \\) và \\( n \\ge 3 \\). Nó sai với \\( n=2 \\) (\\( K_2 \\) là một cạnh, không có chu trình).<br />- Vì có trường hợp (\\( n=2 \\)) mà A đúng nhưng B sai, mệnh đề kéo theo này là <b>FALSE</b>.<br /><br /><b>(ii) If \\( W_n \\) has a Hamilton path, then \\( K_n \\) has an Euler path.</b><br />- Mệnh đề A: \"\\( W_n \\) has a Hamilton path\". Điều này đúng với mọi \\( n \\ge 3 \\).<br />- Mệnh đề B: \"\\( K_n \\) has an Euler path\". Điều này chỉ đúng khi \\( K_n \\) có 0 hoặc 2 đỉnh bậc lẻ. Bậc của đỉnh trong \\( K_n \\) là \\( n-1 \\). Nếu \\( n \\) là số chẵn > 2 (ví dụ \\( n=4 \\)), thì tất cả 4 đỉnh đều có bậc 3 (lẻ). Khi đó \\( K_4 \\) không có đường đi Euler.<br />- Xét trường hợp \\( n=4 \\): A đúng (\\( W_4 \\) có đường đi Hamilton), nhưng B sai (\\( K_4 \\) không có đường đi Euler). Do đó, mệnh đề này là <b>FALSE</b>.<br /><br /><b>(iii) If \\( K_{n,n} \\) has an Euler path, then \\( Q_n \\) has a Hamilton circuit.</b><br />- Mệnh đề A: \"\\( K_{n,n} \\) has an Euler path\". Bậc của mọi đỉnh trong \\( K_{n,n} \\) là \\( n \\). Để có đường đi Euler, tất cả các đỉnh phải có bậc chẵn (vì không thể có 2 đỉnh bậc lẻ). Điều này có nghĩa là \\( n \\) phải là số chẵn.<br />- Mệnh đề B: \"\\( Q_n \\) has a Hamilton circuit\". Đây là một định lý đúng với mọi \\( n \\ge 2 \\).<br />- Ta xét mệnh đề kéo theo A -> B:<br />  - Nếu \\( n \\) là số lẻ: Mệnh đề A sai. `False -> B` luôn đúng.<br />  - Nếu \\( n \\) là số chẵn (và \\( n \\ge 2 \\)): Mệnh đề A đúng, và mệnh đề B cũng đúng. `True -> True` là đúng.<br />- Mệnh đề kéo theo này đúng trong mọi trường hợp. Do đó, nó là <b>TRUE</b>.",
+        "difficulty": "hard",
+        "topic": "Eulerian and Hamiltonian Paths",
+        "hints": [
+          "Một mệnh đề 'If A then B' chỉ sai khi A đúng và B sai.",
+          "Xác định các điều kiện (về n) để các mệnh đề về đường đi/chu trình là đúng.",
+          "Hãy cẩn thận với các trường hợp đặc biệt như n=1, n=2."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 36,
+        "question": "For what values of n does the graph \\( Q_n \\) have Hamilton circuits?",
+        "image": null,
+        "options": [
+          "A. n is even",
+          "B. n is odd",
+          "C. no values of n",
+          "D. n > 1",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Đây là một định lý đã được chứng minh trong lý thuyết đồ thị.<br /><br />- <b>\\( Q_0 \\)</b> là một đỉnh duy nhất, không có chu trình.<br />- <b>\\( Q_1 \\)</b> là một cạnh, không có chu trình.<br />- <b>\\( Q_2 \\)</b> là một hình vuông (chu trình \\( C_4 \\)), nó có chu trình Hamilton.<br />- <b>Định lý:</b> Đồ thị n-lập phương \\( Q_n \\) có chu trình Hamilton cho mọi số nguyên <b>\\( n \\ge 2 \\)</b>.<br /><br />Điều kiện \\( n \\ge 2 \\) tương đương với \\( n > 1 \\) đối với các số nguyên n.<br /><br />Do đó, lựa chọn D là đáp án chính xác.",
+        "difficulty": "medium",
+        "topic": "Hamiltonian Paths",
+        "hints": [
+          "Hãy xem xét các trường hợp nhỏ: Q₀, Q₁, Q₂.",
+          "Q₂ là một hình vuông. Nó có chu trình Hamilton không?",
+          "Có một định lý nổi tiếng về chu trình Hamilton trong đồ thị n-lập phương."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 37,
+        "question": "Choose the correct statement about the graph.<br />(See picture)",
+        "image": "/data/image_exam/de23cau37.png",
+        "options": [
+          "A. It has a Hamilton circuit",
+          "B. It does not have Hamilton paths",
+          "C. It has a Hamilton path but does not have Hamilton circuits",
+          "D. None of the choices is correct"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Hãy phân tích đồ thị:<br /><br />1. <b>Đỉnh cắt (Cut Vertex):</b> Đỉnh ở giữa là một đỉnh cắt. Nếu xóa đỉnh này, đồ thị sẽ bị chia thành hai tam giác rời rạc. Một đồ thị có đỉnh cắt thì <b>không thể có chu trình Hamilton</b>. Lý do là vì một chu trình Hamilton phải đi qua đỉnh cắt, đi vào một thành phần, đi hết các đỉnh trong đó, rồi quay lại đỉnh cắt để đi sang thành phần kia, điều này vi phạm quy tắc \"thăm mỗi đỉnh đúng một lần\".<br /><br />2. <b>Đường đi Hamilton (Hamilton Path):</b> Một đường đi Hamilton phải đi qua tất cả các đỉnh đúng một lần. Ta có thể dễ dàng tìm thấy một đường đi như vậy. Ví dụ: bắt đầu từ một đỉnh của tam giác trái, đi qua đỉnh còn lại của tam giác trái, đi qua đỉnh trung tâm, rồi đi qua hai đỉnh của tam giác phải.<br /><br />Do đó, đồ thị này có đường đi Hamilton nhưng không có chu trình Hamilton.",
+        "difficulty": "easy",
+        "topic": "Hamiltonian Paths",
+        "hints": [
+          "Hãy để ý đến đỉnh ở giữa. Nó có phải là một đỉnh cắt không?",
+          "Một đồ thị có đỉnh cắt có thể có chu trình Hamilton không?",
+          "Hãy thử vẽ một đường đi qua tất cả 5 đỉnh."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 38,
+        "question": "What is the shortest path between G and A?<br />(See picture)",
+        "image": "/data/image_exam/de23cau38.png",
+        "options": [
+          "A. G-D-B-A",
+          "B. G-F-C-A",
+          "C. G-E-A",
+          "D. G-B-A"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Ta có thể sử dụng thuật toán Dijkstra hoặc kiểm tra từng đường đi được đề xuất:<br /><br />- <b>A. G-D-B-A:</b> Độ dài = \\( 8 + 7 + 8 = 23 \\)<br />- <b>B. G-F-C-A:</b> Độ dài = \\( 7 + 5 + 8 = 20 \\)<br />- <b>C. G-E-A:</b> Không có cạnh trực tiếp từ E đến A. Một đường đi khả dĩ là G-F-E-B-A, độ dài = \\( 7 + 3 + 5 + 8 = 23 \\).<br />- <b>D. G-B-A:</b> Không có cạnh trực tiếp từ G đến B.<br /><br />So sánh các đường đi, ta thấy đường đi G-F-C-A có độ dài ngắn nhất là 20. Bằng cách áp dụng thuật toán Dijkstra, ta cũng có thể xác nhận rằng 20 là khoảng cách ngắn nhất.",
+        "difficulty": "medium",
+        "topic": "Shortest Path",
+        "hints": [
+          "Tính tổng trọng số cho mỗi đường đi được liệt kê trong các lựa chọn.",
+          "Chọn đường đi có tổng trọng số nhỏ nhất."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 39,
+        "question": "Find the length of the shortest path from G to M.<br />(See picture)",
+        "image": "/data/image_exam/de23cau39.png",
+        "options": [
+          "A. 6",
+          "B. 8",
+          "C. 7",
+          "D. 9",
+          "E. 5"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Ta sử dụng thuật toán Dijkstra để tìm đường đi ngắn nhất từ G.<br /><br />1. <b>Bắt đầu tại G:</b><br />   - G: 0<br />   - H: 1 (qua G)<br />   - K: 4 (qua G)<br />2. <b>Chọn H (1):</b><br />   - I: 1+1 = 2 (qua H)<br />   - K: 1+1 = 2 (cập nhật K từ 4 xuống 2, qua H)<br />3. <b>Chọn I (2):</b><br />   - M: 2+3 = 5 (qua I)<br />   - J: 2+2 = 4 (qua I)<br />4. <b>Chọn K (2):</b><br />   - L: 2+3 = 5 (qua K)<br />   - J: 2+5 = 7 (không cập nhật vì đã có đường 4)<br />5. <b>Chọn J (4):</b><br />   - M: 4+3 = 7 (không cập nhật vì đã có đường 5)<br />6. <b>Chọn M (5):</b> Ta đã đến đích với độ dài 5.<br /><br />Đường đi ngắn nhất là <b>G -> H -> I -> M</b> với tổng độ dài là \\( 1 + 1 + 3 = 5 \\).",
+        "difficulty": "medium",
+        "topic": "Shortest Path",
+        "hints": [
+          "Sử dụng thuật toán Dijkstra bắt đầu từ đỉnh G.",
+          "Luôn cập nhật khoảng cách đến một đỉnh nếu bạn tìm thấy một đường đi ngắn hơn.",
+          "Đường đi G-H-I-M là một ứng cử viên tốt."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 40,
+        "question": "Apply the Dijkstra algorithm to find the shortest path from A to Z. How many vertices are NOT chosen?<br />(See picture)",
+        "image": "/data/image_exam/de23cau40.png",
+        "options": [
+          "A. 1",
+          "B. 2",
+          "C. 3",
+          "D. 4",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Thuật toán Dijkstra chọn các đỉnh theo thứ tự khoảng cách tăng dần từ điểm xuất phát. Một phiên bản tối ưu của thuật toán sẽ dừng lại ngay khi đỉnh đích được chọn (được lấy ra khỏi hàng đợi ưu tiên).<br /><br /><b>Các bước thực hiện từ A:</b><br />1. Chọn <b>A</b> (khoảng cách 0). Cập nhật B(2), C(7).<br />2. Chọn <b>B</b> (khoảng cách 2). Cập nhật E(5), D(9).<br />3. Chọn <b>E</b> (khoảng cách 5). Cập nhật Z(8).<br />4. Chọn <b>C</b> (khoảng cách 7). Không có cập nhật nào.<br />5. Hàng đợi ưu tiên bây giờ chứa {Z: 8, D: 9}. Thuật toán sẽ chọn đỉnh có khoảng cách nhỏ nhất tiếp theo là <b>Z</b>.<br /><br />Vì Z là đỉnh đích, thuật toán dừng lại tại đây. Các đỉnh đã được chọn (lấy ra khỏi hàng đợi) là A, B, E, và C. Đỉnh Z sắp được chọn, và đỉnh <b>D</b> vẫn còn trong hàng đợi và chưa được chọn.<br /><br />Do đó, có 1 đỉnh không được chọn là đỉnh D.",
+        "difficulty": "hard",
+        "topic": "Shortest Path",
+        "hints": [
+          "\"Chosen\" có nghĩa là đỉnh được lấy ra khỏi hàng đợi ưu tiên để xét các đỉnh kề của nó.",
+          "Thuật toán Dijkstra có thể dừng lại khi đỉnh đích được chọn.",
+          "Theo dõi trạng thái của hàng đợi ưu tiên (các đỉnh chưa được chọn và khoảng cách tạm thời của chúng)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 41,
+        "question": "Apply the Dijkstra algorithm to find the shortest path from A to Z. What are the first 4 vertices chosen?<br />(See picture)",
+        "image": "/data/image_exam/de23cau41.png",
+        "options": [
+          "A. a, d, b, c",
+          "B. a, d, e, z",
+          "C. a, b, d, c",
+          "D. a, b, c, z",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "E",
+        "explanation": "Thuật toán Dijkstra luôn chọn đỉnh chưa được thăm có khoảng cách ngắn nhất từ điểm xuất phát.<br /><br />1. <b>Đỉnh thứ 1:</b> Chọn <b>a</b> (khoảng cách 0).<br />   - Cập nhật các đỉnh kề: dist(b)=3, dist(d)=5.<br />2. <b>Đỉnh thứ 2:</b> Chọn <b>b</b> (khoảng cách 3, nhỏ hơn 5).<br />   - Cập nhật các đỉnh kề của b: dist(d) = min(5, 3+1) = 4.<br />3. <b>Đỉnh thứ 3:</b> Chọn <b>d</b> (khoảng cách 4).<br />   - Cập nhật các đỉnh kề của d: dist(e) = 4+2 = 6.<br />4. <b>Đỉnh thứ 4:</b> Chọn <b>e</b> (khoảng cách 6).<br /><br />Vậy, thứ tự 4 đỉnh đầu tiên được chọn là <b>a, b, d, e</b>.<br />Vì thứ tự này không khớp với bất kỳ lựa chọn nào, đáp án đúng là \"None of the other choices is correct\".",
+        "difficulty": "medium",
+        "topic": "Shortest Path",
+        "hints": [
+          "\"Chosen\" có nghĩa là đỉnh được lấy ra khỏi hàng đợi ưu tiên.",
+          "Sau khi chọn một đỉnh, hãy nhớ cập nhật khoảng cách đến các đỉnh kề của nó nếu tìm thấy đường đi ngắn hơn."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 42,
+        "question": "Find the first 3 vertices when using Dijkstra's algorithm to find the shortest path from a to z.<br />(See picture)",
+        "image": "/data/image_exam/de23cau42.png",
+        "options": [
+          "A. A-B-E",
+          "B. A-B-C",
+          "C. A-B-D",
+          "D. A-B-Z",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta theo dõi các bước của thuật toán Dijkstra bắt đầu từ A.<br /><br />1. <b>Chọn A</b> (khoảng cách 0).<br />   - Cập nhật các đỉnh kề: dist(B) = 2, dist(C) = 9.<br />   - Hàng đợi ưu tiên: {B:2, C:9}.<br />2. <b>Chọn B</b> (khoảng cách 2).<br />   - Cập nhật các đỉnh kề của B: dist(C) = min(9, 2+8) = 9; dist(E) = 2+3 = 5; dist(D) = 2+7 = 9.<br />   - Hàng đợi ưu tiên: {E:5, C:9, D:9}.<br />3. <b>Chọn E</b> (khoảng cách 5).<br /><br />Vậy, 3 đỉnh đầu tiên được chọn theo thứ tự là A, B, và E.",
+        "difficulty": "medium",
+        "topic": "Shortest Path",
+        "hints": [
+          "Sau khi chọn đỉnh A, hàng đợi sẽ chứa {B:2, C:9}.",
+          "Sau khi chọn đỉnh B, hãy cập nhật khoảng cách đến tất cả các đỉnh kề của nó (C, D, E)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 43,
+        "question": "What is the fourth vertex chosen when using Dijkstra's algorithm to find the shortest path from A to D in this weighted graph?<br />(See picture)",
+        "image": "/data/image_exam/de23cau43.png",
+        "options": [
+          "A. The vertex C",
+          "B. The vertex E",
+          "C. The vertex F",
+          "D. The vertex D"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Ta áp dụng thuật toán Dijkstra bắt đầu từ đỉnh A.<br /><br />1. <b>Chọn A</b> (dist=0).<br />   - Cập nhật hàng xóm: B(7), E(14), F(9).<br />   - Hàng đợi: {B:7, F:9, E:14}.<br />2. <b>Chọn B</b> (dist=7).<br />   - Cập nhật hàng xóm: C(7+15=22), F(min(9, 7+8=15)) -> F vẫn là 9.<br />   - Hàng đợi: {F:9, E:14, C:22}.<br />3. <b>Chọn F</b> (dist=9).<br />   - Cập nhật hàng xóm: E(min(14, 9+2=11)), D(9+9=18), C(min(22, 9+6=15)).<br />   - Hàng đợi: {E:11, C:15, D:18}.<br />4. <b>Chọn E</b> (dist=11).<br /><br />Vậy, đỉnh thứ tư được chọn là đỉnh E.",
+        "difficulty": "medium",
+        "topic": "Shortest Path",
+        "hints": [
+          "Thứ tự chọn không phải là thứ tự trên đường đi, mà là thứ tự các đỉnh được xác định khoảng cách ngắn nhất.",
+          "Theo dõi cẩn thận hàng đợi ưu tiên sau mỗi bước."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 44,
+        "question": "Apply the Dijkstra algorithm to find the shortest path from a to f. What are the first 3 vertices chosen?<br />(See picture)",
+        "image": "/data/image_exam/de23cau44.png",
+        "options": [
+          "A. a, b, d",
+          "B. a, d, g",
+          "C. a, b, c",
+          "D. a, d, b",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "Ta thực hiện thuật toán Dijkstra bắt đầu từ đỉnh a.<br /><br />1. <b>Chọn a</b> (dist=0).<br />   - Cập nhật hàng xóm: d(2), b(4).<br />   - Hàng đợi: {d:2, b:4}.<br />2. <b>Chọn d</b> (dist=2).<br />   - Cập nhật hàng xóm: b(min(4, 2+8=10)) -> b vẫn là 4; g(2+3=5); e(2+7=9).<br />   - Hàng đợi: {b:4, g:5, e:9}.<br />3. <b>Chọn b</b> (dist=4).<br /><br />Vậy, 3 đỉnh đầu tiên được chọn theo thứ tự là a, d, và b.",
+        "difficulty": "medium",
+        "topic": "Shortest Path",
+        "hints": [
+          "Sau khi chọn 'a', đỉnh có khoảng cách nhỏ nhất tiếp theo là 'd'.",
+          "Khi xét 'd', hãy cập nhật khoảng cách đến các đỉnh kề của nó và so sánh với giá trị hiện có."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 45,
+        "question": "Apply the Dijkstra algorithm to find the shortest path from A to Z. What is the next vertice chosen after E?<br />(See picture)",
+        "image": "/data/image_exam/de23cau45.png",
+        "options": [
+          "A. D",
+          "B. C",
+          "C. Z",
+          "D. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Ta theo dõi trạng thái của thuật toán Dijkstra.<br /><br />1. <b>Chọn A(0)</b>. Hàng đợi: {B:2, C:9}.<br />2. <b>Chọn B(2)</b>. Cập nhật E(2+3=5), D(2+5=7), C(min(9, 2+8=10)) -> C vẫn là 9.<br />   - Hàng đợi: {E:5, D:7, C:9}.<br />3. <b>Chọn E(5)</b>.<br />   - Cập nhật D(min(7, 5+4=9)) -> D vẫn là 7; Z(5+3=8); C(min(9, 5+3=8)).<br />   - Hàng đợi: {D:7, C:8, Z:8}.<br /><br />Sau khi chọn E, hàng đợi chứa các đỉnh {D:7, C:8, Z:8}. Đỉnh có khoảng cách nhỏ nhất tiếp theo là D.<br /><br />Vậy, đỉnh tiếp theo được chọn sau E là D.",
+        "difficulty": "medium",
+        "topic": "Shortest Path",
+        "hints": [
+          "Theo dõi trạng thái của hàng đợi ưu tiên.",
+          "Sau khi chọn một đỉnh, hãy cập nhật tất cả các đỉnh kề của nó."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 46,
+        "question": "Apply the Dijkstra algorithm to find the shortest path from A to Z. What are the first 4 vertices chosen?<br />(See picture)",
+        "image": "/data/image_exam/de23cau46.png",
+        "options": [
+          "A. A-B-C-E",
+          "B. A-B-E-Z",
+          "C. A-B-D-Z",
+          "D. A-B-C-D",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Thuật toán Dijkstra chọn các đỉnh theo thứ tự khoảng cách tăng dần từ điểm xuất phát (A).<br /><br /><b>Trạng thái ban đầu:</b><br />- Khoảng cách: {A:0, B:∞, C:∞, D:∞, E:∞, Z:∞}<br />- Hàng đợi ưu tiên (chưa xét): {A:0, B:∞, ...}<br /><br /><b>Bước 1:</b><br />- <b>Chọn A</b> (khoảng cách 0).<br />- Cập nhật các đỉnh kề: B(2), C(3).<br />- Hàng đợi: {B:2, C:3, D:∞, E:∞, Z:∞}<br /><br /><b>Bước 2:</b><br />- <b>Chọn B</b> (khoảng cách 2, nhỏ nhất trong hàng đợi).<br />- Cập nhật các đỉnh kề của B: D(2+4=6), E(2+3=5). Khoảng cách tới C không thay đổi (2+3=5 > 3).<br />- Hàng đợi: {C:3, E:5, D:6, Z:∞}<br /><br /><b>Bước 3:</b><br />- <b>Chọn C</b> (khoảng cách 3, nhỏ nhất trong hàng đợi).<br />- Cập nhật các đỉnh kề của C: E(min(5, 3+3=6)) -> E vẫn là 5.<br />- Hàng đợi: {E:5, D:6, Z:∞}<br /><br /><b>Bước 4:</b><br />- <b>Chọn E</b> (khoảng cách 5, nhỏ nhất trong hàng đợi).<br /><br />Vậy, 4 đỉnh đầu tiên được chọn theo thứ tự là <b>A, B, C, E</b>.",
+        "difficulty": "medium",
+        "topic": "Shortest Path",
+        "hints": [
+          "\"Chosen\" có nghĩa là đỉnh được lấy ra khỏi hàng đợi ưu tiên để xét.",
+          "Thứ tự chọn được quyết định bởi khoảng cách ngắn nhất từ đỉnh A tại mỗi bước.",
+          "Sau A, đỉnh gần nhất là B(2) và C(3). Do đó, B sẽ được chọn trước C."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 47,
+        "question": "How many cut-edges in this graph?<br />(See picture)",
+        "image": "/data/image_exam/de23cau47.png",
+        "options": [
+          "A. 0",
+          "B. 4",
+          "C. 5",
+          "D. 1",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Một <b>cạnh cắt (cut-edge)</b>, hay còn gọi là <b>cầu (bridge)</b>, là một cạnh mà nếu xóa nó đi sẽ làm tăng số thành phần liên thông của đồ thị. Về mặt hình ảnh, đây là những cạnh không thuộc bất kỳ chu trình nào.<br /><br />Hãy kiểm tra các cạnh trong đồ thị:<br />1. Cạnh nối từ khối vuông bên trái vào cụm trung tâm là một cầu.<br />2. Cạnh nối từ cụm trung tâm xuống đỉnh treo (đỉnh bậc 1) ở dưới cùng là một cầu.<br />3. Cạnh nối từ cụm trung tâm sang nhánh bên phải là một cầu.<br />4. Cạnh ngoài cùng bên phải nối với đỉnh treo cuối cùng cũng là một cầu.<br /><br />Tất cả các cạnh khác đều nằm trên một chu trình (khối vuông bên trái và tam giác ở trung tâm). Do đó, có tổng cộng <b>4 cạnh cắt</b>.",
+        "difficulty": "medium",
+        "topic": "Graph Connectivity",
+        "hints": [
+          "Một cạnh cắt là một cạnh không nằm trên bất kỳ chu trình nào.",
+          "Những cạnh nối với các đỉnh bậc 1 (đỉnh treo) luôn là cạnh cắt."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 48,
+        "question": "How many cut vertices and cut edges in this graph?<br />(See picture)",
+        "image": "/data/image_exam/de23cau48.png",
+        "options": [
+          "A. 2 and 2",
+          "B. 1 and 1",
+          "C. 2 and 1",
+          "D. 3 and 2",
+          "E. 1 and 3"
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Phân tích cạnh cắt (cut-edges):</b><br />- Một cạnh cắt là một cạnh không thuộc chu trình nào. Trong đồ thị này, có một cạnh duy nhất nối hai cụm đồ thị với nhau.<br />- Nếu xóa cạnh này, đồ thị sẽ bị chia thành hai phần riêng biệt. Do đó, có đúng <b>1 cạnh cắt</b>.<br /><br /><b>Phân tích đỉnh cắt (cut-vertices):</b><br />- Một đỉnh cắt là một đỉnh mà nếu xóa nó đi (cùng các cạnh kề) sẽ làm tăng số thành phần liên thông.<br />- Hai đỉnh ở hai đầu của cạnh cắt duy nhất chính là các đỉnh cắt. Nếu xóa một trong hai đỉnh này, đồ thị sẽ bị tách ra.<br />- Do đó, có đúng <b>2 đỉnh cắt</b>.<br /><br />Vậy, đồ thị có 2 đỉnh cắt và 1 cạnh cắt.",
+        "difficulty": "medium",
+        "topic": "Graph Connectivity",
+        "hints": [
+          "Tìm cạnh duy nhất nối hai phần của đồ thị lại với nhau. Đó là cạnh cắt.",
+          "Các đỉnh ở hai đầu của một cạnh cắt thường là các đỉnh cắt (trừ khi một đầu là đỉnh bậc 1)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 49,
+        "question": "Find the TOTAL number of cut-edges in the two graphs.<br />(See picture)",
+        "image": "/data/image_exam/de23cau49.png",
+        "options": [
+          "A. 0",
+          "B. 1",
+          "C. 2",
+          "D. 3",
+          "E. 4",
+          "F. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Một cạnh cắt là một cạnh không thuộc bất kỳ chu trình nào.<br /><br />- <b>Đồ thị X:</b> Đây là đồ thị đầy đủ 5 đỉnh, \\( K_5 \\). Trong một đồ thị đầy đủ \\( K_n \\) với \\( n>2 \\), mọi cạnh đều là một phần của nhiều chu trình tam giác. Việc xóa một cạnh bất kỳ không bao giờ làm mất tính liên thông. Do đó, \\( K_5 \\) có <b>0 cạnh cắt</b>.<br /><br />- <b>Đồ thị Y:</b> Đây là đồ thị lưỡng phân đầy đủ, \\( K_{3,3} \\). Trong đồ thị này, mọi cạnh đều là một phần của ít nhất một chu trình (cụ thể là các chu trình \\( C_4 \\)). Việc xóa một cạnh bất kỳ cũng không làm mất tính liên thông.<br />Do đó, \\( K_{3,3} \\) có <b>0 cạnh cắt</b>.<br /><br /><b>Tổng cộng:</b> Số cạnh cắt trong cả hai đồ thị là \\( 0 + 0 = 0 \\).",
+        "difficulty": "medium",
+        "topic": "Graph Connectivity",
+        "hints": [
+          "Các đồ thị có tính liên thông cao như đồ thị đầy đủ (Kₙ, n>2) và đồ thị lưỡng phân đầy đủ (K_{m,n}, m,n>1) không có cạnh cắt.",
+          "Kiểm tra xem mỗi cạnh có nằm trên một chu trình nào không."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 50,
+        "question": "Choose the correct statement.<br />(See picture)",
+        "image": "/data/image_exam/de23cau50.png",
+        "options": [
+          "A. The graph does not have Euler paths",
+          "B. The graph has Euler circuits",
+          "C. The graph has Euler paths",
+          "D. The graph has Euler paths but not Euler circuits"
+        ],
+        "correctAnswer": "A",
+        "explanation": "Để xác định sự tồn tại của đường đi hoặc chu trình Euler, ta cần đếm số đỉnh bậc lẻ trong đồ thị.<br /><br />- <b>Chu trình Euler:</b> Tồn tại khi và chỉ khi có 0 đỉnh bậc lẻ.<br />- <b>Đường đi Euler:</b> Tồn tại khi và chỉ khi có đúng 0 hoặc 2 đỉnh bậc lẻ.<br /><br />Hãy kiểm tra bậc của các đỉnh trong đồ thị đã cho:<br />- <b>4 đỉnh ở góc ngoài cùng:</b> Mỗi đỉnh này có bậc 3 (nối với 2 đỉnh trên hình vuông ngoài và 1 đỉnh bên trong). -> <b>Bậc lẻ.</b><br />- <b>8 đỉnh bên trong:</b><br />  - 4 đỉnh ở góc của hình 'bát giác' bên trong: Mỗi đỉnh này có bậc 4. -> Bậc chẵn.<br />  - 4 đỉnh ở cạnh của hình 'bát giác' bên trong: Mỗi đỉnh này có bậc 2. -> Bậc chẵn.<br /><br />Tổng cộng, đồ thị có <b>4 đỉnh bậc lẻ</b>.<br /><br />Vì số đỉnh bậc lẻ không phải là 0 và cũng không phải là 2, đồ thị này <b>không có cả chu trình Euler lẫn đường đi Euler</b>. Do đó, phát biểu 'đồ thị không có đường đi Euler' là đúng.",
+        "difficulty": "medium",
+        "topic": "Eulerian Paths",
+        "hints": [
+          "Đếm số đỉnh có bậc lẻ.",
+          "Nếu số đỉnh bậc lẻ là 0 -> có chu trình Euler.",
+          "Nếu số đỉnh bậc lẻ là 2 -> chỉ có đường đi Euler.",
+          "Nếu số đỉnh bậc lẻ khác 0 và 2 -> không có cả hai."
+        ],
+        "type": "multiple_choice"
+      }
+    ]
+  }
