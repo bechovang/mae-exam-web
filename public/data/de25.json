@@ -1,0 +1,266 @@
+{
+    "examId": "de25",
+    "title": "MAS chương 3",
+    "description": "Exercises on Probability Mass Functions (PMF) and Cumulative Distribution Functions (CDF) from Chapter 3.",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Verify that the following function is a probability mass function, and determine the requested probabilities:<br />\\[ f(x) = \\frac{2x+1}{25}, \\quad x = 0, 1, 2, 3, 4 \\]<br /><br />(a) \\( P(X=4) \\)<br />(b) \\( P(X \\leq 1) \\)<br />(c) \\( P(2 \\leq X < 4) \\)<br />(d) \\( P(X > -10) \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>1. Kiểm tra hàm khối xác suất (PMF):</b><br />Tổng các xác suất phải bằng 1:<br />\\( \\sum_{x=0}^{4} f(x) = f(0) + f(1) + f(2) + f(3) + f(4) \\)<br />\\( = \\frac{1}{25} + \\frac{3}{25} + \\frac{5}{25} + \\frac{7}{25} + \\frac{9}{25} \\)<br />\\( = \\frac{1+3+5+7+9}{25} = \\frac{25}{25} = 1 \\). (Thỏa mãn)<br /><br /><b>Tính các xác suất:</b><br />(a) \\( P(X=4) = f(4) = \\frac{2(4)+1}{25} = \\frac{9}{25} = 0.36 \\)<br /><br />(b) \\( P(X \\leq 1) = f(0) + f(1) = \\frac{1}{25} + \\frac{3}{25} = \\frac{4}{25} = 0.16 \\)<br /><br />(c) \\( P(2 \\leq X < 4) \\) bao gồm \\( x=2 \\) và \\( x=3 \\):<br />\\( = f(2) + f(3) = \\frac{5}{25} + \\frac{7}{25} = \\frac{12}{25} = 0.48 \\)<br /><br />(d) \\( P(X > -10) \\): Vì mọi giá trị \\( x \\) trong tập xác định \\( \\{0,1,2,3,4\\} \\) đều lớn hơn -10, nên xác suất là 1.",
+        "explanation": "Để xác minh một hàm là PMF, ta cần kiểm tra hai điều kiện: <br />1. \\( f(x) \\geq 0 \\) với mọi x.<br />2. Tổng tất cả các \\( f(x) \\) phải bằng 1.<br />Sau đó, ta tính xác suất của các biến cố bằng cách cộng các giá trị \\( f(x) \\) tương ứng.",
+        "difficulty": "easy",
+        "topic": "Probability Mass Function (PMF)",
+        "hints": [
+          "Tính tổng tất cả các f(x) xem có bằng 1 không.",
+          "Xác suất trong khoảng là tổng các f(x) tại các điểm nguyên nằm trong khoảng đó."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 2,
+        "question": "A disk drive manufacturer sells storage devices with capacities of one terabyte, 500 gigabytes, and 100 gigabytes with probabilities 0.5, 0.3, and 0.2, respectively. The revenues associated with the sales in that year are estimated to be $50 million, $25 million, and $10 million, respectively. Let X denote the revenue of storage devices during that year. Determine the probability mass function of X.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Gọi \\( X \\) là doanh thu (đơn vị: triệu đô la).<br />Các giá trị có thể có của \\( X \\) là: 50, 25, và 10.<br /><br />Hàm khối xác suất (PMF) của \\( X \\) là:<br />\\[ P(X=x) = \\begin{cases} 0.5 & \\text{nếu } x = 50 \\\\ 0.3 & \\text{nếu } x = 25 \\\\ 0.2 & \\text{nếu } x = 10 \\\\ 0 & \\text{trường hợp khác} \\end{cases} \\]<br /><br />Bảng phân phối:<br /><table class=\"md-table\" style=\"border-collapse:collapse; margin-top:6px;\"> <thead> <tr> <th style=\"border:1px solid #4b5563; padding:4px 8px;\">x (Revenue)</th> <th style=\"border:1px solid #4b5563; padding:4px 8px;\">50</th> <th style=\"border:1px solid #4b5563; padding:4px 8px;\">25</th> <th style=\"border:1px solid #4b5563; padding:4px 8px;\">10</th> </tr> </thead> <tbody> <tr> <td style=\"border:1px solid #4b5563; padding:4px 8px;\">P(X=x)</td> <td style=\"border:1px solid #4b5563; padding:4px 8px;\">0.5</td> <td style=\"border:1px solid #4b5563; padding:4px 8px;\">0.3</td> <td style=\"border:1px solid #4b5563; padding:4px 8px;\">0.2</td> </tr> </tbody> </table>",
+        "explanation": "Bài toán yêu cầu ánh xạ từ xác suất bán sản phẩm sang biến ngẫu nhiên doanh thu. Ta chỉ cần gán xác suất tương ứng của từng loại ổ cứng với doanh thu mà nó mang lại.",
+        "difficulty": "easy",
+        "topic": "Constructing PMF",
+        "hints": [
+          "Xác định các giá trị doanh thu tương ứng với từng loại ổ cứng.",
+          "Gán xác suất của ổ cứng cho doanh thu tương ứng."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 3,
+        "question": "Marketing estimates that a new instrument for the analysis of soil samples will be very successful, moderately successful, or unsuccessful with probabilities 0.3, 0.6, and 0.1, respectively. The yearly revenue associated with a very successful, moderately successful, or unsuccessful product is $10 million, $5 million, and $1 million, respectively. Let the random variable X denote the yearly revenue of the product. Determine the probability mass function of X.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Gọi \\( X \\) là doanh thu hàng năm (đơn vị: triệu đô la).<br />Các giá trị của \\( X \\) tương ứng với mức độ thành công:<br />- Rất thành công: \\( x = 10 \\), xác suất 0.3<br />- Thành công vừa phải: \\( x = 5 \\), xác suất 0.6<br />- Không thành công: \\( x = 1 \\), xác suất 0.1<br /><br />Hàm khối xác suất (PMF):<br />\\[ f(x) = \\begin{cases} 0.3 & x = 10 \\\\ 0.6 & x = 5 \\\\ 0.1 & x = 1 \\\\ 0 & \\text{khác} \\end{cases} \\]",
+        "explanation": "Tương tự bài trước, ta xác định biến ngẫu nhiên X nhận các giá trị tiền tệ và gán xác suất xảy ra của từng kịch bản kinh doanh cho các giá trị đó.",
+        "difficulty": "easy",
+        "topic": "Constructing PMF",
+        "hints": [
+          "Liệt kê các mức doanh thu có thể đạt được.",
+          "Gán xác suất tương ứng cho từng mức doanh thu."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 4,
+        "question": "Given the cumulative distribution function:<br />\\[ F(x) = \\begin{cases} 0 & x < -10 \\\\ 0.25 & -10 \\leq x < 30 \\\\ 0.75 & 30 \\leq x < 50 \\\\ 1 & 50 \\leq x \\end{cases} \\]<br />Determine the following probabilities:<br />(a) \\( P(X \\leq 50) \\)<br />(b) \\( P(X \\leq 40) \\)<br />(c) \\( P(40 \\leq X \\leq 60) \\)<br />(d) \\( P(X < 0) \\)<br />(e) \\( P(0 \\leq X < 10) \\)<br />(f) \\( P(-10 < X < 10) \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Dựa vào định nghĩa CDF \\( F(x) = P(X \\leq x) \\):<br /><br />(a) \\( P(X \\leq 50) = F(50) = 1 \\)<br /><br />(b) \\( P(X \\leq 40) = F(40) \\). Vì \\( 30 \\leq 40 < 50 \\), nên \\( F(40) = 0.75 \\).<br /><br />(c) \\( P(40 \\leq X \\leq 60) = F(60) - F(40) + P(X=40) \\).<br />Biến ngẫu nhiên này chỉ có bước nhảy tại -10, 30, 50 (biến rời rạc). Tại x=40 hàm liên tục nên P(X=40)=0.<br />\\( = F(60) - F(40) = 1 - 0.75 = 0.25 \\).<br /><br />(d) \\( P(X < 0) \\). Vì 0 nằm trong khoảng \\([-10, 30)\\), giá trị ngay trước 0 cũng là 0.25. (Hoặc hiểu là \\( F(0^-) = 0.25 \\)).<br /><br />(e) \\( P(0 \\leq X < 10) = P(X < 10) - P(X < 0) = 0.25 - 0.25 = 0 \\).<br /><br />(f) \\( P(-10 < X < 10) = P(X < 10) - P(X \\leq -10) \\).<br />\\( = 0.25 - 0.25 = 0 \\) (Vì tại -10 đã có xác suất tích lũy là 0.25, và không có bước nhảy nào thêm cho đến 30).",
+        "explanation": "Đây là hàm phân phối tích lũy dạng bậc thang. Giá trị của hàm chỉ thay đổi tại các điểm bước nhảy (-10, 30, 50). <br />- \\( P(X=x) \\) chính là độ lớn của bước nhảy tại x.<br />- \\( P(a < X \\leq b) = F(b) - F(a) \\).",
+        "difficulty": "medium",
+        "topic": "Cumulative Distribution Function (CDF)",
+        "hints": [
+          "Xác định giá trị x thuộc khoảng nào trong hàm F(x).",
+          "Với biến rời rạc, hãy cẩn thận với dấu đẳng thức (<= hay <)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 5,
+        "question": "The thickness of wood paneling (in inches) that a customer orders is a random variable with the following cumulative distribution function:<br />\\[ F(x) = \\begin{cases} 0 & x < 1/8 \\\\ 0.2 & 1/8 \\leq x < 1/4 \\\\ 0.9 & 1/4 \\leq x < 3/8 \\\\ 1 & 3/8 \\leq x \\end{cases} \\]<br />Determine the following probabilities:<br />(a) \\( P(X \\leq 1/18) \\)<br />(b) \\( P(X \\leq 1/4) \\)<br />(c) \\( P(X \\leq 5/16) \\)<br />(d) \\( P(X > 1/4) \\)<br />(e) \\( P(X \\leq 1/2) \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "(a) \\( P(X \\leq 1/18) \\):<br />Vì \\( \\frac{1}{18} \\approx 0.055 < \\frac{1}{8} = 0.125 \\), nên \\( F(1/18) = 0 \\).<br /><br />(b) \\( P(X \\leq 1/4) \\):<br />Theo định nghĩa hàm tại dấu bằng, \\( F(1/4) = 0.9 \\).<br /><br />(c) \\( P(X \\leq 5/16) \\):<br />Quy đồng mẫu số: \\( \\frac{1}{4} = \\frac{4}{16} \\) và \\( \\frac{3}{8} = \\frac{6}{16} \\).<br />Vì \\( \\frac{4}{16} < \\frac{5}{16} < \\frac{6}{16} \\), giá trị \\( x = 5/16 \\) nằm trong khoảng \\( [1/4, 3/8) \\).<br />Vậy \\( F(5/16) = 0.9 \\).<br /><br />(d) \\( P(X > 1/4) = 1 - P(X \\leq 1/4) = 1 - F(1/4) \\)<br />\\( = 1 - 0.9 = 0.1 \\).<br /><br />(e) \\( P(X \\leq 1/2) \\):<br />Vì \\( \\frac{1}{2} = \\frac{4}{8} > \\frac{3}{8} \\), nên \\( F(1/2) = 1 \\).",
+        "explanation": "Ta cần so sánh giá trị x cần tính với các mốc trong hàm CDF (1/8, 1/4, 3/8) để xác định xem x rơi vào khoảng nào, từ đó lấy giá trị F(x) tương ứng.",
+        "difficulty": "medium",
+        "topic": "Cumulative Distribution Function (CDF)",
+        "hints": [
+          "So sánh các phân số bằng cách quy đồng mẫu số.",
+          "Nhớ công thức phần bù: P(X > x) = 1 - P(X <= x)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 6,
+        "question": "The range of the random variable X is \\([0, 1, 2, 3, x]\\) where \\(x\\) is unknown. If each value is equally likely and the mean of X is 6, determine \\(x\\).",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Vì mỗi giá trị có khả năng xảy ra như nhau (equally likely) và có 5 giá trị trong tập hợp, nên xác suất cho mỗi giá trị là \\( P(X=k) = \\frac{1}{5} \\).<br /><br />Công thức tính kỳ vọng (Mean):<br />\\[ E(X) = \\sum x_i P(x_i) \\]<br />\\[ 6 = \\frac{1}{5}(0 + 1 + 2 + 3 + x) \\]<br />\\[ 30 = 6 + x \\]<br />\\[ x = 24 \\]<br /><br />Vậy \\( x = 24 \\).",
+        "explanation": "Đây là bài toán ngược về tính kỳ vọng. Khi đề bài cho biết phân phối là đều (equally likely), ta có thể lấy trung bình cộng của các giá trị trong tập xác định.",
+        "difficulty": "medium",
+        "topic": "Mean of Discrete Random Variable",
+        "hints": [
+          "Vì 'equally likely' nên xác suất của mỗi giá trị là 1/5.",
+          "Thiết lập phương trình E(X) = tổng giá trị chia cho 5."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 7,
+        "question": "In a NiCd battery, a fully charged cell is composed of nickelic hydroxide. Nickel is an element that has multiple oxidation states. Assume the following proportions of the states:<br /><br />| Nickel Charge | Proportions Found |<br />|---|---|<br />| 0 | 0.17 |<br />| +2 | 0.35 |<br />| +3 | 0.33 |<br />| +4 | 0.15 |<br /><br />(a) Determine the cumulative distribution function of nickel charge.<br />(b) Determine the mean and variance of the nickel charge.",
+        "image": "7.jpg",
+        "options": [],
+        "correctAnswer": "(a) Hàm phân phối tích lũy (CDF) \\( F(x) = P(X \\leq x) \\):<br />\\[ F(x) = \\begin{cases} 0 & x < 0 \\\\ 0.17 & 0 \\leq x < 2 \\\\ 0.17 + 0.35 = 0.52 & 2 \\leq x < 3 \\\\ 0.52 + 0.33 = 0.85 & 3 \\leq x < 4 \\\\ 1 & x \\geq 4 \\end{cases} \\]<br /><br />(b) Tính Mean và Variance:<br /><b>Mean (\\( \\mu \\)):</b><br />\\[ E(X) = 0(0.17) + 2(0.35) + 3(0.33) + 4(0.15) \\]<br />\\[ = 0 + 0.7 + 0.99 + 0.6 = 2.29 \\]<br /><br /><b>Variance (\\( \\sigma^2 \\)):</b><br />Đầu tiên tính \\( E(X^2) \\):<br />\\[ E(X^2) = 0^2(0.17) + 2^2(0.35) + 3^2(0.33) + 4^2(0.15) \\]<br />\\[ = 0 + 1.4 + 2.97 + 2.4 = 6.77 \\]<br /><br />\\( V(X) = E(X^2) - [E(X)]^2 \\)<br />\\( = 6.77 - (2.29)^2 = 6.77 - 5.2441 = 1.5259 \\)",
+        "explanation": "Câu (a) yêu cầu cộng dồn xác suất. Lưu ý các khoảng giá trị của biến ngẫu nhiên không liên tục (0, 2, 3, 4).<br />Câu (b) sử dụng công thức phương sai \\( V(X) = E(X^2) - \\mu^2 \\) để tính toán nhanh hơn.",
+        "difficulty": "medium",
+        "topic": "Mean and Variance",
+        "hints": [
+          "CDF là hàm bậc thang, cộng dồn xác suất tại mỗi điểm.",
+          "Tính E(X^2) trước để tìm phương sai."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 8,
+        "question": "Let the random variable X have a discrete uniform distribution on the integers \\( 0 \\leq x \\leq 99 \\). Determine the mean and variance of X.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Với phân phối đều rời rạc trên các số nguyên liên tiếp từ \\( a \\) đến \\( b \\):<br />\\( a = 0, b = 99 \\). Số phần tử \\( n = b - a + 1 = 100 \\).<br /><br /><b>Mean:</b><br />\\[ \\mu = \\frac{a+b}{2} = \\frac{0+99}{2} = 49.5 \\]<br /><br /><b>Variance:</b><br />\\[ \\sigma^2 = \\frac{n^2 - 1}{12} = \\frac{100^2 - 1}{12} \\]<br />\\[ = \\frac{10000 - 1}{12} = \\frac{9999}{12} = 833.25 \\]",
+        "explanation": "Đây là công thức chuẩn cho phân phối đều rời rạc (Discrete Uniform Distribution) trên tập số nguyên liên tiếp. <br />Mean là trung điểm của khoảng. Variance phụ thuộc vào bình phương số lượng phần tử.",
+        "difficulty": "easy",
+        "topic": "Discrete Uniform Distribution",
+        "hints": [
+          "Công thức Mean: (a+b)/2",
+          "Công thức Variance: ((b-a+1)^2 - 1) / 12"
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 9,
+        "question": "Let the random variable X have a discrete uniform distribution on the integers \\( 1 \\leq x \\leq 3 \\). Determine the mean and variance of X.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Tập xác định là \\( \\{1, 2, 3\\} \\) với \\( a=1, b=3 \\). Số phần tử \\( n=3 \\).<br /><br /><b>Mean:</b><br />\\[ \\mu = \\frac{1+3}{2} = 2 \\]<br /><br /><b>Variance:</b><br />\\[ \\sigma^2 = \\frac{3^2 - 1}{12} = \\frac{8}{12} = \\frac{2}{3} \\approx 0.667 \\]",
+        "explanation": "Áp dụng trực tiếp công thức của phân phối đều rời rạc. Hoặc bạn có thể tính thủ công: Mean là 2. Các độ lệch là -1, 0, 1. Bình phương độ lệch là 1, 0, 1. Tổng bình phương chia 3 là 2/3.",
+        "difficulty": "easy",
+        "topic": "Discrete Uniform Distribution",
+        "hints": [
+          "Đây là trường hợp đơn giản với n=3.",
+          "Mean nằm chính giữa dãy số."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 10,
+        "question": "Thickness measurements of a coating process are made to the nearest hundredth of a millimeter. The thickness measurements are uniformly distributed with values 0.15, 0.16, 0.17, 0.18, and 0.19. Determine the mean and variance of the coating thickness for this process.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Gọi \\( X \\) là độ dày. Tập giá trị: \\( \\{0.15, 0.16, 0.17, 0.18, 0.19\\} \\).<br />Số phần tử \\( n = 5 \\). Xác suất mỗi giá trị là \\( 1/5 \\).<br /><br /><b>Mean:</b><br />Do tính đối xứng của phân phối đều:<br />\\[ \\mu = 0.17 \\]<br /><br /><b>Variance:</b><br />Ta dùng công thức định nghĩa \\( V(X) = \\sum (x_i - \\mu)^2 P(x_i) \\):<br />Các độ lệch so với mean (0.17): \\( -0.02, -0.01, 0, 0.01, 0.02 \\).<br />Bình phương độ lệch: \\( 0.0004, 0.0001, 0, 0.0001, 0.0004 \\).<br />Tổng các bình phương: \\( 0.001 \\).<br /><br />\\[ \\sigma^2 = \\frac{0.001}{5} = 0.0002 \\]",
+        "explanation": "Mặc dù đây là phân phối đều, nhưng các giá trị không phải số nguyên liên tiếp nên ta cần cẩn thận. Cách an toàn nhất là tính trung bình cộng để ra Mean, và tính trung bình của các bình phương độ lệch để ra Variance.",
+        "difficulty": "medium",
+        "topic": "Discrete Uniform Distribution",
+        "hints": [
+          "Mean là giá trị nằm giữa (median) vì phân phối đối xứng.",
+          "Tính tổng bình phương sai lệch rồi chia cho 5."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 11,
+        "question": "Let \\( X \\) be a binomial random variable with \\( p = 0.1 \\) and \\( n = 10 \\). Calculate the following probabilities:<br />(a) \\( P(X \\leq 2) \\)<br />(b) \\( P(X > 8) \\)<br />(c) \\( P(X = 4) \\)<br />(d) \\( P(5 \\leq X \\leq 7) \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Sử dụng công thức phân phối nhị thức: \\( P(X=k) = \\binom{n}{k} p^k (1-p)^{n-k} \\) với \\( n=10, p=0.1 \\).<br /><br />(a) \\( P(X \\leq 2) = P(0) + P(1) + P(2) \\)<br />\\( = \\binom{10}{0}(0.1)^0(0.9)^{10} + \\binom{10}{1}(0.1)^1(0.9)^9 + \\binom{10}{2}(0.1)^2(0.9)^8 \\)<br />\\( \\approx 0.3487 + 0.3874 + 0.1937 = 0.9298 \\)<br /><br />(b) \\( P(X > 8) = P(9) + P(10) \\)<br />\\( = \\binom{10}{9}(0.1)^9(0.9)^1 + \\binom{10}{10}(0.1)^{10}(0.9)^0 \\)<br />\\( \\approx 9 \\times 10^{-9} + 1 \\times 10^{-10} \\approx 0.00000001 \\)<br /><br />(c) \\( P(X = 4) = \\binom{10}{4}(0.1)^4(0.9)^6 \\approx 0.0112 \\)<br /><br />(d) \\( P(5 \\leq X \\leq 7) = P(5) + P(6) + P(7) \\)<br />Tính tổng xác suất tại k = 5, 6, 7.",
+        "explanation": "Đây là bài tập tính toán cơ bản để làm quen với công thức Bernoulli (Phân phối nhị thức). Bạn cần chú ý các dấu bất đẳng thức (<=, >) để xác định đúng các giá trị k cần tính.",
+        "difficulty": "easy",
+        "topic": "Binomial Distribution",
+        "hints": [
+          "Sử dụng công thức tổng quát: nCx * p^x * (1-p)^(n-x).",
+          "Có thể dùng bảng tra hoặc máy tính bỏ túi chức năng Binomial CD/PD."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 12,
+        "question": "A multiple-choice test contains 25 questions, each with four answers. Assume that a student just guesses on each question.<br />(a) What is the probability that the student answers more than 20 questions correctly?<br />(b) What is the probability that the student answers fewer than 5 questions correctly?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Gọi \\( X \\) là số câu trả lời đúng. <br />Số câu hỏi \\( n = 25 \\).<br />Xác suất đoán đúng mỗi câu (chọn 1 trong 4) là \\( p = 0.25 \\).<br /><br />(a) \\( P(X > 20) = \\sum_{x=21}^{25} \\binom{25}{x}(0.25)^x(0.75)^{25-x} \\)<br />Giá trị này cực kỳ nhỏ (gần bằng 0).<br /><br />(b) \\( P(X < 5) = P(X \\leq 4) = \\sum_{x=0}^{4} \\binom{25}{x}(0.25)^x(0.75)^{25-x} \\)<br />\\( = P(0) + P(1) + P(2) + P(3) + P(4) \\).",
+        "explanation": "Bài toán mô hình hóa việc đoán mò trắc nghiệm bằng phân phối nhị thức. Vì các câu hỏi độc lập và xác suất đúng như nhau.",
+        "difficulty": "medium",
+        "topic": "Binomial Distribution",
+        "hints": [
+          "Xác định n=25, p=1/4=0.25.",
+          "X > 20 nghĩa là x chạy từ 21 đến 25.",
+          "X < 5 nghĩa là x chạy từ 0 đến 4."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 13,
+        "question": "The probability of a successful optical alignment in the assembly of an optical data storage product is 0.8. Assume that the trials are independent.<br />(a) What is the probability that the first successful alignment requires exactly four trials?<br />(b) What is the probability that the first successful alignment requires at most four trials?<br />(c) What is the probability that the first successful alignment requires at least four trials?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Đây là Phân phối Hình học (Geometric Distribution) với xác suất thành công \\( p = 0.8 \\).<br />Công thức: \\( P(X=k) = (1-p)^{k-1}p \\).<br /><br />(a) Thành công lần đầu ở lần thử thứ 4 (3 lần đầu thất bại):<br />\\( P(X=4) = (1-0.8)^3(0.8) = (0.2)^3(0.8) = 0.0064 \\)<br /><br />(b) Tối đa 4 lần (nghĩa là thành công ở lần 1, 2, 3 hoặc 4):<br />\\( P(X \\leq 4) = 1 - (1-p)^4 = 1 - (0.2)^4 = 1 - 0.0016 = 0.9984 \\)<br /><br />(c) Ít nhất 4 lần (nghĩa là 3 lần đầu tiên CHẮC CHẮN thất bại):<br />\\( P(X \\geq 4) = P(X > 3) = (1-p)^3 = (0.2)^3 = 0.008 \\)",
+        "explanation": "Phân phối hình học mô tả số lần thử cần thiết để đạt được thành công ĐẦU TIÊN. <br />Công thức tính xác suất tích lũy nhanh: \\( P(X > k) = (1-p)^k \\) và \\( P(X \\leq k) = 1 - (1-p)^k \\).",
+        "difficulty": "medium",
+        "topic": "Geometric Distribution",
+        "hints": [
+          "Geometric: Thử đến khi thành công thì dừng.",
+          "X >= 4 tương đương với việc 3 lần đầu đều thất bại."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 14,
+        "question": "In a clinical study, volunteers are tested for a gene that has been found to increase the risk for a disease. The probability that a person carries the gene is 0.1.<br />(a) What is the probability that exactly four people need to be tested to detect two with the gene?<br />(b) What is the probability that four or more people need to be tested to detect two with the gene?<br />(c) What is the expected number of people to test to detect two with the gene?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Đây là Phân phối Nhị thức âm (Negative Binomial) với mục tiêu tìm \\( r=2 \\) thành công, xác suất \\( p=0.1 \\).<br />Biến ngẫu nhiên \\( X \\) là số lần thử.<br /><br />(a) Cần đúng 4 người (nghĩa là người thứ 4 bị bệnh, và trong 3 người trước đó có đúng 1 người bệnh):<br />\\( P(X=4) = \\binom{4-1}{2-1} p^2 (1-p)^{4-2} = \\binom{3}{1} (0.1)^2 (0.9)^2 \\)<br />\\( = 3 \\times 0.01 \\times 0.81 = 0.0243 \\)<br /><br />(b) Cần 4 người trở lên (\\( X \\geq 4 \\)):<br />Cách dễ nhất là dùng phần bù: \\( 1 - P(X < 4) \\).<br />Vì cần tìm 2 người nên tối thiểu phải thử 2 lần, vậy \\( X < 4 \\) chỉ có trường hợp \\( X=2 \\) và \\( X=3 \\).<br />\\( P(X=2) = (0.1)^2 = 0.01 \\)<br />\\( P(X=3) = \\binom{2}{1}(0.1)^2(0.9)^1 = 2 \\times 0.01 \\times 0.9 = 0.018 \\)<br />\\( P(X \\geq 4) = 1 - (0.01 + 0.018) = 0.972 \\)<br /><br />(c) Kỳ vọng (Mean):<br />\\( E(X) = \\frac{r}{p} = \\frac{2}{0.1} = 20 \\) người.",
+        "explanation": "Phân phối nhị thức âm mở rộng của phân phối hình học: Thử cho đến khi đạt được r lần thành công. Công thức tổng quát: \\( \\binom{x-1}{r-1}p^r(1-p)^{x-r} \\).",
+        "difficulty": "hard",
+        "topic": "Negative Binomial Distribution",
+        "hints": [
+          "Phân biệt với Binomial: Số lần thử không cố định.",
+          "Phân biệt với Geometric: Cần r=2 thành công chứ không phải 1.",
+          "Người cuối cùng được thử BẮT BUỘC phải là người mang gen (thành công thứ r)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 15,
+        "question": "A batch contains 36 bacteria cells and 12 of the cells are not capable of cellular replication. Suppose that you examine six bacteria cells selected at random without replacement.<br />(a) What is the probability that three cells of the selected cells are able to replicate?<br />(b) What is the probability that at least one of the selected cells can not replicate?<br />(c) What are the mean and variance of the number of cells in the sample that can replicate?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Đây là Phân phối Siêu bội (Hypergeometric) vì lấy mẫu không hoàn lại từ tập hữu hạn.<br />Tổng thể \\( N=36 \\).<br />Số tế bào KHÔNG thể nhân bản là 12 \\(\\rightarrow\\) Số tế bào CÓ THỂ nhân bản (thành công) là \\( K = 36 - 12 = 24 \\).<br />Cỡ mẫu \\( n=6 \\).<br />Gọi \\( X \\) là số tế bào CÓ THỂ nhân bản trong mẫu.<br /><br />(a) \\( P(X=3) \\):<br />\\[ P(X=3) = \\frac{\\binom{24}{3} \\binom{12}{3}}{\\binom{36}{6}} \\]<br /><br />(b) Ít nhất 1 tế bào KHÔNG thể nhân bản.<br />Điều này tương đương với việc 'Không phải tất cả 6 tế bào đều có thể nhân bản' (tức là \\( X < 6 \\)).<br />\\( P(\\text{at least 1 bad}) = 1 - P(\\text{all 6 good}) = 1 - P(X=6) \\)<br />\\( = 1 - \\frac{\\binom{24}{6}\\binom{12}{0}}{\\binom{36}{6}} \\)<br /><br />(c) Mean và Variance của \\( X \\):<br />\\( p = \\frac{K}{N} = \\frac{24}{36} = \\frac{2}{3} \\)<br />Mean: \\( \\mu = np = 6 \\times \\frac{2}{3} = 4 \\)<br />Variance: \\( \\sigma^2 = np(1-p) \\frac{N-n}{N-1} = 6(\\frac{2}{3})(\\frac{1}{3}) \\frac{36-6}{36-1} \\)<br />\\( = \\frac{4}{3} \\times \\frac{30}{35} = \\frac{4}{3} \\times \\frac{6}{7} = \\frac{8}{7} \\approx 1.14 \\)",
+        "explanation": "Khi lấy mẫu từ một tập hợp nhỏ mà không hoàn lại, xác suất thay đổi sau mỗi lần lấy, nên ta dùng Hypergeometric thay vì Binomial. Lưu ý đọc kỹ đề bài hỏi về tế bào 'có thể' hay 'không thể' nhân bản.",
+        "difficulty": "hard",
+        "topic": "Hypergeometric Distribution",
+        "hints": [
+          "Xác định N (tổng), K (số lượng quan tâm trong tổng thể), n (cỡ mẫu).",
+          "Câu (b) nên dùng biến cố đối: 1 - P(tất cả đều tốt)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 16,
+        "question": "The number of views of a page on a Web site follows a Poisson distribution with a mean of 1.5 per minute.<br />(a) What is the probability of no views in a minute?<br />(b) What is the probability of two or fewer views in 10 minutes?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Gọi \\( X \\) là số lượt xem.<br /><br />(a) Trong khoảng thời gian 1 phút:<br />Trung bình \\( \\lambda = 1.5 \\).<br />Công thức Poisson: \\( P(X=k) = \\frac{e^{-\\lambda} \\lambda^k}{k!} \\)<br />\\( P(X=0) = \\frac{e^{-1.5} (1.5)^0}{0!} = e^{-1.5} \\approx 0.2231 \\)<br /><br />(b) Trong khoảng thời gian 10 phút:<br />Trung bình mới \\( \\lambda_{10} = 1.5 \\times 10 = 15 \\).<br />Cần tính \\( P(X \\leq 2) = P(0) + P(1) + P(2) \\) với \\( \\lambda = 15 \\).<br />\\( P(X=0) = e^{-15} \\frac{15^0}{0!} = e^{-15} \\)<br />\\( P(X=1) = e^{-15} \\frac{15^1}{1!} = 15e^{-15} \\)<br />\\( P(X=2) = e^{-15} \\frac{15^2}{2!} = 112.5e^{-15} \\)<br />Tổng cộng: \\( e^{-15}(1 + 15 + 112.5) = 128.5 \\times e^{-15} \\approx 3.93 \\times 10^{-5} \\)<br />(Xác suất cực kỳ nhỏ).",
+        "explanation": "Điểm mấu chốt của phân phối Poisson là tham số \\( \\lambda \\) tỉ lệ thuận với độ dài khoảng thời gian. Nếu đề cho tốc độ theo phút nhưng hỏi về 10 phút, bạn phải nhân \\( \\lambda \\) lên 10 lần.",
+        "difficulty": "medium",
+        "topic": "Poisson Distribution",
+        "hints": [
+          "Câu (a): Thay lambda = 1.5, k = 0.",
+          "Câu (b): Tính lambda mới cho 10 phút (1.5 * 10).",
+          "P(X <= 2) là tổng của P(0), P(1), và P(2)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 17,
+        "question": "Suppose that the number of customers who enter a bank in an hour is a Poisson random variable, and suppose that \\( P(X = 0) = 0.05 \\). Determine the mean and variance of X.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Công thức xác suất tại \\( k=0 \\) của phân phối Poisson là:<br />\\( P(X=0) = e^{-\\lambda} \\frac{\\lambda^0}{0!} = e^{-\\lambda} \\)<br /><br />Theo đề bài:<br />\\( e^{-\\lambda} = 0.05 \\)<br />Lấy logarit tự nhiên (ln) hai vế:<br />\\( -\\lambda = \\ln(0.05) \\)<br />\\( \\lambda = -\\ln(0.05) \\approx 2.9957 \\)<br /><br />Đối với phân phối Poisson, Kỳ vọng (Mean) và Phương sai (Variance) đều bằng tham số \\( \\lambda \\).<br />Vậy:<br />Mean \\( \\mu \\approx 3 \\)<br />Variance \\( \\sigma^2 \\approx 3 \\)",
+        "explanation": "Bài toán ngược: Cho xác suất tìm tham số. Đặc trưng quan trọng nhất của Poisson là Mean = Variance = \\( \\lambda \\).",
+        "difficulty": "medium",
+        "topic": "Poisson Distribution",
+        "hints": [
+          "Công thức P(X=0) rút gọn lại rất đơn giản là e^(-lambda).",
+          "Giải phương trình tìm lambda bằng hàm ln.",
+          "Nhớ tính chất đặc biệt: Mean = Variance."
+        ],
+        "type": "essay"
+      }
+    ]
+  }
