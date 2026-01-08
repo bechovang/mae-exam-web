@@ -1,0 +1,173 @@
+{
+    "examId": "de26",
+    "title": "MAS chương 2 BT trên slide",
+    "description": "Bộ câu hỏi để luyện tập các khái niệm của xác suất, bao gồm các quy tắc cộng, nhân, xác suất có điều kiện.",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Each of the possible five outcomes of a random experiment is equally likely. The sample space is \\( S = \\{a, b, c, d, e\\} \\).<br />Let A denote the event \\( \\{a, b\\} \\), and let B denote the event \\( \\{c, d, e\\} \\).<br />Determine the following:<br />a. \\( P(A) \\)<br />b. \\( P(B) \\)<br />c. \\( P(A') \\)<br />d. \\( P(A \\cup B) \\)<br />e. \\( P(A \\cap B) \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>a. \\( P(A) \\)</b><br />Số kết quả của không gian mẫu \\( N(S) = 5 \\).<br />Số kết quả của A là \\( N(A) = 2 \\).<br />\\( P(A) = \\frac{2}{5} = 0.4 \\)<br /><br /><b>b. \\( P(B) \\)</b><br />Số kết quả của B là \\( N(B) = 3 \\).<br />\\( P(B) = \\frac{3}{5} = 0.6 \\)<br /><br /><b>c. \\( P(A') \\)</b><br />\\( P(A') = 1 - P(A) = 1 - 0.4 = 0.6 \\)<br /><br /><b>d. \\( P(A \\cup B) \\)</b><br />\\( A \\cup B = \\{a, b, c, d, e\\} = S \\).<br />\\( P(A \\cup B) = \\frac{5}{5} = 1.0 \\)<br /><br /><b>e. \\( P(A \\cap B) \\)</b><br />A và B không có phần tử chung (A chứa a,b; B chứa c,d,e).<br />\\( A \\cap B = \\emptyset \\) \\( \\Rightarrow P(A \\cap B) = 0 \\)",
+        "explanation": "Đây là bài toán cơ bản về xác suất cổ điển (Classic Probability) với các kết quả đồng khả năng (equally likely).<br />Công thức: \\( P(E) = \\frac{\\text{Số kết quả thuận lợi cho E}}{\\text{Tổng số kết quả có thể xảy ra}} \\).<br />Lưu ý rằng A và B ở đây là hai biến cố xung khắc (mutually exclusive) vì chúng không có phần tử chung.",
+        "difficulty": "easy",
+        "topic": "Sample Spaces and Events",
+        "hints": [
+          "Đếm số phần tử trong mỗi tập hợp.",
+          "Tổng số kết quả là 5.",
+          "A' là phần bù của A (những phần tử không thuộc A)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 2,
+        "question": "The sample space of a random experiment is \\( S = \\{a, b, c, d, e\\} \\) with probabilities 0.1, 0.1, 0.2, 0.4, and 0.2 respectively.<br />Let A denote the event \\( \\{a, b, c\\} \\), and let B denote the event \\( \\{c, d, e\\} \\). Determine:<br />(a) \\( P(A) \\)<br />(b) \\( P(B) \\)<br />(c) \\( P(A') \\)<br />(d) \\( P(A \\cup B) \\)<br />(e) \\( P(A \\cap B) \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>(a) \\( P(A) \\)</b><br />\\( P(A) = P(a) + P(b) + P(c) = 0.1 + 0.1 + 0.2 = 0.4 \\)<br /><br /><b>(b) \\( P(B) \\)</b><br />\\( P(B) = P(c) + P(d) + P(e) = 0.2 + 0.4 + 0.2 = 0.8 \\)<br /><br /><b>(c) \\( P(A') \\)</b><br />\\( P(A') = 1 - P(A) = 1 - 0.4 = 0.6 \\)<br /><br /><b>(d) \\( P(A \\cup B) \\)</b><br />\\( A \\cup B = \\{a, b, c, d, e\\} = S \\).<br />\\( P(A \\cup B) = 1.0 \\)<br />Hoặc dùng công thức cộng: \\( P(A) + P(B) - P(A \\cap B) = 0.4 + 0.8 - 0.2 = 1.0 \\)<br /><br /><b>(e) \\( P(A \\cap B) \\)</b><br />Phần tử chung của A và B là \\( \\{c\\} \\).<br />\\( P(A \\cap B) = P(c) = 0.2 \\)",
+        "explanation": "Trong không gian mẫu rời rạc này, xác suất của một biến cố bằng tổng xác suất của các kết quả đơn lẻ (outcomes) tạo nên biến cố đó.<br />Khác với câu 1, các kết quả ở đây **không** đồng khả năng (not equally likely), nên ta phải cộng các giá trị xác suất cụ thể.",
+        "difficulty": "easy",
+        "topic": "Interpretations of Probability",
+        "hints": [
+          "Xác định các phần tử thuộc tập hợp A và B.",
+          "Cộng xác suất tương ứng của từng phần tử."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 3,
+        "question": "If \\( P(A) = 0.3 \\), \\( P(B) = 0.2 \\) and \\( P(A \\cap B) = 0.1 \\), determine the following probabilities:<br />(a) \\( P(A') \\)<br />(b) \\( P(A \\cup B) \\)<br />(c) \\( P(A' \\cap B) \\)<br />(d) \\( P(A \\cap B') \\)<br />(e) \\( P[(A \\cup B)'] \\)<br />(f) \\( P(A' \\cup B) \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>(a) \\( P(A') \\)</b><br />\\( P(A') = 1 - P(A) = 1 - 0.3 = 0.7 \\)<br /><br /><b>(b) \\( P(A \\cup B) \\)</b><br />Áp dụng quy tắc cộng: \\( P(A \\cup B) = P(A) + P(B) - P(A \\cap B) \\)<br />\\( = 0.3 + 0.2 - 0.1 = 0.4 \\)<br /><br /><b>(c) \\( P(A' \\cap B) \\)</b> (Chỉ xảy ra B, không xảy ra A)<br />\\( P(A' \\cap B) = P(B) - P(A \\cap B) = 0.2 - 0.1 = 0.1 \\)<br /><br /><b>(d) \\( P(A \\cap B') \\)</b> (Chỉ xảy ra A, không xảy ra B)<br />\\( P(A \\cap B') = P(A) - P(A \\cap B) = 0.3 - 0.1 = 0.2 \\)<br /><br /><b>(e) \\( P[(A \\cup B)'] \\)</b><br />\\( = 1 - P(A \\cup B) = 1 - 0.4 = 0.6 \\)<br /><br /><b>(f) \\( P(A' \\cup B) \\)</b><br />\\( P(A' \\cup B) = P(A') + P(B) - P(A' \\cap B) \\)<br />\\( = 0.7 + 0.2 - 0.1 = 0.8 \\)<br />Hoặc: \\( P(A' \\cup B) = 1 - P(A \\cap B') \\) (phần bù của 'chỉ A') \\( = 1 - 0.2 = 0.8 \\)",
+        "explanation": "Bài tập này rèn luyện việc sử dụng các quy tắc cộng (Addition Rules) và sơ đồ Venn.<br />- \\( P(A \\cup B) \\): Hợp của A và B.<br />- \\( P(A' \\cap B) \\): Phần thuộc B nhưng nằm ngoài A.<br />- \\( P(A \\cap B') \\): Phần thuộc A nhưng nằm ngoài B.",
+        "difficulty": "medium",
+        "topic": "Addition Rules",
+        "hints": [
+          "Vẽ sơ đồ Venn sẽ giúp hình dung dễ dàng hơn.",
+          "Sử dụng công thức: P(A u B) = P(A) + P(B) - P(A n B)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 4,
+        "question": "If A, B, and C are mutually exclusive events with \\( P(A) = 0.2 \\), \\( P(B) = 0.3 \\) and \\( P(C) = 0.4 \\), determine the following probabilities:<br />(a) \\( P(A \\cup B \\cup C) \\)<br />(b) \\( P(A \\cap B \\cap C) \\)<br />(c) \\( P(A \\cap B) \\)<br />(d) \\( P[(A \\cup B) \\cap C] \\)<br />(e) \\( P(A' \\cap B' \\cap C') \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>(a) \\( P(A \\cup B \\cup C) \\)</b><br />Vì xung khắc (mutually exclusive) nên: \\( P(A) + P(B) + P(C) \\)<br />\\( = 0.2 + 0.3 + 0.4 = 0.9 \\)<br /><br /><b>(b) \\( P(A \\cap B \\cap C) \\)</b><br />Vì xung khắc nên không thể xảy ra cùng lúc: \\( 0 \\)<br /><br /><b>(c) \\( P(A \\cap B) \\)</b><br />Vì xung khắc: \\( 0 \\)<br /><br /><b>(d) \\( P[(A \\cup B) \\cap C] \\)</b><br />Tập hợp \\( (A \\cup B) \\) và tập hợp \\( C \\) không có phần chung (do A, B, C xung khắc đôi một).<br />Kết quả: \\( 0 \\)<br /><br /><b>(e) \\( P(A' \\cap B' \\cap C') \\)</b><br />Theo định luật De Morgan: \\( A' \\cap B' \\cap C' = (A \\cup B \\cup C)' \\)<br />\\( = 1 - P(A \\cup B \\cup C) = 1 - 0.9 = 0.1 \\)",
+        "explanation": "<b>Biến cố xung khắc (Mutually Exclusive):</b> Là các biến cố không bao giờ xảy ra cùng lúc. Do đó giao của bất kỳ cặp nào cũng bằng rỗng (xác suất bằng 0) và xác suất của hợp bằng tổng các xác suất thành phần.",
+        "difficulty": "medium",
+        "topic": "Addition Rules",
+        "hints": [
+          "Mutually exclusive nghĩa là giao nhau bằng 0.",
+          "P(A u B u C) chỉ đơn giản là tổng các xác suất."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 5,
+        "question": "Suppose that \\( P(A|B) = 0.4 \\) and \\( P(B) = 0.5 \\). Determine the following:<br />(a) \\( P(A \\cap B) \\)<br />(b) \\( P(A' \\cap B) \\)",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>(a) \\( P(A \\cap B) \\)</b><br />Sử dụng công thức nhân xác suất: \\( P(A \\cap B) = P(A|B) \\cdot P(B) \\)<br />\\( = 0.4 \\cdot 0.5 = 0.2 \\)<br /><br /><b>(b) \\( P(A' \\cap B) \\)</b><br />Ta có công thức: \\( P(B) = P(A \\cap B) + P(A' \\cap B) \\) (Xác suất B bằng phần B giao A cộng phần B không giao A).<br />\\( 0.5 = 0.2 + P(A' \\cap B) \\)<br />\\( P(A' \\cap B) = 0.5 - 0.2 = 0.3 \\)<br /><br />Hoặc tính trực tiếp: \\( P(A'|B) = 1 - P(A|B) = 1 - 0.4 = 0.6 \\)<br />\\( P(A' \\cap B) = P(A'|B) \\cdot P(B) = 0.6 \\cdot 0.5 = 0.3 \\)",
+        "explanation": "Câu hỏi sử dụng <b>Quy tắc nhân (Multiplication Rule)</b> được suy ra từ định nghĩa xác suất có điều kiện: \\( P(A|B) = \\frac{P(A \\cap B)}{P(B)} \\).<br />Câu (b) yêu cầu tính xác suất xảy ra B nhưng KHÔNG xảy ra A.",
+        "difficulty": "medium",
+        "topic": "Multiplication and Total Probability Rules",
+        "hints": [
+          "P(A n B) = P(A|B) * P(B)",
+          "P(B) là tổng của P(A n B) và P(A' n B)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 6,
+        "question": "Suppose that \\( P(A|B) = 0.2 \\), \\( P(A|B') = 0.3 \\) and \\( P(B) = 0.8 \\).<br />What is \\( P(A) \\)?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "<b>Áp dụng Quy tắc xác suất đầy đủ (Total Probability Rule):</b><br /><br />Ta có công thức:<br />\\( P(A) = P(A|B)P(B) + P(A|B')P(B') \\)<br /><br /><b>Bước 1: Tính \\( P(B') \\)</b><br />\\( P(B') = 1 - P(B) = 1 - 0.8 = 0.2 \\)<br /><br /><b>Bước 2: Thay số vào công thức</b><br />\\( P(A) = (0.2)(0.8) + (0.3)(0.2) \\)<br />\\( P(A) = 0.16 + 0.06 \\)<br />\\( P(A) = 0.22 \\)",
+        "explanation": "Để tính xác suất của biến cố A, ta chia không gian mẫu thành hai phần xung khắc là B và B' (phần bù của B).<br />Tổng xác suất của A là tổng xác suất của A khi xảy ra trong B và xác suất của A khi xảy ra trong B'.",
+        "difficulty": "medium",
+        "topic": "Multiplication and Total Probability Rules",
+        "hints": [
+          "Tính P(B') trước.",
+          "Sử dụng công thức P(A) = P(A|B)P(B) + P(A|B')P(B')."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 7,
+        "question": "The probability is 1% that an electrical connector that is kept dry fails during the warranty period of a portable computer. If the connector is ever wet, the probability of a failure during the warranty period is 5%.<br />If 90% of the connectors are kept dry and 10% are wet, what proportion of connectors fail during the warranty period?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Gọi:<br />- \\( F \\): Biến cố đầu nối bị hỏng (Fail).<br />- \\( D \\): Biến cố đầu nối khô (Dry).<br />- \\( W \\): Biến cố đầu nối ướt (Wet).<br /><br /><b>Dữ kiện bài toán:</b><br />\\( P(F|D) = 0.01 \\), \\( P(D) = 0.90 \\)<br />\\( P(F|W) = 0.05 \\), \\( P(W) = 0.10 \\)<br /><br /><b>Áp dụng Quy tắc xác suất đầy đủ:</b><br />\\( P(F) = P(F|D)P(D) + P(F|W)P(W) \\)<br />\\( P(F) = (0.01)(0.90) + (0.05)(0.10) \\)<br />\\( P(F) = 0.009 + 0.005 \\)<br />\\( P(F) = 0.014 \\)<br /><br /><b>Kết luận:</b> Tỷ lệ hỏng là 1.4%.",
+        "explanation": "Bài toán yêu cầu tính xác suất tổng quát của việc hỏng hóc (F) dựa trên hai điều kiện môi trường xung khắc nhau là Khô (Dry) và Ướt (Wet).",
+        "difficulty": "medium",
+        "topic": "Multiplication and Total Probability Rules",
+        "hints": [
+          "Xác định các biến cố và xác suất có điều kiện tương ứng.",
+          "Áp dụng công thức xác suất đầy đủ: P(Fail) = P(Fail|Dry)*P(Dry) + P(Fail|Wet)*P(Wet)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 8,
+        "question": "Suppose 2% of cotton fabric rolls and 3% of nylon fabric rolls contain flaws. Of the rolls used by a manufacturer, 70% are cotton and 30% are nylon.<br />What is the probability that a randomly selected roll used by the manufacturer contains flaws?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Gọi:<br />- \\( F \\): Biến cố cuộn vải bị lỗi (Flaws).<br />- \\( C \\): Biến cố vải Cotton.<br />- \\( N \\): Biến cố vải Nylon.<br /><br /><b>Dữ kiện:</b><br />\\( P(F|C) = 0.02 \\), \\( P(C) = 0.70 \\)<br />\\( P(F|N) = 0.03 \\), \\( P(N) = 0.30 \\)<br /><br /><b>Tính toán:</b><br />\\( P(F) = P(F|C)P(C) + P(F|N)P(N) \\)<br />\\( P(F) = (0.02)(0.70) + (0.03)(0.30) \\)<br />\\( P(F) = 0.014 + 0.009 \\)<br />\\( P(F) = 0.023 \\)<br /><br />Vậy xác suất cuộn vải bị lỗi là 0.023 (hay 2.3%).",
+        "explanation": "Tương tự câu 7, đây là ứng dụng trực tiếp của Quy tắc xác suất đầy đủ. Không gian mẫu được chia thành hai nhóm vật liệu: Cotton và Nylon.",
+        "difficulty": "medium",
+        "topic": "Multiplication and Total Probability Rules",
+        "hints": [
+          "Tổng xác suất lỗi = (Lỗi từ Cotton) + (Lỗi từ Nylon)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 9,
+        "question": "The edge roughness of slit paper products increases as knife blades wear. Only 1% of products slit with new blades have rough edges, 3% of products slit with blades of average sharpness exhibit roughness, and 5% of products slit with worn blades exhibit roughness.<br />If 25% of the blades in manufacturing are new, 60% are of average sharpness, and 15% are worn, what is the proportion of products that exhibit edge roughness?",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Gọi \\( R \\) là biến cố sản phẩm bị sần sùi (Roughness).<br />Chia không gian mẫu thành 3 biến cố xung khắc:<br />- \\( N \\) (New): \\( P(N) = 0.25 \\), \\( P(R|N) = 0.01 \\)<br />- \\( A \\) (Average): \\( P(A) = 0.60 \\), \\( P(R|A) = 0.03 \\)<br />- \\( W \\) (Worn): \\( P(W) = 0.15 \\), \\( P(R|W) = 0.05 \\)<br /><br /><b>Áp dụng Quy tắc xác suất đầy đủ mở rộng:</b><br />\\( P(R) = P(R|N)P(N) + P(R|A)P(A) + P(R|W)P(W) \\)<br />\\( P(R) = (0.01)(0.25) + (0.03)(0.60) + (0.05)(0.15) \\)<br />\\( P(R) = 0.0025 + 0.0180 + 0.0075 \\)<br />\\( P(R) = 0.028 \\)<br /><br />Vậy tỷ lệ sản phẩm bị sần sùi là 2.8%.",
+        "explanation": "Bài toán này mở rộng quy tắc xác suất đầy đủ cho 3 biến cố thành phần (New, Average, Worn). Tổng xác suất của 3 loại lưỡi dao phải bằng 100% (0.25 + 0.60 + 0.15 = 1).",
+        "difficulty": "medium",
+        "topic": "Multiplication and Total Probability Rules",
+        "hints": [
+          "Liệt kê 3 trường hợp của lưỡi dao.",
+          "Nhân tỷ lệ lỗi của từng loại với tỷ lệ xuất hiện của loại đó rồi cộng lại."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 10,
+        "question": "An e-mail filter is planned to separate valid e-mails from spam. The word 'free' occurs in 60% of the spam messages and only 4% of the valid messages. Also, 20% of the messages are spam.<br />Determine the following probabilities:<br />(a) The message contains 'free'.<br />(b) The message is spam given that it contains 'free'.<br />(c) The message is valid given that it does not contain 'free'.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Gọi:<br />- \\( S \\): Spam, \\( V \\): Valid (Hợp lệ). \\( P(S) = 0.2, P(V) = 0.8 \\).<br />- \\( F \\): Chứa từ 'free'. \\( P(F|S) = 0.6, P(F|V) = 0.04 \\).<br /><br /><b>(a) Xác suất tin nhắn chứa 'free' \\( P(F) \\):</b><br />\\( P(F) = P(F|S)P(S) + P(F|V)P(V) \\)<br />\\( = (0.6)(0.2) + (0.04)(0.8) = 0.12 + 0.032 = 0.152 \\)<br /><br /><b>(b) Xác suất là Spam nếu chứa 'free' \\( P(S|F) \\):</b><br />Áp dụng định lý Bayes:<br />\\( P(S|F) = \\frac{P(F|S)P(S)}{P(F)} = \\frac{0.12}{0.152} \\approx 0.7895 \\)<br /><br /><b>(c) Xác suất Valid nếu KHÔNG chứa 'free' \\( P(V|F') \\):</b><br />Ta cần tính \\( P(F') = 1 - P(F) = 1 - 0.152 = 0.848 \\).<br />Và \\( P(F'|V) = 1 - P(F|V) = 1 - 0.04 = 0.96 \\).<br />Áp dụng Bayes:<br />\\( P(V|F') = \\frac{P(F'|V)P(V)}{P(F')} = \\frac{(0.96)(0.8)}{0.848} = \\frac{0.768}{0.848} \\approx 0.9057 \\)",
+        "explanation": "Câu (a) sử dụng Quy tắc xác suất đầy đủ. Câu (b) và (c) là ứng dụng kinh điển của <b>Định lý Bayes</b> để cập nhật xác suất khi có thêm thông tin (có hoặc không có từ khóa 'free').",
+        "difficulty": "hard",
+        "topic": "Bayes' Theorem",
+        "hints": [
+          "Câu (a): Dùng Total Probability Rule.",
+          "Câu (b): Dùng Bayes Theorem với kết quả câu (a) ở mẫu số.",
+          "Câu (c): Chú ý tính xác suất phần bù (không chứa 'free')."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 11,
+        "question": "A recreational equipment supplier finds that among orders that include tents, 40% also include sleeping mats. Only 5% of orders that do not include tents do include sleeping mats. Also, 20% of orders include tents.<br />Determine the following probabilities:<br />(a) The order includes sleeping mats.<br />(b) The order includes a tent given it includes sleeping mats.",
+        "image": null,
+        "options": [],
+        "correctAnswer": "Gọi các biến cố:<br />- \\( T \\): Đơn hàng có lều (Tents). \\( P(T) = 0.20 \\) \\( \\Rightarrow P(T') = 1 - 0.20 = 0.80 \\).<br />- \\( M \\): Đơn hàng có thảm ngủ (Sleeping Mats).<br /><br /><b>Dữ kiện bài toán:</b><br />- \\( P(M|T) = 0.40 \\) (Có lều thì có 40% có thảm).<br />- \\( P(M|T') = 0.05 \\) (Không có lều thì có 5% có thảm).<br /><br /><b>(a) Xác suất đơn hàng có thảm ngủ \\( P(M) \\):</b><br />Áp dụng Quy tắc xác suất đầy đủ:<br />\\( P(M) = P(M|T)P(T) + P(M|T')P(T') \\)<br />\\( P(M) = (0.40)(0.20) + (0.05)(0.80) \\)<br />\\( P(M) = 0.08 + 0.04 \\)<br />\\( P(M) = 0.12 \\)<br /><br /><b>(b) Xác suất đơn hàng có lều BẾT RẰNG nó có thảm ngủ \\( P(T|M) \\):</b><br />Áp dụng Định lý Bayes:<br />\\( P(T|M) = \\frac{P(M|T)P(T)}{P(M)} \\)<br />\\( P(T|M) = \\frac{0.08}{0.12} \\)<br />\\( P(T|M) = \\frac{2}{3} \\approx 0.6667 \\) (hay 66.67%)",
+        "explanation": "Đây là một bài toán điển hình kết hợp hai công thức quan trọng:<br />1. <b>Câu (a):</b> Sử dụng <b>Quy tắc xác suất đầy đủ (Total Probability Rule)</b> để tính xác suất tổng quát của biến cố kết quả (có thảm).<br />2. <b>Câu (b):</b> Sử dụng <b>Định lý Bayes</b> để tính xác suất ngược (nguyên nhân là có lều, khi đã biết kết quả là có thảm).",
+        "difficulty": "medium",
+        "topic": "Bayes' Theorem",
+        "hints": [
+          "Xác định rõ xác suất tiền nghiệm P(Tent).",
+          "Câu (a) là mẫu số của câu (b)."
+        ],
+        "type": "essay"
+      }
+    ]
+  }
