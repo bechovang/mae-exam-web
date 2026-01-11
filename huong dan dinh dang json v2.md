@@ -90,14 +90,179 @@ Tài liệu này hướng dẫn cách xây dựng một đề thi Toán học s�
 | `explanation`   | Giải thích bằng tiếng Việt, hỗ trợ LaTeX, **dùng `<br />` để xuống dòng** và **`<b>` để in đậm**. | ✅       | Tất cả      |
 | `difficulty`    | Mức độ câu hỏi: `"easy"`, `"medium"`, `"hard"`.                                                   | ✅       | Tất cả      |
 | `topic`         | Chủ đề: `"Derivatives"`, `"Integrals"`, v.v.                                                      | ✅       | Tất cả      |
-| `hints`         | Gợi ý (tiếng Việt, là array, mỗi dòng là một phần tử, **không cần xuống dòng thêm**).             | ❌       | Tất cả      |
+| `hints`         | Gợi ý (tiếng Việt, là array, mỗi dòng là một phần tử, **không cần xuống dòng thêm**). ⚠️ **Xem Section 3: BẮT BUỘC phải có ít nhất 2 hints!** | ⚠️ **BẮT BUỘC (thực tế)** | Tất cả      |
 | `type`          | Loại câu hỏi: `"multiple_choice"` hoặc `"essay"`. **Mặc định:** `"multiple_choice"` nếu không có. | ❌       | Tất cả      |
 
 ---
 
-## 3. 🔄 **So sánh Loại Câu hỏi**
+## 🔥 **QUICK REFERENCE - CHECKLIST NHANH**
 
-### 3.1. 🎯 **Câu hỏi Trắc nghiệm (`"type": "multiple_choice"`)**
+> ### **TRƯỚC KHI BẮT ĐẦU - KIỂM TRA 8 ĐIỂM QUAN TRỌNG:**
+> 
+> | # | Quy tắc | Chi tiết | Section |
+> |---|---------|----------|---------|
+> | 1️⃣ | **LaTeX inline** | Dùng `\\( ... \\)` KHÔNG phải `$...$` | 5.1 |
+> | 2️⃣ | **LaTeX block** | Dùng `\\[ ... \\]` KHÔNG phải `$$...$$` | 5.2 |
+> | 3️⃣ | **Xuống dòng** | Dùng `<br />` KHÔNG phải `\\\\` hoặc `\n` | 6 |
+> | 4️⃣ | **In đậm** | Dùng `<b>...</b>` KHÔNG phải `**...**` | 6 |
+> | 5️⃣ | **Hints** | Ít nhất 2 hints/câu, tiếng Việt, dẫn dắt không spoil | 3 |
+> | 6️⃣ | **Bảng (Tables)** | HTML với border từng cell: `style='border:1px solid #ddd; padding:5px;'` | 10 |
+> | 7️⃣ | **Ảnh có bảng** | Ghi ra HTML table, KHÔNG nhúng ảnh | 10 |
+> | 8️⃣ | **Ngôn ngữ** | Question/Options: English, Explanation/Hints: Tiếng Việt | 8 |
+> 
+> **💡 Mẹo:** Bookmark section 12 (Checklist cuối) để kiểm tra trước khi submit!
+
+---
+
+## 3. 💡 **HƯỚNG DẪN TRƯỜNG `hints` - GỢI Ý CHO HỌC SINH**
+
+### ⚠️ **QUY TẮC BẮT BUỘC**
+
+> **Dù trường `hints` được đánh dấu là "optional" trong schema, nhưng trong thực tế BẠN PHẢI LUÔN THÊM NÓ CHO MỖI CÂU HỎI.**
+
+### 🎯 **Tại Sao Hints Quan Trọng?**
+
+Hints giúp học sinh:
+- Tự giải quyết vấn đề thay vì xem đáp án ngay
+- Phát triển tư duy logic từng bước
+- Học cách tiếp cận bài toán một cách có hệ thống
+- Tăng khả năng ghi nhớ kiến thức
+
+### 📋 **CHECKLIST KHI TẠO HINTS**
+
+✅ **Bắt buộc phải có:**
+- [ ] Mỗi câu hỏi PHẢI có ít nhất **2 hints**
+- [ ] Hints được sắp xếp theo thứ tự từ **tổng quát → cụ thể**
+- [ ] Hint đầu tiên: Gợi ý hướng tiếp cận hoặc khái niệm cần dùng
+- [ ] Hint thứ hai: Gợi ý cụ thể hơn, có thể là công thức hoặc bước đầu tiên
+- [ ] Viết bằng **tiếng Việt**
+- [ ] Có thể chứa **LaTeX** nếu cần công thức
+- [ ] Không spoil đáp án trực tiếp, chỉ gợi ý hướng đi
+
+### 🏗️ **CẤU TRÚC CHUẨN**
+
+```json
+{
+  "hints": [
+    "Hint 1: Gợi ý chung về phương pháp/khái niệm",
+    "Hint 2: Gợi ý cụ thể hơn hoặc công thức liên quan"
+  ]
+}
+```
+
+### ✅ **VÍ DỤ TỐT (Best Practices)**
+
+#### Ví dụ 1: Câu hỏi Xác suất
+```json
+{
+  "question": "A batch of 500 parts contains 15 defective. What is the probability of selecting 2 defective parts in a sample of 10?",
+  "hints": [
+    "Đây là bài toán phân phối siêu bội (Hypergeometric Distribution).",
+    "Sử dụng công thức: \\( P(X=k) = \\frac{C(K,k) \\cdot C(N-K,n-k)}{C(N,n)} \\)"
+  ]
+}
+```
+
+#### Ví dụ 2: Câu hỏi Phân loại Biến
+```json
+{
+  "question": "Is the weight of students a discrete or continuous variable?",
+  "hints": [
+    "Hỏi bản thân: Đây là kết quả của phép đếm (counting) hay đo lường (measurement)?",
+    "Cân nặng có thể có giá trị thập phân (ví dụ: 65.7 kg) không?"
+  ]
+}
+```
+
+#### Ví dụ 3: Câu hỏi Tính toán
+```json
+{
+  "question": "Find the mean of the probability distribution: X={1,2,3}, P(X)={0.2,0.5,0.3}",
+  "hints": [
+    "Công thức tính Mean: \\( \\mu = \\sum [x \\cdot P(x)] \\)",
+    "Nhân từng giá trị x với xác suất tương ứng, rồi cộng lại."
+  ]
+}
+```
+
+### ❌ **VÍ DỤ SAI (Anti-Patterns)**
+
+#### ❌ Sai 1: Không có hints
+```json
+{
+  "question": "What is the derivative of x²?",
+  "hints": []  // ❌ TUYỆT ĐỐI KHÔNG LÀM THẾ NÀY
+}
+```
+
+#### ❌ Sai 2: Chỉ có 1 hint
+```json
+{
+  "hints": [
+    "Dùng quy tắc đạo hàm cơ bản."  // ❌ CẦN ÍT NHẤT 2 HINTS
+  ]
+}
+```
+
+#### ❌ Sai 3: Hints spoil đáp án
+```json
+{
+  "hints": [
+    "Đáp án là A.",  // ❌ KHÔNG NÊN TIẾT LỘ ĐÁP ÁN
+    "Kết quả bằng 0.5"  // ❌ KHÔNG NÊN CHO KẾT QUẢ TRỰC TIẾP
+  ]
+}
+```
+
+#### ❌ Sai 4: Hints quá chung chung
+```json
+{
+  "hints": [
+    "Hãy suy nghĩ kỹ.",  // ❌ QUÁ MƠ HỒ, KHÔNG HỮU ÍCH
+    "Đọc lại đề bài."     // ❌ KHÔNG MANG TÍNH XÂY DỰNG
+  ]
+}
+```
+
+### 📝 **MẪU TEMPLATE KHI TẠO HINTS**
+
+Dùng template này làm cơ sở:
+
+**Cho câu hỏi lý thuyết/khái niệm:**
+```
+Hint 1: "Phân biệt giữa [Khái niệm A] và [Khái niệm B]..."
+Hint 2: "[Khái niệm cần dùng] có đặc điểm là..."
+```
+
+**Cho câu hỏi tính toán:**
+```
+Hint 1: "Xác định phân phối/công thức cần dùng: [Tên phân phối/công thức]"
+Hint 2: "Công thức: \\( ... \\) với các tham số: [giải thích tham số]"
+```
+
+**Cho câu hỏi phân tích:**
+```
+Hint 1: "Tìm từ khóa trong đề bài: '[từ khóa quan trọng]'"
+Hint 2: "Điều này liên quan đến [khái niệm/phương pháp cụ thể]"
+```
+
+### 🎯 **QUY TẮC VÀNG**
+
+> **1. MỖI CÂU HỎI = ÍT NHẤT 2 HINTS (có thể 3-4 hints cho câu khó)**
+
+> **2. HINTS PHẢI DẪN DẮT, KHÔNG PHẢI TIẾT LỘ**
+
+> **3. THỨ TỰ: TỔNG QUÁT → CỤ THỂ**
+
+> **4. NGÔN NGỮ: TIẾNG VIỆT, CÓ THỂ KÈM LATEX**
+
+> **5. KIỂM TRA TRƯỚC KHI SUBMIT: "Nếu tôi là học sinh, hints này có giúp tôi tìm ra hướng đi không?"**
+
+---
+
+## 4. 🔄 **So sánh Loại Câu hỏi**
+
+### 4.1. 🎯 **Câu hỏi Trắc nghiệm (`"type": "multiple_choice"`)**
 
 | Đặc điểm | Mô tả |
 |----------|-------|
@@ -108,7 +273,7 @@ Tài liệu này hướng dẫn cách xây dựng một đề thi Toán học s�
 | **Trường `correctAnswer`** | Ký tự đáp án đúng: `"A"`, `"B"`, `"C"`, `"D"` |
 | **Trường `type`** | `"multiple_choice"` (hoặc bỏ trống) |
 
-### 3.2. ✍️ **Câu hỏi Tự luận (`"type": "essay"`)**
+### 4.2. ✍️ **Câu hỏi Tự luận (`"type": "essay"`)**
 
 | Đặc điểm | Mô tả |
 |----------|-------|
@@ -119,7 +284,7 @@ Tài liệu này hướng dẫn cách xây dựng một đề thi Toán học s�
 | **Trường `correctAnswer`** | Lời giải chi tiết, có thể chứa LaTeX và HTML |
 | **Trường `type`** | `"essay"` |
 
-### 3.3. 📋 **Quy tắc Chung**
+### 4.3. 📋 **Quy tắc Chung**
 
 - **Tương thích ngược**: Nếu không có trường `type`, hệ thống mặc định là `"multiple_choice"`
 - **Trường `options`**: Luôn phải có, nhưng để rỗng `[]` cho câu tự luận
@@ -128,9 +293,9 @@ Tài liệu này hướng dẫn cách xây dựng một đề thi Toán học s�
 
 ---
 
-## 4. 🧮 **Viết Công Thức Toán bằng LaTeX**
+## 5. 🧮 **Viết Công Thức Toán bằng LaTeX**
 
-### 4.1. ✅ **Toán inline** (`\\( ... \\)`)
+### 5.1. ✅ **Toán inline** (`\\( ... \\)`)
 
 Dùng để chèn công thức giữa dòng.
 
@@ -142,7 +307,7 @@ Dùng để chèn công thức giữa dòng.
 
 ---
 
-### 4.2. ✅ **Toán block** (`\\[ ... \\]`)
+### 5.2. ✅ **Toán block** (`\\[ ... \\]`)
 
 Dành cho công thức dài, hiển thị riêng dòng.
 
@@ -154,7 +319,7 @@ Dành cho công thức dài, hiển thị riêng dòng.
 
 ---
 
-### 4.3. 🔢 **Một số cú pháp LaTeX hữu ích**
+### 5.3. 🔢 **Một số cú pháp LaTeX hữu ích**
 
 | Biểu thức   | Cú pháp LaTeX        |
 | ----------- | -------------------- |
@@ -168,7 +333,7 @@ Dành cho công thức dài, hiển thị riêng dòng.
 
 ---
 
-### 4.4. ✨ **Khối mã (code) và inline code bằng backticks**
+### 5.4. ✨ **Khối mã (code) và inline code bằng backticks**
 
 Hệ thống hỗ trợ hiển thị thuật toán/đoạn mã đẹp mắt bằng backticks.
 
@@ -209,7 +374,7 @@ Ghi chú hiển thị:
 
 ---
 
-## 5. ↩️ **Quy Tắc Xuống Dòng và In Đậm**
+## 6. ↩️ **Quy Tắc Xuống Dòng và In Đậm**
 
 | Trường        | Cách xuống dòng                                            | In đậm             |
 | ------------- | ---------------------------------------------------------- | ------------------ |
@@ -239,7 +404,7 @@ Hiển thị:
 
 ---
 
-## 6. 🌐 **Tích Hợp MathJax hoặc KaTeX trên Web**
+## 7. 🌐 **Tích Hợp MathJax hoặc KaTeX trên Web**
 
 ### MathJax (phổ biến)
 
@@ -256,7 +421,7 @@ Hiển thị:
 
 ---
 
-## 7. 🌏 **Quy Ước Ngôn Ngữ**
+## 8. 🌏 **Quy Ước Ngôn Ngữ**
 
 | Trường                                                               | Ngôn ngữ        |
 | -------------------------------------------------------------------- | --------------- |
@@ -267,9 +432,9 @@ Hiển thị:
 
 ---
 
-## 8. 📝 **Ví dụ Hoàn Chỉnh**
+## 9. 📝 **Ví dụ Hoàn Chỉnh**
 
-### 8.1. 🎯 **Đề thi hỗn hợp (Trắc nghiệm + Tự luận)**
+### 9.1. 🎯 **Đề thi hỗn hợp (Trắc nghiệm + Tự luận)**
 
 ```json
 {
@@ -319,7 +484,7 @@ Hiển thị:
 
 ---
 
-## 📊 **Hướng Dẫn Xử Lý Bảng (Tables)**
+## 10. 📊 **Hướng Dẫn Xử Lý Bảng (Tables)**
 
 ### ⚠️ **LƯU Ý QUAN TRỌNG KHI TẠO BẢNG**
 
@@ -356,7 +521,7 @@ Bảng phải có đầy đủ các thành phần sau:
 
 #### 4. **LỖI THƯỜNG GẶP**
 
-❌ **Quên thêm border cho từng cell:**
+❌ **Lỗi 1: Quên thêm border cho từng cell**
 ```html
 <!-- SAI - Thiếu border cho cell -->
 <td>70</td>
@@ -366,6 +531,31 @@ Bảng phải có đầy đủ các thành phần sau:
 ```html
 <!-- ĐÚNG - Có border rõ ràng -->
 <td style='border:1px solid #ddd; padding:5px;'>70</td>
+```
+
+❌ **Lỗi 2: Chỉ có border ở `<table>` mà không có ở từng cell**
+```html
+<!-- SAI - Border chỉ ở table, cells không có border riêng -->
+<table border='1' cellpadding='5' style='border-collapse:collapse;'>
+  <tr>
+    <th>Header</th>  <!-- ❌ Thiếu style ở đây -->
+    <td>Data</td>    <!-- ❌ Thiếu style ở đây -->
+  </tr>
+</table>
+```
+
+❌ **Lỗi 3: Nhúng ảnh thay vì ghi ra HTML**
+```json
+{
+  "question": "See the table in the image below:<br /><img src='table.jpg' />"  // ❌ TUYỆT ĐỐI KHÔNG LÀM THẾ NÀY
+}
+```
+
+❌ **Lỗi 4: Dùng Markdown table thay vì HTML**
+```json
+{
+  "question": "| Header | Data |\n|--------|------|\n| A | 1 |"  // ❌ Markdown không render tốt trong JSON
+}
 ```
 
 #### 5. **VÍ DỤ HOÀN CHỈNH**
@@ -384,7 +574,7 @@ Bảng phải có đầy đủ các thành phần sau:
 
 ---
 
-## ✅ **Tổng Kết**
+## 11. ✅ **Tổng Kết**
 
 | Nội dung                       | Quy ước                                             |
 | ------------------------------ | --------------------------------------------------- |
@@ -400,6 +590,7 @@ Bảng phải có đầy đủ các thành phần sau:
 | **Xuống dòng trong `correctAnswer` (tự luận)** | `<br />`                    |
 | **Không dùng `\\\\` trong JSON** | Vì đã chuyển sang dùng `<br />`                     |
 | **In đậm**                     | Dùng HTML `<b>...</b>` thay vì `**...**` (Markdown) |
+| **⚠️ Trường `hints`**          | **BẮT BUỘC:** Ít nhất 2 hints cho MỖI câu hỏi. Array tiếng Việt, có thể chứa LaTeX. |
 | **Bảng dữ liệu (Tables)**      | Dùng HTML `<table>` với border cho MỖI cell: `style='border:1px solid #ddd; padding:5px;'` |
 | **Kết xuất toán học**          | Tích hợp MathJax hoặc KaTeX                         |
 | **Ngôn ngữ**                   | Câu hỏi bằng tiếng Anh – Giải thích bằng tiếng Việt |
@@ -411,4 +602,20 @@ Bảng phải có đầy đủ các thành phần sau:
 * Mọi xuống dòng trong `"explanation"` đã được viết bằng `<br />`.
 * Frontend sẽ hiển thị nguyên văn HTML (có nội dung `<br />`, `<b>...</b>`, LaTeX trong `\\[ ... \\]` hoặc `\\( ... \\)`).
 * MathJax/KaTeX nhận diện và render công thức LaTeX tự động.
+
+---
+
+## 12. 🚨 **CHECKLIST TRƯỚC KHI HOÀN THÀNH CÂU HỎI**
+
+Trước khi submit bất kỳ câu hỏi nào, hãy kiểm tra:
+
+- [ ] ✅ **Có trường `hints` với ít nhất 2 gợi ý?**
+- [ ] ✅ **Hints có hữu ích và dẫn dắt học sinh không?**
+- [ ] ✅ **Nếu có bảng, mỗi cell đã có `style='border:1px solid #ddd; padding:5px;'`?**
+- [ ] ✅ **Bảng được viết bằng HTML thay vì trích ảnh?**
+- [ ] ✅ **Các công thức LaTeX đã đúng cú pháp `\\( ... \\)` hoặc `\\[ ... \\]`?**
+- [ ] ✅ **Xuống dòng dùng `<br />` thay vì `\\\\`?**
+- [ ] ✅ **In đậm dùng `<b>...</b>` thay vì `**...**`?**
+
+> **Nhớ:** Hints và Tables là hai phần thường bị quên nhất. Luôn kiểm tra kỹ!
 
