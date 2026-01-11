@@ -1,0 +1,344 @@
+{
+    "examId": "de27",
+    "title": "MAS chương 1 BT luyện thêm",
+    "description": "Bộ câu hỏi để luyện tập các khái niệm của biến ngẫu nhiên, bao gồm các biến ngẫu nhiên rời rạc và liên tục.",
+    "questions": [
+      {
+        "id": 1,
+        "question": "Identify the given variable as being discrete or continuous.<br />X = The amount of sugar in an apple.",
+        "image": null,
+        "options": [
+          "A. Continuous",
+          "B. Discrete"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Dữ liệu liên tục (Continuous Data):</b><br />Lượng đường trong một quả táo là kết quả của việc <b>đo lường</b> (measurement) khối lượng (ví dụ: 10.5g, 10.52g...). Nó có thể nhận bất kỳ giá trị nào trong một khoảng, không chỉ là các số nguyên.<br /><br /><b>Mẹo nhớ:</b> 'The amount of...' (lượng) thường là liên tục.",
+        "difficulty": "easy",
+        "topic": "Data Types",
+        "hints": [
+          "Bạn 'đếm' đường hay bạn 'cân' đường?",
+          "Giá trị có thể là số thập phân không?"
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 2,
+        "question": "Let X be the number of views of a page on a Web site. Identify whether X is discrete or continuous.",
+        "image": null,
+        "options": [
+          "A. Discrete",
+          "B. Continuous"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Dữ liệu rời rạc (Discrete Data):</b><br />Số lượt xem (views) là kết quả của việc <b>đếm</b> (counting).<br />Bạn có 1 view, 2 views, 1000 views. Bạn không thể có 1.5 view.<br /><br /><b>Mẹo nhớ:</b> 'The number of...' (số lượng) thường là rời rạc.",
+        "difficulty": "easy",
+        "topic": "Data Types",
+        "hints": [
+          "Số lượt xem phải là số nguyên.",
+          "Đây là phép đếm (counting)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 3,
+        "question": "Which of the following is **NOT TRUE** about continuous random variables?",
+        "image": null,
+        "options": [
+          "A. ...takes an infinite number of possible values.",
+          "B. ...is usually about measurement.",
+          "C. ...is quantitative data.",
+          "D. ...has a countable infinite range."
+        ],
+        "correctAnswer": "D",
+        "explanation": "<b>Phân tích:</b><br />- Biến ngẫu nhiên liên tục có tập giá trị là vô hạn <b>không đếm được</b> (uncountable infinite), ví dụ như mọi điểm trên một đoạn thẳng.<br />- 'Countable infinite' (Vô hạn đếm được - ví dụ: 1, 2, 3... đến vô cùng) là đặc điểm của biến rời rạc (như phân phối Poisson).<br /><br />Vì vậy, phát biểu D là sai (NOT TRUE) đối với biến liên tục.",
+        "difficulty": "medium",
+        "topic": "Random Variables",
+        "hints": [
+          "Continuous = Uncountable (Không đếm được).",
+          "Discrete = Countable (Đếm được, dù là vô hạn)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 4,
+        "question": "Which of the following random variables is continuous?",
+        "image": null,
+        "options": [
+          "A. The amount of gasoline in a car.",
+          "B. The number of times a transistor in a computer memory changes state in one operation.",
+          "C. The number of molecules in a sample of gas.",
+          "D. The number of students in a university."
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Phân tích:</b><br />- <b>A. Lượng xăng:</b> Đo lường thể tích (lít/gallon) => <b>Liên tục</b>.<br />- B. Số lần đổi trạng thái: Đếm được => Rời rạc.<br />- C. Số phân tử khí: Đếm được (dù rất lớn nhưng là số nguyên) => Rời rạc.<br />- D. Số sinh viên: Đếm người => Rời rạc.<br /><br />Chỉ có A liên quan đến phép đo lường (measurement).",
+        "difficulty": "medium",
+        "topic": "Data Types",
+        "hints": [
+          "Tìm đáp án nào liên quan đến 'đo lường' (measurement) thay vì 'đếm' (counting).",
+          "Hãy chú ý cụm từ 'The amount of'."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 5,
+        "question": "Which is **NOT** an example of continuous random variable?",
+        "image": null,
+        "options": [
+          "A. The weight of high school students.",
+          "B. The number of students are absent from school each day.",
+          "C. The height of trees at a nursery.",
+          "D. The volume of water in a swimming pool each day."
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Phân tích:</b><br />- A. Cân nặng (Weight) => Đo lường => Liên tục.<br />- <b>B. Số học sinh (Number of students)</b> => Đếm (1, 2, 3 người) => <b>Rời rạc</b>.<br />- C. Chiều cao (Height) => Đo lường => Liên tục.<br />- D. Thể tích (Volume) => Đo lường => Liên tục.<br /><br />Câu hỏi tìm cái <b>NOT</b> continuous, nên đáp án là B.",
+        "difficulty": "easy",
+        "topic": "Data Types",
+        "hints": [
+          "Cái nào bạn phải đếm 1, 2, 3...?",
+          "Cái nào không thể chia lẻ ra (ví dụ 1.5 người)?"
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 6,
+        "question": "The chancellor of a major university was concerned about alcohol abuse on her campus and wanted to find out the proportion of students at her university who visited campus bars on the weekend before the final exam week. Her assistant took a random sample of 250 students. The portion of students in the sample who visited campus bars on the weekend before the final exam week is an example of ________.",
+        "image": null,
+        "options": [
+          "A. a statistic.",
+          "B. a parameter.",
+          "C. a population.",
+          "D. a sample.",
+          "E. None of the other choices is true"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Phân biệt Statistic và Parameter:</b><br />- <b>Statistic (Thống kê):</b> Là con số tính được từ <b>Sample (Mẫu)</b>. Trong bài này, con số 'tỉ lệ sinh viên' được tính từ 'nhóm 250 sinh viên mẫu' => Nó là Statistic.<br />- <b>Parameter (Tham số):</b> Là con số của toàn bộ <b>Population (Tổng thể)</b> (tất cả sinh viên của trường).",
+        "difficulty": "medium",
+        "topic": "Basic Concepts",
+        "hints": [
+          "Con số này đến từ 'Sample' hay 'Population'?",
+          "Sample đi với Statistic (S-S). Population đi với Parameter (P-P)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 7,
+        "question": "The process of using sample statistics to draw conclusions about true population parameters is called ________.",
+        "image": null,
+        "options": [
+          "A. the scientific method.",
+          "B. statistical inference.",
+          "C. sampling.",
+          "D. descriptive statistics."
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Định nghĩa:</b><br />- <b>Statistical inference (Thống kê suy luận):</b> Là quá trình dùng cái nhỏ (Sample Statistic) để suy đoán ra cái lớn (Population Parameter).<br />- Descriptive statistics (Thống kê mô tả): Chỉ tóm tắt dữ liệu hiện có (vẽ biểu đồ, tính trung bình) mà không suy diễn.",
+        "difficulty": "easy",
+        "topic": "Statistical Thinking",
+        "hints": [
+          "Từ khóa là 'draw conclusions' (rút ra kết luận).",
+          "Đây là mục tiêu chính của môn học này."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 8,
+        "question": "The number of parents who attended parent teacher conferences at a local elementary school is an example of what type of variable?",
+        "image": null,
+        "options": [
+          "A. discrete-quantitative variable",
+          "B. qualitative variable",
+          "C. continuous-quantitative variable",
+          "D. None of the other choices is true"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Phân tích:</b><br />1. <b>Quantitative (Định lượng):</b> Số lượng phụ huynh là con số (không phải nhãn dán như màu sắc).<br />2. <b>Discrete (Rời rạc):</b> Số người là kết quả của việc <b>đếm</b> (1 người, 2 người...). Không thể có 1.5 phụ huynh.<br />=> Kết hợp lại: <b>Discrete-quantitative variable</b>.",
+        "difficulty": "easy",
+        "topic": "Data Types",
+        "hints": [
+          "Đếm người (Count people) => Rời rạc (Discrete).",
+          "Là con số => Định lượng (Quantitative)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 9,
+        "question": "Which of the following is not a random variable?",
+        "image": null,
+        "options": [
+          "A. The heights of randomly-selected students in FPT University.",
+          "B. The suit of a card randomly-selected from a 52-card deck.",
+          "C. The number of children in randomly-selected kindergartens in Hanoi.",
+          "D. The number of stocks in the Dow Jones Industrial Average that have share price increases on a given day."
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Định nghĩa Biến ngẫu nhiên (Random Variable):</b><br />Là hàm gán một <b>giá trị số (numerical value)</b> cho mỗi kết quả của phép thử.<br />- A (Chiều cao), C (Số trẻ em), D (Số cổ phiếu) đều trả về <b>con số</b>.<br />- <b>B (Chất bài):</b> Trả về 'Cơ, Rô, Chuồn, Bích' (Hearts, Diamonds...). Đây là dữ liệu định tính (Categorical/Qualitative), không phải con số, nên không phải là Random Variable (trừ khi được mã hóa thành số).",
+        "difficulty": "medium",
+        "topic": "Random Variables",
+        "hints": [
+          "Random Variable phải trả về một con số.",
+          "Cái nào trả về chữ hoặc loại (category)?"
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 10,
+        "question": "Which of the following is a discrete random variable?",
+        "image": null,
+        "options": [
+          "A. The time until a projectile returns to earth.",
+          "B. The number of times a student visits family in a year.",
+          "C. The outside diameter of a machined shaft.",
+          "D. The volume of gasoline that is lost to evaporation during the filling of a gas tank."
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Phân tích:</b><br />- A. Time (Thời gian) => Đo lường => Liên tục.<br />- <b>B. Number of times (Số lần)</b> => Đếm (0, 1, 2 lần...) => <b>Rời rạc (Discrete)</b>.<br />- C. Diameter (Đường kính) => Đo độ dài => Liên tục.<br />- D. Volume (Thể tích) => Đo lường => Liên tục.",
+        "difficulty": "easy",
+        "topic": "Data Types",
+        "hints": [
+          "Tìm từ khóa 'The number of...' (số lượng).",
+          "Các đáp án còn lại đều là phép đo (thời gian, độ dài, thể tích)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 11,
+        "question": "A method of gathering data while the subjects of interest are in their natural environment, often unaware they are being watched, is known as ________",
+        "image": null,
+        "options": [
+          "A. observation.",
+          "B. experiments.",
+          "C. retrospective",
+          "D. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Observational Study (Nghiên cứu quan sát):</b><br />Đây là định nghĩa kinh điển của phương pháp quan sát: đối tượng ở trong môi trường tự nhiên và không bị can thiệp. Việc đối tượng \"không biết mình bị quan sát\" giúp dữ liệu tự nhiên và chính xác hơn (tránh hiệu ứng Hawthorne - thay đổi hành vi khi biết bị theo dõi).",
+        "difficulty": "easy",
+        "topic": "Data Collection Methods",
+        "hints": [
+          "Từ khóa: 'natural environment' (môi trường tự nhiên).",
+          "Không có sự can thiệp hay thay đổi nào từ người nghiên cứu."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 12,
+        "question": "A Bank of America employee records the amount of time that customers spend using the ATM machine at her branch. This method of gathering data is known as ________",
+        "image": null,
+        "options": [
+          "A. experiments",
+          "B. retrospective",
+          "C. None of the other choices is correct",
+          "D. observation"
+        ],
+        "correctAnswer": "D",
+        "explanation": "<b>Observation (Quan sát):</b><br />Nhân viên này chỉ đứng ghi nhận lại sự việc đang diễn ra (thời gian dùng ATM) mà không tác động gì đến khách hàng (không yêu cầu họ làm nhanh hay chậm).<br />- Không phải <i>Experiment</i> vì không có sự can thiệp/điều khiển biến số.<br />- Không phải <i>Retrospective</i> vì dữ liệu được thu thập tại thời điểm hiện tại, không phải lục lại hồ sơ quá khứ.",
+        "difficulty": "medium",
+        "topic": "Data Collection Methods",
+        "hints": [
+          "Nhân viên có can thiệp vào hành động của khách hàng không? Không.",
+          "Sự việc đang diễn ra hay đã diễn ra trong quá khứ? Đang diễn ra."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 13,
+        "question": "In an attempt to study the health effects of air pollution, a group of researchers selected 6 cities in very different environments... Altogether they selected 8000 subjects from the 6 cities, and followed their health for the next 20 years. This represents what type of study?",
+        "image": null,
+        "options": [
+          "A. Retrospective",
+          "B. Observational study",
+          "C. An experiment.",
+          "D. None of them."
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Observational Study (Nghiên cứu quan sát):</b><br />Cụ thể đây là nghiên cứu quan sát tương lai (Prospective Observational Study).<br />- Các nhà nghiên cứu chỉ <b>theo dõi</b> (followed) sức khỏe của người dân sống ở các môi trường khác nhau.<br />- Họ <b>không</b> ép buộc nhóm này phải hít khí thải, nhóm kia hít khí sạch (điều này trái đạo đức và không thể thực hiện thí nghiệm). Vì không có sự can thiệp chủ động gán yếu tố tác động, đây không phải là Experiment.",
+        "difficulty": "hard",
+        "topic": "Data Collection Methods",
+        "hints": [
+          "Researcher có chủ động thay đổi môi trường sống của người dân không? Không.",
+          "Họ chỉ quan sát cái đang có sẵn."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 14,
+        "question": "Jared was working on a project to look at global warming and accessed an Internet site where he captured average global surface temperatures from 1866. Which of the four methods of data collection was he using?",
+        "image": null,
+        "options": [
+          "A. Surveying",
+          "B. Experimentation",
+          "C. Observation",
+          "D. Retrospective study"
+        ],
+        "correctAnswer": "D",
+        "explanation": "<b>Retrospective Study (Nghiên cứu hồi cứu):</b><br />Từ khóa quan trọng là <b>\"from 1866\"</b>. Jared đang sử dụng dữ liệu lịch sử, dữ liệu đã được thu thập và lưu trữ trong quá khứ để phân tích cho hiện tại. Đây là đặc điểm nhận dạng của phương pháp hồi cứu.",
+        "difficulty": "easy",
+        "topic": "Data Collection Methods",
+        "hints": [
+          "Dữ liệu này thuộc về quá khứ hay hiện tại?",
+          "Retrospective = Looking back (Nhìn lại)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 15,
+        "question": "Those methods involving the collection, presentation, and characterization of a set of data in order to properly describe the various features of that set of data are called ________",
+        "image": null,
+        "options": [
+          "A. sampling.",
+          "B. the scientific method.",
+          "C. descriptive statistics.",
+          "D. statistical inference."
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Descriptive Statistics (Thống kê mô tả):</b><br />Định nghĩa của thống kê mô tả là tóm tắt, trình bày và mô tả các đặc trưng của dữ liệu (thông qua bảng biểu, đồ thị, trung bình, phương sai...).<br />- Nó khác với <i>Statistical inference</i> (Thống kê suy luận) ở chỗ nó không cố gắng đưa ra dự đoán hay kết luận về tổng thể lớn hơn, chỉ mô tả những gì đang có trong tay.",
+        "difficulty": "easy",
+        "topic": "Basic Concepts",
+        "hints": [
+          "Từ khóa: 'describe' (mô tả), 'presentation' (trình bày).",
+          "Đối lập với 'Inference' (Suy luận)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 16,
+        "question": "A method of gathering data when subjects are exposed to certain treatments and the data of interest is recorded is known as ________",
+        "image": null,
+        "options": [
+          "A. a designed experiment",
+          "B. an observational study",
+          "C. a retrospective study",
+          "D. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Designed Experiment (Thực nghiệm thiết kế):</b><br />Điểm mấu chốt phân biệt giữa 'thực nghiệm' và 'quan sát' là cụm từ <b>\"exposed to certain treatments\"</b> (chịu tác động của các phương pháp điều trị/xử lý cụ thể).<br />- Trong thí nghiệm, nhà nghiên cứu chủ động tác động (treatment) lên đối tượng để xem phản ứng.<br />- Trong quan sát (observational), nhà nghiên cứu không can thiệp, chỉ nhìn.",
+        "difficulty": "medium",
+        "topic": "Data Collection Methods",
+        "hints": [
+          "Từ khóa: 'exposed to treatments' (bị tác động/xử lý).",
+          "Có sự can thiệp chủ động từ người nghiên cứu."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 17,
+        "question": "Retrospective study ________",
+        "image": null,
+        "options": [
+          "A. uses current data.",
+          "B. uses future data.",
+          "C. uses historical data.",
+          "D. None of them"
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Retrospective Study (Nghiên cứu hồi cứu):</b><br />- <i>Retro</i> nghĩa là 'trở về sau' (backwards).<br />- <i>Spect</i> nghĩa là 'nhìn' (look).<br />=> Retrospective là nhìn lại quá khứ, tức là sử dụng <b>historical data (dữ liệu lịch sử)</b>.<br /><br />Ngược lại:<br />- Prospective study (nghiên cứu tương lai) dùng 'future data'.",
+        "difficulty": "easy",
+        "topic": "Data Collection Methods",
+        "hints": [
+          "Retro = Past (Quá khứ).",
+          "Historical data = Dữ liệu lịch sử."
+        ],
+        "type": "multiple_choice"
+      }
+    ]
+  }
