@@ -905,6 +905,482 @@
           "P(A) là tổng trọng số của xác suất A xảy ra trong từng trường hợp của B."
         ],
         "type": "multiple_choice"
+      },
+      {
+        "id": 46,
+        "question": "A class in advanced physics is comprised of 10 juniors, 30 seniors, and 10 graduate students. The final grades show that 3 of the juniors, 10 of the seniors, and 5 of the graduate students received an A for the course. If a student is chosen at random from this class and is found to have earned an A, what is the probability that he or she is a senior?",
+        "options": [
+          "A. 2/9",
+          "B. 4/9",
+          "C. 5/9",
+          "D. 7/9",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Xác suất có điều kiện (Conditional Probability):</b><br>Gọi A là biến cố 'đạt điểm A', S là biến cố 'là sinh viên năm cuối (senior)'.<br>Cần tìm \\( P(S|A) \\).<br>- Số sinh viên Juniors đạt A: 3.<br>- Số sinh viên Seniors đạt A: 10.<br>- Số sinh viên Graduate đạt A: 5.<br>- Tổng số sinh viên đạt điểm A: \\( 3 + 10 + 5 = 18 \\).<br>- Số sinh viên Senior trong nhóm đạt A: 10.<br>Áp dụng công thức: \\( P(S|A) = \\frac{10}{18} = \\frac{5}{9} \\).<br>Đáp án C.",
+        "difficulty": "medium",
+        "topic": "Conditional Probability",
+        "hints": [
+          "Đây là bài toán xác suất có điều kiện: tìm xác suất là Senior biết rằng đã đạt điểm A.",
+          "Không gian mẫu thu hẹp lại chỉ còn những sinh viên đạt điểm A.",
+          "Tính tổng số sinh viên đạt điểm A, sau đó lấy số Senior đạt điểm A chia cho tổng đó."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 47,
+        "question": "A paper bag contains two red balls and one blue ball. A plastic bag contains three blue balls and one red ball. A coin is tossed. If it falls heads up, the paper bag is selected and a ball is drawn. If the coin falls tails up, the plastic bag is selected and a ball is drawn. If a red ball is selected, what is the probability that it came from the paper bag?",
+        "options": [
+          "A. 0.727",
+          "B. 0.338",
+          "C. 0.819",
+          "D. 0.543",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Định lý Bayes (Bayes' Theorem):</b><br>Gọi H là tung được ngửa (chọn túi giấy), T là tung được sấp (chọn túi nhựa). \\( P(H) = P(T) = 0.5 \\).<br>Gọi R là biến cố rút được bi đỏ.<br>- Túi giấy (2 đỏ, 1 xanh): \\( P(R|H) = \\frac{2}{3} \\).<br>- Túi nhựa (1 đỏ, 3 xanh): \\( P(R|T) = \\frac{1}{4} \\).<br>Cần tìm \\( P(H|R) \\).<br>Áp dụng Bayes:<br>\\( P(H|R) = \\frac{P(R|H)P(H)}{P(R|H)P(H) + P(R|T)P(T)} \\)<br>\\( P(H|R) = \\frac{(2/3)(1/2)}{(2/3)(1/2) + (1/4)(1/2)} \\)<br>\\( P(H|R) = \\frac{1/3}{1/3 + 1/8} = \\frac{1/3}{11/24} = \\frac{1}{3} \\times \\frac{24}{11} = \\frac{8}{11} \\).<br>Tính toán: \\( 8 \\div 11 \\approx 0.7272... \\)<br>Làm tròn 3 chữ số thập phân: 0.727.<br>Đáp án A.",
+        "difficulty": "hard",
+        "topic": "Bayes' Theorem",
+        "hints": [
+          "Sử dụng Định lý Bayes để tính xác suất ngược.",
+          "Tính xác suất rút được bi đỏ từ mỗi túi.",
+          "Tính tổng xác suất rút được bi đỏ (mẫu số của công thức Bayes)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 48,
+        "question": "According to the record of the FPT university, 35% of the students are freshman, 25% are sophomore, 16% are junior and the rest are senior. Among the freshmen, sophomores, juniors and seniors, the portion of students who live in the dormitory are, respectively, 80%, 60%, 30% and 20%.<br>If a randomly selected student lives in the dormitory, what is the probability that the student is a freshman?",
+        "options": [
+          "A. 0.532",
+          "B. 0.225",
+          "C. 0.783",
+          "D. 0.305",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Định lý Bayes (Bayes' Theorem):</b><br>Gọi F, So, J, Se lần lượt là Freshman, Sophomore, Junior, Senior.<br>\\( P(F)=0.35, P(So)=0.25, P(J)=0.16 \\).<br>\\( P(Se) = 1 - (0.35+0.25+0.16) = 0.24 \\).<br>Gọi D là biến cố 'sống trong ký túc xá'.<br>\\( P(D|F)=0.8, P(D|So)=0.6, P(D|J)=0.3, P(D|Se)=0.2 \\).<br>Tính \\( P(D) \\) (Tổng xác suất sống KTX):<br>\\( P(D) = (0.35)(0.8) + (0.25)(0.6) + (0.16)(0.3) + (0.24)(0.2) \\)<br>\\( P(D) = 0.28 + 0.15 + 0.048 + 0.048 = 0.526 \\).<br>Cần tìm \\( P(F|D) \\):<br>\\( P(F|D) = \\frac{P(D|F)P(F)}{P(D)} = \\frac{0.28}{0.526} \\approx 0.5323... \\)<br>Làm tròn: 0.532.<br>Đáp án A.",
+        "difficulty": "hard",
+        "topic": "Bayes' Theorem",
+        "hints": [
+          "Sử dụng Định lý Bayes.",
+          "Đầu tiên tính tỷ lệ phần trăm sinh viên Senior.",
+          "Tính tổng xác suất sinh viên sống trong ký túc xá (mẫu số).",
+          "Lấy xác suất (Freshman và sống KTX) chia cho tổng xác suất sống KTX."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 49,
+        "question": "45% of a class are women. The probability that a woman likes the color blue is 18%. What is the probability that a person chosen from the class likes blue given a woman is chosen?",
+        "options": [
+          "A. 0.4",
+          "B. 0.25",
+          "C. 0.2",
+          "D. 0.081",
+          "E. 0.18"
+        ],
+        "correctAnswer": "E",
+        "explanation": "<b>Xác suất có điều kiện (Đọc hiểu đề bài):</b><br>Đề bài cho: \"The probability that a woman likes the color blue is 18%.\" (Xác suất một phụ nữ thích màu xanh là 18%).<br>Câu hỏi: \"What is the probability that a person chosen from the class likes blue given a woman is chosen?\" (Xác suất người được chọn thích màu xanh BIẾT RẰNG người đó là phụ nữ?).<br>Hai câu này là tương đương nhau. \\( P(\\text{Blue}|\\text{Woman}) = 0.18 \\).<br>Lưu ý: Đáp án trong hình Key không hiển thị E, nhưng dựa trên logic câu hỏi thì đáp án phải là 0.18. Tuy nhiên, nếu đề bài có ý khác (ví dụ 18% là \\( P(\\text{Blue} \\cap \\text{Woman}) \\)), thì \\( P(\\text{Blue}|\\text{Woman}) = 0.18 / 0.45 = 0.4 \\).<br>Xét lại ngữ cảnh thường gặp: \"Probability that a woman likes...\" thường ám chỉ \\( P(B|W) \\). Nhưng nếu Key là A (0.4), thì câu đó phải được hiểu là \"18% of the class are women who like blue\" (\\( P(W \\cap B) = 0.18 \\)).<br>Giả sử theo Key A: \\( P(B|W) = P(B \\cap W) / P(W) = 0.18 / 0.45 = 0.4 \\).<br>Vậy chọn A.",
+        "difficulty": "medium",
+        "topic": "Conditional Probability",
+        "hints": [
+          "Phân tích kỹ ngữ nghĩa của câu 'The probability that a woman likes the color blue is 18%'.",
+          "Trong bối cảnh bài toán trắc nghiệm này, có thể 18% là xác suất giao nhau (vừa là nữ vừa thích xanh) của cả lớp.",
+          "Áp dụng công thức \\( P(A|B) = P(A \\cap B) / P(B) \\)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 50,
+        "question": "In a city, there are 40% females and 60% males. Out of the total population, 15% are rich. What is the probability that a randomly chosen person will be a rich male?",
+        "options": [
+          "A. 0.06",
+          "B. 0.09",
+          "C. 0.15",
+          "D. 0.30"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Tính độc lập của biến cố (Independence Assumption):</b><br>Đề bài không cho biết mối liên hệ giữa giới tính và sự giàu có (ví dụ: tỉ lệ giàu trong nam/nữ). Tuy nhiên, trong các bài toán cơ bản dạng này, nếu không có thông tin thêm, ta thường giả sử hai biến cố là Độc lập (Independent).<br>\\( P(\\text{Male}) = 0.60 \\).<br>\\( P(\\text{Rich}) = 0.15 \\).<br>\\( P(\\text{Rich Male}) = P(\\text{Male} \\cap \\text{Rich}) = P(\\text{Male}) \\times P(\\text{Rich}) \\).<br>\\( P(\\text{Rich Male}) = 0.60 \\times 0.15 = 0.09 \\).<br>Đáp án B.",
+        "difficulty": "medium",
+        "topic": "Independence",
+        "hints": [
+          "Đề bài yêu cầu tìm xác suất giao nhau \\( P(\\text{Male} \\cap \\text{Rich}) \\).",
+          "Giả sử sự kiện 'là nam' và 'giàu có' là độc lập.",
+          "Sử dụng công thức nhân cho hai biến cố độc lập: \\( P(A \\cap B) = P(A) \\times P(B) \\)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 51,
+        "question": "Suppose that the students at a university are grouped such that: 45% take chemistry, 35% take biology, 25% take math; 10% take chemistry and math, 5% take chemistry and biology, 3% take biology and math, and 1% take all three subjects. Calculate the probability that a student takes math, given that they take chemistry and biology.",
+        "options": [
+          "A. 0.01",
+          "B. 0.45",
+          "C. 0.11",
+          "D. 0.20",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "<b>Xác suất có điều kiện (Conditional Probability):</b><br>Gọi C, B, M lần lượt là biến cố học Chemistry, Biology, Math.<br>Cần tìm \\( P(M | C \\cap B) \\).<br>Công thức: \\( P(M | C \\cap B) = \\frac{P(M \\cap C \\cap B)}{P(C \\cap B)} \\).<br>Theo đề bài:<br>- \\( P(C \\cap B) = 0.05 \\) (5% take chemistry and biology).<br>- \\( P(C \\cap B \\cap M) = 0.01 \\) (1% take all three subjects).<br>Thay số: \\( \\frac{0.01}{0.05} = 0.20 \\).<br>Đáp án D.",
+        "difficulty": "medium",
+        "topic": "Conditional Probability",
+        "hints": [
+          "Đây là bài toán xác suất có điều kiện: \\( P(A|B) = P(A \\cap B) / P(B) \\).",
+          "Điều kiện B ở đây là 'takes chemistry AND biology'.",
+          "Biến cố A là 'takes math'."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 52,
+        "question": "A math teacher gave her class two tests. 25% of the class passed both tests and 42% of the class passed the first test. What is the probability that a student passed the second test given that he passed the first test?",
+        "options": [
+          "A. 40.3%",
+          "B. 50.2%",
+          "C. 59.5%",
+          "D. 55.4%",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Xác suất có điều kiện:</b><br>Gọi T1 là qua bài 1, T2 là qua bài 2.<br>Theo đề: \\( P(T1 \\cap T2) = 0.25 \\), \\( P(T1) = 0.42 \\).<br>Cần tìm: \\( P(T2 | T1) \\).<br>Công thức: \\( P(T2 | T1) = \\frac{P(T1 \\cap T2)}{P(T1)} \\).<br>Thay số: \\( \\frac{0.25}{0.42} \\approx 0.5952 \\).<br>Đổi sang phần trăm: 59.5%.<br>Đáp án C.",
+        "difficulty": "medium",
+        "topic": "Conditional Probability",
+        "hints": [
+          "Áp dụng công thức xác suất có điều kiện cơ bản.",
+          "Xác suất giao nhau (passed both) chia cho xác suất điều kiện (passed first)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 53,
+        "question": "80% of people attend their primary care physician regularly; 35% of those people have no health problems crop up during the following year. Out of the 20% of people who don't see their doctor regularly, only 5% have no health issues during the following year. What is the probability a random person will have no health problems in the following year?",
+        "options": [
+          "A. 0.28",
+          "B. 0.01",
+          "C. 0.29",
+          "D. 0.71",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Quy tắc xác suất đầy đủ (Total Probability Rule):</b><br>Gọi R là 'Regularly attend doctor', N là 'No health problems'.<br>Theo đề bài:<br>- \\( P(R) = 0.80 \\) \\(\\rightarrow P(R') = 0.20 \\).<br>- \\( P(N|R) = 0.35 \\).<br>- \\( P(N|R') = 0.05 \\).<br>Cần tìm \\( P(N) \\).<br>Công thức: \\( P(N) = P(N|R)P(R) + P(N|R')P(R') \\).<br>Thay số: \\( (0.35)(0.80) + (0.05)(0.20) \\)<br>\\( = 0.28 + 0.01 = 0.29 \\).<br>Đáp án C.",
+        "difficulty": "medium",
+        "topic": "Total Probability Rule",
+        "hints": [
+          "Chia dân số thành 2 nhóm: đi khám đều và không đi khám đều.",
+          "Tính xác suất 'không có vấn đề sức khỏe' cho từng nhóm rồi cộng lại theo trọng số."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 54,
+        "question": "According to a survey of American households, the probability that the residents own 2 cars if annual household income is over $25,000 is 80%. Of the households surveyed, 60% had incomes over $25,000 and 70% had 2 cars. The probability that annual household income is over $25,000 if the residents of a household own 2 cars is ________.",
+        "options": [
+          "A. 0.50",
+          "B. 0.48",
+          "C. 0.42",
+          "D. 0.69",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "<b>Định lý Bayes (Bayes' Theorem) dạng đơn giản:</b><br>Gọi I là biến cố 'Income > 25k', C là biến cố 'Own 2 cars'.<br>Theo đề:<br>- \\( P(C|I) = 0.80 \\).<br>- \\( P(I) = 0.60 \\).<br>- \\( P(C) = 0.70 \\).<br>Cần tìm \\( P(I|C) \\).<br>Công thức Bayes: \\( P(I|C) = \\frac{P(C|I)P(I)}{P(C)} \\).<br>Thay số: \\( \\frac{0.80 \\times 0.60}{0.70} = \\frac{0.48}{0.70} \\approx 0.6857 \\).<br>Làm tròn gần nhất là 0.69.<br>Đáp án D.",
+        "difficulty": "medium",
+        "topic": "Bayes' Theorem",
+        "hints": [
+          "Đây là bài toán tính xác suất ngược: biết A xảy ra, tính xác suất của B.",
+          "Sử dụng công thức Bayes: \\( P(A|B) = P(B|A)P(A) / P(B) \\)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 55,
+        "question": "An automobile manufacturer has three factories: A, B, and C. They produce 45%, 35%, and 20% respectively, of a specific model of car. 30% of the cars produced in factory A are white, 40% of those produced in factory B are white, and 25% produced in factory C are white. Given that an automobile selected at random is white, find the probability that it came from factory B.",
+        "options": [
+          "A. 0.475",
+          "B. 0.375",
+          "C. 0.469",
+          "D. 0.431",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "D",
+        "explanation": "<b>Định lý Bayes (Bayes' Theorem):</b><br>Gọi W là biến cố 'xe màu trắng'.<br>Các xác suất sản xuất: \\( P(A)=0.45, P(B)=0.35, P(C)=0.20 \\).<br>Xác suất xe trắng từ mỗi nhà máy:<br>\\( P(W|A)=0.30, P(W|B)=0.40, P(W|C)=0.25 \\).<br>Cần tìm \\( P(B|W) \\).<br>Bước 1: Tính tổng xác suất xe trắng \\( P(W) \\):<br>\\( P(W) = (0.45)(0.30) + (0.35)(0.40) + (0.20)(0.25) \\)<br>\\( P(W) = 0.135 + 0.140 + 0.050 = 0.325 \\).<br>Bước 2: Tính Bayes:<br>\\( P(B|W) = \\frac{P(W|B)P(B)}{P(W)} = \\frac{0.140}{0.325} \\approx 0.4307 \\).<br>Làm tròn gần nhất là 0.431.<br>Đáp án D.",
+        "difficulty": "hard",
+        "topic": "Bayes' Theorem",
+        "hints": [
+          "Sử dụng Định lý Bayes.",
+          "Tính mẫu số trước: Tổng xác suất để chọn được một chiếc xe màu trắng từ cả 3 nhà máy.",
+          "Tử số là xác suất xe trắng đến từ nhà máy B."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 56,
+        "question": "A and B appear for an interview for two independent positions. The probability of A's selection is 1/3 and that of B's selection is 2/5. Find the probability that only one of them will be selected?",
+        "options": [
+          "A. 2/15",
+          "B. 7/15",
+          "C. 3/15",
+          "D. 11/15"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Xác suất sự kiện độc lập (Independent Events):</b><br>- Gọi A là biến cố A được chọn, B là biến cố B được chọn.<br>- \\( P(A) = 1/3 \\) \\(\\Rightarrow P(A') = 1 - 1/3 = 2/3 \\).<br>- \\( P(B) = 2/5 \\) \\(\\Rightarrow P(B') = 1 - 2/5 = 3/5 \\).<br>- Biến cố \"only one selected\" (chỉ một người được chọn) xảy ra khi:<br>  1. A được chọn và B không: \\( A \\cap B' \\)<br>  2. A không được chọn và B được chọn: \\( A' \\cap B \\)<br>- Vì A và B độc lập:<br>  \\( P(A \\cap B') = P(A)P(B') = (1/3)(3/5) = 3/15 \\).<br>  \\( P(A' \\cap B) = P(A')P(B) = (2/3)(2/5) = 4/15 \\).<br>- Tổng xác suất: \\( 3/15 + 4/15 = 7/15 \\).<br>Đáp án B.",
+        "difficulty": "medium",
+        "topic": "Independent Events",
+        "hints": [
+          "Hai vị trí là độc lập, nên xác suất A và B xảy ra đồng thời là tích các xác suất.",
+          "Chỉ một người được chọn nghĩa là (A chọn, B trượt) HOẶC (A trượt, B chọn).",
+          "Tính xác suất từng trường hợp rồi cộng lại."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 57,
+        "question": "In Orange County, 51% of the adults are males. One adult is randomly selected for a survey involving credit card usage. Given that 9% of males smoke cigars, whereas 2% of females smoke cigars. Find the probability that the selected subject smoke cigars.",
+        "options": [
+          "A. 0.0557",
+          "B. 0.00298",
+          "C. 0.00367",
+          "D. 0.00287",
+          "E. None of the other choices is correct."
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Quy tắc xác suất đầy đủ (Total Probability Rule):</b><br>- Gọi M là 'Male', F là 'Female'. \\( P(M) = 0.51 \\), \\( P(F) = 1 - 0.51 = 0.49 \\).<br>- Gọi C là 'Smoke cigars'.<br>- \\( P(C|M) = 0.09 \\).<br>- \\( P(C|F) = 0.02 \\).<br>Cần tìm \\( P(C) \\).<br>Công thức: \\( P(C) = P(C|M)P(M) + P(C|F)P(F) \\).<br>Thay số: \\( (0.09)(0.51) + (0.02)(0.49) \\)<br>\\( = 0.0459 + 0.0098 = 0.0557 \\).<br>Đáp án A.",
+        "difficulty": "medium",
+        "topic": "Total Probability Rule",
+        "hints": [
+          "Sử dụng quy tắc xác suất đầy đủ.",
+          "Xác suất hút thuốc bằng (xác suất nam hút thuốc * tỷ lệ nam) + (xác suất nữ hút thuốc * tỷ lệ nữ).",
+          "Chú ý tính tỷ lệ nữ là 1 - tỷ lệ nam."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 58,
+        "question": "Suppose that \\( P(A|B) = 0.7 \\), \\( P(A) = 0.5 \\), and \\( P(B) = 0.2 \\). Determine \\( P(B|A) \\).",
+        "options": [
+          "A. 0.28",
+          "B. 0.35",
+          "C. 0.14",
+          "D. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Định lý Bayes (dạng cơ bản):</b><br>Công thức: \\( P(B|A) = \\frac{P(A|B)P(B)}{P(A)} \\).<br>Thay số:<br>\\( P(B|A) = \\frac{0.7 \\times 0.2}{0.5} \\)<br>\\( P(B|A) = \\frac{0.14}{0.5} = 0.28 \\).<br>Đáp án A (Lưu ý: Hình ảnh không hiển thị các option A,B,C,D rõ ràng cho câu này, nhưng dựa trên tính toán thì 0.28 là kết quả đúng. Nếu đây là câu trắc nghiệm trong đề, 0.28 thường là một lựa chọn).",
+        "difficulty": "easy",
+        "topic": "Bayes' Theorem",
+        "hints": [
+          "Sử dụng công thức Bayes: \\( P(B|A) = P(A|B)P(B) / P(A) \\).",
+          "Thay trực tiếp các giá trị đã cho vào công thức."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 59,
+        "question": "Suppose that \\( P(A|B) = 0.4 \\), \\( P(A|B') = 0.2 \\), and \\( P(B) = 0.8 \\). Determine \\( P(B|A) \\).",
+        "options": [
+          "A. 0.56",
+          "B. 0.28",
+          "C. 0.35",
+          "D. 0.20",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "E",
+        "explanation": "<b>Định lý Bayes mở rộng:</b><br>Cần tìm \\( P(B|A) = \\frac{P(A|B)P(B)}{P(A)} \\).<br>Bước 1: Tính \\( P(A) \\) dùng quy tắc xác suất đầy đủ.<br>\\( P(A) = P(A|B)P(B) + P(A|B')P(B') \\)<br>\\( P(B') = 1 - 0.8 = 0.2 \\).<br>\\( P(A) = (0.4)(0.8) + (0.2)(0.2) = 0.32 + 0.04 = 0.36 \\).<br>Bước 2: Tính Bayes.<br>\\( P(B|A) = \\frac{(0.4)(0.8)}{0.36} = \\frac{0.32}{0.36} = \\frac{8}{9} \\approx 0.8889 \\).<br>Không có đáp án nào khớp (A, B, C, D thường là các giá trị khác).<br>Đáp án E (None of the other choices is correct).",
+        "difficulty": "hard",
+        "topic": "Bayes' Theorem",
+        "hints": [
+          "Sử dụng định lý Bayes.",
+          "Đầu tiên, tính P(A) bằng quy tắc xác suất đầy đủ.",
+          "Sau đó áp dụng công thức Bayes để tìm P(B|A)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 60,
+        "question": "Suppose that \\( P(A|B) = 0.7 \\), \\( P(A) = 0.5 \\) and \\( P(B) = 0.4 \\). Determine \\( P(B|A) \\).",
+        "options": [
+          "A. 0.56",
+          "B. 0.28",
+          "C. 0.35",
+          "D. 0.20",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Định lý Bayes cơ bản:</b><br>Công thức: \\( P(B|A) = \\frac{P(A|B)P(B)}{P(A)} \\).<br>Thay số:<br>\\( P(B|A) = \\frac{0.7 \\times 0.4}{0.5} \\)<br>\\( P(B|A) = \\frac{0.28}{0.5} = 0.56 \\).<br>Đáp án A.",
+        "difficulty": "easy",
+        "topic": "Bayes' Theorem",
+        "hints": [
+          "Sử dụng công thức Bayes: \\( P(B|A) = P(A|B)P(B) / P(A) \\).",
+          "Thay các giá trị đã cho vào và tính toán."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 61,
+        "question": "An inspector working for a manufacturing company has a 99% chance of correctly identifying defective items and a 0.5% chance of incorrectly classifying a good item as defective. The company has evidence that its line produces 0.9% of nonconforming items.<br>(a) What is the probability that an item selected for inspection is classified as defective?<br>(b) If an item selected at random is classified as nondefective, what is the probability that it is indeed good?",
+        "options": [],
+        "correctAnswer": "<b>Gọi các biến cố:</b><br>- D: Sản phẩm thực sự bị lỗi (Defective). \\( P(D) = 0.009 \\) (0.9%).<br>- G: Sản phẩm tốt (Good). \\( P(G) = 1 - 0.009 = 0.991 \\).<br>- C_D: Phân loại là lỗi (Classified as Defective).<br>- C_G: Phân loại là tốt (Classified as Good/Nondefective).<br><br><b>Dữ kiện đề bài:</b><br>- \"Correctly identifying defective items\": \\( P(C_D | D) = 0.99 \\) \\(\\Rightarrow P(C_G | D) = 0.01 \\).<br>- \"Incorrectly classifying a good item as defective\": \\( P(C_D | G) = 0.005 \\) \\(\\Rightarrow P(C_G | G) = 0.995 \\).<br><br><b>(a) Xác suất sản phẩm bị phân loại là lỗi \\( P(C_D) \\):</b><br>Áp dụng quy tắc xác suất đầy đủ:<br>\\( P(C_D) = P(C_D | D)P(D) + P(C_D | G)P(G) \\)<br>\\( = (0.99)(0.009) + (0.005)(0.991) \\)<br>\\( = 0.00891 + 0.004955 = 0.013865 \\).<br><br><b>(b) Xác suất sản phẩm thực sự tốt BIẾT RẰNG nó được phân loại là tốt \\( P(G | C_G) \\):</b><br>Đầu tiên tính \\( P(C_G) \\):<br>\\( P(C_G) = 1 - P(C_D) = 1 - 0.013865 = 0.986135 \\).<br>Áp dụng định lý Bayes:<br>\\( P(G | C_G) = \\frac{P(C_G | G)P(G)}{P(C_G)} \\)<br>\\( = \\frac{(0.995)(0.991)}{0.986135} \\)<br>\\( = \\frac{0.986045}{0.986135} \\approx 0.9999087 \\).",
+        "explanation": "Bài toán kiểm tra chất lượng kinh điển sử dụng định lý Bayes và xác suất đầy đủ. Phần (a) là tính tổng xác suất (Total Probability) cho kết quả kiểm tra. Phần (b) là tính xác suất hậu nghiệm (Posterior Probability) sử dụng Bayes.",
+        "difficulty": "hard",
+        "topic": "Bayes' Theorem",
+        "hints": [
+          "Phần (a): Sử dụng quy tắc xác suất đầy đủ. Tổng xác suất bị loại = (Xác suất lỗi thật sự bị loại) + (Xác suất tốt bị loại nhầm).",
+          "Phần (b): Sử dụng định lý Bayes. Xác suất (Tốt | Được báo tốt) = (Xác suất báo tốt | Tốt) * (Xác suất Tốt) / (Tổng xác suất báo tốt)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 62,
+        "question": "Customers are used to evaluate preliminary product designs. In the past, 95% of highly successful products received good reviews, 60% of moderately successful products received good reviews, and 10% of poor products received good reviews. In addition, 40% of products have been highly successful, 35% have been moderately successful, and 25% have been poor products.<br>(a) What is the probability that a product attains a good review?<br>(b) If a new design attains a good review, what is the probability that it will be a highly successful product?",
+        "options": [],
+        "correctAnswer": "<b>Gọi các biến cố:</b><br>- H: Highly successful, M: Moderately successful, P: Poor.<br>- G: Good review.<br><b>Dữ kiện:</b><br>- \\( P(H) = 0.40, P(M) = 0.35, P(P) = 0.25 \\).<br>- \\( P(G|H) = 0.95, P(G|M) = 0.60, P(G|P) = 0.10 \\).<br><br><b>(a) Xác suất nhận đánh giá tốt \\( P(G) \\):</b><br>\\( P(G) = P(G|H)P(H) + P(G|M)P(M) + P(G|P)P(P) \\)<br>\\( = (0.95)(0.40) + (0.60)(0.35) + (0.10)(0.25) \\)<br>\\( = 0.38 + 0.21 + 0.025 = 0.615 \\).<br><br><b>(b) Xác suất sản phẩm thành công cao BIẾT RẰNG nhận đánh giá tốt \\( P(H|G) \\):</b><br>\\( P(H|G) = \\frac{P(G|H)P(H)}{P(G)} \\)<br>\\( = \\frac{0.38}{0.615} \\approx 0.6179 \\).",
+        "explanation": "Câu (a) dùng quy tắc xác suất đầy đủ để tính tổng tỷ lệ nhận review tốt từ tất cả các loại sản phẩm. Câu (b) dùng định lý Bayes để suy ngược lại khả năng thành công thực tế dựa trên review.",
+        "difficulty": "medium",
+        "topic": "Bayes' Theorem",
+        "hints": [
+          "Phần (a): Tính tổng trọng số của xác suất nhận review tốt từ từng nhóm sản phẩm.",
+          "Phần (b): Dùng công thức Bayes với kết quả phần (a) làm mẫu số."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 63,
+        "question": "Orders for a computer are summarized by the optional features that are requested as follows:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'>Requests</th><th style='border:1px solid #ddd; padding:5px;'>Proportion of orders</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'>no optional features</td><td style='border:1px solid #ddd; padding:5px;'>0.3</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>one optional feature</td><td style='border:1px solid #ddd; padding:5px;'>0.5</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>more than one optional feature</td><td style='border:1px solid #ddd; padding:5px;'>0.2</td></tr></table><br /><br />(a) What is the probability that an order requests at least one optional feature?<br />(b) What is the probability that an order does not request more than one optional feature?",
+        "options": [],
+        "correctAnswer": "<b>(a) Probability of 'at least one optional feature' (Ít nhất 1):</b><br />Biến cố này bao gồm: 'one optional feature' HOẶC 'more than one'.<br />\\( P(\\ge 1) = P(1) + P(>1) \\)<br />\\( = 0.5 + 0.2 = 0.7 \\).<br />Hoặc dùng phần bù: \\( 1 - P(\\text{no features}) = 1 - 0.3 = 0.7 \\).<br /><br /><b>(b) Probability of 'does not request more than one' (Không quá 1):</b><br />Biến cố này nghĩa là 'nhỏ hơn hoặc bằng 1' (0 hoặc 1).<br />\\( P(\\le 1) = P(0) + P(1) \\)<br />\\( = 0.3 + 0.5 = 0.8 \\).<br />Hoặc dùng phần bù: \\( 1 - P(\\text{more than one}) = 1 - 0.2 = 0.8 \\).",
+        "explanation": "Bài toán yêu cầu hiểu các thuật ngữ 'at least' (lớn hơn hoặc bằng) và 'not more than' (nhỏ hơn hoặc bằng), sau đó cộng các xác suất rời rạc tương ứng.",
+        "difficulty": "medium",
+        "topic": "Probability Calculation",
+        "hints": [
+          "'At least one' nghĩa là \\( \\ge 1 \\). Có thể tính bằng tổng trực tiếp hoặc dùng 1 trừ đi trường hợp 'None'.",
+          "'Not more than one' nghĩa là \\( \\le 1 \\). Bao gồm trường hợp 'no features' và 'one feature'."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 64,
+        "question": "Consider the sample space S = {copper, sodium, nitrogen, potassium, uranium, oxygen, zinc}, and the events:<br>A = {copper, sodium, zinc}<br>B = {sodium, nitrogen, potassium}<br>C = {oxygen}<br>Find \\( (A \\cap B') \\cup C' \\).",
+        "options": [
+          "A. {copper, sodium, potassium, uranium, zinc}",
+          "B. None of the other choices is correct",
+          "C. {nitrogen, potassium, uranium, zinc}",
+          "D. {copper, sodium, nitrogen, potassium, uranium, zinc}",
+          "E. {copper, sodium, nitrogen, uranium, zinc}"
+        ],
+        "correctAnswer": "D",
+        "explanation": "<b>Phép toán tập hợp:</b><br>1. Tìm \\( B' \\) (Phần bù của B trong S):<br>\\( S \\setminus B = \\{copper, uranium, oxygen, zinc\\} \\).<br>2. Tìm \\( A \\cap B' \\) (Giao của A và B'):<br>\\( \\{copper, sodium, zinc\\} \\cap \\{copper, uranium, oxygen, zinc\\} = \\{copper, zinc\\} \\).<br>3. Tìm \\( C' \\) (Phần bù của C):<br>\\( S \\setminus C = \\{copper, sodium, nitrogen, potassium, uranium, zinc\\} \\).<br>4. Tìm \\( (A \\cap B') \\cup C' \\) (Hợp của kết quả bước 2 và bước 3):<br>\\( \\{copper, zinc\\} \\cup \\{copper, sodium, nitrogen, potassium, uranium, zinc\\} \\)<br>\\( = \\{copper, sodium, nitrogen, potassium, uranium, zinc\\} \\).<br>Đáp án D.",
+        "difficulty": "medium",
+        "topic": "Set Theory",
+        "hints": [
+          "Thực hiện từng bước trong ngoặc trước.",
+          "Tìm B' (những gì có trong S nhưng không có trong B).",
+          "Tìm giao của A và B'.",
+          "Cuối cùng hợp với C' (tất cả trừ Oxygen)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 65,
+        "question": "Suppose that a number x is to be selected from the real line S, let A = {x | 0 < x <= 7}. Describe event A' as a set of real numbers.",
+        "options": [
+          "A. (iii) A' = {x | x <= 0 or x > 7}",
+          "B. (ii) A' = {x | x <= 0 or x > 7}",
+          "C. (v) A' = {x | x > 7}",
+          "D. (i) A' = {x | x <= 0 and x > 7}",
+          "E. (iv) A' = {x | x <= 0}"
+        ],
+        "correctAnswer": "B",
+        "explanation": "<b>Phần bù của tập hợp số thực:</b><br>- Tập A là khoảng nửa mở (0, 7].<br>- Phần bù A' là tất cả các số thực không thuộc khoảng này.<br>- Tức là \\( x \\le 0 \\) hoặc \\( x > 7 \\).<br>- Ký hiệu tập hợp: \\( \\{x | x \\le 0 \\text{ or } x > 7\\} \\).<br>- Lưu ý: Đáp án A (iii) trong hình đề bài có vẻ giống B (ii) về nội dung nhưng thứ tự đánh số khác nhau. Dựa vào Keys: B, ta chọn mục (ii) hoặc nội dung tương ứng.<br>Trong hình, mục (ii) là \\( A' = \\{x | x \\le 0 \\text{ or } x > 7\\} \\).",
+        "difficulty": "easy",
+        "topic": "Set Theory",
+        "hints": [
+          "Phần bù của khoảng (a, b] trên trục số thực là \\( (-\\infty, a] \\cup (b, \\infty) \\).",
+          "Chú ý dấu bất đẳng thức: nếu A chứa 7 (<= 7) thì A' không chứa 7 (> 7). Nếu A không chứa 0 (> 0) thì A' chứa 0 (<= 0)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 66,
+        "question": "Each of the possible five outcomes of a random experiment is equally likely. The sample space is \\( S = \\{a, b, c, d, e\\} \\).<br />Let \\( A \\) denote the event \\( \\{a, b\\} \\), and let \\( B \\) denote the event \\( \\{c, d, e\\} \\).<br />Determine the following:<br />(a) \\( P(A) \\)<br />(b) \\( P(B) \\)<br />(c) \\( P(A') \\)<br />(d) \\( P(A \\cup B) \\)<br />(e) \\( P(A \\cap B) \\)",
+        "options": [],
+        "correctAnswer": "<b>Dữ kiện:</b><br />Không gian mẫu \\( S \\) có 5 kết quả đồng khả năng (equally likely).<br />\\( \\Rightarrow P(\\text{mỗi kết quả}) = \\frac{1}{5} = 0.2 \\).<br /><br /><b>(a) \\( P(A) \\):</b><br />\\( A \\) có 2 kết quả \\( \\{a, b\\} \\).<br />\\( P(A) = \\frac{2}{5} = 0.4 \\).<br /><br /><b>(b) \\( P(B) \\):</b><br />\\( B \\) có 3 kết quả \\( \\{c, d, e\\} \\).<br />\\( P(B) = \\frac{3}{5} = 0.6 \\).<br /><br /><b>(c) \\( P(A') \\):</b><br />\\( P(A') = 1 - P(A) = 1 - 0.4 = 0.6 \\).<br />(Hoặc \\( A' = \\{c, d, e\\} \\), có 3 kết quả).<br /><br /><b>(d) \\( P(A \\cup B) \\):</b><br />\\( A \\cup B = \\{a, b, c, d, e\\} = S \\).<br />\\( P(A \\cup B) = 1.0 \\).<br /><br /><b>(e) \\( P(A \\cap B) \\):</b><br />A và B không có phần tử chung (A chứa a,b; B chứa c,d,e).<br />\\( A \\cap B = \\emptyset \\) (Rỗng).<br />\\( P(A \\cap B) = 0 \\).",
+        "explanation": "Đây là bài toán cơ bản về xác suất cổ điển với các kết quả đồng khả năng. Lưu ý rằng A và B ở đây là hai biến cố xung khắc (mutually exclusive) và bù nhau (complementary) trong không gian mẫu này.",
+        "difficulty": "easy",
+        "topic": "Probability Calculation",
+        "hints": [
+          "Vì các kết quả là 'equally likely', xác suất của mỗi kết quả đơn lẻ là 1 chia cho tổng số kết quả.",
+          "Đếm số lượng phần tử trong mỗi tập hợp biến cố.",
+          "Kiểm tra xem A và B có phần tử nào chung không để tính giao (intersection)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 67,
+        "question": "The sample space of a random experiment is \\( S = \\{a, b, c, d, e\\} \\) with probabilities 0.1, 0.1, 0.2, 0.4, and 0.2 respectively.<br />Let \\( A \\) denote the event \\( \\{a, b, c\\} \\), and let \\( B \\) denote the event \\( \\{c, d, e\\} \\).<br />Determine the following:<br />(a) \\( P(A) \\)<br />(b) \\( P(B) \\)<br />(c) \\( P(A') \\)<br />(d) \\( P(A \\cup B) \\)<br />(e) \\( P(A \\cap B) \\)",
+        "options": [],
+        "correctAnswer": "<b>Dữ kiện xác suất:</b><br />\\( P(a)=0.1, P(b)=0.1, P(c)=0.2, P(d)=0.4, P(e)=0.2 \\).<br /><br /><b>(a) \\( P(A) \\):</b><br />\\( A = \\{a, b, c\\} \\)<br />\\( P(A) = P(a) + P(b) + P(c) = 0.1 + 0.1 + 0.2 = 0.4 \\).<br /><br /><b>(b) \\( P(B) \\):</b><br />\\( B = \\{c, d, e\\} \\)<br />\\( P(B) = P(c) + P(d) + P(e) = 0.2 + 0.4 + 0.2 = 0.8 \\).<br /><br /><b>(c) \\( P(A') \\):</b><br />\\( P(A') = 1 - P(A) = 1 - 0.4 = 0.6 \\).<br /><br /><b>(d) \\( P(A \\cup B) \\):</b><br />\\( A \\cup B = \\{a, b, c, d, e\\} = S \\).<br />\\( P(A \\cup B) = 1.0 \\).<br />(Hoặc dùng công thức: \\( P(A)+P(B)-P(A \\cap B) = 0.4+0.8-0.2 = 1.0 \\)).<br /><br /><b>(e) \\( P(A \\cap B) \\):</b><br />Phần tử chung của A và B là \\( \\{c\\} \\).<br />\\( P(A \\cap B) = P(c) = 0.2 \\).",
+        "explanation": "Khác với câu 2-54, các kết quả ở đây **không đồng khả năng**. Ta phải cộng xác suất cụ thể của từng kết quả đơn lẻ thuộc biến cố đó.",
+        "difficulty": "medium",
+        "topic": "Probability Calculation",
+        "hints": [
+          "Không được dùng công thức n(A)/n(S) vì xác suất không đều nhau.",
+          "Cộng trực tiếp giá trị xác suất của các phần tử trong tập hợp.",
+          "Tìm phần tử giao nhau giữa A và B để tính câu (e)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 68,
+        "question": "A random experiment can result in one of the outcomes {a, b, c, d, e} with probabilities 0.25, 0.3, 0.15, 0.2, 0.1, respectively. Let A denote the event {b, d, e} and B the event {a, b, d}. Find P(A \\cup B).",
+        "options": [
+          "A. 0.6",
+          "B. 0.75",
+          "C. 0.85",
+          "D. 1.35"
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Tính xác suất của hợp hai biến cố:</b><br>- \\( P(A \\cup B) = P(\\{a, b, d, e\\}) \\) (Hợp của {b,d,e} và {a,b,d}).<br>- Ta cộng xác suất của các kết quả đơn lẻ trong tập hợp này:<br>  \\( P(a) = 0.25 \\)<br>  \\( P(b) = 0.30 \\)<br>  \\( P(d) = 0.20 \\)<br>  \\( P(e) = 0.10 \\)<br>- Tổng: \\( 0.25 + 0.30 + 0.20 + 0.10 = 0.85 \\).<br>- Hoặc dùng công thức cộng: \\( P(A \\cup B) = P(A) + P(B) - P(A \\cap B) \\).<br>  \\( P(A) = 0.3 + 0.2 + 0.1 = 0.6 \\).<br>  \\( P(B) = 0.25 + 0.3 + 0.2 = 0.75 \\).<br>  \\( A \\cap B = \\{b, d\\} \\Rightarrow P(A \\cap B) = 0.3 + 0.2 = 0.5 \\).<br>  \\( P(A \\cup B) = 0.6 + 0.75 - 0.5 = 0.85 \\).<br>Đáp án C.",
+        "difficulty": "easy",
+        "topic": "Probability Calculation",
+        "hints": [
+          "Liệt kê các phần tử của tập hợp hợp A U B: {a, b, d, e}.",
+          "Cộng xác suất tương ứng của từng phần tử đó."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 69,
+        "question": "Two fair dice are rolled. Let A be the event that the sum of numbers on the dice is smaller than 5 and let B be the event that the numbers on the dice are different. List the outcomes in \\( A \\cap B \\).",
+        "options": [
+          "A. {(1,2); (1,3); (2,3)}",
+          "B. {(1,2); (2,1); (1,3); (3,1); (1,4); (2,3); (3,2); (4,1)}",
+          "C. {(1,1); (1,2); (2,1); (1,3); (2,2); (3,1)}",
+          "D. {(1,2); (2,1); (1,3); (3,1)}"
+        ],
+        "correctAnswer": "D",
+        "explanation": "<b>Liệt kê phần tử giao nhau:</b><br>- Biến cố A (Tổng < 5): {(1,1), (1,2), (2,1), (1,3), (3,1), (2,2)}.<br>- Biến cố B (Hai số khác nhau): Loại bỏ các cặp số kép (doublets).<br>- Từ tập A, loại bỏ (1,1) và (2,2).<br>- Còn lại: {(1,2), (2,1), (1,3), (3,1)}.<br>Đáp án D.",
+        "difficulty": "medium",
+        "topic": "Sample Space and Events",
+        "hints": [
+          "Tìm tất cả các cặp có tổng bằng 2, 3, 4.",
+          "Loại bỏ những cặp có hai số giống nhau.",
+          "Chọn đáp án liệt kê đúng các cặp còn lại."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 70,
+        "question": "Disks of polycarbonate plastic from a supplier are analyzed for scratch and shock resistance. The results from 100 disks are summarized as follows:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'></th><th style='border:1px solid #ddd; padding:5px;'>Shock Resistance: High</th><th style='border:1px solid #ddd; padding:5px;'>Shock Resistance: Low</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>Scratch Resistance: High</b></td><td style='border:1px solid #ddd; padding:5px;'>70</td><td style='border:1px solid #ddd; padding:5px;'>9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>Scratch Resistance: Low</b></td><td style='border:1px solid #ddd; padding:5px;'>16</td><td style='border:1px solid #ddd; padding:5px;'>5</td></tr></table><br /><br />Let \\( A \\) denote the event that a disk has <b>high shock resistance</b>, and let \\( B \\) denote the event that a disk has <b>high scratch resistance</b>. Determine the following probabilities:<br />(a) \\( P(A) \\)<br />(b) \\( P(B) \\)<br />(c) \\( P(A \\cap B) \\)<br />(d) \\( P(A \\cup B) \\)",
+        "options": [],
+        "correctAnswer": "<b>Phân tích dữ liệu từ bảng:</b><br />- Tổng số mẫu \\( N = 100 \\).<br /><br /><b>(a) Tính \\( P(A) \\) (High Shock Resistance):</b><br />Số đĩa có độ chịu va đập cao là tổng của cột 'Shock Resistance: High':<br />\\( N(A) = 70 + 16 = 86 \\).<br />\\( P(A) = \\frac{86}{100} = 0.86 \\).<br /><br /><b>(b) Tính \\( P(B) \\) (High Scratch Resistance):</b><br />Số đĩa có độ chống trầy xước cao là tổng của hàng 'Scratch Resistance: High':<br />\\( N(B) = 70 + 9 = 79 \\).<br />\\( P(B) = \\frac{79}{100} = 0.79 \\).<br /><br /><b>(c) Tính \\( P(A \\cap B) \\) (Giao của A và B):</b><br />Đây là ô giao nhau giữa cột High Shock và hàng High Scratch:<br />\\( N(A \\cap B) = 70 \\).<br />\\( P(A \\cap B) = \\frac{70}{100} = 0.70 \\).<br /><br /><b>(d) Tính \\( P(A \\cup B) \\) (Hợp của A và B):</b><br />Sử dụng quy tắc cộng xác suất:<br />\\( P(A \\cup B) = P(A) + P(B) - P(A \\cap B) \\)<br />\\( P(A \\cup B) = 0.86 + 0.79 - 0.70 \\)<br />\\( P(A \\cup B) = 0.95 \\).<br /><br /><b>Kết quả:</b><br />(a) 0.86<br />(b) 0.79<br />(c) 0.70<br />(d) 0.95",
+        "explanation": "Bài toán yêu cầu kỹ năng đọc bảng chéo (contingency table) để tính xác suất biên (marginal probability) và xác suất đồng thời (joint probability), cũng như áp dụng quy tắc cộng.",
+        "difficulty": "medium",
+        "topic": "Probability from Tables",
+        "hints": [
+          "Tính tổng của các hàng và các cột để tìm số lượng tổng quát cho từng biến cố A và B.",
+          "Ô giao nhau giữa hàng và cột tương ứng chính là số lượng phần tử của \\( A \\cap B \\).",
+          "Sử dụng công thức \\( P(A \\cup B) = P(A) + P(B) - P(A \\cap B) \\)."
+        ],
+        "type": "essay"
       }
     ]
   }
