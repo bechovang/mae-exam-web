@@ -1369,16 +1369,279 @@
       },
       {
         "id": 70,
-        "question": "Disks of polycarbonate plastic from a supplier are analyzed for scratch and shock resistance. The results from 100 disks are summarized as follows:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'></th><th style='border:1px solid #ddd; padding:5px;'>Shock Resistance: High</th><th style='border:1px solid #ddd; padding:5px;'>Shock Resistance: Low</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>Scratch Resistance: High</b></td><td style='border:1px solid #ddd; padding:5px;'>70</td><td style='border:1px solid #ddd; padding:5px;'>9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>Scratch Resistance: Low</b></td><td style='border:1px solid #ddd; padding:5px;'>16</td><td style='border:1px solid #ddd; padding:5px;'>5</td></tr></table><br /><br />Let \\( A \\) denote the event that a disk has <b>high shock resistance</b>, and let \\( B \\) denote the event that a disk has <b>high scratch resistance</b>. Determine the following probabilities:<br />(a) \\( P(A) \\)<br />(b) \\( P(B) \\)<br />(c) \\( P(A \\cap B) \\)<br />(d) \\( P(A \\cup B) \\)",
+        "question": "Disks of polycarbonate plastic from a supplier are analyzed for scratch and shock resistance. The results from 100 disks are summarized as follows:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'></th><th style='border:1px solid #ddd; padding:5px;'>Shock Resistance: High</th><th style='border:1px solid #ddd; padding:5px;'>Shock Resistance: Low</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>Scratch Resistance: High</b></td><td style='border:1px solid #ddd; padding:5px;'>70</td><td style='border:1px solid #ddd; padding:5px;'>9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>Scratch Resistance: Low</b></td><td style='border:1px solid #ddd; padding:5px;'>16</td><td style='border:1px solid #ddd; padding:5px;'>5</td></tr></table><br /><br />Let \\( A \\) denote the event that a disk has high shock resistance, and let \\( B \\) denote the event that a disk has high scratch resistance. If a disk is selected at random, determine the following probabilities:<br />(a) \\( P(A) \\)<br />(b) \\( P(B) \\)<br />(c) \\( P(A') \\)<br />(d) \\( P(A \\cap B) \\)<br />(e) \\( P(A \\cup B) \\)<br />(f) \\( P(A' \\cup B) \\)",
         "options": [],
-        "correctAnswer": "<b>Phân tích dữ liệu từ bảng:</b><br />- Tổng số mẫu \\( N = 100 \\).<br /><br /><b>(a) Tính \\( P(A) \\) (High Shock Resistance):</b><br />Số đĩa có độ chịu va đập cao là tổng của cột 'Shock Resistance: High':<br />\\( N(A) = 70 + 16 = 86 \\).<br />\\( P(A) = \\frac{86}{100} = 0.86 \\).<br /><br /><b>(b) Tính \\( P(B) \\) (High Scratch Resistance):</b><br />Số đĩa có độ chống trầy xước cao là tổng của hàng 'Scratch Resistance: High':<br />\\( N(B) = 70 + 9 = 79 \\).<br />\\( P(B) = \\frac{79}{100} = 0.79 \\).<br /><br /><b>(c) Tính \\( P(A \\cap B) \\) (Giao của A và B):</b><br />Đây là ô giao nhau giữa cột High Shock và hàng High Scratch:<br />\\( N(A \\cap B) = 70 \\).<br />\\( P(A \\cap B) = \\frac{70}{100} = 0.70 \\).<br /><br /><b>(d) Tính \\( P(A \\cup B) \\) (Hợp của A và B):</b><br />Sử dụng quy tắc cộng xác suất:<br />\\( P(A \\cup B) = P(A) + P(B) - P(A \\cap B) \\)<br />\\( P(A \\cup B) = 0.86 + 0.79 - 0.70 \\)<br />\\( P(A \\cup B) = 0.95 \\).<br /><br /><b>Kết quả:</b><br />(a) 0.86<br />(b) 0.79<br />(c) 0.70<br />(d) 0.95",
-        "explanation": "Bài toán yêu cầu kỹ năng đọc bảng chéo (contingency table) để tính xác suất biên (marginal probability) và xác suất đồng thời (joint probability), cũng như áp dụng quy tắc cộng.",
+        "correctAnswer": "<b>Phân tích dữ liệu:</b><br />- Tổng số mẫu \\( N = 100 \\).<br />- \\( N(A) \\) (High Shock) = Tổng cột 1 = \\( 70 + 16 = 86 \\).<br />- \\( N(B) \\) (High Scratch) = Tổng hàng 1 = \\( 70 + 9 = 79 \\).<br />- \\( N(A \\cap B) \\) (Giao nhau) = 70.<br /><br /><b>(a) \\( P(A) \\):</b><br />\\( P(A) = 86/100 = 0.86 \\).<br /><br /><b>(b) \\( P(B) \\):</b><br />\\( P(B) = 79/100 = 0.79 \\).<br /><br /><b>(c) \\( P(A') \\):</b><br />\\( P(A') = 1 - P(A) = 1 - 0.86 = 0.14 \\).<br /><br /><b>(d) \\( P(A \\cap B) \\):</b><br />\\( P(A \\cap B) = 70/100 = 0.70 \\).<br /><br /><b>(e) \\( P(A \\cup B) \\):</b><br />\\( P(A \\cup B) = P(A) + P(B) - P(A \\cap B) \\)<br />\\( = 0.86 + 0.79 - 0.70 = 0.95 \\).<br /><br /><b>(f) \\( P(A' \\cup B) \\):</b><br />Biến cố này bao gồm các phần tử thuộc A' (Low Shock) hoặc thuộc B (High Scratch).<br />- \\( N(A') \\) = Tổng cột 2 = \\( 9 + 5 = 14 \\).<br />- \\( N(B) \\) = 79.<br />- \\( N(A' \\cap B) \\) (Low Shock và High Scratch) = 9.<br />- \\( P(A' \\cup B) = P(A') + P(B) - P(A' \\cap B) \\)<br />- \\( = 0.14 + 0.79 - 0.09 = 0.84 \\).",
+        "explanation": "Bài toán yêu cầu tính toán xác suất từ bảng dữ liệu hai chiều, bao gồm cả các phép toán tập hợp như phần bù, giao và hợp.",
         "difficulty": "medium",
         "topic": "Probability from Tables",
         "hints": [
-          "Tính tổng của các hàng và các cột để tìm số lượng tổng quát cho từng biến cố A và B.",
-          "Ô giao nhau giữa hàng và cột tương ứng chính là số lượng phần tử của \\( A \\cap B \\).",
-          "Sử dụng công thức \\( P(A \\cup B) = P(A) + P(B) - P(A \\cap B) \\)."
+          "Tính tổng hàng và cột trước tiên để có số liệu tổng quát.",
+          "Sử dụng công thức cộng xác suất: P(X U Y) = P(X) + P(Y) - P(X n Y).",
+          "A' là phần bù của A (Low Shock Resistance)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 71,
+        "question": "Samples of emissions from three suppliers are classified for conformance to air-quality specifications. The results from 100 samples are summarized as follows:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'>Supplier</th><th style='border:1px solid #ddd; padding:5px;'>Conforms: Yes</th><th style='border:1px solid #ddd; padding:5px;'>Conforms: No</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>1</b></td><td style='border:1px solid #ddd; padding:5px;'>22</td><td style='border:1px solid #ddd; padding:5px;'>8</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>2</b></td><td style='border:1px solid #ddd; padding:5px;'>25</td><td style='border:1px solid #ddd; padding:5px;'>5</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>3</b></td><td style='border:1px solid #ddd; padding:5px;'>30</td><td style='border:1px solid #ddd; padding:5px;'>10</td></tr></table><br /><br />Let \\( A \\) denote the event that a sample is from supplier 1, and let \\( B \\) denote the event that a sample conforms to specifications. If a sample is selected at random, determine the following probabilities:<br />(a) \\( P(A) \\)<br />(b) \\( P(B) \\)<br />(c) \\( P(A') \\)<br />(d) \\( P(A \\cap B) \\)<br />(e) \\( P(A \\cup B) \\)<br />(f) \\( P(A' \\cup B) \\)",
+        "options": [],
+        "correctAnswer": "<b>Phân tích dữ liệu:</b><br />- Tổng số mẫu \\( N = 100 \\).<br />- \\( N(A) \\) (Supplier 1) = Tổng hàng 1 = \\( 22 + 8 = 30 \\).<br />- \\( N(B) \\) (Conforms Yes) = Tổng cột 1 = \\( 22 + 25 + 30 = 77 \\).<br />- \\( N(A \\cap B) \\) (Supplier 1 và Conforms Yes) = 22.<br /><br /><b>(a) \\( P(A) \\):</b><br />\\( P(A) = 30/100 = 0.30 \\).<br /><br /><b>(b) \\( P(B) \\):</b><br />\\( P(B) = 77/100 = 0.77 \\).<br /><br /><b>(c) \\( P(A') \\):</b><br />\\( P(A') = 1 - P(A) = 1 - 0.30 = 0.70 \\).<br />(Hoặc tổng số mẫu từ Supplier 2 và 3: \\( 30 + 40 = 70 \\)).<br /><br /><b>(d) \\( P(A \\cap B) \\):</b><br />\\( P(A \\cap B) = 22/100 = 0.22 \\).<br /><br /><b>(e) \\( P(A \\cup B) \\):</b><br />\\( P(A \\cup B) = P(A) + P(B) - P(A \\cap B) \\)<br />\\( = 0.30 + 0.77 - 0.22 = 0.85 \\).<br /><br /><b>(f) \\( P(A' \\cup B) \\):</b><br />- \\( P(A') = 0.70 \\).<br />- \\( P(B) = 0.77 \\).<br />- \\( P(A' \\cap B) \\) (Không phải Supplier 1 VÀ Conforms Yes) = \\( 25 + 30 = 55 \\) (từ Supplier 2 và 3). \\( \\Rightarrow P = 0.55 \\).<br />- \\( P(A' \\cup B) = 0.70 + 0.77 - 0.55 = 0.92 \\).",
+        "explanation": "Tương tự bài 2-66, bài này yêu cầu trích xuất thông tin từ bảng và thực hiện các phép tính xác suất cơ bản.",
+        "difficulty": "medium",
+        "topic": "Probability from Tables",
+        "hints": [
+          "Biến cố A là hàng ngang đầu tiên (Supplier 1).",
+          "Biến cố B là cột dọc đầu tiên (Conforms: Yes).",
+          "A' là tất cả các nhà cung cấp trừ Supplier 1 (tức là Supplier 2 và 3)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 72,
+        "question": "At a California college, 22% of students speak Spanish, 5% speak French, and 3% speak both languages. What is the probability that a student chosen at random from the college speaks Spanish but not French?",
+        "options": [
+          "A. 0.19",
+          "B. 0.17",
+          "C. All of the other choices are incorrect",
+          "D. 0.02",
+          "E. 0.24"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Xác suất phần bù trong giao (Probability of Difference):</b><br>- Gọi S là biến cố 'nói tiếng Tây Ban Nha', F là biến cố 'nói tiếng Pháp'.<br>- Theo đề: \\( P(S) = 0.22 \\), \\( P(F) = 0.05 \\), \\( P(S \\cap F) = 0.03 \\).<br>- Cần tìm \\( P(S \\cap F') \\) (nói Spanish nhưng KHÔNG nói French).<br>- Công thức: \\( P(S \\cap F') = P(S) - P(S \\cap F) \\).<br>- Thay số: \\( 0.22 - 0.03 = 0.19 \\).<br>Đáp án A.",
+        "difficulty": "easy",
+        "topic": "Probability Calculation",
+        "hints": [
+          "Sử dụng biểu đồ Venn để hình dung.",
+          "Phần 'Spanish but not French' chính là phần thuộc vòng tròn Spanish nhưng nằm ngoài phần giao nhau.",
+          "Công thức: P(A chỉ) = P(A) - P(A và B)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 73,
+        "question": "If \\( P(A \\cup B) = \\frac{5}{6} \\), \\( P(A \\cap B) = \\frac{1}{3} \\) and \\( P(\\bar{A}) = \\frac{1}{2} \\), then which of following are correct?<br>1. A and B are independent events.<br>2. A and B are mutually exclusive events.",
+        "options": [
+          "A. 1 only",
+          "B. 2 only",
+          "C. Both 1 and 2",
+          "D. None of 1 and 2"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Kiểm tra tính độc lập và xung khắc:</b><br>- Từ \\( P(\\bar{A}) = 1/2 \\) \\(\\Rightarrow P(A) = 1 - 1/2 = 1/2 \\).<br>- Sử dụng công thức cộng: \\( P(A \\cup B) = P(A) + P(B) - P(A \\cap B) \\).<br>  \\( 5/6 = 1/2 + P(B) - 1/3 \\)<br>  \\( 5/6 = 3/6 - 2/6 + P(B) \\)<br>  \\( 5/6 = 1/6 + P(B) \\) \\(\\Rightarrow P(B) = 4/6 = 2/3 \\).<br><br><b>Kiểm tra 1 (Independent):</b><br>  \\( P(A) \\times P(B) = (1/2) \\times (2/3) = 1/3 \\).<br>  \\( P(A \\cap B) = 1/3 \\).<br>  Vì \\( P(A \\cap B) = P(A)P(B) \\), nên A và B độc lập. (Mệnh đề 1 ĐÚNG).<br><br><b>Kiểm tra 2 (Mutually Exclusive):</b><br>  Để xung khắc thì \\( P(A \\cap B) \\) phải bằng 0.<br>  Ở đây \\( P(A \\cap B) = 1/3 \\ne 0 \\). (Mệnh đề 2 SAI).<br><br>Vậy chỉ có 1 đúng.<br>Đáp án A.",
+        "difficulty": "medium",
+        "topic": "Independence and Mutually Exclusive",
+        "hints": [
+          "Tính P(A) từ P(A').",
+          "Sử dụng công thức P(A U B) để tìm P(B).",
+          "Kiểm tra điều kiện độc lập: P(A n B) = P(A)P(B).",
+          "Kiểm tra điều kiện xung khắc: P(A n B) = 0."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 74,
+        "question": "Suppose that A, B and C are mutually exclusive events with P(A) = 0.22, P(B) = 0.25, P(C) = 0.28. Compute the probability of \\( A' \\cap B' \\cap C' \\).",
+        "options": [
+          "A. 0.25",
+          "B. 0.75",
+          "C. 0.19",
+          "D. 2.25",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Định luật De Morgan và Biến cố xung khắc:</b><br>- \\( A' \\cap B' \\cap C' = (A \\cup B \\cup C)' \\).<br>- \\( P(A' \\cap B' \\cap C') = 1 - P(A \\cup B \\cup C) \\).<br>- Vì A, B, C là xung khắc từng đôi (mutually exclusive), nên:<br>  \\( P(A \\cup B \\cup C) = P(A) + P(B) + P(C) \\)<br>  \\( = 0.22 + 0.25 + 0.28 = 0.75 \\).<br>- Vậy \\( P(A' \\cap B' \\cap C') = 1 - 0.75 = 0.25 \\).<br>Đáp án A.",
+        "difficulty": "medium",
+        "topic": "Probability Calculation",
+        "hints": [
+          "Sử dụng định luật De Morgan: P(A' n B' n C') = 1 - P(A u B u C).",
+          "Vì các biến cố xung khắc, xác suất của hợp bằng tổng các xác suất thành phần."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 75,
+        "question": "Disks of polycarbonate plastic from a supplier are analyzed for scratch and shock resistance. The results from 100 disks are summarized as follows:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'></th><th style='border:1px solid #ddd; padding:5px;'>Shock Resistance: High</th><th style='border:1px solid #ddd; padding:5px;'>Shock Resistance: Low</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>Scratch Resistance: High</b></td><td style='border:1px solid #ddd; padding:5px;'>70</td><td style='border:1px solid #ddd; padding:5px;'>9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>Scratch Resistance: Low</b></td><td style='border:1px solid #ddd; padding:5px;'>16</td><td style='border:1px solid #ddd; padding:5px;'>5</td></tr></table><br /><br />(a) If a disk is selected at random, what is the probability that its scratch resistance is high and its shock resistance is high?<br />(b) If a disk is selected at random, what is the probability that its scratch resistance is high or its shock resistance is high?<br />(c) Consider the event that a disk has high scratch resistance and the event that a disk has high shock resistance. Are these two events mutually exclusive?",
+        "options": [],
+        "correctAnswer": "<b>Phân tích dữ liệu:</b><br />- Tổng số mẫu \\( N = 100 \\).<br />- Gọi A là biến cố 'High Scratch Resistance'. \\( N(A) = 70 + 9 = 79 \\).<br />- Gọi B là biến cố 'High Shock Resistance'. \\( N(B) = 70 + 16 = 86 \\).<br /><br /><b>(a) Probability (High Scratch AND High Shock):</b><br />Đây là giao của A và B (ô giao nhau trong bảng).<br />\\( P(A \\cap B) = \\frac{70}{100} = 0.70 \\).<br /><br /><b>(b) Probability (High Scratch OR High Shock):</b><br />Đây là hợp của A và B.<br />Sử dụng công thức cộng: \\( P(A \\cup B) = P(A) + P(B) - P(A \\cap B) \\).<br />\\( P(A) = 0.79, P(B) = 0.86, P(A \\cap B) = 0.70 \\).<br />\\( P(A \\cup B) = 0.79 + 0.86 - 0.70 = 0.95 \\).<br /><br /><b>(c) Mutually Exclusive?</b><br />Hai biến cố được gọi là xung khắc (mutually exclusive) nếu chúng không thể xảy ra cùng lúc, tức là \\( P(A \\cap B) = 0 \\).<br />Ở đây, \\( P(A \\cap B) = 0.70 \\neq 0 \\).<br />Vậy hai biến cố này <b>KHÔNG</b> xung khắc (Not Mutually Exclusive).",
+        "explanation": "Câu hỏi này kiểm tra kiến thức về giao (AND), hợp (OR) và khái niệm xung khắc (mutually exclusive) dựa trên bảng số liệu thực tế.",
+        "difficulty": "medium",
+        "topic": "Probability from Tables",
+        "hints": [
+          "'And' nghĩa là giao nhau (Intersection), tìm ô chung trong bảng.",
+          "'Or' nghĩa là hợp (Union), dùng công thức cộng hoặc cộng tất cả các ô thỏa mãn.",
+          "Mutually exclusive nghĩa là phần giao nhau phải bằng 0."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 76,
+        "question": "Strands of copper wire from a manufacturer are analyzed for strength and conductivity. The results from 100 strands are as follows:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'></th><th style='border:1px solid #ddd; padding:5px;'>Strength: High</th><th style='border:1px solid #ddd; padding:5px;'>Strength: Low</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>Conductivity: High</b></td><td style='border:1px solid #ddd; padding:5px;'>74</td><td style='border:1px solid #ddd; padding:5px;'>8</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>Conductivity: Low</b></td><td style='border:1px solid #ddd; padding:5px;'>15</td><td style='border:1px solid #ddd; padding:5px;'>3</td></tr></table><br /><br />(a) If a strand is randomly selected, what is the probability that its conductivity is high and its strength is high?<br />(b) If a strand is randomly selected, what is the probability that its conductivity is low or its strength is low?<br />(c) Consider the event that a strand has low conductivity and the event that the strand has a low strength. Are these two events mutually exclusive?",
+        "options": [],
+        "correctAnswer": "<b>Phân tích dữ liệu:</b><br />- Tổng số mẫu \\( N = 100 \\).<br /><br /><b>(a) Probability (High Conductivity AND High Strength):</b><br />Số lượng dây thỏa mãn cả hai: 74 (ô giao nhau).<br />\\( P = \\frac{74}{100} = 0.74 \\).<br /><br /><b>(b) Probability (Low Conductivity OR Low Strength):</b><br />Gọi L_C là 'Low Conductivity', L_S là 'Low Strength'.<br />- \\( N(L_C) = 15 + 3 = 18 \\) \\( \\Rightarrow P(L_C) = 0.18 \\).<br />- \\( N(L_S) = 8 + 3 = 11 \\) \\( \\Rightarrow P(L_S) = 0.11 \\).<br />- \\( N(L_C \\cap L_S) = 3 \\) \\( \\Rightarrow P(L_C \\cap L_S) = 0.03 \\).<br />- \\( P(L_C \\cup L_S) = 0.18 + 0.11 - 0.03 = 0.26 \\).<br /><br /><b>(c) Mutually Exclusive?</b><br />Xét giao của 'Low Conductivity' và 'Low Strength'.<br />\\( P(L_C \\cap L_S) = 0.03 \\neq 0 \\).<br />(Có 3 sợi dây vừa có độ dẫn điện thấp vừa có độ bền thấp).<br />Vậy hai biến cố này <b>KHÔNG</b> xung khắc (Not Mutually Exclusive).",
+        "explanation": "Tương tự câu trên, bài này yêu cầu tính toán xác suất giao, hợp và kiểm tra tính xung khắc. Lưu ý ở câu (b) là tính cho các trường hợp 'Low'.",
+        "difficulty": "medium",
+        "topic": "Probability from Tables",
+        "hints": [
+          "Câu (b) hỏi về 'Low' or 'Low', hãy xác định đúng hàng và cột tương ứng.",
+          "Để kiểm tra xung khắc, chỉ cần nhìn vào ô giao nhau của hai biến cố đó. Nếu số lượng > 0 thì không xung khắc."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 77,
+        "question": "Disks of polycarbonate plastic from a supplier are analyzed for scratch and shock resistance. The results from 200 disks are summarized as follows:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'></th><th style='border:1px solid #ddd; padding:5px;'>Shock Resistance: High</th><th style='border:1px solid #ddd; padding:5px;'>Shock Resistance: Low</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>Scratch Resistance: High</b></td><td style='border:1px solid #ddd; padding:5px;'>144</td><td style='border:1px solid #ddd; padding:5px;'>22</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>Scratch Resistance: Low</b></td><td style='border:1px solid #ddd; padding:5px;'>25</td><td style='border:1px solid #ddd; padding:5px;'>9</td></tr></table><br /><br />If a disk is selected at random, what is the probability that its scratch resistance is high or its shock resistance is high?",
+        "options": [
+          "A. 0.85",
+          "B. 0.72",
+          "C. 0.955",
+          "D. 0.83"
+        ],
+        "correctAnswer": "C",
+        "explanation": "<b>Xác suất hợp (Union Probability):</b><br />- Tổng số đĩa \\( N = 200 \\).<br />- Gọi A là 'High Scratch': \\( N(A) = 144 + 22 = 166 \\).<br />- Gọi B là 'High Shock': \\( N(B) = 144 + 25 = 169 \\).<br />- Giao của A và B (High Scratch AND High Shock): \\( N(A \\cap B) = 144 \\).<br />- Cần tìm \\( P(A \\cup B) = P(A) + P(B) - P(A \\cap B) \\).<br />- \\( P(A \\cup B) = \\frac{166}{200} + \\frac{169}{200} - \\frac{144}{200} = \\frac{191}{200} \\).<br />- Tính toán: \\( 191 \\div 200 = 0.955 \\).<br />Đáp án C.",
+        "difficulty": "medium",
+        "topic": "Probability from Tables",
+        "hints": [
+          "Sử dụng công thức cộng xác suất: P(A hoặc B) = P(A) + P(B) - P(A và B).",
+          "Tính tổng số đĩa thỏa mãn ít nhất một trong hai điều kiện 'High'.",
+          "Chia tổng số đó cho 200."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 78,
+        "question": "Let A and B be independent events. Assume that \\( P(A) = 0.2 \\), \\( P(A \\cap B) = 0.08 \\). Find \\( P(A) + P(B) \\).",
+        "options": [
+          "A. 0.6",
+          "B. None of the other choices is correct",
+          "C. 0.4",
+          "D. 0.16"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Biến cố độc lập (Independent Events):</b><br />- Vì A và B độc lập, ta có công thức: \\( P(A \\cap B) = P(A) \\times P(B) \\).<br />- Thay số: \\( 0.08 = 0.2 \\times P(B) \\).<br />- Suy ra: \\( P(B) = \\frac{0.08}{0.2} = 0.4 \\).<br />- Đề bài yêu cầu tính \\( P(A) + P(B) \\).<br />- \\( P(A) + P(B) = 0.2 + 0.4 = 0.6 \\).<br />Đáp án A.",
+        "difficulty": "easy",
+        "topic": "Independence",
+        "hints": [
+          "Sử dụng tính chất độc lập: P(A giao B) = P(A) * P(B) để tìm P(B).",
+          "Sau đó cộng P(A) và P(B) lại."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 79,
+        "question": "Suppose that 55% of all adults regularly consume coffee, 45% regularly consume carbonated soda and 70% regularly consume at least one of these two products. What is the probability that a randomly selected adult regularly consumes both coffee and soda?",
+        "options": [
+          "A. 0.3",
+          "B. 0.7",
+          "C. 1",
+          "D. 0.1",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Quy tắc cộng xác suất (Addition Rule):</b><br />- Gọi C là 'Coffee', S là 'Soda'.<br />- \\( P(C) = 0.55 \\), \\( P(S) = 0.45 \\).<br />- \\( P(C \\cup S) \\) (ít nhất một trong hai) = 0.70.<br />- Cần tìm \\( P(C \\cap S) \\) (cả hai).<br />- Công thức: \\( P(C \\cup S) = P(C) + P(S) - P(C \\cap S) \\).<br />- Thay số: \\( 0.70 = 0.55 + 0.45 - P(C \\cap S) \\).<br />- \\( 0.70 = 1.00 - P(C \\cap S) \\).<br />- \\( P(C \\cap S) = 1.00 - 0.70 = 0.30 \\).<br />Đáp án A.",
+        "difficulty": "easy",
+        "topic": "Probability Calculation",
+        "hints": [
+          "Sử dụng công thức cộng: P(A giao B) = P(A) + P(B) - P(A hợp B).",
+          "Thay các giá trị phần trăm vào công thức để tính phần giao nhau."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 80,
+        "question": "If \\( P(A) = 0.3 \\), \\( P(B) = 0.2 \\), and \\( P(A \\cap B) = 0.1 \\), determine the following probabilities:<br />(a) \\( P(A') \\)<br />(b) \\( P(A \\cup B) \\)<br />(c) \\( P(A' \\cap B) \\)<br />(d) \\( P(A \\cap B') \\)<br />(e) \\( P[(A \\cup B)'] \\)<br />(f) \\( P(A' \\cup B) \\)",
+        "options": [],
+        "correctAnswer": "<b>(a) \\( P(A') \\):</b><br />\\( P(A') = 1 - P(A) = 1 - 0.3 = 0.7 \\).<br /><br /><b>(b) \\( P(A \\cup B) \\):</b><br />\\( P(A \\cup B) = P(A) + P(B) - P(A \\cap B) \\)<br />\\( = 0.3 + 0.2 - 0.1 = 0.4 \\).<br /><br /><b>(c) \\( P(A' \\cap B) \\):</b><br />\\( P(A' \\cap B) = P(B) - P(A \\cap B) \\)<br />\\( = 0.2 - 0.1 = 0.1 \\).<br /><br /><b>(d) \\( P(A \\cap B') \\):</b><br />\\( P(A \\cap B') = P(A) - P(A \\cap B) \\)<br />\\( = 0.3 - 0.1 = 0.2 \\).<br /><br /><b>(e) \\( P[(A \\cup B)'] \\):</b><br />\\( P[(A \\cup B)'] = 1 - P(A \\cup B) \\)<br />\\( = 1 - 0.4 = 0.6 \\).<br /><br /><b>(f) \\( P(A' \\cup B) \\):</b><br />Cách 1: \\( P(A' \\cup B) = P(A') + P(B) - P(A' \\cap B) \\)<br />\\( = 0.7 + 0.2 - 0.1 = 0.8 \\).<br />Cách 2: \\( P(A' \\cup B) = 1 - P(A \\cap B') = 1 - 0.2 = 0.8 \\).",
+        "explanation": "Bài tập này ôn luyện các công thức cơ bản của xác suất: quy tắc cộng, quy tắc phần bù, và tính chất giao của các tập hợp.",
+        "difficulty": "medium",
+        "topic": "Probability Rules",
+        "hints": [
+          "Vẽ biểu đồ Venn sẽ giúp hình dung dễ dàng các vùng giao và hợp.",
+          "A' giao B chính là phần thuộc B nhưng không thuộc A."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 81,
+        "question": "If \\( A \\), \\( B \\), and \\( C \\) are mutually exclusive events with \\( P(A) = 0.2 \\), \\( P(B) = 0.3 \\), and \\( P(C) = 0.4 \\), determine the following probabilities:<br />(a) \\( P(A \\cup B \\cup C) \\)<br />(b) \\( P(A \\cap B \\cap C) \\)<br />(c) \\( P(A \\cap B) \\)<br />(d) \\( P[(A \\cup B) \\cap C] \\)<br />(e) \\( P(A' \\cap B' \\cap C') \\)",
+        "options": [],
+        "correctAnswer": "<b>Dữ kiện quan trọng:</b> Mutually exclusive (Xung khắc) nghĩa là giao của bất kỳ cặp nào cũng bằng Rỗng (xác suất = 0).<br /><br /><b>(a) \\( P(A \\cup B \\cup C) \\):</b><br />Do xung khắc: \\( P(A) + P(B) + P(C) \\)<br />\\( = 0.2 + 0.3 + 0.4 = 0.9 \\).<br /><br /><b>(b) \\( P(A \\cap B \\cap C) \\):</b><br />Do xung khắc: \\( 0 \\).<br /><br /><b>(c) \\( P(A \\cap B) \\):</b><br />Do xung khắc: \\( 0 \\).<br /><br /><b>(d) \\( P[(A \\cup B) \\cap C] \\):</b><br />Phân phối: \\( (A \\cap C) \\cup (B \\cap C) \\).<br />Cả hai giao này đều bằng 0 do xung khắc.<br />Kết quả: \\( 0 \\).<br /><br /><b>(e) \\( P(A' \\cap B' \\cap C') \\):</b><br />Theo định luật De Morgan: \\( A' \\cap B' \\cap C' = (A \\cup B \\cup C)' \\).<br />\\( = 1 - P(A \\cup B \\cup C) \\)<br />\\( = 1 - 0.9 = 0.1 \\).",
+        "explanation": "Bài toán kiểm tra sự hiểu biết về khái niệm 'biến cố xung khắc' (mutually exclusive events). Khi các biến cố xung khắc, phần giao nhau bằng 0 và xác suất của hợp bằng tổng xác suất thành phần.",
+        "difficulty": "medium",
+        "topic": "Probability Rules",
+        "hints": [
+          "Mutually exclusive: Không thể xảy ra cùng lúc -> Giao nhau bằng 0.",
+          "Sử dụng định luật De Morgan cho câu (e)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 82,
+        "question": "The probability is 1% that an electrical connector that is kept dry fails during the warranty period of a portable computer. If the connector is ever wet, the probability of a failure during the warranty period is 5%.<br />If 90% of the connectors are kept dry and 10% are wet, what proportion of connectors fail during the warranty period?",
+        "options": [],
+        "correctAnswer": "<b>Gọi các biến cố:</b><br />- \\( F \\): Connector fails (hỏng).<br />- \\( D \\): Kept dry (khô). \\( P(D) = 0.90 \\).<br />- \\( W \\): Ever wet (ướt). \\( P(W) = 0.10 \\).<br /><br /><b>Dữ kiện xác suất có điều kiện:</b><br />- \\( P(F|D) = 0.01 \\).<br />- \\( P(F|W) = 0.05 \\).<br /><br /><b>Áp dụng quy tắc xác suất đầy đủ (Total Probability Rule):</b><br />\\( P(F) = P(F|D)P(D) + P(F|W)P(W) \\)<br />\\( P(F) = (0.01)(0.90) + (0.05)(0.10) \\)<br />\\( P(F) = 0.009 + 0.005 \\)<br />\\( P(F) = 0.014 \\).<br /><br /><b>Kết luận:</b> Tỷ lệ hỏng là 0.014 (hay 1.4%).",
+        "explanation": "Bài toán ứng dụng quy tắc xác suất đầy đủ để tính xác suất hỏng hóc tổng quát dựa trên hai điều kiện môi trường khác nhau (khô và ướt).",
+        "difficulty": "medium",
+        "topic": "Total Probability Rule",
+        "hints": [
+          "Tổng xác suất lỗi bằng tổng các xác suất lỗi trong từng điều kiện nhân với tỷ lệ xảy ra điều kiện đó.",
+          "P(Fail) = P(Fail|Dry)*P(Dry) + P(Fail|Wet)*P(Wet)."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 83,
+        "question": "Suppose 2% of cotton fabric rolls and 3% of nylon fabric rolls contain flaws. Of the rolls used by a manufacturer, 70% are cotton and 30% are nylon.<br />What is the probability that a randomly selected roll used by the manufacturer contains flaws?",
+        "options": [],
+        "correctAnswer": "<b>Gọi các biến cố:</b><br />- \\( F \\): Roll contains flaws (lỗi).<br />- \\( C \\): Cotton roll. \\( P(C) = 0.70 \\).<br />- \\( N \\): Nylon roll. \\( P(N) = 0.30 \\).<br /><br /><b>Dữ kiện:</b><br />- \\( P(F|C) = 0.02 \\).<br />- \\( P(F|N) = 0.03 \\).<br /><br /><b>Tính toán:</b><br />\\( P(F) = P(F|C)P(C) + P(F|N)P(N) \\)<br />\\( P(F) = (0.02)(0.70) + (0.03)(0.30) \\)<br />\\( P(F) = 0.014 + 0.009 \\)<br />\\( P(F) = 0.023 \\).<br /><br /><b>Kết luận:</b> Xác suất là 0.023 (hay 2.3%).",
+        "explanation": "Tương tự câu 82, đây là một ví dụ khác về quy tắc xác suất đầy đủ, tính tỷ lệ lỗi trung bình của toàn bộ lô hàng gồm hai loại vải.",
+        "difficulty": "medium",
+        "topic": "Total Probability Rule",
+        "hints": [
+          "Xác định tỷ lệ lỗi của từng loại vải và tỷ lệ phần trăm của loại vải đó trong kho.",
+          "Cộng các tích số lại với nhau."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 84,
+        "question": "If \\( P(A|B) = 0.4 \\), \\( P(B) = 0.8 \\), and \\( P(A) = 0.5 \\), are the events \\( A \\) and \\( B \\) independent?",
+        "options": [],
+        "correctAnswer": "<b>Điều kiện để A và B độc lập:</b><br />Hai biến cố A và B độc lập nếu \\( P(A|B) = P(A) \\).<br /><br /><b>Kiểm tra:</b><br />- \\( P(A|B) = 0.4 \\)<br />- \\( P(A) = 0.5 \\)<br /><br />Vì \\( 0.4 \\neq 0.5 \\), nên \\( P(A|B) \\neq P(A) \\).<br /><br /><b>Kết luận:</b> A và B KHÔNG độc lập (Not independent). Việc B xảy ra làm giảm xác suất của A.",
+        "explanation": "Để kiểm tra tính độc lập, ta so sánh xác suất có điều kiện P(A|B) với xác suất không điều kiện P(A). Nếu chúng khác nhau, hai biến cố phụ thuộc nhau.",
+        "difficulty": "easy",
+        "topic": "Independence",
+        "hints": [
+          "So sánh P(A|B) và P(A).",
+          "Nếu bằng nhau -> Độc lập. Nếu khác nhau -> Phụ thuộc."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 85,
+        "question": "If \\( P(A|B) = 0.3 \\), \\( P(B) = 0.8 \\), and \\( P(A) = 0.3 \\), are the events \\( B \\) and the complement of \\( A \\) independent?",
+        "options": [],
+        "correctAnswer": "<b>Bước 1: Kiểm tra xem A và B có độc lập không</b><br />Ta thấy \\( P(A|B) = 0.3 \\) và \\( P(A) = 0.3 \\).<br />Vì \\( P(A|B) = P(A) \\), nên A và B là hai biến cố độc lập.<br /><br /><b>Bước 2: Sử dụng tính chất của biến cố độc lập</b><br />Nếu A và B độc lập, thì:<br />- A và B' độc lập.<br />- A' và B độc lập.<br />- A' và B' độc lập.<br /><br />Ở đây đề hỏi về \\( B \\) và \\( A' \\) (complement of A).<br />Vì A và B độc lập, nên A' và B cũng độc lập.<br /><br /><b>Kết luận:</b> Có, chúng độc lập.",
+        "explanation": "Bài toán kiểm tra tính chất mở rộng của sự độc lập: Nếu A độc lập với B thì phần bù của chúng cũng độc lập với nhau.",
+        "difficulty": "medium",
+        "topic": "Independence",
+        "hints": [
+          "Trước hết kiểm tra xem A và B có độc lập không (so sánh P(A|B) và P(A)).",
+          "Nhớ định lý: Nếu A và B độc lập thì A' và B cũng độc lập."
+        ],
+        "type": "essay"
+      },
+      {
+        "id": 86,
+        "question": "Disks of polycarbonate plastic from a supplier are analyzed for scratch and shock resistance. The results from 100 disks are summarized as follows:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'></th><th style='border:1px solid #ddd; padding:5px;'>Shock: High</th><th style='border:1px solid #ddd; padding:5px;'>Shock: Low</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>Scratch: High</b></td><td style='border:1px solid #ddd; padding:5px;'>70</td><td style='border:1px solid #ddd; padding:5px;'>9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'><b>Scratch: Low</b></td><td style='border:1px solid #ddd; padding:5px;'>16</td><td style='border:1px solid #ddd; padding:5px;'>5</td></tr></table><br /><br />Let \\( A \\) denote the event that a disk has high shock resistance, and let \\( B \\) denote the event that a disk has high scratch resistance. Are events \\( A \\) and \\( B \\) independent?",
+        "options": [],
+        "correctAnswer": "<b>Tính các xác suất:</b><br />- Tổng số \\( N = 100 \\).<br />- \\( P(A) \\) (High Shock) = \\( (70+16)/100 = 0.86 \\).<br />- \\( P(B) \\) (High Scratch) = \\( (70+9)/100 = 0.79 \\).<br />- \\( P(A \\cap B) \\) (Giao nhau) = \\( 70/100 = 0.70 \\).<br /><br /><b>Kiểm tra điều kiện độc lập:</b><br />\\( P(A) \\times P(B) = 0.86 \\times 0.79 = 0.6794 \\).<br />\\( P(A \\cap B) = 0.70 \\).<br /><br />Vì \\( 0.70 \\neq 0.6794 \\), tức là \\( P(A \\cap B) \\neq P(A)P(B) \\).<br /><br /><b>Kết luận:</b> Hai biến cố A và B KHÔNG độc lập (Not independent).",
+        "explanation": "Để kiểm tra tính độc lập từ bảng dữ liệu, ta tính xác suất biên của A và B, nhân chúng lại và so sánh với xác suất đồng thời (giao nhau) thực tế.",
+        "difficulty": "medium",
+        "topic": "Independence",
+        "hints": [
+          "Tính P(A), P(B) và P(A giao B) từ bảng.",
+          "Kiểm tra xem P(A)*P(B) có bằng P(A giao B) hay không."
         ],
         "type": "essay"
       }
