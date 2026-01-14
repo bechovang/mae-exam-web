@@ -1353,6 +1353,72 @@
           "Tính theo công thức Poisson."
         ],
         "type": "multiple_choice"
+      },
+      {
+        "id": 66,
+        "question": "On average, Binh receives 9 phone calls from his mother weekly. Assume that the number of calls follows a Poisson distribution. Find the probability that his mother only calls him once during a two-day period.",
+        "image": null,
+        "options": [
+          "A. 0.197",
+          "B. 0.231",
+          "C. 0.223",
+          "D. 0.218",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "A",
+        "explanation": "<b>Bước 1: Tính số cuộc gọi trung bình trong 2 ngày (\\( \\lambda_{new} \\))</b><br />Đề bài cho trung bình 9 cuộc gọi/tuần (7 ngày).<br />Tốc độ trung bình mỗi ngày: \\( \\frac{9}{7} \\) cuộc gọi/ngày.<br />Trong 2 ngày, trung bình số cuộc gọi là:<br />\\( \\lambda = \\frac{9}{7} \\times 2 = \\frac{18}{7} \\approx 2.5714 \\)<br /><br /><b>Bước 2: Sử dụng công thức Poisson</b><br />Ta cần tính xác suất có đúng 1 cuộc gọi (\\( k=1 \\)) với \\( \\lambda = 2.5714 \\).<br />\\( P(X=1) = \\frac{e^{-\\lambda} \\lambda^k}{k!} = \\frac{e^{-2.5714} (2.5714)^1}{1!} \\)<br />\\( P(X=1) = e^{-2.5714} \\times 2.5714 \\)<br />\\( P(X=1) \\approx 0.0764 \\times 2.5714 \\approx 0.1965 \\)<br /><br />Làm tròn kết quả gần nhất là 0.197.",
+        "difficulty": "hard",
+        "topic": "Poisson Rate Adjustment",
+        "hints": [
+          "Chú ý đơn vị thời gian: Đề cho 'weekly' (hàng tuần) nhưng hỏi trong 'two-day period' (2 ngày).",
+          "Hãy quy đổi \\( \\lambda \\) từ tuần sang 2 ngày trước khi áp dụng công thức.",
+          "Công thức Poisson: \\( P(X=k) = \\frac{e^{-\\lambda}\\lambda^k}{k!} \\)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 67,
+        "question": "A statistics professor finds that when he schedules an office hour at the 10:30 a.m. time slot, an average of three students arrive. Use the Poisson distribution to find the probability that in a randomly selected office hour in the 10:30 a.m. time slot exactly five students will arrive.",
+        "image": null,
+        "options": [
+          "A. 0.0070",
+          "B. 0.1008",
+          "C. 0.0519",
+          "D. 0.0137",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "B",
+        "explanation": "Đây là bài toán phân phối Poisson trực tiếp.<br /><br /><b>Các tham số:</b><br />- Trung bình số sinh viên đến: \\( \\lambda = 3 \\).<br />- Số sinh viên cần tính xác suất: \\( k = 5 \\).<br /><br /><b>Tính toán:</b><br />Áp dụng công thức: \\( P(X=5) = \\frac{e^{-3} 3^5}{5!} \\)<br />\\( P(X=5) = \\frac{0.049787 \\times 243}{120} \\)<br />\\( P(X=5) = \\frac{12.098}{120} \\approx 0.1008 \\)",
+        "difficulty": "medium",
+        "topic": "Poisson Probability",
+        "hints": [
+          "Xác định giá trị trung bình \\( \\lambda \\) từ đề bài.",
+          "Áp dụng công thức Poisson với \\( k=5 \\).",
+          "Lưu ý: \\( 5! = 5 \\times 4 \\times 3 \\times 2 \\times 1 = 120 \\)."
+        ],
+        "type": "multiple_choice"
+      },
+      {
+        "id": 68,
+        "question": "The Columbia Power Company power failures follow a Poisson distribution with a mean of 0.210 per day. Find the probability that there are exactly two power failures in a particular day.",
+        "image": null,
+        "options": [
+          "A. 0.085",
+          "B. 0.027",
+          "C. 0.018",
+          "D. 0.036",
+          "E. None of the other choices is correct"
+        ],
+        "correctAnswer": "C",
+        "explanation": "Bài toán yêu cầu tính xác suất của biến ngẫu nhiên Poisson.<br /><br /><b>Các tham số:</b><br />- Trung bình số sự cố mỗi ngày: \\( \\lambda = 0.210 \\).<br />- Số sự cố cần tính xác suất: \\( k = 2 \\).<br /><br /><b>Tính toán:</b><br />\\( P(X=2) = \\frac{e^{-\\lambda} \\lambda^k}{k!} = \\frac{e^{-0.210} (0.210)^2}{2!} \\)<br />\\( P(X=2) = \\frac{0.81058 \\times 0.0441}{2} \\)<br />\\( P(X=2) = \\frac{0.035746}{2} \\approx 0.01787 \\)<br /><br />Làm tròn kết quả ta được 0.018.",
+        "difficulty": "medium",
+        "topic": "Poisson Probability",
+        "hints": [
+          "Sử dụng công thức Poisson với \\( \\lambda = 0.210 \\).",
+          "Thay \\( k = 2 \\) vào công thức.",
+          "Tính toán cẩn thận với lũy thừa và giai thừa."
+        ],
+        "type": "multiple_choice"
       }
     ]
   }
