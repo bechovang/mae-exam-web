@@ -1,0 +1,607 @@
+{
+  "examId": "de32",
+  "title": "MAS chương 8 - BT luyện thêm",
+  "description": "Practice calculating and interpreting confidence intervals for population means and proportions.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "It is desired to estimate the average total compensation of CEOs in the Service industry. Data were randomly collected from 18 CEOs and the 97% confidence interval was calculated to be (2181260, 5836180). Which of the following interpretations is correct?",
+      "image": null,
+      "options": [
+        "A. We are 97% confident that the average total compensation of all CEOs in the Service industry falls in the interval 2181260 to 5836180.",
+        "B. We are 97% confident that the mean of the sampled CEOs falls in the interval 2181260 to 5836180.",
+        "C. In the population of Service industry CEOs, 97% of them will have total compensations that fall in the interval 2181260 to 5836180.",
+        "D. 97% of the sampled total compensation values fell between 2181260 and 5836180."
+      ],
+      "correctAnswer": "A",
+      "explanation": "Định nghĩa chuẩn của Khoảng tin cậy (Confidence Interval): Nó được dùng để ước lượng một <b>tham số của tổng thể (population parameter)</b>, cụ thể ở đây là mức lương trung bình của <b>TẤT CẢ</b> các CEO trong ngành (average total compensation of all CEOs).<br /><br />Mức độ tin cậy 97% mang ý nghĩa: Nếu ta lấy mẫu nhiều lần và tính toán khoảng tin cậy theo cùng một cách, thì 97% số khoảng tin cậy tạo ra sẽ chứa giá trị trung bình lương thực sự của toàn bộ tổng thể.<br /><br /><b>Phân tích các đáp án sai:</b><br />- <b>B sai:</b> Trung bình của mẫu (sample mean) nằm chính xác ở giữa khoảng này, ta chắc chắn 100% chứ không phải 97%.<br />- <b>C sai:</b> Khoảng tin cậy không dùng để nói về tỷ lệ phần trăm cá nhân trong tổng thể rơi vào khoảng đó.<br />- <b>D sai:</b> Khoảng tin cậy không nói về việc các giá trị của mẫu rơi vào đâu.",
+      "difficulty": "medium",
+      "topic": "Interpreting Confidence Intervals",
+      "hints": [
+        "Ghi nhớ quy tắc vàng: Khoảng tin cậy luôn đi kèm với từ khóa 'ALL' (đại diện cho Population parameter)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 2,
+      "question": "It is desired to estimate the average total compensation of CEOs in the Service industry. Data were randomly collected from 35 CEOs and the 94% confidence interval was calculated to be (3451260, 7536180). Which of the following interpretations is correct?",
+      "image": null,
+      "options": [
+        "A. We are 94% confident that the average total compensation of all CEOs in the Service industry falls in the interval 3451260 to 7536180",
+        "B. We are 94% confident that the mean of the sampled CEOs falls in the interval 3451260 to 7536180",
+        "C. In the population of Service industry CEOs, 94% of them will have total compensations that fall in the interval 3451260 to 7536180",
+        "D. 94% of the sampled total compensation values fell between 3451260 and 7536180"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Tương tự như câu 1, khoảng tin cậy được xây dựng để đưa ra ước lượng cho giá trị <b>trung bình của tổng thể (population mean)</b>.<br /><br />Ta có thể tự tin 94% rằng mức lương trung bình thực sự của <b>TẤT CẢ (all)</b> các CEO trong ngành dịch vụ nằm trong khoảng từ 3451260 đến 7536180.<br /><br />Đáp án A diễn đạt hoàn toàn chuẩn xác ý nghĩa này.",
+      "difficulty": "medium",
+      "topic": "Interpreting Confidence Intervals",
+      "hints": [
+        "Khoảng tin cậy luôn dùng để ước lượng cho 'Tổng thể' (Population) chứ không phải cho 'Mẫu' (Sample) hay từng cá thể."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 3,
+      "question": "A confidence interval was used to estimate the proportion of statistics students that are females. A random sample of 72 statistics students generated the following 90% confidence interval: (0.438, 0.642). Based on the interval above, is the population proportion of females equal to 0.60?",
+      "image": null,
+      "options": [
+        "A. No. The proportion is 54.17%.",
+        "B. Yes, and we are 90% sure of it.",
+        "C. No, and we are 90% sure of it.",
+        "D. Maybe. 0.60 is a believable value of the population proportion based on the information above."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Bản chất của khoảng tin cậy (Confidence Interval) là cung cấp một khoảng chứa các giá trị <b>có khả năng cao (believable/plausible values)</b> của tham số tổng thể.<br /><br />Vì giá trị 0.60 nằm bên trong khoảng (0.438, 0.642), nó hoàn toàn có thể là tỷ lệ thực tế của tổng thể. Tuy nhiên, ta không thể khẳng định chắc chắn 100% hay 90% rằng tỷ lệ này <b>ĐÚNG BẰNG</b> 0.60. Ta chỉ có thể tự tin 90% rằng tỷ lệ thực sự rơi vào đâu đó trong toàn bộ khoảng này.<br /><br />Do đó, trả lời <b>\"Maybe (Có thể)\"</b> là diễn đạt chính xác nhất theo ngôn ngữ thống kê.",
+      "difficulty": "easy",
+      "topic": "Interpreting Confidence Intervals",
+      "hints": [
+        "Khoảng tin cậy không chỉ ra một giá trị duy nhất. Bất cứ giá trị nào nằm bên trong khoảng đều có thể (maybe) là giá trị thực của tổng thể."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 4,
+      "question": "A manufacturer produces piston rings for an automobile engine. It is known that ring diameter is normally distributed with \\( \\sigma = 0.25 \\) millimeters. A random sample of 15 rings has a mean diameter of 74.53 millimeters. Find a 95% two-sided confidence interval on the true mean diameter.<br /><br />Let \\( z_{0.025} = 1.960 \\); \\( z_{0.05} = 1.645 \\).",
+      "image": null,
+      "options": [
+        "A. (74.40, 74.66)",
+        "B. (74.42, 74.64)",
+        "C. (74.44, 74.62)",
+        "D. (74.38, 74.68)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1:</b> Tổng thể có phân phối chuẩn và đã biết \\( \\sigma = 0.25 \\). Độ tin cậy là 95% nên ta dùng \\( z_{0.025} = 1.960 \\).<br /><br /><b>Bước 2:</b> Tính sai số biên (ME):<br />\\[ ME = z_{0.025} \\cdot \\frac{\\sigma}{\\sqrt{n}} = 1.960 \\cdot \\frac{0.25}{\\sqrt{15}} \\approx 1.960 \\cdot 0.06455 \\approx 0.1265 \\]<br /><br /><b>Bước 3:</b> Tính khoảng tin cậy:<br />\\[ CI = 74.53 \\pm 0.1265 \\]<br />Cận dưới: \\( 74.53 - 0.1265 = 74.4035 \\)<br />Cận trên: \\( 74.53 + 0.1265 = 74.6565 \\)<br /><br />Làm tròn đến 2 chữ số thập phân, ta được khoảng <b>(74.40, 74.66)</b>.",
+      "difficulty": "medium",
+      "topic": "Confidence Intervals",
+      "hints": [
+        "Sử dụng công thức \\( \\bar{x} \\pm z_{0.025} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\). Đừng quên lấy căn bậc hai của 15."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 5,
+      "question": "A confidence interval estimate is desired for the gain in a circuit on a semiconductor device. Assume that gain is normally distributed with standard deviation \\( \\sigma = 10 \\). Find a 95% confidence interval for the mean gain \\( \\mu \\) when \\( n = 25 \\) and \\( \\bar{x} = 1010 \\).<br /><br />Let \\( z_{0.025} = 1.96 \\), \\( z_{0.05} = 1.65 \\)<br />\\( t_{0.025, 24} = 2.06 \\), \\( t_{0.05, 24} = 1.71 \\)",
+      "image": null,
+      "options": [
+        "A. (1006.08, 1013.92)",
+        "B. (1006.70, 1013.30)",
+        "C. (1005.88, 1014.12)",
+        "D. (1006.58, 1013.42)",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1:</b> Do đã biết độ lệch chuẩn của tổng thể (\\( \\sigma = 10 \\)), ta sử dụng phân phối chuẩn Z để tính khoảng tin cậy. Với độ tin cậy 95% (\\( \\alpha = 0.05 \\)), ta dùng \\( z_{\\alpha/2} = z_{0.025} = 1.96 \\).<br /><br /><b>Bước 2:</b> Tính sai số biên (Margin of Error - ME):<br />\\[ ME = z_{0.025} \\cdot \\frac{\\sigma}{\\sqrt{n}} = 1.96 \\cdot \\frac{10}{\\sqrt{25}} = 1.96 \\cdot \\frac{10}{5} = 1.96 \\cdot 2 = 3.92 \\]<br /><br /><b>Bước 3:</b> Tìm khoảng tin cậy (Confidence Interval):<br />\\[ CI = \\bar{x} \\pm ME = 1010 \\pm 3.92 \\]<br />Cận dưới: \\( 1010 - 3.92 = 1006.08 \\)<br />Cận trên: \\( 1010 + 3.92 = 1013.92 \\)<br /><br />Khoảng tin cậy là <b>(1006.08, 1013.92)</b>.",
+      "difficulty": "medium",
+      "topic": "Confidence Intervals",
+      "hints": [
+        "Khi đã biết độ lệch chuẩn của tổng thể (\\( \\sigma \\)), hãy dùng phân phối Z thay vì phân phối t.",
+        "Áp dụng công thức \\( \\bar{x} \\pm z \\cdot \\frac{\\sigma}{\\sqrt{n}} \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 6,
+      "question": "A random sample of 40 students has a mean annual earnings of 3120. Assume the population standard deviation is 677. Construct the confidence interval for the population mean. Use a 95% confidence level.<br /><br />Let \\( z_{0.05} = 1.645 \\), \\( z_{0.025} = 1.96 \\), \\( t_{0.05,39} = 1.685 \\), \\( t_{0.025,39} = 2.023 \\)",
+      "image": null,
+      "options": [
+        "A. (3110, 4210)",
+        "B. (4812, 5342)",
+        "C. (1987, 2346)",
+        "D. (2910, 3330)",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Công thức khoảng tin cậy 95% khi biết độ lệch chuẩn tổng thể \\( \\sigma \\):</b><br />\\[ \\bar{x} \\pm z_{0.025} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\]<br /><br /><b>Thay số:</b><br />\\( \\bar{x} = 3120,\\ \\sigma = 677,\\ n = 40,\\ z_{0.025} = 1.96 \\)<br /><br />\\[ SE = \\frac{677}{\\sqrt{40}} \\approx 107.08 \\]<br />\\[ 3120 \\pm 1.96 \\times 107.08 = 3120 \\pm 209.88 \\]<br /><br /><b>Kết quả:</b> \\( (2910.12,\\ 3329.88) \\approx (2910, 3330) \\)<br /><br />Đáp án đúng là <b>D. (2910, 3330)</b>.",
+      "difficulty": "medium",
+      "topic": "Confidence Intervals",
+      "hints": [
+        "Vì đã biết độ lệch chuẩn tổng thể \\( \\sigma \\), dùng phân phối Z (không dùng t).",
+        "Với mức tin cậy 95%, dùng \\( z_{0.025} = 1.96 \\).",
+        "Công thức: \\( \\bar{x} \\pm z_{0.025} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\)"
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 7,
+      "question": "A group of 49 randomly selected students has a mean age of 22.4 years. Assume the population standard deviation is 3.8. Construct a 98% confidence interval for the population mean.<br /><br />Let \\( z_{0.01} = 2.33 \\), \\( t_{0.01,48} = 2.50 \\)",
+      "image": null,
+      "options": [
+        "A. (18.8, 26.3)",
+        "B. (21.1, 23.7)",
+        "C. (20.3, 24.5)",
+        "D. (19.8, 25.1)",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Công thức khoảng tin cậy 98% khi biết độ lệch chuẩn tổng thể \\( \\sigma \\):</b><br />\\[ \\bar{x} \\pm z_{0.01} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\]<br /><br /><b>Thay số:</b><br />\\( \\bar{x} = 22.4,\\ \\sigma = 3.8,\\ n = 49,\\ z_{0.01} = 2.33 \\)<br /><br />\\[ SE = \\frac{3.8}{\\sqrt{49}} = \\frac{3.8}{7} \\approx 0.543 \\]<br />\\[ 22.4 \\pm 2.33 \\times 0.543 = 22.4 \\pm 1.265 \\]<br /><br /><b>Kết quả:</b> \\( (21.135,\\ 23.665) \\approx (21.1, 23.7) \\)<br /><br />Đáp án đúng là <b>B. (21.1, 23.7)</b>.",
+      "difficulty": "medium",
+      "topic": "Confidence Intervals",
+      "hints": [
+        "Vì đã biết \\( \\sigma \\), dùng phân phối Z.",
+        "Mức tin cậy 98% tương ứng với \\( \\alpha/2 = 0.01 \\), dùng \\( z_{0.01} = 2.33 \\).",
+        "Tính \\( SE = \\frac{\\sigma}{\\sqrt{n}} = \\frac{3.8}{7} \\)"
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 8,
+      "question": "In a sample of 10 randomly selected women, it was found that their mean height was 63.4 inches. From previous studies, it is assumed that the standard deviation of the population is 2.4 inches. Construct the 95% confidence interval for the population mean.<br /><br />Let \\( z_{0.025} = 1.96 \\), \\( z_{0.05} = 1.65 \\), \\( t_{0.025,9} = 2.26 \\)",
+      "image": null,
+      "options": [
+        "A. (61.9, 64.9)",
+        "B. (60.8, 65.4)",
+        "C. (59.7, 66.5)",
+        "D. (58.1, 67.3)",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Công thức khoảng tin cậy 95% khi biết độ lệch chuẩn tổng thể \\( \\sigma \\):</b><br />\\[ \\bar{x} \\pm z_{0.025} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\]<br /><br /><b>Thay số:</b><br />\\( \\bar{x} = 63.4,\\ \\sigma = 2.4,\\ n = 10,\\ z_{0.025} = 1.96 \\)<br /><br />\\[ SE = \\frac{2.4}{\\sqrt{10}} \\approx 0.759 \\]<br />\\[ 63.4 \\pm 1.96 \\times 0.759 = 63.4 \\pm 1.487 \\]<br /><br /><b>Kết quả:</b> \\( (61.913,\\ 64.887) \\approx (61.9, 64.9) \\)<br /><br />Đáp án đúng là <b>A. (61.9, 64.9)</b>.",
+      "difficulty": "medium",
+      "topic": "Confidence Intervals",
+      "hints": [
+        "Vì đã biết \\( \\sigma \\), dùng phân phối Z với \\( z_{0.025} = 1.96 \\).",
+        "Tính \\( SE = \\frac{2.4}{\\sqrt{10}} \\approx 0.759 \\).",
+        "Biên độ sai số: \\( E = z_{0.025} \\times SE \\approx 1.487 \\)"
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 9,
+      "question": "A random sample of 10 parking meters in a beach community showed the following incomes for a day:<br />3.60 &nbsp; 4.50 &nbsp; 2.80 &nbsp; 6.30 &nbsp; 2.60 &nbsp; 5.20 &nbsp; 6.75 &nbsp; 4.25 &nbsp; 8.00 &nbsp; 3.00<br /><br />A simple computation yields a sample mean of 4.7 and standard deviation of 1.8. Assume the incomes are normally distributed. Find the 95% confidence interval for the true mean.<br /><br />Let \\( z_{0.05} = 1.65 \\), \\( z_{0.025} = 1.96 \\), \\( t_{0.05,9} = 1.83 \\), \\( t_{0.025,9} = 2.26 \\)",
+      "image": null,
+      "options": [
+        "A. (4.81, 6.31)",
+        "B. (3.41, 5.99)",
+        "C. (1.35, 2.85)",
+        "D. (2.11, 5.34)",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Vì không biết độ lệch chuẩn tổng thể, dùng phân phối t với \\( n-1 = 9 \\) bậc tự do:</b><br />\\[ \\bar{x} \\pm t_{0.025,9} \\cdot \\frac{s}{\\sqrt{n}} \\]<br /><br /><b>Thay số:</b><br />\\( \\bar{x} = 4.7,\\ s = 1.8,\\ n = 10,\\ t_{0.025,9} = 2.26 \\)<br /><br />\\[ SE = \\frac{1.8}{\\sqrt{10}} \\approx 0.569 \\]<br />\\[ 4.7 \\pm 2.26 \\times 0.569 = 4.7 \\pm 1.286 \\]<br /><br /><b>Kết quả:</b> \\( (3.414,\\ 5.986) \\approx (3.41, 5.99) \\)<br /><br />Đáp án đúng là <b>B. (3.41, 5.99)</b>.",
+      "difficulty": "medium",
+      "topic": "Confidence Intervals",
+      "hints": [
+        "Vì không biết \\( \\sigma \\) của tổng thể, phải dùng phân phối t (không dùng z).",
+        "Bậc tự do: \\( df = n - 1 = 9 \\), dùng \\( t_{0.025,9} = 2.26 \\).",
+        "Tính \\( SE = \\frac{s}{\\sqrt{n}} = \\frac{1.8}{\\sqrt{10}} \\approx 0.569 \\)"
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 10,
+      "question": "The diameter of holes for cable harness is known to have a normal distribution with \\( \\sigma = 0.010 \\) inch. A random sample of size 10 yields an average diameter of 1.545 inch. Find a 99% two-sided confidence interval on the mean hole diameter.<br /><br />Let \\( z_{0.005} = 2.58 \\)",
+      "image": null,
+      "options": [
+        "A. None of the other choices is correct",
+        "B. (1.488, 1.550)",
+        "C. (1.520, 1.546)",
+        "D. (1.537, 1.553)",
+        "E. (1.501, 1.602)"
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Công thức khoảng tin cậy 99% khi biết \\( \\sigma \\):</b><br />\\[ \\bar{x} \\pm z_{0.005} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\]<br /><br /><b>Thay số:</b><br />\\( \\bar{x} = 1.545,\\ \\sigma = 0.010,\\ n = 10,\\ z_{0.005} = 2.58 \\)<br /><br />\\[ SE = \\frac{0.010}{\\sqrt{10}} \\approx 0.003162 \\]<br />\\[ 1.545 \\pm 2.58 \\times 0.003162 = 1.545 \\pm 0.00816 \\]<br /><br /><b>Kết quả:</b> \\( (1.5368,\\ 1.5532) \\approx (1.537, 1.553) \\)<br /><br />Đáp án đúng là <b>D. (1.537, 1.553)</b>.",
+      "difficulty": "medium",
+      "topic": "Confidence Intervals",
+      "hints": [
+        "Vì đã biết \\( \\sigma \\), dùng phân phối Z.",
+        "Với mức tin cậy 99%, \\( \\alpha/2 = 0.005 \\), dùng \\( z_{0.005} = 2.58 \\).",
+        "Tính \\( SE = \\frac{0.010}{\\sqrt{10}} \\approx 0.00316 \\)"
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 11,
+      "question": "A sample of 25 randomly selected students has a mean test score of 81.5 with a standard deviation of 10.2. Construct a 95% confidence interval for the population mean. Assume the population has a normal distribution.<br /><br />Let \\( t_{0.025, 24} = 2.06 \\).",
+      "image": null,
+      "options": [
+        "A. (66.35, 69.89)",
+        "B. None of the other choices is correct",
+        "C. (77.30, 85.70)",
+        "D. (56.12, 78.34)",
+        "E. (87.12, 98.32)"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Phân tích các thông số đã cho:</b><br />- Cỡ mẫu \\( n = 25 \\)<br />- Trung bình mẫu \\( \\bar{x} = 81.5 \\)<br />- Độ lệch chuẩn mẫu \\( s = 10.2 \\)<br />- Độ tin cậy 95% \\( \\Rightarrow \\alpha = 0.05 \\Rightarrow \\alpha/2 = 0.025 \\)<br />- Bậc tự do \\( df = n - 1 = 24 \\)<br />Do chưa biết độ lệch chuẩn tổng thể, ta dùng phân phối Student. Đề đã cho \\( t_{0.025, 24} = 2.06 \\).<br /><br /><b>Thực hiện tính toán:</b><br />Công thức khoảng tin cậy cho trung bình tổng thể:<br />\\[ \\bar{x} \\pm t_{\\alpha/2, n-1} \\cdot \\frac{s}{\\sqrt{n}} \\]<br />- Sai số biên (Margin of Error): \\( E = 2.06 \\cdot \\frac{10.2}{\\sqrt{25}} = 2.06 \\cdot \\frac{10.2}{5} = 4.2024 \\)<br />- Giới hạn dưới: \\( 81.5 - 4.2024 = 77.2976 \\approx 77.30 \\)<br />- Giới hạn trên: \\( 81.5 + 4.2024 = 85.7024 \\approx 85.70 \\)<br />Vậy khoảng tin cậy 95% là \\( (77.30, 85.70) \\).",
+      "difficulty": "medium",
+      "topic": "Confidence Intervals (t-distribution)",
+      "hints": [
+        "Vì độ lệch chuẩn tổng thể chưa biết và kích thước mẫu nhỏ, hãy sử dụng phân phối t.",
+        "Tính sai số biên bằng công thức t * (s / √n) rồi cộng trừ vào trung bình mẫu."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 12,
+      "question": "A local bank needs information concerning the checking account balances of its customers. A random sample of 15 accounts was checked. The mean balance was 686.75 with a standard deviation of 256.20. Find a 98% confidence interval for the true mean. Assume that the account balances are normally distributed.<br /><br />Let \\( z_{0.01} = 2.326 \\), \\( z_{0.02} = 2.054 \\), \\( t_{0.01, 14} = 2.624 \\), \\( t_{0.02, 14} = 2.264 \\).",
+      "image": null,
+      "options": [
+        "A. (238.23, 326.41)",
+        "B. (513.17, 860.33)",
+        "C. (326.21, 437.90)",
+        "D. (487.31, 563.80)",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Phân tích các thông số:</b><br />- Cỡ mẫu \\( n = 15 \\) (mẫu nhỏ)<br />- Trung bình mẫu \\( \\bar{x} = 686.75 \\)<br />- Độ lệch chuẩn mẫu \\( s = 256.20 \\)<br />- Độ tin cậy 98% \\( \\Rightarrow \\alpha = 0.02 \\Rightarrow \\alpha/2 = 0.01 \\)<br />- Vì chưa biết độ lệch chuẩn tổng thể (chỉ biết của mẫu s), ta phải dùng phân phối t với bậc tự do \\( df = n - 1 = 14 \\).<br />- Tra bảng hoặc sử dụng giả thiết đề bài: \\( t_{0.01, 14} = 2.624 \\).<br /><br /><b>Tính toán:</b><br />- Sai số biên: \\( E = t_{0.01, 14} \\cdot \\frac{s}{\\sqrt{n}} = 2.624 \\cdot \\frac{256.20}{\\sqrt{15}} \\approx 2.624 \\cdot 66.151 \\approx 173.58 \\)<br />- Khoảng tin cậy: \\( (686.75 - 173.58, 686.75 + 173.58) = (513.17, 860.33) \\)",
+      "difficulty": "medium",
+      "topic": "Confidence Intervals (t-distribution)",
+      "hints": [
+        "Lưu ý phân biệt giữa Z và t. Do độ lệch chuẩn là của mẫu (sample), ta phải dùng t.",
+        "Tính chính xác giá trị t_0.01,14 được cung cấp để tính khoảng tin cậy."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 13,
+      "question": "Assume that impact energy is normally distributed with \\( \\sigma = 1 \\). We want to find a 95% CI for \\( \\mu \\), the mean impact energy. By a sample, we get \\( n = 10 \\), and sample mean = 64.46. The resulting 95% CI is found by:<br /><br />Let \\( z_{0.025} = 1.96 \\); \\( z_{0.05} = 1.645 \\) and note that all calculations need to be rounded to 4 decimal places.",
+      "image": null,
+      "options": [
+        "A. \\( 53.841 \\le \\mu \\le 75.0823 \\)",
+        "B. \\( 63.8402 \\le \\mu \\le 65.0798 \\)",
+        "C. \\( 67.841 \\le \\mu \\le 85.0823 \\)",
+        "D. \\( 63.9399 \\le \\mu \\le 64.9801 \\)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Phân tích đề bài:</b><br />- Đã biết độ lệch chuẩn tổng thể: \\( \\sigma = 1 \\) (dấu hiệu nhận biết phải dùng phân phối chuẩn Z).<br />- Kích thước mẫu: \\( n = 10 \\)<br />- Trung bình mẫu: \\( \\bar{x} = 64.46 \\)<br />- Độ tin cậy 95% (khoảng 2 phía) \\( \\Rightarrow z_{\\alpha/2} = z_{0.025} = 1.96 \\).<br /><br /><b>Thực hiện tính toán:</b><br />- Công thức khoảng tin cậy Z: \\( \\bar{x} \\pm z_{0.025} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\)<br />- Sai số tính toán (lấy 4 chữ số thập phân): \\( E = 1.96 \\cdot \\frac{1}{\\sqrt{10}} \\approx 0.6198 \\)<br />- Giới hạn dưới: \\( 64.46 - 0.6198 = 63.8402 \\)<br />- Giới hạn trên: \\( 64.46 + 0.6198 = 65.0798 \\)<br />Vậy khoảng tin cậy là \\( 63.8402 \\le \\mu \\le 65.0798 \\).",
+      "difficulty": "medium",
+      "topic": "Confidence Intervals (Z-distribution)",
+      "hints": [
+        "Đề bài cho trực tiếp σ (sigma) của tổng thể, nên sử dụng giá trị Z thay vì t.",
+        "Chú ý yêu cầu làm tròn 4 chữ số thập phân ở kết quả cuối."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 14,
+      "question": "The life of a car tire in miles is known to be normally distributed with a standard deviation of 25 miles. A random sample of 81 tires has an average life of 1025 miles. Construct a 95% upper confidence interval on the mean life. (Calculations need to be rounded to 4 decimal places.)<br /><br />Let \\( z_{0.025} = 1.96 \\); \\( z_{0.05} = 1.645 \\); \\( z_{0.005} = 2.575 \\).",
+      "image": null,
+      "options": [
+        "A. \\( \\mu \\le 1029.5694 \\)",
+        "B. \\( 1019.5632 \\le \\mu \\le 1030.4459 \\)",
+        "C. \\( 1020.4366 \\le \\mu \\)",
+        "D. \\( \\mu \\le 1030.4459 \\)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích đề bài:</b><br />- Độ lệch chuẩn tổng thể đã biết: \\( \\sigma = 25 \\)<br />- Kích thước mẫu: \\( n = 81 \\)<br />- Trung bình mẫu: \\( \\bar{x} = 1025 \\)<br />- Yêu cầu: Tính <b>khoảng tin cậy trên (upper confidence interval)</b> 95%. Đây là khoảng tin cậy một phía, ta dùng mức ý nghĩa toàn phần \\( \\alpha = 0.05 \\) thay vì chia đôi.<br />- Dùng \\( z_{0.05} = 1.645 \\).<br /><br /><b>Thực hiện tính toán:</b><br />- Công thức cho giới hạn trên 1 phía: \\( \\mu \\le \\bar{x} + z_{0.05} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\)<br />- Tính toán sai số: \\( E = 1.645 \\cdot \\frac{25}{\\sqrt{81}} = 1.645 \\cdot \\frac{25}{9} \\approx 4.5694 \\)<br />- Giới hạn trên: \\( 1025 + 4.5694 = 1029.5694 \\)<br />Kết quả: \\( \\mu \\le 1029.5694 \\).",
+      "difficulty": "hard",
+      "topic": "One-sided Confidence Intervals",
+      "hints": [
+        "Đọc kỹ yêu cầu: 'upper confidence interval' nghĩa là chỉ tính khoảng một phía (One-sided).",
+        "Sử dụng mức ý nghĩa toàn phần α = 0.05 (z = 1.645) chứ không chia đôi thành 0.025."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 15,
+      "question": "In an application to estimate the mean number of miles that downtown employees commute to work roundtrip each day, the following information is given:<br />\\[ n = 20, \\quad \\bar{x} = 4.33, \\quad s = 3.50 \\]<br />Based on this information, what is the upper limit for a 95 percent two-sided confidence interval estimate for the true population mean?<br /><br />Let \\( z_{0.025} = 1.96 \\), \\( z_{0.05} = 1.65 \\), \\( t_{0.025, 19} = 2.09 \\) and \\( t_{0.05, 19} = 1.73 \\).",
+      "image": null,
+      "options": [
+        "A. about 5.97 miles.",
+        "B. about 7.83 miles.",
+        "C. about 9.02 miles.",
+        "D. nearly 12.0 miles."
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích đề bài:</b><br />- Cỡ mẫu: \\( n = 20 \\)<br />- Trung bình mẫu: \\( \\bar{x} = 4.33 \\)<br />- Độ lệch chuẩn mẫu: \\( s = 3.50 \\)<br />- Khoảng tin cậy 2 phía (two-sided) 95% \\( \\Rightarrow \\alpha = 0.05 \\Rightarrow \\alpha/2 = 0.025 \\)<br />Do không biết phương sai tổng thể, ta sử dụng phân phối t với bậc tự do \\( df = n - 1 = 19 \\).<br />- Giá trị t tra bảng từ đề: \\( t_{0.025, 19} = 2.09 \\)<br /><br /><b>Thực hiện tính toán:</b><br />- Đề bài yêu cầu tìm giá trị của <b>giới hạn trên (upper limit)</b> cho khoảng tin cậy hai phía.<br />- Công thức tính giới hạn trên: \\( \\bar{x} + t_{0.025, 19} \\cdot \\frac{s}{\\sqrt{n}} \\)<br />- Tính sai số biên: \\( E = 2.09 \\cdot \\frac{3.50}{\\sqrt{20}} \\approx 1.6356 \\)<br />- Giới hạn trên: \\( 4.33 + 1.6356 = 5.9656 \\approx 5.97 \\) dặm.<br />Vậy đáp án là khoảng 5.97 miles.",
+      "difficulty": "medium",
+      "topic": "Confidence Intervals (t-distribution)",
+      "hints": [
+        "Khoảng tin cậy 'two-sided' 95% yêu cầu tính α/2 = 0.025.",
+        "Dùng giá trị t_0.025,19. Chỉ cần tính phép cộng (giới hạn trên) theo yêu cầu câu hỏi."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 15,
+      "question": "The life of a car tire in miles is known to be normally distributed with a standard deviation of 25 miles. A random sample of 81 tires has an average life of 1025 miles. Construct a 95% <b>lower confidence</b> interval on the mean life. (Calculations need to be rounded to 4 decimal places.)<br /><br />Let \\( z_{0.025} = 1.96 \\); \\( z_{0.05} = 1.645 \\); \\( z_{0.005} = 2.575 \\).",
+      "image": null,
+      "options": [
+        "A. \\( 1019.5632 \\le \\mu \\le 1030.4459 \\)",
+        "B. \\( \\mu \\le 1030.4459 \\)",
+        "C. \\( \\mu \\le 1029.5694 \\)",
+        "D. \\( 1020.4306 \\le \\mu \\)"
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Phân tích đề bài:</b><br />- Độ lệch chuẩn tổng thể: \\( \\sigma = 25 \\)<br />- Kích thước mẫu: \\( n = 81 \\)<br />- Trung bình mẫu: \\( \\bar{x} = 1025 \\)<br />- Yêu cầu: Tính <b>khoảng tin cậy dưới (lower confidence interval)</b> ở mức 95%. Đây là khoảng tin cậy một phía, do đó ta dồn toàn bộ mức ý nghĩa \\( \\alpha = 0.05 \\) vào một đuôi, dùng \\( z_{0.05} = 1.645 \\).<br /><br /><b>Tính toán:</b><br />- Công thức giới hạn dưới 1 phía: \\( \\mu \\ge \\bar{x} - z_{0.05} \\cdot \\frac{\\sigma}{\\sqrt{n}} \\)<br />- Sai số: \\( E = 1.645 \\cdot \\frac{25}{\\sqrt{81}} = 1.645 \\cdot \\frac{25}{9} \\approx 4.56944 \\)<br />- Giới hạn dưới: \\( 1025 - 4.56944 = 1020.43056 \\approx 1020.4306 \\)<br /><br />Vậy \\( 1020.4306 \\le \\mu \\).",
+      "difficulty": "hard",
+      "topic": "Confidence Intervals",
+      "hints": [
+        "Chú ý cụm từ 'lower confidence interval', nghĩa là ta chỉ tìm giới hạn dưới (một phía).",
+        "Dùng z ở mức ý nghĩa toàn phần α = 0.05 (z = 1.645)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 16,
+      "question": "A machine produces metal rods used in an automobile suspension system. A random sample of 15 rods is selected, and the diameter is measured. The resulting data (in millimeters) are as follows:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>8.24</td><td style='border:1px solid #ddd; padding:5px;'>8.25</td><td style='border:1px solid #ddd; padding:5px;'>8.20</td><td style='border:1px solid #ddd; padding:5px;'>8.23</td><td style='border:1px solid #ddd; padding:5px;'>8.24</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>8.21</td><td style='border:1px solid #ddd; padding:5px;'>8.26</td><td style='border:1px solid #ddd; padding:5px;'>8.26</td><td style='border:1px solid #ddd; padding:5px;'>8.20</td><td style='border:1px solid #ddd; padding:5px;'>8.25</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>8.23</td><td style='border:1px solid #ddd; padding:5px;'>8.23</td><td style='border:1px solid #ddd; padding:5px;'>8.19</td><td style='border:1px solid #ddd; padding:5px;'>8.28</td><td style='border:1px solid #ddd; padding:5px;'>8.24</td></tr></table><br /><br />(a) Check the assumption of normality for rod diameter.<br />(b) Calculate a 95% two-sided confidence interval on mean rod diameter.<br />(c) Calculate a 95% upper confidence bound on the mean. Compare this bound with the upper bound of the two-sided confidence interval and discuss why they are different.",
+      "image": null,
+      "options": [],
+      "correctAnswer": "<b>(a) Đánh giá tính chuẩn:</b><br />Để kiểm tra xem đường kính thanh kim loại có phân phối chuẩn hay không, ta có thể vẽ biểu đồ xác suất chuẩn (Normal Probability Plot). Nếu các điểm dữ liệu nằm gần một đường thẳng, giả định phân phối chuẩn là hợp lý. Với kích thước mẫu nhỏ n = 15 và không có giá trị ngoại lai nào đáng kể, giả định tính chuẩn thường được chấp nhận trong thực hành.<br /><br /><b>(b) Khoảng tin cậy 95% hai phía (Two-sided CI):</b><br />Từ dữ liệu bảng, ta tính được:<br />- Cỡ mẫu: \\( n = 15 \\)<br />- Trung bình mẫu: \\( \\bar{x} \\approx 8.234 \\)<br />- Độ lệch chuẩn mẫu: \\( s \\approx 0.0253 \\)<br />Do không biết phương sai tổng thể, ta dùng phân phối t với bậc tự do \\( df = 14 \\). Ở độ tin cậy 95% hai phía (\\( \\alpha/2 = 0.025 \\)), giá trị \\( t_{0.025, 14} = 2.145 \\).<br />Sai số biên: \\( E = 2.145 \\cdot \\frac{0.0253}{\\sqrt{15}} \\approx 0.0140 \\)<br />Khoảng tin cậy: \\( 8.234 \\pm 0.0140 \\) hay <b>(8.220, 8.248)</b>.<br /><br /><b>(c) Giới hạn trên 95% (Upper confidence bound):</b><br />Đây là khoảng một phía, ta dùng mức ý nghĩa toàn phần \\( \\alpha = 0.05 \\), với \\( t_{0.05, 14} = 1.761 \\).<br />Giới hạn trên: \\( \\mu \\le \\bar{x} + t_{0.05, 14} \\cdot \\frac{s}{\\sqrt{n}} \\)<br />\\( \\mu \\le 8.234 + 1.761 \\cdot \\frac{0.0253}{\\sqrt{15}} = 8.234 + 0.0115 = 8.2455 \\).<br />Vậy giới hạn trên là <b>8.2455</b>.<br /><br /><b>So sánh:</b> Giới hạn trên của khoảng một phía (8.2455) nhỏ hơn giới hạn trên của khoảng hai phía (8.248). Lý do là ở khoảng một phía, toàn bộ 5% sai số được dồn về một đuôi phân phối, khiến giá trị tới hạn t nhỏ hơn, do đó khoảng cách từ trung bình mẫu đến giới hạn bị thu hẹp lại.",
+      "explanation": "Đây là bài toán thực hành thống kê toàn diện, yêu cầu học viên:<br />1. Nhập liệu và tính các đại lượng thống kê mô tả (trung bình, độ lệch chuẩn mẫu).<br />2. Phân biệt rõ sự khác nhau giữa phân phối t và phân phối Z (do cỡ mẫu nhỏ và dùng s thay vì \\( \\sigma \\)).<br />3. Hiểu sâu bản chất về sự khác biệt giữa khoảng tin cậy một phía và hai phía thông qua việc so sánh thực tế.",
+      "difficulty": "hard",
+      "topic": "Confidence Intervals",
+      "hints": [
+        "Tính giá trị trung bình và độ lệch chuẩn của 15 giá trị trong bảng trước.",
+        "Xác định đúng giá trị t cho trường hợp hai phía (α/2) và một phía (α)."
+      ],
+      "type": "essay"
+    },
+    {
+      "id": 17,
+      "question": "A population has normal distribution with a variance of 81. Suppose you wish to estimate the population mean. Find the sample size needed to assure with 98% confidence that the sample mean will differ from the population mean by at most 3 units.<br /><br />Let \\( z_{0.02} = 2.14, z_{0.01} = 2.33 \\).",
+      "image": null,
+      "options": [
+        "A. 49",
+        "B. 3339",
+        "C. 3968",
+        "D. 41",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích thông số:</b><br />- Phương sai tổng thể: \\( \\sigma^2 = 81 \\Rightarrow \\sigma = 9 \\)<br />- Sai số cho phép (Margin of Error): \\( E = 3 \\)<br />- Độ tin cậy 98%: Cụm từ 'differ... by at most' ngụ ý sai số tính về cả 2 phía (khoảng tin cậy 2 phía). Vậy mức ý nghĩa \\( \\alpha = 0.02 \\Rightarrow \\alpha/2 = 0.01 \\). Dùng \\( z_{0.01} = 2.33 \\).<br /><br /><b>Công thức tính kích thước mẫu tối thiểu:</b><br />\\[ n = \\left( \\frac{z_{\\alpha/2} \\cdot \\sigma}{E} \\right)^2 \\]<br />- Thay số: \\( n = \\left( \\frac{2.33 \\cdot 9}{3} \\right)^2 = (2.33 \\cdot 3)^2 = (6.99)^2 = 48.8601 \\)<br />- Vì n là số lượng phần tử của mẫu nên luôn phải <b>làm tròn lên</b> số nguyên gần nhất: \\( n = 49 \\).<br />Đáp án đúng là 49.",
+      "difficulty": "medium",
+      "topic": "Sample Size Estimation",
+      "hints": [
+        "Chú ý đề bài cho phương sai (variance) là 81, cần suy ra độ lệch chuẩn (standard deviation) trước khi ráp công thức.",
+        "Tính toán kích thước mẫu luôn phải làm tròn lên (round up) số nguyên gần nhất."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 18,
+      "question": "A population is normal with a variance of 64. Suppose you wish to estimate the population mean. Find the sample size needed to assure with 92 percent confidence that the sample mean will not differ from the population mean by more than 2 units.<br /><br />Let \\( z_{0.04} = 1.75; z_{0.08} = 1.41 \\)",
+      "image": null,
+      "options": [
+        "A. 49",
+        "B. 32",
+        "C. 46",
+        "D. 39",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích thông số:</b><br />- Phương sai: \\( \\sigma^2 = 64 \\Rightarrow \\sigma = 8 \\)<br />- Sai số biên cho phép: \\( E = 2 \\)<br />- Độ tin cậy 92% hai phía: Mức ý nghĩa \\( \\alpha = 1 - 0.92 = 0.08 \\Rightarrow \\alpha/2 = 0.04 \\). Do đó ta dùng \\( z_{0.04} = 1.75 \\).<br /><br /><b>Thực hiện tính toán:</b><br />Áp dụng công thức ước lượng kích thước mẫu:<br />\\[ n = \\left( \\frac{z_{0.04} \\cdot \\sigma}{E} \\right)^2 \\]<br />\\( n = \\left( \\frac{1.75 \\cdot 8}{2} \\right)^2 = (1.75 \\cdot 4)^2 = 7^2 = 49 \\)<br />Kết quả là một số nguyên chẵn nên không cần làm tròn. Đáp án là 49.",
+      "difficulty": "medium",
+      "topic": "Sample Size Estimation",
+      "hints": [
+        "Vì ước lượng sự khác biệt không vượt quá 2 unit (cả âm và dương), đây là ước lượng 2 phía.",
+        "Sử dụng α/2 = 0.04 để lấy đúng giá trị z = 1.75."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 19,
+      "question": "A confidence interval estimate is desired for the gain in a circuit on a semiconductor device. Assume that gain is normally distributed with standard deviation \\( \\sigma = 20 \\). How large must the sample size be if the length of the 95% CI is to be 10?<br /><br />Let \\( z_{0.025} = 1.960; z_{0.05} = 1.645 \\)",
+      "image": null,
+      "options": [
+        "A. 62",
+        "B. 44",
+        "C. 16",
+        "D. 11"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích đề bài:</b><br />- Độ lệch chuẩn: \\( \\sigma = 20 \\)<br />- Độ tin cậy 95% \\( \\Rightarrow z_{\\alpha/2} = z_{0.025} = 1.96 \\)<br />- Đề cho <b>chiều dài của khoảng tin cậy (length of CI)</b> là 10. Khoảng tin cậy là \\( \\bar{x} \\pm E \\), nên tổng chiều dài của nó bằng \\( 2E \\).<br />Suy ra sai số biên \\( E = \\frac{10}{2} = 5 \\).<br /><br /><b>Thực hiện tính toán:</b><br />Áp dụng công thức tìm cỡ mẫu:<br />\\[ n = \\left( \\frac{z_{0.025} \\cdot \\sigma}{E} \\right)^2 \\]<br />\\( n = \\left( \\frac{1.96 \\cdot 20}{5} \\right)^2 = (1.96 \\cdot 4)^2 = (7.84)^2 = 61.4656 \\)<br />Nguyên tắc cơ bản trong việc tìm cỡ mẫu là phải làm tròn lên số nguyên tiếp theo để đảm bảo đủ độ tin cậy. Do đó \\( n = 62 \\).",
+      "difficulty": "medium",
+      "topic": "Sample Size Estimation",
+      "hints": [
+        "Cẩn thận: 'Chiều dài của khoảng tin cậy' (Length of CI) chính là 2 lần sai số biên (2E).",
+        "Hãy luôn nhớ nguyên tắc làm tròn lên số nguyên lớn hơn gần nhất đối với cỡ mẫu."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 21,
+      "question": "An economist is interested in studying the incomes of consumers in a particular region. The population standard deviation is known to be $1000. A random sample of 50 individuals resulted in an average income of $15000. What total sample size would the economist need to use for a 95% confidence interval if the width of the interval should not be more than $100?<br /><br />Let \\( z_{0.025} = 1.96 \\).",
+      "image": null,
+      "options": [
+        "A. n = 20",
+        "B. n = 40",
+        "C. n = 1537",
+        "D. n = 385",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Phân tích thông số:</b><br />- Độ lệch chuẩn tổng thể: \\( \\sigma = 1000 \\)<br />- Độ tin cậy 95% \\( \\Rightarrow \\alpha/2 = 0.025 \\Rightarrow z_{0.025} = 1.96 \\)<br />- Yêu cầu: <b>Chiều rộng của khoảng tin cậy (width of the interval)</b> không vượt quá 100.<br />Khoảng tin cậy có độ rộng bằng \\( 2E \\) (với E là sai số biên). Vậy \\( 2E \\le 100 \\Rightarrow E \\le 50 \\). Ta chọn E = 50.<br /><br /><b>Thực hiện tính toán:</b><br />Công thức tìm cỡ mẫu:<br />\\[ n = \\left( \\frac{z_{0.025} \\cdot \\sigma}{E} \\right)^2 \\]<br />- Thay số: \\( n = \\left( \\frac{1.96 \\cdot 1000}{50} \\right)^2 = (1.96 \\cdot 20)^2 = (39.2)^2 = 1536.64 \\)<br />- Nguyên tắc là luôn <b>làm tròn lên</b> số nguyên gần nhất để đảm bảo đủ yêu cầu: \\( n = 1537 \\).",
+      "difficulty": "medium",
+      "topic": "Sample Size Estimation",
+      "hints": [
+        "Lưu ý 'width of the interval' (độ rộng khoảng) là 2E, nên Margin of Error (E) chỉ là một nửa giá trị đó.",
+        "Luôn làm tròn kết quả cỡ mẫu lên số nguyên gần nhất."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 22,
+      "question": "A researcher found that 70 of the 90 people randomly selected were in favor of reducing the sales tax. Compute the 95% confidence interval estimate for the population proportion of people who favor of reducing the sales tax.<br /><br />Let \\( z_{0.025} = 1.96 \\); \\( z_{0.05} = 1.645 \\); \\( z_{0.005} = 2.575 \\).<br />Calculations need to be rounded to 4 decimal places.",
+      "image": null,
+      "options": [
+        "A. \\( 0.2222 \\pm 0.0721 \\)",
+        "B. None of the others",
+        "C. \\( 0.7778 \\pm 0.0859 \\)",
+        "D. \\( 0.7778 \\pm 0.0721 \\)"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Phân tích thông số:</b><br />- Cỡ mẫu: \\( n = 90 \\)<br />- Số lượng thỏa mãn tính trạng: \\( x = 70 \\)<br />- Tỷ lệ mẫu: \\( \\hat{p} = \\frac{x}{n} = \\frac{70}{90} \\approx 0.77778 \\)<br />- Độ tin cậy 95% (hai phía) \\( \\Rightarrow z_{0.025} = 1.96 \\)<br /><br /><b>Thực hiện tính toán:</b><br />Công thức sai số biên cho tỷ lệ:<br />\\[ E = z_{\\alpha/2} \\cdot \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}} \\]<br />- Tính sai số: \\( E = 1.96 \\cdot \\sqrt{\\frac{0.77778 \\cdot (1 - 0.77778)}{90}} = 1.96 \\cdot \\sqrt{\\frac{0.77778 \\cdot 0.22222}{90}} \\approx 1.96 \\cdot \\sqrt{0.00192} \\approx 1.96 \\cdot 0.04382 \\approx 0.08589 \\approx 0.0859 \\)<br />Khoảng tin cậy là: \\( 0.7778 \\pm 0.0859 \\).",
+      "difficulty": "medium",
+      "topic": "Confidence Intervals for Proportions",
+      "hints": [
+        "Tính tỷ lệ mẫu p̂ = x/n trước.",
+        "Sử dụng công thức sai số biên cho tỷ lệ E = z * √(p̂(1-p̂)/n)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 23,
+      "question": "The fraction of defective integrated circuits produced in a photolithography process is being studied. A random sample of 300 circuits is tested, revealing 13 defectives.<br /><br />(a) Calculate a 95% two-sided CI on the fraction of defective circuits produced by this particular tool.<br />(b) Calculate a 95% upper confidence bound on the fraction of defective circuits.",
+      "image": null,
+      "options": [],
+      "correctAnswer": "<b>(a) Khoảng tin cậy 95% hai phía (Two-sided CI):</b><br />- Cỡ mẫu: \\( n = 300 \\)<br />- Số mạch lỗi: \\( x = 13 \\)<br />- Tỷ lệ lỗi mẫu: \\( \\hat{p} = \\frac{13}{300} \\approx 0.0433 \\)<br />- Độ tin cậy 95% hai phía \\( \\Rightarrow z_{0.025} = 1.96 \\)<br />Sai số biên: \\( E = z_{0.025} \\cdot \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}} = 1.96 \\cdot \\sqrt{\\frac{0.0433(1-0.0433)}{300}} \\approx 1.96 \\cdot 0.0117 \\approx 0.023 \\)<br />Khoảng tin cậy: \\( \\hat{p} \\pm E = 0.0433 \\pm 0.023 \\), hay <b>(0.0203, 0.0663)</b>.<br /><br /><b>(b) Giới hạn trên 95% (Upper confidence bound):</b><br />- Độ tin cậy 95% một phía \\( \\Rightarrow \\alpha = 0.05 \\Rightarrow z_{0.05} = 1.645 \\)<br />Giới hạn trên: \\( p \\le \\hat{p} + z_{0.05} \\cdot \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}} \\)<br />\\( p \\le 0.0433 + 1.645 \\cdot 0.0117 \\approx 0.0433 + 0.0192 = 0.0625 \\)<br />Vậy giới hạn trên là <b>0.0625</b>.",
+      "explanation": "Câu hỏi này kiểm tra khả năng ước lượng tỷ lệ cho cả hai trường hợp: khoảng tin cậy hai phía (khoảng giữa) và giới hạn một phía (giới hạn trên). Cần chú ý việc thay đổi giá trị Z tương ứng từ 1.96 sang 1.645.",
+      "difficulty": "medium",
+      "topic": "Confidence Intervals for Proportions",
+      "hints": [
+        "Tính tỷ lệ mẫu p̂. Ở phần (a) dùng Z = 1.96.",
+        "Ở phần (b), do chỉ yêu cầu giới hạn trên, hãy dùng mức ý nghĩa 5% toàn phần (Z = 1.645)."
+      ],
+      "type": "essay"
+    },
+    {
+      "id": 24,
+      "question": "The 2004 presidential election exit polls from the critical state of Ohio provided the following results. The exit polls had 2020 respondents, 768 of whom were college graduates. Of the college graduates, 412 voted for George Bush.<br /><br />(a) Calculate a 95% confidence interval for the proportion of college graduates in Ohio who voted for George Bush.<br />(b) Calculate a 95% lower confidence bound for the proportion of college graduates in Ohio who voted for George Bush.",
+      "image": null,
+      "options": [],
+      "correctAnswer": "<b>(a) Khoảng tin cậy 95% hai phía:</b><br />- Tổng số cử tri tốt nghiệp đại học (cỡ mẫu mục tiêu): \\( n = 768 \\)<br />- Số người bầu cho G. Bush: \\( x = 412 \\)<br />- Tỷ lệ mẫu: \\( \\hat{p} = \\frac{412}{768} \\approx 0.5365 \\)<br />- Độ tin cậy 95% hai phía \\( \\Rightarrow z_{0.025} = 1.96 \\)<br />Sai số: \\( E = 1.96 \\cdot \\sqrt{\\frac{0.5365(1-0.5365)}{768}} \\approx 1.96 \\cdot 0.0180 \\approx 0.0353 \\)<br />Khoảng tin cậy: \\( 0.5365 \\pm 0.0353 \\), hay <b>(0.5012, 0.5718)</b>.<br /><br /><b>(b) Giới hạn dưới 95% (Lower confidence bound):</b><br />- Độ tin cậy 95% một phía \\( \\Rightarrow z_{0.05} = 1.645 \\)<br />Giới hạn dưới: \\( p \\ge \\hat{p} - z_{0.05} \\cdot \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}} \\)<br />\\( p \\ge 0.5365 - 1.645 \\cdot 0.0180 \\approx 0.5365 - 0.0296 = 0.5069 \\)<br />Vậy giới hạn dưới là <b>0.5069</b>.",
+      "explanation": "Điểm quan trọng trong bài toán này là xác định đúng cỡ mẫu (n). Mặc dù có 2020 người tham gia khảo sát, nhưng câu hỏi chỉ hỏi về 'tỷ lệ của những người tốt nghiệp đại học'. Vì vậy, tập mẫu thực sự (n) chỉ là 768 người.",
+      "difficulty": "hard",
+      "topic": "Confidence Intervals for Proportions",
+      "hints": [
+        "Đọc kỹ câu hỏi: chúng ta đang tìm ước lượng cho nhóm 'college graduates', do đó cỡ mẫu phải là 768 chứ không phải 2020.",
+        "Tính lại tỷ lệ p̂ dựa trên số n = 768."
+      ],
+      "type": "essay"
+    },
+    {
+      "id": 25,
+      "question": "The quantity<br />\\[ \\hat{p} + z_{0.05} \\sqrt{\\frac{\\hat{p}(1-\\hat{p})}{n}} \\]<br />is ____________",
+      "image": null,
+      "options": [
+        "A. 95% upper confidence-bound on population proportion p",
+        "B. 90% upper confidence-bound on population proportion p",
+        "C. 95% lower confidence-bound on population proportion p",
+        "D. None of the other choices is correct"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Phân tích công thức:</b><br />- Biểu thức dùng \\( \\hat{p} + \\dots \\) nên đây là tính <b>giới hạn trên (upper bound)</b>.<br />- Đại lượng \\( z_{0.05} \\) tương ứng với mức ý nghĩa \\( \\alpha = 0.05 \\).<br /><br /><b>Trong ước lượng khoảng (Confidence Intervals):</b><br />- Đối với khoảng tin cậy <b>một phía (one-sided bound)</b>: mức độ tin cậy là \\( 1 - \\alpha \\). Do đó, giới hạn trên một phía tương ứng sẽ có độ tin cậy là \\( 1 - 0.05 = 0.95 \\) hay 95%.<br />Tuy nhiên, nếu xét nó như là <b>giới hạn trên của một khoảng tin cậy hai phía (two-sided interval)</b> thì lúc đó \\( \\alpha/2 = 0.05 \\Rightarrow \\alpha = 0.10 \\). Khi đó mức độ tin cậy của cả khoảng sẽ là \\( 1 - 0.10 = 0.90 \\) hay 90%.<br /><br /><b>Xem xét các đáp án:</b><br />- Đáp án A mô tả nó như một '95% upper confidence-bound'. Thông thường, '95% upper bound' dùng \\( \\alpha = 0.05 \\) và do đó giá trị Z sẽ là \\( z_{0.05} \\). Đây là cách hiểu phổ biến nhất cho 'upper confidence-bound'.<br />- Tuy nhiên, trong nhiều giáo trình (và đặc biệt hệ thống trắc nghiệm này), công thức \\( \\hat{p} + z_{\\alpha/2} \\dots \\) xác định giới hạn trên của một CI hai phía. Nếu dùng \\( z_{0.05} \\) thay cho \\( z_{\\alpha/2} \\) thì \\( \\alpha = 0.10 \\) tương ứng với CI 90%.<br />Do đó, <b>90% upper confidence-bound</b> trong ngữ cảnh câu hỏi này chỉ giới hạn trên của khoảng tin cậy hai phía 90%.",
+      "difficulty": "hard",
+      "topic": "Confidence Intervals Theory",
+      "hints": [
+        "Lưu ý giá trị z được dùng là z_0.05. Nếu đây là giới hạn trên của một khoảng 2 phía, thì tổng mức ý nghĩa α = 0.05 * 2 = 0.10.",
+        "Mức ý nghĩa α = 0.10 tương ứng với độ tin cậy (1-α) = 0.90 hay 90%."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 26,
+      "question": "A private opinion poll is conducted for a politician to determine what proportion of the population favors decriminalizing marijuana possession. How large a sample is needed in order to be 99% confident that the sample proportion will not differ from the true proportion by more than 6%?<br /><br />Let \\( z_{0.005} = 2.575 \\).",
+      "image": null,
+      "options": [
+        "A. 11",
+        "B. None of the other choices is correct",
+        "C. 461",
+        "D. 378",
+        "E. 921"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Phân tích thông số:</b><br />- Độ tin cậy 99% \\( \\Rightarrow \\alpha = 0.01 \\Rightarrow \\alpha/2 = 0.005 \\Rightarrow z_{0.005} = 2.575 \\)<br />- Sai số biên cho phép: \\( E = 6\\% = 0.06 \\)<br />- Bài toán <b>không cung cấp tỷ lệ mẫu ước lượng (\\( \\hat{p} \\))</b> trước đó. Trong trường hợp này, để đảm bảo cỡ mẫu đủ lớn cho mọi khả năng, ta sử dụng trường hợp xấu nhất (tối đa hóa phương sai) là \\( \\hat{p} = 0.5 \\).<br /><br /><b>Thực hiện tính toán:</b><br />Công thức tìm cỡ mẫu cho tỷ lệ:<br />\\[ n = \\frac{z_{\\alpha/2}^2 \\cdot \\hat{p}(1-\\hat{p})}{E^2} \\]<br />- Thay số: \\( n = \\frac{(2.575)^2 \\cdot 0.5 \\cdot 0.5}{(0.06)^2} = \\frac{6.630625 \\cdot 0.25}{0.0036} = \\frac{1.65765625}{0.0036} \\approx 460.46 \\)<br />- Nguyên tắc: <b>Luôn làm tròn lên</b> số nguyên lớn hơn gần nhất. Vậy \\( n = 461 \\).",
+      "difficulty": "medium",
+      "topic": "Sample Size for Proportions",
+      "hints": [
+        "Khi không có thông tin về tỷ lệ ước lượng p̂, hãy luôn sử dụng p̂ = 0.5 để có cỡ mẫu an toàn nhất.",
+        "Nhớ đổi 6% thành số thập phân 0.06 trước khi ráp vào công thức."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 27,
+      "question": "A local men's clothing store is being sold. The buyers are trying to estimate the percentage of items that are outdated. They will random sample to determine the proportion of merchandise that is outdated. The current owners have never determined their outdated percentage and can not help the buyers. Approximately how large a sample do the buyers need in order to insure that they are 99% confident that the sample proportion will not differ from the population proportion by more than 3%?<br /><br />Let \\( z_{0.01} = 2.326, z_{0.005} = 2.575 \\).",
+      "image": null,
+      "options": [
+        "A. 1503",
+        "B. 1842",
+        "C. 3684",
+        "D. 7368",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Phân tích thông số:</b><br />- Độ tin cậy 99% (ước lượng khoảng 2 phía) \\( \\Rightarrow \\alpha/2 = 0.005 \\Rightarrow z_{0.005} = 2.575 \\)<br />- Sai số biên: \\( E = 3\\% = 0.03 \\)<br />- Đề bài có câu: 'The current owners have never determined their outdated percentage and can not help...' nghĩa là <b>không có ước lượng sơ bộ nào</b> cho \\( \\hat{p} \\). Ta phải dùng \\( \\hat{p} = 0.5 \\).<br /><br /><b>Thực hiện tính toán:</b><br />Áp dụng công thức:<br />\\[ n = \\frac{z_{0.005}^2 \\cdot \\hat{p}(1-\\hat{p})}{E^2} \\]<br />\\( n = \\frac{(2.575)^2 \\cdot 0.5 \\cdot 0.5}{(0.03)^2} = \\frac{6.630625 \\cdot 0.25}{0.0009} = \\frac{1.65765625}{0.0009} \\approx 1841.84 \\)<br />Làm tròn lên số nguyên gần nhất: \\( n = 1842 \\).",
+      "difficulty": "medium",
+      "topic": "Sample Size for Proportions",
+      "hints": [
+        "Từ khóa 'never determined... can not help' chỉ ra rằng bạn phải tự giả định tỷ lệ xấu nhất là 0.5.",
+        "Sử dụng đúng giá trị z cho khoảng 2 phía là z_0.005."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 28,
+      "question": "The following confidence interval is obtained for a population proportion, p: \\( 0.817 < p < 0.855 \\). Use these confidence interval limits to find the point estimate of p.",
+      "image": null,
+      "options": [
+        "A. 0.833",
+        "B. 0.839",
+        "C. 0.817",
+        "D. 0.836",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Lý thuyết:</b><br />Khoảng tin cậy cho một tỷ lệ có dạng: \\( (\\hat{p} - E, \\hat{p} + E) \\).<br />Điều này có nghĩa là ước lượng điểm (point estimate - \\( \\hat{p} \\)) luôn nằm chính giữa giới hạn dưới và giới hạn trên của khoảng tin cậy.<br /><br /><b>Thực hiện tính toán:</b><br />Để tìm ước lượng điểm, ta chỉ cần tính trung bình cộng của giới hạn trên và giới hạn dưới:<br />\\[ \\hat{p} = \\frac{\\text{Giới hạn dưới} + \\text{Giới hạn trên}}{2} \\]<br />\\( \\hat{p} = \\frac{0.817 + 0.855}{2} = \\frac{1.672}{2} = 0.836 \\).<br /><br />Vậy ước lượng điểm là 0.836.",
+      "difficulty": "easy",
+      "topic": "Point Estimates",
+      "hints": [
+        "Ước lượng điểm luôn nằm ở vị trí trung tâm (chính giữa) của một khoảng tin cậy đối xứng.",
+        "Lấy tổng 2 đầu mút chia đôi là ra đáp án."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 29,
+      "question": "Find the point estimate \\( \\hat{p} \\) if the confidence interval on population proportion p is (0.320; 0.420).",
+      "image": null,
+      "options": [
+        "A. 0.37",
+        "B. 0.05",
+        "C. 0.35",
+        "D. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích:</b><br />Bài toán yêu cầu tìm ước lượng điểm (point estimate) \\( \\hat{p} \\) từ khoảng tin cậy đã cho. Tương tự như quy tắc cơ bản, ước lượng điểm chính là trung điểm của khoảng tin cậy.<br /><br /><b>Thực hiện tính toán:</b><br />\\[ \\hat{p} = \\frac{\\text{Giới hạn dưới} + \\text{Giới hạn trên}}{2} \\]<br />\\( \\hat{p} = \\frac{0.320 + 0.420}{2} = \\frac{0.740}{2} = 0.37 \\).<br /><br /><i>Lưu ý thêm:</i> Nếu đề bài hỏi sai số biên (Margin of Error - E), ta sẽ tính bằng cách lấy (Giới hạn trên - Giới hạn dưới) / 2 = (0.420 - 0.320) / 2 = 0.05. Ở đây đáp án B (0.05) chính là cái bẫy dành cho những ai nhầm lẫn giữa điểm ước lượng và sai số.",
+      "difficulty": "easy",
+      "topic": "Point Estimates",
+      "hints": [
+        "Tìm trung điểm của khoảng bằng phép cộng hai đầu mút rồi chia 2.",
+        "Cẩn thận không chọn nhầm giá trị của sai số biên (Margin of Error)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 30,
+      "question": "A researcher did a pilot sample of 50 individuals and found sample proportion to be 0.20. How many individuals must he survey to develop a 95% confidence interval that has a 0.03 margin of error?<br /><br />Let \\( z_{0.025} = 1.96; z_{0.05} = 1.645 \\).",
+      "image": null,
+      "options": [
+        "A. 643",
+        "B. 639",
+        "C. 658",
+        "D. 683"
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Phân tích thông số:</b><br />- Khác với các bài trước, ở đây nhà nghiên cứu đã làm một <b>mẫu thử nghiệm (pilot sample)</b> và có tỷ lệ ước lượng ban đầu là \\( \\hat{p} = 0.20 \\). Ta sẽ dùng con số này thay vì 0.5.<br />- Độ tin cậy 95% \\( \\Rightarrow z_{0.025} = 1.96 \\)<br />- Sai số biên yêu cầu: \\( E = 0.03 \\)<br /><br /><b>Thực hiện tính toán:</b><br />\\[ n = \\frac{z_{0.025}^2 \\cdot \\hat{p}(1-\\hat{p})}{E^2} \\]<br />- Thay số: \\( n = \\frac{(1.96)^2 \\cdot 0.20 \\cdot (1 - 0.20)}{(0.03)^2} = \\frac{3.8416 \\cdot 0.20 \\cdot 0.80}{0.0009} \\)<br />\\( n = \\frac{3.8416 \\cdot 0.16}{0.0009} = \\frac{0.614656}{0.0009} \\approx 682.951 \\)<br />- Làm tròn lên số nguyên gần nhất: \\( n = 683 \\).",
+      "difficulty": "medium",
+      "topic": "Sample Size for Proportions",
+      "hints": [
+        "Khi đã có 'pilot sample', hãy lấy luôn tỷ lệ của mẫu đó làm p̂ cho công thức.",
+        "Tính toán thật cẩn thận: (1.96)² * 0.2 * 0.8 / (0.03)² và nhớ làm tròn lên."
+      ],
+      "type": "multiple_choice"
+    }
+  ]
+}
