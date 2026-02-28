@@ -1,0 +1,371 @@
+{
+  "examId": "de31",
+  "title": "MAS chương 7 - BT luyện thêm",
+  "description": "Practice questions on the properties of sampling distributions and the Central Limit Theorem.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "Which of the following is true about the sampling distribution of the sample mean?<br /><br />(i) The mean of the sampling distribution is always \\( \\mu \\)<br />(ii) The standard deviation of the sampling distribution is always \\( \\sigma \\)<br />(iii) The shape of the sampling distribution is always approximately normal.",
+      "image": null,
+      "options": [
+        "A. (iii)",
+        "B. All of them are true.",
+        "C. (i)",
+        "D. (ii)"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Phân tích từng phát biểu:</b><br /><br />- <b>(i) Đúng:</b> Giá trị kỳ vọng của trung bình mẫu luôn bằng trung bình của tổng thể, tức là \\( \\mu_{\\bar{x}} = \\mu \\).<br />- <b>(ii) Sai:</b> Độ lệch chuẩn của phân phối mẫu (sai số chuẩn) là \\( \\frac{\\sigma}{\\sqrt{n}} \\), không phải \\( \\sigma \\). Nó phụ thuộc vào kích thước mẫu \\( n \\).<br />- <b>(iii) Sai:</b> Hình dạng của phân phối mẫu chỉ xấp xỉ phân phối chuẩn khi kích thước mẫu đủ lớn (thường \\( n \\ge 30 \\) theo Định lý Giới hạn Trung tâm) hoặc khi tổng thể ban đầu có phân phối chuẩn.<br /><br />Vậy chỉ có phát biểu (i) là luôn đúng.",
+      "difficulty": "medium",
+      "topic": "Sampling Distributions",
+      "hints": [
+        "Hãy nhớ lại các tính chất cơ bản của phân phối mẫu: Trung bình, Độ lệch chuẩn (sai số chuẩn) và Hình dạng."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 2,
+      "question": "For sample sizes greater than 40, the sampling distribution of the mean will be approximately normally distributed________",
+      "image": null,
+      "options": [
+        "A. only if the population is normally distributed.",
+        "B. only if the standard deviation of the samples are known.",
+        "C. regardless of the shape of the population.",
+        "D. only if the shape of the population is symmetrical."
+      ],
+      "correctAnswer": "C",
+      "explanation": "Theo <b>Định lý Giới hạn Trung tâm (Central Limit Theorem)</b>, nếu kích thước mẫu đủ lớn (thường lấy mốc \\( n \\ge 30 \\)), thì phân phối của trung bình mẫu sẽ xấp xỉ phân phối chuẩn <b>bất kể hình dạng của tổng thể ban đầu</b> như thế nào.<br /><br />Ở đây kích thước mẫu lớn hơn 40 (\\( n > 40 \\)) là đã hoàn toàn thỏa mãn điều kiện này.",
+      "difficulty": "easy",
+      "topic": "Central Limit Theorem",
+      "hints": [
+        "Kích thước mẫu \\( n > 40 \\) là \"đủ lớn\". Định lý Giới hạn Trung tâm phát biểu gì khi n đủ lớn?"
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 3,
+      "question": "Which of the following is true regarding the sampling distribution of the mean for a large sample size?",
+      "image": null,
+      "options": [
+        "A. It has the same shape and mean as the population, but has a smaller standard deviation.",
+        "B. It has a normal distribution with the same mean and standard deviation as the population.",
+        "C. It has the same shape, mean, and standard deviation as the population.",
+        "D. It has a normal distribution with the same mean as the population but with a smaller standard deviation."
+      ],
+      "correctAnswer": "D",
+      "explanation": "Dựa vào <b>Định lý Giới hạn Trung tâm</b> đối với mẫu lớn:<br /><br />1. Phân phối của trung bình mẫu sẽ có hình dạng <b>phân phối chuẩn (normal distribution)</b>.<br />2. Trung bình của phân phối mẫu bằng đúng trung bình của tổng thể: \\( \\mu_{\\bar{x}} = \\mu \\).<br />3. Độ lệch chuẩn của phân phối mẫu (sai số chuẩn) là \\( \\frac{\\sigma}{\\sqrt{n}} \\). Vì mẫu lớn (\\( n > 1 \\)), giá trị này luôn <b>nhỏ hơn</b> độ lệch chuẩn của tổng thể (\\( \\sigma \\)).<br /><br />Do đó, phân phối mẫu sẽ có dạng chuẩn, cùng giá trị trung bình nhưng độ lệch chuẩn nhỏ hơn tổng thể.",
+      "difficulty": "medium",
+      "topic": "Sampling Distributions",
+      "hints": [
+        "So sánh công thức độ lệch chuẩn của mẫu \\( \\frac{\\sigma}{\\sqrt{n}} \\) với độ lệch chuẩn tổng thể \\( \\sigma \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 4,
+      "question": "The standard error of the mean for a sample of 100 is 30. In order to cut the standard error of the mean to 15, we would________",
+      "image": null,
+      "options": [
+        "A. decrease the sample size to 50.",
+        "B. decrease the sample to 25.",
+        "C. increase the sample size to 200.",
+        "D. increase the sample size to 400."
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Bước 1:</b> Viết công thức tính sai số chuẩn (Standard Error - SE):<br />\\[ SE = \\frac{\\sigma}{\\sqrt{n}} \\]<br /><br />Với mẫu ban đầu \\( n_1 = 100 \\), ta có:<br />\\( SE_1 = \\frac{\\sigma}{\\sqrt{100}} = \\frac{\\sigma}{10} = 30 \\)<br />Từ đó suy ra độ lệch chuẩn của tổng thể: \\( \\sigma = 300 \\).<br /><br /><b>Bước 2:</b> Tìm kích thước mẫu mới (\\( n_2 \\)) để đạt được \\( SE_2 = 15 \\):<br />\\[ \\frac{300}{\\sqrt{n_2}} = 15 \\]<br />\\[ \\sqrt{n_2} = \\frac{300}{15} = 20 \\]<br />\\[ n_2 = 20^2 = 400 \\]<br /><br /><b>Cách tính nhanh:</b> Sai số chuẩn tỷ lệ nghịch với <b>căn bậc hai</b> của kích thước mẫu. Để giảm sai số chuẩn đi một nửa (từ 30 xuống 15), ta phải tăng kích thước mẫu lên \\( 2^2 = 4 \\) lần (tức là \\( 100 \\times 4 = 400 \\)).",
+      "difficulty": "hard",
+      "topic": "Standard Error",
+      "hints": [
+        "Nhớ rằng Sai số chuẩn = \\( \\frac{\\sigma}{\\sqrt{n}} \\).",
+        "Để mẫu số (\\( \\sqrt{n} \\)) tăng gấp đôi, thì \\( n \\) phải tăng gấp mấy lần?"
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 5,
+      "question": "Suppose a sample of n = 15 items is drawn from a population of manufactured products and the weight, X, of each item is recorded. Prior experience has shown that the weight has a probability distribution with mean = 6 ounces and standard deviation = 2.5 ounces. Which of the following is true about the sampling distribution of the sample mean if a sample of size 15 is selected?",
+      "image": null,
+      "options": [
+        "A. All of the others are correct.",
+        "B. The mean of the sampling distribution is 6 ounces.",
+        "C. The standard deviation of the sampling distribution is 2.5 ounces.",
+        "D. The shape of the sample distribution is approximately normal."
+      ],
+      "correctAnswer": "B",
+      "explanation": "Phân tích từng phương án với các dữ kiện: \\( n = 15 \\), \\( \\mu = 6 \\), \\( \\sigma = 2.5 \\):<br /><br />- <b>Phương án B Đúng:</b> Trung bình của phân phối mẫu luôn bằng với trung bình tổng thể: \\( \\mu_{\\bar{x}} = \\mu = 6 \\) ounces.<br />- <b>Phương án C Sai:</b> Độ lệch chuẩn của phân phối mẫu (sai số chuẩn) phải là \\( \\frac{\\sigma}{\\sqrt{n}} = \\frac{2.5}{\\sqrt{15}} \\), giá trị này hoàn toàn khác 2.5.<br />- <b>Phương án D Sai:</b> Kích thước mẫu khá nhỏ (\\( n = 15 < 30 \\)) và đề bài không hề cung cấp thông tin rằng tổng thể ban đầu có phân phối chuẩn. Do đó, ta không thể kết luận hình dạng của phân phối mẫu là xấp xỉ chuẩn theo Định lý Giới hạn Trung tâm.<br /><br />Vậy chỉ có phát biểu B là chính xác.",
+      "difficulty": "medium",
+      "topic": "Sampling Distributions",
+      "hints": [
+        "Kích thước mẫu \\( n = 15 \\) là một mẫu nhỏ. Bạn có thể sử dụng Định lý giới hạn trung tâm không?",
+        "Kiểm tra lại công thức độ lệch chuẩn của trung bình mẫu."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 6,
+      "question": "A random sample of size \\( n = 16 \\) is taken from a normal population with mean 40 and variance 5. The distribution of the sample mean is________",
+      "image": null,
+      "options": [
+        "A. normal with mean 40 and variance 5/16.",
+        "B. normal with mean 40 and standard deviation 5/16.",
+        "C. normal with mean 40 and variance 5/4",
+        "D. standard normal.",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Theo lý thuyết về phân phối mẫu, nếu tổng thể có phân phối chuẩn với trung bình \\( \\mu \\) và phương sai \\( \\sigma^2 \\), thì trung bình mẫu \\( \\bar{X} \\) cũng có phân phối chuẩn.<br /><br /><b>Các thông số của phân phối mẫu:</b><br />- Trung bình của mẫu: \\( \\mu_{\\bar{x}} = \\mu = 40 \\)<br />- Phương sai của mẫu: \\( \\sigma^2_{\\bar{x}} = \\frac{\\sigma^2}{n} = \\frac{5}{16} \\)<br /><br />Vậy trung bình mẫu có phân phối chuẩn với mean = 40 và variance = 5/16.",
+      "difficulty": "medium",
+      "topic": "Sampling Distributions",
+      "hints": [
+        "Chú ý đề bài cho 'variance' (phương sai) chứ không phải độ lệch chuẩn.",
+        "Phương sai của trung bình mẫu bằng phương sai tổng thể chia cho n."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 7,
+      "question": "Currently, quarters have weights that are normally distributed with a mean of 6.35g and standard deviation 0.5g. If 280 different quarters are inserted into the vending machine, describe the sampling distribution for the sample mean weight.",
+      "image": null,
+      "options": [
+        "A. Normal with a mean of 6.35g and a standard deviation of 0.03g",
+        "B. Normal with a mean of 6.35g and a standard deviation of 0.002g",
+        "C. Approximately normal with a mean of 6.35g and a standard deviation of 0.03g",
+        "D. Approximately normal with a mean of 6.35g and a standard deviation of 0.002g",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Hình dạng phân phối</b><br />Vì tổng thể ban đầu đã được cho là có phân phối chuẩn (normally distributed), nên phân phối của trung bình mẫu sẽ là <b>chuẩn một cách chính xác</b> (Normal), không phải là xấp xỉ chuẩn (Approximately normal).<br /><br /><b>Bước 2: Tính các thông số</b><br />- Trung bình: \\( \\mu_{\\bar{x}} = \\mu = 6.35 \\)g.<br />- Độ lệch chuẩn (sai số chuẩn): \\( \\sigma_{\\bar{x}} = \\frac{\\sigma}{\\sqrt{n}} = \\frac{0.5}{\\sqrt{280}} \\approx 0.02988 \\approx 0.03 \\)g.<br /><br /><b>Kết luận:</b> Phân phối chuẩn (Normal) với mean = 6.35g và standard deviation = 0.03g.",
+      "difficulty": "medium",
+      "topic": "Sampling Distributions",
+      "hints": [
+        "Nếu tổng thể đã có phân phối chuẩn, thì phân phối mẫu luôn là chuẩn (không phải xấp xỉ).",
+        "Tính sai số chuẩn: \\( \\frac{0.5}{\\sqrt{280}} \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 8,
+      "question": "The compressive strength of concrete is normally distributed with mean = 1200 psi and standard deviation = 30. A random sample of \\( n = 9 \\) specimens will have a sample mean diameter that falls in the interval from 1011 psi to 1230 psi. What is the standard error of the sample mean?",
+      "image": null,
+      "options": [
+        "A. 400/3",
+        "B. None of the others",
+        "C. 40",
+        "D. 30/9",
+        "E. 10"
+      ],
+      "correctAnswer": "E",
+      "explanation": "Sai số chuẩn (standard error - SE) của trung bình mẫu được tính bằng công thức:<br />\\[ SE = \\frac{\\sigma}{\\sqrt{n}} \\]<br /><br />Trong đó:<br />- Độ lệch chuẩn tổng thể \\( \\sigma = 30 \\)<br />- Kích thước mẫu \\( n = 9 \\)<br /><br />Thay số vào công thức:<br />\\[ SE = \\frac{30}{\\sqrt{9}} = \\frac{30}{3} = 10 \\]<br /><br />Các thông tin về khoảng giá trị (1011 psi đến 1230 psi) chỉ là dữ kiện gây nhiễu, không cần dùng để tính toán sai số chuẩn.",
+      "difficulty": "easy",
+      "topic": "Standard Error",
+      "hints": [
+        "Chỉ cần áp dụng công thức Sai số chuẩn = Độ lệch chuẩn chia cho căn bậc hai của n."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 9,
+      "question": "A normal population has mean 76 and variance 9. How large must be the random sample be if we want the standard error of the sample mean to be 1.1?",
+      "image": null,
+      "options": [
+        "A. 9",
+        "B. 6",
+        "C. 11",
+        "D. 8"
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Bước 1:</b> Tìm độ lệch chuẩn của tổng thể từ phương sai.<br />\\( \\sigma = \\sqrt{\\text{variance}} = \\sqrt{9} = 3 \\).<br /><br /><b>Bước 2:</b> Thiết lập phương trình từ công thức sai số chuẩn (SE):<br />\\[ SE = \\frac{\\sigma}{\\sqrt{n}} = 1.1 \\]<br />\\[ \\frac{3}{\\sqrt{n}} = 1.1 \\]<br />\\[ \\sqrt{n} = \\frac{3}{1.1} \\approx 2.727 \\]<br /><br /><b>Bước 3:</b> Bình phương hai vế để tìm n:<br />\\[ n \\approx (2.727)^2 \\approx 7.44 \\]<br /><br />Vì kích thước mẫu \\( n \\) phải là số nguyên, và để sai số chuẩn <b>không vượt quá</b> 1.1 (tức là càng nhỏ càng tốt), ta phải làm tròn lên số nguyên tiếp theo. Do đó \\( n = 8 \\).",
+      "difficulty": "hard",
+      "topic": "Sample Size Calculation",
+      "hints": [
+        "Đừng quên chuyển phương sai thành độ lệch chuẩn trước khi tính.",
+        "Kích thước mẫu luôn phải là số nguyên, hãy làm tròn lên để đảm bảo sai số chuẩn đạt yêu cầu."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 10,
+      "question": "Suppose that \\( \\mu = 16 \\) and \\( \\sigma^2 = 20 \\) for a population. In a sample where \\( n = 100 \\) is randomly taken, what is the standard deviation for the sample mean?",
+      "image": null,
+      "options": [
+        "A. 0.45",
+        "B. 0.2",
+        "C. 0.16",
+        "D. 0.02",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "Độ lệch chuẩn của trung bình mẫu (standard error) được tính theo công thức:<br />\\[ \\sigma_{\\bar{x}} = \\frac{\\sigma}{\\sqrt{n}} \\]<br /><br /><b>Bước 1:</b> Từ phương sai \\( \\sigma^2 = 20 \\), ta tính được độ lệch chuẩn của tổng thể:<br />\\( \\sigma = \\sqrt{20} \\approx 4.472 \\).<br /><br /><b>Bước 2:</b> Thay vào công thức với \\( n = 100 \\):<br />\\[ \\sigma_{\\bar{x}} = \\frac{\\sqrt{20}}{\\sqrt{100}} = \\frac{4.472}{10} = 0.4472 \\]<br /><br />Làm tròn đến 2 chữ số thập phân, ta được kết quả là <b>0.45</b>.",
+      "difficulty": "medium",
+      "topic": "Standard Error",
+      "hints": [
+        "Đề bài cho \\( \\sigma^2 \\), hãy lấy căn bậc hai để tìm \\( \\sigma \\) trước.",
+        "\\( \\sqrt{100} = 10 \\), vậy bạn chỉ cần lấy \\( \\sqrt{20} \\) chia cho 10."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 11,
+      "question": "Let \\( \\overline{X} \\) denote the sample mean of a random sample of size \\( n_1 = 16 \\) taken from a normal distribution \\( N(\\mu, 36) \\), and let \\( \\overline{Y} \\) denote the sample mean of a random sample of size \\( n_2 = 25 \\) taken from a different normal distribution \\( N(\\mu, 9) \\). The distribution of \\( \\overline{X} - \\overline{Y} \\) is",
+      "image": null,
+      "options": [
+        "A. normal with mean 0 and standard deviation 2.61",
+        "B. normal with mean 0 and standard deviation 1.6155",
+        "C. normal with mean \\( \\mu \\) and standard deviation 1.6155",
+        "D. standard normal.",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Bước 1:</b> Xác định phân phối của từng trung bình mẫu.<br />- Trung bình mẫu \\( \\overline{X} \\) có phân phối chuẩn với trung bình \\( \\mu \\) và phương sai \\( \\frac{\\sigma_1^2}{n_1} = \\frac{36}{16} = 2.25 \\). Vậy \\( \\overline{X} \\sim N(\\mu, 2.25) \\).<br />- Trung bình mẫu \\( \\overline{Y} \\) có phân phối chuẩn với trung bình \\( \\mu \\) và phương sai \\( \\frac{\\sigma_2^2}{n_2} = \\frac{9}{25} = 0.36 \\). Vậy \\( \\overline{Y} \\sim N(\\mu, 0.36) \\).<br /><br /><b>Bước 2:</b> Tính kỳ vọng và phương sai của hiệu \\( \\overline{X} - \\overline{Y} \\).<br />- Kỳ vọng: \\( E(\\overline{X} - \\overline{Y}) = E(\\overline{X}) - E(\\overline{Y}) = \\mu - \\mu = 0 \\).<br />- Vì 2 mẫu độc lập, phương sai tổng bằng tổng các phương sai: \\( Var(\\overline{X} - \\overline{Y}) = Var(\\overline{X}) + Var(\\overline{Y}) = 2.25 + 0.36 = 2.61 \\).<br /><br /><b>Bước 3:</b> Tính độ lệch chuẩn (standard deviation).<br />\\( \\sigma_{\\overline{X} - \\overline{Y}} = \\sqrt{2.61} \\approx 1.6155 \\).<br /><br />Vậy phân phối của \\( \\overline{X} - \\overline{Y} \\) là phân phối chuẩn với mean = 0 và standard deviation = 1.6155.",
+      "difficulty": "hard",
+      "topic": "Difference of Sample Means",
+      "hints": [
+        "Khi lấy hiệu hai biến ngẫu nhiên độc lập, phương sai của chúng được CỘNG lại với nhau chứ không trừ đi.",
+        "Nhớ chuyển đổi phương sai (variance) thành độ lệch chuẩn (standard deviation) bằng cách lấy căn bậc hai."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 12,
+      "question": "Assume that blood pressure readings are normally distributed with a mean of 124 and a standard deviation of 6.4. If 64 people are randomly selected, find the probability that their mean blood pressure will be less than 126.<br /><br />Let P(Z < 2.5) = 0.9938, P(Z < 2) = 0.9772, P(Z < 0) = 0.5.",
+      "image": null,
+      "options": [
+        "A. 0.0238",
+        "B. 0.9762",
+        "C. 0.9938",
+        "D. 0.0062",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Bước 1:</b> Xác định các thông số của phân phối trung bình mẫu.<br />- Kỳ vọng: \\( \\mu_{\\overline{x}} = \\mu = 124 \\).<br />- Sai số chuẩn: \\( \\sigma_{\\overline{x}} = \\frac{\\sigma}{\\sqrt{n}} = \\frac{6.4}{\\sqrt{64}} = \\frac{6.4}{8} = 0.8 \\).<br /><br /><b>Bước 2:</b> Tính điểm Z cho giá trị \\( \\overline{X} = 126 \\).<br />\\[ Z = \\frac{\\overline{X} - \\mu_{\\overline{x}}}{\\sigma_{\\overline{x}}} = \\frac{126 - 124}{0.8} = \\frac{2}{0.8} = 2.5 \\]<br /><br /><b>Bước 3:</b> Tính xác suất.<br />\\( P(\\overline{X} < 126) = P(Z < 2.5) \\). Dựa vào dữ kiện đề bài đã cho, \\( P(Z < 2.5) = 0.9938 \\).",
+      "difficulty": "medium",
+      "topic": "Normal Probabilities",
+      "hints": [
+        "Vì hỏi về 'mean blood pressure' của một mẫu n=64, bạn phải dùng sai số chuẩn (standard error) chứ không phải độ lệch chuẩn gốc của tổng thể."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 13,
+      "question": "At a computer manufacturing company, the actual size of computer chips is normally distributed with a mean of 1 centimeter and a standard deviation of 0.1 centimeter. A random sample of 12 computer chips is taken. Above what value do 2.5% of the sample means fall?<br /><br />Let P(Z < -1.959) = 0.025, P(Z < 1.002) = 0.842, P(Z < 1.959) = 0.975 and P(Z < 1.529) = 0.937.",
+      "image": null,
+      "options": [
+        "A. 0.994",
+        "B. 1.002",
+        "C. 1.057",
+        "D. 1.529",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Bước 1:</b> Tính sai số chuẩn (Standard Error).<br />\\( SE = \\frac{\\sigma}{\\sqrt{n}} = \\frac{0.1}{\\sqrt{12}} \\approx 0.02887 \\).<br /><br /><b>Bước 2:</b> Tìm giá trị Z.<br />Đề bài yêu cầu tìm mốc giá trị mà có 2.5% trung bình mẫu lớn hơn nó (Above what value... fall?). Điều này đồng nghĩa với việc có 97.5% giá trị nhỏ hơn nó.<br />Ta cần tìm Z sao cho \\( P(Z < z) = 0.975 \\). Theo giả thiết, giá trị đó là \\( Z = 1.959 \\).<br /><br /><b>Bước 3:</b> Tính giá trị trung bình mẫu tương ứng.<br />Sử dụng công thức chuyển đổi ngược: \\( \\overline{X} = \\mu + Z \\cdot SE \\)<br />\\( \\overline{X} = 1 + 1.959 \\times 0.02887 \\approx 1 + 0.05655 = 1.05655 \\).<br /><br />Làm tròn số, ta được kết quả là <b>1.057</b>.",
+      "difficulty": "hard",
+      "topic": "Finding Values from Probabilities",
+      "hints": [
+        "\"Above what value do 2.5% fall?\" nghĩa là bạn đang tìm phân vị thứ 97.5 (vì 100% - 2.5% = 97.5%)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 14,
+      "question": "The owner of a fish market has an assistant who has determined that the weights of catfish are normally distributed, with mean of 3.2 pounds and standard deviation of 0.8 pound. What percentage of samples of 4 fish will have sample means between 3.0 and 4.0 pounds?<br /><br />Let P(Z < 2) = 0.9772, P(Z < -0.5) = 0.3085.",
+      "image": null,
+      "options": [
+        "A. 67%",
+        "B. 84%",
+        "C. 29%",
+        "D. 16%",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1:</b> Tính sai số chuẩn (SE).<br />\\( SE = \\frac{\\sigma}{\\sqrt{n}} = \\frac{0.8}{\\sqrt{4}} = \\frac{0.8}{2} = 0.4 \\).<br /><br /><b>Bước 2:</b> Tính điểm Z cho hai biên 3.0 và 4.0.<br />\\( Z_1 = \\frac{3.0 - 3.2}{0.4} = \\frac{-0.2}{0.4} = -0.5 \\).<br />\\( Z_2 = \\frac{4.0 - 3.2}{0.4} = \\frac{0.8}{0.4} = 2.0 \\).<br /><br /><b>Bước 3:</b> Tính xác suất đoạn (diện tích dưới đường cong chuẩn).<br />\\( P(3.0 < \\overline{X} < 4.0) = P(-0.5 < Z < 2.0) = P(Z < 2) - P(Z < -0.5) \\).<br />Theo dữ kiện đã cho: \\( 0.9772 - 0.3085 = 0.6687 \\).<br /><br />Chuyển sang phần trăm, ta được 66.87%, làm tròn thành <b>67%</b>.",
+      "difficulty": "medium",
+      "topic": "Normal Probabilities",
+      "hints": [
+        "Tính Z cho từng biên riêng biệt, sau đó lấy xác suất của biên lớn trừ đi xác suất của biên nhỏ."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 15,
+      "question": "The amount of time required for an oil and filter change on an automobile is normally distributed with a mean of 45 minutes and a standard deviation of 10 minutes. A random sample of 16 cars is selected. What is the probability that the sample mean is between 45 and 52 minutes?<br /><br />Let P(Z < 0) = 0.5 P(Z < 2.8) = 0.9974 , P(Z < 3.2) = 1 and P(Z < - 1) = 0.3974 .",
+      "image": null,
+      "options": [
+        "A. 0.6974",
+        "B. 0.5974",
+        "C. 0.3974",
+        "D. 0.4974",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Bước 1:</b> Tính sai số chuẩn cho mẫu (SE).<br />\\( SE = \\frac{\\sigma}{\\sqrt{n}} = \\frac{10}{\\sqrt{16}} = \\frac{10}{4} = 2.5 \\) phút.<br /><br /><b>Bước 2:</b> Chuyển đổi hai mốc thời gian 45 và 52 sang điểm Z.<br />- Tại \\( \\overline{X} = 45 \\): \\( Z_1 = \\frac{45 - 45}{2.5} = 0 \\).<br />- Tại \\( \\overline{X} = 52 \\): \\( Z_2 = \\frac{52 - 45}{2.5} = \\frac{7}{2.5} = 2.8 \\).<br /><br /><b>Bước 3:</b> Tính xác suất nằm giữa 2 điểm Z này.<br />\\( P(45 < \\overline{X} < 52) = P(0 < Z < 2.8) = P(Z < 2.8) - P(Z < 0) \\).<br />Thay các giá trị đã cho: \\( 0.9974 - 0.5000 = 0.4974 \\).",
+      "difficulty": "medium",
+      "topic": "Normal Probabilities",
+      "hints": [
+        "Khoảng từ 45 đến 52 chính là từ giá trị trung bình \\( \\mu \\) đến một điểm nằm phía bên phải đồ thị.",
+        "Vì đồ thị chuẩn đối xứng, một nửa diện tích đồ thị (từ tâm trở về trước) luôn là 0.5."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 16,
+      "question": "Let \\( \\overline{X} \\) denote the sample mean of a random sample of size \\( n_1 = 16 \\) taken from a normal distribution \\( N(\\mu, 32) \\), and let \\( \\overline{Y} \\) denote the sample mean of a random sample of size \\( n_2 = 25 \\) taken from a different normal distribution \\( N(\\mu, 50) \\). Compute \\( P(\\overline{X} - \\overline{Y} > 5) \\).<br /><br />Let \\( P(Z > 2.3) = 0.010 \\), \\( P(Z > -2.3) = 0.990 \\), \\( P(Z > 2.5) = 0.006 \\), \\( P(Z > 3.1) = 0.999 \\).",
+      "image": null,
+      "options": [
+        "A. 0.990",
+        "B. 0.999",
+        "C. 0.006",
+        "D. 0.010",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Bước 1:</b> Xác định phân phối của từng trung bình mẫu.<br />- \\( \\overline{X} \\) có phân phối chuẩn với kỳ vọng \\( \\mu \\) và phương sai \\( \\frac{32}{16} = 2 \\). Vậy \\( \\overline{X} \\sim N(\\mu, 2) \\).<br />- \\( \\overline{Y} \\) có phân phối chuẩn với kỳ vọng \\( \\mu \\) và phương sai \\( \\frac{50}{25} = 2 \\). Vậy \\( \\overline{Y} \\sim N(\\mu, 2) \\).<br /><br /><b>Bước 2:</b> Tính kỳ vọng và phương sai cho biến mới \\( \\overline{X} - \\overline{Y} \\).<br />- Kỳ vọng: \\( E(\\overline{X} - \\overline{Y}) = E(\\overline{X}) - E(\\overline{Y}) = \\mu - \\mu = 0 \\).<br />- Phương sai (vì 2 mẫu lấy từ 2 tổng thể độc lập): \\( Var(\\overline{X} - \\overline{Y}) = Var(\\overline{X}) + Var(\\overline{Y}) = 2 + 2 = 4 \\).<br />- Độ lệch chuẩn là \\( \\sqrt{4} = 2 \\).<br /><br /><b>Bước 3:</b> Tính xác suất.<br />\\[ P(\\overline{X} - \\overline{Y} > 5) = P\\left(Z > \\frac{5 - 0}{2}\\right) = P(Z > 2.5) \\]<br />Dựa vào dữ kiện đề bài, \\( P(Z > 2.5) = 0.006 \\).",
+      "difficulty": "hard",
+      "topic": "Difference of Sample Means",
+      "hints": [
+        "Chú ý đề bài cho N(μ, 32) tức là phương sai tổng thể bằng 32, không phải độ lệch chuẩn.",
+        "Phương sai của hiệu hai biến độc lập bằng TỔNG hai phương sai."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 17,
+      "question": "The weights of the fish in a certain lake are normally distributed with a mean of 15 lb and a standard deviation of 6. If 4 fish are randomly selected, what is the probability that the mean weight will be between 12.6 and 18.6 lb.<br /><br />Let \\( P(Z < -1.2) = 0.1151 \\), \\( P(Z < -0.8) = 0.2119 \\), \\( P(Z < 0.8) = 0.7881 \\) and \\( P(Z < 1.2) = 0.8849 \\).",
+      "image": null,
+      "options": [
+        "A. 0.4032",
+        "B. 0.6730",
+        "C. 0.0968",
+        "D. 0.3270",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Bước 1:</b> Tính sai số chuẩn (Standard Error) của trung bình mẫu.<br />\\[ SE = \\frac{\\sigma}{\\sqrt{n}} = \\frac{6}{\\sqrt{4}} = \\frac{6}{2} = 3 \\]<br /><br /><b>Bước 2:</b> Tính điểm Z cho hai biên 12.6 và 18.6.<br />- \\( Z_1 = \\frac{12.6 - 15}{3} = \\frac{-2.4}{3} = -0.8 \\).<br />- \\( Z_2 = \\frac{18.6 - 15}{3} = \\frac{3.6}{3} = 1.2 \\).<br /><br /><b>Bước 3:</b> Tính xác suất đoạn.<br />\\[ P(12.6 < \\overline{X} < 18.6) = P(-0.8 < Z < 1.2) = P(Z < 1.2) - P(Z < -0.8) \\]<br />Thay các giá trị đã cho: \\( 0.8849 - 0.2119 = 0.6730 \\).",
+      "difficulty": "medium",
+      "topic": "Normal Probabilities",
+      "hints": [
+        "Vì bài hỏi về trung bình mẫu ('mean weight') của 4 con cá, phải chia độ lệch chuẩn cho căn bậc 2 của 4."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 18,
+      "question": "A population of Australian Koala bears has a mean height of 20 inches and a standard deviation of 4 inches. You plan to choose a sample of 64 bears at random. What is the probability of a sample mean between 20 and 21.<br /><br />Let \\( P(Z < 0) = 0.5 \\), \\( P(Z < 0.6) = 0.5228 \\) and \\( P(Z < 2) = 0.9772 \\).",
+      "image": null,
+      "options": [
+        "A. 0.4772",
+        "B. 0.9772",
+        "C. 0.0228",
+        "D. 0.5228",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1:</b> Xác định các thông số cho phân phối của trung bình mẫu.<br />- Kỳ vọng: \\( \\mu_{\\overline{x}} = \\mu = 20 \\).<br />- Sai số chuẩn: \\( \\sigma_{\\overline{x}} = \\frac{\\sigma}{\\sqrt{n}} = \\frac{4}{\\sqrt{64}} = \\frac{4}{8} = 0.5 \\).<br /><br /><b>Bước 2:</b> Chuyển đổi hai mốc 20 và 21 sang điểm Z.<br />- Tại \\( \\overline{X} = 20 \\): \\( Z_1 = \\frac{20 - 20}{0.5} = 0 \\).<br />- Tại \\( \\overline{X} = 21 \\): \\( Z_2 = \\frac{21 - 20}{0.5} = \\frac{1}{0.5} = 2 \\).<br /><br /><b>Bước 3:</b> Tính xác suất.<br />\\[ P(20 < \\overline{X} < 21) = P(0 < Z < 2) = P(Z < 2) - P(Z < 0) \\]<br />Theo dữ kiện đã cho: \\( 0.9772 - 0.5 = 0.4772 \\).",
+      "difficulty": "medium",
+      "topic": "Normal Probabilities",
+      "hints": [
+        "Dữ kiện \\( P(Z < 0.6) \\) chỉ là yếu tố gây nhiễu cho những ai quên chia sai số chuẩn cho \\( \\sqrt{n} \\).",
+        "Lấy giá trị xác suất lớn trừ đi xác suất nhỏ để tìm phần diện tích ở giữa."
+      ],
+      "type": "multiple_choice"
+    }
+  ]
+}
