@@ -1,0 +1,1 @@
+{"repository_type":"monolith","parts":[{"part_id":"main","project_type_id":"web","display_name":"Main Web Application","root_path":"C:\\Users\\Admin\\Desktop\\GIT CLONE\\mae-exam-web","entry_point":"app/","technology_stack":{"framework":"Next.js","version":"15.2.6","language":"TypeScript","ui_library":"shadcn/ui","styling":"Tailwind CSS"}}],"integration_points":[]}
