@@ -1,0 +1,106 @@
+{
+  "examId": "de34",
+  "title": "MAS chương 9 - BT luyện thêm",
+  "description": "Practice on formulating hypotheses and identifying errors in testing.",
+  "questions": [
+    {
+      "id": 1,
+      "question": "An entomologist writes an article in a scientific journal which claims that fewer than 12 in ten thousand male fireflies are unable to produce light due to a genetic mutation. Express the null hypothesis \\( H_0 \\) and the alternative hypothesis \\( H_1 \\) in symbolic form. Use the parameter \\( p \\), the true proportion of fireflies unable to produce light.",
+      "image": null,
+      "options": [
+        "A. (i) \\( H_0: p < 0.0012, H_1: p \\ge 0.0012 \\)",
+        "B. (ii) \\( H_0: p = 0.0012, H_1: p > 0.0012 \\)",
+        "C. (iii) \\( H_0: p > 0.0012, H_1: p \\le 0.0012 \\)",
+        "D. (iv) \\( H_0: p = 0.0012, H_1: p < 0.0012 \\)"
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Phân tích từ khóa:</b><br />- Tỷ lệ \"12 in ten thousand\" tức là \\( \\frac{12}{10000} = 0.0012 \\).<br />- Cụm từ \"fewer than\" (ít hơn) biểu thị dấu \\( < \\). Dấu này không có phần bằng nên nó phải nằm ở giả thuyết đối \\( H_1 \\). Vậy \\( H_1: p < 0.0012 \\).<br />- Giả thuyết không \\( H_0 \\) luôn chứa dấu bằng, nên ta có \\( H_0: p = 0.0012 \\) (hoặc \\( p \\ge 0.0012 \\)).<br />Đối chiếu với các đáp án, lựa chọn (iv) là chính xác nhất.",
+      "difficulty": "medium",
+      "topic": "Hypothesis Formulation",
+      "hints": [
+        "Nhớ quy tắc vàng: H₀ luôn chứa dấu bằng (=, ≥, ≤), H₁ luôn chứa dấu ngặt (≠, >, <).",
+        "Từ 'fewer than' chỉ ra điều gì đang bị nghi ngờ?"
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 2,
+      "question": "A soft drink manufacturer claims that the average volume of soft drink in its bottle is at least 2000 ml. Express the null hypothesis and the alternative hypothesis in symbolic form.",
+      "image": null,
+      "options": [
+        "A. (i) \\( H_0: \\mu = 2000, H_1: \\mu > 2000 \\)",
+        "B. (ii) \\( H_0: \\mu = 2000, H_1: \\mu < 2000 \\)",
+        "C. (iii) \\( H_0: \\mu < 2000, H_1: \\mu \\ge 2000 \\)",
+        "D. (iv) \\( H_0: \\mu > 2000, H_1: \\mu \\le 2000 \\)"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Phân tích từ khóa:</b><br />- \"average\" (trung bình) tương ứng với tham số \\( \\mu \\).<br />- \"at least\" (ít nhất) biểu thị dấu \\( \\ge \\). Vì có chứa dấu bằng, nên nhận định này nằm ở \\( H_0 \\). Vậy \\( H_0: \\mu \\ge 2000 \\) (trong kiểm định thường ghi đơn giản là \\( H_0: \\mu = 2000 \\)).<br />- Phần bù ngược lại của nó sẽ là giả thuyết đối: \\( H_1: \\mu < 2000 \\).<br />Do đó, cặp giả thuyết đúng là (ii).",
+      "difficulty": "medium",
+      "topic": "Hypothesis Formulation",
+      "hints": [
+        "Cụm từ 'at least' (ít nhất) nghĩa là lớn hơn hoặc bằng (≥).",
+        "Dấu ≥ sẽ thuộc về H₀ hay H₁?"
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 3,
+      "question": "A real estate agent claims that 65% of all private residences being built today are 3-bedroom homes. To test this claim, a large sample of new residences is inspected; the proportion of these homes with 3 bedrooms is recorded. State the null and alternative hypotheses to be used in this test.",
+      "image": null,
+      "options": [
+        "A. (i) \\( H_0: p = 0.65, H_1: p \\ne 0.65 \\)",
+        "B. (ii) \\( H_0: p \\ne 0.65, H_1: p = 0.65 \\)",
+        "C. (iii) \\( H_0: p = 0.65, H_1: p > 0.65 \\)",
+        "D. (iv) \\( H_0: p = 0.65, H_1: p < 0.65 \\)"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích bài toán:</b><br />- \"claims that 65%... are\" (nhận định tỷ lệ là 65%) tức là \\( p = 0.65 \\). Vì chứa dấu bằng nên đây là giả thuyết \\( H_0 \\).<br />- Đề bài không hề có các từ khóa như \"nhiều hơn\" (more than) hay \"ít hơn\" (less than) để chỉ định hướng. Do đó, ta chỉ kiểm định xem tỷ lệ này có KHÁC 0.65 hay không (kiểm định 2 phía). Vậy \\( H_1: p \\ne 0.65 \\).",
+      "difficulty": "easy",
+      "topic": "Hypothesis Formulation",
+      "hints": [
+        "Không có từ khóa hướng (như greater, smaller), vậy đây là loại kiểm định mấy phía?",
+        "Kiểm định 2 phía thì H₁ dùng dấu gì?"
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 4,
+      "question": "Suppose we wish to test \\( H_0: \\mu = 47 \\) versus \\( H_1: \\mu > 47 \\). What will result if we conclude that the mean is greater than 47 when its true value is really 52?",
+      "image": null,
+      "options": [
+        "A. We have made a correct decision.",
+        "B. We have made a Type I error.",
+        "C. We have made a Type II error.",
+        "D. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Phân tích tình huống:</b><br />- Thực tế, giá trị thật sự là 52. Mà 52 > 47 nên giả thuyết \\( H_0: \\mu = 47 \\) là <b>SAI</b> trong thực tế.<br />- Dựa trên dữ liệu, chúng ta \"conclude that the mean is greater than 47\" (kết luận mean lớn hơn 47) tức là ta đã <b>Bác bỏ (Reject) \\( H_0 \\)</b> và chấp nhận \\( H_1 \\).<br />- Việc bác bỏ một giả thuyết \\( H_0 \\) đang sai là một <b>quyết định chính xác (correct decision)</b>. Không có sai lầm nào (Type I hay Type II) xảy ra ở đây.",
+      "difficulty": "hard",
+      "topic": "Errors in Hypothesis Testing",
+      "hints": [
+        "True value = 52, vậy H₀ đang đúng hay sai?",
+        "Việc bác bỏ một H₀ bị sai được gọi là gì trong thống kê?"
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 5,
+      "question": "Which of the following situations is NOT a correctly stated hypothesis testing problem?<br /><br />(i) \\( H_0: \\mu = 30, H_1: \\mu \\ne 30 \\)<br />(ii) \\( H_0: \\mu \\ne 25, H_1: \\mu = 25 \\)<br />(iii) \\( H_0: \\bar{x} = 30, H_1: \\bar{x} \\ne 30 \\)<br />(iv) \\( H_0: \\sigma = 0.05, H_1: \\sigma \\ne 0.05 \\)<br />(v) \\( H_0: p = 0.5, H_1: p \\ne 0.6 \\)",
+      "image": null,
+      "options": [
+        "A. (ii) and (iii)",
+        "B. (ii)",
+        "C. (ii), (iii) and (iv)",
+        "D. (ii), (iii) and (v)"
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Kiểm tra các quy tắc đặt giả thuyết:</b><br />1. \\( H_0 \\) <b>luôn luôn</b> chứa dấu bằng, \\( H_1 \\) <b>không bao giờ</b> chứa dấu bằng.<br />2. Tham số phải là của quần thể (Population: \\( \\mu, \\sigma, p \\)), <b>không được</b> dùng tham số mẫu (Sample: \\( \\bar{x}, s, \\hat{p} \\)).<br />3. Giá trị tham chiếu ở 2 bên phải <b>giống hệt nhau</b>.<br /><br /><b>Xét từng cặp:</b><br />- (i) Đúng chuẩn.<br />- (ii) <b>SAI</b> vì \\( H_0 \\) dùng dấu \\( \\ne \\), còn \\( H_1 \\) dùng dấu \\( = \\). (Vi phạm quy tắc 1)<br />- (iii) <b>SAI</b> vì dùng ký hiệu của tham số mẫu là \\( \\bar{x} \\). (Vi phạm quy tắc 2)<br />- (iv) Đúng chuẩn.<br />- (v) <b>SAI</b> vì so sánh với 2 con số khác nhau: 0.5 và 0.6. (Vi phạm quy tắc 3)<br /><br />Vậy các cặp viết sai là (ii), (iii) và (v).",
+      "difficulty": "hard",
+      "topic": "Hypothesis Formulation",
+      "hints": [
+        "Nhớ 3 quy tắc: H₀ luôn có dấu =, chỉ dùng tham số quần thể (không dùng tham số mẫu), và con số ở 2 giả thuyết phải y hệt nhau."
+      ],
+      "type": "multiple_choice"
+    }
+  ]
+}

@@ -1,939 +1,1481 @@
 {
   "examId": "de30",
-  "title": "MAS chương 6 - BT luyện thêm",
-  "description": "Practice questions on calculating mean, median, and mode.",
-  "questions":[
+  "title": "MAS chương 4 - BT luyện thêm",
+  "description": "Practice problems on Probability Density Functions (PDFs) and related probability calculations for continuous random variables.",
+  "questions": [
     {
       "id": 1,
-      "question": "Consider the following sample data:<br /><br />\\( 25 \\quad 11 \\quad 6 \\quad 4 \\quad 2 \\quad 17 \\quad 9 \\quad 6 \\)<br /><br />For these data the sample mean is ______",
+      "question": "Which of the following statements is FALSE about the probability density function \\( f(x) \\) of a continuous random variable?",
       "image": null,
-      "options":[
-        "A. 3",
-        "B. 10",
-        "C. 8",
-        "D. 7",
-        "E. None of the other choices is correct"
+      "options": [
+        "(i) \\( f(x) \\) is nonnegative function for all value of x",
+        "(ii) \\( f(x) = P(X = x) \\)",
+        "(iii) \\( P(a < X < b) = \\int_a^b f(x) \\, dx \\)",
+        "(iv) \\( \\int_{-\\infty}^{\\infty} f(x) \\, dx = 1 \\)"
       ],
-      "correctAnswer": "B",
-      "explanation": "<b>Bước 1: Tính tổng các giá trị trong mẫu.</b><br />\\( \\sum x_i = 25 + 11 + 6 + 4 + 2 + 17 + 9 + 6 = 80 \\)<br /><br /><b>Bước 2: Xác định kích thước mẫu (số lượng phần tử).</b><br />\\( n = 8 \\)<br /><br /><b>Bước 3: Tính số trung bình mẫu (sample mean).</b><br />\\( \\bar{x} = \\frac{\\sum x_i}{n} = \\frac{80}{8} = 10 \\)",
+      "correctAnswer": "(ii)",
+      "explanation": "<b>Đối với biến ngẫu nhiên liên tục:</b><br />- Xác suất tại một điểm cụ thể \\( P(X=x) \\) luôn bằng 0.<br />- Hàm mật độ xác suất \\( f(x) \\) không đại diện cho xác suất tại điểm đó; nó đại diện cho \"mật độ\" xác suất xung quanh điểm đó.<br /><br /><b>Các khẳng định đúng:</b><br />- (i) \\( f(x) \\ge 0 \\) với mọi x.<br />- (iii) Xác suất trên một khoảng được tính bằng tích phân của PDF.<br />- (iv) Tổng diện tích dưới đồ thị PDF là 1.",
       "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Số trung bình (mean) được tính bằng tổng các giá trị chia cho số lượng các giá trị."
+      "topic": "Continuous Random Variables",
+      "hints": [
+        "Nhớ lại định nghĩa và tính chất của PDF cho biến liên tục.",
+        "Xác suất tại một điểm đối với biến liên tục là bao nhiêu?"
       ],
       "type": "multiple_choice"
     },
     {
       "id": 2,
-      "question": "Which statement is true for the scores of 1, 2, 3, 4, 5, 5, 7, 8, 9, and 10?",
+      "question": "The probability density function of the length of a hinge for fastening a door is \\( f(x) = 1 \\) for \\( 74 < x < 75 \\). Find \\( P(X < 74.3) \\).",
       "image": null,
-      "options":[
-        "A. The mean is greater than the median",
-        "B. The median is greater than the mean",
-        "C. The mean is less than the mode",
-        "D. The mode is greater than the median"
+      "options": [
+        "A. 0.36",
+        "B. 0.30",
+        "C. 0.81",
+        "D. 0.74",
+        "E. None of the other choices is correct"
       ],
-      "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Tính số trung bình (Mean).</b><br />Tổng các giá trị = \\( 1 + 2 + 3 + 4 + 5 + 5 + 7 + 8 + 9 + 10 = 54 \\)<br />Số lượng \\( n = 10 \\). Vậy Mean = \\( \\frac{54}{10} = 5.4 \\).<br /><br /><b>Bước 2: Tìm số trung vị (Median).</b><br />Dãy đã được sắp xếp tăng dần. Vì \\( n = 10 \\) (chẵn), Median là trung bình cộng của 2 giá trị ở vị trí thứ 5 và thứ 6.<br />Giá trị thứ 5 là 5, thứ 6 là 5. Vậy Median = \\( \\frac{5 + 5}{2} = 5 \\).<br /><br /><b>Bước 3: Tìm số yếu vị (Mode).</b><br />Giá trị xuất hiện nhiều nhất là 5 (2 lần). Vậy Mode = 5.<br /><br /><b>Bước 4: So sánh.</b><br />Ta có: Mean (5.4) > Median (5). Do đó, phát biểu A đúng.",
+      "correctAnswer": "B",
+      "explanation": "<b>Bước 1: Xác định PDF đầy đủ</b><br />\\( f(x) = \\begin{cases} 1 & \\text{if } 74 < x < 75 \\\\\\\\ 0 & \\text{otherwise} \\end{cases} \\)<br /><br /><b>Bước 2: Tính xác suất bằng tích phân</b><br />\\( P(X < 74.3) = \\int_{-\\infty}^{74.3} f(x) \\, dx \\)<br />Vì \\( f(x) = 0 \\) khi \\( x \\le 74 \\), ta chỉ cần tính:<br />\\( P(X < 74.3) = \\int_{74}^{74.3} 1 \\, dx = [x]_{74}^{74.3} = 74.3 - 74 = 0.3 \\)",
       "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Lần lượt tính mean, median và mode rồi so sánh các giá trị đó với nhau.",
-        "Median của dãy số chẵn phần tử là trung bình cộng của hai phần tử ở giữa."
+      "topic": "Uniform Distribution",
+      "hints": [
+        "Đây là một ví dụ về phân phối đều (Uniform Distribution).",
+        "Xác suất \\( P(X < a) \\) được tính bằng diện tích dưới đồ thị PDF từ \\( -\\infty \\) đến a."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 3,
-      "question": "The midterm grades on a chemistry exam, graded on a scale of 0 to 100, are:<br />62, 64, 65, 65, 68, 70, 72, 73, 74, 75, 75, 75, 76, 78, 80, 81, 83, 83, 84, 85, 87, 88, 92, 95, 98, 98, 100, 100.<br /><br />What is the median for this data?",
+      "question": "Let X be a continuous random variable with the probability density function \\( f(x) = 0.5 \\) for \\( 0 < x < 2 \\). Find a such that \\( P(X > a) = 0.1 \\).",
       "image": null,
-      "options":[],
-      "correctAnswer": "<b>Đáp án: 79</b><br /><br /><b>Cách giải:</b><br /><b>Bước 1:</b> Kiểm tra xem dữ liệu đã được sắp xếp chưa. Ta thấy dãy điểm số đã được sắp xếp theo thứ tự tăng dần.<br /><br /><b>Bước 2:</b> Đếm số lượng phần tử (kích thước mẫu \\( n \\)).<br />Đếm các số trong dãy, ta có \\( n = 28 \\).<br /><br /><b>Bước 3:</b> Vì \\( n \\) là số chẵn, số trung vị (Median) sẽ là trung bình cộng của hai phần tử nằm ở giữa, tức là phần tử ở vị trí thứ \\( \\frac{28}{2} = 14 \\) và vị trí thứ \\( 14 + 1 = 15 \\).<br /><br /><b>Bước 4:</b> Xác định các phần tử ở vị trí 14 và 15.<br />Đếm từ đầu dãy, ta thấy phần tử thứ 14 là 78, và phần tử thứ 15 là 80.<br /><br /><b>Bước 5:</b> Tính Median.<br />\\( \\text{Median} = \\frac{78 + 80}{2} = 79 \\).",
-      "explanation": "Trong thống kê, trung vị (median) của một tập dữ liệu có số lượng phần tử chẵn là trung bình cộng của hai giá trị ở vị trí chính giữa khi tập dữ liệu đã được sắp xếp.",
-      "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Đếm tổng số các điểm số để biết tập dữ liệu có chẵn hay lẻ phần tử.",
-        "Xác định hai phần tử ở giữa dãy và tính trung bình cộng của chúng."
+      "options": [
+        "A. 1.8",
+        "B. 0.2",
+        "C. 0.1",
+        "D. 1.9",
+        "E. None of the other choice is correct"
       ],
-      "type": "essay"
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Thiết lập phương trình tích phân</b><br />\\( P(X > a) = \\int_a^{\\infty} f(x) \\, dx = 0.1 \\)<br />Dựa vào khoảng xác định của f(x), ta có:<br />\\( \\int_a^2 0.5 \\, dx = 0.1 \\)<br /><br /><b>Bước 2: Giải phương trình</b><br />\\( [0.5x]_a^2 = 0.1 \\)<br />\\( 0.5(2) - 0.5(a) = 0.1 \\)<br />\\( 1 - 0.5a = 0.1 \\)<br />\\( 0.5a = 0.9 \\)<br />\\( a = \\frac{0.9}{0.5} = 1.8 \\)",
+      "difficulty": "medium",
+      "topic": "Uniform Distribution",
+      "hints": [
+        "Chú ý giới hạn của tích phân cho \\( P(X > a) \\).",
+        "Tích phân của một hằng số là một hàm bậc nhất."
+      ],
+      "type": "multiple_choice"
     },
     {
       "id": 4,
-      "question": "The numbers of incorrect answers on a true-false competency test for a random sample of 15 students were recorded as follows: 2, 1, 3, 0, 1, 3, 6, 0, 3, 3, 5, 2, 1, 4, and 2. Find the median and the mean of the data.",
+      "question": "Let \\( f(x) \\) be the probability density function of a continuous random variable such that \\( f(x) = 0.5 \\) for \\( 0 < x < 2 \\). Find \\( P(X < 1.5) \\).",
       "image": null,
-      "options":[
-        "A. 2 and 2.4",
-        "B. 0 and 2.4",
-        "C. 2 and 2.6",
-        "D. 0 and 2.6",
-        "E. None of the other choices is correct"
+      "options": [
+        "A. 0.25",
+        "B. 0.75",
+        "C. 0.5",
+        "D. 0",
+        "E. None of the other choice is correct"
       ],
-      "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Tìm số trung bình (Mean).</b><br />Tính tổng các phần tử: \\( 2+1+3+0+1+3+6+0+3+3+5+2+1+4+2 = 36 \\).<br />Số lượng phần tử \\( n = 15 \\).<br />Mean = \\( \\frac{36}{15} = 2.4 \\).<br /><br /><b>Bước 2: Tìm số trung vị (Median).</b><br />Trước tiên, cần sắp xếp lại dãy số theo thứ tự tăng dần:<br />\\( 0, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 3, 4, 5, 6 \\).<br />Vì \\( n = 15 \\) (lẻ), Median là phần tử nằm ở vị trí thứ \\( \\frac{15+1}{2} = 8 \\).<br />Phần tử ở vị trí thứ 8 trong dãy đã sắp xếp là 2.<br />Vậy Median = 2.<br /><br /><b>Kết luận:</b> Median là 2 và Mean là 2.4.",
+      "correctAnswer": "B",
+      "explanation": "<b>Bước 1: Tính xác suất bằng tích phân</b><br />\\( P(X < 1.5) = \\int_{-\\infty}^{1.5} f(x) \\, dx \\)<br />Ta chỉ cần tính trên khoảng PDF khác 0:<br />\\( P(X < 1.5) = \\int_0^{1.5} 0.5 \\, dx \\)<br /><br /><b>Bước 2: Giải tích phân</b><br />\\( [0.5x]_0^{1.5} = 0.5 \\cdot 1.5 - 0.5 \\cdot 0 = 0.75 \\)",
       "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Đừng quên sắp xếp dữ liệu theo thứ tự từ nhỏ đến lớn trước khi tìm median.",
-        "Mean được tính bằng tổng tất cả các phần tử chia cho 15."
+      "topic": "Uniform Distribution",
+      "hints": [
+        "Đây là một bài toán tính diện tích hình chữ nhật dưới PDF.",
+        "Tích phân đơn giản của một hằng số."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 5,
-      "question": "Five fish with lengths of 7.5 inch, 7.75 inch, 8.5 inch, 8.5 inch, 8.25 inch. The sample median is ______",
+      "question": "Let X be a continuous random variable with probability density function defined by \\( f(x) = e^{-(x-4)} \\) for \\( 4 < x \\). Determine x such that \\( P(X < x) = 0.9 \\).",
       "image": null,
-      "options":[
-        "A. 7.5",
-        "B. 7.75",
-        "C. 8.25",
-        "D. 8.5",
-        "E. None of the other choices is correct"
+      "options": [
+        "A. 6.303",
+        "B. 10",
+        "C. 8.303",
+        "D. 9"
       ],
-      "correctAnswer": "C",
-      "explanation": "<b>Bước 1: Sắp xếp dữ liệu theo thứ tự tăng dần.</b><br />Dãy ban đầu: 7.5, 7.75, 8.5, 8.5, 8.25.<br />Dãy đã sắp xếp: 7.5, 7.75, 8.25, 8.5, 8.5.<br /><br /><b>Bước 2: Tìm vị trí của số trung vị.</b><br />Số lượng phần tử \\( n = 5 \\) (lẻ), do đó Median nằm ở vị trí thứ \\( \\frac{5+1}{2} = 3 \\).<br /><br /><b>Bước 3: Xác định Median.</b><br />Phần tử ở vị trí thứ 3 trong dãy đã sắp xếp là 8.25.<br />Vậy Sample median = 8.25.",
-      "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Phải sắp xếp các độ dài từ ngắn nhất đến dài nhất trước khi lấy giá trị ở giữa."
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Thiết lập phương trình tích phân</b><br />\\( P(X < x) = \\int_{-\\infty}^x f(t) \\, dt = 0.9 \\) (sử dụng t làm biến tích phân để tránh nhầm lẫn)<br />Vì PDF bằng 0 khi \\( t \\le 4 \\), ta có:<br />\\( \\int_4^x e^{-(t-4)} \\, dt = 0.9 \\)<br /><br /><b>Bước 2: Giải tích phân</b><br />Đặt \\( u = -(t-4) \\) => \\( du = -dt \\). Khi \\( t=4, u=0 \\). Khi \\( t=x, u=-(x-4) \\).<br />Tích phân trở thành:<br />\\( \\int_0^{-(x-4)} -e^u \\, du = [-e^u]_0^{-(x-4)} = -e^{-(x-4)} - (-e^0) = 1 - e^{-(x-4)} \\)<br /><br /><b>Bước 3: Giải x</b><br />\\( 1 - e^{-(x-4)} = 0.9 \\)<br />\\( e^{-(x-4)} = 0.1 \\)<br />Lấy logarit tự nhiên (ln) hai vế:<br />\\( -(x-4) = \\ln(0.1) \\)<br />\\( x - 4 = -\\ln(0.1) = \\ln\\left(\\frac{1}{0.1}\\right) = \\ln(10) \\)<br />\\( x = 4 + \\ln(10) \\approx 4 + 2.302585 = 6.302585 \\approx 6.303 \\)",
+      "difficulty": "hard",
+      "topic": "Exponential Distribution",
+      "hints": [
+        "Chú ý PDF có dạng phân phối mũ dịch chuyển (shifted exponential).",
+        "Dùng phương pháp đổi biến số để tính tích phân có chứa e mũ.",
+        "Dùng hàm ln để giải phương trình e mũ."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 6,
-      "question": "Consider the following sample data:<br /><br />\\( 25 \\quad 11 \\quad 6 \\quad 4 \\quad 2 \\quad 17 \\quad 9 \\quad 6 \\)<br /><br />For these data the median is ________",
+      "question": "Let X be a continuous random variable with probability density function defined by<br />\\[ f(x) = 1.5x^2 \\text{ for } -1 < x < 1. \\]<br />Determine x such that \\( P(x < X) = 0.05 \\).",
       "image": null,
-      "options":[
-        "A. 10",
-        "B. 7.5",
-        "C. 3.5",
-        "D. None of the other choices is correct"
+      "options": [
+        "A. 0.9655",
+        "B. 0.215",
+        "C. -0.215",
+        "D. 0.5"
       ],
-      "correctAnswer": "B",
-      "explanation": "<b>Bước 1: Sắp xếp dữ liệu theo thứ tự tăng dần.</b><br />Dãy ban đầu: 25, 11, 6, 4, 2, 17, 9, 6<br />Dãy đã sắp xếp: 2, 4, 6, 6, 9, 11, 17, 25<br /><br /><b>Bước 2: Xác định vị trí số trung vị.</b><br />Kích thước mẫu \\( n = 8 \\) (số chẵn). Vậy Median là trung bình cộng của hai giá trị ở giữa (vị trí thứ 4 và thứ 5).<br /><br /><b>Bước 3: Tính Median.</b><br />Phần tử thứ 4 là 6, phần tử thứ 5 là 9.<br />\\( \\text{Median} = \\frac{6 + 9}{2} = \\frac{15}{2} = 7.5 \\)",
-      "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Luôn sắp xếp dữ liệu trước khi tìm Median.",
-        "Với số lượng phần tử chẵn, Median là trung bình cộng của hai phần tử ở chính giữa."
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Thiết lập phương trình</b><br />Đề bài yêu cầu tìm \\( x \\) sao cho \\( P(X > x) = 0.05 \\) (lưu ý \\( x < X \\) viết thuận lại là \\( X > x \\)).<br />Biết rằng miền giới hạn trên của hàm là 1, ta có phương trình tích phân:<br />\\( \\int_x^1 1.5t^2 \\, dt = 0.05 \\)<br /><br /><b>Bước 2: Giải tích phân</b><br />Nguyên hàm của \\( 1.5t^2 \\) là \\( 0.5t^3 \\).<br />\\( [0.5t^3]_x^1 = 0.05 \\)<br />\\( 0.5(1^3) - 0.5(x^3) = 0.05 \\)<br />\\( 0.5 - 0.5x^3 = 0.05 \\)<br /><br /><b>Bước 3: Giải phương trình tìm x</b><br />\\( 0.5x^3 = 0.5 - 0.05 \\)<br />\\( 0.5x^3 = 0.45 \\)<br />\\( x^3 = 0.9 \\)<br />\\( x = \\sqrt[3]{0.9} \\approx 0.965489 \\approx 0.9655 \\)",
+      "difficulty": "medium",
+      "topic": "Probability Density Function",
+      "hints": [
+        "Hãy viết phương trình tích phân từ giới hạn dưới là x đến giới hạn trên là 1.",
+        "Chú ý P(x < X) đồng nghĩa với việc tính phần diện tích đuôi bên phải từ điểm x."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 7,
-      "question": "A comparison of coffee prices at 4 randomly selected grocery stores in San Diego showed increases from the previous month of 12, 15, 17 and 20 cents for a 1 pound bag. Find the variance of this sample of price increases.",
+      "question": "The probability density function of the length of a cutting blade is<br />\\[ f(x) = 1.25 \\text{ for } 74.6 < x < 75.4 \\text{ millimeters.} \\]<br />If the specifications for this process are from 74.7 to 75.3 millimeters, what proportion of blades meets specifications?",
       "image": null,
-      "options":[
-        "A. 26/3",
-        "B. 32/3",
-        "C. 34/3",
-        "D. 28/3",
-        "E. None of the other choices is correct"
+      "options": [
+        "A. 0.75",
+        "B. 0.25",
+        "C. 0.5",
+        "D. 0.125"
       ],
-      "correctAnswer": "C",
-      "explanation": "<b>Bước 1: Tính số trung bình mẫu (\\( \\bar{x} \\)).</b><br />\\( \\bar{x} = \\frac{12 + 15 + 17 + 20}{4} = \\frac{64}{4} = 16 \\)<br /><br /><b>Bước 2: Tính tổng bình phương các độ lệch (SS).</b><br />\\( \\sum (x_i - \\bar{x})^2 = (12 - 16)^2 + (15 - 16)^2 + (17 - 16)^2 + (20 - 16)^2 \\)<br />\\( = (-4)^2 + (-1)^2 + (1)^2 + (4)^2 \\)<br />\\( = 16 + 1 + 1 + 16 = 34 \\)<br /><br /><b>Bước 3: Tính phương sai mẫu (\\( s^2 \\)).</b><br />\\( s^2 = \\frac{\\sum (x_i - \\bar{x})^2}{n - 1} = \\frac{34}{4 - 1} = \\frac{34}{3} \\)",
-      "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Lưu ý đề bài yêu cầu tìm phương sai của 'sample' (mẫu).",
-        "Công thức phương sai mẫu: chia tổng bình phương độ lệch cho \\( n - 1 \\)."
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Xác định yêu cầu</b><br />Tỉ lệ lưỡi cắt đạt chuẩn chính là xác suất chiều dài rơi vào khoảng từ 74.7 đến 75.3 mm, tức là ta cần tính \\( P(74.7 < X < 75.3) \\).<br /><br /><b>Bước 2: Tính tích phân</b><br />Vì khoảng này nằm hoàn toàn trong miền \\( 74.6 < x < 75.4 \\) nên hàm mật độ là một hằng số \\( f(x) = 1.25 \\) (đây là phân phối đều).<br />\\( P(74.7 < X < 75.3) = \\int_{74.7}^{75.3} 1.25 \\, dx \\)<br /><br /><b>Bước 3: Thực hiện tính toán</b><br />Đây là diện tích hình chữ nhật:<br />\\( 1.25 \\cdot (75.3 - 74.7) = 1.25 \\cdot 0.6 = 0.75 \\)",
+      "difficulty": "easy",
+      "topic": "Uniform Distribution",
+      "hints": [
+        "Tính tích phân của hàm f(x) trên khoảng từ 74.7 đến 75.3.",
+        "Với phân phối đều, xác suất đơn giản là Chiều cao (1.25) nhân với Chiều rộng (khoảng cách giữa 2 cận)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 8,
-      "question": "Given the following data on the motor fuel octane rating of several blends of gasoline:<br /><br />88.2; 93.8; 86.5<br /><br />Find the sample variance of these data.",
+      "question": "Find c such that \\( f(x) \\) is probability density function of a continuous random variable X, where<br />\\[ f(x) = \\begin{cases} cx & \\text{if } 0 < x < 1 \\\\\\\\ 0.5 & \\text{if } 1 < x < 2 \\\\\\\\ 0 & \\text{otherwise} \\end{cases} \\]",
       "image": null,
-      "options":[
-        "A. 14.59",
-        "B. 3.82",
-        "C. 4.26",
-        "D. 18.34"
+      "options": [
+        "A. 1",
+        "B. 0",
+        "C. 2",
+        "D. 0.5",
+        "E. 1.5",
+        "F. None of the other choice is correct"
       ],
       "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Tính số trung bình mẫu (\\( \\bar{x} \\)).</b><br />\\( \\bar{x} = \\frac{88.2 + 93.8 + 86.5}{3} = \\frac{268.5}{3} = 89.5 \\)<br /><br /><b>Bước 2: Tính tổng bình phương các độ lệch.</b><br />\\( (88.2 - 89.5)^2 = (-1.3)^2 = 1.69 \\)<br />\\( (93.8 - 89.5)^2 = (4.3)^2 = 18.49 \\)<br />\\( (86.5 - 89.5)^2 = (-3.0)^2 = 9.00 \\)<br />Tổng = \\( 1.69 + 18.49 + 9.00 = 29.18 \\)<br /><br /><b>Bước 3: Tính phương sai mẫu (\\( s^2 \\)).</b><br />Với mẫu \\( n = 3 \\):<br />\\( s^2 = \\frac{29.18}{3 - 1} = \\frac{29.18}{2} = 14.59 \\)",
+      "explanation": "<b>Bước 1: Sử dụng tính chất của PDF</b><br />Tổng diện tích dưới đồ thị hàm mật độ xác suất luôn phải bằng 1:<br />\\( \\int_{-\\infty}^{\\infty} f(x) \\, dx = 1 \\)<br /><br /><b>Bước 2: Tách tích phân theo các khoảng xác định</b><br />\\( \\int_0^1 cx \\, dx + \\int_1^2 0.5 \\, dx = 1 \\)<br /><br /><b>Bước 3: Tính toán từng phần</b><br />- Phần 1: \\( \\int_0^1 cx \\, dx = \\left[ \\frac{cx^2}{2} \\right]_0^1 = \\frac{c}{2} \\)<br />- Phần 2: \\( \\int_1^2 0.5 \\, dx = [0.5x]_1^2 = 0.5(2) - 0.5(1) = 0.5 \\)<br /><br /><b>Bước 4: Giải phương trình tìm c</b><br />\\( \\frac{c}{2} + 0.5 = 1 \\)<br />\\( \\frac{c}{2} = 0.5 \\)<br />\\( c = 1 \\)",
       "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Công thức tính phương sai mẫu là \\( s^2 = \\frac{\\sum(x_i - \\bar{x})^2}{n - 1} \\).",
-        "Hãy tính trung bình cẩn thận để tránh sai số."
+      "topic": "Properties of PDF",
+      "hints": [
+        "Tổng diện tích dưới đồ thị hàm mật độ xác suất (tích phân từ âm vô cùng đến dương vô cùng) luôn bằng 1.",
+        "Hãy tính tổng tích phân trên 2 khoảng (0, 1) và (1, 2) rồi cho kết quả bằng 1."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 9,
-      "question": "Find the variance of the data: 6, 8, 10, 12, 14, and 16.",
+      "question": "The total number of hours, measured in units of 100 hours, that a family runs a vacuum cleaner over a period of one year is a continuous random variable X that has the density function<br />\\[ f(x) = \\begin{cases} x & , 0 < x < 1, \\\\\\\\ 2 - x & , 1 \\le x < 2, \\\\\\\\ 0 & , \\text{elsewhere}. \\end{cases} \\]<br />Find the probability that over a period of one year, a family runs their vacuum cleaner between 50 and 100 hours.",
       "image": null,
-      "options":[
-        "A. 14",
-        "B. 3.74",
-        "C. 11.67",
-        "D. 13.25",
+      "options": [
+        "A. 0.478",
+        "B. 0.915",
+        "C. 0.529",
+        "D. 0.375",
         "E. None of the other choices is correct"
       ],
-      "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Tính số trung bình (Mean).</b><br />\\( \\bar{x} = \\frac{6 + 8 + 10 + 12 + 14 + 16}{6} = \\frac{66}{6} = 11 \\)<br /><br /><b>Bước 2: Tính tổng bình phương các độ lệch.</b><br />\\( \\sum (x_i - \\bar{x})^2 = (6-11)^2 + (8-11)^2 + (10-11)^2 + (12-11)^2 + (14-11)^2 + (16-11)^2 \\)<br />\\( = (-5)^2 + (-3)^2 + (-1)^2 + (1)^2 + (3)^2 + (5)^2 \\)<br />\\( = 25 + 9 + 1 + 1 + 9 + 25 = 70 \\)<br /><br /><b>Bước 3: Tính phương sai.</b><br />Dữ liệu thường được mặc định là một mẫu, nên ta tính phương sai mẫu (\\( s^2 \\)):<br />\\( s^2 = \\frac{70}{n-1} = \\frac{70}{6-1} = \\frac{70}{5} = 14 \\)",
-      "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Tính tổng bình phương khoảng cách từ mỗi điểm dữ liệu đến giá trị trung bình.",
-        "Sử dụng công thức phương sai mẫu (chia cho \\( n-1 \\)) vì các đáp án thường được thiết kế theo giả định này khi không đề cập cụ thể."
+      "correctAnswer": "D",
+      "explanation": "<b>Bước 1: Chuyển đổi đơn vị</b><br />Chú ý đề bài ghi rõ biến ngẫu nhiên X được tính bằng <b>đơn vị 100 giờ</b>.<br />Do đó, khoảng thời gian \"từ 50 đến 100 giờ\" tương đương với khoảng giá trị của X là: \\( \\frac{50}{100} < X < \\frac{100}{100} \\) hay \\( 0.5 < X < 1 \\).<br /><br /><b>Bước 2: Xác định hàm f(x) tương ứng</b><br />Trên khoảng \\( (0.5, 1) \\), hàm số lấy nhánh đầu tiên: \\( f(x) = x \\).<br /><br /><b>Bước 3: Tính xác suất bằng tích phân</b><br />\\( P(0.5 < X < 1) = \\int_{0.5}^1 x \\, dx \\)<br />\\( = \\left[ \\frac{x^2}{2} \\right]_{0.5}^1 \\)<br />\\( = \\frac{1^2}{2} - \\frac{0.5^2}{2} \\)<br />\\( = 0.5 - \\frac{0.25}{2} = 0.5 - 0.125 = 0.375 \\)",
+      "difficulty": "hard",
+      "topic": "Triangular Distribution",
+      "hints": [
+        "Điều quan trọng nhất là phải quy đổi 50 giờ và 100 giờ ra đơn vị của biến ngẫu nhiên X (chia cho 100).",
+        "Sau khi có khoảng giá trị mới của X, hãy chọn nhánh f(x) phù hợp để tích phân."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 10,
-      "question": "Apple would like to estimate the web browsing battery life (in hours) of the Iphone 6. Four users are randomly selected and the battery life are:<br />4  4  3  5<br />Using this sample, what is the point estimate for the variance of the battery life?",
+      "question": "Find C such that \\( f(x) \\) is a probability density function, where<br />\\[ f(x) = C(x^2 + 2x) \\text{ for } 0 < x < 2. \\]",
       "image": null,
-      "options":[
-        "A. 0.67",
-        "B. 1.40",
-        "C. 0.33",
-        "D. 2.50",
-        "E. None of the other choices is correct"
+      "options": [
+        "A. 3/20",
+        "B. 9/8",
+        "C. -3/20",
+        "D. -9/8",
+        "E. None of the others"
       ],
       "correctAnswer": "A",
-      "explanation": "<b>Lý thuyết:</b> Ước lượng điểm (point estimate) tốt nhất cho phương sai tổng thể chính là phương sai mẫu (\\( s^2 \\)).<br /><br /><b>Bước 1: Tính trung bình mẫu (\\( \\bar{x} \\)).</b><br />\\( \\bar{x} = \\frac{4 + 4 + 3 + 5}{4} = \\frac{16}{4} = 4 \\)<br /><br /><b>Bước 2: Tính tổng bình phương độ lệch.</b><br />\\( \\sum (x_i - \\bar{x})^2 = (4-4)^2 + (4-4)^2 + (3-4)^2 + (5-4)^2 \\)<br />\\( = 0^2 + 0^2 + (-1)^2 + 1^2 = 2 \\)<br /><br /><b>Bước 3: Tính ước lượng điểm cho phương sai (phương sai mẫu).</b><br />\\( s^2 = \\frac{2}{n - 1} = \\frac{2}{4 - 1} = \\frac{2}{3} \\approx 0.67 \\)",
+      "explanation": "<b>Bước 1: Sử dụng điều kiện chuẩn hóa của PDF</b><br />Để \\( f(x) \\) là một hàm mật độ xác suất hợp lệ, tích phân của nó trên toàn miền xác định phải bằng 1:<br />\\( \\int_0^2 C(x^2 + 2x) \\, dx = 1 \\)<br /><br /><b>Bước 2: Đưa hằng số C ra ngoài và tìm nguyên hàm</b><br />\\( C \\cdot \\int_0^2 (x^2 + 2x) \\, dx = 1 \\)<br />\\( C \\cdot \\left[ \\frac{x^3}{3} + x^2 \\right]_0^2 = 1 \\)<br /><br /><b>Bước 3: Thay cận và giải phương trình</b><br />\\( C \\cdot \\left( \\left( \\frac{2^3}{3} + 2^2 \\right) - 0 \\right) = 1 \\)<br />\\( C \\cdot \\left( \\frac{8}{3} + 4 \\right) = 1 \\)<br />\\( C \\cdot \\left( \\frac{8}{3} + \\frac{12}{3} \\right) = 1 \\)<br />\\( C \\cdot \\frac{20}{3} = 1 \\)<br />\\( C = \\frac{3}{20} \\)",
       "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Ước lượng điểm cho phương sai của một tổng thể chính là phương sai của mẫu ngẫu nhiên được chọn.",
-        "Đừng quên chia cho \\( n-1 \\) khi tính phương sai mẫu."
+      "topic": "Properties of PDF",
+      "hints": [
+        "Tích phân của toàn bộ hàm số trên khoảng từ 0 đến 2 phải bằng 1.",
+        "Tính tích phân trước, sau đó cho kết quả bằng 1 để giải ngược ra C."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 11,
-      "question": "Find the sample standard deviation.<br /><br />\\( 15 \\quad 42 \\quad 53 \\)",
+      "question": "A probability density function is given by<br />\\[ f(x) = \\frac{b}{x^2} \\quad \\text{when } 1 < x < 5. \\]<br />What is the value of b?",
       "image": null,
-      "options":[
-        "A. 16.6",
-        "B. 15.8",
-        "C. 19.6",
-        "D. 29.1",
-        "E. None of the other choices is correct"
+      "options": [
+        "A. 1.25",
+        "B. 2",
+        "C. 4",
+        "D. None of the other choices is correct",
+        "E. 2.5"
       ],
-      "correctAnswer": "C",
-      "explanation": "<b>Bước 1: Tính số trung bình mẫu (\\( \\bar{x} \\)).</b><br />\\( \\bar{x} = \\frac{15 + 42 + 53}{3} = \\frac{110}{3} \\approx 36.67 \\)<br /><br /><b>Bước 2: Tính tổng bình phương các độ lệch.</b><br />Ta có thể dùng công thức tính nhanh: \\( SS = \\sum x_i^2 - \\frac{(\\sum x_i)^2}{n} \\)<br />\\( \\sum x_i^2 = 15^2 + 42^2 + 53^2 = 225 + 1764 + 2809 = 4798 \\)<br />\\( SS = 4798 - \\frac{110^2}{3} = 4798 - 4033.33 = 764.67 \\)<br /><br /><b>Bước 3: Tính phương sai mẫu (\\( s^2 \\)) và độ lệch chuẩn mẫu (\\( s \\)).</b><br />Phương sai mẫu: \\( s^2 = \\frac{SS}{n-1} = \\frac{764.67}{3-1} = 382.335 \\)<br />Độ lệch chuẩn mẫu: \\( s = \\sqrt{382.335} \\approx 19.55 \\)<br />Làm tròn ta được \\( 19.6 \\).",
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Sử dụng tính chất của hàm mật độ xác suất (PDF)</b><br />Tổng tích phân của PDF trên toàn bộ miền xác định phải bằng 1:<br />\\[ \\int_1^5 \\frac{b}{x^2} \\, dx = 1 \\]<br /><br /><b>Bước 2: Tìm nguyên hàm và giải tích phân</b><br />Nguyên hàm của \\( x^{-2} \\) là \\( -x^{-1} \\) (tức là \\( -\\frac{1}{x} \\)).<br />\\[ b \\cdot \\left[ -\\frac{1}{x} \\right]_1^5 = 1 \\]<br />\\[ b \\cdot \\left( -\\frac{1}{5} - \\left(-\\frac{1}{1}\\right) \\right) = 1 \\]<br />\\[ b \\cdot \\left( 1 - \\frac{1}{5} \\right) = 1 \\]<br />\\[ b \\cdot \\left( \\frac{4}{5} \\right) = 1 \\]<br /><br /><b>Bước 3: Giải tìm b</b><br />\\[ b = \\frac{5}{4} = 1.25 \\]",
       "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Đừng quên sử dụng công thức mẫu (chia cho n - 1) chứ không phải công thức tổng thể.",
-        "Độ lệch chuẩn là căn bậc hai của phương sai."
+      "topic": "Properties of PDF",
+      "hints": [
+        "Thiết lập phương trình: tích phân của f(x) từ 1 đến 5 bằng 1.",
+        "Nhớ lại nguyên hàm của \\( \\frac{1}{x^2} \\) là \\( -\\frac{1}{x} \\)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 12,
-      "question": "Find the mode for the sample composed of the observations 4, 5, 6, 6, 6, 7, 7, 8, 8, 5.",
+      "question": "The probability density function of the weight in kilogram of a packaged chemical is<br />\\[ f(x) = 2 \\quad \\text{for } 24.75 < x < 25.25 \\text{ kg} \\]<br />How much chemical is contained in 80% of all packages?",
       "image": null,
-      "options":[
-        "A. None of the other choices is correct",
-        "B. 5",
-        "C. 7",
-        "D. 6",
-        "E. 8"
+      "options": [
+        "A. 24.85kg",
+        "B. 25.15kg",
+        "C. 25.00kg",
+        "D. 24.95kg"
       ],
-      "correctAnswer": "D",
-      "explanation": "<b>Bước 1: Thống kê tần số xuất hiện của mỗi giá trị.</b><br />- Giá trị 4: 1 lần<br />- Giá trị 5: 2 lần<br />- Giá trị 6: 3 lần<br />- Giá trị 7: 2 lần<br />- Giá trị 8: 2 lần<br /><br /><b>Bước 2: Xác định số yếu vị (Mode).</b><br />Mode là giá trị có tần số xuất hiện cao nhất trong tập dữ liệu. Giá trị 6 xuất hiện nhiều nhất (3 lần).<br />Vậy Mode = 6.",
-      "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Mode (số yếu vị) là giá trị xuất hiện lặp lại nhiều lần nhất trong tập dữ liệu."
+      "correctAnswer": "B",
+      "explanation": "<b>Bước 1: Hiểu yêu cầu bài toán</b><br />Câu hỏi \"How much chemical is contained in 80% of all packages?\" nghĩa là tìm phân vị thứ 80 (80th percentile). Ta cần tìm giá trị \\( x \\) sao cho xác suất để khối lượng gói hàng nhỏ hơn \\( x \\) bằng 0.8 (tức là 80%).<br />\\[ P(X < x) = 0.8 \\]<br /><br /><b>Bước 2: Thiết lập phương trình tích phân</b><br />\\[ \\int_{24.75}^x 2 \\, dt = 0.8 \\]<br /><br /><b>Bước 3: Giải phương trình</b><br />\\[ [2t]_{24.75}^x = 0.8 \\]<br />\\[ 2x - 2(24.75) = 0.8 \\]<br />\\[ 2x - 49.5 = 0.8 \\]<br />\\[ 2x = 50.3 \\]<br />\\[ x = 25.15 \\]",
+      "difficulty": "medium",
+      "topic": "Uniform Distribution & Percentiles",
+      "hints": [
+        "Bài toán yêu cầu tìm giá trị x sao cho diện tích dưới đồ thị từ giới hạn dưới (24.75) đến x bằng 0.8.",
+        "Giải phương trình tích phân để tìm cận trên x."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 13,
-      "question": "Find the mode and the median of the sample 18, 19, 16, 21, 18, 19, 24, 15, 19",
+      "question": "The probability density function of the time customers arrive at a terminal (in minutes after 9:00 A.M.) is given by<br />\\[ f(x) = \\frac{1}{9}e^{-x/9}, \\quad x > 0. \\]<br />Determine the cumulative distribution function \\( F(x) \\).",
       "image": null,
-      "options":[
-        "A. 19 and 18",
-        "B. 18 and 19",
-        "C. 19 and 19",
-        "D. 18 and 18",
-        "E. None of the other choices is correct"
+      "options": [
+        "A. \\( 1 - e^{-x/9}, \\, x > 0 \\)",
+        "B. \\( 1 - (1/9)e^{-x/9}, \\, x > 0 \\)",
+        "C. \\( e^{-x/9}, \\, x > 0 \\)",
+        "D. \\( (1/9)e^{-x/9}, \\, x > 0 \\)"
       ],
-      "correctAnswer": "C",
-      "explanation": "<b>Bước 1: Sắp xếp dữ liệu theo thứ tự tăng dần.</b><br />Dãy ban đầu: 18, 19, 16, 21, 18, 19, 24, 15, 19<br />Dãy đã sắp xếp: 15, 16, 18, 18, 19, 19, 19, 21, 24<br /><br /><b>Bước 2: Tìm Mode.</b><br />Trong dãy số trên, số 19 xuất hiện nhiều nhất (3 lần).<br />Vậy Mode = 19.<br /><br /><b>Bước 3: Tìm Median.</b><br />Mẫu có số lượng phần tử \\( n = 9 \\) (số lẻ), Median sẽ nằm ở vị trí thứ \\( \\frac{n+1}{2} = \\frac{10}{2} = 5 \\).<br />Phần tử ở vị trí thứ 5 trong dãy đã sắp xếp là 19.<br />Vậy Median = 19.<br /><br /><b>Kết luận:</b> Mode và Median lần lượt là 19 và 19.",
-      "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Sắp xếp dữ liệu từ nhỏ đến lớn sẽ giúp bạn dễ dàng nhìn thấy cả Mode và Median."
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Nhớ công thức của CDF</b><br />Hàm phân phối tích lũy (CDF), ký hiệu là \\( F(x) \\), được tính bằng tích phân của hàm mật độ xác suất (PDF) từ giới hạn dưới cùng (ở đây là 0) đến \\( x \\):<br />\\[ F(x) = \\int_0^x f(t) \\, dt = \\int_0^x \\frac{1}{9}e^{-t/9} \\, dt \\]<br /><br /><b>Bước 2: Đổi biến số để giải tích phân</b><br />Đặt \\( u = -\\frac{t}{9} \\implies du = -\\frac{1}{9}dt \\implies -du = \\frac{1}{9}dt \\).<br />Biến đổi các cận: Khi \\( t = 0 \\implies u = 0 \\). Khi \\( t = x \\implies u = -\\frac{x}{9} \\).<br />Tích phân trở thành:<br />\\[ \\int_0^{-x/9} -e^u \\, du = \\left[ -e^u \\right]_0^{-x/9} \\]<br /><br /><b>Bước 3: Tính toán kết quả</b><br />\\[ = -e^{-x/9} - (-e^0) = -e^{-x/9} + 1 = 1 - e^{-x/9} \\]",
+      "difficulty": "medium",
+      "topic": "Cumulative Distribution Function",
+      "hints": [
+        "CDF F(x) là tích phân của PDF f(t) từ 0 đến x.",
+        "Sử dụng phương pháp đổi biến số cho hàm số mũ. Đây là phân phối mũ (Exponential Distribution) cơ bản."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 14,
-      "question": "The following data reflect the number of customers who test drove new cars each day for a sample of 20 days at the Redfield Ford Dealership.<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>5</td><td style='border:1px solid #ddd; padding:5px;'>7</td><td style='border:1px solid #ddd; padding:5px;'>2</td><td style='border:1px solid #ddd; padding:5px;'>9</td><td style='border:1px solid #ddd; padding:5px;'>4</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>9</td><td style='border:1px solid #ddd; padding:5px;'>7</td><td style='border:1px solid #ddd; padding:5px;'>10</td><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px;'>7</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>5</td><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px;'>0</td><td style='border:1px solid #ddd; padding:5px;'>7</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px;'>3</td><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px;'>14</td><td style='border:1px solid #ddd; padding:5px;'>6</td></tr></table><br /><br />What is the sample range?",
+      "question": "The cumulative distribution function of the random variable X is defined by<br />\\[ F(x) = \\begin{cases} 0 & , x < 0 \\\\\\\\ 1 - e^{-x/2} & , x \\ge 0. \\end{cases} \\]<br />What is \\( P[X > 1] \\)?",
       "image": null,
-      "options":[
-        "A. Approximately 3.08",
-        "B. 1",
-        "C. 14",
-        "D. 5.95",
+      "options": [
+        "A. 0.5",
+        "B. 0.74",
+        "C. 0.42",
+        "D. 0.61",
         "E. None of the other choices is correct"
       ],
-      "correctAnswer": "C",
-      "explanation": "<b>Bước 1: Tìm giá trị lớn nhất (Max) và giá trị nhỏ nhất (Min).</b><br />Quan sát toàn bộ bảng dữ liệu:<br />- Giá trị cao nhất là 14.<br />- Giá trị thấp nhất là 0.<br /><br /><b>Bước 2: Tính khoảng biến thiên (Range).</b><br />Công thức tính khoảng biến thiên: \\( \\text{Range} = \\text{Max} - \\text{Min} \\)<br />\\( \\text{Range} = 14 - 0 = 14 \\).",
+      "correctAnswer": "D",
+      "explanation": "<b>Bước 1: Sử dụng tính chất của CDF</b><br />Biết rằng CDF \\( F(x) = P(X \\le x) \\).<br />Xác suất phần bù được tính bằng: \\( P(X > x) = 1 - P(X \\le x) = 1 - F(x) \\).<br /><br /><b>Bước 2: Áp dụng vào bài toán</b><br />Ta cần tính \\( P(X > 1) = 1 - F(1) \\).<br />Thay \\( x = 1 \\) vào nhánh \\( x \\ge 0 \\) của hàm \\( F(x) \\):<br />\\[ F(1) = 1 - e^{-1/2} = 1 - e^{-0.5} \\]<br /><br /><b>Bước 3: Tính toán</b><br />\\[ P(X > 1) = 1 - (1 - e^{-0.5}) = e^{-0.5} \\]<br />Sử dụng máy tính, ta có \\( e^{-0.5} \\approx 0.60653 \\).<br />Làm tròn kết quả ta được \\( 0.61 \\).",
       "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Range (khoảng biến thiên) được tính bằng cách lấy phần tử có giá trị lớn nhất trừ đi phần tử có giá trị nhỏ nhất."
+      "topic": "Cumulative Distribution Function",
+      "hints": [
+        "Khi đã cho sẵn CDF, ta tính xác suất lớn hơn một giá trị bằng cách lấy 1 trừ đi giá trị của hàm CDF tại điểm đó.",
+        "P(X > 1) = 1 - F(1). Hãy thay x = 1 vào hàm số."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 15,
-      "question": "A family has eight children. The ages were 9, 11, 8, 15, 14, 12, 17, 14. Find the mean and the range of the data.",
+      "question": "Suppose the cumulative distribution function of the random variable X is<br />\\[ F(x) = \\begin{cases} 0 & x < -2 \\\\\\\\ 0.25x + 0.5 & -2 \\le x < 1 \\\\\\\\ 0.5x + 0.25 & 1 \\le x < 1.5 \\\\\\\\ 1 & 1.5 \\le x \\end{cases} \\]<br />Calculate \\( f(0) \\), the value of the density function at \\( x = 0 \\).",
       "image": null,
-      "options":[
-        "A. 13 and 9",
-        "B. 12.5 and 9",
-        "C. 13 and 8",
-        "D. 12.5 and 8",
+      "options": [
+        "A. 0.25",
+        "B. 0",
+        "C. 0.5",
+        "D. 1",
         "E. None of the other choices is correct"
       ],
-      "correctAnswer": "B",
-      "explanation": "<b>Bước 1: Tính số trung bình (Mean).</b><br />Tổng các độ tuổi: \\( \\sum x_i = 9 + 11 + 8 + 15 + 14 + 12 + 17 + 14 = 100 \\)<br />Số lượng trẻ \\( n = 8 \\).<br />\\( \\text{Mean} = \\frac{100}{8} = 12.5 \\)<br /><br /><b>Bước 2: Tính khoảng biến thiên (Range).</b><br />Tìm độ tuổi lớn nhất và nhỏ nhất:<br />- Lớn nhất (Max) = 17<br />- Nhỏ nhất (Min) = 8<br />\\( \\text{Range} = \\text{Max} - \\text{Min} = 17 - 8 = 9 \\)<br /><br /><b>Kết luận:</b> Mean là 12.5 và Range là 9.",
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Liên hệ giữa PDF và CDF</b><br />Hàm mật độ xác suất (PDF) \\( f(x) \\) chính là đạo hàm bậc 1 của hàm phân phối tích lũy (CDF) \\( F(x) \\).<br />\\[ f(x) = \\frac{d}{dx} F(x) \\]<br /><br /><b>Bước 2: Xác định khoảng chứa x = 0</b><br />Đề bài yêu cầu tính \\( f(0) \\). Giá trị \\( x = 0 \\) nằm trong khoảng từ \\(-2\\) đến \\(1\\) (nhánh thứ hai: \\( -2 \\le x < 1 \\)).<br />Tại khoảng này, hàm số có dạng: \\( F(x) = 0.25x + 0.5 \\).<br /><br /><b>Bước 3: Lấy đạo hàm và thay số</b><br />Đạo hàm của \\( F(x) \\) trên khoảng này là:<br />\\[ f(x) = \\frac{d}{dx}(0.25x + 0.5) = 0.25 \\]<br />Vì đạo hàm là một hằng số, nên \\( f(0) = 0.25 \\).",
       "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Tính Mean bằng cách cộng tất cả các độ tuổi lại rồi chia cho 8.",
-        "Tính Range bằng cách lấy độ tuổi lớn nhất trừ đi độ tuổi nhỏ nhất."
+      "topic": "Relationship between CDF and PDF",
+      "hints": [
+        "Hàm mật độ f(x) là đạo hàm của hàm tích lũy F(x).",
+        "Hãy xem x = 0 rơi vào khoảng (nhánh) nào của hệ phương trình, sau đó lấy đạo hàm của nhánh đó."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 16,
-      "question": "The number of books read in a year by 11 students are shown in a stem and leaf diagram:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'>Stem</th><th style='border:1px solid #ddd; padding:5px;'>Leaf</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'>0</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>5 5 6</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>1</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1 4 6 2 3</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>2</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 2 1</td></tr></table><br /><br />What is the range for this data?",
+      "question": "Let \\( X \\) be a continuous random variable that has the cumulative distribution function given by<br />\\[ F(x) = \\begin{cases} 0, & x \\le 0 \\\\\\\\ 1 - e^{-4x}, & x > 0 \\end{cases} \\]<br />Determine \\( P(-1 < X < 1) \\).",
       "image": null,
-      "options":[
-        "A. 17",
-        "B. 12",
-        "C. 13",
-        "D. 14",
-        "E. 15",
-        "F. 16"
+      "options": [
+        "A. 0.9817",
+        "B. 0.0183",
+        "C. 0.5655",
+        "D. 0.4345",
+        "E. None of the other choices is correct"
       ],
       "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Tìm giá trị nhỏ nhất (Min) và lớn nhất (Max).</b><br />- Giá trị nhỏ nhất tương ứng với Stem = 0 và Leaf nhỏ nhất = 5, vậy \\( \\text{Min} = 5 \\).<br />- Giá trị lớn nhất tương ứng với Stem = 2 và Leaf lớn nhất = 2, vậy \\( \\text{Max} = 22 \\).<br /><br /><b>Bước 2: Tính khoảng biến thiên (Range).</b><br />\\( \\text{Range} = \\text{Max} - \\text{Min} = 22 - 5 = 17 \\).",
-      "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Để tìm Range, lấy giá trị lớn nhất trong biểu đồ nhánh-lá trừ đi giá trị nhỏ nhất.",
-        "Nhớ kết hợp Stem (hàng chục) và Leaf (hàng đơn vị) để tạo thành con số hoàn chỉnh."
+      "explanation": "<b>Bước 1:</b> Sử dụng công thức tính xác suất trên một khoảng cho hàm phân phối tích lũy (CDF):<br />\\( P(a < X < b) = F(b) - F(a) \\).<br /><br /><b>Bước 2:</b> Thay số vào công thức với khoảng từ -1 đến 1:<br />\\( P(-1 < X < 1) = F(1) - F(-1) \\).<br /><br /><b>Bước 3:</b> Tính từng giá trị của \\( F(x) \\):<br />- Tại \\( x = 1 \\) (rơi vào nhánh \\( x > 0 \\)): \\( F(1) = 1 - e^{-4(1)} = 1 - e^{-4} \\).<br />- Tại \\( x = -1 \\) (rơi vào nhánh \\( x \\le 0 \\)): \\( F(-1) = 0 \\).<br /><br /><b>Bước 4:</b> Kết luận:<br />\\( P(-1 < X < 1) = (1 - e^{-4}) - 0 = 1 - e^{-4} \\approx 0.98168 \\approx 0.9817 \\).",
+      "difficulty": "medium",
+      "topic": "Cumulative Distribution Function",
+      "hints": [
+        "Xác suất \\( P(a < X < b) \\) bằng \\( F(b) - F(a) \\).",
+        "Lưu ý kiểm tra xem \\( x = 1 \\) và \\( x = -1 \\) thuộc nhánh nào của hệ phương trình để tính giá trị cho đúng."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 17,
-      "question": "Given a stem-and-leaf diagram:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>1</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>2 4</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>2</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 0 5</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1 3 3 7 8</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 2 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>7</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>9</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>2 4</td></tr></table><br /><br />What are the mean and median of the data?",
+      "question": "Suppose the cumulative distribution function of a continuous random variable X is given by<br />\\[ F(x) = \\begin{cases} 0 & x < 0 \\\\\\\\ 0.25x & 0 \\le x < 4 \\\\\\\\ 1 & 4 \\le x \\end{cases} \\]<br />Determine \\( P(X > 2) + P(X < 1) \\).",
       "image": null,
-      "options":[
-        "A. Mean = 47.5625, Median = 45",
-        "B. Mean = 47.5625, Median = 43",
-        "C. Mean = 59.0625, Median = 45",
-        "D. Mean = 59.0625, Median = 43",
-        "E. None of the other choices"
+      "options": [
+        "A. 0.75",
+        "B. 0.25",
+        "C. 0.5",
+        "D. 1"
       ],
       "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Liệt kê các giá trị từ biểu đồ nhánh-lá.</b><br />Dữ liệu gồm 16 giá trị (\\( n = 16 \\)): 12, 14, 20, 20, 25, 41, 43, 43, 47, 48, 60, 62, 69, 71, 92, 94.<br /><br /><b>Bước 2: Tìm số trung vị (Median).</b><br />Vì \\( n = 16 \\) (số chẵn), Median là trung bình cộng của giá trị thứ 8 và thứ 9.<br />Giá trị thứ 8 là 43, thứ 9 là 47.<br />\\( \\text{Median} = \\frac{43 + 47}{2} = \\frac{90}{2} = 45 \\).<br /><br /><b>Bước 3: Tính số trung bình (Mean).</b><br />Tổng các giá trị = \\( 12+14+20+20+25+41+43+43+47+48+60+62+69+71+92+94 = 761 \\).<br />\\( \\text{Mean} = \\frac{761}{16} = 47.5625 \\).",
+      "explanation": "<b>Bước 1:</b> Phân tích biểu thức cần tính: \\( P(X > 2) + P(X < 1) \\).<br /><br /><b>Bước 2:</b> Tính \\( P(X > 2) \\). Sử dụng tính chất phần bù của CDF:<br />\\( P(X > 2) = 1 - P(X \\le 2) = 1 - F(2) \\).<br />Tại \\( x = 2 \\) (thuộc nhánh \\( 0 \\le x < 4 \\)), \\( F(2) = 0.25 \\cdot 2 = 0.5 \\).<br />Vậy \\( P(X > 2) = 1 - 0.5 = 0.5 \\).<br /><br /><b>Bước 3:</b> Tính \\( P(X < 1) \\). Dựa vào định nghĩa CDF (đối với biến liên tục \\( P(X < x) = F(x) \\)):<br />\\( P(X < 1) = F(1) \\).<br />Tại \\( x = 1 \\) (thuộc nhánh \\( 0 \\le x < 4 \\)), \\( F(1) = 0.25 \\cdot 1 = 0.25 \\).<br /><br /><b>Bước 4:</b> Cộng hai kết quả lại:<br />\\( 0.5 + 0.25 = 0.75 \\).",
       "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Đếm tổng số chiếc lá để biết có bao nhiêu phần tử dữ liệu (n = 16).",
-        "Vì n là số chẵn, trung vị là trung bình cộng của 2 số đứng giữa (số thứ 8 và số thứ 9)."
+      "topic": "Cumulative Distribution Function",
+      "hints": [
+        "Nhớ rằng \\( P(X > x) = 1 - F(x) \\).",
+        "Xác suất \\( P(X < x) \\) chính bằng giá trị của hàm số \\( F(x) \\)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 18,
-      "question": "Which of the following shows the data in a stem-and-leaf plot?<br /><br />20 &nbsp; 35 &nbsp; 42 &nbsp; 52 &nbsp; 65 &nbsp; 20 &nbsp; 60 &nbsp; 49 &nbsp; 24 &nbsp; 37 &nbsp; 23 &nbsp; 24 &nbsp; 22 &nbsp; 20 &nbsp; 41 &nbsp; 25 &nbsp; 28 &nbsp; 27 &nbsp; 50 &nbsp; 47 &nbsp; 58 &nbsp; 30<br /><br /><b>(1)</b><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>2</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 0 0 2 3 4 4 5 7 8</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>3</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 5 7</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1 2 7 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>5</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 2 8</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 5</td></tr></table><br /><br /><b>(2)</b><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>2</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 0 2 3 4 4 5 7 8</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>3</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 2 5 7</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1 2 7 8 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>5</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 2 8</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 5</td></tr></table><br /><br /><b>(3)</b><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>2</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 0 0 2 3 4 4 5 7</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>3</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 2 5 7 8</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1 2 7 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>5</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 2 8</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 5</td></tr></table>",
+      "question": "The cumulative distribution function of the random variable X is defined by<br />\\[ F(x) = \\begin{cases} 0 & , x < 0 \\\\\\\\ 1 - e^{-2x/5} & , x \\ge 0. \\end{cases} \\]<br />What is \\( P[X > 5] \\)?",
       "image": null,
-      "options":[
-        "A. (1)",
-        "B. (2)",
-        "C. (3)"
+      "options": [
+        "A. 0.135",
+        "B. 0.519",
+        "C. 0.251",
+        "D. 0.864",
+        "E. None of the other choices is correct"
       ],
       "correctAnswer": "A",
-      "explanation": "<b>Cách làm: Kiểm tra tần số xuất hiện của một nhóm dữ liệu.</b><br />- Hãy đếm và sắp xếp nhóm dữ liệu ở khoảng 20-29 trong dãy ban đầu: 20, 20, 24, 23, 24, 22, 20, 25, 28, 27.<br />- Dãy trên sau khi sắp xếp tăng dần là: 20, 20, 20, 22, 23, 24, 24, 25, 27, 28.<br />- Do đó, phần lá (leaf) tương ứng với Stem 2 phải là dãy: 0 0 0 2 3 4 4 5 7 8.<br /><br /><b>Kiểm tra các phương án:</b><br />- Bảng <b>(1)</b> có phần lá của Stem 2 trùng khớp hoàn toàn.<br />- Bảng <b>(2)</b> thiếu một số 0 ở Stem 2 và thừa dữ liệu ở Stem 3.<br />- Bảng <b>(3)</b> thiếu số 8 ở Stem 2 và thừa dữ liệu ở Stem 3.<br />Vậy bảng <b>(1)</b> biểu diễn dữ liệu đúng nhất.",
-      "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Cách nhanh nhất là hãy tự sắp xếp các số bắt đầu bằng chữ số 2 (nhóm 20s), ghi ra nháp rồi đối chiếu với các lựa chọn."
+      "explanation": "<b>Bước 1:</b> Chuyển đổi xác suất sang hàm CDF:<br />Ta có công thức: \\( P(X > x) = 1 - P(X \\le x) = 1 - F(x) \\).<br />Do đó, \\( P(X > 5) = 1 - F(5) \\).<br /><br /><b>Bước 2:</b> Tính \\( F(5) \\).<br />Giá trị \\( x = 5 \\) thỏa mãn điều kiện \\( x \\ge 0 \\), nên ta sử dụng nhánh thứ hai của hệ phương trình:<br />\\( F(5) = 1 - e^{-2(5)/5} = 1 - e^{-2} \\).<br /><br /><b>Bước 3:</b> Hoàn thành phép tính:<br />\\( P(X > 5) = 1 - (1 - e^{-2}) = e^{-2} \\).<br />Sử dụng máy tính, ta được \\( e^{-2} \\approx 0.135335 \\approx 0.135 \\).",
+      "difficulty": "easy",
+      "topic": "Cumulative Distribution Function",
+      "hints": [
+        "Tính xác suất của biến lớn hơn một giá trị bằng cách lấy 1 trừ đi hàm tích lũy tại điểm đó.",
+        "Thay \\( x = 5 \\) vào phương trình, chú ý phép rút gọn phân số ở số mũ."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 19,
-      "question": "Given a stem-and-leaf diagram:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>1</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>2 4</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>2</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 2 5</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1 3 3 7</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 2 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>7</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1</td></tr></table><br /><br />What are the mean and median of the data?",
+      "question": "The cumulative distribution function of a continuous random variable X is<br />\\[ F(x) = \\begin{cases} 0 & x < 1 \\\\\\\\ 0.3x & 1 \\le x < 7 \\\\\\\\ 1 & 7 \\le x \\end{cases} \\]<br />Find \\( P(X < 0.5) \\).",
       "image": null,
-      "options":[
-        "A. Mean = 40.7, Median = 43",
-        "B. Mean = 40.7, Median = 43.5",
-        "C. Mean = 43.6, Median = 40",
-        "D. Mean = 43.6, Median = 40.5"
+      "options": [
+        "A. 0",
+        "B. 0.15",
+        "C. 0.3",
+        "D. 0.5"
       ],
       "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Đọc dữ liệu từ biểu đồ.</b><br />Ta có dãy gồm 13 giá trị (\\( n = 13 \\)): 12, 14, 20, 22, 25, 41, 43, 43, 47, 60, 62, 69, 71.<br /><br /><b>Bước 2: Tìm số trung vị (Median).</b><br />Với \\( n = 13 \\) (số lẻ), Median nằm ở vị trí thứ \\( \\frac{13+1}{2} = 7 \\).<br />Đếm từ giá trị nhỏ nhất, giá trị thứ 7 trong dãy là 43. Vậy \\( \\text{Median} = 43 \\).<br /><br /><b>Bước 3: Tính số trung bình (Mean).</b><br />Tổng các giá trị = \\( 12+14+20+22+25+41+43+43+47+60+62+69+71 = 529 \\).<br />\\( \\text{Mean} = \\frac{529}{13} \\approx 40.692 \\approx 40.7 \\).",
-      "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Số lượng phần tử là 13 (số lẻ), vậy Median nằm đúng ở giữa dãy (vị trí thứ 7).",
-        "Chỉ cần tìm ra Median = 43 là bạn đã có thể suy ra ngay đáp án đúng mà chưa cần tính Mean."
+      "explanation": "<b>Bước 1:</b> Định nghĩa của hàm phân phối tích lũy (CDF) là \\( F(x) = P(X \\le x) \\). Đối với biến ngẫu nhiên liên tục, \\( P(X < x) = P(X \\le x) = F(x) \\).<br /><br /><b>Bước 2:</b> Xác định giá trị của hàm tại \\( x = 0.5 \\).<br />Nhìn vào hệ phương trình của \\( F(x) \\), ta thấy \\( x = 0.5 \\) thỏa mãn điều kiện của nhánh đầu tiên là \\( x < 1 \\).<br /><br /><b>Bước 3:</b> Áp dụng giá trị tương ứng:<br />Ở nhánh này, \\( F(x) = 0 \\). Do đó, \\( F(0.5) = 0 \\).<br />Vậy \\( P(X < 0.5) = 0 \\).",
+      "difficulty": "easy",
+      "topic": "Cumulative Distribution Function",
+      "hints": [
+        "Chỉ cần xem \\( x = 0.5 \\) thuộc nhánh điều kiện nào trong hàm \\( F(x) \\).",
+        "Bất kỳ giá trị nào nhỏ hơn 1 đều có xác suất tích lũy bằng 0 theo định nghĩa của hàm."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 20,
-      "question": "The following data represents the high ambient temperature for a particular city over the past 16 days.<br /><br />52 &nbsp; 56 &nbsp; 56 &nbsp; 58 &nbsp; 59 &nbsp; 60 &nbsp; 62 &nbsp; 65<br />69 &nbsp; 73 &nbsp; 73 &nbsp; 74 &nbsp; 76 &nbsp; 76 &nbsp; 77 &nbsp; 78<br /><br />Construct a stem and leaf display for this data.<br /><br /><b>(i)</b><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>5</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>2 6 6 8 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 2 5 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>7</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>3 3 4 6 6 7 8</td></tr></table><br /><br /><b>(ii)</b><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>5</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>2 6 6 8 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 2 5 9 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>7</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>3 3 4 6 7 7 8</td></tr></table><br /><br /><b>(iii)</b><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>5</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>2 2 6 6 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 2 5 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>7</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>3 4 6 7 7 8</td></tr></table>",
+      "question": "Let X be a continuous random variable that has the cumulative distribution function given by<br />\\[ F(x) = \\begin{cases} 0, & x \\le 0 \\\\\\\\ 1 - e^{-5x}, & x > 0 \\end{cases} \\]<br />Find the density function of X.<br /><br />(i) \\( f(x) = 0, x \\le 0 \\) and \\( f(x) = 5e^{-5x}, x > 0 \\).<br />(ii) \\( f(x) = 1, x \\le 0 \\) and \\( f(x) = 5e^{-5x}, x > 0 \\).<br />(iii) \\( f(x) = 0, x \\le 0 \\) and \\( f(x) = 1 - 5e^{-5x}, x > 0 \\).<br />(iv) \\( f(x) = 1, x \\le 0 \\) and \\( f(x) = 1 + 5e^{-5x}, x > 0 \\).",
       "image": null,
-      "options":[
+      "options": [
         "A. (i)",
         "B. (ii)",
-        "C. (iii)"
+        "C. (iii)",
+        "D. (iv)",
+        "E. None of the other choices is correct"
       ],
       "correctAnswer": "A",
-      "explanation": "<b>Cách làm: Liệt kê phần lá (leaf) cho từng nhóm chục (stem).</b><br />- <b>Nhóm 50 (Stem = 5):</b> 52, 56, 56, 58, 59 &rarr; Phần lá: 2 6 6 8 9.<br />- <b>Nhóm 60 (Stem = 6):</b> 60, 62, 65, 69 &rarr; Phần lá: 0 2 5 9.<br />- <b>Nhóm 70 (Stem = 7):</b> 73, 73, 74, 76, 76, 77, 78 &rarr; Phần lá: 3 3 4 6 6 7 8.<br /><br /><b>Đối chiếu với các lựa chọn:</b><br />- Bảng <b>(i)</b> trùng khớp hoàn toàn với kết quả phân tích.<br />- Bảng <b>(ii)</b> bị thừa một số 9 ở dòng 6, và thừa một số 7 ở dòng 7.<br />- Bảng <b>(iii)</b> bị sai phần lá ở dòng 5 (ghi thành 2 2 6 6 9 thay vì 2 6 6 8 9) và thiếu sót ở dòng 7.",
-      "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Dữ liệu ban đầu đã được sắp xếp tăng dần sẵn, bạn chỉ cần ngắt chữ số hàng chục và hàng đơn vị ra để dựng bảng."
+      "explanation": "<b>Bước 1:</b> Mối liên hệ giữa hàm phân phối tích lũy (CDF) \\( F(x) \\) và hàm mật độ xác suất (PDF) \\( f(x) \\) là phép đạo hàm. Cụ thể: \\( f(x) = \\frac{d}{dx}F(x) \\).<br /><br /><b>Bước 2:</b> Lấy đạo hàm cho từng nhánh của hệ phương trình \\( F(x) \\).<br />- Với nhánh \\( x \\le 0 \\): \\( F(x) = 0 \\implies f(x) = (0)' = 0 \\).<br />- Với nhánh \\( x > 0 \\): \\( F(x) = 1 - e^{-5x} \\).<br />Áp dụng quy tắc đạo hàm hàm hợp \\( (e^u)' = u' \\cdot e^u \\):<br />\\( f(x) = (1 - e^{-5x})' = 0 - (-5)e^{-5x} = 5e^{-5x} \\).<br /><br /><b>Bước 3:</b> Kết hợp lại để tạo thành hàm mật độ \\( f(x) \\).<br />Ta được hệ phương trình: \\( f(x) = 0 \\) khi \\( x \\le 0 \\) và \\( f(x) = 5e^{-5x} \\) khi \\( x > 0 \\). Điều này hoàn toàn khớp với phát biểu ở lựa chọn (i).",
+      "difficulty": "medium",
+      "topic": "Relationship between CDF and PDF",
+      "hints": [
+        "Để tìm hàm mật độ \\( f(x) \\) từ hàm phân phối \\( F(x) \\), bạn cần lấy đạo hàm bậc 1 của \\( F(x) \\).",
+        "Hãy nhớ lại quy tắc đạo hàm của hàm số mũ: đạo hàm của \\( e^{cx} \\) là \\( c \\cdot e^{cx} \\)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 21,
-      "question": "Consider the following stem and leaf display:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>3</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1 1 1 4 5</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>4 6 7</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>5</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 0 4 5 6 6 8 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1 3 3 6</td></tr></table><br /><br />Which data value occurs most often?",
+      "question": "The probability density function of the time customers arrive at a terminal (in minutes after 9:00 A.M.) is given by<br />\\[ f(x) = \\frac{1}{9}e^{-x/9}, \\quad x > 0. \\]<br />Determine the cumulative distribution function \\( F(x) \\).",
       "image": null,
-      "options":[
-        "A. 31",
-        "B. 50",
-        "C. 61",
-        "D. 63",
-        "E. None of the other choices is true"
+      "options": [
+        "A. \\( 1 - e^{-x/9}, \\quad x > 0 \\)",
+        "B. \\( 1 - (1/9)e^{-x/9}, \\quad x > 0 \\)",
+        "C. \\( e^{-x/9}, \\quad x > 0 \\)",
+        "D. \\( (1/9)e^{-x/9}, \\quad x > 0 \\)"
       ],
       "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Phân tích biểu đồ nhánh-lá để đếm tần số.</b><br />- Ở nhánh 3 (Stem 3), lá 1 xuất hiện 3 lần, tức là giá trị 31 xuất hiện 3 lần.<br />- Ở nhánh 5, lá 0 và 6 xuất hiện 2 lần (giá trị 50 và 56 xuất hiện 2 lần).<br />- Ở nhánh 6, lá 3 xuất hiện 2 lần (giá trị 63 xuất hiện 2 lần).<br /><br /><b>Bước 2: Kết luận.</b><br />Giá trị xuất hiện nhiều nhất (Mode) là 31 với tần số là 3.",
-      "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Giá trị xuất hiện nhiều nhất là giá trị có phần lá lặp lại nhiều lần nhất trên cùng một nhánh.",
-        "Hãy đếm số lần lặp lại của các chữ số ở phần lá của từng hàng."
+      "explanation": "<b>Bước 1: Áp dụng công thức tính CDF</b><br />Hàm phân phối tích lũy \\( F(x) \\) đối với biến liên tục được tính bằng tích phân của hàm mật độ \\( f(t) \\) từ cận dưới đến \\( x \\).<br />\\[ F(x) = \\int_0^x \\frac{1}{9}e^{-t/9} \\, dt \\]<br /><br /><b>Bước 2: Tìm nguyên hàm</b><br />Đặt \\( u = -\\frac{t}{9} \\implies du = -\\frac{1}{9}dt \\).<br />Nguyên hàm của \\( \\frac{1}{9}e^{-t/9} \\) chính là \\( -e^{-t/9} \\).<br /><br /><b>Bước 3: Thay cận</b><br />\\[ F(x) = \\left[ -e^{-t/9} \\right]_0^x = -e^{-x/9} - (-e^0) \\]<br />\\[ = -e^{-x/9} - (-1) = 1 - e^{-x/9} \\]",
+      "difficulty": "medium",
+      "topic": "Cumulative Distribution Function",
+      "hints": [
+        "CDF \\( F(x) \\) là tích phân của \\( f(t) \\) từ 0 đến \\( x \\).",
+        "Chú ý dấu âm khi lấy nguyên hàm của hàm số mũ có hệ số âm."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 22,
-      "question": "Given the stem-and-leaf plot:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'>Stem</th><th style='border:1px solid #ddd; padding:5px; text-align:left;'>Leaf</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'>58</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>4 4 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>59</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 0 2 3 8</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>60</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 2 4 5 7 8 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>61</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1 2 4 4 5 6 7 9 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>62</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1 2 3 7</td></tr></table><br /><br />Find the origin data between 595 and 606.",
+      "question": "Let \\( X \\) be a random variable that has the density function<br />\\[ f(x) = 2e^{-2x}, \\quad x > 0. \\]<br />Find the value of the cumulative distribution function at \\( x = 2 \\).",
       "image": null,
-      "options":[
-        "A. 598, 600, 602, 604, 605",
-        "B. 595, 596, 597, 598, 599, 600, 601, 602, 603, 604, 605, 606",
-        "C. 596, 597, 598, 599, 600, 601, 602, 603, 604, 605",
-        "D. 598, 600, 602, 604, 604, 605"
+      "options": [
+        "A. 0.8647",
+        "B. 0.1353",
+        "C. 0.9817",
+        "D. 0.0183",
+        "E. None of the other choices is correct"
       ],
-      "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Liệt kê các giá trị gốc từ biểu đồ.</b><br />- Ở nhánh 59, các giá trị là: 590, 590, 592, 593, 598.<br />- Ở nhánh 60, các giá trị là: 600, 602, 604, 605, 607, 608, 609.<br /><br /><b>Bước 2: Lọc các giá trị nằm giữa 595 và 606 (lớn hơn 595 và nhỏ hơn 606).</b><br />- Từ nhánh 59, chỉ có giá trị 598 thỏa mãn lớn hơn 595.<br />- Từ nhánh 60, các giá trị nhỏ hơn 606 là: 600, 602, 604, 605.<br /><br />Vậy tập hợp dữ liệu cần tìm là: 598, 600, 602, 604, 605.",
+      "correctAnswer": "C",
+      "explanation": "<b>Bước 1: Tìm hàm CDF \\( F(x) \\)</b><br />Tính tích phân của hàm mật độ từ 0 đến \\( x \\):<br />\\[ F(x) = \\int_0^x 2e^{-2t} \\, dt = \\left[ -e^{-2t} \\right]_0^x = -e^{-2x} - (-e^0) = 1 - e^{-2x} \\]<br /><br /><b>Bước 2: Thay giá trị x = 2</b><br />\\[ F(2) = 1 - e^{-2(2)} = 1 - e^{-4} \\]<br /><br /><b>Bước 3: Tính toán</b><br />Sử dụng máy tính: \\( e^{-4} \\approx 0.0183156 \\).<br />\\[ F(2) = 1 - 0.0183156 = 0.9816844 \\approx 0.9817 \\]",
       "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Dóng từ Stem (hàng trăm và hàng chục) ghép với Leaf (hàng đơn vị) để đọc toàn bộ dữ liệu gốc.",
-        "Chỉ liệt kê các số lớn hơn hẳn 595 và nhỏ hơn hẳn 606 thuộc hai nhánh 59 và 60."
+      "topic": "Exponential Distribution",
+      "hints": [
+        "Đầu tiên hãy thiết lập biểu thức tổng quát cho hàm F(x) bằng cách tính tích phân.",
+        "Sau đó thay x = 2 vào hàm F(x) vừa tìm được."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 23,
-      "question": "Find the original data from the stem-and-leaf plot.<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'>Stem</th><th style='border:1px solid #ddd; padding:5px; text-align:left;'>Leaves</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'>8</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>5 &nbsp; 8</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>9</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1 &nbsp; 8</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>10</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>5 &nbsp; 5</td></tr></table>",
+      "question": "Suppose the cumulative distribution function of the random variable \\( X \\) is<br />\\[ F(x) = \\begin{cases} 0 & \\text{if } x < -1 \\\\\\\\ \\frac{1}{2}x^3 + \\frac{1}{2} & \\text{if } -1 \\le x < 1 \\\\\\\\ 1 & \\text{if } x \\ge 1. \\end{cases} \\]<br />Compute \\( P(-1 < X < 2) \\).",
       "image": null,
-      "options":[
-        "A. 85, 88, 91, 98, 105, 105",
-        "B. 81, 85, 81, 98, 108, 105",
-        "C. 85, 81, 88, 91, 101, 105",
-        "D. 81, 88, 81, 98, 105, 105",
-        "E. None of the other choices is true"
+      "options": [
+        "A. 0",
+        "B. 0.75",
+        "C. None of the other choices is correct",
+        "D. 1",
+        "E. 0.5"
       ],
-      "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Ghép giá trị ở cột Stem với cột Leaves.</b><br />- Nhánh 8, lá 5 và 8 &rarr; tạo thành các số 85, 88.<br />- Nhánh 9, lá 1 và 8 &rarr; tạo thành các số 91, 98.<br />- Nhánh 10, lá 5 và 5 &rarr; tạo thành các số 105, 105.<br /><br /><b>Bước 2: Kết luận.</b><br />Tập dữ liệu gốc thu được là: 85, 88, 91, 98, 105, 105.",
-      "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Stem đại diện cho các chữ số hàng chục (hoặc lớn hơn), còn Leaf đại diện cho chữ số hàng đơn vị.",
-        "Chỉ cần viết ghép Stem và từng Leaf lại với nhau theo thứ tự."
+      "correctAnswer": "D",
+      "explanation": "<b>Bước 1: Sử dụng tính chất của CDF</b><br />Xác suất để biến ngẫu nhiên rơi vào một khoảng được tính bằng:<br />\\[ P(a < X < b) = F(b) - F(a) \\]<br />Suy ra: \\( P(-1 < X < 2) = F(2) - F(-1) \\).<br /><br /><b>Bước 2: Tính các giá trị F(2) và F(-1)</b><br />- Tại \\( x = 2 \\): Vì \\( 2 \\ge 1 \\), ta dùng nhánh thứ 3 của hàm số \\( \\implies F(2) = 1 \\).<br />- Tại \\( x = -1 \\): Vì \\( -1 \\le -1 < 1 \\) (dấu bằng xảy ra), ta dùng nhánh thứ 2 \\( \\implies F(-1) = \\frac{1}{2}(-1)^3 + \\frac{1}{2} = -\\frac{1}{2} + \\frac{1}{2} = 0 \\).<br /><br /><b>Bước 3: Kết quả</b><br />\\[ P(-1 < X < 2) = 1 - 0 = 1 \\]",
+      "difficulty": "medium",
+      "topic": "Cumulative Distribution Function",
+      "hints": [
+        "Sử dụng công thức \\( P(a < X < b) = F(b) - F(a) \\).",
+        "Kiểm tra cẩn thận xem các giá trị -1 và 2 thuộc nhánh nào của hệ phương trình."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 24,
-      "question": "A survey was conducted to determine how people rated the quality of programming available on VTV1. Viewers were asked to rate the overall quality from 0 to 100. The stem-and-leaf display of the data is shown below.<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'>Stem</th><th style='border:1px solid #ddd; padding:5px; text-align:left;'>Leaves</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'>3</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>2 6</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 3 4 7 8 9 9 9</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>5</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>0 1 1 2 3 4 5</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1 2 5 6 6</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>7</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>1 7</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>8</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'></td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>9</td><td style='border:1px solid #ddd; padding:5px; text-align:left;'>3</td></tr></table><br /><br />Identify the maximum quality rating.",
+      "question": "Determine the probability density function \\( f(x) \\) if the cumulative distribution function \\( F(x) \\) of a continuous random variable \\( X \\) is given by<br />\\[ F(x) = 1 - e^{-5x}, \\quad x > 0. \\]",
       "image": null,
-      "options":[],
-      "correctAnswer": "<b>Đáp án: 93</b><br /><br /><b>Cách giải:</b><br /><b>Bước 1:</b> Hiểu cấu trúc biểu đồ.<br />Stem đại diện cho chữ số hàng chục, Leaves đại diện cho chữ số hàng đơn vị.<br /><br /><b>Bước 2:</b> Tìm giá trị lớn nhất.<br />Giá trị lớn nhất sẽ nằm ở nhánh (Stem) lớn nhất và có phần lá (Leaf) lớn nhất.<br />Trong biểu đồ trên, nhánh lớn nhất chứa dữ liệu là Stem = 9. Lá tương ứng ở nhánh này là 3.<br /><br /><b>Kết luận:</b> Đánh giá chất lượng cao nhất (maximum) là 93.",
-      "explanation": "Để tìm giá trị lớn nhất trong một biểu đồ nhánh-lá (stem-and-leaf), ta luôn nhìn vào phần dưới cùng của biểu đồ (nơi có Stem lớn nhất) và chọn Leaf lớn nhất trong hàng đó.",
-      "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Đừng quên rằng nếu Stem là 9 và Leaf là 3 thì giá trị thực tế là 93.",
-        "Hãy nhìn vào nhánh cuối cùng có chứa dữ liệu ở cuối bảng."
+      "options": [
+        "A. \\( 1 - e^{-5x}, \\quad x > 0 \\)",
+        "B. \\( 5e^{-5x}, \\quad x > 0 \\)",
+        "C. \\( 1 - 5e^{-5x}, \\quad x > 0 \\)",
+        "D. \\( 0.5 - e^{-5x}, \\quad x > 0 \\)"
       ],
-      "type": "essay"
+      "correctAnswer": "B",
+      "explanation": "<b>Bước 1: Liên hệ giữa F(x) và f(x)</b><br />Hàm mật độ xác suất (PDF) là đạo hàm bậc nhất của hàm phân phối tích lũy (CDF):<br />\\[ f(x) = \\frac{d}{dx} F(x) \\]<br /><br /><b>Bước 2: Lấy đạo hàm</b><br />Ta có: \\( F(x) = 1 - e^{-5x} \\).<br />\\[ f(x) = \\frac{d}{dx}(1) - \\frac{d}{dx}(e^{-5x}) \\]<br />\\[ f(x) = 0 - (-5)e^{-5x} \\]<br />\\[ f(x) = 5e^{-5x} \\]<br /><br /><b>Kết luận:</b> \\( f(x) = 5e^{-5x} \\) với điều kiện giữ nguyên là \\( x > 0 \\).",
+      "difficulty": "easy",
+      "topic": "Relationship between CDF and PDF",
+      "hints": [
+        "Hàm PDF là đạo hàm của hàm CDF.",
+        "Chú ý quy tắc chuỗi (chain rule) khi lấy đạo hàm của hàm e mũ."
+      ],
+      "type": "multiple_choice"
     },
     {
       "id": 25,
-      "question": "Given the relative frequency distribution of the ages of 25 members in a dancing club:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'>Ages</th><th style='border:1px solid #ddd; padding:5px;'>Relative frequency</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'>16-20</td><td style='border:1px solid #ddd; padding:5px;'>20%</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>21-30</td><td style='border:1px solid #ddd; padding:5px;'>28%</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>31-40</td><td style='border:1px solid #ddd; padding:5px;'>36%</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>41-50</td><td style='border:1px solid #ddd; padding:5px;'>16%</td></tr></table><br /><br />How many members in this club that their ages are not exceed 40?",
+      "question": "The probability density function of the time customers arrive at a terminal (in minutes after 9:00 A.M.) is given by<br />\\[ f(x) = \\frac{1}{9}e^{-x/9}, \\quad x > 0. \\]<br />Determine the cumulative distribution function \\( F(x) \\).",
       "image": null,
-      "options":[
-        "A. 21",
-        "B. 12",
-        "C. 9",
-        "D. 4",
-        "E. None of the other choices is correct"
+      "options": [
+        "A. \\( 1 - e^{-x/9}, \\quad x > 0 \\)",
+        "B. \\( 1 - (1/9)e^{-x/9}, \\quad x > 0 \\)",
+        "C. \\( e^{-x/9}, \\quad x > 0 \\)",
+        "D. \\( (1/9)e^{-x/9}, \\quad x > 0 \\)"
       ],
       "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Tính tổng tần suất tương đối của các nhóm tuổi không vượt quá 40.</b><br />Các độ tuổi không vượt quá 40 (<= 40) bao gồm các nhóm: 16-20, 21-30, và 31-40.<br />Tổng tần suất tương đối (phần trăm) = \\( 20\\% + 28\\% + 36\\% = 84\\% \\).<br /><br /><b>Bước 2: Tính số lượng thành viên tương ứng.</b><br />Tổng số thành viên trong câu lạc bộ khiêu vũ là 25 người.<br />Số lượng thành viên có độ tuổi không quá 40 là: \\( 25 \\times 84\\% = 25 \\times 0.84 = 21 \\) (người).",
+      "explanation": "<b>Bước 1: Nhớ định nghĩa của hàm CDF</b><br />Hàm CDF \\( F(x) \\) thể hiện xác suất để biến \\( X \\) nhận giá trị nhỏ hơn hoặc bằng \\( x \\). Đối với phân phối liên tục, nó là:<br />\\[ F(x) = \\int_0^x f(t) \\, dt \\]<br /><br /><b>Bước 2: Giải tích phân</b><br />Thay hàm số vào: \\( \\int_0^x \\frac{1}{9}e^{-t/9} \\, dt \\).<br />Bằng cách đổi biến, ta có nguyên hàm là \\( -e^{-t/9} \\).<br /><br /><b>Bước 3: Hoàn thiện</b><br />Thay các cận 0 và x vào: \\( (-e^{-x/9}) - (-e^0) = 1 - e^{-x/9} \\).",
       "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Cụm từ 'not exceed 40' nghĩa là từ 40 tuổi trở xuống. Hãy bao gồm cả 3 nhóm tuổi đầu tiên.",
-        "Cộng các phần trăm tương ứng lại và nhân với tổng số thành viên (25)."
+      "topic": "Cumulative Distribution Function",
+      "hints": [
+        "Câu hỏi này hoàn toàn giống với câu ID 21.",
+        "Chỉ cần lấy tích phân của hàm mật độ từ 0 đến x."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 26,
-      "question": "The following histogram represents the mass (in kilograms) of each pumpkin in Leonard's patch. How many pumpkins are 3 and more kilograms in Leonard's patch?",
-      "image": "/data/image_exam/de30cau26.png",
-      "options":[
-        "A. 21",
-        "B. 12",
-        "C. 4",
-        "D. None of other choices.",
-        "E. 25"
+      "question": "Let \\( X \\) be a random variable that has the density function<br />\\[ f(x) = 2e^{-2x}, \\quad x > 0. \\]<br />Find the value of the cumulative distribution function at \\( x = 2 \\).",
+      "image": null,
+      "options": [
+        "A. 0.8647",
+        "B. 0.1353",
+        "C. 0.9817",
+        "D. 0.0183",
+        "E. None of the other choices is correct"
       ],
-      "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Quan sát biểu đồ Histogram.</b><br />Trục hoành biểu diễn khối lượng (Mass), trục tung biểu diễn số lượng bí ngô (Number of pumpkins).<br /><br /><b>Bước 2: Tìm số lượng bí ngô có khối lượng từ 3 kg trở lên.</b><br />Ta cần cộng tần số của các cột từ mốc 3 trở đi:<br />- Cột từ 3 đến 6 kg: có 5 quả<br />- Cột từ 6 đến 9 kg: có 8 quả<br />- Cột từ 9 đến 12 kg: có 6 quả<br />- Cột từ 12 đến 15 kg: có 2 quả<br /><br /><b>Bước 3: Tính tổng.</b><br />Tổng số bí ngô = \\( 5 + 8 + 6 + 2 = 21 \\) (quả).",
-      "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Chỉ cần nhìn vào các cột bắt đầu từ mốc 3 nằm trên trục hoành (trục ngang).",
-        "Cộng độ cao của 4 cột cuối cùng lại với nhau."
+      "correctAnswer": "C",
+      "explanation": "<b>Bước 1: Tìm hàm phân phối tích lũy F(x)</b><br />Hàm CDF \\( F(x) \\) là tích phân của hàm mật độ xác suất từ cận dưới (là 0) đến \\( x \\):<br />\\[ F(x) = \\int_0^x 2e^{-2t} \\, dt = \\left[ -e^{-2t} \\right]_0^x = -e^{-2x} - (-e^0) = 1 - e^{-2x} \\]<br /><br /><b>Bước 2: Tính giá trị tại x = 2</b><br />Thay \\( x = 2 \\) vào hàm \\( F(x) \\) vừa tìm được:<br />\\[ F(2) = 1 - e^{-2(2)} = 1 - e^{-4} \\]<br /><br /><b>Bước 3: Bấm máy tính</b><br />Ta có \\( e^{-4} \\approx 0.0183156 \\).<br />\\[ F(2) = 1 - 0.0183156 = 0.9816844 \\approx 0.9817 \\]",
+      "difficulty": "medium",
+      "topic": "Exponential Distribution",
+      "hints": [
+        "Hàm F(x) là tích phân của hàm f(t) từ 0 đến x.",
+        "Tính ra biểu thức F(x) rồi thay x = 2 vào để tìm kết quả cuối cùng."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 27,
-      "question": "Given a table of data:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>44</td><td style='border:1px solid #ddd; padding:5px;'>63</td><td style='border:1px solid #ddd; padding:5px;'>84</td><td style='border:1px solid #ddd; padding:5px;'>98</td><td style='border:1px solid #ddd; padding:5px;'>56</td><td style='border:1px solid #ddd; padding:5px;'>32</td><td style='border:1px solid #ddd; padding:5px;'>26</td><td style='border:1px solid #ddd; padding:5px;'>75</td><td style='border:1px solid #ddd; padding:5px;'>35</td><td style='border:1px solid #ddd; padding:5px;'>97</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>53</td><td style='border:1px solid #ddd; padding:5px;'>39</td><td style='border:1px solid #ddd; padding:5px;'>96</td><td style='border:1px solid #ddd; padding:5px;'>36</td><td style='border:1px solid #ddd; padding:5px;'>97</td><td style='border:1px solid #ddd; padding:5px;'>44</td><td style='border:1px solid #ddd; padding:5px;'>74</td><td style='border:1px solid #ddd; padding:5px;'>26</td><td style='border:1px solid #ddd; padding:5px;'>85</td><td style='border:1px solid #ddd; padding:5px;'>84</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>13</td><td style='border:1px solid #ddd; padding:5px;'>46</td><td style='border:1px solid #ddd; padding:5px;'>64</td><td style='border:1px solid #ddd; padding:5px;'>38</td><td style='border:1px solid #ddd; padding:5px;'>96</td><td style='border:1px solid #ddd; padding:5px;'>45</td><td style='border:1px solid #ddd; padding:5px;'>89</td><td style='border:1px solid #ddd; padding:5px;'>86</td><td style='border:1px solid #ddd; padding:5px;'>43</td><td style='border:1px solid #ddd; padding:5px;'>71</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>60</td><td style='border:1px solid #ddd; padding:5px;'>12</td><td style='border:1px solid #ddd; padding:5px;'>46</td><td style='border:1px solid #ddd; padding:5px;'>84</td><td style='border:1px solid #ddd; padding:5px;'>15</td><td style='border:1px solid #ddd; padding:5px;'>75</td><td style='border:1px solid #ddd; padding:5px;'>37</td><td style='border:1px solid #ddd; padding:5px;'>80</td><td style='border:1px solid #ddd; padding:5px;'>37</td><td style='border:1px solid #ddd; padding:5px;'>27</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>97</td><td style='border:1px solid #ddd; padding:5px;'>46</td><td style='border:1px solid #ddd; padding:5px;'>36</td><td style='border:1px solid #ddd; padding:5px;'>38</td><td style='border:1px solid #ddd; padding:5px;'>37</td><td style='border:1px solid #ddd; padding:5px;'>58</td><td style='border:1px solid #ddd; padding:5px;'>85</td><td style='border:1px solid #ddd; padding:5px;'>44</td><td style='border:1px solid #ddd; padding:5px;'>57</td><td style='border:1px solid #ddd; padding:5px;'>72</td></tr></table><br /><br />What is the relative frequency of interval \\( 90 \\le x < 100 \\)?",
+      "question": "Suppose the cumulative distribution function of the random variable X is<br />\\[ F(x) = \\begin{cases} 0 & x < 0 \\\\\\\\ 0.2x & 0 \\le x < 5 \\\\\\\\ 1 & 5 \\le x \\end{cases} \\]<br />Compute \\( E(X) \\).",
       "image": null,
-      "options":[
-        "A. 12%",
-        "B. 10%",
-        "C. 50%",
-        "D. 60%",
-        "E. None of the other choices"
+      "options": [
+        "A. 2.5",
+        "B. 3.5",
+        "C. 4.5",
+        "D. 5.5",
+        "E. None of the other choices is correct"
       ],
       "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Tính tổng số phần tử (n).</b><br />Bảng dữ liệu có 5 hàng và 10 cột. Tổng cộng \\( n = 5 \\times 10 = 50 \\) phần tử.<br /><br /><b>Bước 2: Tìm tần số tuyệt đối của khoảng \\( 90 \\le x < 100 \\).</b><br />Ta đếm các giá trị từ 90 đến 99 trong bảng:<br />- Hàng 1: 98, 97 (2 số)<br />- Hàng 2: 96, 97 (2 số)<br />- Hàng 3: 96 (1 số)<br />- Hàng 4: không có<br />- Hàng 5: 97 (1 số)<br />Tổng cộng có 6 giá trị thỏa mãn.<br /><br /><b>Bước 3: Tính tần suất tương đối (Relative Frequency).</b><br />\\( \\text{Tần suất tương đối} = \\frac{\\text{Tần số}}{\\text{Tổng số phần tử}} = \\frac{6}{50} = 0.12 = 12\\% \\).",
+      "explanation": "<b>Bước 1: Tìm hàm mật độ xác suất (PDF)</b><br />Hàm mật độ xác suất \\( f(x) \\) là đạo hàm của hàm phân phối tích lũy \\( F(x) \\):<br />\\( f(x) = \\frac{d}{dx}(0.2x) = 0.2 \\) với \\( 0 \\le x < 5 \\). Đây là đặc điểm của phân phối đều (Uniform Distribution) trên khoảng [0, 5].<br /><br /><b>Bước 2: Tính kỳ vọng E(X)</b><br />Kỳ vọng của biến ngẫu nhiên liên tục được tính bằng công thức: \\( E(X) = \\int_{-\\infty}^{\\infty} x \\cdot f(x) \\, dx \\).<br />Thay vào bài toán: \\( E(X) = \\int_0^5 x(0.2) \\, dx = 0.2 \\left[ \\frac{x^2}{2} \\right]_0^5 \\).<br /><br /><b>Bước 3: Tính toán</b><br />\\( E(X) = 0.2 \\left( \\frac{5^2}{2} - 0 \\right) = 0.2 \\left( \\frac{25}{2} \\right) = \\frac{5}{2} = 2.5 \\).<br /><br />*(Mẹo nhanh: Với phân phối đều trên khoảng [a, b], kỳ vọng luôn là trung bình cộng của 2 đầu mút: \\( E(X) = \\frac{a + b}{2} = \\frac{0 + 5}{2} = 2.5 \\)).*",
       "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Tần suất tương đối bằng tần số của khoảng đó chia cho tổng số lượng dữ liệu, rồi nhân với 100%."
+      "topic": "Expected Value",
+      "hints": [
+        "Đạo hàm F(x) để tìm hàm mật độ f(x). Nhận ra đây là phân phối đều trên khoảng (0, 5).",
+        "Tính kỳ vọng bằng tích phân của x*f(x) hoặc dùng công thức E(X) của phân phối đều."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 28,
-      "question": "Many Wal-Mart stores have automotive departments where customers can buy tires, have their vehicles serviced, and obtain other automotive services. Recently, the manager at an Ohio Wal-Mart collected data on the time customers had to wait to get the desired automotive service. Of the 500 cars in the sample, the shortest time any customer spent waiting was 3 minutes and the longest time was 183 minutes. Assuming that the manager wishes to develop a frequency distribution with 9 classes, which of the following would be an appropriate class width for each class?",
+      "question": "Suppose that contamination particle size X (in micrometers) can be modeled as continuous random variable with probability density function \\( f(x) = 3/x^4 \\) for \\( x > 1 \\). Determine the mean of X.",
       "image": null,
-      "options":[
-        "A. 3 to 23",
-        "B. 20.00",
-        "C. 10.50",
-        "D. 19.99",
-        "E. None of the other choices is correct"
+      "options": [
+        "A. 2.0",
+        "B. 3.0",
+        "C. 2.5",
+        "D. 1.5"
       ],
-      "correctAnswer": "B",
-      "explanation": "<b>Bước 1: Xác định giá trị nhỏ nhất và lớn nhất.</b><br />- Thời gian chờ ngắn nhất (Min) = 3 phút.<br />- Thời gian chờ lâu nhất (Max) = 183 phút.<br /><br /><b>Bước 2: Tính khoảng biến thiên (Range).</b><br />\\( \\text{Range} = \\text{Max} - \\text{Min} = 183 - 3 = 180 \\) phút.<br /><br /><b>Bước 3: Tính độ rộng của mỗi lớp (Class width).</b><br />Số lượng lớp (k) mong muốn là 9.<br />Công thức tính độ rộng lớp (ước lượng): \\( \\text{Width} \\approx \\frac{\\text{Range}}{k} \\)<br />\\( \\text{Width} = \\frac{180}{9} = 20 \\).<br /><br />Vậy độ rộng lớp (class width) phù hợp nhất là 20.00.",
-      "difficulty": "medium",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Độ rộng lớp được tính bằng cách lấy Khoảng biến thiên (Giá trị lớn nhất - Giá trị nhỏ nhất) chia cho số lượng lớp."
+      "correctAnswer": "D",
+      "explanation": "<b>Bước 1: Sử dụng công thức tính kỳ vọng</b><br />Kỳ vọng (mean) của biến ngẫu nhiên liên tục là \\( E(X) = \\int_{-\\infty}^{\\infty} x \\cdot f(x) \\, dx \\).<br /><br /><b>Bước 2: Thiết lập tích phân</b><br />Với \\( f(x) = \\frac{3}{x^4} \\) khi \\( x > 1 \\), ta có:<br />\\( E(X) = \\int_1^{\\infty} x \\cdot \\left(\\frac{3}{x^4}\\right) \\, dx = \\int_1^{\\infty} \\frac{3}{x^3} \\, dx = \\int_1^{\\infty} 3x^{-3} \\, dx \\).<br /><br /><b>Bước 3: Giải tích phân suy rộng</b><br />Tìm nguyên hàm: \\( \\int 3x^{-3} \\, dx = 3 \\cdot \\frac{x^{-2}}{-2} = -\\frac{3}{2x^2} \\).<br />Tính giới hạn cận: \\( E(X) = \\left[ -\\frac{3}{2x^2} \\right]_1^{\\infty} \\).<br />Khi \\( x \\to \\infty \\), \\( \\frac{1}{x^2} \\to 0 \\).<br />Tại cận dưới \\( x = 1 \\), giá trị là \\( -\\frac{3}{2(1)^2} = -1.5 \\).<br />Vậy \\( E(X) = 0 - (-1.5) = 1.5 \\).",
+      "difficulty": "hard",
+      "topic": "Expected Value",
+      "hints": [
+        "Kỳ vọng E(X) là tích phân của x * f(x) trên toàn bộ miền xác định.",
+        "Rút gọn biểu thức trước khi tích phân: \\( x \\cdot (3/x^4) = 3/x^3 \\).",
+        "Nhớ công thức nguyên hàm: \\( \\int x^n \\, dx = \\frac{x^{n+1}}{n+1} \\) (với n = -3)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 29,
-      "question": "The following histogram represents the mass (in kilograms) of each pumpkin in Leonard's patch. How many pumpkins are in Leonard's patch?",
-      "image": "/data/image_exam/de30cau29.png",
-      "options":[
-        "A. 25",
-        "B. 8",
-        "C. 20",
-        "D. 16",
-        "E. None of the other choices is correct"
+      "question": "Let X be a continuous random variable with \\( E(X) = 10 \\) and \\( E(X^2) = 100 \\). Find \\( V(X) \\).",
+      "image": null,
+      "options": [
+        "A. 0",
+        "B. 90",
+        "C. 110",
+        "D. 50",
+        "E. None of the others"
       ],
       "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Đọc tần số của từng lớp trên biểu đồ.</b><br />Chiều cao của mỗi cột tương ứng với số lượng bí ngô trong khoảng khối lượng đó:<br />- Cột[0, 3) kg: cao ở mức 4.<br />- Cột[3, 6) kg: cao ở mức 5.<br />- Cột[6, 9) kg: cao ở mức 8.<br />- Cột[9, 12) kg: cao ở mức 6.<br />- Cột [12, 15] kg: cao ở mức 2.<br /><br /><b>Bước 2: Tính tổng số lượng.</b><br />Tổng số bí ngô = \\( 4 + 5 + 8 + 6 + 2 = 25 \\) (quả).",
+      "explanation": "<b>Bước 1: Ghi nhớ công thức tính phương sai</b><br />Phương sai của một biến ngẫu nhiên \\( X \\), ký hiệu là \\( V(X) \\) hoặc \\( Var(X) \\), luôn được tính bằng công thức cơ bản:<br />\\[ V(X) = E(X^2) - [E(X)]^2 \\]<br /><br /><b>Bước 2: Thay số và tính toán</b><br />Theo đề bài, ta đã có các dữ kiện: \\( E(X) = 10 \\) và \\( E(X^2) = 100 \\).<br />Thay vào công thức:<br />\\( V(X) = 100 - (10)^2 \\)<br />\\( V(X) = 100 - 100 = 0 \\).<br /><br /><b>Ý nghĩa:</b> Khi phương sai bằng 0, điều này cho thấy không có sự phân tán dữ liệu nào cả; biến ngẫu nhiên X thực chất luôn nhận một giá trị hằng số duy nhất là 10.",
       "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Tổng số bí ngô chính là tổng tần số (chiều cao) của tất cả các cột cộng lại."
+      "topic": "Variance",
+      "hints": [
+        "Sử dụng công thức liên hệ trực tiếp: \\( V(X) = E(X^2) - (E(X))^2 \\).",
+        "Đừng nhầm lẫn giữa \\( E(X^2) \\) và \\( [E(X)]^2 \\)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 30,
-      "question": "Suppose a study of houses that have sold recently in your community showed the following frequency distribution for the number of bedrooms:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'>Bedrooms</th><th style='border:1px solid #ddd; padding:5px;'>Frequency</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'>1</td><td style='border:1px solid #ddd; padding:5px;'>1</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>2</td><td style='border:1px solid #ddd; padding:5px;'>18</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>3</td><td style='border:1px solid #ddd; padding:5px;'>140</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px;'>57</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>5</td><td style='border:1px solid #ddd; padding:5px;'>11</td></tr></table><br /><br />Based on this information, what is the mode for the data?",
+      "question": "A test engineer discovered that the cumulative distribution function of the lifetime of an equipment in years is given by<br />\\[ F(x) = \\begin{cases} 0, & x < 0 \\\\\\\\ 1 - e^{-2x/5}, & x \\ge 0 \\end{cases} \\]<br />What is the expected lifetime of the equipment?",
       "image": null,
-      "options":[
-        "A. 3",
-        "B. 4",
-        "C. 57",
-        "D. 140",
+      "options": [
+        "A. 2.2",
+        "B. 2.5",
+        "C. 3.5",
+        "D. 4",
         "E. None of the other choices is correct"
       ],
-      "correctAnswer": "A",
-      "explanation": "<b>Bước 1: Hiểu định nghĩa số yếu vị (Mode).</b><br />Mode là giá trị (trong cột Bedrooms) xuất hiện nhiều lần nhất, tức là có tần số (Frequency) cao nhất.<br /><br /><b>Bước 2: Tìm tần số lớn nhất.</b><br />Nhìn vào cột Frequency, ta thấy tần số lớn nhất là 140.<br /><br /><b>Bước 3: Xác định giá trị Mode.</b><br />Giá trị của số phòng ngủ (Bedrooms) tương ứng với tần số 140 này là 3.<br />Vậy Mode là 3.<br /><br /><i>Lưu ý:</i> Nhiều người hay nhầm lẫn chọn 140, nhưng 140 chỉ là <b>số lần lặp lại</b>, còn 3 mới là <b>giá trị</b> của tập dữ liệu.",
-      "difficulty": "easy",
-      "topic": "Descriptive Statistics",
-      "hints":[
-        "Mode là giá trị của biến (Bedrooms) có tần số lớn nhất. Đừng nhầm lẫn Mode với giá trị tần số của nó."
+      "correctAnswer": "B",
+      "explanation": "<b>Bước 1: Nhận diện phân phối</b><br />Hàm phân phối tích lũy có dạng \\( F(x) = 1 - e^{-\\lambda x} \\) (với \\( x \\ge 0 \\)) là đặc trưng chuẩn của <b>phân phối mũ</b> (Exponential Distribution).<br />Đối chiếu với phương trình của đề bài: \\( F(x) = 1 - e^{-\\frac{2}{5}x} \\), ta suy ra tham số tỷ lệ (rate parameter) là \\( \\lambda = \\frac{2}{5} \\).<br /><br /><b>Bước 2: Tính kỳ vọng (Expected lifetime)</b><br />Đặc điểm quan trọng của phân phối mũ là kỳ vọng \\( E(X) \\) (hay giá trị trung bình) luôn bằng nghịch đảo của \\( \\lambda \\):<br />\\[ E(X) = \\frac{1}{\\lambda} \\]<br /><br /><b>Bước 3: Thay số</b><br />\\[ E(X) = \\frac{1}{2/5} = \\frac{5}{2} = 2.5 \\]<br />Vậy tuổi thọ trung bình dự kiến của thiết bị là 2.5 năm.",
+      "difficulty": "medium",
+      "topic": "Exponential Distribution",
+      "hints": [
+        "Dạng hàm \\( 1 - e^{-\\lambda x} \\) chính là hàm phân phối tích lũy của phân phối mũ.",
+        "Xác định tham số \\( \\lambda \\) từ số mũ của \\( e \\), sau đó tính kỳ vọng bằng công thức \\( E(X) = 1/\\lambda \\)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 31,
-      "question": "Construct a histogram using the following data:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'>x</th><th style='border:1px solid #ddd; padding:5px;'>25</th><th style='border:1px solid #ddd; padding:5px;'>26</th><th style='border:1px solid #ddd; padding:5px;'>27</th><th style='border:1px solid #ddd; padding:5px;'>28</th><th style='border:1px solid #ddd; padding:5px;'>29</th><th style='border:1px solid #ddd; padding:5px;'>30</th><th style='border:1px solid #ddd; padding:5px;'>53</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'>Frequence</td><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px;'>10</td><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px;'>3</td><td style='border:1px solid #ddd; padding:5px;'>3</td><td style='border:1px solid #ddd; padding:5px;'>1</td><td style='border:1px solid #ddd; padding:5px;'>1</td></tr></table><br /><br />Based on the charts in the image, which one is correct?",
-      "image": "/data/image_exam/de30cau31.png",
+      "question": "A test engineer discovered that the cumulative distribution function of the lifetime of an equipment in years is given by<br />\\[ F(x) = \\begin{cases} 0, & x < 0 \\\\\\\\ 1 - e^{-x/5}, & x \\ge 0 \\end{cases} \\]<br />What is the expected lifetime of the equipment?",
+      "image": null,
       "options": [
-        "A. Chart (i)",
-        "B. Chart (ii)",
-        "C. Chart (iii)"
+        "A. 2",
+        "B. 5",
+        "C. 4.5",
+        "D. 5.6",
+        "E. None of the other choices is correct"
       ],
-      "correctAnswer": "C",
-      "explanation": "Biểu đồ <b>(iii)</b> thể hiện chính xác tần số (frequence) tương ứng với từng giá trị \\( x \\) trong bảng dữ liệu.<br />Ví dụ: Tại \\( x = 25 \\), cột cao ở mức 4. Tại \\( x = 26 \\), cột vươn tới mức 10. Tại \\( x = 27 \\), cột ở mức 6. Các biểu đồ (i) và (ii) biểu diễn sai giá trị tần số (có thể là dạng tích lũy hoặc giá trị khác không khớp).",
-      "difficulty": "easy",
-      "topic": "Histograms",
+      "correctAnswer": "B",
+      "explanation": "<b>Bước 1: Nhận diện phân phối</b><br />Hàm phân phối tích lũy có dạng \\( F(x) = 1 - e^{-\\lambda x} \\) là hàm đặc trưng của phân phối mũ (Exponential Distribution).<br />Từ phương trình bài cho \\( F(x) = 1 - e^{-x/5} \\), ta xác định được tham số \\( \\lambda = \\frac{1}{5} \\).<br /><br /><b>Bước 2: Tính kỳ vọng</b><br />Kỳ vọng (hay giá trị trung bình) của phân phối mũ được tính bằng nghịch đảo của tham số \\( \\lambda \\):<br />\\[ E(X) = \\frac{1}{\\lambda} \\]<br />\\[ E(X) = \\frac{1}{1/5} = 5 \\]",
+      "difficulty": "medium",
+      "topic": "Exponential Distribution",
       "hints": [
-        "Hãy đối chiếu chiều cao của mỗi cột trong biểu đồ với hàng 'Frequence' trong bảng."
+        "So sánh hàm F(x) của đề bài với dạng chuẩn \\( 1 - e^{-\\lambda x} \\) để tìm \\( \\lambda \\).",
+        "Kỳ vọng của phân phối mũ bằng \\( 1/\\lambda \\)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 32,
-      "question": "Construct a relative frequency histogram using the following data:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'>x</th><th style='border:1px solid #ddd; padding:5px;'>51</th><th style='border:1px solid #ddd; padding:5px;'>53</th><th style='border:1px solid #ddd; padding:5px;'>55</th><th style='border:1px solid #ddd; padding:5px;'>57</th><th style='border:1px solid #ddd; padding:5px;'>59</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'>Relative frequence</td><td style='border:1px solid #ddd; padding:5px;'>0.25</td><td style='border:1px solid #ddd; padding:5px;'>0.5</td><td style='border:1px solid #ddd; padding:5px;'>0.1</td><td style='border:1px solid #ddd; padding:5px;'>0.1</td><td style='border:1px solid #ddd; padding:5px;'>0.05</td></tr></table><br /><br />Based on the charts in the image, which one is correct?",
-      "image": "/data/image_exam/de30cau32.png",
+      "question": "Let X be a continuous random variable with probability density function<br />\\[ f(x) = 25e^{-25(x-5)} \\quad \\text{for } x > 5. \\]<br />Find \\( V(X) \\).",
+      "image": null,
       "options": [
-        "A. Chart (i)",
-        "B. Chart (ii)",
-        "C. Chart (iii)"
+        "A. 0.0016",
+        "B. 0.04",
+        "C. 0.02",
+        "D. 25",
+        "E. None of the others"
       ],
       "correctAnswer": "A",
-      "explanation": "Biểu đồ <b>(i)</b> biểu diễn chính xác tần số tương đối (relative frequency).<br />- Trục tung hiển thị đúng các giá trị tỷ lệ (từ 0 đến 0.5).<br />- Cột tại \\( x = 51 \\) cao 0.25; cột tại \\( x = 53 \\) cao 0.5; hai cột tại 55 và 57 cao 0.1, hoàn toàn khớp với bảng dữ liệu.",
-      "difficulty": "easy",
-      "topic": "Histograms",
+      "explanation": "<b>Bước 1: Nhận diện phân phối</b><br />Hàm mật độ có dạng \\( f(x) = \\lambda e^{-\\lambda(x-\\theta)} \\) là phân phối mũ bị dịch chuyển (Shifted Exponential Distribution), với tham số tỉ lệ \\( \\lambda = 25 \\) và độ dịch chuyển \\( \\theta = 5 \\).<br /><br /><b>Bước 2: Tính phương sai</b><br />Tính chất quan trọng: Việc dịch chuyển đồ thị hàm số theo trục hoành (cộng/trừ thêm một hằng số vào biến X) làm thay đổi kỳ vọng, nhưng <b>không làm thay đổi phương sai (độ phân tán)</b>.<br />Phương sai của biến này vẫn giống hệt phân phối mũ tiêu chuẩn:<br />\\[ V(X) = \\frac{1}{\\lambda^2} \\]<br />\\[ V(X) = \\frac{1}{25^2} = \\frac{1}{625} \\]<br /><br /><b>Bước 3: Chuyển ra số thập phân</b><br />\\( 1 / 625 = 0.0016 \\).",
+      "difficulty": "hard",
+      "topic": "Shifted Exponential Distribution",
       "hints": [
-        "Chú ý thang đo trên trục tung. Tần số tương đối luôn là các số thập phân nhỏ hơn 1."
+        "Phép tịnh tiến biến ngẫu nhiên (dịch chuyển trục x đi 5 đơn vị) không làm thay đổi phương sai.",
+        "Sử dụng công thức phương sai của phân phối mũ: \\( V(X) = 1/\\lambda^2 \\)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 33,
-      "question": "Given a table of data:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>44</td><td style='border:1px solid #ddd; padding:5px;'>63</td><td style='border:1px solid #ddd; padding:5px;'>84</td><td style='border:1px solid #ddd; padding:5px;'>98</td><td style='border:1px solid #ddd; padding:5px;'>56</td><td style='border:1px solid #ddd; padding:5px;'>32</td><td style='border:1px solid #ddd; padding:5px;'>26</td><td style='border:1px solid #ddd; padding:5px;'>75</td><td style='border:1px solid #ddd; padding:5px;'>35</td><td style='border:1px solid #ddd; padding:5px;'>97</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>53</td><td style='border:1px solid #ddd; padding:5px;'>39</td><td style='border:1px solid #ddd; padding:5px;'>96</td><td style='border:1px solid #ddd; padding:5px;'>36</td><td style='border:1px solid #ddd; padding:5px;'>97</td><td style='border:1px solid #ddd; padding:5px;'>44</td><td style='border:1px solid #ddd; padding:5px;'>74</td><td style='border:1px solid #ddd; padding:5px;'>26</td><td style='border:1px solid #ddd; padding:5px;'>85</td><td style='border:1px solid #ddd; padding:5px;'>84</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>13</td><td style='border:1px solid #ddd; padding:5px;'>46</td><td style='border:1px solid #ddd; padding:5px;'>64</td><td style='border:1px solid #ddd; padding:5px;'>38</td><td style='border:1px solid #ddd; padding:5px;'>96</td><td style='border:1px solid #ddd; padding:5px;'>45</td><td style='border:1px solid #ddd; padding:5px;'>89</td><td style='border:1px solid #ddd; padding:5px;'>86</td><td style='border:1px solid #ddd; padding:5px;'>43</td><td style='border:1px solid #ddd; padding:5px;'>71</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>60</td><td style='border:1px solid #ddd; padding:5px;'>12</td><td style='border:1px solid #ddd; padding:5px;'>46</td><td style='border:1px solid #ddd; padding:5px;'>84</td><td style='border:1px solid #ddd; padding:5px;'>15</td><td style='border:1px solid #ddd; padding:5px;'>75</td><td style='border:1px solid #ddd; padding:5px;'>37</td><td style='border:1px solid #ddd; padding:5px;'>80</td><td style='border:1px solid #ddd; padding:5px;'>37</td><td style='border:1px solid #ddd; padding:5px;'>27</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>97</td><td style='border:1px solid #ddd; padding:5px;'>46</td><td style='border:1px solid #ddd; padding:5px;'>36</td><td style='border:1px solid #ddd; padding:5px;'>38</td><td style='border:1px solid #ddd; padding:5px;'>37</td><td style='border:1px solid #ddd; padding:5px;'>58</td><td style='border:1px solid #ddd; padding:5px;'>85</td><td style='border:1px solid #ddd; padding:5px;'>44</td><td style='border:1px solid #ddd; padding:5px;'>57</td><td style='border:1px solid #ddd; padding:5px;'>72</td></tr></table><br /><br />Compare the frequency of interval \\( 10 \\le x < 20 \\) to that of interval \\( 60 \\le x < 70 \\).",
+      "question": "The probability density function of the length of a metal rod is<br />\\[ f(x) = x^2/56 \\quad \\text{for } 2 < x < 4 \\text{ meters.} \\]<br />Find \\( E(56X) \\).",
       "image": null,
       "options": [
-        "A. Both have the same frequency.",
-        "B. Interval \\( 10 \\le x < 20 \\) has higher frequency.",
-        "C. Interval \\( 60 \\le x < 70 \\) has higher frequency."
+        "A. 60",
+        "B. 1",
+        "C. 16",
+        "D. 3",
+        "E. None of the other choices is true"
       ],
       "correctAnswer": "A",
-      "explanation": "Ta tiến hành đếm số lượng giá trị (tần số) xuất hiện trong mỗi khoảng:<br /><br />- Khoảng \\( 10 \\le x < 20 \\) bao gồm các số: <b>13, 12, 15</b> (tổng cộng có 3 số).<br />- Khoảng \\( 60 \\le x < 70 \\) bao gồm các số: <b>63, 64, 60</b> (tổng cộng có 3 số).<br /><br /><b>Kết luận:</b> Cả hai khoảng này đều có tần số bằng nhau và bằng 3.",
+      "explanation": "<b>Bước 1: Tính kỳ vọng E(X)</b><br />Áp dụng công thức tính kỳ vọng liên tục: \\( E(X) = \\int_2^4 x \\cdot f(x) \\, dx \\).<br />\\[ E(X) = \\int_2^4 x \\cdot \\left(\\frac{x^2}{56}\\right) \\, dx = \\int_2^4 \\frac{x^3}{56} \\, dx \\]<br />\\[ E(X) = \\frac{1}{56} \\left[ \\frac{x^4}{4} \\right]_2^4 = \\frac{1}{224} (4^4 - 2^4) \\]<br />\\[ E(X) = \\frac{1}{224} (256 - 16) = \\frac{240}{224} = \\frac{15}{14} \\]<br /><br /><b>Bước 2: Sử dụng tính chất tuyến tính của kỳ vọng</b><br />Ta cần tìm \\( E(56X) \\). Biết rằng \\( E(aX) = a \\cdot E(X) \\):<br />\\[ E(56X) = 56 \\cdot E(X) = 56 \\cdot \\frac{15}{14} \\]<br />\\[ E(56X) = 4 \\cdot 15 = 60 \\]<br /><br /><i>(Ghi chú: Về mặt toán học khắt khe, hàm f(x) trong bài này bị lỗi vì \\( \\int_2^4 \\frac{x^2}{56} dx \\neq 1 \\). Tuy nhiên ta vẫn cứ áp dụng công thức theo ý đồ của người ra đề để tìm được đáp án).</i>",
       "difficulty": "medium",
-      "topic": "Frequency Distributions",
+      "topic": "Expected Value",
       "hints": [
-        "Hãy quét qua từng hàng và đếm cẩn thận các số nằm trong mỗi khoảng yêu cầu."
+        "Đầu tiên tính E(X) bằng tích phân của x*f(x) từ 2 đến 4.",
+        "Sau đó áp dụng tính chất \\( E(aX) = a \\cdot E(X) \\) để tính E(56X)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 34,
-      "question": "Given a table of data:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>44</td><td style='border:1px solid #ddd; padding:5px;'>63</td><td style='border:1px solid #ddd; padding:5px;'>84</td><td style='border:1px solid #ddd; padding:5px;'>98</td><td style='border:1px solid #ddd; padding:5px;'>56</td><td style='border:1px solid #ddd; padding:5px;'>32</td><td style='border:1px solid #ddd; padding:5px;'>26</td><td style='border:1px solid #ddd; padding:5px;'>75</td><td style='border:1px solid #ddd; padding:5px;'>35</td><td style='border:1px solid #ddd; padding:5px;'>97</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>53</td><td style='border:1px solid #ddd; padding:5px;'>39</td><td style='border:1px solid #ddd; padding:5px;'>96</td><td style='border:1px solid #ddd; padding:5px;'>36</td><td style='border:1px solid #ddd; padding:5px;'>97</td><td style='border:1px solid #ddd; padding:5px;'>44</td><td style='border:1px solid #ddd; padding:5px;'>74</td><td style='border:1px solid #ddd; padding:5px;'>26</td><td style='border:1px solid #ddd; padding:5px;'>85</td><td style='border:1px solid #ddd; padding:5px;'>84</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>13</td><td style='border:1px solid #ddd; padding:5px;'>46</td><td style='border:1px solid #ddd; padding:5px;'>64</td><td style='border:1px solid #ddd; padding:5px;'>38</td><td style='border:1px solid #ddd; padding:5px;'>96</td><td style='border:1px solid #ddd; padding:5px;'>45</td><td style='border:1px solid #ddd; padding:5px;'>89</td><td style='border:1px solid #ddd; padding:5px;'>86</td><td style='border:1px solid #ddd; padding:5px;'>43</td><td style='border:1px solid #ddd; padding:5px;'>71</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>60</td><td style='border:1px solid #ddd; padding:5px;'>12</td><td style='border:1px solid #ddd; padding:5px;'>46</td><td style='border:1px solid #ddd; padding:5px;'>84</td><td style='border:1px solid #ddd; padding:5px;'>15</td><td style='border:1px solid #ddd; padding:5px;'>75</td><td style='border:1px solid #ddd; padding:5px;'>37</td><td style='border:1px solid #ddd; padding:5px;'>80</td><td style='border:1px solid #ddd; padding:5px;'>37</td><td style='border:1px solid #ddd; padding:5px;'>27</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>97</td><td style='border:1px solid #ddd; padding:5px;'>46</td><td style='border:1px solid #ddd; padding:5px;'>36</td><td style='border:1px solid #ddd; padding:5px;'>38</td><td style='border:1px solid #ddd; padding:5px;'>37</td><td style='border:1px solid #ddd; padding:5px;'>58</td><td style='border:1px solid #ddd; padding:5px;'>85</td><td style='border:1px solid #ddd; padding:5px;'>44</td><td style='border:1px solid #ddd; padding:5px;'>57</td><td style='border:1px solid #ddd; padding:5px;'>72</td></tr></table><br /><br />Compare the frequency of interval \\( 20 \\le x < 30 \\) to that of interval \\( 50 \\le x < 60 \\).",
+      "question": "Let X be a random variable with the probability density function \\( f(x) = x/2 \\) when \\( 0 < x < 2 \\). What is the variance of X?",
       "image": null,
       "options": [
-        "A. Interval \\( 50 \\le x < 60 \\) has higher frequency.",
-        "B. Interval \\( 20 \\le x < 30 \\) has higher frequency.",
-        "C. Both have the same frequency."
+        "A. 1/3",
+        "B. 4/7",
+        "C. 3",
+        "D. 2/9",
+        "E. None of the other choices is correct"
       ],
-      "correctAnswer": "A",
-      "explanation": "Kiểm tra dữ liệu trong bảng để tìm tần số của mỗi khoảng:<br /><br />- Khoảng \\( 20 \\le x < 30 \\) bao gồm các số: <b>26, 26, 27</b> (tần số = 3).<br />- Khoảng \\( 50 \\le x < 60 \\) bao gồm các số: <b>56, 53, 58, 57</b> (tần số = 4).<br /><br /><b>Kết luận:</b> Khoảng \\( 50 \\le x < 60 \\) có tần số lớn hơn (4 > 3).",
+      "correctAnswer": "D",
+      "explanation": "<b>Bước 1: Tính E(X)</b><br />\\[ E(X) = \\int_0^2 x \\cdot f(x) \\, dx = \\int_0^2 x \\cdot \\left(\\frac{x}{2}\\right) \\, dx = \\int_0^2 \\frac{x^2}{2} \\, dx \\]<br />\\[ E(X) = \\left[ \\frac{x^3}{6} \\right]_0^2 = \\frac{8}{6} - 0 = \\frac{4}{3} \\]<br /><br /><b>Bước 2: Tính E(X²)</b><br />\\[ E(X^2) = \\int_0^2 x^2 \\cdot f(x) \\, dx = \\int_0^2 x^2 \\cdot \\left(\\frac{x}{2}\\right) \\, dx = \\int_0^2 \\frac{x^3}{2} \\, dx \\]<br />\\[ E(X^2) = \\left[ \\frac{x^4}{8} \\right]_0^2 = \\frac{16}{8} - 0 = 2 \\]<br /><br /><b>Bước 3: Tính phương sai V(X)</b><br />\\[ V(X) = E(X^2) - [E(X)]^2 \\]<br />\\[ V(X) = 2 - \\left(\\frac{4}{3}\\right)^2 = 2 - \\frac{16}{9} \\]<br />Quy đồng mẫu số:<br />\\[ V(X) = \\frac{18}{9} - \\frac{16}{9} = \\frac{2}{9} \\]",
       "difficulty": "medium",
-      "topic": "Frequency Distributions",
+      "topic": "Variance",
       "hints": [
-        "Hãy cẩn thận phân biệt giữa số 26 (xuất hiện 2 lần) và các số đầu 5."
+        "Phương sai được tính bằng công thức: \\( V(X) = E(X^2) - (E(X))^2 \\).",
+        "Bạn cần tính 2 tích phân riêng biệt: một cho x*f(x) và một cho x^2*f(x)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 35,
-      "question": "Given the cumulative relative frequency distribution of the ages of 80 members in a dancing club<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'>Ages</th><th style='border:1px solid #ddd; padding:5px;'>Cumulative relative frequency</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'>11-20</td><td style='border:1px solid #ddd; padding:5px;'>27.5%</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>21-30</td><td style='border:1px solid #ddd; padding:5px;'>72.5%</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>31-40</td><td style='border:1px solid #ddd; padding:5px;'>91.25%</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>41-50</td><td style='border:1px solid #ddd; padding:5px;'>100%</td></tr></table><br /><br />How many members in this club that their ages are between 21 and 30?",
+      "question": "Let X be a continuous random variable with \\( E(X) = 10 \\) and \\( E(X^2) = 100 \\). Find \\( V(X) \\).",
       "image": null,
       "options": [
-        "A. 58",
-        "B. 7",
-        "C. 15",
-        "D. 36",
-        "E. None of the other choices is correct"
+        "A. 0",
+        "B. 90",
+        "C. 110",
+        "D. 50",
+        "E. None of the others"
       ],
-      "correctAnswer": "D",
-      "explanation": "<b>Bước 1:</b> Tìm tần số tương đối (relative frequency) của nhóm tuổi 21-30 bằng cách lấy tần số tích lũy của nhóm đó trừ đi tần số tích lũy của nhóm ngay trước nó.<br />\\[ P(21-30) = 72.5\\% - 27.5\\% = 45\\% = 0.45 \\]<br /><br /><b>Bước 2:</b> Tính số lượng thành viên thực tế nằm trong độ tuổi này bằng cách nhân tỷ lệ vừa tìm được với tổng số thành viên (80 người).<br />\\[ N = 0.45 \\times 80 = 36 \\]<br /><br />Vậy có 36 thành viên có độ tuổi từ 21 đến 30.",
-      "difficulty": "medium",
-      "topic": "Cumulative Frequency",
+      "correctAnswer": "A",
+      "explanation": "<b>Sử dụng công thức tính phương sai</b><br />Phương sai của một biến ngẫu nhiên (dù là rời rạc hay liên tục) luôn tuân theo công thức:<br />\\[ V(X) = E(X^2) - [E(X)]^2 \\]<br /><br />Thay các dữ kiện đề bài đã cho vào:<br />\\[ V(X) = 100 - (10)^2 \\]<br />\\[ V(X) = 100 - 100 = 0 \\]<br /><br /><i>(Lưu ý: Phương sai bằng 0 có nghĩa là biến ngẫu nhiên X không hề có sự phân tán, nó luôn nhận duy nhất giá trị hằng số là 10).</i>",
+      "difficulty": "easy",
+      "topic": "Variance",
       "hints": [
-        "Bảng đang cho tần số tích lũy (Cumulative), bạn cần trừ đi lớp trước đó để tìm tỷ lệ phần trăm của riêng lớp 21-30.",
-        "Sau khi có phần trăm, nhân với tổng số người (80)."
+        "Nhớ công thức: \\( V(X) = E(X^2) - (E(X))^2 \\).",
+        "Bình phương của E(X) là bao nhiêu?"
       ],
       "type": "multiple_choice"
     },
     {
       "id": 36,
-      "question": "The interquartile range (IQR) is",
-      "image": "/data/image_exam/de30cau36.png",
+      "question": "Let X be a continuous random variable that have uniform distribution over the interval [0.1, 5] . What is the probability that the random variable X has a value less than 2.1?",
+      "image": null,
       "options": [
-        "A. (iv)",
-        "B. (ii)",
-        "C. (i)",
-        "D. (v)",
-        "E. (iii)",
-        "F. None of the other choices is correct"
+        "A. 0.4082",
+        "B. 0.3875",
+        "C. 0.1375",
+        "D. 0.0125",
+        "E. None of the other choices is correct"
       ],
       "correctAnswer": "A",
-      "explanation": "Độ trải giữa (Interquartile Range - IQR) được định nghĩa là sự chênh lệch giữa tứ phân vị thứ ba (\\( Q_3 \\)) và tứ phân vị thứ nhất (\\( Q_1 \\)).<br /><br /><b>Công thức:</b> \\[ IQR = Q_3 - Q_1 \\]<br /><br />Dựa vào danh sách các biểu thức trong đề bài, biểu thức (iv) là \\( Q_3 - Q_1 \\), tương ứng với đáp án A.",
-      "difficulty": "easy",
-      "topic": "Interquartile Range",
+      "explanation": "<b>Bước 1: Tìm hàm mật độ xác suất (PDF)</b><br />Với phân phối đều trên khoảng \\( [a, b] \\), hàm mật độ là \\( f(x) = \\frac{1}{b - a} \\).<br />Ở đây \\( a = 0.1 \\) và \\( b = 5 \\), nên \\( f(x) = \\frac{1}{5 - 0.1} = \\frac{1}{4.9} \\).<br /><br /><b>Bước 2: Tính xác suất</b><br />Ta cần tính \\( P(X < 2.1) \\):<br />\\[ P(X < 2.1) = \\int_{0.1}^{2.1} \\frac{1}{4.9} \\, dx = \\frac{2.1 - 0.1}{4.9} = \\frac{2}{4.9} \\]<br />\\[ \\frac{2}{4.9} = \\frac{20}{49} \\approx 0.40816 \\approx 0.4082 \\]",
+      "difficulty": "medium",
+      "topic": "Uniform Distribution",
       "hints": [
-        "Nhớ lại định nghĩa của IQR: khoảng cách giữa tứ phân vị trên và tứ phân vị dưới."
+        "Xác suất của phân phối đều trên một khoảng con bằng chiều dài khoảng con chia cho chiều dài toàn bộ khoảng.",
+        "Tính: \\( (2.1 - 0.1) / (5 - 0.1) \\)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 37,
-      "question": "The number of books read in a year by 11 students are shown in a stem and leaf diagram:<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><th style='border:1px solid #ddd; padding:5px;'>Stem</th><th style='border:1px solid #ddd; padding:5px;'>Leaf</th></tr><tr><td style='border:1px solid #ddd; padding:5px;'>0</td><td style='border:1px solid #ddd; padding:5px;'>5 5 6</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>1</td><td style='border:1px solid #ddd; padding:5px;'>1 4 6 2 3</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>2</td><td style='border:1px solid #ddd; padding:5px;'>0 2 1</td></tr></table><br /><br />What is the third quartile \\( Q_3 \\) for this data?",
+      "question": "A machine is set to pump cleanser into a process at the rate of 5 gallons per minute. Upon inspection, it is learned that the machine actually pumps cleanser at a rate described by the uniform distribution over the interval 4.5 to 7.5 gallons per minute. Find the probability that between 5.0 gallons and 6.0 gallons are pumped during a randomly selected minute.",
       "image": null,
       "options": [
-        "A. 20",
-        "B. 6",
-        "C. 14",
-        "D. 22",
-        "E. 13",
-        "F. 15"
+        "A. 0",
+        "B. 1",
+        "C. 0.33",
+        "D. 0.67",
+        "E. None of the other choices is correct"
       ],
-      "correctAnswer": "A",
-      "explanation": "<b>Bước 1:</b> Đọc và sắp xếp lại dữ liệu từ biểu đồ nhánh-lá (stem-and-leaf) theo thứ tự tăng dần:<br />Các giá trị lần lượt là: 5, 5, 6, 11, 12, 13, 14, 16, 20, 21, 22.<br />Tổng số quan sát \\( n = 11 \\).<br /><br /><b>Bước 2:</b> Tìm trung vị (\\( Q_2 \\)):<br />Vị trí trung vị là \\( \\frac{11+1}{2} = 6 \\). Giá trị thứ 6 là 13.<br /><br /><b>Bước 3:</b> Tìm tứ phân vị thứ ba (\\( Q_3 \\)):<br />\\( Q_3 \\) là trung vị của nửa dữ liệu phía trên trung vị (gồm 14, 16, 20, 21, 22).<br />Trung vị của tập {14, 16, 20, 21, 22} là giá trị đứng giữa, tức là 20.<br /><br /><b>Kết luận:</b> Vậy \\( Q_3 = 20 \\).",
-      "difficulty": "medium",
-      "topic": "Quartiles",
+      "correctAnswer": "C",
+      "explanation": "<b>Bước 1: Xác định các thông số của phân phối đều</b><br />Biến ngẫu nhiên X (tốc độ bơm) phân phối đều trên khoảng \\( [4.5, 7.5] \\).<br />Hàm mật độ xác suất: \\( f(x) = \\frac{1}{7.5 - 4.5} = \\frac{1}{3} \\).<br /><br /><b>Bước 2: Tính xác suất trên khoảng yêu cầu</b><br />Xác suất bơm được từ 5.0 đến 6.0 gallon là \\( P(5.0 < X < 6.0) \\):<br />\\[ P(5.0 < X < 6.0) = \\frac{6.0 - 5.0}{7.5 - 4.5} = \\frac{1}{3} \\approx 0.3333 \\approx 0.33 \\]",
+      "difficulty": "easy",
+      "topic": "Uniform Distribution",
       "hints": [
-        "Cẩn thận khi đọc nhánh '1' và '2', các lá chưa được sắp xếp theo thứ tự (ví dụ: 1 4 6 2 3 phải hiểu là 11, 12, 13, 14, 16)."
+        "Giá trị trung bình 5 gallon ở đầu bài chỉ là thông tin gây nhiễu. Hãy tập trung vào khoảng phân phối thực tế [4.5, 7.5].",
+        "Lấy (Cận trên cần tìm - Cận dưới cần tìm) chia cho (Cận trên tối đa - Cận dưới tối thiểu)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 38,
-      "question": "Construct the boxplot for the given data set<br /><br />23, 46, 36, 46, 50, 36, 36, 45<br /><br />Choose the best answer.",
-      "image": "/data/image_exam/de30cau38.png",
+      "question": "Suppose a continuous uniform distribution can be used to describe the outcome of an experiment with outcomes ranging from 50 to 70. What is the mean outcome of this experiment?",
+      "image": null,
       "options": [
-        "A. (i)",
-        "B. (ii)",
-        "C. (iii)",
-        "D. (iv)"
+        "A. 60",
+        "B. 70",
+        "C. 50",
+        "D. 65",
+        "E. None of the other choices is correct"
       ],
       "correctAnswer": "A",
-      "explanation": "<b>Bước 1:</b> Sắp xếp tập dữ liệu theo thứ tự tăng dần:<br />23, 36, 36, 36, 45, 46, 46, 50 (\\( n = 8 \\)).<br /><br /><b>Bước 2:</b> Tính toán 5 giá trị đặc trưng (5-number summary):<br />- <b>Min:</b> 23<br />- <b>Max:</b> 50<br />- <b>Trung vị (\\( Q_2 \\)):</b> Nằm giữa vị trí thứ 4 và 5 \\( \\rightarrow \\frac{36 + 45}{2} = 40.5 \\).<br />- <b>Tứ phân vị thứ nhất (\\( Q_1 \\)):</b> Là trung vị của nửa đầu (23, 36, 36, 36) \\( \\rightarrow \\frac{36 + 36}{2} = 36 \\).<br />- <b>Tứ phân vị thứ ba (\\( Q_3 \\)):</b> Là trung vị của nửa sau (45, 46, 46, 50) \\( \\rightarrow \\frac{46 + 46}{2} = 46 \\).<br /><br /><b>Kết luận:</b> Đối chiếu với các biểu đồ, biểu đồ (i) có Min=23, \\( Q_1=36 \\), \\( Q_2=40.5 \\), \\( Q_3=46 \\), Max=50, hoàn toàn trùng khớp.",
-      "difficulty": "medium",
-      "topic": "Boxplots",
+      "explanation": "<b>Sử dụng công thức tính kỳ vọng (Mean) của phân phối đều</b><br />Đối với phân phối đều liên tục trên khoảng \\( [a, b] \\), giá trị trung bình (kỳ vọng) được tính bằng trung bình cộng của hai đầu mút:<br />\\[ \\mu = E(X) = \\frac{a + b}{2} \\]<br />Thay \\( a = 50 \\) và \\( b = 70 \\) vào công thức:<br />\\[ E(X) = \\frac{50 + 70}{2} = \\frac{120}{2} = 60 \\]",
+      "difficulty": "easy",
+      "topic": "Uniform Distribution",
       "hints": [
-        "Bạn cần tìm chính xác 5 giá trị: Min, Q1, Median, Q3, Max để so sánh với thang đo trên biểu đồ."
+        "Giá trị trung bình của phân phối đều luôn nằm chính giữa khoảng.",
+        "Cộng cận dưới và cận trên lại rồi chia đôi."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 39,
-      "question": "The investigation in your book involves collecting resting pulse rates from 30 students in your class are shown below. Construct the boxplot for the data set<br /><br />56, 57, 60, 60, 64, 65, 65, 65, 68, 70,<br />70, 76, 77, 77, 77, 77, 78, 80, 82, 85,<br />87, 87, 88, 89, 89, 89, 89, 90, 90, 90",
-      "image": "/data/image_exam/de30cau39.png",
+      "question": "The diameter of ball bearings produced in a manufacturing process can be explained using a uniform distribution over the interval 4.5 to 6.5 millimeters. What is the probability that a randomly selected ball bearing has a diameter greater than 5.2 millimeters?",
+      "image": null,
       "options": [
-        "A. (i)",
-        "B. (ii)",
-        "C. (iii)",
-        "D. None of the other choices is correct"
+        "A. 0.47",
+        "B. 0.82",
+        "C. 0.65",
+        "D. 2.5",
+        "E. None of the other choices is correct"
       ],
-      "correctAnswer": "D",
-      "explanation": "<b>Bước 1:</b> Xác định các giá trị đặc trưng từ tập dữ liệu \\( n = 30 \\) (đã sắp xếp):<br />- <b>Min:</b> 56<br />- <b>Max:</b> 90<br />- <b>Trung vị (\\( Q_2 \\)):</b> Trung bình cộng của giá trị thứ 15 và 16. Cả hai đều là 77 \\( \\rightarrow Q_2 = 77 \\).<br />- <b>\\( Q_1 \\):</b> Trung vị của 15 giá trị đầu tiên \\( \\rightarrow \\) giá trị thứ 8 là 65.<br />- <b>\\( Q_3 \\):</b> Trung vị của 15 giá trị cuối cùng \\( \\rightarrow \\) giá trị thứ 23 (hoặc thứ 8 từ dưới đếm lên) là 88.<br /><br /><b>Bước 2:</b> So sánh với các biểu đồ:<br />Bộ thông số chính xác là: <b>{56, 65, 77, 88, 90}</b>.<br />- Biểu đồ (i) và (ii) có \\( Q_3 = 89 \\) (sai).<br />- Biểu đồ (iii) có \\( Q_3 = 88.5 \\) (sai).<br /><br /><b>Kết luận:</b> Không có biểu đồ nào chính xác, đáp án đúng là D.",
-      "difficulty": "hard",
-      "topic": "Boxplots",
+      "correctAnswer": "C",
+      "explanation": "<b>Bước 1: Xác định thông số phân phối đều</b><br />Khoảng phân phối là \\( [4.5, 6.5] \\).<br />Chiều dài của tổng khoảng là \\( 6.5 - 4.5 = 2.0 \\).<br /><br /><b>Bước 2: Tính xác suất</b><br />Yêu cầu tính \\( P(X > 5.2) \\). Trong phân phối đều, xác suất này chính bằng chiều dài của đoạn từ 5.2 đến cận trên 6.5 chia cho chiều dài tổng.<br />\\[ P(X > 5.2) = \\frac{6.5 - 5.2}{6.5 - 4.5} = \\frac{1.3}{2.0} = 0.65 \\]",
+      "difficulty": "easy",
+      "topic": "Uniform Distribution",
       "hints": [
-        "Khi \\( n = 30 \\), trung vị chia dữ liệu thành 2 nửa, mỗi nửa 15 quan sát. Tìm tứ phân vị bằng cách lấy trung vị của mỗi nửa này."
+        "Tính độ dài khoảng từ 5.2 đến cận trên cùng là 6.5.",
+        "Chia kết quả vừa tính cho tổng độ dài khoảng (6.5 - 4.5)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 40,
-      "question": "The investigation in your book involves collecting exercise pulse rates from 20 students in your class are shown below. Construct the boxplot for the data set<br /><br />100, 113, 115, 115, 116, 118, 123, 125, 136, 136,<br />138, 140, 142, 145, 147, 149, 150, 160, 163, 164.",
-      "image": "/data/image_exam/de30cau40.png",
+      "question": "Suppose X is a uniform continuous random variable over the interval [40, 50]. Find the probability that a randomly selected observation exceeds 43.",
+      "image": null,
       "options": [
-        "A. (i)",
-        "B. (ii)",
-        "C. (iii)",
-        "D. (iv)",
+        "A. 0.1",
+        "B. 0.9",
+        "C. 0.3",
+        "D. 0.7",
         "E. None of the other choices is correct"
       ],
-      "correctAnswer": "A",
-      "explanation": "<b>Bước 1:</b> Tập dữ liệu có \\( n = 20 \\) giá trị, đã được sắp xếp tăng dần.<br /><br /><b>Bước 2:</b> Tính 5 giá trị đặc trưng:<br />- <b>Min:</b> 100.<br />- <b>Max:</b> 164.<br />- <b>Trung vị (\\( Q_2 \\)):</b> Nằm giữa giá trị thứ 10 (136) và 11 (138) \\( \\rightarrow \\frac{136 + 138}{2} = 137 \\).<br />- <b>\\( Q_1 \\):</b> Trung vị của nửa đầu (10 giá trị), nằm giữa giá trị thứ 5 (116) và 6 (118) \\( \\rightarrow \\frac{116 + 118}{2} = 117 \\).<br />- <b>\\( Q_3 \\):</b> Trung vị của nửa sau (10 giá trị), nằm giữa giá trị thứ 15 (147) và 16 (149) \\( \\rightarrow \\frac{147 + 149}{2} = 148 \\).<br /><br /><b>Kết luận:</b> Biểu đồ hộp (i) biểu diễn đúng các thông số: 100, 117, 137, 148, 164.",
-      "difficulty": "medium",
-      "topic": "Boxplots",
+      "correctAnswer": "D",
+      "explanation": "<b>Bước 1: Nhận diện khoảng phân phối</b><br />Khoảng giá trị là \\( [40, 50] \\), tổng độ dài của khoảng này là \\( 50 - 40 = 10 \\).<br /><br /><b>Bước 2: Tính xác suất phần đuôi</b><br />Quan sát vượt quá 43 tức là \\( X > 43 \\).<br />Xác suất này bằng chiều dài của đoạn từ 43 đến cận trên 50 chia cho tổng độ dài của khoảng phân phối:<br />\\[ P(X > 43) = \\frac{50 - 43}{50 - 40} = \\frac{7}{10} = 0.7 \\]",
+      "difficulty": "easy",
+      "topic": "Uniform Distribution",
       "hints": [
-        "Đừng quên chia nửa dữ liệu: 10 phần tử đầu để tìm \\( Q_1 \\) và 10 phần tử cuối để tìm \\( Q_3 \\)."
+        "Tương tự các câu trước, khoảng cần tính là từ 43 đến 50.",
+        "Lấy (50 - 43) chia cho (50 - 40)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 41,
-      "question": "Construct the boxplot for the given data set:<br /><br />23, 45, 36, 47, 50, 36, 36, 45<br /><br />Choose the best answer.",
-      "image": "/data/image_exam/de30cau41.png",
+      "question": "Suppose X is a continuous uniform random variable over [10, 70]. Find the probability that a randomly selected observation is between 13 and 65.",
+      "image": null,
       "options": [
-        "A. (i)",
-        "B. (ii)",
-        "C. (iii)",
-        "D. (iv)",
+        "A. 0.56",
+        "B. 0.13",
+        "C. 0.87",
+        "D. 0.28",
         "E. None of the other choices is correct"
       ],
-      "correctAnswer": "A",
-      "explanation": "<b>Bước 1:</b> Sắp xếp tập dữ liệu theo thứ tự tăng dần:<br />23, 36, 36, 36, 45, 45, 47, 50 (\\( n = 8 \\)).<br /><br /><b>Bước 2:</b> Tính 5 giá trị đặc trưng:<br />- <b>Min:</b> 23<br />- <b>Max:</b> 50<br />- <b>Trung vị (\\( Q_2 \\)):</b> Nằm giữa vị trí thứ 4 và 5 \\( \\rightarrow \\frac{36 + 45}{2} = 40.5 \\).<br />- <b>Tứ phân vị thứ nhất (\\( Q_1 \\)):</b> Là trung vị của nửa đầu (23, 36, 36, 36) \\( \\rightarrow \\frac{36 + 36}{2} = 36 \\).<br />- <b>Tứ phân vị thứ ba (\\( Q_3 \\)):</b> Là trung vị của nửa sau (45, 45, 47, 50) \\( \\rightarrow \\frac{45 + 47}{2} = 46 \\).<br /><br /><b>Kết luận:</b> Biểu đồ (i) có các điểm mốc: 23, 36, 40.5, 46, 50, hoàn toàn trùng khớp với kết quả tính toán.",
-      "difficulty": "medium",
-      "topic": "Boxplots",
+      "correctAnswer": "C",
+      "explanation": "<b>Bước 1: Xác định độ dài các khoảng</b><br />Biến ngẫu nhiên X phân phối đều trên khoảng \\( [10, 70] \\).<br />Tổng độ dài khoảng không gian mẫu là \\( 70 - 10 = 60 \\).<br /><br /><b>Bước 2: Tính xác suất</b><br />Xác suất để X nằm trong khoảng từ 13 đến 65 là tỉ lệ giữa độ dài khoảng \\( [13, 65] \\) và tổng độ dài khoảng phân phối.<br />\\[ P(13 < X < 65) = \\frac{65 - 13}{70 - 10} = \\frac{52}{60} \\approx 0.8667 \\approx 0.87 \\]",
+      "difficulty": "easy",
+      "topic": "Uniform Distribution",
       "hints": [
-        "Hãy sắp xếp dữ liệu và tìm lần lượt Min, Q1, Median, Q3, Max.",
-        "Chú ý tính Q3 cẩn thận: trung vị của {45, 45, 47, 50} là 46."
+        "Sử dụng công thức tính xác suất cho phân phối đều liên tục: Chiều dài đoạn cần tìm chia cho chiều dài toàn bộ đoạn."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 42,
-      "question": "The following data reflect the number of customers who test drove new cars each day for a sample of 20 days at the Redfield Ford Dealership.<br /><br /><table border='1' cellpadding='5' style='border-collapse:collapse; text-align:center;'><tr><td style='border:1px solid #ddd; padding:5px;'>5</td><td style='border:1px solid #ddd; padding:5px;'>7</td><td style='border:1px solid #ddd; padding:5px;'>2</td><td style='border:1px solid #ddd; padding:5px;'>9</td><td style='border:1px solid #ddd; padding:5px;'>4</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>9</td><td style='border:1px solid #ddd; padding:5px;'>7</td><td style='border:1px solid #ddd; padding:5px;'>10</td><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px;'>7</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>5</td><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px;'>0</td><td style='border:1px solid #ddd; padding:5px;'>7</td></tr><tr><td style='border:1px solid #ddd; padding:5px;'>6</td><td style='border:1px solid #ddd; padding:5px;'>3</td><td style='border:1px solid #ddd; padding:5px;'>4</td><td style='border:1px solid #ddd; padding:5px;'>14</td><td style='border:1px solid #ddd; padding:5px;'>6</td></tr></table><br /><br />Given these data, what is the interquartile range?",
+      "question": "The daily amount of coffee, in liters, dispensed by a machine located in an airport lobby is random variable X having a continuous uniform distribution over [7, 10]. Find the probability that on a given day the amount of coffee dispensed by this machine will be at most 8.8 liters.",
       "image": null,
       "options": [
-        "A. 14",
-        "B. 3",
-        "C. 4",
-        "D. 7",
+        "A. 0.4",
+        "B. 0.9",
+        "C. 0.5",
+        "D. 0.6",
         "E. None of the other choices is correct"
       ],
-      "correctAnswer": "B",
-      "explanation": "<b>Bước 1:</b> Sắp xếp 20 giá trị theo thứ tự tăng dần:<br />0, 2, 3, 4, 4, 4, 4, 5, 5, 6, 6, 6, 7, 7, 7, 7, 9, 9, 10, 14.<br /><br /><b>Bước 2:</b> Tìm các tứ phân vị:<br />- <b>\\( Q_1 \\)</b> (Trung vị của 10 số đầu): Nằm giữa số thứ 5 và thứ 6 \\( \\rightarrow \\frac{4 + 4}{2} = 4 \\).<br />- <b>\\( Q_3 \\)</b> (Trung vị của 10 số cuối): Nằm giữa số thứ 15 và thứ 16 \\( \\rightarrow \\frac{7 + 7}{2} = 7 \\).<br /><br /><b>Bước 3:</b> Tính khoảng tứ phân vị (IQR):<br />\\[ IQR = Q_3 - Q_1 = 7 - 4 = 3 \\]<br /><br />Vậy đáp án đúng là 3.",
-      "difficulty": "medium",
-      "topic": "Interquartile Range",
+      "correctAnswer": "D",
+      "explanation": "<b>Bước 1: Phân tích khoảng giá trị</b><br />Biến ngẫu nhiên X phân phối đều trên khoảng \\( [7, 10] \\).<br />Tổng độ dài khoảng là \\( 10 - 7 = 3 \\).<br /><br /><b>Bước 2: Tính xác suất</b><br />Cụm từ \"at most 8.8 liters\" (tối đa 8.8 lít) tương đương với việc tìm xác suất \\( X \\le 8.8 \\), tức là X nằm trong đoạn từ 7 đến 8.8.<br />\\[ P(X \\le 8.8) = \\frac{8.8 - 7}{10 - 7} = \\frac{1.8}{3} = 0.6 \\]",
+      "difficulty": "easy",
+      "topic": "Uniform Distribution",
       "hints": [
-        "Viết tất cả các số ra nháp theo thứ tự từ bé đến lớn trước khi chia nửa dữ liệu.",
-        "IQR = Q3 - Q1."
+        "\"At most 8.8\" có nghĩa là giá trị nhỏ hơn hoặc bằng 8.8.",
+        "Khoảng cần tính là từ cận dưới cùng (7) đến 8.8."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 43,
-      "question": "The test scores of 40 students are listed below. Draw a boxplot for the data set.<br /><br />25 35 43 44 47 48 54 55 56 57<br />59 62 63 65 66 68 69 69 71 72<br />72 73 74 76 77 77 78 79 80 81<br />81 82 83 85 89 92 93 94 97 98<br /><br />Based on the image, choose the correct boxplot.",
-      "image": "/data/image_exam/de30cau43.png",
+      "question": "An airline knows from experience that the distribution of the number of suitcases that get lost each week on a certain route is approximately normal with \\( \\mu = 15.5 \\) and \\( \\sigma = 3.6 \\). What is the probability that during a given week the airline will lose less than 20 suitcases?<br /><br />Let \\( P(Z < -1.25) = 0.1056 \\), \\( P(Z < -0.37) = 0.3944 \\), \\( P(Z < -0.24) = 0.4040 \\)",
+      "image": null,
       "options": [
-        "A. (i)",
-        "B. (ii)",
-        "C. (iii)",
-        "D. (iv)"
+        "A. 0.3944",
+        "B. 0.8944",
+        "C. 0.1056",
+        "D. 0.4040",
+        "E. None of the other choices is correct"
       ],
       "correctAnswer": "B",
-      "explanation": "Tập dữ liệu gồm \\( n = 40 \\) giá trị đã được sắp xếp sẵn.<br /><br /><b>Bước 1:</b> Tìm 5 giá trị đặc trưng:<br />- <b>Min:</b> 25<br />- <b>Max:</b> 98<br />- <b>Trung vị (\\( Q_2 \\)):</b> Nằm giữa giá trị thứ 20 (72) và 21 (72) \\( \\rightarrow Q_2 = 72 \\).<br />- <b>\\( Q_1 \\):</b> Trung vị của 20 giá trị đầu, nằm giữa giá trị thứ 10 (57) và 11 (59) \\( \\rightarrow \\frac{57 + 59}{2} = 58 \\).<br />- <b>\\( Q_3 \\):</b> Trung vị của 20 giá trị cuối, nằm giữa giá trị thứ 30 (81) và 31 (81) \\( \\rightarrow Q_3 = 81 \\).<br /><br /><b>Kết luận:</b> Biểu đồ (ii) có chính xác các mốc: 25, 58, 72, 81, 98.",
+      "explanation": "<b>Bước 1: Chuẩn hóa biến ngẫu nhiên (Tính điểm Z)</b><br />Phân phối chuẩn có trung bình \\( \\mu = 15.5 \\) và độ lệch chuẩn \\( \\sigma = 3.6 \\).<br />Để tìm \\( P(X < 20) \\), ta quy đổi \\( X = 20 \\) sang điểm Z:<br />\\[ Z = \\frac{X - \\mu}{\\sigma} = \\frac{20 - 15.5}{3.6} = \\frac{4.5}{3.6} = 1.25 \\]<br /><br /><b>Bước 2: Sử dụng tính chất đối xứng để tìm xác suất</b><br />Ta cần tính \\( P(Z < 1.25) \\). Đề bài không cho trực tiếp mà lại cho \\( P(Z < -1.25) = 0.1056 \\).<br />Do đồ thị phân phối chuẩn đối xứng qua gốc tọa độ \\( Z = 0 \\), ta có tính chất:<br />\\[ P(Z < 1.25) = 1 - P(Z < -1.25) \\]<br />\\[ P(Z < 1.25) = 1 - 0.1056 = 0.8944 \\]",
       "difficulty": "medium",
-      "topic": "Boxplots",
+      "topic": "Normal Distribution",
       "hints": [
-        "Dữ liệu đã được sắp xếp sẵn, mỗi hàng có 10 số giúp bạn dễ dàng đếm và tìm vị trí của Q1, Q2, Q3."
+        "Đổi giá trị thực tế X = 20 sang điểm chuẩn Z bằng công thức \\( Z = (X - \\mu) / \\sigma \\).",
+        "Nếu bảng chỉ cho Z âm, hãy dùng tính chất đối xứng: \\( P(Z < a) = 1 - P(Z < -a) \\)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 44,
-      "question": "A large retail company gives an employment screening test to all prospective employees. If a prospective employee receives a report saying that she scored at the 2nd quartile, then which of the following statements are correct?<br /><br />(i) she scored at the 50th percentile.<br />(ii) she scored at the median.",
+      "question": "In 2005, the property crime rates (per 100,000 residents) for the 50 states and the District of Columbia had a mean of 3377.2 and a standard deviation of 847.4. Assuming the distribution of property crime rates is normal, what percentage of the states had property crime rates between 2360 and 4055?<br /><br />Let \\( P(Z < 0.8) = 0.79 \\), \\( P(Z < 1.8) = 0.96 \\), \\( P(Z < -1.2) = 0.12 \\).",
       "image": null,
       "options": [
-        "A. (i)",
-        "B. (ii)",
-        "C. Both (i) and (ii)",
-        "D. None of the other choices is correct"
+        "A. 0.67",
+        "B. 0.96",
+        "C. 0.84",
+        "D. 0.17",
+        "E. None of the other choices is correct"
       ],
-      "correctAnswer": "C",
-      "explanation": "Trong thống kê, <b>tứ phân vị thứ hai (2nd quartile - \\( Q_2 \\))</b> chia tập dữ liệu thành hai phần bằng nhau. Do đó:<br /><br />1. Nó hoàn toàn tương đương với <b>trung vị (median)</b> của tập dữ liệu.<br />2. Nó cũng tương đương với <b>bách phân vị thứ 50 (50th percentile)</b>, nghĩa là có 50% dữ liệu nằm dưới hoặc bằng giá trị này.<br /><br />Vì vậy, cả hai phát biểu (i) và (ii) đều chính xác về mặt toán học.",
-      "difficulty": "easy",
-      "topic": "Percentiles and Quartiles",
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Tính các điểm Z tương ứng cho 2 cận</b><br />Ta có \\( \\mu = 3377.2 \\) và \\( \\sigma = 847.4 \\).<br />Với cận dưới \\( X_1 = 2360 \\):<br />\\[ Z_1 = \\frac{2360 - 3377.2}{847.4} = \\frac{-1017.2}{847.4} = -1.2 \\]<br />Với cận trên \\( X_2 = 4055 \\):<br />\\[ Z_2 = \\frac{4055 - 3377.2}{847.4} = \\frac{677.8}{847.4} = 0.8 \\]<br /><br /><b>Bước 2: Tính phần trăm (xác suất nằm giữa hai điểm)</b><br />Ta cần tính \\( P(-1.2 < Z < 0.8) \\).<br />Sử dụng công thức cho khoảng xác suất:<br />\\[ P(a < Z < b) = P(Z < b) - P(Z < a) \\]<br />\\[ P(-1.2 < Z < 0.8) = P(Z < 0.8) - P(Z < -1.2) \\]<br />Thay các giá trị đề bài cho sẵn vào:<br />\\[ P(-1.2 < Z < 0.8) = 0.79 - 0.12 = 0.67 \\]<br />Vậy có 67% số bang thỏa mãn điều kiện.",
+      "difficulty": "medium",
+      "topic": "Normal Distribution",
       "hints": [
-        "Hãy nhớ lại mối quan hệ tương đương giữa Median, Q2 và P50."
+        "Tính 2 giá trị Z tương ứng với 2 mốc 2360 và 4055.",
+        "Để tìm xác suất ở giữa 2 khoảng, hãy lấy Xác suất của cận lớn trừ đi Xác suất của cận bé."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 45,
-      "question": "The box plot below is constructed from a given data set:<br /><br />How many of the following statements are correct?<br />i) About 25% of the data lies above 15.<br />ii) The number 18 must be in the data set.<br />iii) The number 20 must be in the data set.",
-      "image": "/data/image_exam/de30cau45.png",
+      "question": "For a standard normal distribution Z, find the percentage of data that are less than 2 standard deviations below the mean or more than 3 standard deviations above the mean.<br /><br />Let \\( P(Z < 1) = 0.8413 \\), \\( P(Z < -2) = 0.0228 \\) and \\( P(Z < 3) = 0.9987 \\).",
+      "image": null,
       "options": [
-        "A. 0",
-        "B. 1",
-        "C. 2",
-        "D. 3"
+        "A. 2.41%",
+        "B. 0.26%",
+        "C. 97.59%",
+        "D. 4.56%",
+        "E. None of the other choices is correct"
       ],
       "correctAnswer": "A",
-      "explanation": "Phân tích từng phát biểu dựa trên biểu đồ hộp (có Min=10, \\( Q_1 \\)=15, Median=18, \\( Q_3 \\)=20, Max=22):<br /><br />- <b>Phát biểu (i) sai:</b> 15 là \\( Q_1 \\) (tứ phân vị thứ nhất). Về mặt lý thuyết, khoảng 75% dữ liệu lớn hơn hoặc bằng \\( Q_1 \\), chứ không phải 25%. (25% là lượng dữ liệu nằm <i>dưới</i> 15).<br />- <b>Phát biểu (ii) sai:</b> 18 là trung vị. Nếu số lượng dữ liệu là chẵn, trung vị là trung bình cộng của 2 số ở giữa. Do đó, bản thân số 18 không bắt buộc phải có mặt trong tập dữ liệu thực tế.<br />- <b>Phát biểu (iii) sai:</b> Tương tự như trung vị, các tứ phân vị (\\( Q_1 \\), \\( Q_3 \\)) có thể được tính bằng cách lấy trung bình cộng của hai giá trị, nên số 20 cũng không bắt buộc phải có mặt trong tập dữ liệu.<br /><br /><b>Kết luận:</b> Không có phát biểu nào đúng (0 phát biểu đúng).",
-      "difficulty": "hard",
-      "topic": "Interpreting Boxplots",
+      "explanation": "<b>Bước 1: Phân tích cụm từ sang ký hiệu toán học</b><br />- \"Less than 2 standard deviations below the mean\": Dịch là nhỏ hơn giá trị nằm dưới trung bình 2 độ lệch chuẩn, tức là \\( Z < -2 \\).<br />- \"More than 3 standard deviations above the mean\": Dịch là lớn hơn giá trị nằm trên trung bình 3 độ lệch chuẩn, tức là \\( Z > 3 \\).<br />- Từ \"or\" (hoặc) chỉ ra rằng ta cần cộng hai phần xác suất này lại: \\( P(Z < -2) + P(Z > 3) \\).<br /><br /><b>Bước 2: Tính toán các xác suất thành phần</b><br />Đề bài đã cho trực tiếp \\( P(Z < -2) = 0.0228 \\).<br />Để tính \\( P(Z > 3) \\), ta dùng quy tắc phần bù (lấy tổng xác suất là 1 trừ đi phần không thỏa mãn):<br />\\[ P(Z > 3) = 1 - P(Z < 3) \\]<br />\\[ P(Z > 3) = 1 - 0.9987 = 0.0013 \\]<br /><br /><b>Bước 3: Tổng hợp kết quả</b><br />Tổng xác suất hai đuôi = \\( 0.0228 + 0.0013 = 0.0241 \\).<br />Chuyển sang phần trăm là 2.41%.",
+      "difficulty": "medium",
+      "topic": "Standard Normal Distribution",
       "hints": [
-        "Hãy nhớ rằng tứ phân vị và trung vị đôi khi chỉ là kết quả của phép chia trung bình cộng, do đó chúng không nhất thiết phải là một con số thực tế có trong tập dữ liệu ban đầu.",
-        "Q1 chia 25% dữ liệu bên dưới và 75% dữ liệu bên trên nó."
+        "Vì đây là phân phối chuẩn tắc (Z), \"2 độ lệch chuẩn dưới trung bình\" chính là Z = -2.",
+        "Để tìm diện tích phần đuôi bên phải \\( P(Z > 3) \\), hãy lấy 1 trừ đi phần diện tích bên trái \\( P(Z < 3) \\)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 46,
-      "question": "The box plot below is constructed from a given data set:<br /><br />How many of the following statements are correct?<br />i) About 25% of the data lies above 20.<br />ii) The IQR is 12.<br />iii) The median is 15.",
-      "image": "/data/image_exam/de30cau46.png",
+      "question": "The life of a semiconductor laser at a constant power is normally distributed with a mean of 7000 hours and a standard deviation of 600 hours. What is the life in hours that 90% of the lasers exceed?<br /><br />Let \\( P(Z < 1.28) = 0.9 \\).",
+      "image": null,
       "options": [
-        "A. 0",
-        "B. 1",
-        "C. 2",
-        "D. 3"
+        "A. 7540",
+        "B. 6460",
+        "C. 6232",
+        "D. 7768",
+        "E. None of the other choices is correct"
       ],
-      "correctAnswer": "B",
-      "explanation": "Dựa vào biểu đồ hộp, ta có các thông số: Min = 10, \\( Q_1 \\) = 15, Median = 18, \\( Q_3 \\) = 20, Max = 22.<br /><br />Phân tích từng phát biểu:<br />- <b>Phát biểu (i) đúng:</b> 20 chính là tứ phân vị thứ ba (\\( Q_3 \\)). Theo định nghĩa, có khoảng 25% dữ liệu nằm trên \\( Q_3 \\).<br />- <b>Phát biểu (ii) sai:</b> Khoảng tứ phân vị \\( IQR = Q_3 - Q_1 = 20 - 15 = 5 \\) (chứ không phải 12).<br />- <b>Phát biểu (iii) sai:</b> Trung vị (Median) được biểu diễn bằng đường thẳng đứng bên trong hộp, ở đây là 18 (15 là \\( Q_1 \\)).<br /><br /><b>Kết luận:</b> Chỉ có 1 phát biểu đúng (phát biểu i).",
-      "difficulty": "medium",
-      "topic": "Interpreting Boxplots",
+      "correctAnswer": "C",
+      "explanation": "<b>Bước 1: Phân tích yêu cầu</b><br />Đề bài yêu cầu tìm tuổi thọ \\( x \\) sao cho 90% số tia laser có tuổi thọ lớn hơn mức này. Nghĩa là:<br />\\[ P(X > x) = 0.90 \\]<br />Điều này tương đương với phần diện tích bên trái (nhỏ hơn \\( x \\)) là 10%:<br />\\[ P(X < x) = 0.10 \\]<br /><br /><b>Bước 2: Tìm giá trị Z</b><br />Đề bài cho \\( P(Z < 1.28) = 0.90 \\).<br />Do tính chất đối xứng của phân phối chuẩn, nếu phần diện tích bên trái của \\( Z = 1.28 \\) là 0.90, thì phần diện tích bên trái của \\( Z = -1.28 \\) sẽ là 0.10.<br />Suy ra: \\( Z = -1.28 \\).<br /><br /><b>Bước 3: Giải ngược tìm x</b><br />Áp dụng công thức chuẩn hóa \\( Z = \\frac{x - \\mu}{\\sigma} \\):<br />\\[ x = \\mu + Z \\cdot \\sigma \\]<br />\\[ x = 7000 + (-1.28) \\cdot 600 \\]<br />\\[ x = 7000 - 768 = 6232 \\]",
+      "difficulty": "hard",
+      "topic": "Normal Distribution",
       "hints": [
-        "Nhìn kỹ đường thẳng chia bên trong hộp để tìm trung vị.",
-        "Q3 chia tập dữ liệu sao cho 75% nằm dưới và 25% nằm trên."
+        "\"90% exceed\" nghĩa là \\( P(X > x) = 0.9 \\), suy ra \\( P(X < x) = 0.1 \\).",
+        "Sử dụng tính chất đối xứng: Nếu \\( P(Z < 1.28) = 0.9 \\) thì \\( P(Z < -1.28) = 0.1 \\)."
       ],
       "type": "multiple_choice"
     },
     {
       "id": 47,
-      "question": "The box plot below is constructed from a given data set:<br /><br />How many of the following statements are correct?<br />i) About 50% of the data lies above 15.<br />ii) The IQR is 15.<br />iii) The number 10 must be in the data set.",
-      "image": "/data/image_exam/de30cau47.png",
+      "question": "The systolic blood pressure of 18-year-old women is normally distributed with a mean of 120 mmHg and a standard deviation of 12 mmHg. What percentage of 18-year-old women have a systolic blood pressure between 96 mmHg and 144 mmHg?<br /><br />Let \\( P(Z < -2) = 0.025 \\) and \\( P(Z < 0) = 0.5 \\).",
+      "image": null,
       "options": [
-        "A. 0",
-        "B. 1",
-        "C. 2",
-        "D. 3"
+        "A. 68%",
+        "B. 95%",
+        "C. 99.7%",
+        "D. 99.99%",
+        "E. None of the other choices is correct"
       ],
       "correctAnswer": "B",
-      "explanation": "Sử dụng lại các thông số từ biểu đồ: Min = 10, \\( Q_1 \\) = 15, Median = 18, \\( Q_3 \\) = 20, Max = 22.<br /><br />Phân tích từng phát biểu:<br />- <b>Phát biểu (i) sai:</b> 15 là \\( Q_1 \\). Khoảng 75% dữ liệu nằm trên \\( Q_1 \\) (để có 50% dữ liệu nằm trên thì mốc đó phải là trung vị 18).<br />- <b>Phát biểu (ii) sai:</b> Khoảng tứ phân vị \\( IQR = Q_3 - Q_1 = 20 - 15 = 5 \\) (không phải 15).<br />- <b>Phát biểu (iii) đúng:</b> 10 là giá trị nhỏ nhất (Min) của tập dữ liệu. Khác với trung vị hay các tứ phân vị (có thể là kết quả của phép trung bình cộng), giá trị Min và Max luôn phải là một quan sát thực tế có mặt trong tập dữ liệu ban đầu.<br /><br /><b>Kết luận:</b> Chỉ có 1 phát biểu đúng (phát biểu iii).",
+      "explanation": "<b>Bước 1: Chuyển đổi sang điểm Z</b><br />Ta có \\( \\mu = 120 \\) và \\( \\sigma = 12 \\).<br />- Với cận dưới \\( x_1 = 96 \\):<br />\\[ Z_1 = \\frac{96 - 120}{12} = \\frac{-24}{12} = -2 \\]<br />- Với cận trên \\( x_2 = 144 \\):<br />\\[ Z_2 = \\frac{144 - 120}{12} = \\frac{24}{12} = 2 \\]<br /><br /><b>Bước 2: Tính xác suất nằm trong khoảng</b><br />Ta cần tính \\( P(-2 < Z < 2) = P(Z < 2) - P(Z < -2) \\).<br />Dựa vào tính đối xứng của phân phối chuẩn, ta biết \\( P(Z < 2) = 1 - P(Z < -2) \\).<br />Theo đề bài \\( P(Z < -2) = 0.025 \\), suy ra:<br />\\[ P(Z < 2) = 1 - 0.025 = 0.975 \\]<br /><br /><b>Bước 3: Hoàn thành phép tính</b><br />\\[ P(-2 < Z < 2) = 0.975 - 0.025 = 0.950 \\]<br />Kết quả là 0.95, tương đương 95%. *(Đây cũng chính là quy tắc thực nghiệm 68-95-99.7 đối với 2 độ lệch chuẩn).* ",
       "difficulty": "medium",
-      "topic": "Interpreting Boxplots",
+      "topic": "Normal Distribution",
       "hints": [
-        "Giá trị nhỏ nhất (Min) và lớn nhất (Max) luôn là các giá trị cụ thể có tồn tại trong mẫu dữ liệu.",
-        "Nhớ lại Q1 chia dữ liệu thành 25% bên dưới và 75% bên trên."
+        "Khoảng từ 96 đến 144 tương ứng với khoảng từ \\( \\mu - 2\\sigma \\) đến \\( \\mu + 2\\sigma \\).",
+        "Áp dụng quy tắc tính xác suất: \\( P(-2 < Z < 2) = P(Z < 2) - P(Z < -2) \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 48,
+      "question": "The volumes of soda in quart soda bottles are normally distributed with a mean of 32.3 oz and a standard deviation of 1.2 oz. What is the probability that the volume of soda in a randomly selected bottle will be less than 32 oz?<br /><br />Let \\( P(Z < -0.3) = 0.3821 \\), \\( P(Z < -0.25) = 0.4013 \\), \\( P(Z < 0.6) = 0.5987 \\) and \\( P(Z < 0.85) = 0.8026 \\).",
+      "image": null,
+      "options": [
+        "A. 0.4013",
+        "B. 0.8026",
+        "C. 0.3821",
+        "D. 0.5987",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Tính điểm chuẩn Z</b><br />Bài toán yêu cầu tính \\( P(X < 32) \\).<br />Sử dụng công thức chuẩn hóa \\( Z = \\frac{X - \\mu}{\\sigma} \\):<br />\\[ Z = \\frac{32 - 32.3}{1.2} = \\frac{-0.3}{1.2} \\]<br />\\[ Z = -\\frac{1}{4} = -0.25 \\]<br /><br /><b>Bước 2: Tìm xác suất từ dữ kiện</b><br />Ta cần tìm \\( P(Z < -0.25) \\).<br />Nhìn vào các dữ kiện mà đề bài đã cung cấp:<br />\\[ P(Z < -0.25) = 0.4013 \\]<br />Vậy xác suất cần tìm là 0.4013.",
+      "difficulty": "easy",
+      "topic": "Normal Distribution",
+      "hints": [
+        "Tính giá trị Z cho X = 32.",
+        "So sánh giá trị Z vừa tìm được với các dữ kiện trong đề bài để chọn kết quả."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 49,
+      "question": "At one college, GPAs are normally distributed with a mean of 2.6 and a standard deviation of 0.4. What percentage of students at the college have a GPA between 2.2 and 3?<br /><br />Let \\( P(Z < -1) = 0.1613 \\), \\( P(Z < 0) = 0.5 \\), \\( P(Z < 1) = 0.8413 \\) and \\( P(Z < 2) = 0.977 \\).",
+      "image": null,
+      "options": [
+        "A. 68%",
+        "B. 84.13%",
+        "C. 99.7%",
+        "D. 89%",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Chuyển đổi các mốc GPA sang điểm Z</b><br />Với \\( \\mu = 2.6 \\) và \\( \\sigma = 0.4 \\):<br />- Cận dưới \\( X = 2.2 \\):<br />\\[ Z_1 = \\frac{2.2 - 2.6}{0.4} = \\frac{-0.4}{0.4} = -1 \\]<br />- Cận trên \\( X = 3.0 \\):<br />\\[ Z_2 = \\frac{3.0 - 2.6}{0.4} = \\frac{0.4}{0.4} = 1 \\]<br /><br /><b>Bước 2: Tính xác suất</b><br />Ta cần tìm phần trăm tương ứng với \\( P(-1 < Z < 1) \\).<br />\\[ P(-1 < Z < 1) = P(Z < 1) - P(Z < -1) \\]<br />Lấy các giá trị đã cho trong đề bài thay vào:<br />\\[ P(-1 < Z < 1) = 0.8413 - 0.1613 = 0.6800 \\]<br /><br /><b>Kết luận:</b> Xác suất là 0.68, tức là 68% số sinh viên có GPA nằm trong khoảng này.",
+      "difficulty": "easy",
+      "topic": "Normal Distribution",
+      "hints": [
+        "Tìm z-score cho 2.2 và 3.",
+        "Lấy phần diện tích bên trái của Z = 1 trừ đi phần diện tích bên trái của Z = -1."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 50,
+      "question": "The life of a semiconductor laser at a constant power is normally distributed with a mean of 7000 hours and a standard deviation of 600 hours. What is the life in hours that 90% of the lasers exceed?<br /><br />Let \\( P(Z < 1.28) = 0.9 \\).",
+      "image": null,
+      "options": [
+        "A. 7540",
+        "B. 6460",
+        "C. 6232",
+        "D. 7768",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Bước 1: Phân tích bài toán</b><br />Gọi X là biến ngẫu nhiên chỉ tuổi thọ của laser. Đề yêu cầu tìm mức tuổi thọ \\( x \\) sao cho 90% số tia laser vượt qua mức này, tức là phần đuôi bên phải: \\( P(X > x) = 0.9 \\).<br />Điều này có nghĩa là phần đuôi bên trái (số laser chết trước mức \\( x \\)) chiếm 10%: \\( P(X < x) = 0.1 \\).<br /><br /><b>Bước 2: Sử dụng bảng phân phối chuẩn</b><br />Đề bài cho biết \\( P(Z < 1.28) = 0.9 \\).<br />Do phân phối chuẩn có tính đối xứng qua trục Z = 0, nên nếu phần diện tích bên trái tại Z = 1.28 là 90%, thì phần diện tích bên trái tại Z = -1.28 sẽ là 10%.<br />Nghĩa là điểm \\( Z \\) chúng ta cần tìm là \\( -1.28 \\).<br /><br /><b>Bước 3: Chuyển ngược từ Z về giá trị X</b><br />Công thức: \\( X = \\mu + Z \\cdot \\sigma \\)<br />\\[ x = 7000 + (-1.28)(600) \\]<br />\\[ x = 7000 - 768 = 6232 \\]<br />Vậy mức tuổi thọ cần tìm là 6232 giờ.",
+      "difficulty": "hard",
+      "topic": "Normal Distribution",
+      "hints": [
+        "Lưu ý: Câu hỏi này hoàn toàn giống với câu ID 46.",
+        "Chỉ cần nhớ công thức giải ngược từ điểm Z về X: \\( X = \\mu + Z \\cdot \\sigma \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 51,
+      "question": "Based upon past experience, 40% of all customers at Miller's Automotive Service Station pay for their purchases with a credit card. If a random sample of 200 customers is selected, what is the approximate probability that at least 75 customers pay with a credit card?<br /><br />Let \\( P(Z < -0.79) = 0.215 \\); \\( P(Z < -0.65) = 0.258 \\)",
+      "image": null,
+      "options": [
+        "A. 0.785",
+        "B. 0.742",
+        "C. 0.043",
+        "D. 0.145"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Tính các tham số của phân phối nhị thức</b><br />Gọi X là số khách hàng trả bằng thẻ tín dụng. X tuân theo phân phối nhị thức với \\( n = 200 \\) và \\( p = 0.40 \\).<br />Kỳ vọng: \\( \\mu = np = 200 \\cdot 0.40 = 80 \\).<br />Độ lệch chuẩn: \\( \\sigma = \\sqrt{npq} = \\sqrt{200 \\cdot 0.40 \\cdot 0.60} = \\sqrt{48} \\approx 6.9282 \\).<br /><br /><b>Bước 2: Dùng phân phối chuẩn để xấp xỉ và hiệu chỉnh liên tục (Continuity Correction)</b><br />Đề yêu cầu tính xác suất \"at least 75\" (ít nhất 75), tức là \\( P(X \\ge 75) \\).<br />Khi xấp xỉ sang phân phối chuẩn, ta mở rộng khoảng thêm 0.5: \\( P(X > 74.5) \\).<br /><br /><b>Bước 3: Tính điểm Z và xác suất</b><br />\\( Z = \\frac{74.5 - 80}{6.9282} = \\frac{-5.5}{6.9282} \\approx -0.7938 \\approx -0.79 \\).<br />Xác suất cần tính: \\( P(Z > -0.79) = 1 - P(Z < -0.79) \\).<br />\\( P(Z > -0.79) = 1 - 0.215 = 0.785 \\).",
+      "difficulty": "hard",
+      "topic": "Normal Approximation to Binomial",
+      "hints": [
+        "Đây là bài toán xấp xỉ phân phối nhị thức bằng phân phối chuẩn. Hãy tính \\( \\mu = np \\) và \\( \\sigma = \\sqrt{np(1-p)} \\).",
+        "Đừng quên hiệu chỉnh liên tục (continuity correction): \"ít nhất 75\" sẽ trở thành \\( X > 74.5 \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 52,
+      "question": "At a computer manufacturing company, the actual size of computer chips is normally distributed with a mean of 1 centimeter and a standard deviation of 0.1 centimeter. A random sample of 12 computer chips is taken. Above what value do 2.5% of the sample means fall?<br /><br />Let \\( P(Z < -1.959) = 0.025 \\), \\( P(Z < 1.002) = 0.842 \\), \\( P(Z < 1.957) = 0.975 \\) and \\( P(Z < 1.529) = 0.937 \\).",
+      "image": null,
+      "options": [
+        "A. 0.994",
+        "B. 1.002",
+        "C. 1.057",
+        "D. 1.529",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Bước 1: Tính Sai số chuẩn (Standard Error) của trung bình mẫu</b><br />Vì bài toán xét trung bình của một mẫu gồm 12 chip, ta phải chia độ lệch chuẩn cho căn bậc hai của cỡ mẫu \\( n \\):<br />\\( SE = \\frac{\\sigma}{\\sqrt{n}} = \\frac{0.1}{\\sqrt{12}} \\approx 0.028867 \\).<br /><br /><b>Bước 2: Xác định điểm Z</b><br />Đề bài hỏi mức giá trị mà chỉ có 2.5% trung bình mẫu vượt qua nó, tức là phần diện tích đuôi bên phải bằng 0.025. Nghĩa là phần diện tích bên trái là 0.975.<br />Theo dữ kiện, nếu \\( P(Z < -1.959) = 0.025 \\) thì do tính đối xứng, \\( Z = 1.959 \\) sẽ có phần diện tích bên trái là 0.975.<br /><br /><b>Bước 3: Tính giá trị x</b><br />Áp dụng công thức: \\( \\bar{x} = \\mu + Z \\cdot SE \\)<br />\\( \\bar{x} = 1 + 1.959 \\cdot 0.028867 \\approx 1 + 0.05655 = 1.05655 \\approx 1.057 \\).",
+      "difficulty": "hard",
+      "topic": "Sampling Distribution of Sample Mean",
+      "hints": [
+        "Lưu ý từ khóa \"sample means\" (trung bình mẫu). Phải chia độ lệch chuẩn \\( \\sigma \\) cho căn bậc hai của cỡ mẫu \\( n \\).",
+        "Nếu 2.5% nằm bên phải thì tức là 97.5% nằm bên trái, tương đương với Z = 1.959."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 53,
+      "question": "The diameter of ball bearings produced in a manufacturing process can be explained using a uniform distribution over the interval 4.5 to 6.5 millimeters. What is the probability that a randomly selected ball bearing has a diameter greater than 5.2 millimeters?",
+      "image": null,
+      "options": [
+        "A. 0.47",
+        "B. 0.82",
+        "C. 0.65",
+        "D. 2.5",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Bước 1: Xác định khoảng phân phối</b><br />Đại lượng tuân theo phân phối đều trên đoạn \\( [4.5, 6.5] \\).<br />Tổng chiều dài của khoảng phân phối là: \\( 6.5 - 4.5 = 2.0 \\).<br /><br /><b>Bước 2: Tính xác suất</b><br />Xác suất đường kính lớn hơn 5.2 mm, tức là rơi vào đoạn từ 5.2 đến cận trên 6.5, bằng:<br />\\[ P(X > 5.2) = \\frac{6.5 - 5.2}{6.5 - 4.5} = \\frac{1.3}{2.0} = 0.65 \\]",
+      "difficulty": "easy",
+      "topic": "Uniform Distribution",
+      "hints": [
+        "Tính chiều dài đoạn từ 5.2 đến giới hạn trên là 6.5.",
+        "Chia kết quả cho tổng chiều dài đoạn phân phối ban đầu."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 54,
+      "question": "If a random variable has the normal distribution with \\( \\mu = 30 \\) and \\( \\sigma = 5 \\), find the probability that it will take on the value between 31 and 35.<br /><br />Let \\( P(Z < 0) = 0.5 \\), \\( P(Z < 0.2) = 0.579 \\), \\( P(Z < 1) = 0.841 \\) and \\( P(Z < 2) = 0.977 \\).",
+      "image": null,
+      "options": [
+        "A. 0.262",
+        "B. 0.7624",
+        "C. 0.3621",
+        "D. 0.3122",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Quy đổi hai cận sang điểm Z</b><br />Trung bình \\( \\mu = 30 \\), độ lệch chuẩn \\( \\sigma = 5 \\).<br />- Tại \\( x_1 = 31 \\): \\( Z_1 = \\frac{31 - 30}{5} = \\frac{1}{5} = 0.2 \\).<br />- Tại \\( x_2 = 35 \\): \\( Z_2 = \\frac{35 - 30}{5} = \\frac{5}{5} = 1.0 \\).<br /><br /><b>Bước 2: Tính xác suất trong khoảng</b><br />Ta cần tính \\( P(0.2 < Z < 1) = P(Z < 1) - P(Z < 0.2) \\).<br />Lấy các giá trị đã cho trong đề bài thay vào:<br />\\[ P(0.2 < Z < 1) = 0.841 - 0.579 = 0.262 \\]",
+      "difficulty": "easy",
+      "topic": "Normal Distribution",
+      "hints": [
+        "Chuyển cả 2 giá trị 31 và 35 sang điểm Z tương ứng.",
+        "Lấy phần diện tích của Z lớn trừ đi phần diện tích của Z nhỏ."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 55,
+      "question": "A normal distribution has mean \\( \\mu = 60 \\) and standard deviation \\( \\sigma = 6 \\), find the area under the curve to the right of 64.<br /><br />Let \\( P(Z < 0.57) = 0.7157 \\) and \\( P(Z < 0.67) = 0.7486 \\).",
+      "image": null,
+      "options": [
+        "A. 0.2843",
+        "B. 0.7486",
+        "C. 0.7157",
+        "D. 0.2514",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Bước 1: Tính điểm Z</b><br />Giá trị cần tính là diện tích bên phải 64, tức là \\( P(X > 64) \\).<br />Chuyển sang điểm chuẩn Z:<br />\\[ Z = \\frac{64 - 60}{6} = \\frac{4}{6} \\approx 0.6667 \\approx 0.67 \\]<br /><br /><b>Bước 2: Tính xác suất phần đuôi bên phải</b><br />Diện tích bên phải đường cong bằng 1 trừ đi phần diện tích bên trái:<br />\\[ P(Z > 0.67) = 1 - P(Z < 0.67) \\]<br />Thay giá trị đề bài đã cho vào:<br />\\[ P(Z > 0.67) = 1 - 0.7486 = 0.2514 \\]",
+      "difficulty": "easy",
+      "topic": "Normal Distribution",
+      "hints": [
+        "Tính z-score cho giá trị 64.",
+        "Đề yêu cầu tính phần diện tích 'to the right' (bên phải), nên ta lấy 1 trừ đi giá trị tra bảng."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 56,
+      "question": "Suppose that X is a binomial random variable with n = 200 and p = 0.4. Use normal distribution to approximate the probability that X is less than or equal to 90.<br /><br />Let \\( P(Z < 1.52) = 0.936 \\); \\( P(Z < 1.66) = 0.952 \\)",
+      "image": null,
+      "options": [
+        "A. 0.936",
+        "B. 0.064",
+        "C. 0.952",
+        "D. 0.048"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Tính các tham số của phân phối nhị thức</b><br />Kỳ vọng: \\( \\mu = np = 200 \\cdot 0.4 = 80 \\).<br />Độ lệch chuẩn: \\( \\sigma = \\sqrt{np(1-p)} = \\sqrt{200 \\cdot 0.4 \\cdot 0.6} = \\sqrt{48} \\approx 6.9282 \\).<br /><br /><b>Bước 2: Xấp xỉ và hiệu chỉnh liên tục (Continuity Correction)</b><br />Xác suất \\( X \\le 90 \\) (less than or equal to 90).<br />Khi dùng phân phối chuẩn liên tục để xấp xỉ một biến rời rạc, ta cần bao trùm hết \"khối\" xác suất của số 90 bằng cách cộng thêm 0.5 vào cận trên: \\( P(X < 90.5) \\).<br /><br /><b>Bước 3: Tính điểm Z và xác suất</b><br />\\[ Z = \\frac{90.5 - 80}{6.9282} = \\frac{10.5}{6.9282} \\approx 1.5155 \\approx 1.52 \\]<br />Xác suất cần tìm: \\( P(Z < 1.52) = 0.936 \\).",
+      "difficulty": "medium",
+      "topic": "Normal Approximation to Binomial",
+      "hints": [
+        "Tính \\( \\mu = np \\) và \\( \\sigma = \\sqrt{npq} \\).",
+        "Đừng quên hiệu chỉnh liên tục: \\( X \\le 90 \\) sẽ chuyển thành \\( X < 90.5 \\) trước khi tính Z."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 57,
+      "question": "A certain baseball player hits a home run in 3% of his at-bats. Consider his at-bats as independent events. Use the normal approximation formula for Binomial distributions to find the probability that this baseball player hits more than 10 home runs in 600 at-bats.<br /><br />Let \\( P(Z < -1.795) = 0.0363 \\); \\( P(Z < -1.915) = 0.0277 \\)",
+      "image": null,
+      "options": [
+        "A. 0.9637",
+        "B. 0.0363",
+        "C. 0.9723",
+        "D. 0.0277",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Tính tham số</b><br />Số phép thử \\( n = 600 \\), xác suất thành công \\( p = 0.03 \\).<br />Kỳ vọng: \\( \\mu = np = 600 \\cdot 0.03 = 18 \\).<br />Độ lệch chuẩn: \\( \\sigma = \\sqrt{np(1-p)} = \\sqrt{18 \\cdot 0.97} = \\sqrt{17.46} \\approx 4.1785 \\).<br /><br /><b>Bước 2: Hiệu chỉnh liên tục</b><br />Tìm xác suất \"more than 10\" (lớn hơn 10), tức là \\( X \\ge 11 \\) (vì X rời rạc chỉ nhận số nguyên).<br />Khi chuyển sang khoảng liên tục, khối xác suất của số 11 bắt đầu từ 10.5. Vậy ta tính \\( P(X > 10.5) \\).<br /><br /><b>Bước 3: Tính điểm Z</b><br />\\[ Z = \\frac{10.5 - 18}{4.1785} = \\frac{-7.5}{4.1785} \\approx -1.7949 \\approx -1.795 \\]<br />\\[ P(Z > -1.795) = 1 - P(Z < -1.795) = 1 - 0.0363 = 0.9637 \\]",
+      "difficulty": "medium",
+      "topic": "Normal Approximation to Binomial",
+      "hints": [
+        "Lớn hơn 10 nghĩa là bắt đầu từ 11. Sau khi hiệu chỉnh liên tục, cận dưới là 10.5.",
+        "Tính giá trị Z cho 10.5 và lấy 1 trừ đi phần diện tích bên trái để ra phần diện tích đuôi bên phải."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 58,
+      "question": "If we are using the normal approximation to determine the probability of at most 28 successes in a binomial distribution \\( P(X \\le 28) \\) the normal distribution probability that is used to make the estimate is",
+      "image": null,
+      "options": [
+        "A. \\( P(X \\le 28.5) \\)",
+        "B. \\( P(X < 28) \\)",
+        "C. \\( P(X \\le 27.5) \\)",
+        "D. \\( P(X \\le 28) \\)",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Nguyên tắc Hiệu chỉnh liên tục (Continuity Correction):</b><br />Khi dùng phân phối chuẩn (liên tục) để xấp xỉ phân phối nhị thức (rời rạc), ta cần mở rộng khoảng giá trị ra mỗi bên 0.5 đơn vị để bao trùm hết \"khối histogram\" của số nguyên đó.<br /><br />- \"At most 28\" (Tối đa 28) nghĩa là ta muốn lấy tất cả các cột từ 28 trở xuống (\\( X \\le 28 \\)).<br />- Trên trục số liên tục, cột của giá trị 28 trải dài từ 27.5 đến 28.5.<br />- Do đó, để lấy toàn bộ cột 28, ta phải kéo dài cận trên tới tận cùng biên phải của nó, tức là 28.5.<br /><br />Kết quả xấp xỉ chính xác sẽ là \\( P(X \\le 28.5) \\).",
+      "difficulty": "easy",
+      "topic": "Continuity Correction",
+      "hints": [
+        "Để bao phủ được số 28 trên đồ thị liên tục, cận trên cần phải cộng thêm 0.5."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 59,
+      "question": "Suppose that X has a Poisson distribution with a mean of 64. Use normal distribution to approximate the probability \\( P(X > 72) \\).<br /><br />Let \\( P(Z < 1.06) = 0.8554 \\); \\( P(Z < 1.19) = 0.8830 \\)",
+      "image": null,
+      "options": [
+        "A. 0.1446",
+        "B. 0.8554",
+        "C. 0.8830",
+        "D. 0.1170"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Tính các tham số của phân phối Poisson</b><br />Đặc điểm của phân phối Poisson là Kỳ vọng (\\( \\mu \\)) và Phương sai (\\( \\sigma^2 \\)) đều bằng \\( \\lambda \\).<br />\\( \\mu = \\lambda = 64 \\).<br />\\( \\sigma = \\sqrt{\\lambda} = \\sqrt{64} = 8 \\).<br /><br /><b>Bước 2: Hiệu chỉnh liên tục</b><br />Xác suất \\( X > 72 \\) tức là lấy từ giá trị 73 trở đi (\\( X \\ge 73 \\)).<br />Khi chuyển sang phân phối liên tục, phần diện tích cho giá trị 73 bắt đầu từ 72.5. Vậy ta phải tính: \\( P(X > 72.5) \\).<br /><br /><b>Bước 3: Tính Z và kết quả</b><br />\\[ Z = \\frac{72.5 - 64}{8} = \\frac{8.5}{8} = 1.0625 \\approx 1.06 \\]<br />\\[ P(Z > 1.06) = 1 - P(Z < 1.06) = 1 - 0.8554 = 0.1446 \\]",
+      "difficulty": "medium",
+      "topic": "Normal Approximation to Poisson",
+      "hints": [
+        "Độ lệch chuẩn của phân phối Poisson bằng căn bậc hai của trung bình (căn 64 = 8).",
+        "Với \\( X > 72 \\), mức nhỏ nhất hợp lệ là 73. Do đó mốc hiệu chỉnh liên tục phải là 72.5."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 60,
+      "question": "Cars arrive at Kenny's Car Wash at a rate of 16 per hour. Use the normal formula for Poisson distributions to approximate the probability that in any given one-hour period, at least ten cars arriving.<br /><br />Let \\( P(Z < -1.12) = 0.1313 \\); \\( P(Z < -1.75) = 0.0400 \\).<br />Let \\( P(Z < -1.625) = 0.0521 \\); \\( P(Z < -1.750) = 0.0401 \\).",
+      "image": null,
+      "options": [
+        "A. 0.0521",
+        "B. 0.9599",
+        "C. 0.0401",
+        "D. 0.9479",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "D",
+      "explanation": "<b>Bước 1: Xác định tham số</b><br />Trung bình số xe đến là \\( \\lambda = 16 \\).<br />Kỳ vọng: \\( \\mu = 16 \\).<br />Độ lệch chuẩn: \\( \\sigma = \\sqrt{16} = 4 \\).<br /><br /><b>Bước 2: Hiệu chỉnh liên tục</b><br />\"At least 10\" (Ít nhất 10) nghĩa là lấy từ 10 trở lên (\\( X \\ge 10 \\)).<br />Trên đồ thị liên tục, khối đại diện cho số 10 sẽ bắt đầu từ 9.5. Do đó, để không bỏ sót, ta lấy cận dưới là 9.5: \\( P(X > 9.5) \\).<br /><br /><b>Bước 3: Tính điểm Z</b><br />\\[ Z = \\frac{9.5 - 16}{4} = \\frac{-6.5}{4} = -1.625 \\]<br /><br /><b>Bước 4: Tính xác suất phần đuôi bên phải</b><br />\\[ P(Z > -1.625) = 1 - P(Z < -1.625) \\]<br />Theo dữ kiện đã cho: \\( P(Z < -1.625) = 0.0521 \\).<br />\\[ P(Z > -1.625) = 1 - 0.0521 = 0.9479 \\]",
+      "difficulty": "medium",
+      "topic": "Normal Approximation to Poisson",
+      "hints": [
+        "Lại một câu xấp xỉ Poisson. Tìm \\( \\mu = 16 \\) và \\( \\sigma = 4 \\).",
+        "\"Ít nhất 10\" thì sau khi trừ 0.5 sẽ còn 9.5. Tính \\( Z \\) tại 9.5 rồi lấy 1 trừ đi giá trị nhỏ hơn để ra xác suất lớn hơn."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 61,
+      "question": "The manufacturing of semiconductor chips produces 2% defective chips. Assume the chips are independent and that a lot contains 2000 chips. Use normal distribution to approximate the probability that more than 50 chips are defective.<br /><br />Let \\( P(Z < 1.677) = 0.9532 \\); \\( P(Z < 1.358) = 0.9128 \\).",
+      "image": null,
+      "options": [
+        "A. 0.0468",
+        "B. 0.9128",
+        "C. 0.0872",
+        "D. 0.9532"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Tính tham số của phân phối nhị thức</b><br />Xác suất hỏng \\( p = 0.02 \\), số lượng \\( n = 2000 \\).<br />Kỳ vọng: \\( \\mu = np = 2000 \\cdot 0.02 = 40 \\).<br />Độ lệch chuẩn: \\( \\sigma = \\sqrt{np(1-p)} = \\sqrt{2000 \\cdot 0.02 \\cdot 0.98} = \\sqrt{39.2} \\approx 6.261 \\).<br /><br /><b>Bước 2: Hiệu chỉnh liên tục</b><br />Đề yêu cầu tính xác suất \"more than 50\" (lớn hơn 50), đối với biến rời rạc tức là \\( X \\ge 51 \\).<br />Chuyển sang khoảng liên tục bằng cách lùi cận dưới đi 0.5: \\( X > 50.5 \\).<br /><br /><b>Bước 3: Tính điểm Z và xác suất</b><br />\\[ Z = \\frac{50.5 - 40}{6.261} = \\frac{10.5}{6.261} \\approx 1.677 \\]<br />\\[ P(Z > 1.677) = 1 - P(Z < 1.677) = 1 - 0.9532 = 0.0468 \\]",
+      "difficulty": "hard",
+      "topic": "Normal Approximation to Binomial",
+      "hints": [
+        "Tính \\( \\mu \\) và \\( \\sigma \\) theo công thức của phân phối nhị thức.",
+        "\"More than 50\" thì các số nguyên thỏa mãn bắt đầu từ 51. Hiệu chỉnh liên tục của 51 là 50.5."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 62,
+      "question": "Assume that the number of asbestos particles in a squared meter of dust on a surface follows a Poisson distribution with a mean of 1000. If a squared meter of dust is analyzed, use normal distribution to approximate the probability that exactly 950 particles are found.<br /><br />Let \\( P(Z < -1.57) = 0.058 \\); \\( P(Z < -1.60) = 0.055 \\).",
+      "image": null,
+      "options": [
+        "A. 0.003",
+        "B. 0.943",
+        "C. 0.072",
+        "D. 0.428",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Tham số của phân phối Poisson</b><br />Kỳ vọng \\( \\mu = \\lambda = 1000 \\).<br />Độ lệch chuẩn \\( \\sigma = \\sqrt{\\lambda} = \\sqrt{1000} \\approx 31.623 \\).<br /><br /><b>Bước 2: Hiệu chỉnh liên tục cho một giá trị chính xác</b><br />Đề bài yêu cầu tính xác suất \"exactly 950\" (chính xác bằng 950), tức là \\( X = 950 \\).<br />Trên đồ thị liên tục, giá trị rời rạc 950 được trải dài thành một khoảng từ 949.5 đến 950.5.<br /><br /><b>Bước 3: Tính điểm Z</b><br />\\[ Z_1 = \\frac{949.5 - 1000}{31.623} \\approx -1.597 \\approx -1.60 \\]<br />\\[ Z_2 = \\frac{950.5 - 1000}{31.623} \\approx -1.565 \\approx -1.57 \\]<br /><br /><b>Bước 4: Tính xác suất</b><br />\\[ P(-1.60 < Z < -1.57) = P(Z < -1.57) - P(Z < -1.60) \\]<br />\\[ = 0.058 - 0.055 = 0.003 \\]",
+      "difficulty": "hard",
+      "topic": "Normal Approximation to Poisson",
+      "hints": [
+        "Xác suất của một điểm rời rạc \\( X = c \\) sẽ được chuyển thành xác suất của một khoảng \\( c - 0.5 < X < c + 0.5 \\).",
+        "Tính hai giá trị Z cho 949.5 và 950.5, sau đó trừ xác suất cho nhau."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 63,
+      "question": "A particular production process used to manufacture ferrite magnets used to operate reed switches in electronic meters is known to give 8% defective magnets on average. If 300 magnets are randomly selected, use normal distribution to approximate probability that the number of defective magnets is greater than 24 and smaller than 30.<br /><br />Let \\( P(Z < 1.17) = 0.879 \\); \\( P(Z < 0.11) = 0.544 \\); \\( P(Z < 1.06) = 0.855 \\).",
+      "image": null,
+      "options": [
+        "A. 0.335",
+        "B. 0.121",
+        "C. 0.311",
+        "D. 0.145",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Tính tham số</b><br />\\( n = 300 \\), \\( p = 0.08 \\).<br />\\( \\mu = np = 300 \\cdot 0.08 = 24 \\).<br />\\( \\sigma = \\sqrt{300 \\cdot 0.08 \\cdot 0.92} = \\sqrt{22.08} \\approx 4.6989 \\).<br /><br /><b>Bước 2: Hiệu chỉnh liên tục</b><br />\"Greater than 24 and smaller than 30\" nghĩa là \\( 24 < X < 30 \\).<br />Do X rời rạc, khoảng giá trị nguyên thực tế là \\( 25 \\le X \\le 29 \\).<br />Mở rộng mỗi bên 0.5 để bao trùm khối xác suất, ta được khoảng liên tục: \\( 24.5 < X < 29.5 \\).<br /><br /><b>Bước 3: Tính điểm Z</b><br />\\[ Z_1 = \\frac{24.5 - 24}{4.6989} = \\frac{0.5}{4.6989} \\approx 0.106 \\approx 0.11 \\]<br />\\[ Z_2 = \\frac{29.5 - 24}{4.6989} = \\frac{5.5}{4.6989} \\approx 1.170 \\approx 1.17 \\]<br /><br /><b>Bước 4: Tính xác suất</b><br />\\[ P(0.11 < Z < 1.17) = P(Z < 1.17) - P(Z < 0.11) = 0.879 - 0.544 = 0.335 \\]",
+      "difficulty": "hard",
+      "topic": "Normal Approximation to Binomial",
+      "hints": [
+        "Tìm các số nguyên nằm giữa 24 và 30 (chính là từ 25 đến 29).",
+        "Sau khi có khoảng nguyên, hãy lùi cận dưới đi 0.5 và tiến cận trên đi 0.5."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 64,
+      "question": "Suppose that X is a Poisson random variable with \\( \\lambda = 9 \\). Use normal distribution to approximate the probability \\( 10 < X < 15 \\).<br /><br />Let \\( P(Z < 1.83) = 0.966 \\); \\( P(Z < 0.74) = 0.770 \\); \\( P(Z < 0.5) = 0.691 \\).",
+      "image": null,
+      "options": [
+        "A. 0.275",
+        "B. 0.196",
+        "C. 0.966",
+        "D. 0.691",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Tính tham số</b><br />Phân phối Poisson có kỳ vọng \\( \\mu = \\lambda = 9 \\) và độ lệch chuẩn \\( \\sigma = \\sqrt{\\lambda} = \\sqrt{9} = 3 \\).<br /><br /><b>Bước 2: Hiệu chỉnh liên tục</b><br />Yêu cầu \\( 10 < X < 15 \\), đối với biến rời rạc tức là \\( 11 \\le X \\le 14 \\).<br />Hiệu chỉnh liên tục thành khoảng: \\( 10.5 < X < 14.5 \\).<br /><br /><b>Bước 3: Tính điểm Z</b><br />\\[ Z_1 = \\frac{10.5 - 9}{3} = \\frac{1.5}{3} = 0.5 \\]<br />\\[ Z_2 = \\frac{14.5 - 9}{3} = \\frac{5.5}{3} \\approx 1.833 \\approx 1.83 \\]<br /><br /><b>Bước 4: Tính xác suất</b><br />\\[ P(0.5 < Z < 1.83) = P(Z < 1.83) - P(Z < 0.5) = 0.966 - 0.691 = 0.275 \\]",
+      "difficulty": "hard",
+      "topic": "Normal Approximation to Poisson",
+      "hints": [
+        "Lọc ra các giá trị nguyên thỏa mãn: 11, 12, 13, 14.",
+        "Mở rộng biên giới: dưới lùi 0.5 (thành 10.5), trên tiến 0.5 (thành 14.5)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 65,
+      "question": "Given a continuous random variable X having an exponential distribution with mean equal to 10. Determine \\( P(X > 10) \\).",
+      "image": null,
+      "options": [
+        "A. 0.0368",
+        "B. 0.6321",
+        "C. 0.3679",
+        "D. 0.9632"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Bước 1: Tìm tham số của phân phối mũ</b><br />Đề bài cho kỳ vọng \\( E(X) = 10 \\).<br />Biết rằng đối với phân phối mũ, \\( E(X) = \\frac{1}{\\lambda} \\). Do đó, ta suy ra \\( \\lambda = \\frac{1}{10} = 0.1 \\).<br /><br /><b>Bước 2: Sử dụng công thức xác suất</b><br />Hàm phân phối tích lũy của phân phối mũ là \\( P(X \\le x) = 1 - e^{-\\lambda x} \\).<br />Xác suất để biến lớn hơn một giá trị \\( x \\) được tính bằng phần bù:<br />\\[ P(X > x) = e^{-\\lambda x} \\]<br />Thay các số liệu vào:<br />\\[ P(X > 10) = e^{-0.1 \\cdot 10} = e^{-1} \\]<br /><br /><b>Bước 3: Bấm máy tính</b><br />\\( e^{-1} \\approx 0.367879 \\). Làm tròn kết quả ta được 0.3679.",
+      "difficulty": "medium",
+      "topic": "Exponential Distribution",
+      "hints": [
+        "Phân phối mũ có công thức phần đuôi bên phải rất đơn giản: \\( P(X > x) = e^{-\\lambda x} \\).",
+        "Nhớ rằng tham số \\( \\lambda \\) là nghịch đảo của trung bình (mean)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 66,
+      "question": "The time between calls to a plumbing supply business is exponentially distributed with a mean time between calls of 15 minutes. What is the probability that there are no calls within a 30-minute interval?",
+      "image": null,
+      "options": [
+        "A. 0.1353",
+        "B. 0.7294",
+        "C. 0.2706",
+        "D. 0.8647"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Tìm tham số tỉ lệ \\( \\lambda \\)</b><br />Thời gian trung bình giữa các cuộc gọi là kỳ vọng \\( E(X) = 15 \\) phút.<br />Suy ra \\( \\lambda = \\frac{1}{15} \\).<br /><br /><b>Bước 2: Hiểu bản chất câu hỏi</b><br />Việc \"không có cuộc gọi nào trong 30 phút\" đồng nghĩa với việc thời gian chờ đến cuộc gọi tiếp theo phải <b>lớn hơn 30 phút</b>. Vậy ta cần tính \\( P(X > 30) \\).<br /><br /><b>Bước 3: Tính xác suất</b><br />Sử dụng công thức của phân phối mũ: \\( P(X > x) = e^{-\\lambda x} \\).<br />\\[ P(X > 30) = e^{-\\frac{1}{15} \\cdot 30} = e^{-2} \\]<br />Bấm máy tính: \\( e^{-2} \\approx 0.135335 \\approx 0.1353 \\).",
+      "difficulty": "medium",
+      "topic": "Exponential Distribution",
+      "hints": [
+        "Không có cuộc gọi trong 30 phút tức là thời gian chờ lớn hơn 30 phút: \\( P(X > 30) \\).",
+        "Tính \\( \\lambda = 1/15 \\) sau đó áp dụng công thức \\( e^{-\\lambda x} \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 67,
+      "question": "The time to failure (in hours) for a laser in a cytometry machine is modeled by an exponential distribution with \\( \\lambda = 0.00004 \\). Find the probability that the laser will last at least 20000 hours.",
+      "image": null,
+      "options": [
+        "A. 0.45",
+        "B. 0.65",
+        "C. 0.74",
+        "D. 0.55",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Nhận diện yêu cầu và tham số</b><br />Đề bài đã cho sẵn tham số tỉ lệ \\( \\lambda = 0.00004 \\).<br />\"Last at least 20000 hours\" (tồn tại ít nhất 20000 giờ) nghĩa là tuổi thọ \\( X \\ge 20000 \\).<br /><br /><b>Bước 2: Tính toán bằng công thức phân phối mũ</b><br />\\[ P(X \\ge 20000) = e^{-\\lambda x} = e^{-0.00004 \\cdot 20000} \\]<br />\\[ P(X \\ge 20000) = e^{-0.8} \\]<br />Bấm máy tính ta được: \\( e^{-0.8} \\approx 0.449328 \\).<br />Làm tròn đến 2 chữ số thập phân ta được 0.45.",
+      "difficulty": "easy",
+      "topic": "Exponential Distribution",
+      "hints": [
+        "Đề bài đã cho sẵn \\( \\lambda \\), bạn không cần lấy nghịch đảo nữa.",
+        "Tính \\( P(X \\ge 20000) \\) bằng công thức \\( e^{-\\lambda x} \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 68,
+      "question": "Patients arriving at an outpatient clinic follow an exponential distribution at a rate of 15 patients per hour. What is the probability that a randomly chosen arrival to be less than 15 minutes?",
+      "image": null,
+      "options": [
+        "A. 0.9765",
+        "B. 0.5765",
+        "C. 0.2465",
+        "D. 0.0165",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Đồng nhất đơn vị đo lường (Rất quan trọng)</b><br />Đề cho tốc độ đến là \\( \\lambda = 15 \\) bệnh nhân/<b>giờ</b>. Tuy nhiên thời gian cần tính lại là 15 <b>phút</b>.<br />Cần đổi 15 phút ra giờ: \\( x = \\frac{15}{60} = 0.25 \\) giờ.<br /><br /><b>Bước 2: Tính xác suất</b><br />Cần tìm xác suất thời gian nhỏ hơn 0.25 giờ: \\( P(X < 0.25) \\).<br />Sử dụng hàm phân phối tích lũy của phân phối mũ: \\( P(X < x) = 1 - e^{-\\lambda x} \\).<br />\\[ P(X < 0.25) = 1 - e^{-15 \\cdot 0.25} = 1 - e^{-3.75} \\]<br /><br /><b>Bước 3: Bấm máy tính</b><br />\\( e^{-3.75} \\approx 0.0235177 \\)<br />\\( P(X < 0.25) = 1 - 0.0235177 = 0.9764823 \\approx 0.9765 \\)",
+      "difficulty": "medium",
+      "topic": "Exponential Distribution",
+      "hints": [
+        "Bạn phải đổi 15 phút sang đơn vị giờ để đồng nhất với tham số \\( \\lambda \\).",
+        "Dùng công thức tính xác suất nhỏ hơn: \\( 1 - e^{-\\lambda x} \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 69,
+      "question": "A catalog company that receives the majority of its orders by telephone conducted a study to determine how long customers were willing to wait on hold before ordering a product. The length of time was found to be a random variable best approximated by an exponential distribution with a mean equal to 3 minutes. What proportion of customers having to hold more than 4.5 minutes will hang up before placing an order?",
+      "image": null,
+      "options": [
+        "A. 0.51342",
+        "B. 0.77687",
+        "C. 0.22313",
+        "D. 0.48658",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "C",
+      "explanation": "<b>Bước 1: Tính tham số \\( \\lambda \\)</b><br />Thời gian chờ trung bình là \\( E(X) = 3 \\) phút.<br />Suy ra \\( \\lambda = \\frac{1}{3} \\).<br /><br /><b>Bước 2: Phân tích yêu cầu</b><br />Câu hỏi \"Tỉ lệ khách hàng cúp máy vì phải chờ hơn 4.5 phút\" thực chất là yêu cầu tính xác suất thời gian chờ vượt quá mức 4.5 phút. Nghĩa là tính \\( P(X > 4.5) \\).<br /><br /><b>Bước 3: Tính toán</b><br />Áp dụng công thức phần đuôi phân phối mũ:<br />\\[ P(X > 4.5) = e^{-\\lambda x} = e^{-\\frac{1}{3} \\cdot 4.5} = e^{-1.5} \\]<br />Bấm máy tính: \\( e^{-1.5} \\approx 0.223130 \\approx 0.22313 \\).",
+      "difficulty": "medium",
+      "topic": "Exponential Distribution",
+      "hints": [
+        "Khách hàng cúp máy khi phải chờ hơn 4.5 phút, do đó bài toán quy về việc tìm \\( P(X > 4.5) \\).",
+        "Trung bình bằng 3 nên \\( \\lambda = 1/3 \\). Thay vào \\( e^{-\\lambda x} \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 70,
+      "question": "Let X represent the amount of time it takes a student to park in the library parking lot at the university. If we know that the distribution of parking times can be modeled using an exponential distribution with a mean of 4 minutes, find the probability that it will take a randomly selected student more than 10 minutes to park in the library lot.",
+      "image": null,
+      "options": [
+        "A. 0.329680",
+        "B. 0.082085",
+        "C. 0.917915",
+        "D. 0.670320",
+        "E. None of the other choices is correct"
+      ],
+      "correctAnswer": "B",
+      "explanation": "<b>Bước 1: Tìm tham số \\( \\lambda \\)</b><br />Thời gian đỗ xe trung bình là \\( E(X) = 4 \\) phút.<br />Tham số tỉ lệ \\( \\lambda = \\frac{1}{4} = 0.25 \\).<br /><br /><b>Bước 2: Tính xác suất</b><br />Yêu cầu bài toán là tìm xác suất để sinh viên mất hơn 10 phút, tức là \\( P(X > 10) \\).<br />Sử dụng công thức cho phân phối mũ:<br />\\[ P(X > 10) = e^{-\\lambda x} = e^{-0.25 \\cdot 10} = e^{-2.5} \\]<br />Bấm máy tính: \\( e^{-2.5} \\approx 0.08208499 \\approx 0.082085 \\).",
+      "difficulty": "easy",
+      "topic": "Exponential Distribution",
+      "hints": [
+        "Tìm \\( \\lambda \\) bằng cách lấy 1 chia cho 4.",
+        "Sử dụng công thức \\( P(X > 10) = e^{-\\lambda \\cdot 10} \\)."
+      ],
+      "type": "multiple_choice"
+    },
+    {
+      "id": 71,
+      "question": "Suppose that the time to failure (in hours) of fans in a personal computer can be modeled by an exponential distribution with \\( \\lambda = 0.0004 \\). What proportion of the fans will last at least 10,000 hours?",
+      "image": null,
+      "options": [
+        "A. 0.0183",
+        "B. 0.0498",
+        "C. 0.9817",
+        "D. 0.9502"
+      ],
+      "correctAnswer": "A",
+      "explanation": "<b>Bước 1: Phân tích bài toán</b><br />Đề bài cho biết thời gian hỏng của quạt tuân theo phân phối mũ (exponential distribution) với tham số tỉ lệ \\( \\lambda = 0.0004 \\).<br />Yêu cầu tìm tỉ lệ quạt chạy được ít nhất 10,000 giờ, tức là tính xác suất \\( P(X \\ge 10000) \\).<br /><br /><b>Bước 2: Áp dụng công thức</b><br />Xác suất phần đuôi bên phải của phân phối mũ (xác suất để biến ngẫu nhiên lớn hơn một giá trị x) được tính bằng công thức:<br />\\[ P(X \\ge x) = e^{-\\lambda x} \\]<br />Thay các giá trị đã biết vào công thức:<br />\\[ P(X \\ge 10000) = e^{-0.0004 \\cdot 10000} = e^{-4} \\]<br /><br /><b>Bước 3: Bấm máy tính</b><br />Ta có: \\( e^{-4} \\approx 0.0183156 \\).<br />Làm tròn kết quả ta được 0.0183.",
+      "difficulty": "easy",
+      "topic": "Exponential Distribution",
+      "hints": [
+        "Tỉ lệ quạt chạy được ít nhất 10,000 giờ chính là xác suất thời gian tồn tại \\( X \\ge 10000 \\).",
+        "Sử dụng công thức tính xác suất tồn tại của phân phối mũ: \\( P(X \\ge x) = e^{-\\lambda x} \\)."
       ],
       "type": "multiple_choice"
     }
+
   ]
 }
