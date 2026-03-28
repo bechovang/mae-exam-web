@@ -1330,7 +1330,7 @@
       },
       {
         "id": 68,
-        "question": "A random experiment can result in one of the outcomes {a, b, c, d, e} with probabilities 0.25, 0.3, 0.15, 0.2, 0.1, respectively. Let A denote the event {b, d, e} and B the event {a, b, d}. Find \\( P(A \\cup B \\) \\).  ",
+        "question": "A random experiment can result in one of the outcomes {a, b, c, d, e} with probabilities 0.25, 0.3, 0.15, 0.2, 0.1, respectively. Let A denote the event {b, d, e} and B the event {a, b, d}. Find \\( P(A \\cup B) \\).  ",
         "options": [
           "A. 0.6",
           "B. 0.75",
