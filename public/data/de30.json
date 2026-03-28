@@ -8,12 +8,12 @@
       "question": "Which of the following statements is FALSE about the probability density function \\( f(x) \\) of a continuous random variable?",
       "image": null,
       "options": [
-        "(i) \\( f(x) \\) is nonnegative function for all value of x",
-        "(ii) \\( f(x) = P(X = x) \\)",
-        "(iii) \\( P(a < X < b) = \\int_a^b f(x) \\, dx \\)",
-        "(iv) \\( \\int_{-\\infty}^{\\infty} f(x) \\, dx = 1 \\)"
+        "A. \\( f(x) \\) is nonnegative function for all value of x",
+        "B. \\( f(x) = P(X = x) \\)",
+        "C. \\( P(a < X < b) = \\int_a^b f(x) \\, dx \\)",
+        "D. \\( \\int_{-\\infty}^{\\infty} f(x) \\, dx = 1 \\)"
       ],
-      "correctAnswer": "(ii)",
+      "correctAnswer": "B",
       "explanation": "<b>Đối với biến ngẫu nhiên liên tục:</b><br />- Xác suất tại một điểm cụ thể \\( P(X=x) \\) luôn bằng 0.<br />- Hàm mật độ xác suất \\( f(x) \\) không đại diện cho xác suất tại điểm đó; nó đại diện cho \"mật độ\" xác suất xung quanh điểm đó.<br /><br /><b>Các khẳng định đúng:</b><br />- (i) \\( f(x) \\ge 0 \\) với mọi x.<br />- (iii) Xác suất trên một khoảng được tính bằng tích phân của PDF.<br />- (iv) Tổng diện tích dưới đồ thị PDF là 1.",
       "difficulty": "easy",
       "topic": "Continuous Random Variables",
