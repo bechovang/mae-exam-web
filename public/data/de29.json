@@ -945,8 +945,8 @@
           "D. None of the other choices is correct",
           "E. 0.0299"
         ],
-        "correctAnswer": "E",
-        "explanation": "Đây là bài toán phân phối nhị thức với \\( n=11, p=0.68 \\).<br />Gọi \\( X \\) là số người đậu. Cần tính \\( P(2 \\leq X \\leq 4) = P(X=2) + P(X=3) + P(X=4) \\).<br /><br />\\( P(X=k) = \\binom{11}{k} (0.68)^k (0.32)^{11-k} \\)<br />\\( P(X=2) = 55 \\times (0.68)^2 \\times (0.32)^9 \\approx 0.0009 \\)<br />\\( P(X=3) = 165 \\times (0.68)^3 \\times (0.32)^8 \\approx 0.0058 \\)<br />\\( P(X=4) = 330 \\times (0.68)^4 \\times (0.32)^7 \\approx 0.0232 \\)<br />Tổng \\( \\approx 0.0009 + 0.0058 + 0.0232 = 0.0299 \\).",
+        "correctAnswer": "C",
+        "explanation": "Đây là bài toán phân phối nhị thức với \\( n=11, p=0.68 \\).<br />Gọi \\( X \\) là số người đậu. Cần tính \\( P(2 \\leq X \\leq 4) = P(X=2) + P(X=3) + P(X=4) \\).<br /><br />\\( P(X=k) = \\binom{11}{k} (0.68)^k (0.32)^{11-k} \\)<br />\\( P(X=2) = 55 \\times (0.68)^2 \\times (0.32)^9 \\approx 0.0009 \\)<br />\\( P(X=3) = 165 \\times (0.68)^3 \\times (0.32)^8 \\approx 0.0057 \\)<br />\\( P(X=4) = 330 \\times (0.68)^4 \\times (0.32)^7 \\approx 0.0242 \\)<br />Tổng \\( \\approx 0.0009 + 0.0057 + 0.0242 = 0.0308 \\).",
         "difficulty": "medium",
         "topic": "Binomial Distribution",
         "hints": [
